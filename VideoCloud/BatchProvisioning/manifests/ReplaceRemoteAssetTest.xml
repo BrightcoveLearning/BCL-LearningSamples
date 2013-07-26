@@ -1,0 +1,18 @@
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert"
+													 report-success="TRUE">
+	<notify email="rcrooks@brightcove.com"/>
+	<asset
+		 refid="feb13-remoteAsset2"
+		 type="VIDEO_FULL"
+		 encode-to="MP4"
+		 encode-multiple="true"
+		 size="1582360"
+		 hash-code="a181d5b8ecee86ceb49d4b61d6325261"
+		 filename="BCL_Bugs-Butterfly_remote-asset.mp4"/>
+	<reencode-from-new-source
+		 title-refid="1449178461001"
+		 new-source-refid = "feb13-remoteAsset2"
+		 overwrite-images="TRUE"
+/>
+
+</publisher-upload-manifest>

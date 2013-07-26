@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">เล่น</label>
+        <label key="controls pause">หยุดชั่วคราว</label>
+        <label key="controls menu">เมนู</label>
+        <label key="controls play tooltip">เล่น</label>
+        <label key="controls pause tooltip">หยุดชั่วคราว</label>
+        <label key="controls volume tooltip">เปิดส่วนควบคุมระดับเสียง</label>
+        <label key="controls maximize tooltip">แสดงเต็มหน้าจอ</label>
+        <label key="controls minimize tooltip">ออกจากเต็มหน้าจอ</label>
+        <label key="community share">อีเมล</label>
+        <label key="community socialShare">ใช้ร่วมกัน</label>
+        <label key="community link">รับลิงค์</label>
+        <label key="community code">รับโค้ด</label>
+        <label key="community share tooltip">ส่งวิดีโอให้เพื่อนทางอีเมล</label>
+        <label key="community socialShare tooltip">ใช้วิดีโอนี้ร่วมกัน</label>
+        <label key="community link tooltip">รับลิงค์เชื่อมโยงไปยังวิดีโอโดยตรง</label>
+        <label key="community code tooltip">รับ HTML ไปยังโปรแกรมเล่นแบบฝัง</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[ขยาย  >]]></label>
+        <label key="collapse banner">ยุบ  X</label>
+        <label key="sponsor message">ข้อความสปอนเซอร์</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">ปิดเสียง</label>
+        <label key="unmute tooltip">ยกเลิกการปิดเสียง</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">เปิดเมนู</label>
+        <label key="rightclick fullscreen">แสดงเต็มหน้าจอ</label>
+        <label key="rightclick exit fullscreen">ออกจากเต็มหน้าจอ</label>
+        <label key="rightclick show debug">แสดงข้อมูลดีบัก</label>
+        <label key="rightclick hide debug">ซ่อนข้อมูลดีบัก</label>
+<!-- Error messaging -->
+        <label key="noContent">ไม่มีวิดีโอที่พร้อมใช้งาน\nในตอนนี้
+            \n\nโปรดตรวจสอบอีกครั้งในภายหลัง</label>
+        <label key="unavailableContent">วิดีโอที่คุณพยายามจะ
+            ดูไม่พร้อมใช้งานในขณะนี้\n\nโปรดตรวจสอบอีกครั้งในภายหลัง</label>
+        <label key="upgradeRequired">ต้องใช้ Flash 9.0.115.0 หรือรุ่นใหม่กว่าเพื่อดูเนื้อหานี้\n\nคลิก &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;ที่นี่&lt;/u&gt;&lt;/a&gt; เพื่ออัพเกรดโปรแกรมเล่นของคุณ</label>
+        <label key="messaging OK">ตกลง</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">คุณกำลังชม:</label>
+        <label key="connecting">กำลังโหลดวิดีโอ</label>
+        <label key="please select:">โปรดเลือก:</label>
+<!-- General menu navigation -->
+        <label key="menu info">ข้อมูล</label>
+        <label key="menu email">ส่งวิดีโอทางอีเมล</label>
+        <label key="menu link">รับลิงค์</label>
+        <label key="menu share">ใช้วิดีโอร่วมกัน</label>
+        <label key="expand">ขยาย</label>
+        <label key="menu embed">รับโค้ด</label>
+        <label key="menu play">เล่นวิดีโอ</label>
+        <label key="menu replay">เล่นซ้ำ</label>
+        <label key="menu resume">เริ่มใหม่</label>
+        <label key="cancel button">ยกเลิก</label>
+        <label key="continue button">ดำเนินการต่อ</label>
+        <label key="close tooltip">ปิด</label>
+<!-- Email video menu screen -->
+        <label key="email page title">ส่งอีเมลให้เพื่อน</label>
+        <label key="email your email">อีเมลของคุณ</label>
+        <label key="email friend email"><![CDATA[อีเมลของเพื่อน]]></label>
+        <label key="email message">ข้อความ (ระบุหรือไม่ระบุก็ได้)</label>
+        <label key="email send">ส่ง</label>
+        <label key="email video">ส่งวิดีโอทางอีเมล</label>
+        <label key="email error">โปรดระบุที่อยู่อีเมลที่ถูกต้อง</label>
+        <label key="email confirmation text">อีเมลของคุณถูกส่งไปแล้ว</label>
+<!-- Share video menu screen -->
+        <label key="share title">ใช้วิดีโอนี้ร่วมกัน</label>
+        <label key="share directions">ใช้ร่วมกันไปยังไซต์เหล่านี้โดยตรง</label>
+        <label key="share facebook">ใช้ร่วมกันบน Facebook</label>
+        <label key="share twitter">%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%A3%E0%B9%88%E0%B8%A7%E0%B8%A1%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%9A%E0%B8%99%20Twitter</label>
+        <label key="share twitter message">เช็ค+เอาต์+</label>
+        <label key="share link">คัดลอกลิงค์</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">เพิ่มลงในเว็บไซต์หรือบล็อก</label>
+        <label key="embed directions">คัดลอกโค้ดหรือเลือกบริการบล็อก</label>
+        <label key="embed code">ฝังโค้ด</label>
+        <label key="embed copy code">คัดลอกโค้ด</label>
+        <label key="embed copied">ถูกคัดลอก</label>
+        <label key="blog processing">กำลังประมวลผล...</label>
+        <label key="blog username">ชื่อผู้ใช้</label>
+        <label key="blog password">รหัสผ่าน</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">ล็อกอิน/รหัสผ่านไม่ถูกต้อง</label>
+        <label key="blog post select directions">เลือกบล็อก</label>
+        <label key="blog post enter title">โพสต์ชื่อเรื่อง</label>
+        <label key="blog post enter description">โพสต์คำอธิบาย (ระบุหรือไม่ระบุก็ได้)</label>
+        <label key="blog post post video">โพสต์วิดีโอ</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">เกิดข้อผิดพลาด โปรดลองอีกครั้ง</label>
+        <label key="blog confirmation text">ส่งโพสต์แล้ว</label>
+<!-- Link to video menu screen -->
+        <label key="link title">ลิงค์ไปยังวิดีโอนี้</label>
+        <label key="link directions">ใช้ร่วมกันทางอีเมลหรือ IM</label>
+        <label key="link copy link">คัดลอกลิงค์</label>
+        <label key="link copied">ถูกคัดลอก</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">ข้อกำหนดและเงื่อนไข</label>
+        <label key="related videos">วิดีโอที่เกี่ยวข้อง</label>
+        <label key="most viewed videos">เรียกดูมากที่สุด</label>
+        <label key="newest videos">ล่าสุด</label>
+</labels>

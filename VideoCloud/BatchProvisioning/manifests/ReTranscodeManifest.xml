@@ -1,0 +1,18 @@
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert"
+                           report-success="TRUE">
+  <notify email="rcrooks@brightcove.com"/>
+  <asset
+     refid="new-retranscoding-existing-videos"
+     type="VIDEO_FULL"
+     encode-to="MP4"
+     encode-multiple="true"
+     size="94885078 "
+     hash-code="5a5ce37bd0f0ab73e00f40a242e3f90f"
+     filename="BCD002 Re-Transcoding Existing Videos.mp4"/>
+  <reencode-from-new-source
+     title-refid="724842682001"
+     new-source-refid = "new-retranscoding-existing-videos"
+     overwrite-images="FALSE"
+/>
+
+</publisher-upload-manifest>

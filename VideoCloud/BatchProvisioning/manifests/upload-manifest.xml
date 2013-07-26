@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<publisher-upload-manifest publisher-id="57838016001" preparer="Robert">
+  <notify email="rcrooks@brightcove.com" /> 
+  <asset filename="Water-Bubbles.mp4" 
+      refid="water_bubbles_003" 
+      size="114350" 
+      hash-code="3699483adecd8c1ef3f52da57522ddc4" 
+      type="VIDEO_FULL"
+	  display-name="Bubbles in Water"
+	  encode-to="MP4"
+	  encode-multiple="TRUE"
+	  h264-preserve-as-rendition="TRUE"
+		/>  
+  <title name="Water Bubbles" 
+      refid="water_bubbles_004" 
+      video-full-refid="water_bubbles_003"
+      active="TRUE" 
+       > 
+    <short-description>The behavior of air bubbles in water</short-description> 
+    <long-description>One the videos from the water series showing the behavior of air bubbles in water</long-description>
+	<tag>water</tag>
+	<tag>science</tag>
+  </title>
+</publisher-upload-manifest>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+		<script type="text/javascript">
+		document.addEventListener("load",BCLgetData,true);
+		var str = "";
+		var title;
+		function BCLgetData() {
+		  document.removeEventListener("load",BCLgetData,true);
+		  BCLgetCollection("onDataResult","inproduct:OVP");
+	}    
+	
+		function BCLgetCollection(callback,params) {
+			BCMAPI.token = "S0la8DZ0Bz4T8EI_doFa2K1acfXKR0pQhZalkWJqM0hqlmI5cLhylA..";
+			var searchParams = new Object();
+			BCMAPI.callback = callback;
+			searchParams.and = params;
+			searchParams.sort_by = "DISPLAY_NAME";
+			searchParams.video_fields = "id,name";
+			BCMAPI.search(searchParams);
+		}
+		function onDataResult(jsonData) {
+			for (var i = 0; i<jsonData["items"].length; i++) {
+				title = jsonData.items[i];
+				str += title.name+'<br />';
+			}
+			document.getElementById("videoList").innerHTML += str;
+		}
+		
+	
+		</script>
+
+	</head>
+	<body onload="BCLgetData()">
+	<div id="videoList"></div>
+	</body>
+</html>

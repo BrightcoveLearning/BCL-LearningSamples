@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<!-- Replace the text for the content attributes in the two meta tags that follow with whatever you like -->
+	<meta name="title" content="FaceBook Embed Test" />
+	<meta name="description" content="I'm just testing embedding of a Brightcove video player in a Facebook news feed" />
+    <meta name="medium" content="video" />
+    <meta name="video_type" content="application/x-shockwave-flash" />
+    <meta name="video_height" content="336" />
+    <meta name="video_width" content="597" />
+<link rel="video_src" href="<link rel="video_src" href="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1&publisherID=20318290001&playerID=674388892001&domain=embed&videoId=589233309001" />
+
+<link rel="image_src" href="http://brightcove.vo.llnwd.net/d11/unsecured/media/301925175/301925175_407615051001_th-407610602001.jpg?pubId=30192517" />
+	<!-- You can modify or add to the styles as you wish -->
+	<style type="text/css">
+	
+	#Content {
+		width: 570px;
+		text-align: center;
+		margin-left: 50px;
+	}
+	
+	</style>
+</head>
+<body>
+	<div id="Content">
+	<!-- Replace the Brightcove publishing code below with the code for your own player -->
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience589233309001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="520" />
+  <param name="height" value="292" />
+  <param name="playerID" value="674388892001" />
+  <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLAS_8Ejyp47jWB_ng8LYXxSb" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="589233309001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<br />
+		   <!-- facebook button -->
+			 <script type="text/javascript">function fbs_click() {u=location.href;t=document.title;window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');return false;}</script>
+			 <style type="text/css"> 
+	html .fb_share_link { padding:2px 0 0 20px; height:16px; background:url(http://b.static.ak.fbcdn.net/images/share/facebook_share_icon.gif?8:26981) no-repeat top left; }
+	</style>
+	<!-- In the tag below, replace the value of the u parameter in the href value with URL for your own page -->
+	<a href="http://www.facebook.com/share.php?u=http://mysite.verizon.net/vzeqny48/facebook_newsfeed_ver.html" target="_blank" class="fb_share_link" onClick="return fbs_click()">Share on Facebook</a> 
+	</div>
+</body>
+</html>

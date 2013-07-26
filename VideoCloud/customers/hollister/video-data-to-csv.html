@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Video Data to CSV</title>
+    <script src="//use.edgefonts.net/source-code-pro.js"></script>
+    <link href="//files.brightcove.com/proxima-nova/font-faces.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="//docs.brightcove.com/en/styles/anytime.c.css" />
+    <style>
+      /* element styles */
+      body {
+        font-family: 'ProximaNovaA-Regular', "Helvetica Neue", Arial, Helvetica, sans-serif;
+        margin: 20px 30px;
+      }
+      fieldset {
+        width: 800px;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 5px;
+      }
+      h1 {
+        border-bottom: 1px #000 solid;
+      }
+      pre, textarea {
+        border: 1px #999 solid;
+        padding: 5px;
+        width: 100%;
+        height: 800px;
+      }
+      /* class styles */
+      .button {
+        background-color: #ccc;
+        border: 1px #666 solid;
+        border-radius: 5px;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Video Data to CSV</h1>
+    <h2>Instructions</h2>
+    <ol>
+      <li>Open any text editor (Notepad on Windows or TextEdit on Mac will do)</li>
+      <li>Create a new empty file</li>
+      <li>Select the data in the detailed data block below (click anywhere in the data and press CTRL-a (Win) or CMD-a (Mac) to select it all)</li>
+      <li>Copy the data to the clipboard and paste it into your empty text document</li>
+      <li>Save the file as a CSV file, with a name like VideoData.csv</li>
+      <li>Open the csv file in Excel</li>
+    </ol>
+    <h2>Data Overview</h2>
+    <div class="initialData">
+      <p>Total deleted videos in your library: <span id="DELETED"></span></p>
+      <p>Total inactive videos in your library: <span id="INACTIVE"></span></p>
+      <p>Total playable videos in your library: <span id="PLAYABLE"></span></p>
+      <p>Total videos in your library: <span id="totalVideos"></span></p>
+    </div>
+    <h2>Detailed Data in CSV format</h2>
+<textarea id="response"></textarea>
+    <script type="text/javascript" src="//docs.brightcove.com/en/scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="//docs.brightcove.com/en/scripts/bc-mapi.js"></script>
+    <script type="text/javascript" src="//docs.brightcove.com/en/scripts/handlebars.js"></script>
+    <script type="text/javascript" src="//docs.brightcove.com/en/scripts/secondsToTime.js"></script>
+    <script type="text/javascript" src="//docs.brightcove.com/en/scripts/log.js"></script>
+    <script>
+      var BCLS = ( function () {
+        var $totalVideos       = $("#totalVideos"),
+            $request           = $("#request"),
+            $response          = $("#response"),
+            totalVideos        = 0,
+            filterArray        = ["DELETED","INACTIVE","PLAYABLE"],
+            currentFilterIndex = 0,
+            currentFilter      = "",
+            method             = "find_modified_videos",
+            primaryParams      = {
+                                   callback        : "BCLS.primaryCallResponse",
+                                   from_date       : "0",
+                                   filter          : "",
+                                   page_size       : 25,
+                                   sort_by         : "CREATION_DATE",
+                                   get_item_count  : true,
+                                   video_fields    : ""
+                                 },
+            secondaryParams    = {
+                                   callback        : "BCLS.secondaryCallResponse",
+                                   from_date       : "0",
+                                   filter          : "",
+                                   page_size       : 25,
+                                   page_number     : 0,
+                                   sort_by         : "CREATION_DATE",
+                                   get_item_count  : true,
+                                   video_fields    : "id,name,shortDescription,length,lastModifiedDate"
+                                  },
+            totalCalls          = 0,
+            callNumber          = 0,
+            responseStart       = "\"Video ID\",\"Title\",\"Description\",\"Running Time\",\"Last Updated\",\"Status\"\n",
+            dataRowTemplate     = "{{#items}}\"{{id}}\",\"{{name}}\",\"{{shortDescription}}\",\"{{length}}\",\"{{lastModifiedDate}}\",\"{{status}}\"\r{{/items}}",
+            responseBody        = "";
+        BCMAPI.token = "zwqC5UJIjckgMtzr54zPdksrQudyYBmWdTGz67EWJPr2FtpGwjWb5w..";
+        makePrimaryCall = function (filter) {
+          primaryParams.filter = filter;
+          BCMAPI.find(method, primaryParams);
+        };
+        makeSecondaryCall = function (filter) {
+          secondaryParams.filter = filter;
+          secondaryParams.page_number = callNumber;
+          BCMAPI.find(method, secondaryParams);
+        }
+        currentFilter = filterArray[currentFilterIndex];
+        makePrimaryCall(currentFilter);
+        return {
+          primaryCallResponse   : function (jsonData) {
+            document.getElementById(currentFilter).innerHTML = jsonData.total_count;
+            totalVideos += jsonData.total_count;
+            totalCalls = Math.ceil(jsonData.total_count / 25);
+            callNumber = 0;
+            makeSecondaryCall(currentFilter);
+          },
+          secondaryCallResponse : function (jsonData) {
+            var template = Handlebars.compile(dataRowTemplate),
+                data,
+                results,
+                item,
+                lengthObj = {};
+            for (var i = 0, max = jsonData.items.length; i < max; i++) {
+              item = jsonData.items[i];
+              item.id = item.id.toString();
+              item.status = currentFilter.toLowerCase();
+              lengthObj = BCLSsecondsToTime(item.length/1000);
+              item.length = lengthObj.h + ":" + lengthObj.m + ":" + lengthObj.s;
+              bclslog(parseInt(item.lastModifiedDate));
+              item.lastModifiedDate = new Date(parseInt(item.lastModifiedDate));
+              bclslog(item.lastModifiedDate);
+            };
+            data      = jsonData;
+            results   = template(data);
+            responseBody += results;
+            callNumber++;
+            if (callNumber <= totalCalls) {
+              makeSecondaryCall(currentFilter);
+            }
+            else if (currentFilterIndex == filterArray.length - 1) {
+              bclslog("done");
+              $totalVideos.html(totalVideos);
+              document.getElementById("response").innerHTML = responseStart + responseBody;
+            }
+            else {
+              bclslog(currentFilterIndex);
+              currentFilterIndex++;
+              currentFilter = filterArray[currentFilterIndex];
+              makePrimaryCall(currentFilter);
+            }
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

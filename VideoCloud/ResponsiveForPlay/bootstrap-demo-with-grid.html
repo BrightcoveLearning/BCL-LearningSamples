@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bootstrap w/ Grid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+      .outer-container {
+        position: relative;
+        padding-bottom: 56.25%;
+      }
+      .BrightcoveExperience {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span2">
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et tellus at nunc varius dapibus a eget arcu. Fusce venenatis ullamcorper viverra. Integer vitae lorem vel nulla interdum commodo. Donec mauris mi, commodo eget egestas at, malesuada vel lorem. Nullam eleifend congue aliquam. Vestibulum tincidunt ante at nisi blandit sollicitudin. Cras ut magna lacus, lacinia faucibus orci. Sed auctor vehicula mauris, a volutpat turpis mollis eget. Fusce eget nisi velit, eu bibendum nunc. Mauris adipiscing elit eget urna ullamcorper scelerisque. Nullam neque ipsum, iaculis nec consectetur euismod, consectetur eget magna. Sed ullamcorper, leo id dictum lobortis, lacus magna lobortis nunc, in lobortis mauris enim ac lectus. Etiam bibendum augue ut erat sagittis blandit. In rhoncus laoreet lacus, et malesuada dui accumsan sit amet. In quis pharetra justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam convallis tincidunt mauris eu luctus. Nunc nec arcu in.</p>
+      </div>
+      <div class="span8">
+        <div class="outer-container">
+          <!-- Start of Brightcove Player -->
+          <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+          <object id="myExperience1754261437001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="2292582048001" />
+            <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrez4qHriKHGD82W_z7BO_iJ" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+
+            <param name="@videoPlayer" value="1754261437001" />
+          </object>
+
+          <!--
+          This script tag will cause the Brightcove Players defined above it to be created as soon
+          as the line is read by the browser. If you wish to have the player instantiated only after
+          the rest of the HTML is processed and the page load is complete, remove the line.
+          -->
+          <script type="text/javascript">brightcove.createExperiences();</script>
+
+          <!-- End of Brightcove Player -->
+        </div>
+      </div>
+      <div class="span2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam et tellus at nunc varius dapibus a eget arcu. Fusce venenatis ullamcorper viverra. Integer vitae lorem vel nulla interdum commodo. Donec mauris mi, commodo eget egestas at, malesuada vel lorem. Nullam eleifend congue aliquam. Vestibulum tincidunt ante at nisi blandit sollicitudin. Cras ut magna lacus, lacinia faucibus orci. Sed auctor vehicula mauris, a volutpat turpis mollis eget. Fusce eget nisi velit, eu bibendum nunc. Mauris adipiscing elit eget urna ullamcorper scelerisque. Nullam neque ipsum, iaculis nec consectetur euismod, consectetur eget magna. Sed ullamcorper, leo id dictum lobortis, lacus magna lobortis nunc, in lobortis mauris enim ac lectus. Etiam bibendum augue ut erat sagittis blandit. In rhoncus laoreet lacus, et malesuada dui accumsan sit amet. In quis pharetra justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam convallis tincidunt mauris eu luctus. Nunc nec arcu in.</p>
+      </div>
+    </div>
+     <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+
+  </body>
+</html>

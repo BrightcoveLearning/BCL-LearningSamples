@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+  </head>
+  <body>
+<h2>Resizing players using the Player API</h2>
+<style type="text/css">
+#myExperience {margin-left: 50px;}
+</style>
+<p>Using the Player API, you can resize the video player and any other component. If you are new to the Player API, you should read <a href="internal:node/487">Player API Overview</a> before proceeding. </p>
+<p>Every component and layout container in a player has a <code>setSize(width,height)</code> method. When you resize an element, other surrounding elements will be resized automatically to adjust to the new arrangement if their widths and heights are not set explicitly in the BEML code for the template. If other elements are sized explicitly in the BEML code, they will be pushed horizontally or vertically to accommodate the resized element, and they may become partly or fully hidden.</p>
+<p>In the standard video player with horizontal list below, the Player API is used to adjust the aspect ratio for a mix of 4:3 and 16:9 videos. The height is held constant, while the width is adjusted to standard or widescreen for each new video that is loaded into the player. In this case the overall ExperienceModule is resized so that the list resizes with the video player.</p>
+<p>Note that you cannot size overall player (what corresponds to the height and width params in the publishing code) via the Player API because this is part of the HTML DOM rather than the player. You can resize the player via the DOM, however, and then size components within the Player via the API.</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="300" />
+  <param name="height" value="340" />
+  <param name="playerID" value="1198156967001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiZmgfYPq3mgueCld8JnSx4" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>The Player API code for this example is shown below.</p>
+<pre>
+// namespace for all the global vars
+var BCL = {};
+function onTemplateLoaded(id) {
+  BCL.player = brightcove.getExperience(id);
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+  // set the overall player width in the DOM -- 405px works for widescreen here
+  document.getElementById("myExperience").style.width = "405px";
+  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  // store the original width standardWidth
+  BCL.standardWidth = BCL.experienceModule.getWidth();
+  // by trial and error, found that 405 width works for widescreen
+  BCL.wideScreenWidth = 405;
+  // store the height so we don't have to keep fetching it
+  BCL.playerHeight = BCL.experienceModule.getHeight();
+}
+BCL.onTemplateReady = function(event) {
+	BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+	BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+	// execute the handler for initial video
+	BCL.onMediaChange(null);
+}
+BCL.onMediaChange = function(event) {
+	var aspectRatio;
+	var currentRendition = BCL.videoPlayer.getCurrentRendition();
+	aspectRatio = currentRendition.frameWidth / currentRendition.frameHeight;
+	if (aspectRatio > 1.75) {
+		// use wideScreenWidth
+		BCL.experienceModule.setSize(BCL.wideScreenWidth, BCL.playerHeight);
+	}
+	else {
+		// use standardWidth
+		BCL.experienceModule.setSize(BCL.standardWidth, BCL.playerHeight);
+	}
+}
+
+</pre>
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<script type="text/javascript">
+// namespace for all the global vars
+var BCL = {};
+function onTemplateLoaded(id) {
+  BCL.player = brightcove.getExperience(id);
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+  // set the overall player width in the DOM -- 405px works for widescreen here
+  document.getElementById("myExperience").style.width = "405px";
+  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  // store the original width standardWidth
+  BCL.standardWidth = BCL.experienceModule.getWidth();
+  // by trial and error, found that 405 width works for widescreen
+  BCL.wideScreenWidth = 405;
+  // store the height so we don't have to keep fetching it
+  BCL.playerHeight = BCL.experienceModule.getHeight();
+}
+BCL.onTemplateReady = function(event) {
+	BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+	BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+	// execute the handler for initial video
+	BCL.onMediaChange(null);
+}
+BCL.onMediaChange = function(event) {
+	var aspectRatio;
+	var currentRendition = BCL.videoPlayer.getCurrentRendition();
+	aspectRatio = currentRendition.frameWidth / currentRendition.frameHeight;
+	if (aspectRatio > 1.75) {
+		// use wideScreenWidth
+		BCL.experienceModule.setSize(BCL.wideScreenWidth, BCL.playerHeight);
+	}
+	else {
+		// use standardWidth
+		BCL.experienceModule.setSize(BCL.standardWidth, BCL.playerHeight);
+	}
+}
+</script>
+  </body>
+
+</html> 

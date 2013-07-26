@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<publisher-upload-manifest publisher-id="Your-ID" preparer="Ed" report-success="TRUE">
+  <notify email="myemail@myemail"/>
+  <reencode-from-existing-source
+     title-refid="video1"
+     encode-to="MP4"
+     encode-multiple="TRUE"
+     overwrite-images="TRUE"
+  />
+</publisher-upload-manifest>

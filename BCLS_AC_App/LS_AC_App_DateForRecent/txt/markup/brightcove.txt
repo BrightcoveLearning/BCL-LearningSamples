@@ -1,0 +1,23 @@
+===== display-blog-tmpl
+<ul>
+  {{bccorpblogitems}}
+      <li {{if recentBoolean}}class="liDetail unread"{{else}}class="liDetail"{{/if}} data-guid="{{guid}}">
+          <h3>{{title}}</h3>
+          <p>{{forTease|tease>12}}</p>
+      </li>
+  {{/bccorpblogitems}}
+</ul>
+
+===== display-corpblog-tmpl
+<h1>{{selectedCorpBlog.title}}</h1>
+{{selectedCorpBlog.description}}
+
+===== display-twitter-tmpl
+<ul>
+  {{twitteritems}}
+      <li {{if recentBoolean}}class="liDetail unread"{{else}}class="liDetail"{{/if}} >
+          {{text}}<br /><br />
+          <p>{{created_at|date}}</p>
+      </li>
+  {{/twitteritems}}
+</ul>

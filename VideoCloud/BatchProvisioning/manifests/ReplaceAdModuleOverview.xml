@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE publisher-upload-manifest SYSTEM "publisher_upload_manifest_1.4.dtd">
+
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert" report-success="TRUE" upload-authentication="none">
+  <notify email="rcrooks@brightcove.com"/>
+<asset filename="BC_4_NavigatingAdvertisingModule.mp4"
+  refid="731193005001"
+  size="7282908"
+  hash-code="64a16ec73bb272a8920abcaeb67ddbb3"
+  display-name="BC_4 Navigating the Advertising Module"
+   type="VIDEO_FULL"
+         encode-to="MP4"
+         encode-multiple="TRUE"
+         h264-preserve-as-rendition="TRUE"
+         />
+  <title name="BC_4 Navigating the Advertising Module"
+       refid="731193005001"
+       active="TRUE"
+       color="TRUE"
+       language="English"
+>
+
+  <short-description>This video provides an overview of the Advertising Module and the typical tasks performed there</short-description>
+  <related-link-url>http://support.brightcove.com/en/docs/using-brightcove-advertising-module</related-link-url>
+  <related-link-text>Using the Brightcove Advertising Module</related-link-text>
+
+  <tag>studio</tag>
+  <tag>advertising</tag>
+  </title>
+
+  
+</publisher-upload-manifest>

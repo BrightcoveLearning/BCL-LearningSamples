@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Customize the ChromelessVideoPlayer component</title>
+    <style type="text/css">
+    .BCL_topic {
+      width:700px;
+      font-family: Helvetica,Arial,sans-serif;
+    }
+    img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .BCL_introduction {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_concept {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_task {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+	.BCL_topicSteps {
+		clear:both;
+    }
+    .BCL_references {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_nextSteps {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 40px;
+    float: right;
+    height: 270px;
+    width: 480px;
+    }
+    .BCL_subsection {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;    
+    }
+    table {
+    border: solid thin #999;
+    clear: both;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th {
+    background-color: #CCC;
+    padding: 5px;
+    font-weight: bold;
+    }
+    td {
+    padding: 5px;
+    }
+	.BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+    .BCL_aside {
+      font-style: italic;
+      background-color: #DDD;
+      padding: 10px;
+    }
+    .BCL_uiCommand {
+      font-weight: bold;
+    }
+    .BCL_uiDialog {
+      font-weight: bold;
+      font-style: italic;
+    }
+    .BCL_halfWidthImage {
+      margin-left: 10px;
+      float: right;
+      margin-bottom: 10px;
+    }
+    figure figcaption {
+      font-size: 10px;
+    }
+    .BCL_userInput {
+      font-family: Consolas,Courier,monospace;
+      font-weight: bold;
+    }
+	pre {
+    padding: 10px;
+    background-color: #CCC;
+    clear: both;
+    width: 100%;
+    }
+    .BCL_codeBlock {
+      font-family: Consolas,Courier,monospace;
+      padding: 5px;
+      background-color: #E7E7E7;
+    }
+    </style>
+  </head>
+  <body>
+    <article class="BCL_topic">
+      <header class="BCL_topicHeader">
+        <h1 class="BCL_topicTitle">Customize the ChromelessVideoPlayer component</h1>
+      </header>
+      <section class="BCL_introduction">
+        <p><strong>In this exercise, you will learn how to customize the different elements of the ChromelessVideoPlayer component.</strong></p>
+        <p class="BCL_teaser">BEML is an HTML/XML language which is used to create a custom template.</p>
+        <!--break-->
+        <p class="BCL_objective">This is the objectives for the document:</p>
+        <ol class="BCL_objectives">
+          <li>Create a new video template</li>
+          <li>Use the ChromelessControls and ToggleButton components</li>
+          <li>Use the GraphicBlock component</li>
+          <li>Use the Playhead component</li>
+          <li>Add social media, fullscreen, and volume controls</li>
+        </ol>
+      </section>
+      <section class="BCL_concept">
+        <header class="BCL_conceptHeader">
+          <h2 class="BCL_sectionTitle">Customize the ChromelessVideoPlayer component</h2>
+        </header>
+          <div class="BCL_videoTutorial">
+            <strong>Video Tutorial</strong><br/>
+            <!-- Start of Brightcove Player -->
+            <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>   <object id="myExperience1482024659001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="1482015250001" />
+            <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLATm9KISLxm9sSGt0zoK7YyP" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            <param name="@videoPlayer" value="1488679270001" /> </object> <script type="text/javascript">brightcove.createExperiences();</script> <!-- End of Brightcove Player -->
+          </div>
+          <p>You may need to replace an existing video in your Video Cloud account for various reasons, such as:</p>
+          <ul>
+            <li>You re-edit the video</li>
+            <li>You shoot a new version of the video to replace the old one</li>
+            <li>You set up a video as a remote asset, but now wish to store it on Video Cloud</li>
+            <li>You set up a video for a live streaming broadcast, but now that the event has passed, want to replace this with video-on-demand recording</li>
+          </ul>
+          <section class="BCL_subsection">
+          <header class="BCL_subsectionHeader">
+            <h3 class="BCL_subsectionTitle">Subsection Title in &lt;header&gt;</h3>
+          </header>
+          <figure class="BCL_halfWidthImage">
+            <img height="300" width="350" src="http://img.brightcove.com/BCL_sampleImage.png" alt="Sample image"/>
+            <figcaption>Image Caption</caption>
+          </figure>
+          <p>You can do this within the Media Module in Video Cloud Studio.</p>
+          <p>You can also replace videos using <a href="#">Batch Provisioning</a>.</p>
+          <p>We might have half- or full-width images in the sections. Half-width should have text wrapping around the image.</p>
+          <p>We will also have <code>inline code</code> all over the place.</p>
+          
+          </section>
+      </section>
+      <section class="BCL_task">
+        <p></p>
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Exercise: Customize the ChromelessVideoPlayer component</h2>
+        </header>
+          <p>In this exercise, you will learn how to customize the different elements of the ChromelessVideoPlayer component.</p>
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Create a new video template</h4>
+          <ol>
+            <li>Login to your Brightcove Video Cloud account.</li>
+            <li>Navigate to the <span class="BCL_uiCommand">Publishing </span>module.</li>
+            <li>Select <span class="BCL_uiCommand">New Template</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Template</span> dialog, name the template <span class="BCL_userInput">ChromelessBEMLTemplate</span>.</li>
+            <li>In the template editor, replace the existing code with the following code block:</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Runtime>
+   &lt;Theme name="Deluxe" style="Light"/>
+   &lt;Layout width="640" height="450">
+        &lt;ChromelessVideoPlayer id="videoPlayer"/>
+        &lt;!--&lt;Canvas height="120" padding="10"
+             includeInLayout="{!videoPlayer.fullscreen}">
+             &lt;GraphicBlock/>
+             &lt;VBox height="100" padding="10" vAlign="middle">
+                  &lt;Spacer height="10"/>
+                  &lt;TileList id="videoList" height="100" selectOnClick="true"
+                       automaticAdvance="true" columnWidth="80"
+                       rowHeight="100" columnGutter="3" buttonSize="26"
+                       buttonOffsetY="-5">
+                       &lt;ListItem showBack="false" boxType="vbox">
+                            &lt;ThumbnailButton height="60" imageInset="3"
+                                 data="{currentItem}"
+                                 source="{currentItem.thumbnailURL}"/>
+                            &lt;Spacer height="4"/>
+                            &lt;TitleLabel text="{currentItem.displayName}"
+                                 size="10" truncate="true"
+                                 multiline="true"/>
+                       &lt;/ListItem>
+                  &lt;/TileList>
+             &lt;/VBox>
+        &lt;/Canvas>-->
+  &lt;/Layout>
+&lt;/Runtime>
+          </pre>
+          
+          <ol start="6">
+          	<li>Review the code. Notice that the code contains a <code>ChromelessVideoPlayer</code> component and a <code>Canvas</code> container that is commented out. You will learn more about the commented code block later in this exercise.</li>
+            <li>Select <span class="BCL_uiCommand">Preview Template</span>. You should see a chromeless video player displayed. Notice that the player's controls are positioned at the bottom of the player by default.</li>
+          </ol> 
+          
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Use the ChromelessControls and ToggleButton components</h4>
+      <ol start="8">
+          	<li>Change the <code>ChromelessVideoPlayer</code> component tag to use tag block syntax.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessVideoPlayer id="videoPlayer">
+&lt;/ChromelessVideoPlayer>
+          </pre>
+          
+      <ol start="9">
+          	<li>Within the <code>ChromelessVideoPlayer</code> tag block, nest a <code>ChromelessControls</code> tag block with a <code>boxType</code> property set to <span class="BCL_userInput">vbox.</span></li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessVideoPlayer id="videoPlayer"><span class="BCL_uiCommand">
+   &lt;ChromelessControls boxType="vbox">
+   &lt;/ChromelessControls></span>
+&lt;/ChromelessVideoPlayer>
+          </pre>
+          
+      <ol start="10">
+          	<li>Within the <code>ChromelessControls</code> block, add an <code>HBox</code> container with an <code>hAlign</code> property of <span class="BCL_userInput">center</span> and a <code>height</code> of <span class="BCL_userInput">60</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessControls boxType="vbox"><span class="BCL_uiCommand">
+   &lt;HBox hAlign="center"
+       height="60">
+   &lt;/HBox></span>
+&lt;/ChromelessControls>
+          </pre>
+          
+      <ol start="11">
+          	<li>Within the <code>HBox</code> container, nest another <code>HBox</code> container with an <code>id</code> property of <span class="BCL_userInput">defaultView</span>, a <code>gutter</code> property of <span class="BCL_userInput">6</span>, <code>padding</code> property of <span class="BCL_userInput">10</span>, and a <code>vAlign</code> property of <span class="BCL_userInput">middle</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessControls boxType="vbox">
+   &lt;HBox hAlign="center"
+       height="60"><span class="BCL_uiCommand">
+           &lt;HBox id="defaultView"
+               gutter="6"
+               padding="10"
+               vAlign="middle">
+           &lt;/HBox></span>
+   &lt;/HBox>
+&lt;/ChromelessControls>
+          </pre>
+          
+      <ol start="12">
+          	<li>Within the <code>HBox</code> container, add a <code>ToggleButton</code> component with an <code>id</code> property of <span class="BCL_userInput">playButton</span>, a <code>width</code> property of <span class="BCL_userInput">65</span>, and an <code>iconName</code> of <span class="BCL_userInput">play</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox id="defaultView" ...><span class="BCL_uiCommand">
+   &lt;ToggleButton id="playButton"
+       width="65"
+       iconName="play"/></span>
+&lt;/HBox>
+          </pre>
+          
+        <p class="BCL_aside">Note: You need to add the <code>iconName</code> property with the value <span class="BCL_userInput">play</span> in order to display the play symbol in the button. Without the <code>iconName</code> property, the button would just be an empty rectangle.</p>
+          
+      <ol start="13">
+          	<li>Preview the template. Notice that the play button is at the top of the video player, but it is currently covered by the overlay menu.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>To the opening <code>ChromelessVideoPlayer</code> tag, add the <code>useOverlayMenu</code> property with a value of <span class="BCL_userInput">false</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessVideoPlayer id="videoPlayer"<span class="BCL_uiCommand">
+   useOverlayMenu="false"></span>
+   ...
+&lt;/ChromelessVideoPlayer/>
+          </pre>
+          
+      <ol start="16">
+          	<li>Preview the template. You should see that the overlay menu is no longer visible.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          </ol>
+          
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Use the GraphicBlock component</h4>
+      <ol start="18">
+          	<li>Below the <code>ToggleButton</code> component, add a <code>Canvas</code> container block with a <code>height</code> of <span class="BCL_userInput">30</span>.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox id="defaultView" ...>
+   &lt;ToggleButton id="playButton".../><span class="BCL_uiCommand">
+   &lt;Canvas height="30">
+   &lt;/Canvas></span>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="19">
+          	<li>Within the <code>Canvas</code> block, add an instance of the <code>GraphicBlock</code> element.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;Canvas height="30"><span class="BCL_uiCommand">
+   &lt;GraphicBlock/></span>
+&lt;/Canvas>
+          </pre>
+          
+      <ol start="20">
+          	<li>Preview the application. Notice a large rectangle has been added next to the play button. The GraphicBlock element is a non-interactive graphic that can be used as a skin behind other elements.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Below the <code>GraphicBlock</code> element, add an <code>HBox</code> container with a <code>gutter</code> property of <span class="BCL_userInput">4</span> and a <code>vAlign</code> property of <span class="BCL_userInput">middle</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;Canvas height="30">
+   &lt;GraphicBlock/><span class="BCL_uiCommand">
+   &lt;HBox gutter="4"
+        vAlign="middle">
+   &lt;/HBox></span>
+&lt;/Canvas>
+          </pre>
+          
+      <ol start="23">
+          	<li>Within the <code>HBox</code> container, add a <code>Spacer</code> component with a <code>width</code> property of <span class="BCL_userInput">1</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox gutter="4"
+   vAlign="middle"><span class="BCL_uiCommand">
+   &lt;Spacer width="1"/></span>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="24">
+          	<li>Below the <code>Spacer</code> element, add a <code>Canvas</code> container with a <code>width</code> of <span class="BCL_userInput">40</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox gutter="4"
+   vAlign="middle">
+   &lt;Spacer width="1"/><span class="BCL_uiCommand">
+   &lt;Canvas width="40">
+   &lt;/Canvas></span>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="25">
+          	<li>Within the <code>Canvas</code> container, add a <code>Label</code> component with an <code>id</code> property of <span class="BCL_userInput">positionLabel</span>, a <code>text</code> property with a value of <span class="BCL_userInput">0:00</span>, a <code>vAlign</code> property of <span class="BCL_userInput">middle</span>, an <code>hAlign</code> property of <span class="BCL_userInput">left</span>, and an <code>alpha</code> property of <span class="BCL_userInput">.75</span>.</li>
+          </ol>
+          
+        <pre class="BCL_codeBlock">
+          
+&lt;Canvas width="40"><span class="BCL_uiCommand">
+   &lt;Label id="positionLabel"
+       text="0:00"
+       vAlign="middle" hAlign="left"
+       alpha=".75"/></span>
+&lt;/Canvas>
+          </pre>
+          
+          <ol start="26">
+          	<li>Preview the template. You should see the label added on top of the GraphicBlock component.</li>
+          	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Copy the <code>Canvas</code> container with the nested <code>positionLabel Label</code> control, paste the copy below the container, and change the <code>id</code> property of the copied <code>Label</code> control to <span class="BCL_userInput">durationLabel</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox gutter="4"
+   vAlign="middle">
+   &lt;Spacer width="1"/>
+   &lt;Canvas width="40">
+       &lt;Label id="positionLabel"
+           text="0:00"
+           vAlign="middle" hAlign="left"
+           alpha=".75"/>
+   &lt;/Canvas><span class="BCL_uiCommand">
+   &lt;Canvas width="40">
+       &lt;Label id="durationLabel"
+           text="0:00"
+           vAlign="middle" hAlign="left"
+           alpha=".75"/>
+   &lt;/Canvas></span>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="29">
+          	<li>Preview the template. You should see the second label added right next to the first.</li>
+          	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          </ol>
+          
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Use the Playhead component</h4>
+      <ol start="31">
+          	<li>Between the two <code>Canvas</code> containers, add a <code>Playhead</code> component with an <code>id</code> of <span class="BCL_userInput">playhead</span> and a <code>height</code> property of <span class="BCL_userInput">6</span>.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox gutter="4"
+   vAlign="middle">
+   &lt;Spacer width="1"/>
+   &lt;Canvas width="40">
+       &lt;Label id="positionLabel".../>
+   &lt;/Canvas><span class="BCL_uiCommand">
+   &lt;Playhead id="playhead"
+       height="6"/></span>
+   &lt;Canvas width="40">
+       &lt;Label id="durationLabel" .../>
+   &lt;/Canvas>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="32">
+          	<li>Preview the template. You should see the playhead added between the two labels. Notice that the space between the first label and the left edge of the <code>Playhead</code> component is larger than the space b/w the second label and the right edge of the <code>Playhead</code> component.</li>
+          	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Between the <code>Playhead</code> component and the <code>Canvas</code> container nesting the <code>durationLabel Label</code> component, add a <code>Spacer</code> component with a <code>width</code> of <span class="BCL_userInput">10</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;HBox gutter="4"
+   vAlign="middle">
+   &lt;Spacer width="1"/>
+   &lt;Canvas width="40">
+       &lt;Label id="positionLabel".../>
+   &lt;/Canvas>
+   &lt;Playhead id="playhead"
+       height="6"/><span class="BCL_uiCommand">
+   &lt;Spacer width="10"/></span>
+   &lt;Canvas width="40">
+       &lt;Label id="durationLabel" .../>
+   &lt;/Canvas>
+&lt;/HBox>
+          </pre>
+          
+      <ol start="35">
+          	<li>Preview the template. You should now see a bigger space between the second label and the right edge of the playhead.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          </ol>
+          
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Add social media, fullscreen, and volume controls</h4>
+      <ol start="37">
+          	<li>Below the closing tag for the outermost <code>Canvas</code> container, add a <code>Button</code> component with an <code>id</code> of <span class="BCL_userInput">shareButton</span>, a <code>width</code> property of <span class="BCL_userInput">35</span>, a <code>height</code> property of <span class="BCL_userInput">30</span>, and an <code>iconName</code> of <span class="BCL_userInput">socialShare</span>.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;ChromelessVideoPlayer id="videoPlayer ...>
+   &lt;ChromelessControls ...>
+       &lt;HBox ...>
+           &lt;HBox ...>
+               &lt;ToggleButton .../>
+               &lt;Canvas ...>
+                   ...
+               &lt;/Canvas><span class="BCL_uiCommand">
+               &lt;Button id="shareButton"
+                   width="35" height="30"
+                   iconName="socialShare"/></span>
+           &lt;/HBox>
+       &lt;/HBox>
+   &lt;/ChromelessControls>
+&lt;/ChromelessVideoPlayer>
+          </pre>
+          
+      <ol start="38">
+          	<li>Preview the template. Notice the share button is added to the right of the playhead bar.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Below the <code>shareButton</code> component, add a <code>ToggleButton</code> component with an <code>id</code> of <span class="BCL_userInput">fullscreenButton</span>, a <code>width</code> of <span class="BCL_userInput">35</span>, a <code>height</code> of <span class="BCL_userInput">30</span>, and an <code>iconName</code> of <span class="BCL_userInput">maximize</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;Button id="shareButton" .../><span class="BCL_uiCommand">
+&lt;ToggleButton id="fullscreeButton"
+   width="35" height="30"
+   iconName="maximize"/></span>
+          </pre>
+          
+      <ol start="41">
+          	<li>Below the <code>ToggleButton</code> component, add a <code>VolumeControl</code> component with an <code>id</code> property of <span class="BCL_userInput">volumeButton</span>, a <code>width</code> of <span class="BCL_userInput">35</span>, a <code>height</code> of <span class="BCL_userInput">30</span>, and an <code>iconName</code> property of <span class="BCL_userInput">volume</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+             
+&lt;Button id="shareButton" .../>
+&lt;ToggleButton id="fullscreeButton" .../><span class="BCL_uiCommand">
+&lt;VolumeControl id="volumeButton"
+   width="35" height="30"
+   iconName="volume"/></span>
+          </pre>
+          
+      <ol start="42">
+          	<li>Preview the template. Notice the fullscreen and volume buttons are added to the right of the share button.</li>
+          	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          	<li>Select <span class="BCL_uiCommand">Create Template</span> to save the template.</li>
+            <li>Select <span class="BCL_uiCommand">New Player</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Player</span> dialog, name the player <span class="BCL_userInput">ChromelessBEMLPlayer</span> and choose <span class="BCL_uiCommand">ChromlessBEMLTemplate</span> as the template.</li>
+            <li>Select <span class="BCL_uiCommand">Create Player</span>.</li>
+            <li>With the <span class="BCL_uiCommand">ChromelessBEMLPlayer</span> selected, select <span class="BCL_uiCommand">Preview</span> to preview the player in the browser. You should see the fullscreen and volume control buttons added to your player. Notice when you try to toggle the buttons, nothing happens. Later in this training series you will learn how to bind data to your player.</li>
+          </ol>  
+        
+      </section>
+      <section class="BCL_references">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Related Documents</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Using Batch Provisioning</a></li>
+        </ul>
+      </section>
+      <section class="BCL_nextSteps">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Next Steps</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Link to Next Step doc</a></li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

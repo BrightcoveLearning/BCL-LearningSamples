@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+	<!-- Resizing the overall player here by changing height and width values -->
+  <param name="width" value="470" />
+  <param name="height" value="527" />
+  <param name="playerID" value="1206916401001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahKaVpbas3P3tss8_XU_JvZ" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  // remove event listener, get reference to video player, add media change listener
+				BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+				/* 
+				** Get references to all the components that need to be modified 
+				*/
+				// get a reference to overall layout
+				BCL.layout = BCL.experienceModule.getElementByID("application");
+				// get a reference to the VBox
+				BCL.vbox = BCL.layout.getChildAt(0);
+				// get a reference to the HBox inside the VBox
+				BCL.hbox = BCL.vbox.getChildAt(0);
+				// get a reference to the first canvas in the HBox with the labels
+				BCL.labelCanvas = BCL.hbox.getChildAt(0);
+				// get references to description label
+				BCL.descriptionLabel = BCL.labelCanvas.getChildAt(1);
+				// get a reference to the second canvas in the HBox that holds the logo image
+				BCL.logoCanvas = BCL.hbox.getChildAt(1);
+				// get a reference to the video player module
+				BCL.videoPlayerModule = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+				// get a reference to the TileList
+				BCL.tileList = BCL.experienceModule.getElementByID("videoList");
+				// get a reference to the 
+				/*
+				** Now set sizes and make other modifications
+				*/
+				// set the new layout size
+				BCL.layout.setSize(470, 527)
+				// Reduce the gutter in the Layout
+				BCL.layout.setGutter(5);
+				// set the size of the vbox
+				BCL.vbox.setSize(470, 363);
+				// set the size of video player
+				BCL.videoPlayerModule.setSize(450, 300);
+				// set the size of the HBox
+				BCL.hbox.setSize(450, 53);
+				// remove the Link as it is too crowded
+				BCL.labelCanvas.removeChildAt(2);
+				// set the size of the canvas for the logo
+				BCL.logoCanvas.setSize(208, 50);
+				// set the sizing of TileList and columns
+				BCL.tileList.setSize(430, 145);
+				BCL.tileList.setColumnWidth(110);				
+			}
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,18 @@
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert"
+                           report-success="TRUE">
+  <notify email="rcrooks@brightcove.com"/>
+  <asset
+     refid="new-managing-users"
+     type="VIDEO_FULL"
+     encode-to="MP4"
+     encode-multiple="true"
+     size="10256974"
+     hash-code="72dd781373591dde60891901c68125b1"
+     filename="BC045 Managing Users.mov"/>
+  <reencode-from-new-source
+     title-refid="821141023001"
+     new-source-refid = "new-managing-users"
+     overwrite-images="FALSE"
+/>
+
+</publisher-upload-manifest>

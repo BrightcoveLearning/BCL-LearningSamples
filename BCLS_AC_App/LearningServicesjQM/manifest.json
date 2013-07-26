@@ -1,0 +1,153 @@
+{
+    "name": "bclapp",
+    "description": "Brightcove Learning App",
+    "version": "1.0",
+    "devices": [
+        "iPhone",
+        "Android"
+    ],
+    "platformConfig": {
+        "android": {
+            "nativeNavigation": false
+        },
+        "iOS": {
+            "nativeNavigation": false
+        }
+    },
+    "views": [
+        {
+            "navigationTitle": "Brightcove Page",
+            "navigationIcon": "images/icons/logo-corporate.png",
+            "uri": "brightcove.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/brightcove.txt",
+            "data": [
+              {
+                "name": "corpblog",
+                "contentFeed": "50ca4fef42ead55f1e029fb1",
+                "type": "feed",
+                "items": {
+                    "title":        { "type": "string" },
+                    "link":         { "type": "string" },
+                    "description":  { "type": "string" },
+                    "pubDate":      { "type": "string" },
+                    "guid":         { "type": "string" }
+                }
+              }
+            ]
+        },
+        {
+            "navigationTitle": "App Cloud Page",
+            "navigationIcon": "images/icons/appcloud.png",
+            "uri": "appcloud.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/appcloud.txt",
+            "data": [
+              {
+                "name": "acupdate",
+                "contentFeed": "50a7d4fb8a3fd24542093b92",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "description":    { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "acrecent",
+                "contentFeed": "50a7d46fec8e603cf0097a51",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "acvideos",
+                "contentFeed": "50c745b92fa4024c1f129628",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              }
+            ]
+        },
+        {
+            "navigationTitle": "Video Cloud Page",
+            "navigationIcon": "images/icons/videocloud.png",
+            "uri": "videocloud.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/videocloud.txt",
+            "data": [
+              {
+                "name": "vcupdate",
+                "contentFeed": "50a7d6623f62d53af50095ab",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "description":    { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "vcrecent",
+                "contentFeed": "50a7d61c077b285b4a0974b9",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "vcvideos",
+                "contentFeed": "50ad16b7077b28488405ce6e",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              }
+            ]
+        },
+        {
+            "navigationTitle": "Zencoder Page",
+            "navigationIcon": "images/icons/videocloud.png",
+            "uri": "zencoder.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/zencoder.txt",
+            "data": [
+              {
+                "name": "zcblog",
+                "contentFeed": "50cb8bd142ead54ed123a756",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "description":    { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" },
+                    "content_encoded": {"type": "string"}
+                }
+              }
+            ]
+        }
+    ]
+}

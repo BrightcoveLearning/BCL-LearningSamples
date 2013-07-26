@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		body {font-family: sans-serif;}
+		#myExperience {
+		visibility: hidden;
+		display: none;
+		}
+		</style>
+	  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+	  <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<script type="text/javascript">
+			var BCLplayer;
+			var BCLexperienceModule;
+			var BCLvideoPlayer;
+			function onPlayerLoaded(id) {
+			  newLog();
+			  log("EVENT: onTemplateLoaded");
+			  BCLplayer = brightcove.getExperience(id);
+			  BCLexperienceModule = BCLplayer.getModule(APIModules.EXPERIENCE);
+			}
+			function onPlayerReady(event) {
+			  log("EVENT: onTemplateReady");
+			  BCLvideoPlayer = BCLplayer.getModule(APIModules.VIDEO_PLAYER);
+			  BCLvideoPlayer.addEventListener(BCMediaEvent.COMPLETE, onMediaComplete);
+			  BCLvideoPlayer.play();
+			}
+			function onPlayerError(event) {
+			   log("type: " + event.type);
+			   log("errorType: " + event.errorType);
+			   log("code: " + event.code);
+			   log("info: " + event.info);
+			   if (event.errorType == "noContent") {
+			     log("time to hide the player");
+			   }
+			}
+			function onMediaComplete(event) {
+  			log("EVENT: MediaComplete");
+  			hidePlayer();
+			}
+			function hidePlayer() {
+			  log("hiding player");
+			  document.getElementById("myExperience").style.display = "none";
+			  document.getElementById("myExperience").style.visibility = "hidden";
+			}
+			function showPlayer() {
+			  log("showing player");
+			  document.getElementById("myExperience").style.display = "block";
+			  document.getElementById("myExperience").style.visibility = "visible";
+			  BCLvideoPlayer.play();
+			}
+			// clear the textarea of messages
+			function newLog() {
+			  document.getElementById("logger").value = "";;
+			}
+			/*
+			log a message to our debug window to simply show what's
+			happening in this example
+			*/
+			function log(message) {
+			// check to see if the message is complex data and decompose if so
+			  if (typeof message == "object"){
+				  for (var prop in message){
+					if (typeof message[prop] == "object") {
+						log(message[prop]);
+					}
+					else {
+						log(prop+": "+message[prop]);
+					}
+				}
+			  }
+			  else {
+				  document.getElementById("logger").value += message + "\n";
+			  }
+			}
+
+		</script>
+  </head>
+	<body>
+	<h1>Test Page for Hiding Player till a Video is Played</h1>
+	<p>Using the JavaScript Player API and CSS to hide the video player until a video is played. Here I'm starting play through a link that calls a function.</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="866149484001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXah1RvmTe3eUOW4HB6wIeJZk" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->	
+<div id="videoInfo"><a onclick="showPlayer()" href="javascript:showPlayer();">Play Featured Video</a></div>
+<!-- Begin Script Logger -->
+	<h2>Results</h2>
+	<div id="BCscriptingLog">
+	<p><textarea id="logger" name="logger" rows="30" cols="60"></textarea></p></div>
+	<!-- End Debugging Helper -->
+	</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>List All Tags</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style type="text/css">
+		
+			body {
+				font-family : Helvetica, Arial, sans-serif;
+				color : #619FA8;
+			}
+			
+			legend {
+				color: #CF0050;
+			}
+			
+			#progress{
+			  display: none;
+			  color: #000;
+			  font-style: italic
+			}
+			
+        </style>
+        <!-- Javascript Media API Wrapper from opensource.brightcove.com -->
+        <script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+    </head>
+    
+    <body>
+        <h2>List All Tags For Your Media Library</h2>
+        <p>
+		    <label for="BCLtoken">Media Read API Token:</label><br />
+            <input id="BCLtoken" type="text" name="BCLtoken" size="100" value="BS5FZb9mHhMrTYw2TZs9JNseGmFkkuucmO9KhGMiTe1ZJXSAzpWJPA.."/>
+        </p>
+        <p>
+            <button onclick="BCL.runQuery(document.getElementById('BCLtoken').value)" id="btn">List All Tags</button>
+			<span id="progress">Processing, please wait...</span>
+        </p>
+        <fieldset>
+            <legend>Tags</legend>
+            <div id="results"></div>
+        </fieldset>
+
+
+
+		<script type="text/javascript">
+
+					var BCL = {};
+					BCL.tagArray = [];
+					BCL.results = document.getElementById("results");
+					BCL.btn = document.getElementById("btn");
+					BCL.progressLbl = document.getElementById("progress");
+					BCL.runQuery = function (token)
+					{
+					   if(token == ''){
+					      alert("Read token is required!");
+						  return;
+					   }
+					 
+						BCMAPI.token = token;
+						BCMAPI.callback = "BCL.onSearchResponse";
+						BCL.params = {};
+						BCL.params.video_fields = "tags";
+						BCMAPI.search(BCL.params);
+						BCL.progressLbl.style.display = "block";
+						BCL.btn.style.display = "none";
+					}
+
+
+					BCL.onSearchResponse = function (jsonData)
+					{
+						
+						BCL.results.innerHTML = "";
+						BCL.tagArray = jsonData["items"][0].tags;
+						for (var i = 1; i < jsonData["items"].length; i++)
+						{
+							BCL.tagArray.push.apply(BCL.tagArray, jsonData["items"][i].tags);
+							BCL.tagArray = BCL.removeDuplicateElements(BCL.tagArray);
+						
+						}
+						
+						for (var j = 0; j < BCL.tagArray.length; j++)
+						{
+							BCL.results.innerHTML += BCL.tagArray[j] + "<br />";
+						}
+						
+						BCL.progressLbl.style.display = "none";
+						BCL.btn.style.display = "block";
+					}
+
+
+					BCL.removeDuplicateElements = function (arrayName)
+					{
+						var newArray = new Array();
+						label: for (var i = 0; i < arrayName.length; i++)
+						{
+							for (var j = 0; j < newArray.length; j++)
+							{
+								if (newArray[j] == arrayName[i]) continue label;
+							}
+							newArray[newArray.length] = arrayName[i];
+						}
+						return newArray;
+					} 
+				
+		</script>
+    </body>
+
+</html>

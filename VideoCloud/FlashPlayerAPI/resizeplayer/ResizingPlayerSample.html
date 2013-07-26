@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Resizing Player Test</title>
+		<!-- scripts for debugging -->
+	<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.body.appendChild(logEntry);
+  		}
+
+		</script>
+
+<style type="text/css">
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+		#logger {
+		font-size: 12pt;
+		color: #CF0050;
+		}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+</head>
+
+<body>
+<h1>Resizing a Player via the JavaScript Player API</h1>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="640" />
+  <param name="height" value="297" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+  <param name="myText" value="Foo" />
+
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<!-- Begin Script Logger -->
+<h2>Results</h2>
+<script type="application/javascript">
+var BCL = {};
+function onPlayerLoaded(id) {
+  log("EVENT: onPlayerLoaded");
+  BCL.player = brightcove.getExperience(id);
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+}
+function onPlayerReady(event) {
+  log("EVENT: onPlayerReady");
+  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+	BCL.onMediaChange();
+}
+
+ BCL.onMediaChange = function(event) {
+  log("media change");
+	BCL.setPlayerSize();
+}
+
+function onPlayerError(event) {
+   log("type: " + event.type);
+   log("errorType: " + event.errorType)
+   log("code: " + event.code);
+   alert("info: " + event.info);
+}
+
+BCL.setPlayerSize = function() {
+  var currentWidth = BCL.videoPlayer.getWidth();
+  var currentHeight = BCL.videoPlayer.getHeight();
+  log("current height = " + currentHeight);
+  log("current width = " + currentWidth);
+  var currentRendition = BCL.videoPlayer.getCurrentRendition();
+  log("Video Height = " + currentRendition.frameHeight);
+  log("Video Width = " + currentRendition.frameWidth);
+  var aspectRatio = currentRendition.frameWidth / currentRendition.frameHeight;
+  log("Aspect Ratio = "+aspectRatio);
+  var newHeight = currentWidth/aspectRatio;
+  log("new height = "+newHeight);
+  BCL.videoPlayer.setSize(currentWidth,newHeight);
+}
+
+
+</script>
+</body>
+</html>

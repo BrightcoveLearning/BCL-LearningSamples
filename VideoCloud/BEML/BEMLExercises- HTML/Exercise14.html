@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Bind video data in a template</title>
+    <style type="text/css">
+    .BCL_topic {
+      width:700px;
+      font-family: Helvetica,Arial,sans-serif;
+    }
+    img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .BCL_introduction {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_concept {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_task {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+	.BCL_topicSteps {
+		clear:both;
+    }
+    .BCL_references {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_nextSteps {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 40px;
+    float: right;
+    height: 270px;
+    width: 480px;
+    }
+    .BCL_subsection {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;    
+    }
+    table {
+    border: solid thin #999;
+    clear: both;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th {
+    background-color: #CCC;
+    padding: 5px;
+    font-weight: bold;
+    }
+    td {
+    padding: 5px;
+    }
+	.BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+    .BCL_aside {
+      font-style: italic;
+      background-color: #DDD;
+      padding: 10px;
+    }
+    .BCL_uiCommand {
+      font-weight: bold;
+    }
+    .BCL_uiDialog {
+      font-weight: bold;
+      font-style: italic;
+    }
+    .BCL_halfWidthImage {
+      margin-left: 10px;
+      float: right;
+      margin-bottom: 10px;
+    }
+    figure figcaption {
+      font-size: 10px;
+    }
+    .BCL_userInput {
+      font-family: Consolas,Courier,monospace;
+      font-weight: bold;
+    }
+	pre {
+    padding: 10px;
+    background-color: #CCC;
+    clear: both;
+    width: 100%;
+    }
+    .BCL_codeBlock {
+      font-family: Consolas,Courier,monospace;
+      padding: 5px;
+      background-color: #E7E7E7;
+    }
+    </style>
+  </head>
+  <body>
+    <article class="BCL_topic">
+      <header class="BCL_topicHeader">
+        <h1 class="BCL_topicTitle">Bind video data in a template</h1>
+      </header>
+      <section class="BCL_introduction">
+        <p><strong>In this exercise, you will learn how to bind video data to a template.</strong></p>
+        <p class="BCL_teaser"></p>
+        <!--break-->
+        <p class="BCL_objective">This is the objectives for the document:</p>
+        <ol class="BCL_objectives">
+          <li>Examine video information</li>
+          <li>Bind data to a video player</li>
+        </ol>
+      </section>
+      <section class="BCL_concept">
+        <header class="BCL_conceptHeader">
+          <h2 class="BCL_sectionTitle">Bind video data in a template</h2>
+        </header>
+          <div class="BCL_videoTutorial">
+            <strong>Video Tutorial</strong><br/>
+            <!-- Start of Brightcove Player -->
+            <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>   <object id="myExperience1482024659001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="1482015250001" />
+            <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLATm9KISLxm9sSGt0zoK7YyP" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            <param name="@videoPlayer" value="1488679270001" /> </object> <script type="text/javascript">brightcove.createExperiences();</script> <!-- End of Brightcove Player -->
+          </div>
+          <p>You may need to replace an existing video in your Video Cloud account for various reasons, such as:</p>
+          <ul>
+            <li>You re-edit the video</li>
+            <li>You shoot a new version of the video to replace the old one</li>
+            <li>You set up a video as a remote asset, but now wish to store it on Video Cloud</li>
+            <li>You set up a video for a live streaming broadcast, but now that the event has passed, want to replace this with video-on-demand recording</li>
+          </ul>
+          <section class="BCL_subsection">
+          <header class="BCL_subsectionHeader">
+            <h3 class="BCL_subsectionTitle">Subsection Title in &lt;header&gt;</h3>
+          </header>
+          <figure class="BCL_halfWidthImage">
+            <img height="300" width="350" src="http://img.brightcove.com/BCL_sampleImage.png" alt="Sample image"/>
+            <figcaption>Image Caption</caption>
+          </figure>
+          <p>You can do this within the Media Module in Video Cloud Studio.</p>
+          <p>You can also replace videos using <a href="#">Batch Provisioning</a>.</p>
+          <p>We might have half- or full-width images in the sections. Half-width should have text wrapping around the image.</p>
+          <p>We will also have <code>inline code</code> all over the place.</p>
+          
+          </section>
+      </section>
+      <section class="BCL_task">
+        <p></p>
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Exercise: Bind video data in a template</h2>
+        </header>
+          <p>In this exercise, you will learn how to bind video data to a template.</p>
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Examine video information</h4>
+          <ol>
+            <li>Login to your Brightcove Video Cloud account.</li>
+            <li>Navigate to the <span class="BCL_uiCommand">Media </span>module.</li>
+            <li>Select <span class="BCL_uiCommand">All Videos</span> and locate the video that you uploaded in Exercise 1. If you have not uploaded a video yet, upload a video using Exercise 1 as a reference.</li>
+            <li>With your video selected, click <span class="BCL_uiCommand">Edit</span>. In the <span class="BCL_uiDialog">Edit Video</span> dialog, you should see several fields that you can specify for your video, including <span class="BCL_uiCommand">Name</span>, <span class="BCL_uiCommand">Short Description</span>, <span class="BCL_uiCommand">Link URL</span>, <span class="BCL_uiCommand">Thumbnail</span>, and <span class="BCL_uiCommand">Reference ID</span>.</li>
+            <li>Browse to the the <span class="BCL_uiCommand">Flash-Only Player API</span> documentation on the Brightcove Support site:</li>
+            <ul>
+            	<li>http://docs.brightcove.com/en/player/</li>
+            </ul>
+            <li>In the <span class="BCL_uiCommand">All Classes</span>, select the <span class="BCL_uiCommand">MediaDTO</span> class</li>
+            <li>Review the <span class="BCL_uiCommand">Public Properties</span> section. You should see properties that correspond to all of the video attributes, including <span class="BCL_uiCommand">displayName</span>, <span class="BCL_uiCommand">shortDescription</span>, <span class="BCL_uiCommand">linkURL</span>, <span class="BCL_uiCommand">thumbnailURL</span>, and <span class="BCL_uiCommand">referenceID</span></li>
+            <li>Return to <span class="BCL_uiCommand">Video Cloud Studio</span>.</li>
+            <li>If you have not done so already, in the <span class="BCL_uiDialog">Edit Video</span> dialog, fill out the <span class="BCL_uiCommand">Name</span>, <span class="BCL_uiCommand">Short Description</span>, <span class="BCL_uiCommand">Link Text</span>, and <span class="BCL_uiCommand">Link URL</span> fields.</li>
+            <li>Select <span class="BCL_uiCommand">Save Changes</span>.</li>
+          </ol>
+  
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Bind data to a video player</h4>
+          <ol>
+          	<li>Navigate to the <span class="BCL_uiCommand">Publishing</span> module.</li>
+            <li>Select <span class="BCL_uiCommand">All Templates</span> and locate the <span class="BCL_uiCommand">BasicBEMLComponents</span> template you created in Exercise 8.</li>
+            <li>Select <span class="BCL_uiCommand">Edit</span>.</li>
+            <li>Locate the <code>TitleLabel</code> component and change the value of the <code>text</code> property so that it binds the <span class="BCL_userInput">videoPlayer.video.displayName</span> value.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+
+&lt;TitleLabel text="<span class="BCL_uiCommand">{videoPlayer.video.displayName}</span>"
+   height="40"
+   size="24"/>
+          </pre>
+          
+          <ol start="5">
+          	<li>Locate the <code>Label</code> component and change the value of the <code>text</code> property so that it binds the <span class="BCL_userInput">videoPlayer.video.shortDescription</span> value.</li>
+          </ol>  
+          
+           <pre class="BCL_codeBlock">
+   
+&lt;Label text="<span class="BCL_uiCommand">{videoPlayer.video.shortDescription}</span>"
+   height="20"
+   size="14"/>
+          </pre>
+          
+          <ol start="6">
+          	<li>Locate the <code>Link</code> component and change the values of the <code>text</code> and <code>url</code> attributes so that they bind the following data objects:</li>
+            <ul>
+            	<li><code>text</code>: <span class="BCL_userInput">videoPlayer.video.linkText</span></li>
+                <li><code>url</code>: <span class="BCL_userInput">videoPlayer.video.linkURL</span></li>
+            </ul>
+          </ol> 
+          
+          <pre class="BCL_codeBlock">
+   
+&lt;Link text="<span class="BCL_uiCommand">{videoPlayer.video.linkText}</span>"
+   url="<span class="BCL_uiCommand">{videoPlayer.video.linkURL}</span>"
+   height="20"
+   size="14"/>
+          </pre>
+          
+          <ol start="7">
+          	<li>Select <span class="BCL_uiCommand">Save Changes</span>.</li>
+            <li>If you see a warning dialog that states, <span class="BCL_uiDialog">These changes may affect live players</span>, select <span class="BCL_uiCommand">Save</span>. Remember that you created a player from this template in a previous exercise.</li>
+            <li>Navigate to the <span class="BCL_uiCommand">Media</span> module and locate the video that you uploaded.</li>
+            <li>In the panel on the right displaying your video's information, expand the <span class="BCL_uiCommand">Quick Video Publish </span>option.</li>
+            <li>In the <span class="BCL_uiCommand">Select a player</span> drop-down list, select the <span class="BCL_uiCommand">BasicBEMLComponentsPlayer</span>.</li>
+            <li>Select the <span class="BCL_uiCommand">Preview this player</span> button next to the drop-down list. You should see your video along with all of the data you specified for your video in the video player and its associated components. If you specified a working URL, you should be linked to the video's URL when you click the link text.</li>
+        
+          </ol>  	
+        
+      </section>
+      <section class="BCL_references">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Related Documents</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Using Batch Provisioning</a></li>
+        </ul>
+      </section>
+      <section class="BCL_nextSteps">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Next Steps</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Link to Next Step doc</a></li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

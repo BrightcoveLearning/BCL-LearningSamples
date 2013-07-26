@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">LEJÁTSZÁS</label>
+        <label key="controls pause">SZÜNET</label>
+        <label key="controls menu">MENÜ</label>
+        <label key="controls play tooltip">Lejátszás</label>
+        <label key="controls pause tooltip">Szünet</label>
+        <label key="controls volume tooltip">Hangerőszabályzók megnyitása</label>
+        <label key="controls maximize tooltip">Teljes képernyő</label>
+        <label key="controls minimize tooltip">Teljes képernyőből kilépés</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">megosztás</label>
+        <label key="community link">link</label>
+        <label key="community code">kód</label>
+        <label key="community share tooltip">Videó küldése e-mailben egy ismerősnek</label>
+        <label key="community socialShare tooltip">Videó megosztása</label>
+        <label key="community link tooltip">Közvetlen link a videóhoz</label>
+        <label key="community code tooltip">HTML a lejátszó beágyazásához</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[NAGYÍTÁS  >]]></label>
+        <label key="collapse banner">ÖSSZECSUKÁS X</label>
+        <label key="sponsor message">Hirdetési szöveg.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">elnémítás</label>
+        <label key="unmute tooltip">némítás kikapcsolása</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Menü megnyitása</label>
+        <label key="rightclick fullscreen">Teljes képernyő</label>
+        <label key="rightclick exit fullscreen">Teljes képernyőből kilépés</label>
+        <label key="rightclick show debug">Debug infó megjelenítése</label>
+        <label key="rightclick hide debug">Debug infó elrejtése</label>
+<!-- Error messaging -->
+        <label key="noContent">Jelenleg nincs elérhető\nvideó.
+            \n\nKérjük, látogasson vissza később.</label>
+        <label key="unavailableContent">A videó, amelyet éppen megnézni
+            próbál, nem érhető el.\n\nKérjük, látogasson vissza később.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 vagy újabb szükséges a tartalom megtekintéséhez.\n\nKattintson &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;ide&lt;/u&gt;&lt;/a&gt; a lejátszó frissítéséhez.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">ÖN EZT NÉZI:</label>
+        <label key="connecting">VIDEÓ BETÖLTÉSE</label>
+        <label key="please select:">kérjük, válasszon:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Infó</label>
+        <label key="menu email">küldése e-mailben</label>
+        <label key="menu link">Link</label>
+        <label key="menu share">Videó megosztása</label>
+        <label key="expand">Nagyítás</label>
+        <label key="menu embed">Kód</label>
+        <label key="menu play">Videó lejátszása</label>
+        <label key="menu replay">Újbóli lejátszás</label>
+        <label key="menu resume">Folytatás</label>
+        <label key="cancel button">Mégse</label>
+        <label key="continue button">Folytatás</label>
+        <label key="close tooltip">Bezárás</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Küldés e-mailben egy ismerősnek</label>
+        <label key="email your email">Az Ön e-mail címe</label>
+        <label key="email friend email"><![CDATA[Ismerőse e-mail címe]]></label>
+        <label key="email message">Üzenet (nem kötelező)</label>
+        <label key="email send">Küldés</label>
+        <label key="email video">Videó küldése e-mailben</label>
+        <label key="email error">Kérjük, helyesen adja meg az e-mail címeket.</label>
+        <label key="email confirmation text">E-mailjét elküldtük.</label>
+<!-- Share video menu screen -->
+        <label key="share title">Videó megosztása</label>
+        <label key="share directions">Megosztás közvetlenül az alábbi oldalakon</label>
+        <label key="share facebook">Megosztás a Facebookon</label>
+        <label key="share twitter">Megoszt%C3%A1s%20a%20Twitteren</label>
+        <label key="share twitter message">Check+out+</label>
+        <label key="share link">Link másolása</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Hozzáadás webhelyhez vagy bloghoz</label>
+        <label key="embed directions">Kód másolása vagy blogszolgáltatás kiválasztása</label>
+        <label key="embed code">Kód beágyazása</label>
+        <label key="embed copy code">Kód másolása</label>
+        <label key="embed copied">Másolva</label>
+        <label key="blog processing">Feldolgozás...</label>
+        <label key="blog username">Felhasználónév</label>
+        <label key="blog password">Jelszó</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Hibás felhasználónév/jelszó.</label>
+        <label key="blog post select directions">Blog kiválasztása</label>
+        <label key="blog post enter title">Cím közzététele</label>
+        <label key="blog post enter description">Leírás közzététele (nem kötelező)</label>
+        <label key="blog post post video">Videó közzététele</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Hiba történt. Próbálja meg újból.</label>
+        <label key="blog confirmation text">Bejegyzés közzétéve</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Link ehhez a videóhoz</label>
+        <label key="link directions">Megosztás e-mailben vagy azonnali üzenetküldőben</label>
+        <label key="link copy link">Link másolása</label>
+        <label key="link copied">Másolva</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Felhasználási feltételek</label>
+        <label key="related videos">Kapcsolódó videók</label>
+        <label key="most viewed videos">Legtöbbet nézett</label>
+        <label key="newest videos">Legújabb</label>
+</labels>

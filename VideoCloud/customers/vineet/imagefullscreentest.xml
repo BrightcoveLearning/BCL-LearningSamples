@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Runtime SYSTEM "http://admin.brightcove.com/dtds/beml_rt.dtd">
+<Runtime>	<Layout id="application" width="480" height="270">		<VideoDisplay id="videoPlayer" togglePlaybackOnClick="false"/>
+		<Image url="http://img.brightcove.com/bc-training-logo.png" />  </Layout></Runtime>

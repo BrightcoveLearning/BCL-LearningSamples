@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+        <script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+        <script type="text/javascript">
+            function log(message) {
+                var logEntry = prettyPrint(message);
+                document.getElementById("logger").appendChild(logEntry);
+            }
+            function getVideoData() {
+          		// object for search parameters
+          		var searchParams = new Object();
+          		// set Media API token 
+          		BCMAPI.token = "w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..";
+          		// set callback for Media API call
+          		BCMAPI.callback = "onSearchResult";
+          		// set command
+          		BCMAPI.command = "find_all_videos";
+          		// set search params
+          		searchParams.sort_by = "MODIFIED_DATE";
+          		searchParams.sort_order = "DESC";
+          		searchParams.video_fields = "id,name,shortDescription,publishedDate,videoStillURL,thumbnailURL,length,tags";
+          		// execute the search
+          		BCMAPI.find(BCMAPI.command,searchParams);
+        		}
+        		// handler for the media API search
+        		function onSearchResult(jsondata) {
+          		//log(jsondata);
+          		
+          		var str = "";
+          		for (var i = 0; i<jsondata["items"].length; i++) {
+        				var title = jsondata.items[i]
+        				log(title.publishedDate);
+        				var pubDate = new Date(title.publishedDate*1000);
+        				log(pubDate.toLocaleString());
+        				
+        				str += title.name+'<br />';
+        			}
+            }
+
+        </script>
+<!--
+        <rss version="2.0">
+<channel>
+<title>Find All Videos</title>
+<link>
+http://api.brightcove.com/services/library?command=find_all_videos&output=mrss&sort_by=MODIFIED_DATE&sort_order=DESC&token=w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..
+</link>
+<description/>
+<copyright>Copyright 2011</copyright>
+<lastBuildDate>Mon, 18 Apr 2011 08:36:48 -0700</lastBuildDate>
+<generator>http://www.brightcove.com/?v=1.0</generator>
+<item>
+<title>Titmouse</title>
+<link/>
+<description>Bird_Titmouse</description>
+<guid>video836605824001</guid>
+<pubDate>Tue, 12 Apr 2011 08:02:47 -0700</pubDate>
+<media:keywords>air</media:keywords>
+<media:thumbnail height="90" url="http://brightcove.vo.llnwd.net/d14/unsecured/media/835233035001/835233035001_836668687001_th-836659146001.jpg?pubId=835233035001" width="120"/>
+<media:thumbnail height="360" url="http://brightcove.vo.llnwd.net/d14/unsecured/media/835233035001/835233035001_836668686001_vs-836659146001.jpg?pubId=835233035001" width="480"/>
+<bc:titleid>836605824001</bc:titleid>
+<bc:duration>8</bc:duration>
+<dcterms:valid/>
+<bc:playerid>835199013001</bc:playerid>
+<bc:accountid>835233035001</bc:accountid>
+</item>
+</channel>
+        </rss>
+-->
+
+    </head>
+    <body onload="getVideoData()">
+
+      <div id="logger"></div>
+    </body>
+</html>

@@ -1,0 +1,28 @@
+.nav-pills > .active > a {
+  background-color: #C0D53C
+}
+
+.nav-pills > .active > a:hover {
+  background-color: #C0D53C
+}
+
+.icon.check, .icon.info, .icon.question, .icon.warning, .icon.error {
+	background-image:url("http://status.brightcove.com/images/icons-sprite.gif");
+	width:20px;
+	height:20px;
+}
+.icon.check {
+	background-position: 0 0;
+}
+.icon.info {
+	background-position: 0 -20px;
+}
+.icon.question {
+	background-position: 0 -100px;
+}
+.icon.warning {
+	background-position: 0 -40px;
+}
+.icon.error {
+	background-position: 0 -60px;
+}

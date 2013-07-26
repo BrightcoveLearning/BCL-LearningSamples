@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<!-- InstanceBeginEditable name="Body" -->
+	<style type="text/css">
+	.headline {
+	font-size: large;
+	font-weight: bold;
+	}
+	.code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: small;
+	}
+	.floatleft {
+	float: left;
+	padding-right: 5px;
+	}
+	.floatright {
+	float: right;
+	padding-left: 5px;
+	}
+
+	</style>
+	<p class="headline">Set the Sharing Link for Each Video</p>
+	<p>You know that your videos can be shared via email or Twitter using the distribution tools that are built into Brightcove players. Here I'll show you how to modify the link to the video so that it always points back to the page that the video was shared from.</p>
+	<p>You can use the <a href="http://support.brightcove.com/en/docs/editing-settings-players#global">Host on Your URL</a> feature in the Player Settings to set the make the video links point to the page the player is on, but this option doesn't help you if you are going to publish the same player on many pages. But you can still get the links to point back to whatever page the player is on with a little help from the Player API. Here's a working sample you can test: play a video, email a link to yourself, and then click the link.</p>
+		
+	<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="1177318918001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiO4uaOAusmFgYIfRbpjbRZ" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->    </div>
+
+
+
+		<section>
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset
+    </section>
+
+	<p>Here's what you need to do. First, make sure the Player API is enabled in the player settings, and that you're including the JavaScript Player API:</p>
+	<pre>&lt;script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"&gt; </script></pre>
+<p>In the TEMPLATE_READY event handler, get a reference to the VideoPlayer and Social modules, and set up an event listener for MediaChange events. You'll also need to execute the handler for the MediaChange events once for the initially loaded video.</p>
+<pre>
+// namespace for everything global
+var BCL = {};
+// initial setup in the onTemplateLoaded() handler
+function onTemplateLoaded(id) {
+  BCL.player = brightcove.getExperience(id);
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+}
+// event listener for the player being ready
+BCL.onTemplateReady = function(event) {
+  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  // get a reference to the video player module
+  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+  // get a reference to the social module
+  BCL.socialModule = BCL.player.getModule(APIModules.SOCIAL);
+  // set up listner for media change events
+  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+  // execute the change event handler for the initial video in the player
+  BCL.onMediaChange(null);
+}
+</pre>
+<p>In the MediaChange event handler, use the Social module setLink() method to set the sharing link to the document URL with <em>?bctid=[video ID for the current video goes here]</em></p>
+<pre>
+// add handler for change events
+BCL.onMediaChange = function(event) {
+	// log("EVENT: Change");
+	var newLink = document.URL + "?bctid=" + BCL.videoPlayer.getCurrentVideo().id;
+	// set the new link based on the page URL and the video ID
+	BCL.socialModule.setLink(newLink);
+	// log(BCL.socialModule.getLink());
+	return;
+}
+</pre>
+    <!-- import player api -->
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+    <script type="text/javascript">
+    /* script here */
+		// namespace for everything global
+		var BCL = {};
+		// initial setup in the special onTemplateLoaded() function
+		function onTemplateLoaded(id) {
+		  // log("EVENT: TEMPLATE_LOADED");
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+		  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		}
+		// event listener for the player being ready
+		BCL.onTemplateReady = function(event) {
+		  log("BCL.onTemplateReady");
+		  // remove the event listener
+		  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		  // prepare the URL for appending the video id
+		  BCL.setURLstring();
+		  // get a reference to the video player module
+		  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // get a reference to the social module
+		  BCL.socialModule = BCL.player.getModule(APIModules.SOCIAL);
+		  // set up listner for media change events
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+		  // execute the change event handler for the initial video in the player
+		  BCL.onMediaChange(null);
+		}
+		// set the URL prefix for the video ID
+			// see if the document URL has URL params appended
+		BCL.setURLstring = function() {
+			BCL.docURL = document.URL;
+			log(BCL.docURL);
+			var URLpart = "";
+			var paramPart = "";
+			if ( BCL.docURL.indexOf("?") > 0 ) {
+				log("has ?");
+				// split the string into the root URL and the URL params
+				var docURLsplit = BCL.docURL.split("?");
+				log(docURLsplit);
+				// the URL part will equal the first part of the array with the ? restored
+				URLpart = docURLsplit[0].concat("?");
+				// now see if the params already include a video id
+				log("bctid index: " + docURLsplit[1].indexOf("bctid"));
+				if ( docURLsplit[1].indexOf("bctid") >= 0 ) {
+					log("has bctid");
+					// split the param string into whatever comes before bctid and the rest
+					// get the first part of the string
+					var paramString1 = docURLsplit[1].substr(0, docURLsplit[1].indexOf("bctid"));
+					log("paramStr1: " + paramString1);
+					// get the rest of the string, which will begin with the video id param
+					var paramString2 = docURLsplit[1].slice( docURLsplit[1].indexOf("bctid") );
+					log("paramStr2: " + paramString2);
+					// see if there are other params after the video id
+					if ( paramString2.indexOf("&") > 0 ) {
+						log("has additional params");
+						// if so, delete everything up to the first &
+						paramString2 = paramString2.slice(paramString2.indexOf("&"));
+						// recombine the first part of the param string with what's left of the second part and add an '&'
+						paramPart = paramPart.concat(paramString1,paramString2,"&");
+					}
+					// if there are no more params, then just use paramString1 + &
+					else {
+						log("no more params");
+						paramPart = paramPart.concat(paramString1,"&");
+					}
+						log("putting URL back together");
+						// put the string back together
+						BCL.docURL = docURLsplit[0].concat(paramPart);
+				}
+			}
+			// there are no query params, so just append a ? to the original URL
+			else {
+				log("URL has no params");
+				BCL.docURL = BCL.docURL.concat("?");
+			}
+			log(BCL.docURL);
+			return;
+    }
+  
+		// add handler for change events
+		BCL.onMediaChange = function(event) {
+			// add the video id to the URL
+			var newLink = BCL.docURL + "bctid=" + BCL.videoPlayer.getCurrentVideo().id;
+			// set the new link based on the page URL and the video ID
+			BCL.socialModule.setLink(newLink);
+			// log(BCL.socialModule.getLink());
+			return;
+		}
+    </script>
+
+<!-- InstanceEndEditable -->
+    <script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js - the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		};
+		</script>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>baseURL</key>
+	<string>http://api.brightcove.com/services/library</string>
+	<key>headers</key>
+	<array/>
+	<key>method</key>
+	<integer>0</integer>
+	<key>parameters</key>
+	<array>
+		<dict>
+			<key>parameter</key>
+			<string>video_fields</string>
+			<key>value</key>
+			<string>id,name,shortDescription,customFields,thumbnailURL,videoStillURL,length,FLVURL</string>
+		</dict>
+		<dict>
+			<key>parameter</key>
+			<string>command</string>
+			<key>value</key>
+			<string>search_videos</string>
+		</dict>
+		<dict>
+			<key>parameter</key>
+			<string>token</string>
+			<key>value</key>
+			<string>w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..</string>
+		</dict>
+		<dict>
+			<key>parameter</key>
+			<string>all</string>
+			<key>value</key>
+			<string>subject:Water</string>
+		</dict>
+	</array>
+	<key>stringEncoding</key>
+	<integer>4</integer>
+	<key>useJSONP</key>
+	<false/>
+	<key>usingHTTPBody</key>
+	<false/>
+</dict>
+</plist>

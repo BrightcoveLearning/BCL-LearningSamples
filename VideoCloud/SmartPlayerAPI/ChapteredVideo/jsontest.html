@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Media API Exercise</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+			</head>
+	<body>
+	<style type="text/css">
+		table.playlist {font-size: 10px; 
+			height: 280px;
+		}
+		td {
+			vertical-align: top;
+			border: 1px solid #999;
+		}
+		#playlist {
+			height: 270px;
+			overflow: scroll;
+			border: 1px solid #999;
+		}
+		.playlistTR {
+			height: 60px;
+		}
+		#playlistTable {
+			/*height: 100px;*/
+			width: 710px;
+			text-align: left;		
+		}
+		strong {
+			color: #F4901E;
+		}
+		fieldset {
+			width: 540px;
+		}
+		.BCLnote {
+			font-style: italic;
+		}
+		small {
+			font-size: 12px;
+		}
+		fieldset {
+			width: 720px;
+		}
+	</style>
+	<script src="http://files.brightcove.com/jquery-1.4.2.min.js" type="text/javascript"></script>
+	
+		<h2>Chaptered Video Mockup</h2>
+		<div id="modeSwitch">
+			<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+			<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+		</div>
+		<table cellpadding="4" cellspacing="0" border="0">
+			<tbody>
+				<tr>
+					<td valign="top">
+						<!-- Start of Brightcove Player -->
+						
+								<div style="display:none">
+								
+								</div>
+								
+								<!--
+								By use of this code snippet, I agree to the Brightcove Publisher T and C 
+								found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+								-->
+								
+								<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+								
+								<object id="myExperience" class="BrightcoveExperience">
+								  <param name="bgcolor" value="#FFFFFF" />
+								  <param name="width" value="480" />
+								  <param name="height" value="270" />
+								  <param name="playerID" value="1146049103001" />
+								  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEd1K9zn5lA_OOffNUFbVae" />
+								  <param name="isVid" value="true" />
+								  <param name="isUI" value="true" />
+								  <param name="dynamicStreaming" value="true" />
+								  <param name="@videoPlayer" value="928121847001" />
+								  <!-- params for Smart Player API -->
+								  <param name="includeAPI" value="true" />
+								  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+								</object>
+								
+								<script type="text/javascript">brightcove.createExperiences();</script>
+								
+								<!-- End of Brightcove Player -->
+					</td>
+					<td>
+						<div id="playlist"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<fieldset>
+		  <legend>Chapters</legend>
+			<div id="results"></div>
+		</fieldset>
+<h3>Here's how:</h3>
+<p>Data is stored as JSON - either as a separate file with name [videoID].json, or, if the character count will be reliably less than 5000, it can be stored in the video metadata.</p>
+<pre>
+{
+  "chapters": [
+    {
+      "time": "00:00:00",
+      "title": "&lt;h2&gt;Chapter 1&lt;/h2&gt;",
+      "body": "&lt;p&gt;This is the full transcript.&lt;/p&gt;&lt;p&gt;It can contain any html, but paragraphs, lists, and pre or code blocks are probably what make sense.&lt;/p&gt;",
+      "thumbnailURL": "http://files.brightcove.com/img.png",
+      "videoStileURL": "http://files.brightcove.com/imgBig.png",
+      "relatedDocs": [
+        {
+          "title": "A document",
+          "url": "http://docURL"
+        }
+      ]
+    },
+    {
+      "time": "01:27:00",
+      "title": "&lt;h2&gt;Chapter 2&lt;/h2&gt;",
+      "body": "&lt;p&gt;This is the full transcript.&lt;/p&gt;&lt;p&gt;It can contain any html, but paragraphs, lists, and pre or code blocks are probably what make sense.&lt;/p&gt;",
+      "thumbnailURL": "http://files.brightcove.com/img.png",
+      "videoStileURL": "http://files.brightcove.com/imgBig.png",
+      "relatedDocs": [
+        {
+          "title": "A document",
+          "url": "http://docURL"
+        }
+      ]
+    }
+  ]
+}
+</pre>
+<p>We can generate the tables and cue points for the chapters from the JSON using the Smart Player API.</p>
+		<!-- This is the script to modify for the exercise -->
+		<script id="myScript" type="text/javascript">
+// BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
+// namespace to keep all the "global" vars together
+var BCL = {};
+$.ajax({
+  url: "http://files.brightcove.com/BCL_jsontest.json",
+  context: document.body,
+  crossDomain: true,
+  dataType: "jsonp",
+  success: function(jsonData){
+    console.log(jsonData);
+  }
+});
+BCL.token = "WDGO_XdKqXVJRVGtrNuGLxCYDNoR-SvA5yUqX2eE6KjgefOxRzQilw..";
+BCL.callback = "BCL.onSearchResponse";
+BCL.url = "http://api.brightcove.com/services/library";
+BCL.command = "find_playlists_by_ids";
+BCL.params = {"playlist_ids" : "1323984736001,1323984734001,1323984733001,1323984735001"};
+/**
+ * Injects API calls into the head of a document
+ */
+BCL.injectScript = function () {
+	console.log("Injecting script")
+	var scriptElement = document.createElement("script");
+	BCL.srcValue = BCL.url + "?command=" + BCL.command + "&token=" + BCL.token + "&callback=" + BCL.callback;
+	for (var param in BCL.params) {
+		BCL.srcValue += "&" + param + "=" + BCL.params[param];
+	}
+	console.log(BCL.srcValue);
+	scriptElement.setAttribute("src", BCL.srcValue);
+	scriptElement.setAttribute("type", "text/javascript");
+	document.getElementsByTagName("head")[0].appendChild(scriptElement);
+};
+BCL.onSearchResponse = function(jsonData) {
+	console.log(jsonData);
+	// save the jsonData for select listener
+	BCL.jsonData = jsonData;
+	var str = "<table id=\"playlistTable\" cellspacing=\"10\"><tbody>";
+	var html = "";
+	for (var i = 0; i < jsonData["items"].length; i++) {
+		var playlist = jsonData["items"][i];
+		html = "<tr><td onclick=\"BCL.onPlaylistSelect(" + i +")\"><img src=\"{{thumbnailURL}}\" width=\"360\" height=\"210\" /><br />{{name}}</td><td><p>This is the full chapter transcript.</p><p>It can contain any html, but paragraphs, lists, and pre or code blocks are probably what make sense.</p><p>And these are links to related docs</p><ul><li><a href=\"#\">Some Doc</a></li><li><a href=\"#\">Some Doc</a></li><li><a href=\"#\">Some Doc</a></li><li><a href=\"#\">Some Doc</a></li></ul></tr>";
+		str += BCL.markup(html,playlist);
+	}
+	str += "</tbody></table>";
+	console.log(str);
+	document.getElementById("results").innerHTML = str;
+	// load the first playlist
+	BCL.onPlaylistSelect(0);
+}
+// player API code
+// event listener for the player being ready
+BCL.onTemplateReady = function(event) {
+  console.log("onTemplateReady");
+  // load the playlists
+  BCL.injectScript();
+  BCL.player = brightcove.api.getExperience("myExperience");
+  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+  $.getJSON("http://files.brightcove.com/BCL_jsontest.json", function(jsonData) {
+  		console.log(jsonData);
+  });
+  
+}
+// listener for playlist selection
+BCL.onPlaylistSelect = function(index) {
+	console.log(BCL.jsonData["items"][index]["videos"]);
+	var str = "<table class=\"playlistTable\" cellspacing=\"5\"><tbody><tr><td colspan=\"2\">Chapters</td></tr>";
+	var html = "";
+	for (var i = 0; i < BCL.jsonData["items"][index]["videos"].length; i++) {
+		var video = BCL.jsonData["items"][index]["videos"][i];
+		html = "<tr class=\"playlistTR\"><td><a onclick='BCL.playVideo({{id}})'><img height='54' width='96' src='{{thumbnailURL}}'/></a></td><td width=\"130\"><a onclick='BCL.playVideo({{id}})'><small><strong>{{name}}</strong><br/>{{shortDescription}}</a></small><br/>";
+		str += BCL.markup( html , video );
+	}
+		str += "</tbody></table>";
+		document.getElementById("playlist").innerHTML = str;
+}
+// play video function
+BCL.playVideo = function(videoID) {
+	BCL.videoPlayer.loadVideoByID(videoID);
+}
+// for development purposes only: reopen page with HTML5 player
+BCL.switchToHTML5 = function() {
+	var html5URL = document.location.href + "?forceHTML=true";
+	window.location = html5URL;
+}
+// for development purposes only: switch back to Flash
+BCL.switchToFlash = function() {
+	var startOfQuery = document.location.href.indexOf("?", 0);
+	var flashURL = document.location.href.substring(0, startOfQuery);
+	window.location = flashURL;
+}
+/* 
+simple HTML templating function
+ array example:
+   demo.markup("<div>{{1}}, {{0}}</div>", ["John", "Doe"]);
+ object example:
+   demo.markup("<div>{{last}}, {{first}}</div>", {first:"John", last:"Doe"});
+*/
+BCL.markup = function (html, data) {
+    var m;
+    var i = 0;
+    var match = html.match(data instanceof Array ? /{{\d+}}/g : /{{\w+}}/g) || [];
+
+    while (m = match[i++]) {
+        html = html.replace(m, data[m.substr(2, m.length-4)]);
+    }
+
+    return html;
+};		
+		</script>
+
+	</body>
+</html>

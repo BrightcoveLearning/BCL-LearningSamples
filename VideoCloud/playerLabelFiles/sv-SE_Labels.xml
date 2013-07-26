@@ -1,0 +1,105 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">SPELA</label>
+        <label key="controls pause">PAUS</label>
+        <label key="controls menu">MENY</label>
+        <label key="controls play tooltip">Spela</label>
+        <label key="controls pause tooltip">paus</label>
+        <label key="controls volume tooltip">Öppna volymkontrollerna</label>
+        <label key="controls maximize tooltip">Öppna helskärmsläge</label>
+        <label key="controls minimize tooltip">Avbryt helskärmsläge</label>
+        <label key="community share">e-post</label>
+        <label key="community socialShare">dela</label>
+        <label key="community link">hämta länk</label>
+        <label key="community code">hämta kod</label>
+        <label key="community share tooltip">Skicka en video via e-post till en vän</label>
+        <label key="community socialShare tooltip">Dela med dig av den här videon</label>
+        <label key="community link tooltip">Hämta en direktlänk till en video</label>
+        <label key="community code tooltip">Hämta HTML för att bädda in spelaren</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[VISA  >]]></label>
+        <label key="collapse banner">DÖLJ X</label>
+        <label key="sponsor message">Reklam.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">tyst</label>
+        <label key="unmute tooltip">inte tyst</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Öppna meny</label>
+        <label key="rightclick fullscreen">Öppna helskärmsläge</label>
+        <label key="rightclick exit fullscreen">Avbryt helskärmsläge</label>
+        <label key="rightclick show debug">Visa felsökningsinfo</label>
+        <label key="rightclick hide debug">Dölj felsökningsinfo</label>
+<!-- Error messaging -->
+        <label key="noContent">Det finns inga videor tillgängliga \nnu.
+            \n\nKom tillbaka senare.</label>
+        <label key="unavailableContent">Den video du försöker
+            titta på är inte tillgänglig för närvarande. \n\nKom tillbaka senare.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 eller senare krävs för att visa det här innehållet.\n\nKlicka &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;här&lt;/u&gt;&lt;/a&gt; om du vill uppgradera din spelare.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">DU TITTAR PÅ:</label>
+        <label key="connecting">LÄSER IN VIDEO</label>
+        <label key="please select:">välj:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Information</label>
+        <label key="menu email">Skicka via e-post</label>
+        <label key="menu link">Hämta länk</label>
+        <label key="menu share">Dela med dig av en video</label>
+        <label key="expand">Visa</label>
+        <label key="menu embed">Hämta kod</label>
+        <label key="menu play">Spela video</label>
+        <label key="menu replay">Spela upp igen</label>
+        <label key="menu resume">Återuppta</label>
+        <label key="cancel button">Avbryt</label>
+        <label key="continue button">Fortsätt</label>
+        <label key="close tooltip">Stäng</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Skicka via e-post till en vän</label>
+        <label key="email your email">Din e-postadress</label>
+        <label key="email friend email"><![CDATA[Din väns e-postadress]]></label>
+        <label key="email message">Meddelande (frivilligt)</label>
+        <label key="email send">Skicka</label>
+        <label key="email video">Skicka video via e-post</label>
+        <label key="email error">Skriv in rätt e-postadress.</label>
+        <label key="email confirmation text">Ditt brev har skickats</label>
+<!-- Share video menu screen -->
+        <label key="share title">Dela med dig av den här videon</label>
+        <label key="share directions">Dela med dig direkt till dessa webbplatser</label>
+        <label key="share facebook">Dela med dig på Facebook</label>
+        <label key="share twitter">Dela%20med%20dig%20p%C3%A5%20Twitter</label>
+        <label key="share twitter message">Check+out+</label>
+        <label key="share link">Kopiera länk</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Lägg till på en webbsida eller i en blogg</label>
+        <label key="embed directions">Kopiera koden eller välj bloggtjänsten</label>
+        <label key="embed code">Bädda in koden</label>
+        <label key="embed copy code">Kopiera koden</label>
+        <label key="embed copied">Kopierad</label>
+        <label key="blog processing">Behandlar ...</label>
+        <label key="blog username">Användarnamn</label>
+        <label key="blog password">Lösenord</label>
+        <label key="blog blogger">Bloggare</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Fel kombination av användarnamn och lösenord.</label>
+        <label key="blog post select directions">Välj en blogg</label>
+        <label key="blog post enter title">Lägg upp en titel</label>
+        <label key="blog post enter description">Lägg upp en beskrivning (valfritt)</label>
+        <label key="blog post post video">Lägg upp en video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Det uppstod ett fel. Försök igen.</label>
+        <label key="blog confirmation text">Inlägget har skickats in</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Länk till den här videon</label>
+        <label key="link directions">Dela med dig via e-post eller IM</label>
+        <label key="link copy link">Kopiera länk</label>
+        <label key="link copied">Kopierad</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Villkor</label>
+        <label key="related videos">Videor med liknande innehåll</label>
+        <label key="most viewed videos">Mest visade</label>
+        <label key="newest videos">Senast</label>
+</labels>
+

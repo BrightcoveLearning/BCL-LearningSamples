@@ -1,0 +1,69 @@
+===== display-update-item-tmpl
+<ul >
+  {{updateitems}}
+      <li {{if recentBoolean}}class="liDetail unread"{{else}}class="liDetail"{{/if}} data-guid="{{guid}}" data-type="update">
+          <h3>{{title}}</h3>
+          <p>{{pubDate|date}}</p>
+      </li>
+  {{/updateitems}}
+</ul>
+
+===== display-update-tmpl
+<h3>Release Date: {{selectedUpdate.releaseDate}}</h3>
+{{selectedUpdate.docHTML}}<br />
+
+===== display-recent-item-tmpl
+<ul>
+	{{recentitems}}
+		<li {{if recentBoolean}}class="liDetail unread"{{else}}class="liDetail"{{/if}} data-guid="{{guid}}">
+			<h3>{{title}}</h3>
+			<p>{{displayDescription}}</p>
+		</li>
+	{{/recentitems}}
+</ul>
+
+===== display-doc-tmpl
+<link rel="stylesheet" type="text/css" href="http://files.brightcove.com/BCL-document.css">
+<h1>{{titleAndDoc.title}}</h1>
+{{titleAndDoc.docHTML}}
+
+===== play-video-tmpl
+<div class="outer-container">
+  <div class="inner-container">
+    <!-- player publishing code -->
+    <object id="myExperience1968740782001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="1990588098001" />
+      <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLARljSH-mlMD_DMmP5gTLpC6" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      <!-- you can remove the line below unless you want a default video in the player -->
+      <param name="@videoPlayer" value="{{videoID}}" />
+      <!-- import player API and register event handlers -->
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="onTemplateLoad" />
+      <param name="templateReadyHandler" value="onTemplateReady" />
+    </object>
+  </div>
+</div>
+<script type="text/javascript">brightcove.createExperiences();</script>
+<!-- end of player publishing code -->
+<!-- script to load videos -->
+<script type="text/javascript">
+  var player,videoPlayer;
+  // handler for player loaded
+  onTemplateLoad = function(experienceID) {
+    player = brightcove.api.getExperience(experienceID);
+  }
+  // handler for player ready
+  onTemplateReady = function(evt) {
+    videoPlayer = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+  }
+  // call this function to play a video by ID
+  playVideo = function(videoID) {
+    videoPlayer.loadVideoByID(videoID);
+  }
+</script>

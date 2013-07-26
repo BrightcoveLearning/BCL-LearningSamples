@@ -1,0 +1,18 @@
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert"
+													 report-success="TRUE">
+	<notify email="rcrooks@brightcove.com"/>
+	<asset
+		 refid="jan12-analytics"
+		 type="VIDEO_FULL"
+		 encode-to="MP4"
+		 encode-multiple="true"
+		 size="31463706"
+		 hash-code="3061c98a312005e9eb388db4808c6a43"
+		 filename="Video Cloud Analytics.mp4"/>
+	<reencode-from-new-source
+		 title-refid="129226713001"
+		 new-source-refid = "jan12-analytics"
+		 overwrite-images="TRUE"
+/>
+
+</publisher-upload-manifest>

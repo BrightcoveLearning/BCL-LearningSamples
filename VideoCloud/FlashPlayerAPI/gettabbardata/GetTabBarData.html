@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 2</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+
+		</script>
+
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		<!-- including Player API -->
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="986323842001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXajPHsM4pQG7AyfK3vckrKEy" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->					<fieldset>
+			<legend>Generated Code</legend>
+			<h3 id="displayName"></h3>
+		</fieldset>
+
+
+		<fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  log("BCL.onTemplateReady");
+			  // remove event listener, get reference to video player, add media change listener
+				BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+				BCL.tabbar = BCL.experienceModule.getElementByID("playlistTabs");
+				//log(BCL.tabbar.getData());
+				BCL.contentModule = BCL.player.getModule(APIModules.CONTENT);
+				var allCollections = BCL.tabbar.getData();
+				log (allCollections.length);
+				var idArray = [];
+				var videoArray = [];
+				var i;
+				var j;
+				var k;
+				for (i = 0; i < allCollections.length; i++) {
+					BCL.tabbar.setSelectedIndex(i);
+					idArray = [];
+					videoArray = [];
+					//log(allCollections[i].videoIds);
+					idArray = allCollections[i].videoIds;
+					log("original id array " + idArray);
+					for (j = 0; j < idArray.length; j++) {
+						log("j="+j);
+						videoArray[j] = BCL.contentModule.getMedia(idArray[j]);
+						log("displayName = " + videoArray[j].displayName);
+					}
+				videoArray.sort(function(a, b){
+					var nameA=a.displayName.toLowerCase(), nameB=b.displayName.toLowerCase()
+					if (nameA < nameB) //sort string ascending
+					 return -1
+					if (nameA > nameB)
+					 return 1
+					return 0 //default return value (no sorting)
+				 })
+				for (k = 0; k < videoArray.length; k++) {
+					idArray[k] = videoArray[k].id;
+				}
+				allCollections[i].videoIds = idArray;
+				log("sorted id array " + allCollections[i].videoIds);
+				}
+				BCL.tabbar.setData(allCollections);
+				log(BCL.tabbar.getData());
+			}
+
+		</script>
+
+	</body>
+</html>

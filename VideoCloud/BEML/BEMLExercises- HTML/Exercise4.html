@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Use layout containers</title>
+    <style type="text/css">
+    .BCL_topic {
+      width:700px;
+      font-family: Helvetica,Arial,sans-serif;
+    }
+    img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .BCL_introduction {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_concept {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_task {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+	.BCL_topicSteps {
+		clear:both;
+    }
+    .BCL_references {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_nextSteps {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 40px;
+    float: right;
+    height: 270px;
+    width: 480px;
+    }
+    .BCL_subsection {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;    
+    }
+    table {
+    border: solid thin #999;
+    clear: both;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th {
+    background-color: #CCC;
+    padding: 5px;
+    font-weight: bold;
+    }
+    td {
+    padding: 5px;
+    }
+	.BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+    .BCL_aside {
+      font-style: italic;
+      background-color: #DDD;
+      padding: 10px;
+    }
+    .BCL_uiCommand {
+      font-weight: bold;
+    }
+    .BCL_uiDialog {
+      font-weight: bold;
+      font-style: italic;
+    }
+    .BCL_halfWidthImage {
+      margin-left: 10px;
+      float: right;
+      margin-bottom: 10px;
+    }
+    figure figcaption {
+      font-size: 10px;
+    }
+    .BCL_userInput {
+      font-family: Consolas,Courier,monospace;
+      font-weight: bold;
+    }
+	pre {
+    padding: 10px;
+    background-color: #CCC;
+    clear: both;
+    width: 100%;
+    }
+    .BCL_codeBlock {
+      font-family: Consolas,Courier,monospace;
+      padding: 5px;
+      background-color: #E7E7E7;
+    }
+    </style>
+  </head>
+  <body>
+    <article class="BCL_topic">
+      <header class="BCL_topicHeader">
+        <h1 class="BCL_topicTitle">Use layout containers</h1>
+      </header>
+      <section class="BCL_introduction">
+        <p><strong>In this exercise, you will learn how to use the different BEML layout containers.</strong></p>
+        <p class="BCL_teaser">BEML allows you to customize the layout of your video player.</p>
+        <!--break-->
+        <p class="BCL_objective">This is the objectives for the document:</p>
+        <ol class="BCL_objectives">
+          <li>Use the Canvas container</li>
+          <li>Use the VBox container</li>
+          <li>Use the HBox container</li>
+          <li>Use the boxType attribute</li>
+        </ol>
+      </section>
+      <section class="BCL_concept">
+        <header class="BCL_conceptHeader">
+          <h2 class="BCL_sectionTitle">Use layout containers</h2>
+        </header>
+          <div class="BCL_videoTutorial">
+            <strong>Video Tutorial</strong><br/>
+            <!-- Start of Brightcove Player -->
+            <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>   <object id="myExperience1482024659001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="1482015250001" />
+            <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLATm9KISLxm9sSGt0zoK7YyP" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            <param name="@videoPlayer" value="1488679270001" /> </object> <script type="text/javascript">brightcove.createExperiences();</script> <!-- End of Brightcove Player -->
+          </div>
+          <p>You may need to replace an existing video in your Video Cloud account for various reasons, such as:</p>
+          <ul>
+            <li>You re-edit the video</li>
+            <li>You shoot a new version of the video to replace the old one</li>
+            <li>You set up a video as a remote asset, but now wish to store it on Video Cloud</li>
+            <li>You set up a video for a live streaming broadcast, but now that the event has passed, want to replace this with video-on-demand recording</li>
+          </ul>
+          <section class="BCL_subsection">
+          <header class="BCL_subsectionHeader">
+            <h3 class="BCL_subsectionTitle">Subsection Title in &lt;header&gt;</h3>
+          </header>
+          <figure class="BCL_halfWidthImage">
+            <img height="300" width="350" src="http://img.brightcove.com/BCL_sampleImage.png" alt="Sample image"/>
+            <figcaption>Image Caption</caption>
+          </figure>
+          <p>You can do this within the Media Module in Video Cloud Studio.</p>
+          <p>You can also replace videos using <a href="#">Batch Provisioning</a>.</p>
+          <p>We might have half- or full-width images in the sections. Half-width should have text wrapping around the image.</p>
+          <p>We will also have <code>inline code</code> all over the place.</p>
+          
+          </section>
+      </section>
+      <section class="BCL_task">
+        <p></p>
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Exercise: Use layout containers</h2>
+        </header>
+          <p>In this exercise, you will learn how to use the different BEML layout containers.</p>
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Use the Canvas container</h4>
+          <ol>
+            <li>Login to your Brightcove Video Cloud account.</li>
+            <li>Navigate to the <span class="BCL_uiCommand">Publishing </span>module.</li>
+            <li>Select <span class="BCL_uiCommand">New Template</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Template</span> dialog, name the template <span class="BCL_userInput">BEMLLayoutContainers</span>.</li>
+            <li>To the opening <code>Layout</code> tag, add a <code>width</code> property with a value of <span class="BCL_userInput">486</span> and a <code>height</code> property with a value of <span class="BCL_userInput">600</span>.</li>
+           </ol>
+            
+           <pre class="BCL_codeBlock">
+           
+&lt;Layout id="application"
+   <span class="BCL_uiCommand">width="486" height="600"&gt;</span>
+   ...
+&lt;/Layout&gt;
+          </pre>
+          
+          <ol start="6">
+            <li>Within the <code>Layout</code> tag block, add an <code>Image</code> component and assign the component the following properties and values:</li>
+            	<ul>
+                	<li><span class="BCL_userInput">x: 30</span></li>
+                    <li><span class="BCL_userInput">y: 50</span></li>
+                    <li><span class="BCL_userInput">width: 223</span></li>
+                    <li><span class="BCL_userInput">height: 54</span></li>
+                    <li><span class="BCL_userInput">source: http://img.brightcove.com/brightcove-logo.png</span></li>
+                </ul>
+          </ol>
+             
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout ...&gt;<span class="BCL_uiCommand">
+   &lt;Image x="30" y="50"
+   	 width="223" height="54"
+       source="http://img.brightcove.com/brightcove-logo.png"/&gt;</span>
+&lt;/Layout&gt;
+          </pre> 
+          
+          <ol start="7">
+            <li>Select <span class="BCL_uiCommand">Preview Template</span>. You should see the image displayed in the preview window.</li>  
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Copy the <code>Image</code> component and paste two instances of the component below the first.</li>
+            <li>To the second instance, change the <code>y</code> property value to <span class="BCL_userInput">150</span>.</li>
+            <li>To the third instance, change the <code>y</code> property value to <span class="BCL_userInput">250</span>.</li>
+            <li>Select <span class="BCL_uiCommand">Preview Template</span>. You should see three images displayed in the preview window, stacked vertically.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Wrap the <span class="BCL_uiCommand">Image</span> components within a <span class="BCL_uiCommand">Canvas</span> container.</li>
+            </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout ...&gt;<span class="BCL_uiCommand">
+   &lt;Canvas&gt;</span>
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;<span class="BCL_uiCommand">
+   &lt;/Canvas&gt;</span>
+&lt;/Layout&gt;
+          </pre>
+           
+          <ol start="15">
+            <li>Preview the template. You should see that the layout of the images has not changed because the Canvas layout container is the default layout.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          </ol>
+          
+        <h4 class="BCL_stepsSubHeading">Use the VBox container</h4>
+          <ol start="17">
+            <li>Change the <code>Canvas</code> container to a <code>VBox</code> container.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout ...&gt;<span class="BCL_uiCommand">
+   &lt;VBox&gt;</span>
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;<span class="BCL_uiCommand">
+   &lt;/VBox&gt;</span>
+&lt;/Layout&gt;
+          </pre>
+          
+          <ol start="18">
+            <li>Preview the template. You should see that the images are still stacked vertically, but their x and y values have been ignored and there is no space between the components.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>To the opening <code>VBox</code> container tag, add the <code>gutter</code> property with a value of <span class="BCL_userInput">30</span>.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;VBox <span class="BCL_uiCommand">gutter="30"</span>&gt;
+	...
+&lt;/VBox&gt;
+          </pre>
+           
+          <ol start="21">
+          	<li>Preview the template. You should see that there is now a space between each of the images.</li>
+          	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+          </ol>
+          
+      <h4 class="BCL_stepsSubHeading">Use the HBox container</h4>
+          <ol start="23">
+            <li>Change the <code>VBox</code> container to a <code>HBox</code> container.</li>
+          </ol> 
+            
+         <pre class="BCL_codeBlock">
+         
+&lt;Layout ...&gt;<span class="BCL_uiCommand">
+   &lt;HBox&gt;</span>
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;
+       &lt;Image .../&gt;<span class="BCL_uiCommand">
+   &lt;/HBox&gt;</span>
+&lt;/Layout&gt;
+         </pre> 
+         
+         <ol start="24">
+         	<li>Preview the template. You should see that the images are now laid out horizontally.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+         </ol>
+         
+         <h4 class="BCL_stepsSubHeading">Use the boxType attribute</h4>
+          <ol start="26">
+            <li>Remove the <code>HBox</code> container tags.</li>
+            <li>To the opening <code>Layout</code> tag, add the <code>boxType</code> attribute and set its value to <span class="BCL_userInput">vbox</span>.</li>
+          </ol>
+          
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout id="application"
+	...
+   <span class="BCL_uiCommand">boxType="vbox"</span>&gt;
+          </pre>
+          
+          <ol start="28">
+         	<li>Preview the template. You should see that the images are stacked vertically.</li>
+            <li>Select <span class="BCL_uiCommand">Close</span>.</li>
+            <li>Change the value of the <code>boxType</code> attribute to <span class="BCL_userInput">hbox</span>.</li>
+         </ol> 
+         
+         <pre class="BCL_codeBlock">
+         
+&lt;Layout id="application"
+	...
+   <span class="BCL_uiCommand">boxType="hbox"</span>&gt;
+         </pre>
+         
+         <ol start="31">
+         	<li>Preview the template. You should see the images laid out horizontally.</li>
+         	<li>Select <span class="BCL_uiCommand">Close</span>.</li>
+         </ol> 
+        
+      </section>
+      <section class="BCL_references">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Related Documents</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Using Batch Provisioning</a></li>
+        </ul>
+      </section>
+      <section class="BCL_nextSteps">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Next Steps</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Link to Next Step doc</a></li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

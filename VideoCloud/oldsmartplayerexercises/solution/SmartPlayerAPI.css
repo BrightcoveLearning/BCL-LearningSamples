@@ -1,0 +1,68 @@
+			body {
+				font-family : Helvetica,Arial,sans-serif; 
+				color: #619FA8;
+				width: 800px;
+			}
+			#BCL_playlist {
+				border: 1px solid #999;
+				height: 270px;
+				overflow: scroll;
+			}
+			table {
+				font-size: 10px; 
+				height: 280px;
+			}
+			table.playlist {
+				border: 1px solid #999;
+			}
+			td {
+				margin: 2px 2px 2px 2px;
+			}
+			a {
+				cursor: pointer;
+				text-decoration: none;
+				color: #64A8B0;
+			}
+			#playlist {
+				height: 270px;
+				overflow: scroll;
+				border: 1px solid #999;
+			}
+			.playlist {
+			   border: 1px solid #CCC;
+			   padding: 2px;
+			   height: 44px;
+			}
+			.chapters {
+			   border: 1px solid #CCC;
+			   padding: 2px;
+			   height: 55px;			
+			}
+			img.thumbnail {
+			   float:left;
+			   clear:left;
+			   margin-right: 5px;
+			.description {
+			   height: 40px;
+			   font-size: 9px;
+			}
+			
+			strong {
+				color: #F4901E;
+			}
+			fieldset {
+				width: 500px;
+			}
+			legend {
+				color: #CF0050;
+			}
+			.BCLhidden {
+	      		visibility: hidden;
+	      	}
+	      	.BCLshown {
+	      		visibility: visible;
+	      	}
+	      	small {
+	      		font-size: 12px;
+	      	}
+

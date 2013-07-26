@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Resizing Player Test</title>
+<style type="text/css">
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+		#logger {
+		font-size: 12pt;
+		color: #CF0050;
+		}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<script type="application/javascript">
+var player;
+var experienceModule;
+var videoPlayer;
+var currentWidth;
+var currentHeight;
+var currentRendition;
+var newHeight;
+function onPlayerLoaded(id) {
+  newLog();
+  log("EVENT: onPlayerLoaded");
+  player = brightcove.getExperience(id);
+  experienceModule = player.getModule(APIModules.EXPERIENCE);
+}
+function onPlayerReady(event) {
+  log("EVENT: onPlayerReady");
+  videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+  setPlayerSize();
+  videoPlayer.addEventListener(BCMediaEvent.CHANGE, onMediaChange);
+  log(experienceModule.getPlayerParameter("myText"));
+}
+
+function onMediaChange(event) {
+  setPlayerSize();
+}
+
+function onPlayerError(event) {
+   log("type: " + event.type);
+   log("errorType: " + event.errorType)
+   log("code: " + event.code);
+   alert("info: " + event.info);
+}
+
+function setPlayerSize() {
+  currentWidth = videoPlayer.getWidth();
+  currentHeight = videoPlayer.getHeight();
+  log("current height = "+currentHeight);
+  log("current width = "+currentWidth);
+  currentRendition = videoPlayer.getCurrentRendition();
+  log("Video Height = "+currentRendition.frameHeight);
+  log("Video Width = "+currentRendition.frameWidth);
+  aspectRatio = currentRendition.frameWidth / currentRendition.frameHeight;
+  log("Aspect Ratio = "+aspectRatio);
+  newHeight = currentWidth/aspectRatio;
+  log("new height = "+newHeight);
+  videoPlayer.setSize(currentWidth,newHeight);
+}
+  // clear the textarea of messages
+function newLog() {
+  document.getElementById("logger").value = "";;
+}
+/*
+log a message to our debug window to simply show what's
+happening in this example
+*/
+function log(message) {
+// check to see if the message is complex data and decompose if so
+  if (typeof message == "object"){
+	  for (var prop in message){
+		if (typeof message[prop] == "object") {
+			log(prop+": ");
+			log(message[prop]);
+		}
+		else {
+			log(prop+": "+message[prop]);
+		}
+	}
+  }
+  else {
+	  document.getElementById("logger").value += message + "\n";
+  }
+}
+	
+</script>
+</head>
+
+<body>
+<h1>Resizing a Player via the JavaScript Player API</h1>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="640" />
+  <param name="height" value="297" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+  <param name="myText" value="Foo" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<!-- Begin Script Logger -->
+<h2>Results</h2>
+<div id="BCscriptingLog"></div>
+<p><textarea id="logger" name="logger" rows="10" cols="60"></textarea></p></div>
+<!-- End Debugging Helper -->
+</body>
+</html>

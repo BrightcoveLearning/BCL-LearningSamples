@@ -1,0 +1,91 @@
+<!DOCTYPE Runtime SYSTEM "http://admin.brightcove.com/dtds/beml_rt.dtd">
+<Runtime>
+  <Theme name="Deluxe" style="Light">
+    <Style id="videoPlayer">
+      <![CDATA[
+      .playerChrome {
+  gradientTop: #0497f5;
+  gradientBottom: #0497f5;
+  border: #2b2b2b;
+}
+.buttons {
+  gradientTop: #0497f5;
+  gradientBottom: #0497f5;
+  text: #FFFFFF;
+  rolloverText: #96A93B;
+  disabledText: #7E7E7E;
+  icons: #FFFFFF;
+  rolloverIcons: #96A93B;
+  disabledIcons: #7e7e7e;
+}
+.menuButton {
+  borderGradientTop: #0497f5;
+  borderGradientBottom: #0497f5;
+}
+.time {
+  text: #FFFFFF;
+}
+.playhead {
+  icon: #FFFFFF;
+  gradientBottom: #0497f5;
+  gradientTop: #0497f5;
+}
+.playheadWell {
+  unloadedGradientTop: #0497f5;
+  unloadedGradientBottom: #0497f5;
+  bufferedGradientTop: #7E7E7E;
+  bufferedGradientBottom: #929292;
+  watchedGradientTop: #B2C846;
+  watchedGradientBottom: #8EA038;
+}
+.volumeControl {
+  face: #FFFFFF;
+}
+            ]]>
+    </Style>
+         <Style id="playlistTabs">
+         <![CDATA[
+    .tabs {
+  gradientTop: #0497f5;
+  gradientBottom: #0497f5;
+  rolloverGradientTop: #F7F7F7;
+  rolloverGradientBottom: #FFFFFF;
+  selectedGradientTop: #15C8F6;
+  selectedGradientBottom: #0497f5;
+  borderGradientTop: #DCDCDC;
+  borderGradientBottom: #9F9E9E;
+  bottomBorderLine: #CCCCCC;
+  text: #FFFFFF;
+  rolloverText: #68A4AB;
+  selectedText: #F5F5F5;
+  icons: #6D6D6D;
+  rolloverIcons: #68A4AB;
+  disabledIcons: #BAB9B9;
+  fontFace: "Arial Bold";
+  fontSize: 12;
+}
+    ]]>
+    </Style>
+    <Style id="videoList">
+      <![CDATA[
+      .titleText {
+  active: #0497f5;
+  disabled: #9B9B9B;
+  rollover: #999999;
+  selected: #0497f5;
+}
+
+      ]]>
+    </Style>
+  </Theme>
+  <Layout id="application" width="690" height="660" boxType="vbox" gutter="10">
+    <ChromelessVideoPlayer height="388" id="videoPlayer" video="{videoList.selectedItem}" />
+    <TabBar id="playlistTabs" height="30" />
+    <TileList id="videoList" data="{playlistTabs.selectedItem.videoDTOs}" columnWidth="113" columnGutter="10" rowHeight="90" numRows="2" rowGutter="10" height="220" >
+      <ListItem boxType="vbox" padding="3" gutter="3">
+        <ThumbnailButton source="{currentItem.thumbnailURL}" width="107" height="60" />
+        <Label text="{currentItem.displayName}" type="title" size="12" height="14" truncate="true" />
+      </ListItem>
+    </TileList>
+  </Layout>
+</Runtime>

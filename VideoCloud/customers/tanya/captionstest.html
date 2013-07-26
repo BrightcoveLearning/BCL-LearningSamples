@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> Smart Player Captions API Test</title>
+</head>
+<body>
+<h1>Closed Caption Player</h1>
+<!-- Start of Brightcove Player -->
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="1894468829001" />
+  <param name="playerKey" value="AQ~~,AAABPZFZ6vE~,V7astu-MSiUC9BuYo2ueAUgYVukBRoxh" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="@videoPlayer" value="1894553841001" />
+  <param name="includeAPI" value="true" />
+  <param name="templateReadyHandler" value="onTemplateReady" />
+
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+
+<script type="text/javascript"> 
+
+brightcove.createExperiences();
+// initialize vars here that need to be available to all functions
+var player, videoPlayer, captionsModule, videoID;
+function onTemplateReady(event) {
+  console.log("template ready");
+ player = brightcove.api.getExperience("myExperience");
+ videoPlayer = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+ captionsModule = player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
+ // add success|error listeners for captions load
+ captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, onDFXPLoadSuccess);
+ captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_ERROR, onDFXPLoadError);
+ // need to enable captions before you can get the languages
+ videoPlayer.getCurrentVideo(function(videoDTO) {
+   console.log(videoDTO);
+   // saving the video ID to use when getting the languages
+   videoID = videoDTO.id
+   // need to load captions before you can get the languages
+   captionsModule.loadDFXP( videoDTO.captions[0].URL, videoID);
+ });
+ }
+ function onDFXPLoadSuccess() {
+   captionsModule.getLanguages(videoID, function(langs){ 
+     // captionsModule.setCaptionsEnabled(false);
+     console.log(langs); 
+     if (langs.length !== 0) { 
+       console.log('this video has closed captioning languages available');
+     } else { 
+       console.log('no closed captioning languages available'); 
+     } 
+   });
+ }
+ function onDFXPLoadError(event) {
+   console.log("DFXP Load Error");
+   console.log(event);
+ }
+</script>
+
+</body>
+</html>

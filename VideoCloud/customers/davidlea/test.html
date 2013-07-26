@@ -1,0 +1,124 @@
+<html>
+<head>
+	<script language="JavaScript" type="text/javascript" src="xdate.js"></script>
+	<script language="JavaScript" type="text/javascript" src="bc-mapi.js"></script>
+
+    <script type="text/javascript"> 
+    var player; 
+    var modVP;
+    var modExp;
+             
+    // NOTE: This exposes your read token.  If possible, I suggest using PHP or some other method so this isn't exposed
+    // NOTE: This is my read token, you'll need to input your own from Studio -> Account Settings -> API Management -> read token with URL access
+        
+	// Set the default token and handler for calls
+	BCMAPI.token = "pdfXrqbVNoGFXDaC0Bpvw3GNywCrKGgMNvIpByogbla-WEm9fHr3Gg..";
+	BCMAPI.callback = "popClosest";
+
+	
+	// Get playlist, iterate over the video's assign the one with the closest timeslot to the video player.
+	var params = {};
+	params.reference_id = "11_28_14";
+    params.custom_fields = "timeslot";
+	
+	var d = new XDate();
+	var bestMatch = -1; // Sentinel value.  Index in the array of the best match video
+	var videos;
+	
+	BCMAPI.find("find_playlist_by_reference_id", params);
+			
+	function popClosest(results) {
+		videos = results.videos;
+		var currHour = d.getHours(); // The current hour of the day, what we're trying to match
+		var hourDiff = 23; // The starting point, this should decrease as we find times closer to the currHour
+		var vidHour; // hour value from Video Cloud
+			
+		console.log('currHour' + currHour);
+		
+		for (var i=0; i<videos.length; i++) {
+			// sample values for this are numbers like 12/13/14
+			vidHour = videos[i].customFields.timeslot;	
+			console.log('vidHour: ' + vidHour);
+			if (Math.abs(vidHour-currHour) < hourDiff) {
+				console.log('hourDiff is currently: ' + hourDiff);
+				console.log('new hourDiff is: ' +  Math.abs(vidHour-currHour));
+				bestMatch = i;
+				console.log('new bestMatch: ' + i);
+				hourDiff = Math.abs(vidHour-currHour);
+			}		
+		}
+		doneWithMediaSearch();	
+	}
+				
+	</script>
+</head>
+
+<body>
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<div id="playerDiv">
+ <object id="flashObj" class="BrightcoveExperience"><param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" />
+<param name="bgcolor" value="#FFFFFF" />
+<param name="base" value="http://admin.brightcove.com" />
+<param name="seamlesstabbing" value="false" />
+<param name="allowFullScreen" value="true" />
+<!-- <param name="@playlistCombo"  value="' + playlistID + '" /> -->
+<param name="includeAPI" value="true" />
+<param name="templateLoadHandler" value="onTemplateLoad" />
+<param name="templateReadyHandler" value="onTemplateReady" />
+<param name="swLiveConnect" value="true" />
+<param name="allowScriptAccess" value="always" />
+</object>
+</div>
+    <script type="text/javascript">
+    
+	// Assemble the day/time parameter to retrieve the appropriate playlist
+
+	// Commented out for testing
+	var playlistID = "ref:" + (d.getMonth()+1) + '_' + d.getDate() + '_' + d.getHours();
+	
+	// hard coded for testing.	
+	playlistID = "ref:11_28_14";
+	
+	var str = '<object id="flashObj" width="300" height="540" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"><param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" />';
+	str += '<param name="bgcolor" value="#FFFFFF" />';
+	str += '<param name="flashVars" value="templateLoadHandler=onTemplateLoad&templateReadyHandler=onTemplateReady&includeAPI=true&@playlistCombo=' + playlistID + '&playerID=2000908392001&playerKey=AQ~~,AAABs_ku5bE~,oPMqXrrcyAGS8zpwatpIR_rxVWfo6K7n&domain=embed&dynamicStreaming=true" />';
+	str += '<param name="base" value="http://admin.brightcove.com" />';
+	str += '<param name="seamlesstabbing" value="false" />';
+	str += '<param name="allowFullScreen" value="true" />';
+	str += '<param name="@playlistCombo"  value="' + playlistID + '" />';
+	str += '<param name="includeAPI" value="true" />';
+	str += '<param name="templateLoadHandler" value="onTemplateLoad" />';
+  	str += '<param name="templateReadyHandler" value="onTemplateReady" />';
+	str += '<param name="swLiveConnect" value="true" />';
+	str += '<param name="allowScriptAccess" value="always" />';
+	str += '<embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" bgcolor="#FFFFFF" flashVars="templateReadyHandler=onTemplateReady&templateLoadHandler=onTemplateLoad&includeAPI=true&@playlistCombo=' + playlistID + '&playerID=2000908392001&playerKey=AQ~~,AAABs_ku5bE~,oPMqXrrcyAGS8zpwatpIR_rxVWfo6K7n&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" width="480" height="270" seamlesstabbing="false" type="application/x-shockwave-flash" allowFullScreen="true" allowScriptAccess="always" swLiveConnect="true" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed></object>';
+
+	onTemplateLoad = function(experienceID) {
+		console.log('when does this hit');
+    	console.log('expID: ' + experienceID);
+    	player = brightcove.api.getExperience(experienceID);
+		console.log('after player assignment');
+    	modVP = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+    	console.log('after modVP assignment');
+		console.log('in onTemplateLoad bestmatch: ' + bestMatch);
+		if (bestMatch > -1) {
+			  console.log(videos[bestMatch]);
+			  console.log(modVP);
+			  modVP.loadVideoByID(videos[bestMatch].id);
+		}
+
+	}
+
+		function doneWithMediaSearch() {
+			//vidElement = document.getElementById("playerDiv");
+			//vidElement.innerHTML = str;
+
+			console.log('end of page, bestMatch: ' + bestMatch);
+
+		}
+		
+	</script>
+</body>
+</html>

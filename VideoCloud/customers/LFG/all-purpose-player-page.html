@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+    body {
+      margin: 0;
+    }
+    .player-block {
+      width: 100%;
+      height: 100%;
+      the line below for 16:9 video; for 4:3 video, change value to 25%
+      padding-bottom: 56.25%;
+    }
+    .BrightcoveExperience {
+      width: 100%;
+      height: 100%;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="player-block">
+      <!-- Start of Brightcove Player -->
+      <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+      <object id="myExperience1785880099001" class="BrightcoveExperience" style="margin:0;position:relative;top:0;left:0">
+        <param name="bgcolor" value="#FFFFFF" />
+        <!-- These are the params to delete or comment out
+        <param name="width" value="480" />
+        <param name="height" value="270" /> -->
+        <param name="playerID" value="1831687335001" />
+        <param name="playerKey" value="AQ~~,AAABDi-JSEE~,gimkI1WDEZt88hI7gi8pGHP2t-W4M4n3" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <!-- the value below is the video ID for the default video  -->
+        <param name="@videoPlayer" value="1865815061001" />
+      </object>
+      <script type="text/javascript">brightcove.createExperiences();</script>
+      <!-- End of Brightcove Player -->
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+===== page-container-tmpl
+<div class='page page-active blog'>
+  <header class="header">
+    {{if showBackToMoreSection}}
+      <div class="back-button"></div>
+    {{/if}}
+    <h1 class="header-a ellipsis">{{title}}</h1>
+  </header>
+  <div class="drop-shadow"></div>
+  <div class='scroller'>
+    <div class='list-container'></div>
+    {{spinner}}
+  </div>
+</div>
+<div class='page blog-entry-detail'>
+  <header class="header">
+    <div class="back-button"></div>
+    <h1 class="header-a ellipsis"></h1>
+  </header>
+  <div class='scroller'>
+    <div class='list-container'></div>
+  </div>
+</div>
+
+===== error-msg-tmpl
+<h3 class='header-b error-message'>{{error}}</h3>
+
+===== list-items-tmpl
+<ul>
+  {{items}}
+    <li data-bc-entry-id={{#}} class='blog-entry background-a border-a'>
+      <div class='details'>
+        <h2 class='header-b ellipsis listItemTitleTextColor'>{{title}}</h2>
+        <p class='desc-a listItemDateTextColor'>{{pubDate|formatDate}}</p>
+      </div>
+      <div class='arrow'></div>
+    </li>
+  {{/items}}
+</ul>
+
+===== detail-page-tmpl
+<div class='page-content listDetailBackgroundImage'>
+  <h1 class='header-b listDetailTitleTextColor'>{{title}}</h1>
+  <p class='desc-b'>{{posted_on_msg}} {{pubDate|formatDate}}</p>
+  <div class='post desc-a listDetailPostTextColor'>{{description}}</div>
+</div>

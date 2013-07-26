@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<p>Here's what's new in Brightcove Knowledge:</p>
+<ul>
+  <li>Free online training classes available -- go to the <a href="http://www.brightcove.com/en/services/training">Training Class Schedule</a> to sign up:
+    <ul>
+      <li>Brightcove Essentials - every Tuesday and Thursday</li>
+      <li>Customizing Players with BEML - March 15-16</li>
+      <li>Developing with the Brightcove APIs - March 22-23  </li>
+    </ul>
+  </li>
+  <li>
+    <p>New Video Tutorials</p>
+    <ul>
+      <li><a href="http://support.brightcove.com/en/training-videos?id=821141023001">Managing Users</a>  </li>
+    </ul>
+  </li>
+</ul>
+<ul>
+  <li>
+    <p>New and Updated Support Documents:&nbsp;</p>
+    <ul>
+      <li><a href="Creating Audio-Only Renditions for Low-Bandwidth Delivery">Creating Audio-Only Renditions for Low-Bandwidth Delivery</a></li>
+      <li><a href="http://support.brightcove.com/en/docs/modifying-existing-videos-ftp-batch-provisioning">Modifying Existing Videos with FTP Batch Provisioning</a></li>
+      <li><a href="http://support.brightcove.com/en/docs/brightcove-app-sdk-ios">Brightcove App SDK for iOS</a></li>
+      <li><a href="http://support.brightcove.com/en/docs/creating-and-updating-playlists-media-api">Creating and Modifying Playlists with the Media API</a></li>
+    </ul>
+  </li>
+</ul>
+<p><strong>Creating a Player with a Transparent Background: </strong>  Would you like your video player to have a transparent background? You can do this in BEML by adding a backgroundColor attribute to the layout tag:  </p>
+<pre>&lt;Layout backgroundColor=&quot;0x<strong>01</strong>000000&quot;&gt; 
+</pre>
+<p>The 01 value bolded above is the alpha channel set to full transparency (a value of 00 would give you full opacity). You will also need to add a parameter to the JavaScript publishing code:</p>
+<pre>&lt;param name=&quot;wmode&quot; value=&quot;transparent&quot; /&gt;
+</pre>
+<p><br>
+  If you have an Express account and can't use BEML, you can set the background color for the player through the Player API -- note that in all the built-in player templates, the &lt;Layout&gt; tag has the id &quot;application,&quot; which allows you to get a reference to it using the getElementByID() method.</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+  </head>
+
+  <body>
+<h2>Resizing players by modifying the publishing code</h2>
+<style type="text/css">
+.BrightcoveExperience {margin-left: 50px;}
+.BCNote {background-color: #F5F5F5; font-size: smaller;}
+</style>
+<p class="BCNote" >Note: for the player to resize gracefully, the player components, especially the Video Player, need to be sized relatively, so that they expand or contract to fill the available space. If you are using a built-in Video Cloud Template, make sure the description includes the word "resizable" or "scalable." Most of the built-in templates are scalable.</p>
+<p>The publishing code for Brightcove Players contains <code>&lt;param&gt;</code> tags that specify the height and width of the overall player.</p>
+<pre>
+&lt;object id="myExperience" class="BrightcoveExperience"&gt;
+  &lt;param name="bgcolor" value="#FFFFFF" /&gt;
+  &lt;param <span style="color:red">name="width" value="300"</span> /&gt;
+  &lt;param <span style="color:red">name="height" value="340"</span> /&gt;
+  &lt;param name="playerID" value="1195832122001" /&gt;
+  &lt;param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR" /&gt;
+  &lt;param name="isVid" value="true" /&gt;
+  &lt;param name="isUI" value="true" /&gt;
+  &lt;param name="dynamicStreaming" value="true" /&gt;  
+&lt;/object&gt;
+</pre>
+<p>
+  Here is the player that corresponds to that code.<br/>
+</p>
+<!-- Start of Brightcove Player -->
+<div style="display:none"></div>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="300" />
+  <param name="height" value="340" />
+  <param name="playerID" value="1195832122001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+<script type="text/javascript">brightcove.createExperiences();</script>
+<!-- End of Brightcove Player --><p>Now, here is the same player with the value of the width param changed to "405" to eliminate the letter-boxing of the 16:9 videos.</p>
+<pre>
+&lt;param name="width" <strong>value="405"</strong> /&gt;
+&lt;param name="height" value="340" /&gt;
+</pre>
+<!-- Start of Brightcove Player -->
+<div style="display:none; " ></div>
+
+<object id="myExperienceResized" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="405" />
+  <param name="height" value="340" />
+  <param name="playerID" value="1195832122001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />  
+</object>
+<script type="text/javascript" >brightcove.createExperiences();</script>
+<!-- End of Brightcove Player -->
+<p>The exact height and width values you need will depend on what you are trying to do, as well as the sizing of other components in the player, such as lists and images. Some trial and error may be required to get the appearance you want.</p>
+<p>Also note that the way you set the param values differs slightly depending on which version of the publishing code you are using. The example shown above uses the JavaScript Publishing Code.</p>
+<p>If you are using the ActionScript publishing code instead (to embed your player in a Flash container), you will need to modify the following code, which is found in the <code>init()</code> function:</p>
+<pre>
+originalConfig.width = 300;
+originalConfig.height = 340;
+</pre>
+<p>If you are using the HTML to Embed code to embed the player in a blog or some other environment that does not allow JavaScript includes, you will find that width and height attributes appear twice in the code, first near the beginning in an <code>&lt;object&gt;</code> tag (<code>&lt;object id="flashObj" <strong>width="300" height="340"</strong>...</code>). They appear again in the <code>&lt;embed&gt:</code> tag that appears later in the code: <code>...&lt;embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" bgcolor="#FFFFFF" flashVars="playerID=1195832122001&playerKey=AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" <strong>width="300" height="340"</strong>...</code> It is this second set of attributes that you need to modify to change the size of the player. So the following code will create a player that looks like the resized example above.</p>
+<p><code>&lt;object id="flashObj" width="300" height="340" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,47,0"&gt;&lt;param name="movie" value="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" /&gt;&lt;param name="bgcolor" value="#FFFFFF" /&gt;&lt;param name="flashVars" value="playerID=1195832122001&playerKey=AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR&domain=embed&dynamicStreaming=true" /&gt;&lt;param name="base" value="http://admin.brightcove.com" /&gt;&lt;param name="seamlesstabbing" value="false" /&gt;&lt;param name="allowFullScreen" value="true" /&gt;&lt;param name="swLiveConnect" value="true" /&gt;&lt;param name="allowScriptAccess" value="always" /&gt;&lt;embed src="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&isUI=1" bgcolor="#FFFFFF" flashVars="playerID=1195832122001&playerKey=AQ~~,AAAADXdqFgE~,aEKmio9UXaiJFJ4b-xo9Xb6UFi1hKUMR&domain=embed&dynamicStreaming=true" base="http://admin.brightcove.com" name="flashObj" <strong style="color:red;">width="405" height="340"</strong> seamlesstabbing="false" type="application/x-shockwave-flash" allowFullScreen="true" allowScriptAccess="always" swLiveConnect="true" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"&gt;&lt;/embed&gt;&lt;/object&gt;</code></p>
+
+  </body>
+
+</html> 

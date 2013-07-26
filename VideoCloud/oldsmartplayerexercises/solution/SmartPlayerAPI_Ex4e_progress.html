@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Player API Exercise 4</title>
+		<link rel="stylesheet" type="text/css" href="SmartPlayerAPI.css" />
+	</head>
+	<body>
+		<h1>Smart Player API Training</h1>
+		<p>The buttons below are for development purposes only, to switch between Flash and  HTML5 players. Do not use these in production, as the method is unsupported. You should let the Smart Player decide whether to load Flash or HTML5 instead.</p>
+		<div id="modeSwitch">
+			<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+			<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+		</div>
+		<!-- Start of Brightcove Player -->
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		
+		<object id="myExperience" class="BrightcoveExperience">
+		  <param name="bgcolor" value="#FFFFFF" />
+		  <param name="width" value="480" />
+		  <param name="height" value="270" />
+		  <param name="playerID" value="1146049103001" />
+		  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEd1K9zn5lA_OOffNUFbVae" />
+		  <param name="isVid" value="true" />
+		  <param name="isUI" value="true" />
+		  <param name="dynamicStreaming" value="true" />
+		  <param name="@videoPlayer" value="1187529587001" />
+		  <!-- params for Smart Player API -->
+		  <param name="includeAPI" value="true" />
+		  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+		</object>
+		
+		<script type="text/javascript">brightcove.createExperiences();</script>
+		
+		<!-- End of Brightcove Player -->
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  console.log("BCL.onTemplateReady");
+			  BCL.player = brightcove.api.getExperience("myExperience");
+			  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+			  // add event listener for progress on the main video
+			  BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, BCL.onMainProgress);
+			  // capture the original video id and the bumper id (stored as JSON string in the long description)
+			  BCL.videoPlayer.getCurrentVideo( function(videoDTO) {
+				  	BCL.originalID = videoDTO.id;
+				  	BCL.bumper = JSON.parse(videoDTO.longDescription);
+				  	console.log(BCL.bumper);
+				  } );
+			 } 
+			
+			// main video progress handler
+			BCL.onMainProgress = function(event) {
+				console.log("main progress 1 " + event.postion);
+				// stop after 4 seconds
+				if (event.position > 4) {
+					// remove the event listener
+					BCL.videoPlayer.removeEventListener(brightcove.api.events.MediaEvent.PROGRESS, BCL.onMainProgress);
+					// stop playback
+					BCL.videoPlayer.pause(true);
+					// save the restart position
+					BCL.restartPoint = event.position;
+					console.log(BCL.restartPoint);
+					BCL.playBumper(BCL.bumper.bumperID);
+				}
+			}
+
+			// play the "bumper"
+			BCL.playBumper = function(videoID) {
+				console.log("starting the bumper");
+				// add listener for video complete
+				BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, BCL.onBumperComplete);
+				// play the "bumper"
+				BCL.videoPlayer.loadVideoByID(videoID);
+			}
+			// bumper complete handler
+			BCL.onBumperComplete = function(event) {
+				console.log("bumper complete");
+				// remove the bumper complete event listener
+				BCL.videoPlayer.removeEventListener(brightcove.api.events.MediaEvent.COMPLETE, BCL.onBumperComplete);
+				// reload the original video
+				BCL.videoPlayer.loadVideoByID(BCL.originalID);
+				// call check for video playing before seeking
+				BCL.videoPlaying();
+			}
+			
+			BCL.videoPlaying = function () {
+				console.log("check playing");
+				BCL.videoPlayer.getIsPlaying(function(data) {
+						if (data == true) {
+							console.log(data);
+							BCL.videoPlayer.seek(BCL.restartPoint);
+							// add a listener for main video complete to reset
+							BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, BCL.onMainComplete);
+						}
+						else {
+							// function recalls itself till result is true
+							BCL.videoPlaying();
+						}
+					});
+				}
+			// handler for main video complete
+			BCL.onMainComplete = function(event) {
+				console.log("main complete");
+				// remove the main complete event listener
+				BCL.videoPlayer.removeEventListener(brightcove.api.events.MediaEvent.COMPLETE, BCL.onMainComplete);
+				// reset the original progress listener
+				BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, BCL.onMainProgress);
+			}
+			// for development purposes only: reopen page with HTML5 player
+			BCL.switchToHTML5 = function() {
+				var separator = "?";
+				if (document.location.href.indexOf("?", 0) > -1) {
+					separator = "&";
+				}
+				window.location = document.location.href + separator + "forceHTML=true";
+			};
+			// for development purposes only: switch back to Flash
+			BCL.switchToFlash = function() {
+				var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+				window.location = document.location.href.substring(0, startOfQuery);
+			};
+			
+		</script>
+
+	</body>
+</html>

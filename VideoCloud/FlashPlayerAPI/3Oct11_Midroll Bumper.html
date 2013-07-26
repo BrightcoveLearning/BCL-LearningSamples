@@ -1,0 +1,266 @@
+<html>
+<head>
+	<title>Mid-roll Bumper</title>
+</head>
+<body>
+	<p>I've been asked many times if it is possible to make a bumper play in the middle or at the end of the main video, instead of the beginning. The short answer is "no" ... but using the Player API, you can produce a convincing imitation.</p>
+	<p>In the sample below, I play what looks like a bumper in the middle of the video, and then play a second one at the end.</p>
+	<!-- Start of Brightcove Player -->
+	<div style="display:none">&nbsp;</div>
+	<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+	 <object id="myExperience734451479001" class="BrightcoveExperience">
+		<param name="bgcolor" value="#FFFFFF" />
+		<param name="width" value="600" />
+		<param name="height" value="338" />
+		<param name="playerID" value="620280460001" />
+		<param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+		<param name="isVid" value="true" />
+		<param name="isUI" value="true" />
+		<param name="dynamicStreaming" value="true" />
+		<param name="@videoPlayer" value="1194921694001" />
+	</object> 			 			
+	<!-- 
+	This script tag will cause the Brightcove Players defined above it to be created as soon
+	as the line is read by the browser. If you wish to have the player instantiated only after
+	the rest of the HTML is processed and the page load is complete, remove the line.
+	--> 			
+	<script type="text/javascript">brightcove.createExperiences();</script> 			 			
+	<!-- End of Brightcove Player -->
+  <fieldset>
+    <legend>Message</legend> 
+    <div id="message" style="width:100%;border:none"></div>
+  </fieldset>
+  <p>These "bumpers" are not really bumpers - they're just ordinary videos in my account. I stored the video IDs in the Long Description field as a JSON string:</p>
+  <pre>
+  { "bumper1" : 1200264646001 , "bumper2" : 1200287241001 }
+  </pre>
+  <p>To play the first "bumper" near the midpoint of the video, I set up a cue point, and when it's hit,  I load the bumper, saving the position in the main video. When the first bumper finishes, I reload the main video, seeking back to the point where it stopped. When the main video finishes, I play the second bumper. I also added in a couple of embellishments, displaying the time remaining in the first bumper below the player, and inserting a "Thank you" label to the video player that displays while the second bumper plays. All this is done with the standard Chromeless Video Player, so you can reproduce this with any Video Cloud Account. The full code for the script is below.</p>
+  <pre>
+// namespace for everything global
+var BCL = {};
+// var to keep track of what's playing
+BCL.nowPlaying = null;
+// initial setup 
+function onTemplateLoaded(id) {
+  BCL.player = brightcove.getExperience(id);
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+ 	BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+}
+// event listener for player ready
+BCL.onTemplateReady = function(event) {
+  // remove the event listener
+  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  // get a reference to the video player module
+  BCL.videoPlayerModule = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+  // retrieve the "bumper" IDs stored in the video long description
+  BCL.bumpers = JSON.parse(BCL.videoPlayerModule.getCurrentVideo().longDescription);
+  // save the original video id
+  BCL.originalVideoID = BCL.videoPlayerModule.getCurrentVideo().id;
+  // add listener for media complete
+  BCL.videoPlayerModule.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+  // get reference to cuepoint module
+  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+  // add listener for cue points
+  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+  // insert a label that will be displayed with the final bumper
+  // get the parent container of the video player
+  var layout = BCL.videoPlayerModule.getContainer();
+  // append the label component
+  layout.appendChild("&lt;Label x=\"230\" y=\"160\" height=\"24\" size=\"20\" text=\"Thank you\" visible=\"false\" /&gt;");
+  // get a reference to the label
+  BCL.messageLabel = layout.getChildAt(1);
+}
+
+// handler for cue points
+BCL.onCue = function(event) {
+	// only do something the first time the main video plays
+	if (BCL.nowPlaying == null) {
+		// pause the video
+		BCL.videoPlayerModule.pause();
+		// display a message
+		document.getElementById("message").innerHTML = "Bumper 1 starting ...";
+		// save the restart position
+		BCL.restartPosition = event.cuePoint.time;
+		// change now playing
+		BCL.nowPlaying = "bumper1";
+		// play the mid-roll bumper
+		BCL.videoPlayerModule.loadVideo(BCL.bumpers.bumper1);
+		// just to show how, show the viewer how long before the video resumes
+		BCL.videoPlayerModule.addEventListener(BCMediaEvent.PROGRESS, BCL.onBumperProgress);
+	}
+}
+BCL.onMediaComplete = function(event) {
+	// do this if it's bumper1 that's finishing
+	if (BCL.nowPlaying == "bumper1") {
+		// remove the bumper progress listener
+		BCL.videoPlayerModule.removeEventListener(BCMediaEvent.PROGRESS, BCL.onBumperProgress);
+		// change now playing 
+		BCL.nowPlaying = "mainVideo";
+		// display a message
+		document.getElementById("message").innerHTML = "Main video resuming ...";
+		// restart the main video
+		BCL.videoPlayerModule.loadVideo(BCL.originalVideoID);
+		// seek to the restart position
+		BCL.seek(BCL.restartPosition);
+	}
+	// do this if the main video is finishing
+	else if (BCL.nowPlaying == "mainVideo") {
+		// set nowPLaying to bumper2
+		BCL.nowPlaying = "bumper2";
+		// load the post-roll bumper
+		BCL.videoPlayerModule.loadVideo(BCL.bumpers.bumper2);
+		// expose the hidden label
+		BCL.messageLabel.setVisible(true);
+		// display a message
+		document.getElementById("message").innerHTML = "This video brought to you by <a href=\"http:\/\/support.brightcove.com/en/training-videos\">Brightcove Learning</a>"
+	}
+}
+BCL.seek = function(time) {
+  /*
+  it's not possible to seek unless the video is playing
+  so check to see if it's playing and if it's not then
+  save the time and tell the video to play
+	*/
+  if (BCL.videoPlayerModule.isPlaying()) 
+  {
+    BCL.videoPlayerModule.seek(time);
+  }
+  else
+  {
+    // add a progress listener to see when the video starts playing
+    BCL.videoPlayerModule.addEventListener(BCMediaEvent.PROGRESS, BCL.onProgress);
+    BCL.videoPlayerModule.play();
+  }
+}
+
+// handler for progress
+BCL.onProgress = function(event) {
+  // remove the progress event listener and seek to the saved time
+  BCL.videoPlayerModule.removeEventListener(BCMediaEvent.PROGRESS, BCL.onProgress);
+  BCL.seek(BCL.restartPosition);
+}
+// handler for bumper progress
+BCL.onBumperProgress = function(event) {
+  // get remaining time from the event object and round it to an integer
+  var timeRemaining = Math.round(event.duration - event.position);
+  // display the remaining time in the bumper
+  document.getElementById("message").innerHTML = "The video will resume in " + timeRemaining + " seconds";
+}
+  </pre>
+	<!-- Include the Player API -->
+	<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+	<script type="text/javascript">
+		// namespace for everything global
+		var BCL = {};
+		// var to keep track of what's playing
+		BCL.nowPlaying = null;
+		// initial setup 
+		function onTemplateLoaded(id) {
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+		 	BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		}
+		// event listener for player ready
+		BCL.onTemplateReady = function(event) {
+		  // remove the event listener
+		  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		  // get a reference to the video player module
+		  BCL.videoPlayerModule = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // retrieve the "bumper" IDs stored in the video long description
+		  BCL.bumpers = JSON.parse(BCL.videoPlayerModule.getCurrentVideo().longDescription);
+		  // save the original video id
+		  BCL.originalVideoID = BCL.videoPlayerModule.getCurrentVideo().id;
+		  // add listener for media complete
+		  BCL.videoPlayerModule.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+		  // get reference to cuepoint module
+		  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+		  // add listener for cue points
+		  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+		  // insert a label that will be displayed with the final bumper
+		  // get the parent container of the video player
+		  var layout = BCL.videoPlayerModule.getContainer();
+		  // append the label component
+		  layout.appendChild("<Label x=\"230\" y=\"160\" height=\"24\" size=\"20\" text=\"Thank you\" visible=\"false\" />");
+		  // get a reference to the label
+		  BCL.messageLabel = layout.getChildAt(1);
+		}
+
+		// handler for cue points
+		BCL.onCue = function(event) {
+			// only do something the first time the main video plays
+			if (BCL.nowPlaying == null) {
+				// pause the video
+				BCL.videoPlayerModule.pause();
+				// display a message
+				document.getElementById("message").innerHTML = "Bumper 1 starting ...";
+				// save the restart position
+				BCL.restartPosition = event.cuePoint.time;
+				// change now playing
+				BCL.nowPlaying = "bumper1";
+				// play the mid-roll bumper
+				BCL.videoPlayerModule.loadVideo(BCL.bumpers.bumper1);
+				// just to show how, show the viewer how long before the video resumes
+				BCL.videoPlayerModule.addEventListener(BCMediaEvent.PROGRESS, BCL.onBumperProgress);
+			}
+		}
+		BCL.onMediaComplete = function(event) {
+			// do this if it's bumper1 that's finishing
+			if (BCL.nowPlaying == "bumper1") {
+				// remove the bumper progress listener
+				BCL.videoPlayerModule.removeEventListener(BCMediaEvent.PROGRESS, BCL.onBumperProgress);
+				// change now playing 
+				BCL.nowPlaying = "mainVideo";
+				// display a message
+				document.getElementById("message").innerHTML = "Main video resuming ...";
+				// restart the main video
+				BCL.videoPlayerModule.loadVideo(BCL.originalVideoID);
+				// seek to the restart position
+				BCL.seek(BCL.restartPosition);
+			}
+			// do this if the main video is finishing
+			else if (BCL.nowPlaying == "mainVideo") {
+				// set nowPLaying to bumper2
+				BCL.nowPlaying = "bumper2";
+				// load the post-roll bumper
+				BCL.videoPlayerModule.loadVideo(BCL.bumpers.bumper2);
+				// expose the hidden label
+				BCL.messageLabel.setVisible(true);
+				// display a message
+				document.getElementById("message").innerHTML = "This video brought to you by <a href=\"http:\/\/support.brightcove.com/en/training-videos\">Brightcove Learning</a>"
+			}
+		}
+		BCL.seek = function(time) {
+      /*
+			it's not possible to seek unless the video is playing
+      so check to see if it's playing and if it's not then
+      save the time and tell the video to play
+			*/
+      if (BCL.videoPlayerModule.isPlaying()) 
+      {
+        BCL.videoPlayerModule.seek(time);
+      }
+      else
+      {
+        // add a progress listener to see when the video starts playing
+        BCL.videoPlayerModule.addEventListener(BCMediaEvent.PROGRESS, BCL.onProgress);
+        BCL.videoPlayerModule.play();
+      }
+    }
+	
+    // handler for progress
+    BCL.onProgress = function(event) {
+      // remove the progress event listener and seek to the saved time
+      BCL.videoPlayerModule.removeEventListener(BCMediaEvent.PROGRESS, BCL.onProgress);
+      BCL.seek(BCL.restartPosition);
+    }
+    // handler for bumper progress
+    BCL.onBumperProgress = function(event) {
+	    // get remaining time from the event object and round it to an integer
+	    var timeRemaining = Math.round(event.duration - event.position);
+	    // display the remaining time in the bumper
+	    document.getElementById("message").innerHTML = "The video will resume in " + timeRemaining + " seconds";
+    }
+  </script>
+</body>
+</html>

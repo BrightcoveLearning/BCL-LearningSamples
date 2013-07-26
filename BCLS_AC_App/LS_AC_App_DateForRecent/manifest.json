@@ -1,0 +1,472 @@
+{
+    "name": "BC Learning Services App",
+    "description": "BC Learning Services App",
+    "version": "1.0",
+    "devices": [
+        "iPhone",
+        "Android"
+    ],
+    "platformConfig": {
+        "android": {
+            "nativeNavigation": false
+        },
+        "iOS": {
+            "nativeNavigation": false
+        }
+    },
+    "views": [
+        {
+            "navigationTitle": "Brightcove Page",
+            "navigationIcon": "images/icons/logo-corporate.png",
+            "uri": "brightcove.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/brightcove.txt",
+            "data": [
+              {
+                "name": "corpblog",
+                "contentFeed": "50ca4fef42ead55f1e029fb1",
+                "type": "feed",
+                "items": {
+                    "title":        { "type": "string" },
+                    "link":         { "type": "string" },
+                    "description":  { "type": "string" },
+                    "pubDate":      { "type": "string" },
+                    "guid":         { "type": "string" }
+                }
+              },
+              {
+                "name": "abouthtml",
+                "contentFeed": "5102a3fd5f9cfa184c03adf6",
+                "type": "text_block"
+              }
+            ]
+        },
+        {
+            "navigationTitle": "Video Cloud Page",
+            "navigationIcon": "images/icons/videocloud.png",
+            "uri": "videocloud.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/ac_vc_common.txt",
+            "data": [
+              {
+                "name": "vcupdate",
+                "contentFeed": "50a7d6623f62d53af50095ab",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "description":    { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "vcrecent",
+                "contentFeed": "50a7d61c077b285b4a0974b9",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              },
+              {
+                "name": "vcvideos",
+                "contentFeed": "50ad16b7077b28488405ce6e",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "link":       { "type": "string" },
+                    "description":    { "type": "string" },
+                    "category":       { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" }
+                }
+              }
+            ]
+        },
+        {
+            "navigationTitle": "Zencoder Page",
+            "navigationIcon": "images/icons/videocloud.png",
+            "uri": "zencoder.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/zencoder.txt",
+            "data": [
+              {
+                "name": "zcblog",
+                "contentFeed": "50cb8bd142ead54ed123a756",
+                "type": "feed",
+                "items": {
+                    "title":     { "type": "string" },
+                    "description":    { "type": "string" },
+                    "pubDate":       { "type": "string" },
+                    "guid":       { "type": "string" },
+                    "content_encoded": {"type": "string"}
+                }
+              }
+            ]
+        },
+        {
+            "navigationTitle": "Status Page",
+            "navigationIcon": "images/icons/videocloud.png",
+            "uri": "status.html",
+            "locales": "./txt/locales/en.txt",
+            "markup": "./txt/markup/status.txt",
+            "data": [
+              {
+                "name": "nadissyn",
+                "contentFeed": "50e73c4c91954a058807396c",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "nalivestream",
+                "contentFeed": "50e73d735f9cfa192f029e12",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "namars",
+                "contentFeed": "50e73ee4e6cd9933e602f62c",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "napbak",
+                "contentFeed": "50e7404591954a714f026f28",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "napbbc",
+                "contentFeed": "50e740ba91954a3719035d1d",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "napblime",
+                "contentFeed": "50e7413691954a0588075b81",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "naanalytics",
+                "contentFeed": "50e7428fe2a6427ffd0778b9",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "nauploading",
+                "contentFeed": "50d0ce798a3fd238770049f4",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "navcstudio",
+                "contentFeed": "50e84ecb5f9cfa416d0da5b9",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "navidproc",
+                "contentFeed": "50e84f3c5f9cfa192f08852f",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeadissyn",
+                "contentFeed": "50eb11ad5f9cfa4c48006d9c",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emealivestream",
+                "contentFeed": "50eb183b499a021ace00e0dc",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeamars",
+                "contentFeed": "50eb18aa91954a46b700d261",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeapbak",
+                "contentFeed": "50eb1f60e2a6422bc9001d8c",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeapbbc",
+                "contentFeed": "50eb2156987d0351e800262f",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeapblime",
+                "contentFeed": "50eb228de6cd994e97003950",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeaanalytics",
+                "contentFeed": "50eb36085f9cfa1b650092b8",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeauploading",
+                "contentFeed": "50eb366de6cd990c2f009fe8",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeavcstudio",
+                "contentFeed": "50eb372f5f9cfa1b5f00acab",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "emeavidproc",
+                "contentFeed": "50eb37d0e6cd990ca500afc0",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpdissyn",
+                "contentFeed": "50f450b0987d032f7409eea8",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jplivestream",
+                "contentFeed": "50f4510b987d03164006ce71",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpmars",
+                "contentFeed": "50f45164e2a64277dd031eb4",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jppbak",
+                "contentFeed": "50f451c691954a077d254b98",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jppbbc",
+                "contentFeed": "50f45220499a022be50d946c",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jppblime",
+                "contentFeed": "50f45329e6cd9950f503f207",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpanalytics",
+                "contentFeed": "50f453965f9cfa3887260f7a",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpuploading",
+                "contentFeed": "50f453e4499a02523c00f6fd",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpvcstudio",
+                "contentFeed": "50f4545e499a02523c00fa8d",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "jpvidproc",
+                "contentFeed": "50f454bc987d03164006ec6e",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacdissyn",
+                "contentFeed": "50f4560be6cd99531d102b08",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacmars",
+                "contentFeed": "50f456e1499a02523c010c25",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacpbak",
+                "contentFeed": "50f4573b499a02448c0d1987",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacpbbc",
+                "contentFeed": "50f4579591954a33600185f4",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacpblime",
+                "contentFeed": "50f457fa499a02602900fb4a",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacanalytics",
+                "contentFeed": "50f4585c499a02602900ff33",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacuploading",
+                "contentFeed": "50f458a1e6cd99354e00c3d8",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacvcstudio",
+                "contentFeed": "50f458e4e6cd99354e00c696",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              },
+              {
+                "name": "apacvidproc",
+                "contentFeed": "50f45997987d03256b05207b",
+                "type": "feed",
+                "items": {
+                    "sb_status":        { "type": "string" },
+                    "sb_message":       { "type": "string" }
+                }
+              }
+            ]
+        }
+    ]
+}

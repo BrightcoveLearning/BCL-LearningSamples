@@ -1,0 +1,232 @@
+@media (min-width: 979px) {
+    .header {
+        height: 30px;
+        padding-bottom: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+  .navbar-fixed-top,
+  .navbar-fixed-bottom,
+  .navbar-static-top {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 979px) {
+  #pageone .header {
+    margin-bottom: 35px;
+  }
+}
+
+body {
+	background-color:#FFF;
+  font-family: 'ProximaNova-Regular';
+}
+
+div#first-page-details {
+  margin-top: 2px;
+}
+
+#pagetwo .header {
+  height: 37px;
+}
+
+#back-button {
+	padding: 0px;
+	margin:  0px 0px 10px;
+	position: absolute;
+	top: 90px;
+	left: 25px;
+}
+
+/*  TOP NAV  */
+.nav > li > a {
+  height:30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 15px;
+  line-height: 30px;
+}
+
+.navbar .nav > li > a {
+  height:30px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 15px;
+}
+
+.app-navigation {
+      font-size: 90%;
+      font-weight: bold;
+}
+
+.navbar-fixed-top .navbar-inner  {
+  margin: 0px;
+  padding: 0px;
+  min-height: 30px;
+}
+
+/*  SIDE NAV  */
+
+.nav-pills > li > a {
+padding: 8px 12px 0px;
+margin: 2px 2px 0 0;
+line-height: none;
+}
+
+.nav-pills > .active,
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+color: #ffffff;
+}
+
+
+a {
+color:#717171;
+}
+
+a:hover {
+color:#606060;
+text-decoration: none;
+}
+
+/*.nav-pills.nav-stacked > li > a:active {
+color:#fff;
+}*/
+
+.label-inverse, .badge-inverse {
+background-color: #717171;
+}
+
+.nav-stacked li {
+  margin-left: 10px;
+}
+
+.navbar .btn {
+  margin-bottom: 4px;
+}
+
+/*  CONTENT  */
+
+ul, ol {
+padding: 0;
+margin: 0 10px 0 10px;
+}
+
+.liDetail, .liDetail > h3 {
+	color: #717171;
+	text-shadow: 0 1px 0 #ffffff;
+}
+
+.liDetail > h3 {
+    font-size: 20px;
+    line-height:22px;
+    margin:0px;
+    padding: 5px 0px 0px;
+}
+
+.liDetail {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 80%,  from(#f9f9f9), to(#e1e1e1));
+    list-style-type: none;
+    padding: 5px 10px 1px;
+    margin: 0px;
+}
+
+.unread > a:active {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 80%,  from(#e1e1e1), to(#d0d0d0));
+}
+
+.unread, .unread > h3 {
+  text-shadow:none;
+  color:#fff;
+}
+
+.liDetail:first-child {
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+	-moz-border-top-left-radius: 5px;
+	-moz-border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.liDetail:last-child {
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+	-moz-border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+section#pagetwo.header .back-button {
+position: absolute;
+top: 20px;
+left: 20px;
+}
+
+.btn-link:active {
+  text-decoration: none;
+}
+
+section#pagetwo.page.header {
+  height: 40px;
+}
+
+div#second-page-content.content {
+  padding:20px;
+  padding-top: 0px;
+}
+
+#second-page-content h1, h2, h3, h4 {
+  margin: 20px 0px 0px;
+  color:#515151;
+}
+
+#second-page-content h2 {
+  font-size: 24px;
+  line-height:26px;
+  text-transform:uppercase;
+}
+
+#second-page-content h3 {
+  font-size: 20px;
+  line-height:24px;
+}
+
+#second-page-content h4 {
+  font-size: 16px;
+  line-height:20px;
+}
+
+#second-page-content h2, h3, h4 {
+  font-family: 'ProximaNova-Semibold';
+}
+
+#second-page-content em {
+  font-family: 'ProximaNova-RegularIt';
+}
+
+#second-page-content a {
+	color:#717171;
+	text-decoration:underline;
+}
+
+.outer-container {
+  width: 90%;
+  height: 90%;
+}
+.inner-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 56.25%;
+  position: relative;
+}
+.BrightcoveExperience {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+}

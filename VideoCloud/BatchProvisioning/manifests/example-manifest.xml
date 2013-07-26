@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<publisher-upload-manifest publisher-id="101" preparer="3rd Street Video">
+
+  <notify email="him@your-company.com"/>
+  <notify email="her@your-company.com"/>
+
+  <asset filename="MyVideo.preview.flv"
+            refid="asset1"
+             size="188812"
+        hash-code="a4ade1e2b09d517ff7360f91527639b3"
+     display-name="My Video (FLV preview)"
+             type="FLV_PREVIEW"/>
+
+  <asset filename="MyVideo.flv"
+            refid="asset2"
+             size="21064794"
+        hash-code="68792cf467a501f098ed6bcd3f8d0bbc"
+     display-name="My Video (FLV full)"
+             type="FLV_FULL"/>
+
+  <asset filename="MyVideo.thumb.jpg"
+            refid="asset4"
+             size="21887"
+        hash-code="ddac914818459cb7f7df418146916742"
+     display-name="My Video (Thumbnail)"
+             type="THUMBNAIL"/>
+
+  <title              name="My Title"
+                     refid="title1"
+                    active="TRUE"
+       flash-preview-refid="asset1"
+          flash-full-refid="asset2"
+           thumbnail-refid="asset4"
+                     color="TRUE"
+                  language="English"
+                    rating="TV-Y7"
+              release-date="10/5/2005"
+                    genre1="3575"
+                    genre2="3576">
+    <short-description>My short description.</short-description>
+    <long-description>My long description.</long-description>
+    <related-link-url>http://your-company.com/</related-link-url>
+    <related-link-text>Come learn about us!</related-link-text>
+    <award>Two Thumbs Award</award>
+    <award>Frank's Award</award>
+    <tag>funny</tag>
+    <tag>stupid</tag>
+  </title>
+
+  <manual-lineup  name="My Manual Lineup"
+                 refid="lineup1"
+                active="TRUE"
+       thumbnail-refid="asset4">
+    <title-refid>title1</title-refid>
+  </manual-lineup>
+
+  <automatic-lineup  name="My Automatic Lineup"
+                    refid="lineup2"
+                   active="TRUE"
+                     type="NEWEST_TO_OLDEST"
+               tag-filter="AND"
+          thumbnail-refid="asset4">
+    <title-tag>sporty</title-tag>
+  </automatic-lineup>
+
+</publisher-upload-manifest>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Smart Player API Example</title>
+  <style>
+    body {
+    font-family : Helvetica,Arial,sans-serif; 
+    color : #619FA8;
+    padding: 50px;
+    }
+    a {
+       cursor: pointer;
+    }
+    #BCL-playerWrapper {
+      padding: 0px;
+      position:relative;
+    }
+    #BCL {
+      position:absolute;
+      /******
+      the following values determine the location of the CTA image;
+      they are pixels measurements from the top left corner of the 
+      video player
+      ******/
+      left:400px;
+      top:100px;
+
+    }
+    #BCL img {
+      visibility: hidden;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #BCL img.transparent {
+      visibility: visible;
+      opacity:0;
+    }
+    #BCL img.opaque {
+      visibility: visible;
+      opacity: 1;
+    }
+    #BCL_onclick {
+      cursor:pointer;
+    }
+
+  </style>
+  </head>
+
+  <body>
+    <h1>Smart Player API Call-to-Action Sample</h1>
+    <p>Call-to-action image URL is stored in video metadata. Some Media Events are also below the player - open the Console to see the event objects logged.</p>
+    <div id="BCL-playerWrapper">
+    <!-- Start of Brightcove Player -->
+    <div style="display:none"></div>
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <object id="myExperience1785880099001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="590" />
+      <param name="height" value="332" />
+      <param name="playerID" value="1785549116001" />
+      <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiIGkaZsDcv8oF7O6vHDOp-" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      <!-- the value below is the video ID -->
+      <param name="@videoPlayer" value="1785880099001" />
+      <!-- need to add the param below so overlays work in Flash -->
+      <param name="wmode" value="transparent" />
+      <!-- params for Smart Player API -->
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="onTemplateLoaded" />
+      <param name="templateReadyHandler" value="onTemplateReady" />
+    </object>
+    <script type="text/javascript">brightcove.createExperiences();</script>
+    <!-- End of Brightcove Player -->
+      <div id="BCL" class="shadow">
+        <a id="ctaLink"><img id="cta" class="transparent" src="http://files.brightcove.com/1x1.png" /></a>
+      </div>
+      <div id="log">
+        <fieldset>
+          <legend>Event Log</legend>
+          <div id="eventLog"></div>
+        </fieldset>
+      </div>
+    </div>
+    <script type="text/javascript">
+      (function(window) {
+        var player,videoPlayer,cuePointsModule;
+        var image = document.getElementById("cta");
+        var clickThru = document.getElementById("ctaLink");
+        var videoID = 1187529587001;
+        var eventLog = document.getElementById("eventLog");
+        //event listener for template loaded
+        onTemplateLoaded = function(experienceID) {
+          log("template loaded");
+          player = brightcove.api.getExperience(experienceID);
+        }
+        // event listener for the player being ready
+        onTemplateReady = function(event) {
+          log("template ready");
+          // get a reference to the video player and add listener for media complete
+          videoPlayer = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+          // get the long description and parse it
+          videoPlayer.getCurrentVideo(function(videoDTO) {
+            imageData = JSON.parse(videoDTO.longDescription);
+            log(imageData);
+          })
+          // add some media event listeners
+          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onMediaBegin);
+          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.STOP, onMediaStop);
+          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PLAY, onMediaPlay);
+          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onMediaComplete);
+          
+          // get a reference to the cue points module and set a listener
+          cuePointsModule = player.getModule(brightcove.api.modules.APIModules.CUE_POINTS);
+          cuePointsModule.addEventListener(brightcove.api.events.CuePointEvent.CUE, onCuePoint);
+         };
+        // Cue points handler
+        onCuePoint = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Cue Point Hit<br />";
+          if (evt.cuePoint.name === "ctaStart") {
+            clickThru.setAttribute("href", imageData.linkURL);
+            image.setAttribute("src", imageData.imageURL);
+            image.setAttribute("class", "opaque");
+            image.src = imageData.imageURL;
+            image.className = "opaque";
+          }
+          else if (evt.cuePoint.name === "ctaEnd") {
+            image.setAttribute("class", "transparent");
+            image.className = "transparent";
+          }
+        };
+        // media event handlers
+        onMediaBegin = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Media BEGIN event<br />";
+        }
+        onMediaStop = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Media STOP event<br />";          
+        }
+        onMediaPlay = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Media PLAY event<br />";          
+        }
+        onMediaStop = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Media STOP event<br />";          
+          // load a new video
+          videoPlayer.loadVideoByID(videoID);
+          eventLog.innerHTML += "New Video Loaded: " + videoID + "<br />";
+          videoPlayer.getCurrentVideo(function(videoDTO) {
+            log(videoDTO);
+          });
+        }
+        onMediaComplete = function(evt) {
+          log(evt);
+          eventLog.innerHTML += "Media COMPLETE event<br />";
+          // load a new video
+          videoPlayer.loadVideoByID(videoID);
+          eventLog.innerHTML += "New Video Loaded: " + videoID + "<br />";
+          videoPlayer.getCurrentVideo(function(videoDTO) {
+            log(videoDTO);
+          });
+        }
+        // debugging tool - wraps console.log to avoid errors in IE 7 & 8
+        log = function(message) {
+          if (window["console"] && console["log"]) {
+            var d = new Date();
+            console.log(d + ": ");
+            console.log(message);
+          };
+        };
+      })(window);
+    </script>
+
+  </body>
+
+</html> 

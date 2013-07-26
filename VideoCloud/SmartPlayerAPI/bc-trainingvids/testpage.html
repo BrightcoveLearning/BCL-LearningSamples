@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="shortcut icon" href="http://support.brightcove.com/sites/default/files/favicon.ico" type="image/x-icon" />
+<meta http-equiv="content-language" content="en" />
+<meta name="ICBM" content="42.375, -71.1061111" />
+                <meta name="geo.position" content="42.375;-71.1061111" />
+                <meta name="geo.placename" content="Cambridge, MA, United States" />
+                <meta name="geo.region" content="ma-us" />
+<script type="text/javascript">
+                <!--//--><![CDATA[//><!--
+                var _gaq = _gaq || [];
+                _gaq.push(
+                  ["_setAccount", "UA-2728311-17"],
+                  ["_setDomainName", ".brightcove.com"],
+                  ["_trackPageview"],
+                  ["b._setAccount", "UA-2728311-23"],
+                  ["b._setDomainName", ".brightcove.com"],
+                  ["b._trackPageview"]
+                );
+                (function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();
+                //--><!]]>
+                </script>
+<link rel="stylesheet" type="text/css" href="https://files.brightcove.com/BCL-document.css" />
+
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.brightcove.com/bc/all" />  
+  <title>Live Streaming with Wirecast | Brightcove Support</title>
+  <link type="text/css" rel="stylesheet" media="all" href="/modules/acquia/admin_menu/admin_menu.css?1" />
+<link type="text/css" rel="stylesheet" media="all" href="http://support.brightcove.com/sites/default/files/css/css_34e18807fd91239465874da9be959714.css" />
+  <script type="text/javascript" src="http://support.brightcove.com/sites/default/files/js/js_38083df8ae61a1c0a54d24ab630d4514.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/","admin_menu":{"margin_top":1},"lightbox2":{"rtl":"0","file_path":"\/(\\w\\w\/)sites\/default\/files","default_image":"\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":1,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":true,"loop_items":0,"node_link_text":"View Image Details","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"()","trigger_lightbox_classes":"","trigger_lightbox_group_classes":"","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":"lightbox_ungrouped","custom_trigger_classes":"img.lightbox","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":5000,"slideshow_automatic_start":true,"slideshow_automatic_exit":true,"show_play_pause":true,"pause_on_next_click":false,"pause_on_previous_click":true,"loop_slides":false,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0},"commentErrorName":"Please enter your name.","commentErrorEmail":"Please enter a valid email address.","commentErrorComment":"Please enter a comment.","lang":"en"});
+//--><!]]>
+</script>
+  <script type="text/javascript"> </script>
+  <!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/supportbrightcove2012/css/ie7.css"/>
+    <![endif]-->
+  <!--[if IE 8]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/supportbrightcove2012/css/ie8.css"/>
+    <![endif]-->
+  <!--[if IE]>
+  <link type="text/css" rel="stylesheet" media="all" href="/sites/all/themes/supportbrightcove2012/css/fix-ie.css" />  <![endif]-->
+</head>
+<body class="not-front logged-in page-node node-type-training-video one-sidebar sidebar-left context-video-cloud i18n-en">
+<div id="header" class="clear-block">
+<div class="inner">
+  <div class="sticky">
+    <div id="header-top">
+      <div id="header-left">
+      <div id="corporate">
+          <a class="corporate" href="http://www.brightcove.com/en/" title="Brightcove.com">Brightcove Corporate home</a>
+        </div>
+        <div id="product-switcher">
+                    <a href="/en/video-cloud" class="current-product video-cloud"><div></div></a>
+          <a href="/en/app-cloud" class="other-product app-cloud"><div></div></a>
+        </div>
+        <span class="support"><a href="/en/">Support</a></span>
+      </div>
+      <div id="header-wrap">
+        <div id="header-right">
+          <ul>
+              <li id="language-wrapper"><a class="language" href="#">English</a><div id="language-dropdown"><div class="arrow"></div><ul><li class="en first active"><a href="/en/video-cloud/training-videos/live-streaming-wirecast" class="language-link active">English</a></li>
+<li class="fr"><a href="/fr/video-cloud/videos-educatives/live-streaming-wirecast" class="language-link">Français</a></li>
+<li class="de"><a href="/de/video-cloud/trainingsvideos/live-streaming-wirecast" class="language-link">Deutsch</a></li>
+<li class="ja"><a href="/ja/video-cloud/%E5%8B%95%E7%94%BB%E3%83%81%E3%83%A5%E3%83%BC%E3%83%88%E3%83%AA%E3%82%A2%E3%83%AB/live-streaming-wirecast" class="language-link">日本語</a></li>
+<li class="es last"><a href="/es/video-cloud/videos-de-formacion/live-streaming-wirecast" class="language-link">Español</a></li>
+</ul></div></li>              <li class="contact"><a href="/en/contact">Support Request</a></li>
+              <li class="system"><a href="/en/system-status">System Status</a></li>
+              <li class="signin"><a href="#">Sign In</a>
+                <div class="signin-dropdown">
+                  <div class="arrow"></div>               
+                  <ul>
+                  <li class="signin-video-cloud"><a href="http://videocloud.brightcove.com" target="_blank"><span>Video Cloud</span></a></li>
+                  <li class="signin-app-cloud"><a href="http://appcloud.brightcove.com" target="_blank"><span>App Cloud</span></a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="separator" class="sticky"></div>
+<div class="inner">
+        <div id="header-mid">
+            <div id="nav">
+                <ul>
+                                        <li><a href="/en/video-cloud/docs" class="">Documentation</a></li>
+                    <li><a href="/en/video-cloud/solutions" class="">Knowledge Base</a></li>
+                    <li><a href="/en/video-cloud/training-videos" class="active">Training Videos</a></li>
+                    <li class="last"><a href="/en/video-cloud/product-updates" class="">Product Updates</a></li>
+                </ul>
+            </div>
+    </div>
+</div>
+<div id="separator" class="sticky"></div>
+<div class="inner">
+  <div class="">
+    <div id="header-bottom">
+
+      <form action="http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast"  accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div class="container-inline">
+
+  <div class="form-item" id="edit-search-block-form-1-wrapper">
+ <div class="bg-wrap"><input type="text" maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="Have a question?" title="Enter the terms you wish to search for." class="form-text" /></div>
+</div>
+
+  <div id="search-submit-wrapper">
+    <input type="submit" name="op" id="edit-submit-3" value="Search"  class="form-submit" />
+  </div>
+
+  <input type="hidden" name="form_build_id" id="form-f97ca65023b357783759ebfdaa9f864b" value="form-f97ca65023b357783759ebfdaa9f864b"  />
+<input type="hidden" name="form_token" id="edit-search-block-form-form-token" value="cc995bb16c5a0a401bab6677589e5f19"  />
+<input type="hidden" name="form_id" id="edit-search-block-form" value="search_block_form"  />
+<input type="hidden" name="context" id="edit-context-1" value="video-cloud"  />
+
+</div>
+
+</div></form>
+      
+    </div>
+  </div>
+</div>
+</div>  <div id="wrapper" class="">
+    <div class="inner">
+      <div id="top-region">
+                  </div>
+      <div id="container" class="clear-block">
+                <div class="clear"></div>
+                <div id="sidebar-left" class="sidebar">
+                
+<div id="block-brightcove_support-support_browse_topics" class="block block-brightcove_support">
+  <div class="block-header-top">
+    <h2>Browse Topics</h2>
+  </div>
+
+  <div class="content clearfix">
+    <ul><li class="first"><a href="/en/video-cloud/training-videos/topics/3318" class="">Getting Started</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3349" class="">Adding Videos</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3330" class="">Managing Videos</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3331" class="">Creating &amp; Customizing Players</a></li><li class=" active"><a href="/en/video-cloud/training-videos/topics/3332" class=" active">Publishing Videos</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3333" class="">Integrating Ads</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3334" class="">Using Reports &amp; Analytics</a></li><li class=""><a href="/en/video-cloud/training-videos/topics/3329" class="">Administering Accounts &amp; Users</a></li><li class=" last"><a href="/en/video-cloud/training-videos/topics/3386" class="">General Information</a></li>  </div>
+</div>
+
+<div id="block-brightcove_support-support_latest_product_update" class="block block-brightcove_support">
+  <div class="block-header-top">
+    <h2>Latest product update</h2>
+  </div>
+
+  <div class="content clearfix">
+    <div class="block-content"><div class="title"><h4><a href="/en/video-cloud/product-updates/1210">12.10</a></h4></div><div class="date">Released Oct 18, 2012</div></div>  </div>
+</div>
+
+<div id="block-block-42" class="block block-block">
+  <div class="block-header-top">
+    <h2>Developer Resources</h2>
+  </div>
+
+  <div class="content clearfix">
+    <ul id="dev-resources">
+        <li class="first"><a href="http://docs.brightcove.com/en/smart-player-api">Smart Player API</a></li>
+    <li><a href="http://docs.brightcove.com/en/media">Media API Reference</a></li>
+    <li><a href="http://docs.brightcove.com/en/player">Flash-Only Player API</a></li>
+    <li><a href="http://support.brightcove.com/en/docs/brightcove-sdks">Video Cloud SDKs</a></li>
+    <li><a href="http://docs.brightcove.com/en/beml">BEML DTD Reference</a></li>
+        <li><a href="http://opensource.brightcove.com">Open Source</a></li>
+        <li><a href="http://docs.brightcove.com/en/bc-ios-sdk/">Brightcove iOS Player</a></li>
+        <li class="last"><a href="http://docs.brightcove.com/en/video-cloud-analytics-api/">Video Cloud Analytics API</a></li>
+</ul>  </div>
+</div>
+
+<div id="block-brightcove_support-support_latest_tweets" class="block block-brightcove_support">
+
+  <div class="content clearfix">
+    <div class="block support-twitter"><div class="block-header-top"><h2>Latest Tweets</h2><a href="" class="more" target="_blank">follow us →</a></div><div class="content clearfix"><div class="tweets-pulled-listing">
+
+      
+    
+        <span class="tweet-text">@<a href="http://twitter.com/broonix" rel="nofollow" title="@broonix">broonix</a> All looks good on our system status page. Please contact support for help if you continue to have issues: <a href="http://t.co/0HcqDg1K" rel="nofollow" title="http://t.co/0HcqDg1K">t.co/0HcqDg1K</a></span>
+        <div>
+          <div class="tweet-authorphoto"><img src="http://a0.twimg.com/profile_images/1239345522/brightcove-logo-vertical-grey_square_normal.jpg" alt="Brightcove" /></div>
+          <span class="tweet-author"><a href="http://twitter.com/Brightcove">@Brightcove</a></span>
+          <div class="tweet-time">7 Dec</div>
+        </div>
+        
+      </li>
+        </ul>
+  </div>
+</div></div>  </div>
+</div>
+        </div>
+        
+        <div id="center">
+          <div class="shadow">
+            
+                    <div id="tabs-wrapper" class="clear-block">
+              <ul class="tabs primary">
+<li class="active" ><a href="/en/video-cloud/training-videos/live-streaming-wirecast" class="active">View</a></li>
+<li ><a href="/en/node/10400/edit">Edit</a></li>
+<li ><a href="/en/node/10400/translate">Translate</a></li>
+<li ><a href="/en/node/10400/nodequeue">Nodequeue</a></li>
+</ul>
+              </div>
+            
+         
+            <!-- Player -->
+<div style="display:none">
+</div>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="659" />
+  <param name="height" value="371" />
+  <param name="playerID" value="1922430209001" />
+  <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLAQ4THk40pgUa77_9gDNXkV5" />
+  <param name="isVid" value="true" />
+  <param name="wmode" value="opaque" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="linkBaseURL" value="http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast" />
+  <param name="@videoPlayer" value="956561276001" />
+    <!-- params for Smart Player API -->
+  <param name="includeAPI" value="true" />
+</object>
+<script type="text/javascript">brightcove.createExperiences();</script>
+<!-- End Player -->
+<div id="content">
+  <h1 class="node-title">Live Streaming with Wirecast<a class="comment-count" href="javascript:void(0);">0</a></h1>
+  <div class="short-description">
+    Live Streaming with Wirecast  </div>
+  <div class="description"></div>
+  <div id="share">
+    <div class="inside">
+            <div class="gp-button"><div class="g-plusone" data-size="medium"></div></div>
+      <div class="fb-button"><iframe frameborder="0" allowTransparency="true" style="overflow-x: hidden; overflow-y: hidden; border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-image: initial; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; width: 90px; height: 25px; " src="//www.facebook.com/plugins/like.php?href=http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font=arial&amp;layout=button_count"></iframe></div>
+      <div class="twt-button"><iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1335513764.html#_=1335902245260&amp;count=horizontal&amp;counturl=http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http://support.brightcove.com/en/video-cloud/training-videos&amp;size=m&amp;text=Live%20Streaming%20with%20Wirecast&amp;url=http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast&via=Brightcove" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px; " title="Twitter Tweet Button"></iframe></div>
+      <div class="li-button"><script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/Share" data-counter="right"></script></div>
+    </div>
+  </div>
+  <div id="tab-bar">
+    <div id="more-from-topic" class="active tab"><div class="inside"><div class="icon"></div><div class="label">More from this topic</div><div class="clear"></div></div></div>
+    <div id="view-comments" class="tab"><div class="inside"><a class="comment-count-tab" href="javascript:void(0);">0</a><div class="label">Comments</div><div class="clear"></div></div></div>
+    <div id="view-transcription" class="tab"><div class="inside"><div class="icon"></div><div class="label">Transcription</div><div class="clear"></div></div></div>
+  </div>
+  <div id="topic-videos" class="panel">
+    <div class="view view-training-videos-more view-id-training_videos_more view-display-id-block_1 view-dom-id-1">
+  
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <a class="video-thumbnail" href="http://support.brightcove.com/en/video-cloud/training-videos/live-steaming-adobe-flash-media-live-encoder">
+  <img class="still" src="http://brightcove01.brightcove.com/23/20318290001/201211/529/20318290001_1969084971001_Live-Streaming-using-Adobe-Flash-Media-Live-Encoder.jpg?pubId=20318290001" />
+  <div class="bottom">
+    <div class="title">Live Steaming with Adobe Flash...</div>
+    <div class="duration">5:22</div>
+  </div>
+</a>  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <a class="video-thumbnail" href="http://support.brightcove.com/en/video-cloud/training-videos/restricting-video-playback">
+  <img class="still" src="http://brightcove01.brightcove.com/23/20318290001/201211/63/20318290001_1969158017001_Restricting-Video-Playback.jpg?pubId=20318290001" />
+  <div class="bottom">
+    <div class="title">Restricting Video Playback</div>
+    <div class="duration">2:47</div>
+  </div>
+</a>  </div>
+  <div class="views-row views-row-3 views-row-odd">
+    <a class="video-thumbnail" href="http://support.brightcove.com/en/video-cloud/training-videos/enabling-viral-distribution">
+  <img class="still" src="http://brightcove01.brightcove.com/23/20318290001/201211/2929/20318290001_1969225867001_Enabling-Viral-Distribution.jpg?pubId=20318290001" />
+  <div class="bottom">
+    <div class="title">Enabling Viral Distribution</div>
+    <div class="duration">2:32</div>
+  </div>
+</a>  </div>
+  <div class="views-row views-row-4 views-row-even">
+    <a class="video-thumbnail" href="http://support.brightcove.com/en/video-cloud/training-videos/publishing-players-playlists">
+  <img class="still" src="http://brightcove01.brightcove.com/23/20318290001/201211/793/20318290001_1969196330001_Publishing-a-Player-with-Playlists.jpg?pubId=20318290001" />
+  <div class="bottom">
+    <div class="title">Publishing Players with Playlists</div>
+    <div class="duration">1:26</div>
+  </div>
+</a>  </div>
+  <div class="views-row views-row-5 views-row-odd views-row-last">
+    <a class="video-thumbnail" href="http://support.brightcove.com/en/video-cloud/training-videos/quick-video-publishing">
+  <img class="still" src="http://brightcove01.brightcove.com/23/20318290001/201211/2399/20318290001_1969131729001_Quick-Video-Publishing.jpg?pubId=20318290001" />
+  <div class="bottom">
+    <div class="title">Quick Video Publishing</div>
+    <div class="duration">1:46</div>
+  </div>
+</a>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>     <div class="clear"></div>
+  </div>
+  <div id="transcription" class="panel">
+    <div id="transcript">&nbsp;</div>
+      <script type="text/javascript" src="http://p3.3playmedia.com/p3.js"></script>
+      <script type="text/javascript">
+      window.p3_async_init = function(){
+        P3.init({
+          "myExperience" : {
+              file_id: 956561276001,
+              platform_integration: true,
+              player_type: "brightcove",
+              transcript: {
+              target: "transcript",
+              height: "390px",
+              width: "599px",
+              skin: "ice",
+              can_print: true,
+              can_download: true,
+              scan_view: true
+            }
+          }
+        },"TBHMgJqRoP_Kq8Yj9CYAbS8QC6ai6A_Z");
+      }
+    </script>
+    <p class="threeplaynote">Transcriptions provided by <a href="http://www.brightcove.com/en/partners/3play-media">3Play Media</a></p>
+  </div>
+</div><div id="comment-wrapper">
+  <div id="comment-form" class="clear-block">
+    <div class="box">
+
+  <h2>Post new comment</h2>
+
+  <div class="content"><form action="http://support.brightcove.com/en/comment/reply/10400"  accept-charset="UTF-8" method="post" id="comment-form-1">
+<div><div class="form-item">
+ <label>Your name: </label>
+ <a href="/en/users/robert-crooks" title="View user profile.">Robert Crooks</a>
+</div>
+<div class="form-item" id="edit-comment-1-wrapper">
+ <label for="edit-comment-1">Comment: <span class="form-required" title="This field is required.">*</span></label>
+ <div class="textarea-wrapper"><textarea cols="60" rows="15" name="comment" id="edit-comment-1"  class="form-textarea required"></textarea></div>
+</div>
+<input type="hidden" name="form_build_id" id="form-4460a78ad1f057fd75293a5b24679557" value="form-4460a78ad1f057fd75293a5b24679557"  />
+<input type="hidden" name="form_token" id="edit-form-token-1" value="964cddeb01ceb50b7e546748b689f103"  />
+<input type="hidden" name="form_id" id="edit-comment-form-1" value="comment_form"  />
+<input type="submit" name="op" id="edit-submit-1" value="Save"  class="form-submit" />
+<input type="submit" name="op" id="edit-preview-1" value="Preview"  class="form-submit" />
+
+</div></form>
+</div>
+</div>
+  </div>
+  <div id="comments">
+    <div class="comment-count">0</div>
+    <h3>Comments</h3>
+    <div class="box">
+
+
+  <div class="content"></div>
+</div>
+  </div>
+</div>
+          </div>
+        </div>
+
+              </div>
+    </div>
+  </div>
+    
+  <div id="footer" class="clear-block">
+    <div class="inner">
+      <div id="footer-links" class="clear-block">
+  <div class="container">
+      <div class="column column-wide">
+        <h2>About Brightcove</h2>
+              <p>Brightcove Inc. (NASDAQ: BCOV), a leading global provider of cloud content services, offers a family of products used to publish and distribute the world&#039;s professional digital media. The company&#039;s products include Video Cloud, the market-leading online video platform, App Cloud, a pioneering content app platform, and Zencoder, a leading cloud-based media processing service and HTML5 video player technology provider. Brightcove has more than 6,100 customers in over 60 countries that rely on Brightcove cloud content services to build and operate media experiences across PCs, smartphones, tablets and connected TVs.</p>
+      </div>
+      <div class="column column-narrow first">
+        <h2>Company</h2>
+        <ul><li class="video-platform first"><a href="http://www.brightcove.com/en/online-video-platform" title="">Video Platform</a></li>
+<li class="app-platform"><a href="http://www.brightcove.com/en/content-app-platform" title="">App Platform</a></li>
+<li class="learning"><a href="http://www.brightcove.com/en/learning-center" title="">Learning</a></li>
+<li class="services"><a href="http://www.brightcove.com/en/services" title="">Services</a></li>
+<li class="partners"><a href="http://www.brightcove.com/en/partners" title="">Partners</a></li>
+<li class="company"><a href="http://www.brightcove.com/en/company" title="">Company</a></li>
+<li class="events"><a href="http://www.brightcove.com/en/company/events" title="">Events</a></li>
+<li class="career last"><a href="http://www.brightcove.com/en/company/careers" title="">Careers</a></li>
+</ul>      </div>
+      <div class="column column-narrow second">
+        <h2>Support</h2>
+        <ul><li class="documentation first"><a href="http://support.brightcove.com/en/video-cloud/docs" title="Read the official help documentation">Documentation</a></li>
+<li class="knowledge-base"><a href="http://support.brightcove.com/en/video-cloud/solutions" title="Find solutions to common issues">Knowledge Base</a></li>
+<li class="training-videos"><a href="http://support.brightcove.com/en/video-cloud/training-videos" title="Watch the training videos">Training Videos</a></li>
+<li class="contact last"><a href="http://support.brightcove.com/en/contact" title="Submit a support request">Contact Support</a></li>
+</ul>      </div>
+      <div class="column column-narrow third">
+        <h2>Developer</h2>
+        <ul><li class="reference first"><a href="http://developer.brightcove.com/en/reference" title="Helpful developer references">Reference</a></li>
+<li class="articles last"><a href="http://developer.brightcove.com/en/articles" title="Read articles by developers and partners">Articles</a></li>
+</ul>      </div>
+      <div class="column column-narrow fourth">
+        <h2>Quick links</h2>
+        <ul><li class="html5-video first"><a href="http://www.brightcove.com/en/online-video-platform/html5-video" title="">HTML5 Video</a></li>
+<li class="cloud-video"><a href="http://www.brightcove.com/en/content-app-platform" title="">App Cloud</a></li>
+<li class="video-streaming"><a href="http://www.brightcove.com/en/online-video-platform/delivery" title="">Video Streaming</a></li>
+<li class="live-video-streaming"><a href="http://www.brightcove.com/en/online-video-platform/live-streaming" title="">Live Streaming</a></li>
+<li class="vpaid-technology"><a href="http://www.brightcove.com/en/online-video-platform/advertising-and-monetization" title="">VPAID</a></li>
+<li class="video-hosting last"><a href="http://www.brightcove.com/en/learning-center/online-video-hosting" title="">Video Hosting</a></li>
+</ul>      </div>
+  </div>
+</div>
+<div id="footer-bottom">
+  <div id="social-links">
+    <a class="social-link feed external" href="http://feeds.brightcove.com/bc/all">Subscribe to the Brightcove RSS feed</a> 
+    <a class="social-link twitter external" href="http://www.twitter.com/brightcove">Follow @Brightcove on Twitter</a>
+              <a class="social-link facebook external" href="http://www.facebook.com/brightcove">Connect with Brightcove on Facebook</a>
+    <div class="clear"></div>
+      </div>
+  <div id="copyright">
+    <div class="container">
+    <img src="/sites/all/themes/supportbrightcove2012/images/bg-footer-logo.png" />
+    <p class="title">Brightcove Inc.</p>
+      <ul>
+        <li class="left"><p>&copy; 2012 Brightcove Inc.</p></li>
+        <li class="left"><a href="http://www.brightcove.com/en/terms-and-conditions" rel="nofollow" >Terms &amp; Conditions</a></li>
+        <li class="left"><a href="http://www.brightcove.com/en/privacy" rel="nofollow" >Privacy</a></li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<!-- Place this tag after the last +1 button tag. -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>    </div>
+  </div>
+  <div id="admin-menu">
+<ul><li class="expandable admin-menu-icon"><a href="/en"><img class="admin-menu-icon" src="http://blog.brightcove.com/sites/default/files/favicon.ico" width="16" height="16" alt="Home" /></a></li><li class=" admin-menu-action admin-menu-logout"><a href="/en/logout">Log out Robert Crooks</a></li><li class=" admin-menu-action admin-menu-logout"><a href="/en/user">Server Address: 192.168.100.150</a></li><li class="expandable"><a href="/en/admin/content">Content management</a>
+<ul><li class="expandable"><a href="/en/admin/content/comment">Comments</a>
+<ul><li><a href="/en/admin/content/comment/new">Published comments</a></li><li><a href="/en/admin/content/comment/approval">Approval queue</a></li></ul></li><li class="expandable"><a href="/en/admin/content/node">Content</a>
+<ul><li><a href="/en/admin/content/node/overview">List</a></li></ul></li><li><a href="/en/admin/content/filter">Content Management Filter</a></li><li class="expandable"><a href="/en/node/add">Create content</a>
+<ul><li><a href="/en/node/add/announcement">Announcement</a></li><li><a href="/en/node/add/blog">Blog Entry</a></li><li><a href="/en/node/add/community-page">Community Page</a></li><li><a href="/en/node/add/page">Corporate Page</a></li><li><a href="/en/node/add/customer">Customers</a></li><li><a href="/en/node/add/article">Developer Article</a></li><li><a href="/en/node/add/developer-page">Developer Page</a></li><li><a href="/en/node/add/event">Event</a></li><li><a href="/en/node/add/tip">FAQ Entry</a></li><li><a href="/en/node/add/forum">Forum Topic</a></li><li><a href="/en/node/add/hidden-page">Hidden Page</a></li><li><a href="/en/node/add/learning-ctr-asset">Learning Center Asset</a></li><li><a href="/en/node/add/partner">Partner Profile</a></li><li><a href="/en/node/add/coverage">Press Coverage</a></li><li><a href="/en/node/add/press">Press Release</a></li><li><a href="/en/node/add/product-update">Product Update</a></li><li><a href="/en/node/add/resource">Resource Object</a></li><li><a href="/en/node/add/www-resource-promo">Resource Promo</a></li><li><a href="/en/node/add/solution">Solution</a></li><li><a href="/en/node/add/doc">Support Doc</a></li><li><a href="/en/node/add/support-page">Support Page</a></li><li><a href="/en/node/add/training">Training Class</a></li><li><a href="/en/node/add/training-video">Training Video</a></li></ul></li><li class="expandable"><a href="/en/admin/content/forum">Forums</a>
+<ul><li><a href="/en/admin/content/forum/list">List</a></li><li><a href="/en/admin/content/forum/add/container">Add container</a></li><li><a href="/en/admin/content/forum/add/forum">Add forum</a></li><li><a href="/en/admin/content/forum/settings">Settings</a></li></ul></li><li class="expandable"><a href="/en/admin/content/nodequeue">Nodequeue</a>
+<ul><li><a href="/en/admin/content/nodequeue/list">List</a></li></ul></li><li><a href="/en/admin/content/node-settings">Post settings</a></li><li class="expandable"><a href="/en/admin/content/taxonomy">Taxonomy</a>
+<ul><li><a href="/en/admin/content/taxonomy/list">List</a></li><li><a href="/en/admin/content/taxonomy/add/vocabulary">Add vocabulary</a></li></ul></li><li><a href="/en/admin/content/translation_overview_manage">Translation overview</a></li><li class="expandable"><a href="/en/admin/content/translation_overview_assignments">Translator assigments</a>
+<ul><li><a href="/en/admin/content/translation_overview_assignments/en">English</a></li><li><a href="/en/admin/content/translation_overview_assignments/fr">French</a></li><li><a href="/en/admin/content/translation_overview_assignments/de">German</a></li><li><a href="/en/admin/content/translation_overview_assignments/ja">Japanese</a></li><li><a href="/en/admin/content/translation_overview_assignments/ko">Korean</a></li><li><a href="/en/admin/content/translation_overview_assignments/es">Spanish</a></li></ul></li></ul></li><li class="expandable"><a href="/en/admin/build">Site building</a>
+<ul><li class="expandable"><a href="/en/admin/build/menu">Menus</a>
+<ul><li><a href="/en/admin/build/menu/list">List menus</a></li><li><a href="/en/admin/build/menu/add">Add menu</a></li><li><a href="/en/admin/build/menu/settings">Settings</a></li></ul></li><li class="expandable"><a href="/en/admin/build/path">URL aliases</a>
+<ul><li><a href="/en/admin/build/path/list">List</a></li><li><a href="/en/admin/build/path/add">Add alias</a></li><li><a href="/en/admin/build/path/delete_bulk">Delete aliases</a></li></ul></li></ul></li><li class="expandable"><a href="/en/admin/settings">Site configuration</a>
+<ul><li><a href="/en/admin/by-module">By module</a></li><li><a href="/en/admin/settings/brightcove_careers">Administer featured job positions</a></li><li><a href="/en/admin/settings/support">Brightcove Support</a></li><li><a href="/en/admin/settings/brightcove_training_videos">Brightcove Training Videos</a></li><li><a href="/en/admin/settings/blog">Brightcove blog</a></li><li><a href="/en/admin/settings/quova">Quova</a></li></ul></li><li class="expandable"><a href="/en/admin/domain/content">Affiliated content</a>
+<ul><li><a href="/en/admin/domain/content/all">Content for all affiliate sites</a></li><li><a href="/en/admin/domain/content/0">Brightcove Drupal content</a></li><li><a href="/en/admin/domain/content/2">Brightcove Support content</a></li><li><a href="/en/admin/domain/content/3">Brightcove Developer content</a></li><li><a href="/en/admin/domain/content/4">Brightcove Community content</a></li><li><a href="/en/admin/domain/content/5">Brightcove content</a></li><li><a href="/en/admin/domain/content/9">Brightcove Blog content</a></li></ul></li><li class="expandable"><a href="/en/admin/user">User management</a>
+<ul><li><a href="/en/admin/user/profile">Profiles</a></li><li><a href="/en/admin/user/settings">User settings</a></li><li class="expandable"><a href="/en/admin/user/user">Users</a>
+<ul><li><a href="/en/admin/user/user/list">List</a></li><li><a href="/en/admin/user/user/create">Add user</a></li></ul></li></ul></li><li><a href="/en/admin/advanced_help">Advanced help</a></li><li><a href="/en/admin/help">Help</a></li></ul></div>
+
+      <div id='l10n-client' class='hidden'>
+        <div class='labels'>
+          <span class='toggle'>Translate Text</span>
+          <div class='label strings'><h2>Page Text</h2></div>
+          <div class='label source'><h2>Source</h2></div>
+          <div class='label translation'><h2>Translation to <em>English</em></h2></div>
+        </div>
+        <div id='l10n-client-string-select'>
+          <ul class='string-list'><li class='translated'>
+        Smart Player API
+    Media API Reference
+    Flash-Only Player ...</li></ul>
+          <form action="http://support.brightcove.com/en/video-cloud/training-videos/live-streaming-wirecast"  accept-charset="UTF-8" method="post" id="l10n-client-search-form">
+<div><div class="form-item" id="edit-search-wrapper">
+ <div class="bg-wrap"><input type="text" maxlength="128" name="search" id="edit-search" size="60" value="" class="form-text string-search" /></div>
+</div>
+<input type="submit" name="op" id="l10n-client-search-filter-clear" value="X"  class="form-submit form-submit" />
+<input type="hidden" name="form_build_id" id="form-17c3c4f7d67c6b87417b67ae75454e69" value="form-17c3c4f7d67c6b87417b67ae75454e69"  />
+<input type="hidden" name="form_token" id="edit-l10n-client-search-form-form-token" value="e7925e7e75e6fdc88450243522c23f99"  />
+<input type="hidden" name="form_id" id="edit-l10n-client-search-form" value="l10n_client_search_form"  />
+
+</div></form>
+
+        </div>
+        <div id='l10n-client-string-editor'>
+          <div class='source'>
+            <div class='source-text'></div>
+          </div>
+          <div class='translation'>
+            <form action="/en/i18nstrings/save"  accept-charset="UTF-8" method="post" id="l10n-client-form">
+<div><div class="form-item" id="edit-target-wrapper">
+ <div class="textarea-wrapper"><textarea cols="60" rows="6" name="target" id="edit-target"  class="form-textarea translation-target"></textarea></div>
+</div>
+<input type="submit" name="op" id="edit-save" value="Save translation"  class="form-submit" />
+<input type="hidden" name="textgroup" id="edit-textgroup" value="default"  class="source-textgroup" />
+<input type="submit" name="op" id="l10n-client-edit-copy" value="Copy source"  class="form-submit form-submit edit-copy" />
+<input type="submit" name="op" id="l10n-client-edit-clear" value="Clear"  class="form-submit form-submit edit-clear" />
+<input type="hidden" name="form_build_id" id="form-45a7b6d3688b6cf15a46e692c0d60a73" value="form-45a7b6d3688b6cf15a46e692c0d60a73"  />
+<input type="hidden" name="form_token" id="edit-l10n-client-form-form-token" value="9573992fe80fbe7bb8ae29e06f6f71bb"  />
+<input type="hidden" name="form_id" id="edit-l10n-client-form" value="l10n_client_form"  />
+
+</div></form>
+
+          </div>
+        </div>
+      </div>
+      <div id='l10n-client-data'><div><span class='source'>&lt;ul id="dev-resources"&gt;
+        &lt;li class="first"&gt;&lt;a href="http://docs.brightcove.com/en/smart-player-api"&gt;Smart Player API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/media"&gt;Media API Reference&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/player"&gt;Flash-Only Player API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://support.brightcove.com/en/docs/brightcove-sdks"&gt;Video Cloud SDKs&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/beml"&gt;BEML DTD Reference&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="http://opensource.brightcove.com"&gt;Open Source&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/bc-ios-sdk/"&gt;Brightcove iOS Player&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="last"&gt;&lt;a href="http://docs.brightcove.com/en/video-cloud-analytics-api/"&gt;Video Cloud Analytics API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span><span class='target'>&lt;ul id="dev-resources"&gt;
+        &lt;li class="first"&gt;&lt;a href="http://docs.brightcove.com/en/smart-player-api"&gt;Smart Player API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/media"&gt;Media API Reference&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/player"&gt;Flash-Only Player API&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://support.brightcove.com/en/docs/brightcove-sdks"&gt;Video Cloud SDKs&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/beml"&gt;BEML DTD Reference&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="http://opensource.brightcove.com"&gt;Open Source&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="http://docs.brightcove.com/en/bc-ios-sdk/"&gt;Brightcove iOS Player&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="last"&gt;&lt;a href="http://docs.brightcove.com/en/video-cloud-analytics-api/"&gt;Video Cloud Analytics API&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</span><span class='textgroup'>blocks</span></div></div>
+    
+</body>
+</html>

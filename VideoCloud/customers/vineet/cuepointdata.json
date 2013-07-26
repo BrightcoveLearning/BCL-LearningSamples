@@ -1,0 +1,25 @@
+{
+  "cuePoints" : [
+    {
+      "name" : "cue point 1",
+      "metadata" : "First cue point",
+      "videoID" : 1950728038001,
+      "type" : 1,
+      "time" : 2
+    },
+	{
+      "name" : "cue point 2",
+      "metadata" : "Second cue point",
+      "videoID" : 1950728038001,
+      "type" : 1,
+      "time" : 4
+    },
+	{
+      "name" : "cue point 3",
+      "metadata" : "Third cue point",
+      "videoID" : 1950728038001,
+      "type" : 1,
+      "time" : 6
+    }
+  ]
+}

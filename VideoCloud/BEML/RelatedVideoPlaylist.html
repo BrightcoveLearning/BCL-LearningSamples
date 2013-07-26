@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<h3>Tip of the week: Generating an Instant &quot;Playlist&quot; from Related Videos Using BEML</h3>
+<p>If you use BEML, you know that you typically give your List or TileList components the id &quot;videoList&quot;. This id is used by Brightcove Studio and by the BEML processor built into players to allow you to assign playlists to the player. But you're not limited to using the list components in this way. Here I'm going to show you how to include a list in single-video player that will automatically pickup and display the related videos for the current video through the magic of BEML data binding. Here's the player I built:</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience734451478001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="961771669001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahr9QqQVurRky70IYIdKO8j" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="734451478001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+
+  <p></p>
+  <p>You'll notice that when a video finishes, or you select a new video from the list, the list refreshes -- that's because it's not representing a playlist from my account, but rather the related videos for the video that is currently loaded in the player.</p>
+  <p>Here's how it's done. I started with a copy of  the Chromeless Player with Tabbed Playlists template. I removed the TabBar component. and then made two changes to the List component:</p>
+<ul>
+    <li>Changed the id to an arbitrary value so that Studio would not identify this a playlist player</li>
+    <li>Changed the data binding by changing the value of the data attribute to point to the relatedMedia property of the current video</li>
+</ul>
+<pre>&lt;List <strong>id=&quot;relatedVideoList</strong>&quot; width=&quot;300&quot; rowHeight=&quot;78&quot;
+ 	automaticAdvance=&quot;true&quot; <strong>data=&quot;{videoPlayer.relatedMedia}&quot;</strong> 
+	selectOnClick=&quot;true&quot; itemInsetV=&quot;4&quot; itemLeading=&quot;2&quot;&gt;
+</pre>
+<p>Next, I changed the data binding of the video attribute for the ChromelessVideoPlayer component to reflect the new id value for the List:</p>
+<pre>&lt;ChromelessVideoPlayer id=&quot;videoPlayer&quot; 
+	<strong>video=&quot;{relatedVideoList.selectedItem}&quot;</strong>/&gt;</pre>
+  <p>And that's all it takes. Of course, you could keep the TabBar and the regulare assigned playlists, and add this related video pseudo playlist as an additional list, but that would require a little Player API development.</p>
+<ul>
+  <li>New or updated Support Documents:&nbsp;</li>
+  <ul>
+    <li>Don't miss the big updates to <a href="http://support.brightcove.com/en/docs/delivering-video-html5-and-smart-players">Delivering Video with HTML5 and Smart Players</a>: tabbed playlist players are now Smart Players that will work on iPhones or iPads! Currently, only the first playlist will be displayed on those devices, but this means you can use any of the standard player templates to create Smart Players except for the two Mobile Optimized templates. The range of BEML components supported in HTML5 players is also expanded.</li>
+    <li>Also, in case you missed it, Brightcove has started rolling out advanced search features for the Media Module: <a href="http://support.brightcove.com/en/docs/searching-videos-media-module">Searching for Videos in the Media Module</a>. This is the first phase of a series of enhancements. Current you can use advanced search to choose what fields you search, and to search for videos with specific values for custom fields. To enable Advanced Search in your account, go the Media section of the Account Settings.</li>
+  </ul>
+  <li>New video tutorials -- two new tutorials on setting live video streaming events
+    <ul>
+      <li><a href="http://support.brightcove.com/en/docs/video-tutorial-live-streaming-wirecast">Live Streaming with Wirecast</a></li>
+      <li><a href="http://support.brightcove.com/en/docs/video-tutorial-live-streaming-flash-media-live-encoder">Live Streaming with Flash Media Live Encoder</a></li>
+    </ul>
+  </li>
+</ul>
+<p>Free online training classe schedule:</p>
+<p>[view:www_events=block_3]</p>
+<div id="BCToolKitContainer" style="width: 400px; ">&nbsp;</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

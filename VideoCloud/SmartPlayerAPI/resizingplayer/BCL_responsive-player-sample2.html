@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Responsive Player Sample</title>
+    <script type="text/javascript" src="http://files.brightcove.com/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="http://files.brightcove.com/jquery.fitvids.js"></script>
+    <style type="text/css">
+      body {
+        font-family: Arial,Helvetica,sans-serif;
+      }
+      .BCLbodyContent {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      #BCLcontainingBlock {
+        width: 50%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        float: right;
+      }
+
+      .BCLvideoWrapper {
+        position: relative;
+        padding-top: 1px;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      * html .BCLvideoWrapper {
+        margin-bottom: 45px;
+        margin-top: 0;
+      }
+
+      .BCLvideoWrapper div,
+      .BCLvideoWrapper embed,
+      .BCLvideoWrapper object {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      pre {
+	      font-size: 14px;
+      }
+      .BCLbutton {
+        background-color: #ffffff;
+        background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(#dddddd), to(#ffffff));
+        background-image: -webkit-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -moz-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -o-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -ms-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: radial-gradient(50% 50%, #ffffff, #dddddd);
+        border: #999999 1px solid;
+        border-radius: 10px;
+        font-size: .7em;
+        padding: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://files.brightcove.com/google-code-prettify/prettify.css" />
+    <link href="http://files.brightcove.com/google-code-prettify/styles/brightcove.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="BCLbodyContent">
+	    <h1>Responsive Player Sample</h1>
+      <div id="modeSwitch" style="text-align:center">
+        <span class="BCLbutton" onclick="switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</span>
+        <span class="BCLbutton" onclick="switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+      </div>
+      <div id="sizeSwitch" style="margin-top:10px">
+        <span class="BCLbutton" onclick="resizeBody()">Change Body Width</span>
+      </div>
+	    <div id="BCLcontainingBlock">
+	      <div class="BCLvideoWrapper">
+	        <!-- Start of Brightcove Player -->
+	        <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+	        <object id="myExperience" class="BrightcoveExperience">
+	          <param name="bgcolor" value="#FFFFFF" />
+	          <param name="width" value="480" />
+	          <param name="height" value="270" />
+	          <param name="playerID" value="1655292658001" />
+	          <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXai4AfuyXjS4fpJNnDLOcLqh" />
+	          <param name="isVid" value="true" />
+	          <param name="isUI" value="true" />
+	          <param name="dynamicStreaming" value="true" />
+	          <param name="@videoPlayer" value="1195804260001" />
+            <!-- params for Smart Player API -->
+            <param name="includeAPI" value="true" />
+            <param name="templateLoadHandler" value="onTemplateLoaded"/>
+            <param name="templateReadyHandler" value="onTemplateReady" />
+	        </object>
+	        <script type="text/javascript">brightcove.createExperiences();</script>
+	        <!-- End of Brightcove Player -->
+	      </div>
+	    </div>
+	    <p>One aspect of responsive web design is insuring that elements within your page adapt gracefully to different screen sizes. This has become an essential aspect of web design as more and more users are viewing the web on phone or tablet devices. The challenge of these devices is not only that their screens are much smaller than a typical laptop or computer monitor, but also that by simply rotating the device, the user can toggle back and forth between portrait and landscape displays.</p>
+	    <p>As if that were not challenging enough, thanks to web-tv and Apple's AirPlay, your web pages may now be viewed on a TV screen whose pixel dimensions are tow, three, or four times greater than what you get on a typical laptop.</p>
+	    <p>This sample doesn't address all the aspects of responsive web design, which might include font changes and whole layout transformations.</p>
+	    <p>Instead, the focus here is just on video players and address the problem that you not only want the player to resize according to the screen dimensions, but also want to maintain the aspect ratio, so that the video is not letterboxed.</p>
+	    <p>The solution here uses CSS - no JavaScript required - and general credit for it belongs to Thierry Koblentz - see his article <a href="http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/">Creating Intrinsic Ratios for Video</a> for a complete explanation of the style properties used (some of them are only necessary to provide workarounds for versions of IE).</p>
+	    <p>The key is to take advantage of the padding property for the HTML container that you embed the video player in. By setting padding-bottom to a percentage of the width - which is also set a percentage of the bounding container - you have a player that resizes as the bounding container resizes, but maintains its aspect ratio. And the bounding container itself needs to be sized relative to the overall body, so that it shrinks and expands as the window size changes. Here 56.25% is used for the <code>padding-bottom</code> property of the container for the player, corresponding to 16:9 video:</p>
+		</div>
+		<script type="text/javascript">
+		  (function() {
+		    var player, videoPlayer, experienceModule, playerMode;
+		    onTemplateLoaded = function(experienceID) {
+		      log("player loaded");
+		      player = brightcove.api.getExperience(id);
+		      // if (document.location.href.indexOf("forceHTML",0) > -1) {
+		      //   playerMode = "html";
+		      //   $(".BCLvideoWrapper").fitVids({ customSelector: "iframe[src^='http://c.brightcove.com']"});
+		      // }
+		      // else {
+		      //   playerMode = "flash";
+		      // }
+		    };
+		    onTemplateReady = function(evtObject) {
+		      log("player ready");
+		    }        
+		    // for development purposes only: reopen page with HTML5 player
+		    function switchToHTML5() {
+		      var separator = "?";
+		      if (document.location.href.indexOf("?", 0) > -1) {
+		        separator = "&";
+		      }
+		      window.location = document.location.href + separator + "forceHTML=true";
+		    };
+		    // for development purposes only: switch back to Flash
+		    function switchToFlash() {
+		      var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+		      window.location = document.location.href.substring(0, startOfQuery);
+		    };
+		    function resizeBody() {
+		      $('.BCLbodyContent').width('80%');
+		    };
+		    // debugging tool - wraps console.log to avoid errors in IE 7 & 8
+		    function log(message) {
+		      if (window["console"] && console["log"]) {
+		        var d = new Date();
+		        console.log(d + ": ");
+		        console.log(message);
+		      }
+		    }
+		  });
+		
+	</script> -->
+
+<!-- 		<script src="http://files.brightcove.com/google-code-prettify/prettify.js"></script>
+ 		<script src="http://files.brightcove.com/google-code-prettify/lang-css.js"></script>
+ 		<script>
+			document.onload = prettyPrint();
+		</script>
+ -->    
+     <script type="text/javascript">
+      (function() {
+        var player, videoPlayer, experienceModule, playerMode;
+        onTemplateLoaded = function(experienceID) {
+          log("player loaded");
+          player = brightcove.api.getExperience(id);
+          // if (document.location.href.indexOf("forceHTML",0) > -1) {
+          //   playerMode = "html";
+          //   $(".BCLvideoWrapper").fitVids({ customSelector: "iframe[src^='http://c.brightcove.com']"});
+          // }
+          // else {
+          //   playerMode = "flash";
+          // }
+        };
+        onTemplateReady = function(evtObject) {
+          log("player ready");
+        }        
+        // for development purposes only: reopen page with HTML5 player
+        function switchToHTML5() {
+          var separator = "?";
+          if (document.location.href.indexOf("?", 0) > -1) {
+            separator = "&";
+          }
+          window.location = document.location.href + separator + "forceHTML=true";
+        };
+        // for development purposes only: switch back to Flash
+        function switchToFlash() {
+          var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+          window.location = document.location.href.substring(0, startOfQuery);
+        };
+        function resizeBody() {
+          $('.BCLbodyContent').width('80%');
+        };
+        // debugging tool - wraps console.log to avoid errors in IE 7 & 8
+        function log(message) {
+          if (window["console"] && console["log"]) {
+            var d = new Date();
+            console.log(d + ": ");
+            console.log(message);
+          }
+        }
+      });
+
+    </script>
+	</body>
+</html>

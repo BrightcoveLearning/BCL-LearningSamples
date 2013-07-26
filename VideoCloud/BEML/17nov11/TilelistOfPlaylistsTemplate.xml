@@ -1,0 +1,27 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout width="540" height="304">
+    <TabBar id="playlistTabs" visible="false"/>
+    <ChromelessVideoPlayer id="videoPlayer"/>
+  	<ViewStack visible="{!videoPlayer.playing}">
+	    <VBox hAlign="center" vAlign="middle">
+		    <Label size="18" height="22" text="Playlists"/>
+		    <TileList id="playlistTiles" y="10" height="120" columnWidth="130" rowHeight="120" columnGutter="4" rowGutter="0" visible="false" data="{playlistTabs.data}">
+		      <ListItem boxType="vbox" padding="4">
+		        <ThumbnailButton source="{currentItem.thumbnailURL}" tooltip="{currentItem.shortDescription}"/>
+		        <TitleLabel text="{currentItem.displayName}" height="12" size="10"/>
+		      </ListItem>
+		    </TileList>
+	    </VBox>
+	    <VBox hAlign="center" vAlign="middle">
+		    <Label size="16" height="20" text="Videos"/>
+		    <TileList id="videoList" y="10" height="200" columnWidth="100" rowHeight="100" columnGutter="0" rowGutter="0" automaticAdvance="false" visible="false" data="{playlistTiles.selectedItem.videoDTOs}">
+		      <ListItem boxType="vbox" padding="4">
+		        <ThumbnailButton source="{currentItem.thumbnailURL}" tooltip="{currentItem.shortDescription}"/>
+		        <TitleLabel text="{currentItem.displayName}" height="12" size="10"/>
+		      </ListItem>
+		    </TileList>
+	   	</VBox>
+	   </ViewStack>
+  </Layout>
+</Runtime>

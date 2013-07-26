@@ -1,0 +1,7 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout>
+    <ChromelessVideoPlayer id="videoPlayer"/>
+    <Image source="http://files.brightcove.com/BCL-cta-sample.png" height="59" width="96" x="10" y="50" />
+      </Layout>
+</Runtime>

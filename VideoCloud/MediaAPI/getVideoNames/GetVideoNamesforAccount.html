@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Get Video Collection</title>
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+		<script type="text/javascript">
+		var BCL = {};
+		BCL.getData = function (token) {
+		  BCL.getCollection("BCL.onDataResult",token,"");
+	}    
+	
+		BCL.getCollection = function (callback,token,params) {
+			BCMAPI.token = token;
+			var searchParams = new Object();
+			BCMAPI.callback = callback;
+			searchParams.and = params;
+			searchParams.sort_by = "DISPLAY_NAME";
+			searchParams.video_fields = "id,name";
+			BCMAPI.search(searchParams);
+		}
+		BCL.onDataResult = function (jsonData) {
+			var str = "";
+			var title = {};
+			document.getElementById("jsondata").innerHTML = JSON.stringify(jsonData);
+			for (var i = 0; i<jsonData["items"].length; i++) {
+				title = jsonData.items[i];
+				str += title.name+'<br />';
+			}
+			document.getElementById("videoList").innerHTML = str;
+		}
+		
+	
+		</script>
+
+	</head>
+	<body>
+		<fieldset>
+      <legend>Set Up Search</legend>
+			<div id="search">
+			<select id="accountSelect" onchange="BCL.getData(this.options[this.selectedIndex].value)">
+				<option>Choose an Account</option>
+				<option value="S0la8DZ0Bz4T8EI_doFa2K1acfXKR0pQhZalkWJqM0hqlmI5cLhylA..">Training Videos</option>
+				<option value="WDGO_XdKqXVJRVGtrNuGLxCYDNoR-SvA5yUqX2eE6KjgefOxRzQilw..">Developer Training</option>
+				<option value="w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..">Mobile Training</option>
+				<option value="jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..">BC Learning</option>
+			</select>
+			</div>
+    </fieldset>
+		<fieldset>
+      <legend>Results</legend>
+			<div id="videoList"></div>
+    </fieldset>
+		<fieldset>
+      <legend>JSON</legend>
+			<div id="jsondata"></div>
+    </fieldset>
+
+	
+	</body>
+</html>

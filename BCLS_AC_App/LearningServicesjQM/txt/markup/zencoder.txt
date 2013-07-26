@@ -1,0 +1,23 @@
+===== display-blog-tmpl
+<ul class="content-list" data-role="listview" data-inset="true">
+  {{bccorpblogitems}}
+      <li {{if recentBoolean}}data-theme="b"{{/if}} data-guid="{{guid}}">
+          <a href="#content-details" data-transition="slide"><h3>{{title}}</h3>
+          <p class="content-description">{{description|tease>15}}</p></a>
+      </li>
+  {{/bccorpblogitems}}
+</ul>
+
+===== display-corpblog-tmpl
+<h1>{{selectedCorpBlog.title}}</h1>
+{{selectedCorpBlog.content_encoded}}
+
+===== display-twitter-tmpl
+<ul class="content-list" data-role="listview" data-inset="true">
+  {{twitteritems}}
+      <li {{if recentBoolean}}data-theme="b"{{/if}}>
+          {{text}}<br /><br />
+          <p class="content-description">{{created_at}}</p>
+      </li>
+  {{/twitteritems}}
+</ul>

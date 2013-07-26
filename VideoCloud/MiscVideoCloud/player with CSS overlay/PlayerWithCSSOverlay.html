@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample: CSS Overlay</title>
+    <style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #835004}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+  </head>
+
+  <body>
+    <header>
+      <img src="http://img.brightcove.com/bc-training-logo.png"  alt="Brightcove Training" />
+    </header>
+    <section>
+      <h1>Brightcove Learning Sample: Overlaying Other Objects on Top of a Player</h1>
+      <p>I've had several people ask me how to overlay an HTML object like an image or button over a Brightcove Video Cloud player. You can easily do this using CSS positioning.</p>
+      <p>You can see an example below.</p>
+      </section>
+      <section>
+      <style>
+      .BrightcoveExperience {
+      	position: absolute;
+      	top: 0px;
+      	left: 0px;
+      	z-index: 1;
+      }
+      .overlay {
+      	position: absolute;
+      	top: 60px;
+      	left: 20px;
+      	z-index: 5;
+      }
+      .playContainer {
+      	position: static;
+      }
+      </style>
+      <div class="playContainer">
+      <!-- Start of Brightcove Player -->
+<button class="overlay">My Overlaid Button</button>
+<div style="display:none">
+
+</div>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="798" />
+  <param name="height" value="603" />
+  <param name="playerID" value="1031989184001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXajBzVQ-3nIlGGc3z2dSv8Bu" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+</div>
+<p>To do this, simply place both the player publishing code and the object you want to place on top of it in the same &lt;div&gt; tag. Give your HTML object a class or id so that you can style it. Create CSS style rules for both the BrightcoveExperience (the player object) class, and the class or id for your other object.</p>
+<p>In each style rule include the position <strong>property</strong> set to "absolute", and <strong>right</strong>, <strong>left</strong>, <strong>top</strong>, and/or <strong>bottom</strong> properties to position the object horizontally and vertically with the containing div tag. Also include the z-index property, making sure that the value for your HTML object is higher than the value for the player object.</p>
+<p>Here's sample code for the player and button you see above.</p>
+<pre>
+      &lt;style&gt;
+      .BrightcoveExperience {
+      	position: absolute;
+      	top: 0px;
+      	left: 0px;
+      	z-index: 1;
+      }
+      .overlay {
+      	position: absolute;
+      	top: 60px;
+      	left: 20px;
+      	z-index: 5;
+      }
+      .playContainer {
+      	position: static;
+      }
+      &lt;/style&gt;
+      &lt;div class="playContainer"&gt;
+      &lt;!-- Start of Brightcove Player --&gt;
+&lt;button class="overlay"&gt;My Overlaid Button&lt;/button&gt;
+&lt;div style="display:none"&gt;
+
+&lt;/div&gt;
+&lt;script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"&gt;&lt;/script&gt;
+
+&lt;object id="myExperience" class="BrightcoveExperience"&gt;
+  &lt;param name="bgcolor" value="#FFFFFF" /&gt;
+  &lt;param name="width" value="798" /&gt;
+  &lt;param name="height" value="603" /&gt;
+  &lt;param name="playerID" value="1031989184001" /&gt;
+  &lt;param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXajBzVQ-3nIlGGc3z2dSv8Bu" /&gt;
+  &lt;param name="isVid" value="true" /&gt;
+  &lt;param name="isUI" value="true" /&gt;
+  &lt;param name="dynamicStreaming" value="true" /&gt;
+  
+&lt;/object&gt;
+
+&lt;script type="text/javascript"&gt;brightcove.createExperiences();&lt;/script&gt;
+
+&lt;!-- End of Brightcove Player --&gt;
+&lt;/div&gt;
+
+</pre>
+</section>
+  </body>
+
+</html> 

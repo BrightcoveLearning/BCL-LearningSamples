@@ -1,0 +1,513 @@
+
+/* GENERAL STYLES */
+
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	color: #343434;
+}
+
+a {
+	color: #2d1004;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #AD2118;
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+	padding: 0 0 10px 0;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	color: #65483a;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+h2 {
+	font-size: 25px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+li {
+	margin: 0 0 7px 0;
+}
+
+
+
+
+/* TOP OF PAGE */
+#topbar {
+	padding: 20px;
+	margin: 10px auto 0 auto;
+	background: #5e2e15; /* Old browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e2e15', endColorstr='#2d1004',GradientType=0 ); /* IE6-9 */
+	border-bottom: 1px solid #fff;
+	overflow: auto;
+	width: 940px;
+	color: #875038;
+}
+
+.logo {
+	width: 424px;
+	height: 45px;
+	background: url(../images/logo.png) top left no-repeat;
+	float: left;
+}
+
+#topbar #toplinks {
+	text-align: right;
+}
+#topbar #toplinks, 
+#topbar #toplinks a {
+	color: #b98d79;
+}
+#topbar #toplinks a:hover {
+	color: #AD2118;
+}
+
+#searchForm {
+	padding: 10px 3px 0 0;
+}
+
+#searchForm #searchField {
+	padding: 4px;
+	color: #333;
+	border: 0px solid white;
+	outline: none;
+}
+
+#searchForm #submitButton {
+	width: 15px;
+	height: 15px;
+	background: url(../images/submitButton.png) top left no-repeat;
+	border: none;
+	text-indent: -500px;
+	margin: 0 0 0 -20px;
+	cursor: pointer;
+}
+
+h1.header {
+	font-family: Gotham, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 25px;
+	text-transform: uppercase;
+	float: left;
+	margin: 1px 0 0 20px;
+	border-left: 3px solid #7F543E;
+	padding: 11px 0 6px 20px;
+	letter-spacing: 6px;
+}
+
+h1.header a {
+	opacity: 0.5;
+	color: #f3c085;
+}
+h1.header a:hover {
+	text-decoration: none;
+}
+
+
+
+/* SPECIAL  */
+
+#floating {
+	position: absolute;
+	top: 100px;
+	left: 30%;
+}
+
+
+
+/* PAGE BODY */
+
+.container {
+	margin: 0 auto;
+	padding: 10px 0;
+	overflow: auto;
+	width: 980px;
+	background: #ece9e4;
+}
+
+#mainContent {
+	float: left;
+	overflow: auto;
+	padding: 10px 0 0 0;
+}
+
+#fullWidthContent {
+	overflow: auto;
+}
+
+#tabbedContent {
+	background: #fff;
+	overflow: hidden;
+	padding: 0 0 0 15px;
+}
+
+/* LEFT NAV BAR */
+#leftBar {
+	float: left;
+	width: 160px;
+	padding: 0 10px 10px 10px;
+}
+
+#backLink {
+	padding: 0;
+	display: block;
+	font-size: 11px;
+	height: 13px;
+}
+
+#leftBar #mainMenu ul li {
+	border-left: 2px solid #d0c8bf;
+	padding: 5px 10px;
+	margin: 0 0 0 10px;
+	font-size: 11px;
+}
+
+#leftBar #mainMenu .title {
+	font-weight: bold;
+	font-size: 13px;
+	font-family: Helvetica, sans-serif;
+	padding: 10px 0 10px 0;
+}
+
+#leftBar #mainMenu ul {
+	margin: 0 0 20px 0;
+}
+
+ul#leftNav li a {
+	color: #664739;
+}
+ul#leftNav li a.active {
+	font-weight: bold;
+}
+ul#leftNav li a:hover {
+	text-decoration: none;
+	color: #AD2118;
+}
+
+
+
+/* CENTER CONTENT */
+#mainContent #centerContent {
+	float: left;
+	width: 538px;
+	padding: 10px;
+	margin: 0 23px 0 0;
+}
+
+#centerContent h3 {
+	color: #5d5c5c;
+	font-size: 15px;
+	font-weight: normal;
+	font-family: Helvetica, Arial, sans-serif;
+	line-height: 1.5em;
+}
+
+#mainContent #centerContent h2 {
+	
+}
+
+#mainContent #centerContent #groupedPlaylists {
+	margin: 20px 0 0 0;
+	overflow: hidden;
+}
+
+#mainContent #centerContent #groupedPlaylists h3 {
+	font-weight: bold;
+}
+
+.playlistBox {
+	display: block;
+	float: left;
+	margin: 0 10px 10px 10px;
+	padding: 0 0 10px 0;
+	position: relative;
+	/*width: 249px;
+	min-height: 221px;
+	max-height: 221px;*/
+	overflow: visible;
+	background: url(../images/groupedPlaylistBg.png) 0px 0px no-repeat;
+	width: 249px;
+	height: 210px;
+}
+
+.playlistBox img.playlistBoxImg {
+	width: 249px;
+	height: 122px;
+}
+
+.playlistBoxBanner {
+	position: absolute;
+	top: 14px;
+	left: 0px;
+}
+
+.playlistBoxBanner h4 {
+	color: white;
+	font-size: 18px;
+	padding: 3px 0 4px 19px;
+	margin-left: -10px;
+	width: 212px;
+	background: #948776;
+}
+
+.playlistBoxBanner img.corner {
+	margin: 0 0 0 -10px;
+}
+
+.playlistBox img {
+}
+
+.playlistBox ul {
+	position: absolute;
+	top: 122px;
+	left: 0px;
+	width: 249px;
+}
+
+.playlistBox ul li {
+	/*background: #F6F5F1;*/
+	padding: 3px 0 3px 10px;
+	margin: 0;
+	border-bottom: 1px dashed #B0AFAD;
+}
+
+.playlistBox ul li.lastChild {
+	/*border: 1px solid #F6F5F1;*/
+}
+
+.playlistBox ul li a {
+	color: #71706e;
+}
+
+.playlistBox ul li a:hover {
+	text-decoration: none;
+	color: #ad2118;
+}
+
+/* RIGHT BAR */
+.roundedCorners {
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	behavior: url(border-radius.htc);
+	position: relative;
+}
+
+#rightBar {
+	position: relative;
+	float: left;
+	width: 194px;
+	padding: 10px;
+	background: #5e2e15; /* Old browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e2e15', endColorstr='#2d1004',GradientType=0 ); /* IE6-9 */
+	margin: 10px 0 0 0;
+	border: 1px solid #5e2e15;
+}
+
+#rightBar h3 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #fff;
+}
+
+#rightBar ul {
+	
+}
+
+#rightBar ul li {
+	display: block;
+	padding: 5px;
+	overflow: auto;
+	background: #6f422f;
+	color: white;
+	position: relative;
+}
+
+#rightBar ul li.lastChild {
+	margin: 0;
+}
+
+#rightBar ul li.active, 
+#rightBar ul li.hover {
+	background: #9f5f43;
+}
+
+#rightBar ul li a {
+	color: #fff;
+	text-decoration: none;
+}
+#rightBar ul li a:hover {
+	text-decoration: none;
+}
+
+#rightBar ul li img.videoThumb {
+	float: left;
+	margin: 0 5px 0 0;
+}
+
+img.playArrowSmall {
+	position: absolute;
+	top: 14px;
+	left: 23px;
+}
+
+#rightBar ul li div.copy {
+	font-size: 11px;
+}
+#rightBar ul li .copy p.title {
+	font-weight: normal;
+	margin: 0 0 5px 0;
+}
+#rightBar ul li .copy p.desc {
+	margin: 0 0 3px 0;
+	color: #beb3aa;
+}
+#rightBar ul li .copy p.uploaded {
+	font-style: italic;
+}
+
+#playlistPlayer {
+	
+}
+
+.playlistContent {
+	overflow: auto;
+	padding: 20px 10px;
+}
+
+#videoPlayer {
+	background: #E7E4DB;
+	float: left;
+	margin: 20px 10px 0 0;
+	width: 528px;
+	height: 297px;
+}
+
+#videoPlayer h4 {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	color: #63442F;
+	padding: 30px 0 0 0;
+	text-align: center;
+}
+
+#videoTitle {
+	clear: both;
+	padding: 0 0 20px 0;
+	width: 529px;
+}
+
+#videoTitle h3 {
+	padding: 10px 0;
+	color: #664739;
+}
+
+.loading {
+	width: 220px;
+	height: 19px;
+	background: url(../images/ajax-loader.gif) bottom center no-repeat;
+	margin: 90px auto;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 21px;
+	color: #63442F;
+	padding: 30px;
+	text-align: center;
+}
+
+.videoListContainer {
+	float: right;
+	width: 230px;
+	height: 297px;
+	overflow: auto;
+	margin: 20px 10px 0 0;
+	position: relative;
+	background: #e7e4db;
+}
+
+.videoListContainer ul li {
+	overflow: hidden;
+	border-bottom: 1px dashed #666261;
+	background: #e7e4db;
+	padding: 6px;
+	margin: 0;
+	cursor: pointer;
+	position: relative;
+}
+.videoListContainer ul li.active, 
+.videoListContainer ul li.hover {
+	background: #d1cac0;
+}
+
+.videoListContainer ul li a {
+	
+}
+
+.videoListContainer ul li a:hover {
+	text-decoration: none;
+}
+
+.videoListContainer ul li img {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
+.videoListContainer ul li h4 {
+	font-weight: bold;
+	color: #664739;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0 0 5px 0;
+	font-size: 12px;
+}
+
+.videoListContainer ul li p {
+	color: #5d5c5c;
+	font-size: 11px;
+}
+
+div#tabbedPlaylists ul.tabs {
+	padding: 5px 5px 0 5px;
+	overflow: auto;
+	display: block;
+	background: #5e2e15; /* Old browsers */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e2e15', endColorstr='#2d1004',GradientType=0 ); /* IE6-9 */
+	border: 0px;
+	width: 783px;
+}
+div#tabbedPlaylists ul.tabs li {
+	float: left;
+	background: #63442f;
+	padding: 10px;
+	border-radius: 6px 6px 0 0;
+	margin: 3px 6px 0px 2px;
+	min-width: 185px;
+	text-align: center;
+	font-size: 13px;
+}
+
+div#tabbedPlaylists ul.tabs li.active {
+	background: #fff;
+}
+
+div#tabbedPlaylists ul.tabs a {
+	color: #fff;
+}
+div#tabbedPlaylists ul.tabs a:hover {
+	text-decoration: none;
+}
+
+div#tabbedPlaylists ul.tabs a.active {
+	color: #63442f;
+}
+
+
+

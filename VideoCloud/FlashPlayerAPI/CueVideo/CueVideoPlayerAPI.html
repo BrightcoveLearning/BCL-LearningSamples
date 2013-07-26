@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<style type="text/css">
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+#BClogger {
+	background-color: #EEEEEE;
+	font-size: 11pt;
+	color: #990000;
+}
+</style>
+<h1 class="node-title" title="Using JavaScript with the Player API">Changing the Video in the Player when the Current Playlist Changes</h1>
+	<div class="meta">
+						<div class="taxonomy-top">
+			<div  class="vocabulary first"><div class="label">Applies to Roles</div><div class="terms">Developer</div></div><div  class="vocabulary"><div class="label">Version</div><div class="terms">Brightcove 5</div></div><div  class="vocabulary"><div class="label">Modules</div><div class="terms">Player API</div></div><div  class="vocabulary last"><div class="label">Edition</div><div class="terms">All</div></div>		</div>
+
+				<div class="submitted">Created by <a href="/en/users/robert-crooks" title="View user profile.">Robert Crooks</a>, last edited on Monday, July 19 2010.</div>
+	</div>
+
+  
+  <div class="content">
+<!--c:introduction:start-->
+<p>This document walks you through the steps required to  change the video in the player in a tab navigation player when the viewer selected a new playlist using the Player API. Brightcove exposes an API in JavaScript, so all you need is an HTML/JavaScript editor, or just a plain text editor, and web browser to test your work. Although this example uses JavaScript, you could easily adapt it to ActionScript if you prefer to use the ActionScript Player API.</p>
+<!--c:introduction:end--> <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script> <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<p><style type="text/css">
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+#BClogger {
+	background-color: #EEEEEE;
+	font-size: 11pt;
+	color: #990000;
+}
+</style>   <!--c:overview:start--></p>
+<h2>Why change the video in the player if a new playlist is selected?</h2>
+<p>By default, when a viewer clicks on a new tab in a tabbed-navigation player to select a new playlist, the contents of the list component change, but not the video cued in the video player. This means that the video player will continue to display the video still from the current video. This is by design: if the viewer clicked the new tab while a video was playing, you wouldn't want to stop playback by cueing up a new video. If a video is not currently playing, however, you may wish to put the first video in the new playlist in the player, so that you provide the viewer with a stronger visual signal that the playlist has changed. You can easily do this using the script explained in the document, adding a check to ensure that the current video is not playing before you replace it.</p>
+<!--c:overview:end--> <!--c:requirements:start-->
+<p>This document assumes you understand how to work with JavaScript in general. If you're not already familiar with the Player API, read <a href="internal:node/484">Getting   Started with the Player API</a>. The <a href="http://docs.brightcove.com/en/player">Player API Reference</a> lists all of the methods and events for each component available in the   player.</p>
+<!--c:requirements:end--> <!--c:navigation:start-->
+<p>In this document, you'll learn the following steps to create your script:</p>
+<ul>
+    <li><strong><a href="#creatingaplayer">Creating a Player</a></strong></li>
+    <li><strong><a href="#content">Assigning content to the player</a></strong></li>
+    <li><a href="#get-code"><strong>Getting the publishing code</strong></a></li>
+    <li><strong><a href="#enable-api"><strong>Enabling the APIs</strong></a></strong></li>
+    <li><strong><a href="#addeventlisteners">Modifying the publishing code to set up initial event listeners</a></strong></li>
+    <li><strong><a href="#ref">Setting up your custom script and adding the initial event handlers</a></strong></li>
+    <li><a href="#listen"><strong>Listening for user interaction events and changing the  video in the player</strong></a></li>
+    <li><strong><a href="#results">Results</a></strong></li>
+</ul>
+<!--c:navigation:end--> <!--c:procedure:start-->
+<h2><a name="creatingaplayer" id="creatingaplayer"></a>Creating a player and enabling the Player API in the player settings</h2>
+<p>If you do not already have a web page set up to publish this player and script, create a new HTML page. If you don't already have a player with tabbed navigation, follow the instructions in <a href="internal:node/594">Creating Players with the Publishing Module</a> to create new one.
+</p>
+<p>Next, go to <a href="internal:node/1137">Editing Settings for Players</a> and follow the instructions there to edit the player settings, checking the option to <em><strong>Enable ActionScript/JavaScript APIs</strong></em> under <strong>Web Settings</strong> on the <strong>Global</strong> tab of the settings.</p>
+<h2><a name="content" id="content"></a>Assigning content to the player</h2>
+<p>Next, go to the Media Module and assign two or more playlists to your player. If you need help with this, see <a href="internal:node/564">Assigning Content to Players</a>, and if you need help creating playlists, see <a href="internal:node/3932">Creating a Playlist</a>.</p>
+<h2><a name="get-code"></a>Getting the publishing code</h2>
+<p>Return to the Publishing Module, and following the directions in <a href="internal:node/590">Publishing   a Brightcove Player</a>, copy the JavaScript player publishing code to embed a player from the Brightcove Studio Publishing module.  Since you are embedding in HTML,  copy and paste the JavaScript code below  into an HTML page anywhere between the <code>&lt;body&gt;</code> tags.</p>
+<pre>
+&lt;body&gt;
+
+&lt;!-- Start of Brightcove Player --&gt;
+    &lt;div style=&quot;display:none&quot;&gt;
+    &lt;/div&gt;
+    &lt;!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C 
+    found at http://corp.brightcove.com/legal/terms_publisher.cfm. 
+    --&gt;
+&lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot; 
+        src=&quot;http://admin.brightcove.com/js/BrightcoveExperiences.js&quot;&gt;&lt;/script&gt;
+
+ &lt;!-- Note the width, height, playerID, and playerKey values below will be
+   different to reflect your own player --&gt;
+ &lt;object id=&quot;myExperience&quot; class=&quot;BrightcoveExperience&quot;&gt;  &lt;param name=&quot;bgcolor&quot; value=&quot;#FFFFFF&quot; /&gt;
+  &lt;param name=&quot;width&quot; value=&quot;960&quot; /&gt;
+  &lt;param name=&quot;height&quot; value=&quot;445&quot; /&gt;
+  &lt;param name=&quot;playerID&quot; value=&quot;732947645001&quot; /&gt;
+  &lt;param name=&quot;playerKey&quot; value=&quot;AQ~~,AAAADXdqFgE~,aEKmio9UXahJz3DFZLC7ExXGuJqgE1B7&quot; /&gt;
+  &lt;param name=&quot;isVid&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;isUI&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;dynamicStreaming&quot; value=&quot;true&quot; /&gt;
+&lt;/object&gt;
+
+&lt;!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon as the line 
+is read by the browser. If you wish to have the player instantiated only after the rest of the HTML 
+is processed and the page load is complete, remove the line
+--&gt; 
+&lt;script type=&quot;text/javascript&quot;&gt;brightcove.createExperiences();&lt;/script&gt;
+&lt;!-- End of Brightcove Player --&gt;
+&lt;/body&gt;
+</pre>
+<h2><a name="enable-api"></a>Enabling the APIs</h2>
+<p>To ensure that all the classes necessary are loaded with the player, your player publishing code <strong>must</strong> include a reference to the <code>APIModules_all.js</code> file on the Brightcove servers. Copy and paste this code into your document as well.</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://admin.brightcove.com/js/APIModules_all.js&quot;&gt;
+ &lt;/script&gt; </pre>
+<p>This line is necessary to include the Player API, even if you have <a href="http://support.brightcove.com/en/docs/editing-settings-players#apis">selected &quot;Enable ActionScript/JavaScript APIs&quot;</a> for the player in the Publishing module.</p>
+<p>You can paste the line above directly after the initial script tag in the publishing code, or, to improve the load time for your player, take both script tags and move them inside the <strong>head</strong> tag in your document.</p>
+<pre>
+&lt;head&gt;
+  &lt;title&gt;Video Changer for New Playlist&lt;/title&gt;
+  &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+  &lt;!-- The following script tags call the JavaScript for the player and the Player API --&gt;
+<strong>  &lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot; src=&quot;http://admin.brightcove.com/js/BrightcoveExperiences.js&quot;&gt;&lt;/script&gt;<br />  &lt;script type=&quot;text/javascript&quot; src=&quot;http://admin.brightcove.com/js/APIModules_all.js&quot;&gt;&lt;/script&gt;</strong>
+&lt;/head&gt;</pre>
+<h2><a name="addeventlisteners" id="addeventlisteners"></a>Modifying the publishing code to set up initial event listeners</h2>
+<p>You can specify the event listeners for the initial player events by adding the params bolded below to the publishing code.</p>
+<pre>
+&lt;object id=&quot;myExperience&quot; class=&quot;BrightcoveExperience&quot;&gt;
+  &lt;param name=&quot;bgcolor&quot; value=&quot;#FFFFFF&quot; /&gt;
+  &lt;param name=&quot;width&quot; value=&quot;960&quot; /&gt;
+  &lt;param name=&quot;height&quot; value=&quot;445&quot; /&gt;
+  &lt;param name=&quot;playerID&quot; value=&quot;732947645001&quot; /&gt;
+  &lt;param name=&quot;playerKey&quot; value=&quot;AQ~~,AAAADXdqFgE~,aEKmio9UXahJz3DFZLC7ExXGuJqgE1B7&quot; /&gt;
+  &lt;param name=&quot;isVid&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;isUI&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;dynamicStreaming&quot; value=&quot;true&quot; /&gt;
+  
+  &lt;!-- The following 3 params establish the listeners for initial player events --&gt;
+  <strong>&lt;param name=&quot;templateLoadHandler&quot; value=&quot;onPlayerLoaded&quot; /&gt;<br />  &lt;param name=&quot;templateReadyHandler&quot; value=&quot;onPlayerReady&quot; /&gt;<br />  &lt;param name=&quot;templateErrorHandler&quot; value=&quot;onPlayerError&quot; /&gt;</strong>
+&lt;/object&gt;
+</pre>
+<p>Event listeners can be set up in your JavaScript code instead if you prefer.</p>
+<h2><a name="ref"></a>Setting up your custom script and adding the initial event handlers</h2>
+<p>Now you are ready to start your custom script. It can be placed in the <code>&lt;head&gt;</code> section of the document or in the <code>&lt;body&gt;</code>. Create a new script block, and define some global variables that you will use to get references to modules and components of the player, and then add the initial listener functions to handle player events.</p>
+<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;
+   // define global variables used in the functions
+   var player;
+   var experienceModule;
+   var videoPlayer;
+   var tabBar;
+   var newPlaylist;
+// event listener for player load
+   function onPlayerLoaded(id) {
+     // get a reference to the overall player object
+     player = brightcove.getExperience(id);
+     // get a reference to the Experience module
+     experienceModule = player.getModule(APIModules.EXPERIENCE);
+   }
+// event listener for the player being ready
+   function onPlayerReady(event) {
+     // get references to the video player and TabBar
+     videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+     tabBar = experienceModule.getElementByID(&quot;playlistTabs&quot;);
+     //  set an event listener for TabBar changes
+     tabBar.addEventListener(&quot;propertyChange&quot;, onTabChange);
+   }
+   function onPlayerError(event) {
+     alert(&quot;info: &quot; + event.info);
+   } 
+&lt;/script&gt;  </pre>
+<p>In these listener functions, we do the following:</p>
+<p><code>onPlayerLoaded</code>:</p>
+<ul>
+    <li>get a reference to the overall player object</li>
+    <li>get a reference to the Experience Module of the Player API</li>
+</ul>
+<p><code>onPlayerReady</code>:</p>
+<ul>
+    <li>get a reference to the VideoPlayer Module of the Player API</li>
+    <li>get a reference to the TabBar component</li>
+    <li>set up a listener for <code>propertyChange</code> events fired by the TabBar</li>
+</ul>
+<p><code>onPlayerError</code>:</p>
+<ul>
+    <li>raise an alert if the player fails to load</li>
+</ul>
+<p>You can access the modules using their constant values or string names. In this example, we're getting a reference to the <a href="http://docs.brightcove.com/en/player/com/brightcove/api/modules/VideoPlayerModule.html">VideoPlayer module</a>, whose APIs we can use to load and play videos and get playback status and events. The list of constants is in the <a href="http://docs.brightcove.com/en/player/com/brightcove/api/APIModules.html">Player API Reference</a> under the <code>APIModules</code> class definition.</p>
+<h2><a name="listen"></a>Listening for user interaction events</h2>
+<p>Finally, we'll add the function that listens for a change in  the TabBar.We'll respond to it by first checking to make sure that the property that changed was the <code>selectedItem</code>. If so, we will respond to the event by getting a reference to video data associated with the newly selected tab, check to see if there is video currently playing, and, if not, uses the <code>cueVideo()</code> method of the VideoPlayer Module to replace the current video in the player with the first one in the new playlist.</p>
+<p>Add the listener function for TabBar <span style="font-family: Courier New;">propertyChange</span> events.</p>
+<pre>
+// event listener for TabBar changes
+function onTabChange(event) {
+  if (event.property == &quot;selectedItem&quot;) {<br />    // get a reference to the playlist object for the currently selected tab<br />    newPlaylist = tabBar.getSelectedData();  <br />    // only if no video is currently playing, cue up the first video of the new playlist<br />    if (videoPlayer.isPlaying() == false) {<br />      videoPlayer.cueVideo(newPlaylist.videoIds[0]);<br />    }<br />  }<br />}</pre>
+<p>The <a href="internal:node/1324">Brightcove Debugger utility</a> can help you debug your custom code. You can use the <code>experienceModule.debug() </code>method to create custom debug messages that will show up in the Debugger utility. You can also build your own <a href="internal:node/5702">lightweight event logger</a>.</p>
+<h2><a id="debug" name="debug"></a>Results</h2>
+<p>Below, you'll see a working example of this player, and below the player, a link to the full code for the page. Remember that in your own page, you'll want to replace the player publishing code with the publishing code for your own player.</p>
+<!-- Start of Brightcove Player -->
+<div style="display: none;">&nbsp;</div>
+<p><object id="myExperience" class="BrightcoveExperience">
+<param name="bgcolor" value="#FFFFFF" />
+<param name="width" value="620" />
+<param name="height" value="267" />
+<param name="playerID" value="732947645001" />
+<param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahJz3DFZLC7ExXGuJqgE1B7" />
+<param name="isVid" value="true" />
+<param name="isUI" value="true" />
+<param name="dynamicStreaming" value="true" />      <!-- The following 3 params establish the listeners for initial player events -->
+<param name="templateLoadHandler" value="onPlayerLoaded" />
+<param name="templateReadyHandler" value="onPlayerReady" />
+<param name="templateErrorHandler" value="onPlayerError" /> </object>  <!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon as the line is read by the browser. If you wish to have the player instantiated only after the rest of the HTML is processed and the page load is complete, remove the line.
+-->  <script type="text/javascript">brightcove.createExperiences();</script>  <!-- End of Brightcove Player -->   <!-- Begin Event Logger --></p>
+<h3>Event Log</h3>
+<div id="BCscriptingLog">
+<p><textarea id="BClogger" name="BClogger" rows="15" cols="50"></textarea></p>
+</div>
+<!-- End Event Logger -->   <!-- Now add your custom script for the Player API -->  <script type="text/javascript">
+/*
+Don't forget to enable the player APIs in the player settings (Publishing Module) or this script will fail silently!
+*/
+// define global variables used in the functions
+
+var player;
+var experienceModule;
+var videoPlayer;
+var tabBar;
+var newPlaylist;
+
+// initial setup in the special onTemplateLoaded() function
+
+function onPlayerLoaded(id) {
+
+// new log
+  newLog();
+  log("EVENT: Player Loaded");
+// get a reference to the overall player object
+  player = brightcove.getExperience(id);
+// get a reference to the Experience module
+  experienceModule = player.getModule(APIModules.EXPERIENCE);
+}
+
+// event listener for the player being ready
+function onPlayerReady(event) {
+  log("EVENT: Player Ready");
+// get references to the video player and TabBar
+  videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+  tabBar = experienceModule.getElementByID("playlistTabs");
+//  set an event listener for TabBar changes
+  tabBar.addEventListener("propertyChange", onTabChange);
+}
+
+function onPlayerError(event) {
+   log("type: " + event.type);
+   log("errorType: " + event.errorType)
+   log("code: " + event.code);
+   alert("info: " + event.info);
+}
+
+// event listener for TabBar changes
+function onTabChange(event) {
+  log("EVENT: Tab Change");
+  log(event);
+// get a reference to the playlist object for the currently selected tab
+  newPlaylist = tabBar.getSelectedData();  
+// only if there is no video currently playing, cue up the first video of the new playlist
+  if (videoPlayer.isPlaying() == false) {
+    videoPlayer.cueVideo(newPlaylist.videoIds[0]);
+  }
+}
+
+  // clear the textarea of messages
+function newLog() {
+  document.getElementById("BClogger").value = "";;
+}
+
+/*
+log a message to our debug window to simply show what's
+happening in this example
+*/
+function log(message) {
+// check to see if the message is complex data and decompose if so
+  if (typeof message == "object"){
+	  for (var prop in message){
+		if (typeof message[prop] == "object") {
+			log(prop+": ");
+			log(message[prop]);
+		}
+		else {
+			log(prop+": "+message[prop]);
+		}
+	}
+  }
+  else {
+	  document.getElementById("BClogger").value += message + "\n";
+  }
+}
+</script>   <!--c:procedure:end-->
+<h3>Complete Code for the Example Page</h3>
+<p>You can download the complete sample code from <a href="http://files.brightcove.com/CueVideoForNewPlaylist.html.zip">http://files.brightcove.com/CueVideoForNewPlaylist.html.zip</a>.<!--c:references:start--></p>
+<h2>Additional resources</h2>
+<p>The following references will help you learn about the Player API</p>
+<ul>
+    <li>Read <a href="internal:node/484">Getting   Started with the Player API</a>.</li>
+    <li>The <a href="http://docs.brightcove.com/en/player">Player API Reference</a> lists all of the methods and events for each component available in the   player.</li>
+    <li><a href="internal:node/466">Using ActionScript with the Player API</a> describes how you can use ActionScript to access and   control the player.</li>
+    <li>Explore the <a href="internal:node/489">Player API Examples</a> to help you   build your own custom players.</li>
+    <li>For more examples of assigning content in the publishing code, see <a href="http://internal:node/565">Assigning Content to Players Programmatically</a> and <a href="internal:node/566">Designating Featured Content in Players</a>.</li>
+</ul>
+<!--c:references:end--></div>
+
+	</body>
+</html>

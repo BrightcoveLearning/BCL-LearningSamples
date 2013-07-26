@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Steps for Setting Up CTA Videos</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: #FFF;
+        color: #666;
+        padding: 50px;
+        max-width: 800px;
+      }
+      pre {
+        font-family: Monaco,Menlo,monospace;
+        background-color: #F5F5F5;
+        color: #666;
+        border: #333 1px solid;
+        border-radius: 10px;
+        padding: 5px;
+        font-size: large;
+      }
+      .note {
+        background-color: #F5F5F5;
+        border: 1px #999 solid;
+        border-radius: 10px;
+        padding: 5px;
+        font-style: italic;
+      }
+      a {
+        color: #0d93f2;
+      }
+      a:hover {
+        color: #9a3535;
+      }
+      strong.red {
+        color: #9a3535;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Steps for Implementing CTA Videos</h1>
+    <ol>
+      <li>Store the image you want to use <strong class="red">in PNG format with a transparent background</strong> on http://img.brightcove.com/</li>
+      <li><strong>Save the data for the image/click-thru:</strong> In the Long Description field for the video store a JSON string in like this:
+<pre>{
+  "linkURL" : "http://zencoder.com",
+  "imageURL" : "http://img.brightcove.com/BCL-cta-sample.png",
+  "top" : "160px",
+  "left" : "480px"
+}</pre>
+<div class="note">
+  <p>Note that the white-space doesn't just matter, but all the syntax does &mdash; there is <a href="http://olivierlabs.com/jason/">a free JSON tool</a> that you can create / open this code in that will check the syntax and make sure it is correct.</p>
+  <p>The <strong>top</strong> and <strong>left</strong> values are pixel distance from the top and left edges of the video player to the top and left edges of the image.</p>
+      </li>
+      <li>Set the <strong class="red">code</strong> cue points for the positions where the CTA should appear and disappear: set two cue points with the following names:
+        <ul>
+          <li>First cue point name: <strong class="red">ctaStart</strong></li>
+          <li>Second cue point name: <strong class="red">ctaEnd</strong></li>
+        </ul>
+        <p class="note">Note that the names are case-sensitive! Also if it would easier for you to specify the start and end times in second (e.g. 14.33) in the long description, I can modify the code to work that way.</p>
+      </li>
+      <li>Embed the embed-code-for-cta-player.txt code block (as is). There is one number to change:
+        <ul>
+          <li>The video ID (value of the <strong class="red">@videoPlayer</strong> param of the object tag)</li>
+        </ul>
+      </li>
+    </ol>
+  </body>
+</html>

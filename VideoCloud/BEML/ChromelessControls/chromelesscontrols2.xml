@@ -1,0 +1,42 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light">
+    <Style id="background"><![CDATA[.background {color: #666666; height: 20px;}]]></Style>
+  </Theme>
+  <Layout>
+    <!-- 1px Border -->
+    <VBox id="background" gutter="0" padding="1">
+      <ChromelessVideoPlayer id="videoPlayer" hideControlsOnLoad="false">
+        <ChromelessControls boxType="hbox" visible="{videoPlayer.playing}" includeInLayout="{videoPlayer.playing}" vAlign="bottom">
+          <!-- Playback controls -->
+          <HBox hAlign="center" height="30" width="100%">
+            <HBox id="defaultView" gutter="0" padding="0" hAlign="center" vAlign="middle" width="100%" maxWidth="100%">
+              <!-- Play / Pause button -->
+              <ToggleButton id="playButton" width="46" iconName="play" toggledIconName="pause" tooltip="play" toggledTooltip="pause" click="{videoPlayer.play()}" toggledClick="{videoPlayer.pause()}" toggled="{videoPlayer.playing}" enabled="{videoPlayer.video}"/>
+              <!-- Progress Bar -->
+              <Canvas height="30">
+                <GraphicBlock/>
+                <HBox gutter="4" hAlign="center" vAlign="middle">
+                  <Spacer width="1"/>
+                  <Canvas width="40">
+                    <Label id="positionLabel" y="-1" text="{format(videoPlayer.mediaPosition, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="right" alpha=".75"/>
+                  </Canvas>
+                  <Playhead id="playhead" height="6" width="80%" mediaController="{videoPlayer}" useTimeToolTip="true" enabled="{videoPlayer.video}"/>
+                  <Canvas width="40">
+                    <Label id="durationLabel" y="-1" text="{format(videoPlayer.mediaDuration, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="left" alpha=".75"/>
+                  </Canvas>
+                  <Spacer width="1"/>
+                </HBox>
+              </Canvas>
+              <!-- Fullscreen button -->
+              <ToggleButton id="fullscreenButton" width="35" height="30" iconName="maximize" toggledIconName="minimize" tooltip="maximize" toggledTooltip="minimize" click="{videoPlayer.goFullScreen(true)}" toggledClick="{videoPlayer.goFullScreen(false)}" toggled="{videoPlayer.fullscreen}"/>
+              <!-- VolumeControl button -->
+              <VolumeControl id="volumeButton" width="35" height="30" mediaController="{videoPlayer}" useOverlayLayer="false" iconName="volume" mutedIconName="muted" tooltip="mute" mutedTooltip="unmute" useZeroWidth="true" horizontalPadding="10" popupGutter="3"/>
+            </HBox>
+          </HBox>
+          <Spacer height="20" includeInLayout="{videoPlayer.fullscreen}"/>
+          <Spacer includeInLayout="{!videoPlayer.fullscreen}"/>
+        </ChromelessControls>
+      </ChromelessVideoPlayer>
+    </VBox>
+  </Layout>
+</Runtime>

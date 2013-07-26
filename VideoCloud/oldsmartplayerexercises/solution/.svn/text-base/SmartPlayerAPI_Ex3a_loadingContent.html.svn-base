@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 3</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+			fieldset {
+				width: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Smart Player API Training</h1>
+		<p>The buttons below are for development purposes only, to switch between Flash and  HTML5 players. Do not use these in production, as the method is unsupported. You should let the Smart Player decide whether to load Flash or HTML5 instead.</p>
+		<div id="modeSwitch">
+			<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+			<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+		</div>
+		<!-- Start of Brightcove Player -->
+
+		<div style="display:none">
+		
+		</div>
+		
+		<!--
+		By use of this code snippet, I agree to the Brightcove Publisher T and C 
+		found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+		-->
+		
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		
+		<object id="myExperience" class="BrightcoveExperience">
+		  <param name="bgcolor" value="#FFFFFF" />
+		  <param name="width" value="480" />
+		  <param name="height" value="270" />
+		  <param name="playerID" value="1146049103001" />
+		  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEd1K9zn5lA_OOffNUFbVae" />
+		  <param name="isVid" value="true" />
+		  <param name="isUI" value="true" />
+		  <param name="dynamicStreaming" value="true" />
+		  <param name="@videoPlayer" value="928121847001" />
+		  <!-- params for Smart Player API -->
+		  <param name="includeAPI" value="true" />
+		  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+		</object>
+		
+		<script type="text/javascript">brightcove.createExperiences();</script>
+		
+		<!-- End of Brightcove Player -->
+		<fieldset>
+			<legend>Generated Content</legend>
+			<div style="float: left;" id="videoSelector"></div>
+			<div style="float: right;" id="videoDetails"></div>
+		</fieldset>
+
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// video names and ids from the account as a JSON string -- this could be obtained through a Media API search_videos call and written into the page on the server side
+			BCL.videoCollection = {"items":[{"id":921449663001,"name":"Bird_Titmouse"},{"id":921449661001,"name":"Bird_Woodpecker"},{"id":921453383001,"name":"Sea_Anemone"},{"id":921453381001,"name":"Sea_ClownFish"},{"id":928087275001,"name":"Sea_LionFish"},{"id":921447844001,"name":"Sea_SeaHorse"},{"id":928121847001,"name":"Sea_SplashingWater - with cue points"},{"id":921494005001,"name":"Sea_Turtle_Solo"},{"id":928199562001,"name":"Video for Updating Exercise -- do not delete"},{"id":922656010001,"name":"Wildlife_Deer"},{"id":922601358001,"name":"Wildlife_Elephant"},{"id":922600341001,"name":"Wildlife_Orangutan"},{"id":921494004001,"name":"Wildlife_Tiger -- has cuepoints"},{"id":922600652001,"name":"Wildlife_Zebra"}],"page_number":0,"page_size":100,"total_count":-1};
+			// build the video selector -- this function called on template ready
+			BCL.createVideoList = function() {
+			  // best practice tip: Dom calls are expensive - build the whole HTML string and inject it all at once rather than make repeated DOM calls
+				var str = "<h3>Videos</h3><ul id=\"playlist\">";
+			  var html = "";
+			  for (var i = 0; i < BCL.videoCollection.items.length; i++) {
+			    // console.log(BCL.videoCollection.items[i]);
+			   html = "<li style=\"cursor:pointer;color:#F4901E\" id=\"{{id}}\" onclick=\"BCL.onVideoSelect(this.id)\">{{name}}</li>";
+			   str += BCL.markup( html , BCL.videoCollection.items[i]);
+			   console.log(i);
+			   
+			  };
+			  str += "</ul>"
+			  document.getElementById("videoSelector").innerHTML = str;
+			  return;
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  console.log("BCL.onTemplateReady");
+			  // call the video list creator
+			  BCL.createVideoList();
+			  BCL.player = brightcove.api.getExperience("myExperience");
+			  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+			  // get a reference to the content module
+			  BCL.contentModule = BCL.player.getModule(brightcove.api.modules.APIModules.CONTENT);
+			}
+
+				// select onchange handler - fetch the video and display the details 
+				BCL.onVideoSelect = function(id) {
+				  console.log("video selected; id = " + id);
+				  // fetch the video DTO and display the details in the videoDetails div
+				  BCL.contentModule.getMediaByID(id, function(videoDTO) {
+					  console.log(videoDTO);
+					  var str = "<table><tbody><tr><td valign=\"top\"><img style=\"cursor:pointer;\" onClick=\"BCL.playVideo({{id}})\" src=\"{{thumbnailURL}}\" /></td><td><p style=\"cursor:pointer;color:blue;\" onClick=\"BCL.playVideo({{id}})\">Video Name: {{displayName}}</p><p>Video Description: {{shortDescription}}</p>";
+					  str = BCL.markup( str , videoDTO );
+					  str += "<p>Video Tags:<br/>" + videoDTO.tags.join() + "</p>";
+					  str += "<p>Video Custom Fields:<br/>";
+						for (var prop in videoDTO.customFields) {
+						str += prop + ": " + videoDTO.customFields[prop] + "</br>";
+						};
+						str += "</p></td></tbody></table>";
+						document.getElementById("videoDetails").innerHTML = str;
+				  });
+				}
+				// play a video
+				BCL.playVideo = function(videoID) {
+					// BCL.videoPlayer.getCurrentVideo(function (videoDTO) {
+					//	console.log(videoDTO)
+					// });
+					BCL.videoPlayer.loadVideoByID(videoID);
+				}
+			// for development purposes only: reopen page with HTML5 player
+			BCL.switchToHTML5 = function() {
+				var separator = "?";
+				if (document.location.href.indexOf("?", 0) > -1) {
+					separator = "&";
+				}
+				window.location = document.location.href + separator + "forceHTML=true";
+			};
+			// for development purposes only: switch back to Flash
+			BCL.switchToFlash = function() {
+				var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+				window.location = document.location.href.substring(0, startOfQuery);
+			};
+				/* 
+				simple HTML templating function
+				 array example:
+				   demo.markup("<div>{{1}}, {{0}}</div>", ["John", "Doe"]);
+				 object example:
+				   demo.markup("<div>{{last}}, {{first}}</div>", {first:"John", last:"Doe"});
+				*/
+				BCL.markup = function (html, data) {
+				    var m;
+				    var i = 0;
+				    var match = html.match(data instanceof Array ? /{{\d+}}/g : /{{\w+}}/g) || [];
+				
+				    while (m = match[i++]) {
+				        html = html.replace(m, data[m.substr(2, m.length-4)]);
+				    }
+				
+				    return html;
+				};
+				
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "name": "localesDemoApp",
+    "description": "Please provide a description for this template.",
+    "version": "1.0",
+    "devices": [
+        "iPhone",
+        "Android"
+    ],
+    "platformConfig": {
+        "android": {
+            "nativeNavigation": true
+        },
+        "iOS": {
+            "nativeNavigation": true
+        }
+    },
+    "views": [
+      {
+          "navigationTitle": "localesDemo",
+          "navigationIcon": "images/icons/localesDemo.png",
+          "uri": "./html/localesDemo.html",
+          "locales": "./txt/locales/de.txt",
+          "markup": "./txt/markup/localesDemo.txt"
+      }
+    ]
+}

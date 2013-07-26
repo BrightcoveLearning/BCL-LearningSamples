@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!-- Video player chrome controls -->
+        <label key="controls play">播放</label>
+        <label key="controls pause">暂停</label>
+        <label key="controls menu">菜单</label>
+        <label key="controls play tooltip">播放</label>
+        <label key="controls pause tooltip">暂停</label>
+        <label key="controls volume tooltip">打开音量控制</label>
+        <label key="controls maximize tooltip">切换全屏</label>
+        <label key="controls minimize tooltip">退出全屏</label>
+        <label key="community share">电子邮件</label>
+        <label key="community socialShare">共享</label>
+        <label key="community link">获取链接</label>
+        <label key="community code">获取代码</label>
+        <label key="community share tooltip">使用电子邮件向朋友发送视频</label>
+        <label key="community socialShare tooltip">共享本视频</label>
+        <label key="community link tooltip">获取视频的直接链接</label>
+        <label key="community code tooltip">获取嵌入式播放器的 HTML 代码</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[展开  >]]></label>
+        <label key="collapse banner">折叠  X</label>
+        <label key="sponsor message">赞助商消息。</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">静音</label>
+        <label key="unmute tooltip">取消静音</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">打开菜单</label>
+        <label key="rightclick fullscreen">切换全屏</label>
+        <label key="rightclick exit fullscreen">退出全屏</label>
+        <label key="rightclick show debug">显示调试信息</label>
+        <label key="rightclick hide debug">隐藏调试信息</label>
+<!-- Error messaging -->
+        <label key="noContent">目前没有相关\n视频。
+			\n\n请过一段时间再试。</label>
+        <label key="unavailableContent">您要收看的视频目前
+			不可用。\n\n请稍后再试。</label>
+        <label key="upgradeRequired">播放本内容需要 Flash 9.0.115.0 或以上版本。\n\n单击&lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;此处&lt;/u&gt;&lt;/a&gt;升级您的播放器。</label>
+        <label key="messaging OK">确定</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">您正在收看：</label>
+        <label key="connecting">正在加载视频</label>
+        <label key="please select:">请选择：</label>
+<!-- General menu navigation -->
+        <label key="menu info">信息</label>
+        <label key="menu email">用电子邮件发送视频</label>
+        <label key="menu link">获取链接</label>
+        <label key="menu share">共享视频</label>
+        <label key="expand">展开</label>
+        <label key="menu embed">获取代码</label>
+        <label key="menu play">播放视频</label>
+        <label key="menu replay">重播</label>
+        <label key="menu resume">恢复</label>
+        <label key="cancel button">取消</label>
+        <label key="continue button">继续</label>
+        <label key="close tooltip">关闭</label>
+<!-- Email video menu screen -->
+        <label key="email page title">使用电子邮件发送给朋友</label>
+        <label key="email your email">您的电子邮件</label>
+        <label key="email friend email"><![CDATA[朋友的电子邮件]]></label>
+        <label key="email message">附言（可选）</label>
+        <label key="email send">发送</label>
+        <label key="email video">用电子邮件发送视频</label>
+        <label key="email error">请输入正确的电子邮件地址。</label>
+        <label key="email confirmation text">电子邮件已发送</label>
+<!-- Share video menu screen -->
+        <label key="share title">共享本视频</label>
+        <label key="share directions">直接共享到下列网站</label>
+        <label key="share facebook">在 Facebook 上共享</label>
+        <label key="share twitter">%E5%9C%A8%20Twitter%20%E4%B8%8A%E5%85%B1%E4%BA%AB</label>
+        <label key="share twitter message">查看</label>
+        <label key="share link">复制链接</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">添加到网站或博客</label>
+        <label key="embed directions">复制代码或选择博客</label>
+        <label key="embed code">内嵌代码</label>
+        <label key="embed copy code">复制代码</label>
+        <label key="embed copied">已复制</label>
+        <label key="blog processing">正在处理...</label>
+        <label key="blog username">用户名</label>
+        <label key="blog password">密码</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">用户名和密码组合不正确。</label>
+        <label key="blog post select directions">选择博客</label>
+        <label key="blog post enter title">发帖标题</label>
+        <label key="blog post enter description">发帖说明（可选）</label>
+        <label key="blog post post video">发布视频</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">产生了错误。请再试一次。</label>
+        <label key="blog confirmation text">帖子发布成功</label>
+<!-- Link to video menu screen -->
+        <label key="link title">本视频的链接</label>
+        <label key="link directions">通过电子邮件或即时通讯工具共享</label>
+        <label key="link copy link">复制链接</label>
+        <label key="link copied">已复制</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">条款和条件</label>
+        <label key="related videos">相关视频</label>
+        <label key="most viewed videos">最多查看视频</label>
+        <label key="newest videos">最新视频</label>
+</labels>

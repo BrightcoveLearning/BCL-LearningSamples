@@ -1,0 +1,26 @@
+<!DOCTYPE Runtime SYSTEM "http://admin.brightcove.com/dtds/beml_rt.dtd">
+<Runtime>
+  <Theme name="Deluxe" style="Light">
+  </Theme>
+  <Layout id="application" boxType="vbox" padding="0" gutter="0" backgroundColor="0x01000000">
+    <HBox gutter="0">
+      <ChromelessVideoPlayer id="videoPlayer" video="{videoList.selectedItem}"/>
+      <List id="videoList" width="250" rowHeight="78" automaticAdvance="true" selectOnClick="true" itemInsetV="0" itemLeading="3">
+        <ListItem boxType="hbox">
+          <Spacer width="8"/>
+          <VBox width="80" height="74" vAlign="middle">
+            <ThumbnailButton height="60" data="{currentItem}" source="{currentItem.thumbnailURL}"/>
+          </VBox>
+          <Spacer width="7"/>
+          <VBox>
+            <Spacer height="4"/>
+            <TitleLabel text="{currentItem.displayName}" truncate="true"/>
+            <Spacer height="2"/>
+            <Label height="52" multiline="true" text="{currentItem.shortDescription}" truncate="true"/>
+          </VBox>
+          <Spacer width="3"/>
+        </ListItem>
+      </List>
+    </HBox>
+  </Layout>
+</Runtime>

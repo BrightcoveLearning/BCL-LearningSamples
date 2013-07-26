@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+
+  </head>
+
+  <body>
+      <h1>Handling Cue Points Using the Smart Player API</h1>
+      <style type="text/css">
+      	.BCLhidden {
+      		visibility: hidden;
+      	}
+      	.BCLshown {
+      		visibility: visible;
+      	}
+      	small {
+      		font-size: 12px;
+      	}
+      	
+      </style>
+      
+
+      <p>The new Smart Player API allows you to listen for (or even set) cue points in your video, so that you can respond with mid-stream behaviors. In this example, I will show you how to display overlay images at cue points.</p>
+      <div style="margin:10px;float:right;width:220px;">
+        <script>document.write('<img src="http://files.brightcove.com/BCL_qrForCuePointHTML5Player.png" width="200" height="200" style="border:1px solid #CCC"/><br>');</script>
+        <small style="font-size:10px;">Scan the QR from your iPhone or iPad to load this page on your device</small>
+      </div>
+      <p style="font-style: italic;font-size: small;">Note: this is a re-do of a <a href="http://blog.brightcove.com/en/2011/08/another-sponsorship-technique">previous blog post</a>, showing a way to do it that will work for HTML5 as well as Flash players</p> 
+      <p>This sample works off the standard Chromeless Video Player, so you can implement this in any Brightcove Video Cloud account. The only change I made to player is to increase the size the setting the height and width param values in the publishing code.</p>
+      <p>This player displays a semi-transparent image over the lower part of the video at cue points. Watch the video below to see it work.</p>
+      <small>The buttons below are for development purposes only, to switch between Flash and  HTML5 players. Do not use these in production, as the method is unsupported. You should let the Smart Player decide whether to load Flash or HTML5 instead.</small>
+      <div id="modeSwitch">
+      	<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+      	<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+      </div>
+      
+      <div class="BCLplayerWrapper" style="position: relative;width: 600;height: 338;">
+      <!-- Start of Brightcove Player -->
+
+			<div style="display:none">
+			
+			</div>
+			
+			<!--
+			By use of this code snippet, I agree to the Brightcove Publisher T and C 
+			found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+			-->
+			
+			<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+			
+			<object id="myExperience" class="BrightcoveExperience">
+				<param name="bgcolor" value="#FFFFFF" />
+				<param name="width" value="600" />
+				<param name="height" value="338" />
+				<param name="playerID" value="620280460001" />
+				<param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+				<param name="isVid" value="true" />
+				<param name="isUI" value="true" />
+				<param name="dynamicStreaming" value="true" />
+				<param name="@videoPlayer" value="734451479001" />
+				<!-- make background transparent so image will show with Flash player -->
+				<param name="wmode" value="transparent" />
+				<!-- params for Universal Player API -->
+				<param name="includeAPI" value="true" />
+				<param name="templateReadyHandler" value="BCL.onTemplateReady" />
+				
+			</object>
+			
+			<!-- 
+			This script tag will cause the Brightcove Players defined above it to be created as soon
+			as the line is read by the browser. If you wish to have the player instantiated only after
+			the rest of the HTML is processed and the page load is complete, remove the line.
+			-->
+			<script type="text/javascript">brightcove.createExperiences();</script>
+			
+			<!-- End of Brightcove Player -->
+			<image id="BCLoverlay" class="BCLhidden" width="600" height="75" style="position: absolute;top: 263px;left: 0px;z-index: 10;" />
+			</div>
+      <p>The semi-transparent images are created simply by using PNG images with the opacity set to 60%. The images are stored on a server, and URLs are stored in the metadata for code  cue points in the video, which I set using the <a href="http://support.brightcove.com/en/docs/setting-cue-points-media-module">cue point editor</a> in the Studio Media Module.</p>
+      <p>Using CSS positioning, I place an image tag that is initially hidden over the lower portion of the player. To make the image visible over the Flash player, I add a wmode param to the player publishing code with the value "transparent."</p>
+      <p>The rest is done using the Smart Player API and JavaScript. I get references to the VIDEO_PLAYER and CUE_POINTs modules, and then and then add listeners for CUE and COMPLETE events.</p>
+      <p>The cue point handler sets the visibility of the image to true, and then sets the source of the image to the metadata for the cue point.</p>
+      <p>The listener for the media complete event sets the image visibility back to hidden. You can use view source to see the complete code here.</p>
+      <p>Want to give the overlay a click-through URL as well? That just requires a simple modification. First, in the cue point metadata, save two URLs, one for the image and one for the click-through in a JSON string</p>
+      <pre>
+  { "imageURL" : "http://my.sponsor.com/image1.png" , "linkURL" : "http://my.sponsor.com/landingpage.html" }
+      </pre>
+      <p>Then you would just need to wrap the image in a link, and change its href value in the cue point handler as well as the image src value.</p>
+    <script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  console.log("BCL.onTemplateReady");
+			  BCL.player = brightcove.api.getExperience("myExperience");
+				// get a reference to the video player and add listener for media complete
+				BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+				BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, BCL.onMediaComplete);
+			  // get a reference to the cue points module and set a listener
+			  BCL.cuePointsModule = BCL.player.getModule(brightcove.api.modules.APIModules.CUE_POINTS);
+			  BCL.cuePointsModule.addEventListener(brightcove.api.events.CuePointEvent.CUE, BCL.onCuePoint);
+			 } 
+			// Cue points handler
+			BCL.onCuePoint = function(event) {
+				console.log("cue point");
+				console.log(event);
+				BCL.image = document.getElementById("BCLoverlay");
+				BCL.image.className = "BCLshown";
+				BCL.image.src = event.cuePoint.metadata;
+			}
+			// handler for media complete
+			BCL.onMediaComplete = function(event) {
+				console.log("Event: Media Complete");
+				// hide the image
+				BCL.image.className = "BCLhidden";
+			}
+			// for development purposes only: reopen page with HTML5 player
+			BCL.switchToHTML5 = function() {
+				var html5URL = document.location.href + "?forceHTML=true";
+				window.location = html5URL;
+			}
+			// for development purposes only: switch back to Flash
+			BCL.switchToFlash = function() {
+				var startOfQuery = document.location.href.indexOf("?", 0);
+				var flashURL = document.location.href.substring(0, startOfQuery);
+				window.location = flashURL;
+			}
+			
+    </script>
+
+  </body>
+
+</html> 

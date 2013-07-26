@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="Content-Type">
+  <title>Publishing VIdeos to a Facebook News Feed</title>
+</head>
+<body>
+<p>How to add Brightcove video to a Facebook News Feed.</p>
+<p>As a Brightcove publisher, you can increase the visibility of your
+organization and your content by sharing videos in your News Feeds on
+Facebook*.&nbsp; This article will take you through the steps of adding
+videos to your Facebook News Feed.<br>
+</p>
+<p>First you will want to create a new player for viral sharing on
+Facebook, so that you can adjust the settings to conform to Facebook
+guidelines. to turn off advertising and track the performance
+separately in your reports. Within the HTML code of your site you can
+configure how the metadata will be passed into the News Feed. Full
+details on Facebook sharing options can be found <a target="_blank"
+ href="http://www.facebook.com/share_partners.php">here</a>.&nbsp; Once
+this is set, a few lines of JavaScript create a button that enables
+users to post one of your videos to their Facebook news feed for all of
+their friends to see.</p>
+<p><img style="width: 537px; height: 254px;"
+ alt="Facebook Newsfeed
+        video" src="images/facebookNewsfeed.png"><br>
+</p>
+<p>I have also created a <a
+ href="http://files.brightcove.com/facebook_newsfeed.html">demo</a> of
+this and attached the source code with instructions below.</p>
+<h3><strong>Prodedure</strong></h3>
+<h4>Create a Player for Facebook Viewing</h4>
+<ol>
+  <li>In the Publishing Module, create a new player from any of the
+single video players.</li>
+  <li>Open the Settings for the player.</li>
+  <li>If you want to drive viral traffic back to your site, in the
+Global Settings, choose the Host on your URL option and insert the URL
+for page where you will embed the player.</li>
+  <li>In the Video Player settings, check Prevent full screen
+functionality to abide by Facebook requirements</li>
+  <li>In the Advertising Module, make sure that Advertising is NOT
+enabled for the player to abide by Facebook requirements.<br>
+  </li>
+</ol>
+<h4>Set up a Page to Share the Video on your Facebook News Feed<br>
+</h4>
+<ol>
+  <li><a href="http://files.brightcove.com/fb-newsfeed.zip">Download
+this starter file</a>, extract it, and open it in a text editor.</li>
+  <li>Edit the meta tags at top of the HTML page to change the content
+values for the title and description.</li>
+</ol>
+<pre>	<code>&lt;meta name="title" content="<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">FaceBook Embed Test</span>" /&gt;<br>	&lt;meta name="description" content="<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">I'm just testing embedding of a Brightcove video player in a Facebook news feed</span>" /&gt;<br></code><br></pre>
+<ol start="3">
+  <li>Edit the link just below the player, substituting the URL for the
+page for u value in the query string:</li>
+</ol>
+<pre style="margin-left: 80px;"><code>&lt;a href="http://www.facebook.com/share.php?u=<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">http://files.brightcove.com/facebook_newsfeed.html</span>" <br>target="_blank" class="fb_share_link style1" onClick="return fbs_click()"&gt;Share on Facebook&lt;/a&gt;</code><br></pre>
+<ol start="4">
+  <li>Get the JavaScript publishing code for the Brightcove player you
+want to use from your account and replace the demo Brightcove player.</li>
+  <li>Edit "image_src" and "video_src" in the &lt;link&gt; tags within
+the Facebook button code to reference your image and the video player
+that you want to be posted in the News Feed. Retain the format of
+'video_src' url and add your publisher ID, player ID, and video IDs.</li>
+</ol>
+<pre>	&lt;link rel="image_src" <br>	 href="<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">http://brightcove.vo.llnwd.net/d12/unsecured/media/20318290001/20318290001_675312622001_bc5-studio-player-still.jpg?pubId=20318290001</span>" /&gt;<br>      	&lt;link rel="video_src" <br>	 href="http://c.brightcove.com/services/viewer/federated_f9/30183089001?isVid=1&amp;isUI=1&amp;publisherID=<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">20318290001</span>&amp;playerID=<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">674388892001</span>&amp;domain=embed&amp;videoId=<span
+ style="font-weight: bold; color: rgb(255, 0, 0);">407541841001</span>" /&gt;<br></pre>
+<div style="margin-left: 40px; font-style: italic;">Note that you can
+get the URL for the video still using the Player API or the Media API.<br>
+</div>
+<div>
+<ol start="6">
+  <li>Make any other changes you wish to the content and styling of the
+page, as long as you leave the code detailed above intact.<br>
+  </li>
+  <li>Save the page and post it to your web site.</li>
+  <li>Open the page on your web site, and click the <span
+ style="font-weight: bold;">Share on Facebook</span> link.</li>
+  <li>Login with your Facebook Credentials and click <span
+ style="font-weight: bold;">Share</span> to add the video to your news
+feed.</li>
+</ol>
+<img style="width: 477px; height: 335px;" alt="Facebook Share Dialog"
+ src="images/FacebookShare.png"><br>
+<br>
+To embed a video in a Facebook Fan page, follow the instructions <a
+ href="http://developer.brightcove.com/en/articles/adding-brightcove-player-your-facebook-fan-page">here</a>.<br>
+<br>
+</div>
+<em>*Note: Be sure to abide by <a target="_blank"
+ href="http://wiki.developers.facebook.com/index.php/Platform_Guidelines">Facebook&#8217;s
+
+Platform
+
+
+Guidelines</a>, and the <a target="_blank"
+ href="http://www.facebook.com/terms.php">Statement of Rights and
+Responsibilities</a>. Please note that advertising is not allowed on
+user profile pages.</em>
+</body>
+</html>

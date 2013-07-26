@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Media API Exercise</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {
+				font-family : Helvetica,Arial,sans-serif; 
+				color : #619FA8;
+				padding: 0px 50px 50px 50px;
+			}
+			legend {
+				color: #CF0050;
+			}
+			.content {
+								width: 900px;
+			}
+			.button {
+				background-color: #f5f5f5;
+				background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#999999));
+				background-image: -webkit-linear-gradient(top, #f5f5f5, #999999);
+				background-image: -moz-linear-gradient(top, #f5f5f5, #999999);
+				background-image: -o-linear-gradient(top, #f5f5f5, #999999);
+				background-image: -ms-linear-gradient(top, #f5f5f5, #999999);
+				background-image: linear-gradient(top, #f5f5f5, #999999);
+				filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#f5f5f5', EndColorStr='#999999');
+				color: #990000;
+				border: #999 1px solid;
+				border-radius: 10px;
+				padding: 5px;
+			}
+			.videoTitle {
+				font-weight: bold;
+				color: #990000;
+			}
+			#pages {
+				font-weight: bold;
+				color: #990000;
+			}
+			.aside {
+				color: #990000;
+				font-style: italic;
+				background-color: #CCC;
+				border: #999 1px solid;
+				border-radius: 10px;
+				padding: 5px;
+				width: 550px;
+			}
+			#results {
+				font-family: monospace;
+				background-color: #F4F4F4;
+				padding: 10px;
+				border: #999 1px solid;
+			}
+		</style>
+		<!-- Javascript Media API wrapper from opensource.brightcove.com -->
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+
+	</head>
+	<body>
+		<div class="content">
+			<h2>Video Data Retriever</h2>
+				<p>This is a utility for dumping out the video metadata for your Video Cloud videos in CSV format. Feel free to take the source code and use or modify it, but take note:</p>
+				<p class="aside">You should not post this page on a public-facing server - it is never a good idea to expose Media API tokens in page contents or source code.</p>
+				<p>Enter your Media API <strong>Read</strong> token</p>
+				<p><input id="token" size="100" value="jUPgZ3EQYo26aTy2Y7_RZ4JWOyou9XyMna9fvkmT1IiQ8a9cHlHcCQ.." /></p>
+				<p>Items per page: 
+					<select id="pageSize">
+						<option>5</option>
+						<option>10</option>
+						<option>25</option>
+						<option>50</option>
+						<option selected="selected">100</option>
+					</select>
+				</p>
+				<p>Total number of items: <span id="pages">???</span></p>
+				<p>Page to display: <select id="pageSelector" onchange="BCL.getVideoData()">
+					<option>1</option>
+				</select></p>
+				<p><span class="button" onclick="BCL.getVideoData()">Get Video Data</span>
+					<span id="allVideos" onclick="BCL.getAllVideos()"></span></p>
+			</div>
+			<pre id="results"></pre>
+		<script type="text/javascript">
+			// BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
+			// namespace to keep all the "global" vars together
+			var BCL = {};
+			// set header row for CSV data
+			BCL.CSVstr = "Video ID,OMSID,Title,Tags,Video Type,Item State,Short Description,Date Modified<br />";
+			// get form data and make the Media API call
+			BCL.getVideoData = function(page) {
+				document.getElementById("results").innerHTML = "";
+				var token = document.getElementById("token").value;
+				var fields = "id,lastModifiedDate,name,tags,itemState,shortDescription";
+				var custom_fields = "omsid,videotype";
+				var pageSizeSelector = document.getElementById("pageSize");
+				var pageSizeSelectedIndex = pageSizeSelector.selectedIndex;
+				var pageSize = pageSizeSelector.options[pageSizeSelectedIndex].text;
+				var pages = 1;
+				var pageSelector = document.getElementById("pageSelector");
+				var allVidBtn = document.getElementById("allVideos");
+				allVidBtn.className = "button";
+				allVidBtn.innerHTML = "Get all Videos <small>(be patient)</small>"
+				if (!page) {
+				var page_number = parseInt(pageSelector.options[pageSelector.selectedIndex].text) - 1;
+				}
+				else {
+				var page_number = page;
+				}
+				if (token === "") {
+					alert("Please enter your Media API Read token");
+				}
+				BCMAPI.token = token;
+				BCMAPI.callback = "BCL.onSearchResponse";
+				BCL.params = {};
+				// use next line to limit fields returned
+				BCL.params.video_fields = fields;
+				BCL.params.custom_fields = custom_fields;
+				BCL.params.page_size = parseInt(pageSize);
+				BCL.params.page_number = page_number;
+				BCL.params.get_item_count = true;
+				BCL.params.filter = "PLAYABLE,INACTIVE";
+				BCL.params.from_date = 22092873;
+				BCMAPI.find("find_modified_videos",BCL.params);
+			}
+			BCL.onSearchResponse = function(jsonData) {
+				console.log(jsonData);
+				var video = {};
+				if (jsonData.total_count > 0) {
+					document.getElementById("pages").innerHTML = jsonData.total_count;
+						BCL.pages = Math.ceil(jsonData.total_count / jsonData.page_size);
+					if (pageSelector.options.length !== BCL.pages) {
+						pageSelector.options.length = 0;
+						for (var i = 1; i <= BCL.pages; i++) {
+							BCL.addOption("pageSelector",i,i);
+						};
+					};
+				}
+				else {
+					document.getElementById("pages").innerHTML = "1";
+				};
+				for (var index in jsonData.items) {
+					video = jsonData.items[index];
+					var date = new Date(parseInt(video.lastModifiedDate));
+					date = date.toLocaleString();
+					if (!video.customFields){
+						video.customFields = {};
+						video.customFields.omsid = "";
+						video.customFields.videotype = "";
+					}
+					else if (!video.customFields.omsid) {
+						video.customFields.omsid = "";						
+					}
+					else if (!video.customFields.videotype) {
+						video.customFields.videotype = "";
+					}
+					else if (!video.shortDescription) {
+						video.shortDescription = "";
+					};
+					var reNewLines=/[\n\r]/g;
+					video.customFields.omsid=video.customFields.omsid.replace(reNewLines, " ");
+					video.shortDescription = BCL.fixShortDescription(video.shortDescription);
+					//console.log(video.customFields.omsid)
+					BCL.CSVstr += "&quot;" + video.id + "&quot;,&quot;" + video.customFields.omsid + "&quot;,&quot;" + video.name + "&quot;,&quot;" + video.tags.join() + "&quot;,&quot;" + video.customFields.videotype + "&quot;,&quot;" + video.itemState + "&quot;,&quot;" + escape(video.shortDescription) + "&quot;,&quot;" + date + "&quot;<br />"
+				}
+				document.getElementById("results").innerHTML = BCL.CSVstr;
+			}
+			BCL.addOption = function(selectID, display, value) {
+			  var obj = document.getElementById(selectID);
+			  obj.options[obj.options.length] = new Option(display, value);
+			}
+			BCL.getAllVideos = function() {
+			BCL.CSVstr = "Video ID,OMSID,Title,Tags,Video Type,Item State,Short Description,Date Modified<br />";
+				for (var i=0; i<BCL.pages; i++){
+					BCL.getVideoData(i);
+				}
+			}
+			BCL.fixShortDescription = function(str) {
+				var ss1,ss2,strURL;
+				var idx = str.indexOf("http");
+				 console.log(idx)
+				if (idx > -1) {
+					console.log(str);
+					ss1 = str.substring(0,(idx-1));
+					console.log(ss1);
+					str = str.substring(idx,str.length);
+					console.log(str);
+					idx2 = str.indexOf(" ");
+					if (idx2 > -1) {
+						console.log(idx2);
+						strURL = ss1.substring(0,(idx2-1));
+						ss2 = str.substring(idx2,(str.length-1));
+						console.log(ss2);
+					}
+					else {
+						strURL = str;
+						ss2 = "";
+					}
+					console.log(strURL)
+					strURL = escape(strURL);
+					str = ss1.concat(strURL,ss2);
+					// console.log(str);
+					return str;
+				}
+				else {return str;}
+			}
+		</script>
+	</body>
+</html>

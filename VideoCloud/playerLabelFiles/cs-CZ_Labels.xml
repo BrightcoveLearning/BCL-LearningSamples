@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">PŘEHRÁT</label>
+        <label key="controls pause">POZASTAVIT</label>
+        <label key="controls menu">NABÍDKA</label>
+        <label key="controls play tooltip">Přehrát</label>
+        <label key="controls pause tooltip">Pozastavit</label>
+        <label key="controls volume tooltip">Otevřít ovladač hlasitosti</label>
+        <label key="controls maximize tooltip">Zobrazit na celou obrazovku</label>
+        <label key="controls minimize tooltip">Zavřít zobrazení na celou obrazovku</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">sdílet</label>
+        <label key="community link">odkaz</label>
+        <label key="community code">kód</label>
+        <label key="community share tooltip">Odeslat video e-mailem kamarádovi</label>
+        <label key="community socialShare tooltip">Sdílet toto video</label>
+        <label key="community link tooltip">Získat přímý odkaz na video</label>
+        <label key="community code tooltip">Získat kód HTML pro vložení přehrávače</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[ROZBALIT  >]]></label>
+        <label key="collapse banner">SBALIT  X</label>
+        <label key="sponsor message">Sponzorská zpráva.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">ztlumit</label>
+        <label key="unmute tooltip">zapnout zvuk</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Otevřít nabídku</label>
+        <label key="rightclick fullscreen">Zobrazit na celou obrazovku</label>
+        <label key="rightclick exit fullscreen">Zavřít zobrazení na celou obrazovku</label>
+        <label key="rightclick show debug">Zobrazit informace o ladění</label>
+        <label key="rightclick hide debug">Skrýt informace o ladění</label>
+<!-- Error messaging -->
+        <label key="noContent">Momentálně nejsou dostupná žádná videa.\n
+            \n\nZkuste to znovu později.</label>
+        <label key="unavailableContent">Video, které chcete
+            sledovat, je momentálně nedostupné.\n\nZkuste to znovu za chvíli.</label>
+        <label key="upgradeRequired">K zobrazení tohoto obsahu je vyžadována aplikace Flash verze 9.0.115.0 nebo novější.\n\nKlepnutím &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;sem&lt;/u&gt;&lt;/a&gt; můžete svůj přehrávač aktualizovat.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">SLEDUJETE</label>
+        <label key="connecting">NAČÍTÁNÍ VIDEA</label>
+        <label key="please select:">vyberte:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Informace</label>
+        <label key="menu email">Poslat e-mailem</label>
+        <label key="menu link">Získat odkaz</label>
+        <label key="menu share">Sdílet video</label>
+        <label key="expand">Rozbalit</label>
+        <label key="menu embed">Získat kód</label>
+        <label key="menu play">Přehrát video</label>
+        <label key="menu replay">Přehrát znovu</label>
+        <label key="menu resume">Přehrát</label>
+        <label key="cancel button">Storno</label>
+        <label key="continue button">Pokračovat</label>
+        <label key="close tooltip">Zavřít</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Odeslat e-mailem kamarádovi</label>
+        <label key="email your email">Váš e-mail</label>
+        <label key="email friend email"><![CDATA[E-mail kamaráda]]></label>
+        <label key="email message">Zpráva (nepovinná)</label>
+        <label key="email send">Odeslat</label>
+        <label key="email video">Poslat video e-mailem</label>
+        <label key="email error">Zadejte správné e-mailové adresy.</label>
+        <label key="email confirmation text">E-mail byl odeslán</label>
+<!-- Share video menu screen -->
+        <label key="share title">Sdílet toto video</label>
+        <label key="share directions">Sdílet přímo na těchto stránkách</label>
+        <label key="share facebook">Sdílet ve službě Facebook</label>
+        <label key="share twitter">Sdílet ve službě Twitter</label>
+        <label key="share twitter message">Pokladna</label>
+        <label key="share link">Kopírovat odkaz</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Přidat na web nebo do blogu</label>
+        <label key="embed directions">Zkopírujte kód nebo vyberte blogovací službu</label>
+        <label key="embed code">Vložit kód</label>
+        <label key="embed copy code">Kopírovat kód</label>
+        <label key="embed copied">Zkopírováno</label>
+        <label key="blog processing">Probíhá zpracování…</label>
+        <label key="blog username">Uživatelské jméno</label>
+        <label key="blog password">Heslo</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Nesprávná kombinace jména a hesla.</label>
+        <label key="blog post select directions">Vyberte blog</label>
+        <label key="blog post enter title">Název příspěvku</label>
+        <label key="blog post enter description">Popis příspěvku (nepovinné)</label>
+        <label key="blog post post video">Publikovat video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Došlo k chybě. Zkuste to znovu.</label>
+        <label key="blog confirmation text">Příspěvek byl odeslán</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Odkaz na toto video</label>
+        <label key="link directions">Sdílet e-mailem nebo prostřednictvím rychlé zprávy</label>
+        <label key="link copy link">Kopírovat odkaz</label>
+        <label key="link copied">Zkopírováno</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Smluvní podmínky</label>
+        <label key="related videos">Související videa</label>
+        <label key="most viewed videos">Nejpopulárnější</label>
+        <label key="newest videos">Nejnovější</label>
+</labels>

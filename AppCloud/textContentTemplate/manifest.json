@@ -1,0 +1,33 @@
+{
+    "name": "demotextcontent",
+    "description": "Please provide a description for this template.",
+    "version": "1.0",
+    "devices": [
+        "iPhone",
+        "Android"
+    ],
+    "platformConfig": {
+        "android": {
+            "nativeNavigation": true
+        },
+        "iOS": {
+            "nativeNavigation": true
+        }
+    },
+    "views": [
+      {
+          "navigationTitle": "demoview",
+          "navigationIcon": "images/icons/demoview.png",
+          "uri": "./html/demoview.html",
+          "locales": "./txt/locales/en.txt",
+          "markup": "./txt/markup/demoview.txt",
+          "data":[
+            {
+              "name": "textcontentfeed",
+              "contentFeed": "4f9edfd2499a022e9500106a",
+              "type": "text_block"
+            }
+          ]
+       }
+    ]
+}

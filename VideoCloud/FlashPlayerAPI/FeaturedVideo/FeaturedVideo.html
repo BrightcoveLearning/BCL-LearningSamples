@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 1</title>
+		<style type="text/css">
+		body {font-family : Helvetica,Arial,sans-serif;color : #619FA8;}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+				<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.body.appendChild(logEntry);
+  		}
+
+		</script>
+
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+		<!-- Start of Brightcove Player -->
+
+		<div style="display:none">
+		
+		</div>
+		
+		<!--
+		By use of this code snippet, I agree to the Brightcove Publisher T and C 
+		found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+		-->
+		
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		<!-- including Player API -->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>		
+		<object id="myExperience" class="BrightcoveExperience">
+		  <param name="bgcolor" value="#FFFFFF" />
+		  <param name="width" value="960" />
+		  <param name="height" value="525" />
+		  <param name="playerID" value="921711277001" />
+		  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WFVFPjkMEccQ12nfiMMKgOf" />
+		  <param name="isVid" value="true" />
+		  <param name="isUI" value="true" />
+		  <param name="dynamicStreaming" value="true" />
+		  <param name="featuredVideo" value="928121847001" />
+		  
+		</object>		
+		<!-- 
+		This script tag will cause the Brightcove Players defined above it to be created as soon
+		as the line is read by the browser. If you wish to have the player instantiated only after
+		the rest of the HTML is processed and the page load is complete, remove the line.
+		-->
+		<script type="text/javascript">brightcove.createExperiences();</script>
+		
+		<!-- End of Brightcove Player -->
+		<h2>Event Log</h2>
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, onTemplateReady);
+			}
+		// listener for the Template Ready event
+			function onTemplateReady(event) {
+				log("EVENT: TEMPLATE_READY");
+				var featuredVideo = BCL.experienceModule.getPlayerParameter("featuredVideo");
+				log(featuredVideo);
+				BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+				if ( featuredVideo != "" ) {
+					BCL.videoPlayer.loadVideo(featuredVideo);
+				}
+			}
+		</script>
+
+	</body>
+</html>

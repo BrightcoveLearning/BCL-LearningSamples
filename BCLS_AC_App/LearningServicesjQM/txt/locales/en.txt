@@ -1,0 +1,2 @@
+#english translated strings
+details_msg=Details

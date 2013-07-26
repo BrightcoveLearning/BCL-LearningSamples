@@ -1,0 +1,35 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light">
+    <Style id="default"><![CDATA[.titleText {fontSize: 12;}.bodyText {fontSize: 10;}.linkText {fontSize: 10;}]]></Style>
+  </Theme>
+  <Layout id="application" boxType="vbox" padding="8" gutter="4" width="960" height="445">
+    <TabBar id="playlistTabs" height="22" tabAlign="right" hideSingleTab="true"/>
+    <HBox gutter="4">
+      <ChromelessVideoPlayer id="videoPlayer" video="{videoList.selectedItem}"/>
+      <List id="videoList" width="300" rowHeight="78" automaticAdvance="true" data="{playlistTabs.selectedItem.videoDTOs}" selectOnClick="true" itemInsetV="4" itemLeading="2">
+        <ListItem boxType="hbox">
+          <Spacer width="8"/>
+          <VBox width="80" height="74" vAlign="middle">
+            <ThumbnailButton height="60" data="{currentItem}" source="{currentItem.thumbnailURL}"/>
+          </VBox>
+          <Spacer width="7"/>
+          <VBox>
+            <Spacer height="4"/>
+            <TitleLabel height="16" text="{currentItem.displayName}" truncate="true"/>
+            <Label height="52" multiline="true" text="{currentItem.shortDescription}" truncate="true"/>
+          </VBox>
+          <Spacer width="3"/>
+        </ListItem>
+      </List>
+    </HBox>
+    <HBox height="39">
+      <Spacer width="7"/>
+      <VBox>
+        <TitleLabel height="24" width="765" id="videoTitle" text="{videoPlayer.video.displayName}" selected="true" size="18" truncate="true"/>
+        <Canvas>
+          <Link x="1" y="-4" size="10" id="relatedLink" text="{videoPlayer.video.linkText}" vAlign="bottom" url="{videoPlayer.video.linkURL}"/>
+        </Canvas>
+      </VBox>
+    </HBox>
+  </Layout>
+</Runtime>

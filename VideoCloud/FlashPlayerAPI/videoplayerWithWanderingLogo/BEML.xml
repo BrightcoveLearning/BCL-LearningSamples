@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Runtime SYSTEM "http://admin.brightcove.com/dtds/beml_rt.dtd">
+<Runtime>  <Theme name="Deluxe" style="Light"/>  <Layout>		<ChromelessVideoPlayer id="videoPlayer"/>
+		<Image x="{videoPlayer.mediaPosition}" y="{videoPlayer.mediaPosition}" rotation="{videoPlayer.timeRemaining}" source="http://files.brightcove.com/BCL-Training-Logo-small.png" height="48" width="200" />
+  </Layout></Runtime>

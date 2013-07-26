@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Resizing Players</title>
+<style type="text/css" >
+body {
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+p, pre, h1, h2, h3 {
+	text-align:left;
+}
+
+.BCNote {
+	background-color:#F5F5F5;
+	font-weight:bold;
+	color:#333333;
+	font-size:small;
+	padding:4px;
+}
+
+#contentBody {
+	width:700px;
+}
+
+#myExperience3 {
+	width:90%;
+	height:250px;
+}
+
+</style>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js" ></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js" > </script>
+
+</head>
+
+<body style="" >
+<div id="contentBody" align="center" >
+<h1>Resizing Players</h1>
+<p>There are different ways to resize a Brightcove Video Cloud Player, by adjusting the publishing code, modifying the BEML code for player template, or using the Player API.</p>
+<p>You can choose the method that works best for you based on the kind of Video Cloud account you have, what kind of player you are using, and the level of your technical skills.</p>
+<table>
+<tbody><tr>
+<th>Solution</th>
+<th>Video Cloud Editions</th>
+<th>Skills Required</th>
+</tr>
+<tr>
+<td>Modify the publishing code</td><td>All</td>
+<td>Add tag to HTML code</td>
+</tr>
+<tr>
+<td>Modify the player template</td>
+<td>Pro, Enterprise</td>
+<td>Modify XML code</td>
+</tr>
+<tr>
+<td>Use the Player API</td>
+<td>All</td>
+<td>JavaScript or ActionScript</td>
+</tr>
+</tbody></table>
+
+<p class="BCNote" >Note: for the player to resize gracefully, the player components, especially the Video Player, need to be sized relatively, so that they expand or contract to fill the available space. If you are using a built-in Brightcove Template, make sure the description includes the word "resizable" or "scalable."</p>
+<h2>Method 1: Adjusting the object params in the publishing code</h2>
+<p>The publishing code for Brightcove Players contains <code>&lt;param&gt;</code> tags that specify the height and width of the overall player.</p>
+<pre>&lt;!-- preliminary code omitted --&gt;
+&lt;object id="myExperience" class="BrightcoveExperience"&gt;
+  &lt;param name="bgcolor" value="#FFFFFF" /&gt;
+<strong>  &lt;param name="width" value="960" /&gt;
+  &lt;param name="height" value="445" /&gt;
+</strong>  &lt;param name="playerID" value="742128481001" /&gt;
+  &lt;param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" /&gt;
+  &lt;param name="isVid" value="true" /&gt;
+  &lt;param name="isUI" value="true" /&gt;
+  &lt;param name="dynamicStreaming" value="true" /&gt;
+&lt;/object&gt;
+&lt;!-- additional code omitted --&gt;
+</pre>
+<p>
+  Here is the player that corresponds to that code.<br/>
+</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none; " >
+
+</div>
+<object id="myExperience" class="BrightcoveExperience" >
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+<script type="text/javascript" >brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>Now, here is the same player with the width and height params adjusted as follows.</p>
+<pre>&lt;param name="width" value="620" /&gt;
+&lt;param name="height" value="297" /&gt;</pre>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none; " >
+
+</div>
+
+<object id="myExperience2" class="BrightcoveExperience" >
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="620" />
+  <param name="height" value="297" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<script type="text/javascript" >brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>Note that the result isn't entirely satisfactory. While the Video Player component in this template is entirely resizeable, the width of the List is fixed. As a result, when I scaled the whole player down proportionally, the aspect ratio of the video player changed and no longer fits the videos as well.</p>
+<p>By looking at the BEML code or measuring components on the screen and doing some math, you can make adjustments that will produce better results. However, there are some other possibilities.</p>
+<h2>Method 2: Control the player dimensions via CSS</h2>
+<p>You can also set the width and height of the player via CSS. In this case, you will delete the <code>&lt;param&gt;</code> tags for the height and width, and instead create a CSS style for the player id, found in the <code>&lt;object&gt;</code> tag.</p>
+<pre>&lt;object <strong>id="myExperience"</strong> class="BrightcoveExperience"&gt;
+</pre>
+<p>So you could create a style that looks like this.</p>
+<pre>#myExperience {
+	width: 620px;
+	height: 297px;<br/>}
+</pre>
+<p>This doesn't solve the problem highlighted above, that you need to do some measuring and math, or use trial and error, to get the actual player screen sized the way you want. However, sizing via CSS does allow you to solve another common challenge: letting the player size adjust automatically to the space available when the page layout is changed. Most often, the size constraint will be on the width, so you could use CSS to let the player width adjust to the width of its HTML container, and leave the height static.</p>
+<pre>#myExperience3 {
+	width: 90%;
+	height: 250px;
+ }</pre>
+<p>In the player below, I've done just that.
+</p>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none; " >
+
+</div>
+<object id="myExperience3" class="BrightcoveExperience" >
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+<script type="text/javascript" >brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>While making your player conform better to the page layout, this method could actually aggrevate the aspect ratio problem in the player, if the width of the HTML container changes dramatically.</p>
+<p>There is an additional method of controlling the player size, however, which is more technically complex but allows you to address the aspect ration issue directly.</p>
+<h2>Method 3: Managing Player size via the Player API</h2>
+<p>Using the Player API, you can get the size of your videos as they are loaded into the player and resize the player to fit the video. This is particularly useful if your videos have different aspect ratios. Here we'll use the JavaScript Player API, but the same technique works in the ActionScript version.</p>
+<p>If you haven't used the Player API before, you should look at <a href="internal:node/484" >Getting Started with the Player API</a>.</p>
+<p>The code used here assumes that you've set up listeners for the player loaded and player ready events in you publishing code by adding the following params to the &lt;object&gt; tag:</p>
+<pre> &lt;param name="templateLoadHandler" value="onPlayerLoaded" /&gt;
+&lt;param name="templateReadyHandler" value="onPlayerReady" /&gt;</pre>
+<pre>&nbsp;</pre>
+<p>You can set the reset the player size based on the aspect ratio of the current video using the following function (which is more verbose than it needs to be in order to make the logic clear):</p>
+<pre>function setPlayerSize() {<br/>  // you need to have already gotten a reference to the VIDEO_PLAYER Module as videoPlayer
+  // get the current width and height of the player<br/>  currentWidth = videoPlayer.getWidth();<br/>  currentHeight = videoPlayer.getHeight();
+  // get a reference <br/>  currentRendition = videoPlayer.getCurrentRendition();<br/>  aspectRatio = currentRendition.frameWidth / currentRendition.frameHeight;<br/>  var newHeight = currentWidth/aspectRatio;<br/>  videoPlayer.setSize(currentWidth,newHeight);<br/>}</pre>
+</div>
+
+</body></html>

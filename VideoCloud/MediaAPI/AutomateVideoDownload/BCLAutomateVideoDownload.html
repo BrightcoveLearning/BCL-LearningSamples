@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Download Sample</title>
+		<!--Standard Player Script moved to head for faster loading-->
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		<!--Player API Script-->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<!-- add MAPI wrapper from http://opensource.brightcove.com/ for Media API calls -->
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+		<!-- add logging scripts -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+				<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.body.appendChild(logEntry);
+  		}
+
+		</script>
+		<!-- custom script that does the real work -->
+		<script type="text/javascript">
+		/* create a namespace so we don't clutter global with vars */
+		var BCL = {};
+		/* initial event listeners */
+		function onTemplateLoaded(id) {
+		  log("EVENT: onPlayerLoaded");
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			// set event listener for player ready for interactions
+			BCL.experienceModule.addEventListener( BCExperienceEvent.TEMPLATE_READY, onPlayerReady );
+		}
+		function onPlayerReady(event) {
+		  log("EVENT: onPlayerReady");
+		  // get a reference to the video player module
+		  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // add a listener for media change events
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, onMediaChange);
+		  // execute the function to pick up the initially loaded video
+		  onMediaChange(null);
+		}
+		// listener for media change events
+		function onMediaChange(event) {
+		log("EVENT: MediaBegin");
+    // get the ID of the current video as it starts playing
+		BCL.currentVideoID = BCL.videoPlayer.getCurrentVideo().id;
+		// pass the video ID to getDownloadLink()
+		getDownloadLink(BCL.currentVideoID);
+		}
+		function getDownloadLink(id) {
+		// object for search parameters
+		var searchParams = new Object();
+		// set Media API token - MUST BE URL ACCESS READ token!!
+		BCMAPI.token = "jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..";
+		// set callback for Media API call
+		BCMAPI.callback = "onSearchResult";
+		// set command
+		BCMAPI.command = "find_video_by_id";
+		// set search params
+		searchParams.video_id = id;
+		// need this if the delivery for the account is streaming, and Universal Delivery Service must be enabled!
+		searchParams.media_delivery = "HTTP";
+		// just get the field we need for better performance
+		searchParams.video_fields = "FLVURL";
+		// execute the search via Media API -- Player API won't get the URL
+		BCMAPI.find(BCMAPI.command,searchParams);
+		}
+		// handler for the media API search
+		function onSearchResult(jsondata) {
+		log(jsondata.FLVURL);
+		// create the link and write it into the HTML
+		var str = "";
+		str += "<a href='"+jsondata.FLVURL+"'>Download the Video</a>";
+		document.getElementById("downloadLink").innerHTML = str;
+		}
+		</script>
+
+	</head>
+	<body>
+	<h1>Sample of Automating Provision of Video Download</h1>
+	<div id="playerBlock">
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="876399696001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiXzpQG9K_R6AJJs_1C0Vjy" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player --></div>
+	<div id="downloadLink"></div>
+	<!-- Begin Script Logging Area -->
+	<h2>Results</h2>
+	<!-- End Script Logging Area  -->
+	</body>
+</html>

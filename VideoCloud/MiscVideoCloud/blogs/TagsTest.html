@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+    <style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #666666;
+			margin-left: 100px;
+			width: 800px;
+			}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js - the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		};
+		</script>
+		<!-- including Player API -->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <img src="http://img.brightcove.com/bc-training-logo.png"  alt="Brightcove Training" />
+    </div>
+    <div>
+      <h1>Brightcove Learning Sample: Sponsor Messages on Cue Points</h1>
+      <ul>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-ChangeImages.html">Displaying sponsor banners for each video</a></li>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-ChangeImagesOnCuePoints.html">Displaying sponsor banners at cue points</a></li>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-HideVideoOnCuePoints.html">Pausing a video to display sponsor messages at cue points</a></li>
+      </ul>
+      <!-- Start of Brightcove Player -->
+      
+      <div style="display:none">
+      
+      </div>
+      
+      <!--
+      By use of this code snippet, I agree to the Brightcove Publisher T and C 
+      found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+      -->
+      
+      <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+      
+      <object id="myExperience" class="BrightcoveExperience">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="640" />
+        <param name="height" value="400" />
+        <param name="playerID" value="1275282363001" />
+        <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag32ylmdflHyai73DhtMDLJ" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        
+      </object>
+      
+      <!-- 
+      This script tag will cause the Brightcove Players defined above it to be created as soon
+      as the line is read by the browser. If you wish to have the player instantiated only after
+      the rest of the HTML is processed and the page load is complete, remove the line.
+      -->
+      <script type="text/javascript">brightcove.createExperiences();</script>
+      
+      <!-- End of Brightcove Player -->
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset>
+    </div>
+    <script type="text/javascript">
+      /* script here */
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  log("BCL.onTemplateReady");
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  // get a reference to the logo image in the player
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+			  log(BCL.videoPlayer.getCurrentVideo().tags);
+			  log(BCL.experienceModule.getElementByID("videoTags").getData());
+				/*
+				get a reference to HBox that contains the video player and playlist;
+				note that if you examine the BEML code for the player, you will
+				find that it's the second child of the overall layout, which has
+				the id "application"
+				*/
+			}
+
+    </script>
+
+  </body>
+
+</html> 

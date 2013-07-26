@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Smart Player API updateMedia Sample</title>
+    <style>
+    body {
+      font-family: sans-serif;
+    }
+    pre {
+      background-color: #f6f6f6;
+      color: #333;
+      border: 1px #ccc solid;
+      border-radius: 10px;
+      padding: 5px;
+      font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Update Media Sample</h1>
+    <p>This sample uses the Smart Player API sample to remove the displayName from the current video so that it doesn't show up in the chromeless player overlay.</p>
+    <!-- Start of Brightcove Player -->
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <object id="myExperience928087275001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="921267190001" />
+      <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WG3MLvDx9F9zkV06cNK00ey" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      <param name="@videoPlayer" value="928087275001" />
+      <!-- params for Smart Player API -->
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="onTemplateLoad" />
+      <param name="templateReadyHandler" value="onTemplateReady" />
+    </object>
+    <script type="text/javascript">brightcove.createExperiences();</script>
+    <!-- End of Brightcove Player -->
+    <p id="vidName">Original video name:</p>
+    <p id="newVidName">New display name:</p>
+    <h2>Code for this sample</h2>
+    <p>Below is are the relevant HTML and JavaScript code snippets for this example. You can view source to see the complete code.</p>
+<pre><code>
+  [params added to publishing code]
+  &lt;param name=&quot;includeAPI&quot; value=&quot;true&quot; /&gt;
+  &lt;param name=&quot;templateLoadHandler&quot; value=&quot;onTemplateLoad&quot; /&gt;
+  &lt;param name=&quot;templateReadyHandler&quot; value=&quot;onTemplateReady&quot; /&gt;
+  
+  [JavaScript code]
+  var player,modContent,modVP;
+  onTemplateLoad = function (id) {
+    // get references to player and modules
+    player = brightcove.api.getExperience(id);
+    modVP = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+    modContent = player.getModule(brightcove.api.modules.APIModules.CONTENT);
+  }
+  onTemplateReady = function(event) {
+    // get the current video object
+    modVP.getCurrentVideo(function(videoDTO) {
+      var updateDTO = videoDTO;
+      document.getElementById("vidName").innerHTML += " " + videoDTO.displayName;
+      updateDTO.displayName = "";
+      modContent.updateMedia(updateDTO,function(newVideoDTO) {
+        modVP.play();
+        document.getElementById("newVidName").innerHTML += " " + newVideoDTO.displayName;
+      })
+    });
+  }
+</code></pre>
+    <script src="http://docs.brightcove.com/en/scripts/jquery-1.8.2.min.js"></script>
+    <script src="http://docs.brightcove.com/en/scripts/highlight/highlight.pack.js"></script>
+    <script src="http://files.brightcove.com/bcl-remove-video-name.js">
+      /***************************************************
+      syntax highlighting - dependent on highlight.pack.js
+      ***************************************************/
+      hljs.tabReplace = '  ';
+      hljs.initHighlightingOnLoad();
+      BCLhighlight = function() {
+        $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+      }
+      BCLhighlight();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<!-- Replace the text for the content attributes in the two meta tags that follow with whatever you like -->
+	<meta name="title" content="FaceBook Embed Test" />
+	<meta name="description" content="I'm just testing embedding of a Brightcove video player in a Facebook news feed" />
+    <meta name="medium" content="video" />
+    <meta name="video_type" content="application/x-shockwave-flash" />
+    <link rel="image_src" href="http://mysite.verizon.net/vzeqny48/images/HTML5VideoPreview.jpg" />
+	<!-- You can modify or add to the styles as you wish -->
+	<style type="text/css">
+	<!--
+	.style1 {
+		color: #3b5998;
+		font-weight: bold;
+	}
+	.style2 {
+		color: #3b5998; 
+		text-align: right;
+	}
+	#Content {
+		width: 570px;
+		text-align: center;
+		margin-left: 50px;
+	}
+	-->
+	</style>
+</head>
+<body>
+	<div id="Content">
+	<!-- Replace the Brightcove publishing code below with the code for your own player -->
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="687957498001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagebULq1spME5appRV75mTd" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+</body>
+</html>

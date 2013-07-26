@@ -1,0 +1,48 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <!-- Change the height and width values in the Layout tag below to size the player differently or remove them and specify the height and with the Edit Template dialog -->
+  <Layout boxType="hbox" vAlign="bottom">
+    <ChromelessVideoPlayer id="videoPlayer" useOverlayMenu="false" video="{videoList.selectedItem}" preventFullScreen="false" width="100%">
+      <ChromelessControls boxType="vbox" vAlign="bottom" height="95%" width="100%" visible="{!videoPlayer.menu.open}">
+        <!-- Playback controls -->
+        <HBox hAlign="left" vAlign="bottom" height="95%">
+          <HBox id="defaultView" gutter="6" padding="10" vAlign="bottom">
+            <ToggleButton id="playButton" width="65" height="30" iconName="play" toggledIconName="pause" tooltip="controls play tooltip" toggledTooltip="controls pause &#xD;                          tooltip" click="{videoPlayer.play()}" toggledClick="{videoPlayer.pause()}" toggled="{videoPlayer.playing}" enabled="{videoPlayer.video}"/>
+            <Canvas height="30">
+              <GraphicBlock/>
+              <HBox gutter="4" vAlign="middle">
+                <Spacer width="1"/>
+                <Canvas width="40">
+                  <Label id="positionLabel" y="-1" text="{format(videoPlayer.mediaPosition, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="right" alpha=".75"/>
+                </Canvas>
+                <Playhead id="playhead" height="6" mediaController="{videoPlayer}" useTimeToolTip="true" enabled="{videoPlayer.video}"/>
+                <Canvas width="40">
+                  <Label id="durationLabel" y="-1" text="{format(videoPlayer.mediaDuration, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="left" alpha=".75"/>
+                </Canvas>
+                <Spacer width="1"/>
+              </HBox>
+            </Canvas>
+            <ToggleButton id="fullscreenButton" width="35" height="30" iconName="maximize" toggledIconName="minimize" tooltip="controls maximize tooltip" toggledTooltip="controls minimize tooltip" click="{videoPlayer.goFullScreen(true)}" toggledClick="{videoPlayer.goFullScreen(false)}" toggled="{videoPlayer.fullscreen}"/>
+            <VolumeControl id="volumeButton" width="35" height="30" mediaController="{videoPlayer}" useOverlayLayer="false" iconName="volume" mutedIconName="muted" tooltip="mute tooltip" mutedTooltip="unmute tooltip" useZeroWidth="true" horizontalPadding="10" popupGutter="3"/>
+          </HBox>
+          <!-- The Spacer below shortens the control block to keep the playhead well from covering the logo -->
+          <HBox width="146" vAlign="top" hAlign="right" padding="10" gutter="5" includeInLayout="{!videoPlayer.fullscreen}">
+          	<Button id="emailButton" width="35" height="30" iconName="share" tooltip="Email video" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Email', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+          	<Button id="shareButton" width="35" height="30" iconName="socialShare" tooltip="Share video" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Share', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+          	<Button id="embedButton" width="35" height="30" iconName="code" tooltip="Get code" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Embed', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+          </HBox>
+        </HBox>
+        <Spacer height="20" includeInLayout="{videoPlayer.fullscreen}"/>
+        <Spacer includeInLayout="{!videoPlayer.fullscreen}"/>
+      </ChromelessControls>
+    </ChromelessVideoPlayer>
+    <!-- To make the images appear only when a video is playing, like a true logo overlay, add the attribute visible="{videoPlayer.playing}" to the VBox tag below -->
+    <VBox vAlign="bottom" hAlign="right" width="0" height="55" visible="{!videoPlayer.fullscreen}">
+      <Canvas>
+        <!-- The images are on a permanent file server at Brightcove - if you wish to put them on a Mashable server instead, you can retrieve using the URLs and then change the source values to point to the new locations -->
+        <Image source="http://files.brightcove.com/MashableOverlay.png" height="30" url="http://mashable.com" x="-146"/>
+        <Image source="http://files.brightcove.com/BrightcoveOverlayForMashable.png" width="136" height="25" url="http://roia.biz/im/n/GofFvq1BAAGYOkMAAA0DQgAA2OFmMQA-A/" x="-146" y="30"/>
+      </Canvas>
+    </VBox>
+  </Layout>
+</Runtime>

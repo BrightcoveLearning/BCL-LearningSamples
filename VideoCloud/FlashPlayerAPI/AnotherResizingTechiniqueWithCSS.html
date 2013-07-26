@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+    <script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+        <!-- script for debugging -->
+    <script type="text/javascript">
+    /*
+      This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+      */
+      function log(message) {
+        var logEntry = prettyPrint(message);
+        document.getElementById("results").appendChild(logEntry);
+      }
+    </script>
+
+<style type="text/css">
+.BCLplayerSmall {
+  float: right;
+  height: 180px;
+  width: 320px;
+}
+.BCLplayerLarge {
+  height: 383px;
+  width: 680px;
+}
+#myExperience654553710001 {
+  height: 100%;
+  width: 100%;
+}
+</style>
+<h3>Tip of the week: another way to resize a player</h3>
+<p>Here's another use case for resizing a player: you want as large a screen as possible for the video while it's playing, but you don't want to give up all that real estate on the page when a video isn't playing. We can address this using a combination of CSS and just little bit of the Player API. I'll just use the standard Chromeless Video Player, enabling the ActionScript/JavaScript Player APIs in the player settings.</p>
+<p>I am putting the player inside a div tag that has the id "BCLPlayerBlock" and has a class attribute set to BCLplayerSmall. Here's the CSS rule for the class:</p>
+<div class="BCLplayerSmall" id="BCLPlayerBlock"><!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience654553710001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="320" />
+  <param name="height" value="180" />
+  <param name="playerID" value="620280460001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+  <param name="@videoPlayer" value="654553710001" />
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player --></div>
+
+<pre>.BCLplayerSmall {<br />  float: right;<br /> height: 180px;<br />  width: 320px;<br />}
+</pre>
+<p>I've also changed the height and width values in the publishing code to match the size of the div: 320x180, but I'm also going to create another CSS rule for player object, using its id (in this case myExperience654553710001):</p>
+<pre>#myExperience654553710001 {
+  height: 100%;
+  width: 100%;
+}</pre>
+<p>This means that my player will grow and shrink to fill 100% of its surrounding container.</p>
+<p>And now I'll create one more style class called BCLplayerLarge:</p>
+<pre>
+.BCLplayerLarge {
+  height: 383px;
+  width: 680px;
+}
+</pre>
+<p>That's it for the CSS. Now all I need is a little bit of JavaScript and Player API. I'll get a reference to the VideoPlayer module and set up event listeners for the PLAY and STOP events:</p>
+<pre>
+  // namespace for everything global
+  var BCL = {};
+  // initial setup in the special onTemplateLoaded() function
+  function onTemplateLoaded(id) {
+    BCL.player = brightcove.getExperience(id);
+    BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+    BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  }
+  // event listener for the player being ready
+  BCL.onTemplateReady = function(event) {
+    BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+    BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+    BCL.videoPlayer.addEventListener(BCMediaEvent.PLAY, BCL.onMediaPlay);
+    // add a listener for playback stop
+    BCL.videoPlayer.addEventListener(BCMediaEvent.STOP, BCL.onMediaStop);
+  }
+</pre>
+<p>In the listener functions for the PLAY and STOP events, I'll simply swap the class values for the div that contains the player between BCLplayerLarge and BCLplayerSmall:</p>
+<pre>
+  // listener for media play
+  BCL.onMediaPlay = function() {
+    document.getElementById("BCLPlayerBlock").className = "BCLplayerLarge";
+}
+  // listener for media stop
+  BCL.onMediaStop = function() {
+    document.getElementById("BCLPlayerBlock").className = "BCLplayerSmall";
+  }
+</pre>
+<p>And that's it -- now I'm giving my viewers big screen experience while they're watching the video without giving up a huge area of the page when they</p>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<script type="text/javascript">
+  // namespace for everything global
+  var BCL = {};
+  // initial setup in the special onTemplateLoaded() function
+  function onTemplateLoaded(id) {
+    BCL.player = brightcove.getExperience(id);
+    BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+    BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+  }
+  // event listener for the player being ready
+  BCL.onTemplateReady = function(event) {
+    BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+    BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+    BCL.videoPlayer.addEventListener(BCMediaEvent.PLAY, BCL.onMediaPlay);
+    // add a listener for playback stop
+    BCL.videoPlayer.addEventListener(BCMediaEvent.STOP, BCL.onMediaStop);
+  }
+  // listener for media play
+  BCL.onMediaPlay = function() {
+    document.getElementById("BCLPlayerBlock").className = "BCLplayerLarge";
+}
+  // listener for media stop
+  BCL.onMediaStop = function() {
+    document.getElementById("BCLPlayerBlock").className = "BCLplayerSmall";
+  }
+</script>
+<ul>
+    <li>
+    <p>New or updated Support Documents:&nbsp;</p>
+    <ul>
+        <li><a hrefhttp://support.brightcove.com/en/docs/advertising-and-live-streams">Advertising and Live Video</a>: setting up ads for a live stream is as easy as for on-demand videos</li>
+    </ul>
+  </li>
+</ul>
+<p>Free online training classe schedule:</p>
+<p>[view:www_events=block_3]</p>
+<div id="BCToolKitContainer" style="width: 400px; ">&nbsp;</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

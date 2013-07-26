@@ -1,0 +1,104 @@
+<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">AFSPIL</label>
+        <label key="controls pause">PAUSE</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Afspil</label>
+        <label key="controls pause tooltip">Pause</label>
+        <label key="controls volume tooltip">Åbn kontrolelementerne til lydstyrke</label>
+        <label key="controls maximize tooltip">Skift til fuld skærm</label>
+        <label key="controls minimize tooltip">Afslut fuld skærm</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">del</label>
+        <label key="community link">hent link</label>
+        <label key="community code">hent kode</label>
+        <label key="community share tooltip">Send video til en ven via e-mail</label>
+        <label key="community socialShare tooltip">Del denne video</label>
+        <label key="community link tooltip">Hent direkte link til video</label>
+        <label key="community code tooltip">Hent HTML til integreret afspiller</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[UDVID  >]]></label>
+        <label key="collapse banner">SKJUL  X</label>
+        <label key="sponsor message">Sponsormeddelelse.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">slå lyden fra</label>
+        <label key="unmute tooltip">slå lyden til</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Åbn Menu</label>
+        <label key="rightclick fullscreen">Skift til fuld skærm</label>
+        <label key="rightclick exit fullscreen">Afslut fuld skærm</label>
+        <label key="rightclick show debug">Vis fejlfindingsoplysninger</label>
+        <label key="rightclick hide debug">Skjul fejlfindingsoplysninger</label>
+<!-- Error messaging -->
+        <label key="noContent">Der er ingen tilgængelige videoer på\nnuværende tidspunkt.
+            \n\nPrøv igen senere.</label>
+        <label key="unavailableContent">Videoen, som du prøver på at
+            se, er ikke tilgængelig i øjeblikket.\n\nPrøv igen senere.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 eller senere er påkrævet for at se dette indhold.\n\nKlik <a href='http://www.adobe.com/go/getflash/' target='_blank'><u>her</u></a> for at opgradere afspilleren.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">DU SER I ØJEBLIKKET:</label>
+        <label key="connecting">INDLÆSER VIDEO</label>
+        <label key="please select:">Vælg:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Info</label>
+        <label key="menu email">E-mail</label>
+        <label key="menu link">Hent link</label>
+        <label key="menu share">Del video</label>
+        <label key="expand">Udvid</label>
+        <label key="menu embed">Hent kode</label>
+        <label key="menu play">Afspil video</label>
+        <label key="menu replay">Afspil igen</label>
+        <label key="menu resume">Fortsæt</label>
+        <label key="cancel button">Annuller</label>
+        <label key="continue button">Fortsæt</label>
+        <label key="close tooltip">Luk</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Send til en ven via e-mail</label>
+        <label key="email your email">Din e-mail</label>
+        <label key="email friend email"><![CDATA[Vens e-mail]]></label>
+        <label key="email message">Meddelelse (valgfri)</label>
+        <label key="email send">Send</label>
+        <label key="email video">Send video via e-mail</label>
+        <label key="email error">Indtast korrekte e-mail-adresser.</label>
+        <label key="email confirmation text">Din e-mail er sendt</label>
+<!-- Share video menu screen -->
+        <label key="share title">Del denne video</label>
+        <label key="share directions">Del direkte på disse websider</label>
+        <label key="share facebook">Del på Facebook</label>
+        <label key="share twitter">Del%20p%C3%A5%20Twitter</label>
+        <label key="share twitter message">Check+out+</label>
+        <label key="share link">Kopier link</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Tilføj til websted eller blog</label>
+        <label key="embed directions">Kopier kode, eller vælg blogtjeneste</label>
+        <label key="embed code">Integrer kode</label>
+        <label key="embed copy code">Kopier kode</label>
+        <label key="embed copied">Kopieret</label>
+        <label key="blog processing">Behandler ...</label>
+        <label key="blog username">Brugernavn</label>
+        <label key="blog password">Adgangskode</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Forkert kombination af logon/adgangskode.</label>
+        <label key="blog post select directions">Vælg en blog</label>
+        <label key="blog post enter title">Angiv titel</label>
+        <label key="blog post enter description">Angiv beskrivelse (valgfri)</label>
+        <label key="blog post post video">Send video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Der opstod en fejl. Prøv igen.</label>
+        <label key="blog confirmation text">Indlægget er sendt</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Link til denne video</label>
+        <label key="link directions">Del via e-mail eller IM</label>
+        <label key="link copy link">Kopier link</label>
+        <label key="link copied">Kopieret</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Vilkår og bestemmelser</label>
+        <label key="related videos">Relaterede videoer</label>
+        <label key="most viewed videos">Mest sete</label>
+        <label key="newest videos">Nyeste</label>
+</labels>

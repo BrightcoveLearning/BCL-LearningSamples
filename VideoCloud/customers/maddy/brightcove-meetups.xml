@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Runtime SYSTEM "http://admin.brightcove.com/dtds/beml_rt.dtd">
+<Runtime>
+	<Theme name="Deluxe" style="Light">
+		<Style id="default"><![CDATA[
+			.titleText {
+			fontSize: 12;
+			active: #A81E28;
+			disabled: #A8AAAD;
+			rollover: #A81E28;
+			selected: #A81E28;
+			}
+			.bodyText {
+			fontSize: 11;
+			active: #666666;
+			disabled: #A8AAAD;
+			rollover: #666666;
+			}
+			.linkText {fontSize: 11;}
+			]]></Style>
+		<Style id="videoList"><![CDATA[
+			.listItemBoxes {
+			gradientTop: #303030;
+			gradientMiddle: #424242;
+			gradientBottom: #303030;
+			rolloverGradientTop: #272727;
+			rolloverGradientMiddle: #353535;
+			rolloverGradientBottom: #272727;
+			selectedGradientTop: #272727;
+			selectedGradientMiddle: #353535;
+			selectedGradientBottom: #272727;
+			border: #3C3C3C;
+			}
+			.pagingButtons {
+			gradientTop: #444444;
+			gradientBottom: #1B1B1B;
+			rolloverGradientTop: #A81E28;
+			rolloverGradientBottom: #2B2B2B;
+			selectedGradientTop: #2B2B2B;
+			selectedGradientBottom: #3B3B3B;
+			disabledGradientTop: #444444;
+			disabledGradientBottom: #444444;
+			borderGradientTop: #5B5B5B;
+			borderGradientBottom: #4B4B4B;
+			rolloverBorderGradientTop: #5B5B5B;
+			rolloverBorderGradientBottom: #4B4B4B;
+			selectedBorderGradientTop: #5B5B5B;
+			selectedBorderGradientBottom: #4B4B4B;
+			disabledBorderGradientTop: #5B5B5B;
+			disabledBorderGradientBottom: #5B5B5B;
+			backgroundGradientTop: #7C7B7B;
+			backgroundGradientBottom: #666666;
+			backgroundBorderGradientTop: #7C7B7B;
+			backgroundBorderGradientBottom: #666666;
+			icons: #EEEEEE;
+			rolloverIcons: #FFFFFF;
+			selectedIcons: #FFFFFF;
+			disabledIcons: #BBBBBB;
+			}
+			.titleText {
+			active: #999999;
+			disabled: #9B9B9B;
+			rollover: #A81E28;
+			selected: #A81E28;
+			}
+			.bodyText {
+			active: #A2A2A2;
+			disabled: #6B6B6B;
+			rollover: #A2A2A2;
+			selected: #A2A2A2;
+			}
+			
+			.buttons {
+			gradientTop: #7C7B7B;
+			gradientBottom: #3B3A3A;
+			borderGradientTop: #898989;
+			borderGradientBottom: #585858;
+			rolloverGradientTop: #7C7B7B;
+			rolloverGradientBottom: #3B3A3A;
+			downStateGradientTop: #7C7B7B;
+			downStateGradientBottom: #3B3A3A;
+			downStateBorder: #B0C645;
+			text: #FFFFFF;
+			rolloverText: #96A93B;
+			disabledText: #FFFFFF;
+			icons: #FFFFFF;
+			rolloverIcons: #A81E28;
+			disabledIcons: #7E7E7E;
+			}
+			
+			]]></Style>
+	</Theme>
+	<Layout id="application" width="570" height="566" boxType="vbox" gutter="10" hAlign="center">
+		<VBox>
+    <HBox vAlign="bottom" padding="5" height="430">
+    <ChromelessVideoPlayer id="videoPlayer" useOverlayMenu="false" video="{videoList.selectedItem}" preventFullScreen="false" width="100%">
+      <ChromelessControls boxType="vbox" vAlign="bottom" height="95%" width="100%" visible="{!videoPlayer.menu.open}">
+        <!-- Playback controls -->
+        <HBox hAlign="left" vAlign="bottom" height="95%">
+          <HBox id="defaultView" gutter="6" padding="10" vAlign="bottom">
+            <ToggleButton id="playButton" width="65" height="30" iconName="play" toggledIconName="pause" tooltip="controls play tooltip" toggledTooltip="controls pause tooltip" click="{videoPlayer.play()}" toggledClick="{videoPlayer.pause()}" toggled="{videoPlayer.playing}" enabled="{videoPlayer.video}"/>
+            <Canvas height="30">
+              <GraphicBlock/>
+              <HBox gutter="4" vAlign="middle">
+                <Spacer width="1"/>
+                <Canvas width="40">
+                  <Label id="positionLabel" y="-1" text="{format(videoPlayer.mediaPosition, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="right" alpha=".75"/>
+                </Canvas>
+                <Playhead id="playhead" height="6" mediaController="{videoPlayer}" useTimeToolTip="true" enabled="{videoPlayer.video}"/>
+                <Canvas width="40">
+                  <Label id="durationLabel" y="-1" text="{format(videoPlayer.mediaDuration, SecondsTimecodeFormatter)}" vAlign="middle" hAlign="left" alpha=".75"/>
+                </Canvas>
+                <Spacer width="1"/>
+              </HBox>
+            </Canvas>
+            <ToggleButton id="fullscreenButton" width="35" height="30" iconName="maximize" toggledIconName="minimize" tooltip="controls maximize tooltip" toggledTooltip="controls minimize tooltip" click="{videoPlayer.goFullScreen(true)}" toggledClick="{videoPlayer.goFullScreen(false)}" toggled="{videoPlayer.fullscreen}"/>
+            <VolumeControl id="volumeButton" width="35" height="30" mediaController="{videoPlayer}" useOverlayLayer="false" iconName="volume" mutedIconName="muted" tooltip="mute tooltip" mutedTooltip="unmute tooltip" useZeroWidth="true" horizontalPadding="10" popupGutter="3"/>
+          </HBox>
+          <!-- The Spacer below shortens the control block to keep the playhead well from covering the logo -->
+          <HBox width="153" vAlign="top" hAlign="right" padding="10" gutter="5" includeInLayout="{!videoPlayer.fullscreen}">
+            <Button id="emailButton" width="35" height="30" iconName="share" tooltip="Email video" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Email', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+            <Button id="shareButton" width="35" height="30" iconName="socialShare" tooltip="Share video" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Share', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+            <Button id="embedButton" width="35" height="30" iconName="code" tooltip="Get code" data="{videoPlayer.video}" click="{videoPlayer.toggleMenuPage('Embed', data)}" visible="{adContext.menuOptionsVisible}" includeInLayout="{!videoPlayer.fullscreen}" showBack="false"/>
+          </HBox>
+        </HBox>
+        <Spacer height="20" includeInLayout="{videoPlayer.fullscreen}"/>
+        <Spacer includeInLayout="{!videoPlayer.fullscreen}"/>
+      </ChromelessControls>
+    </ChromelessVideoPlayer>
+    <!-- To make the images appear only when a video is playing, like a true logo overlay, add the attribute visible="{videoPlayer.playing}" to the VBox tag below -->
+    <VBox vAlign="bottom" hAlign="right" width="0" height="45" visible="{!videoPlayer.fullscreen}">
+      <Canvas>
+        <Image id="overlayImage" source="http://img.brightcove.com/logo-corporate-new.png" width="159" height="38" url="http://www.brightcove.com/" x="-160" y="0" alpha="1"/>
+      </Canvas>
+    </VBox>
+    </HBox>
+		</VBox>
+		<TileList id="videoList" height="126" automaticAdvance="true" selectOnClick="true" rowHeight="124" columnWidth="116" buttonOffsetY="-19" columnGutter="6" numRows="1" useBlur="true">
+			<ListItem boxType="vbox" padding="2" showBack="false">
+				<ThumbnailButton height="84" data="{currentItem}" source="{currentItem.thumbnailURL}" imageInset="3"/>
+				<Spacer height="1"/>
+				<HBox padding="1">
+					<TitleLabel text="{currentItem.displayName}" truncate="true" multiline="true"/>
+				</HBox>
+			</ListItem>
+		</TileList>
+	</Layout>
+</Runtime>

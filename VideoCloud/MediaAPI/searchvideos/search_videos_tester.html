@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+    <title>Media API Exercise</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+      body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+      legend {
+        color: #CF0050;
+      }
+    </style>
+    <!-- Javascript Media API wrapper from opensource.brightcove.com -->
+    <script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+
+  </head>
+  <body>
+    <h2>Media API Training</h2>
+    <fieldset>
+      <legend>API Query</legend> <p id="query" style="width:100%;border:none"></p>
+    </fieldset><br>
+    <fieldset>
+      <legend>Results</legend>
+      <div id="results"></div>
+    </fieldset><br>
+    <!-- This is the script to modify for the exercise -->
+    <script type="text/javascript">
+      // BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
+      // namespace to keep all the "global" vars together
+      var BCL = {};
+      BCMAPI.token = "jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..";
+      BCMAPI.callback = "BCL.onSearchResponse";
+      BCL.params = {};
+      // BCL.srcValue = "";
+      BCL.params.video_id = "1195804260001";
+      // BCL.params.video_fields = "FLVURL,renditions,iosrenditions";
+      BCMAPI.find("find_video_by_id",1195804260001);
+      BCL.onSearchResponse = function(jsonData) {
+        //document.getElementById("query").innerHTML = BCL.srcValue;
+        console.log(jsonData);
+        var str = "";
+
+        document.getElementById("results").innerHTML = str;
+      }
+/* http://api.brightcove.com/services/library?command=find_video_by_id&video_id=1520880903001&video_fields=name,length,FLVURL&token=jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg.. */
+
+    </script>
+
+  </body>
+</html>

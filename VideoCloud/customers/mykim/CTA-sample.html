@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Smart Player API Exercise 4b</title>
+  <style>
+    body {
+    font-family : Helvetica,Arial,sans-serif; 
+    color : #619FA8;
+    padding: 50px;
+    }
+  </style>
+  </head>
+
+  <body>
+    <h1>Smart Player API Call-to-Action Sample</h1>
+    <!-- wrapper for the player and image to provide positioning -->
+    <div id="BCL-playerWrapper" class="BCL-player-wrapper">
+      <!-- the call-to-action image -->
+      <div id="BCL" class="BCL-image">
+          <a id="ctaLink"><img id="cta" class="transparent" src="http://files.brightcove.com/1x1.png" /></a>
+      </div>
+      <!-- Start of Brightcove Player -->
+      <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+      <object id="myExperience1785880099001" class="BrightcoveExperience" style="margin:0;position:relative;top:0;left:0">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="583" />
+        <param name="height" value="328" />
+        <param name="playerID" value="1831687335001" />
+        <param name="playerKey" value="AQ~~,AAABDi-JSEE~,gimkI1WDEZt88hI7gi8pGHP2t-W4M4n3" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <!-- the value below is the video ID for the video to be played -->
+        <param name="@videoPlayer" value="1865815061001" />
+        <!-- need to add the param below so overlays work in Flash -->
+        <param name="wmode" value="transparent" />
+        <!-- params for Smart Player API -->
+        <param name="includeAPI" value="true" />
+        <param name="templateLoadHandler" value="onTemplateLoaded" />
+        <param name="templateReadyHandler" value="onTemplateReady" />
+      </object>
+      <script type="text/javascript">brightcove.createExperiences();</script>
+      <!-- End of Brightcove Player -->
+      <link href="bcl-cta.css" rel="stylesheet" type="text/css">
+      <script src="bcl-cta.js" type="text/javascript"></script>
+    </div>
+  </body>
+
+</html> 

@@ -1,0 +1,5 @@
+#german translated strings
+hello_msg=Guten Tag
+goodbye_msg=Auf Wiedersehen
+fname=Dieter
+lname=Schmidt

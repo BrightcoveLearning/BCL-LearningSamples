@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+    <title>Responsive Player Sample</title>
+    <script type="text/javascript" src="http://files.brightcove.com/jquery-1.8.2.min.js"></script>
+        <style type="text/css">
+      body {
+        font-family: Arial,Helvetica,sans-serif;
+      }
+      #BCLbodyContent {
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 20px;
+      }
+      #BCLcontainingBlock {
+        width: 50%;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        float: right;
+      }
+
+      .BCLvideoWrapper {
+        position: relative;
+        padding-top: 1px;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      * html .BCLvideoWrapper {
+        margin-bottom: 45px;
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .BCLvideoWrapper div,
+      .BCLvideoWrapper embed,
+      .BCLvideoWrapper object,
+      .BrightcoveExperience {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+      }
+      pre {
+        font-size: 14px;
+      }
+      .BCLbutton {
+        background-color: #ffffff;
+        background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(#dddddd), to(#ffffff));
+        background-image: -webkit-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -moz-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -o-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: -ms-radial-gradient(50% 50%, #ffffff, #dddddd);
+        background-image: radial-gradient(50% 50%, #ffffff, #dddddd);
+        border: #999999 1px solid;
+        border-radius: 10px;
+        font-size: .7em;
+        padding: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="BCLbodyContent">
+      <h1>Responsive Player Sample</h1>
+      <h2>(Using CSS, jQuery, and the Smart Player API)</h2>
+        <div id="modeSwitch">
+          <span id="HTML5" class="BCLbutton" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</span>
+          <span id="FLASH" class="BCLbutton" style="margin-bottom: 20px;">Switch to Flash Player</span>
+        </div>
+        <div id="sizeSwitch" style="margin-top:10px;margin-bottom:10px;">
+          <span id="resize100" class="BCLbutton">Change Player Width to 100%</span>
+          <span id="resize75" class="BCLbutton">Change Player Width to 75%</span>
+          <span id="resize50" class="BCLbutton">Change Player Width to 50%</span>
+          <span id="resize25" class="BCLbutton">Change Player Width to 25%</span>
+        </div>
+          <div id="BCLcontainingBlock">
+             <div class="BCLvideoWrapper">
+               <!-- Start of Brightcove Player -->
+               <div style="display:none">
+               </div>
+               <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+               <object id="myExperience1195045806001" class="BrightcoveExperience">
+                 <param name="bgcolor" value="#FFFFFF" />
+                 <param name="width" value="100%" />
+                 <param name="height" value="100%" />
+                 <param name="playerID" value="1655292658001" />
+                 <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXai4AfuyXjS4fpJNnDLOcLqh" />
+                 <param name="isVid" value="true" />
+                 <param name="isUI" value="true" />
+                 <param name="dynamicStreaming" value="true" />
+                 <param name="htmlFallback" value="true" />
+                 <param name="@videoPlayer" value="1807962446001" />
+                   <!-- params for Universal Player API -->
+                 <param name="includeAPI" value="true" />
+                 <param name="templateLoadHandler" value="onTemplateLoaded" />
+                 <param name="templateReadyHandler" value="onTemplateReady" />
+               </object>
+               <script type="text/javascript">brightcove.createExperiences();</script>
+               <!-- End of Brightcove Player -->
+             </div>
+          </div>
+          <p>One aspect of responsive web design is insuring that elements within your page adapt gracefully to different screen sizes. This has become an essential aspect of web design as more and more users are viewing the web on phone or tablet devices. The challenge of these devices is not only that their screens are much smaller than a typical laptop or computer monitor, but also that by simply rotating the device, the user can toggle back and forth between portrait and landscape displays.</p>
+          <p>As if that were not challenging enough, thanks to web-tv and Apple's AirPlay, your web pages may now be viewed on a TV screen whose pixel dimensions are tow, three, or four times greater than what you get on a typical laptop.</p>
+          <p>This sample doesn't address all the aspects of responsive web design, which might include font changes and whole layout transformations.</p>
+          <p>Instead, the focus here is just on video players and address the problem that you not only want the player to resize according to the screen dimensions, but also want to maintain the aspect ratio, so that the video is not letterboxed.</p>
+          <p>The solution here uses CSS in part, and the general credit for it belongs to Thierry Koblentz - see his article <a href="http://www.alistapart.com/articles/creating-intrinsic-ratios-for-video/">Creating Intrinsic Ratios for Video</a> for a complete explanation of the style properties used (some of them are only necessary to provide workarounds for versions of IE).</p>
+          <p>The key to the CSS part is to take advantage of the padding property for the HTML container that you embed the video player in. By setting padding-bottom to a percentage of the width - which is also set a percentage of the bounding container - you have a player that resizes as the bounding container resizes, but maintains its aspect ratio. And the bounding container itself needs to be sized relative to the overall body, so that it shrinks and expands as the window size changes. Here 56.25% is used for the <code>padding-bottom</code> property of the container for the player, corresponding to 16:9 video.</p> 
+          <p>In addition, the Smart Player API provides a <code>setSize()</code> method for the Experience Module, which allows you to set a new width and height for player.</p>
+          <p>For responsive design, however, the key is to make the player size respond to factors in the page around it &mdash; the size of the viewport changing, rotation of a device between portrait and landscape views, and so forth. You can handle resizing of the general page contents through CSS media queries or other means &mdash; we will not go into details of that here. The point is that the CSS part of the solution here will handle maintaining the correct aspect ratio of the <code>div</code> wrapper for the player, but the Smart Player API is needed to resize the player itself, especially when the player loads in the HTML5 mode, in which case it is in an <code>iframe</code>, not the main page.</p>
+          <p>The rest is just JavaScript, but jQuery is employed here to create an event listeners for resizing events on the <code>window</code> object as well as the buttons that resize the player explicitly. The listeners call a function that resizes the <code>div</code> wrapper for the player, and then and calls the Smart Player API <code>setSize()</code> method to resize the player itself.</p>
+        </div>
+    <script type="text/javascript">
+      var BCL = {};
+      BCL.currentPlayerWidth = .5;
+      var $BCLbodyContent = $('#BCLbodyContent');
+      var $BCLvideoWrapper = $('.BCLvideoWrapper');
+      var $BCLcontainingBlock = $('#BCLcontainingBlock');
+      var $html5 = $('#HTML5');
+      var $flash = $('#FLASH');
+      var $resize100 = $('#resize100');
+      var $resize75 = $('#resize75');
+      var $resize50 = $('#resize50');
+      var $resize25 = $('#resize25');
+      var onTemplateLoaded = function (experienceID) {
+        log("template loaded")
+        BCL.player = brightcove.api.getExperience(experienceID);
+      }
+      var onTemplateReady = function(evtObj) {
+        log("template ready")
+        BCL.experienceModule = BCL.player.getModule(brightcove.api.modules.APIModules.EXPERIENCE);
+        BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+      }
+      // dynamic resizer
+      $(window).on('resize',function() {
+        log("window resize");
+        BCL.resizePlayer(BCL.currentPlayerWidth);
+      });
+      // resizing handlers
+      $resize100.on('click',function() {
+        BCL.resizePlayer(1);
+      });
+      $resize75.on('click',function() {
+        BCL.resizePlayer(.75);
+      });
+      $resize50.on('click',function() {
+        BCL.resizePlayer(.50);
+      });
+      $resize25.on('click',function() {
+        BCL.resizePlayer(.25);
+      });
+      // resizing function - newWidth is percentage of content width as a decimal value
+      BCL.resizePlayer = function(newWidth) {
+        $BCLcontainingBlock.width($BCLbodyContent.width() * newWidth);
+        BCL.experienceModule.setSize($BCLcontainingBlock.width(),$BCLcontainingBlock.height());
+        BCL.currentPlayerWidth = newWidth;
+      }
+      // debugging tool - wraps console.log to avoid errors in IE 7 & 8
+      log = function(message) {
+        if (window["console"] && console["log"]) {
+          var d = new Date();
+          console.log(d + ": ");
+          console.log(message);
+        }
+      }
+      // for development purposes only: reopen page with HTML5 player
+      $html5.on('click',function() {
+        var separator = "?";
+        if (document.location.href.indexOf("?", 0) > -1) {
+          separator = "&";
+        }
+        window.location = document.location.href + separator + "forceHTML=true";
+      });
+      // for development purposes only: switch back to Flash
+      $flash.on('click',function() {
+        var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+        window.location = document.location.href.substring(0, startOfQuery);
+      });
+    </script>
+  </body>
+</html>

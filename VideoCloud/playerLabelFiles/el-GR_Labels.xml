@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">ΑΝΑΠ...</label>
+        <label key="controls pause">ΠΑΥΣΗ</label>
+        <label key="controls menu">ΜΕΝΟΥ</label>
+        <label key="controls play tooltip">Αναπαραγωγή</label>
+        <label key="controls pause tooltip">Παύση</label>
+        <label key="controls volume tooltip">Άνοιγμα στοιχείων ελέγχων έντασης ήχου</label>
+        <label key="controls maximize tooltip">Μετάβαση σε πλήρη οθόνη</label>
+        <label key="controls minimize tooltip">Έξοδος από την πλήρη οθόνη</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">μερίδιο</label>
+        <label key="community link">σύνδεση</label>
+        <label key="community code">κωδικός</label>
+        <label key="community share tooltip">Αποστολή βίντεο σε φίλο μέσω ηλεκτρονικού ταχυδρομείου </label>
+        <label key="community socialShare tooltip">Κοινή χρήση αυτού του βίντεο</label>
+        <label key="community link tooltip">Λήψη απευθείας σύνδεσης με βίντεο</label>
+        <label key="community code tooltip">Λήψη HTML για ενσωμάτωση προγράμματος αναπαραγωγής</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[ΑΝΑΠΤΥΞΗ  >]]></label>
+        <label key="collapse banner">ΣΥΜΠΤΥΞΗ  X</label>
+        <label key="sponsor message">Μήνυμα χορηγού.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">μηδενισμός έντασης ήχου</label>
+        <label key="unmute tooltip">κατάργηση μηδενισμού έντασης ήχου</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Άνοιγμα μενού</label>
+        <label key="rightclick fullscreen">Μετάβαση σε πλήρη οθόνη</label>
+        <label key="rightclick exit fullscreen">Έξοδος από την πλήρη οθόνη</label>
+        <label key="rightclick show debug">Προβολή πληροφοριών εντοπισμού σφαλμάτων</label>
+        <label key="rightclick hide debug">Απόκρυψη πληροφοριών εντοπισμού σφαλμάτων</label>
+<!-- Error messaging -->
+        <label key="noContent">Δεν υπάρχουν διαθέσιμα βίντεο αυτή \nτη στιγμή.
+            \n\nΕλέγξτε ξανά αργότερα.</label>
+        <label key="unavailableContent">Το βίντεο που προσπαθείτε να
+            δείτε δεν είναι διαθέσιμο αυτή τη στιγμή.\n\nΕλέγξτε ξανά σε λίγο.</label>
+        <label key="upgradeRequired">Απαιτείται το Flash 9.0.115.0 ή μεταγενέστερη έκδοση για την προβολή του συγκεκριμένου περιεχομένου.\n\nΚάντε κλικ &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;εδώ&lt;/u&gt;&lt;/a&gt; για να αναβαθμίσετε το πρόγραμμα αναπαραγωγής.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">ΤΩΡΑ ΒΛΕΠΕΤΕ:</label>
+        <label key="connecting">ΦΟΡΤΩΣΗ ΒΙΝΤΕΟ</label>
+        <label key="please select:">παρακαλούμε επιλέξτε:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Πληροφορίες</label>
+        <label key="menu email">Email βίντεο</label>
+        <label key="menu link">Σύνδεση</label>
+        <label key="menu share">Κοινή χρήση βίντεο</label>
+        <label key="expand">Ανάπτυξη</label>
+        <label key="menu embed">Λήψη κωδικού</label>
+        <label key="menu play">Αναπαραγωγή</label>
+        <label key="menu replay">Επανάληψη αναπαραγωγής</label>
+        <label key="menu resume">Συνέχιση</label>
+        <label key="cancel button">Άκυρο</label>
+        <label key="continue button">Συνέχεια</label>
+        <label key="close tooltip">Κλείσιμο</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Email σε φίλο</label>
+        <label key="email your email">Η δική σας διεύθυνση e-mail</label>
+        <label key="email friend email"><![CDATA[Η διεύθυνση e-mail του φίλου σας]]></label>
+        <label key="email message">Μήνυμα (προαιρετικό)</label>
+        <label key="email send">Αποστολή</label>
+        <label key="email video">Αποστολή βίντεο</label>
+        <label key="email error">Πληκτρολογήστε τις σωστές διευθύνσεις ηλεκτρονικού ταχυδρομείου.</label>
+        <label key="email confirmation text">Το μήνυμα ηλεκτρονικού ταχυδρομείου εστάλη.</label>
+<!-- Share video menu screen -->
+        <label key="share title">Κοινή χρήση αυτού του βίντεο</label>
+        <label key="share directions">Κοινή χρήση απευθείας σε αυτές τις ιστοσελίδες</label>
+        <label key="share facebook">Κοινή χρήση στο Facebook</label>
+        <label key="share twitter">%CE%9A%CE%BF%CE%B9%CE%BD%CE%AE%20%CF%87%CF%81%CE%AE%CF%83%CE%B7%20%CF%83%CF%84%CE%BF%20Twitter</label>
+        <label key="share twitter message">%CE%88%CE%BB%CE%B5%CE%B3%CF%87%CE%BF%CF%82</label>
+        <label key="share link">Αντιγραφή σύνδεσης</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Προσθήκη σε ιστοσελίδα ή ιστολόγιο (blog)</label>
+        <label key="embed directions">Αντιγραφή κωδικού ή επιλογή υπηρεσίας ιστολογίου</label>
+        <label key="embed code">Ενσωμάτωση κωδικού</label>
+        <label key="embed copy code">Αντιγραφή κωδικού</label>
+        <label key="embed copied">Αντιγράφηκε</label>
+        <label key="blog processing">Πραγματοποιείται επεξεργασία...</label>
+        <label key="blog username">Όνομα χρήστη</label>
+        <label key="blog password">Κωδικός πρόσβασης</label>
+        <label key="blog blogger">Χρήστης ιστολογίου</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Μη σωστός συνδυασμός στοιχείων σύνδεσης/κωδικού πρόσβασης.</label>
+        <label key="blog post select directions">Επιλογή ιστολογίου</label>
+        <label key="blog post enter title">Καταχώρηση τίτλου</label>
+        <label key="blog post enter description">Καταχώρηση περιγραφής (προαιρετική)</label>
+        <label key="blog post post video">Καταχώρηση βίντεο</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Παρουσιάστηκε σφάλμα. Προσπαθήστε ξανά.</label>
+        <label key="blog confirmation text">Η υποβολή καταχώρησης ολοκληρώθηκε</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Σύνδεση σε αυτό το βίντεο</label>
+        <label key="link directions">Κοινή χρήση μέσω ηλεκτρονικού ταχυδρομείου ή ανταλλαγής άμεσων μηνυμάτων</label>
+        <label key="link copy link">Αντιγραφή σύνδεσης</label>
+        <label key="link copied">Αντιγράφηκε</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Όροι & προϋποθέσεις</label>
+        <label key="related videos">Σχετικά βίντεο</label>
+        <label key="most viewed videos">Βίντεο που έχουν προβληθεί περισσότερο</label>
+        <label key="newest videos">Πρόσφατα βίντεο</label>
+</labels>

@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.BCLhighlight {font-weight: bold;
+	color: #C00;
+	background-color: #FFC;
+}
+.BCLnote {		font-family: Monaco, monospace;
+		background-color: #FFFFCC;
+}
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<style type="text/css">
+.BCLnote {		font-family: Monaco, monospace;
+font-size:small;
+		background-color: #FFFFCC;
+}
+</style><p>&nbsp;Here's what's new in Brightcove Knowledge:</p>
+<p><strong>Tip of the week:</strong> Player API basics:</p>
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<script type="application/javascript">
+var player;
+var experienceModule;
+var videoPlayer;
+function onPlayerLoaded(id) {
+  player = brightcove.getExperience(id);
+  experienceModule = player.getModule(APIModules.EXPERIENCE);
+}
+function onPlayerReady(event) {
+  videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+  // get thumbnailURL for the initial video
+  getThumbnailURL();
+  // add listener for media changes
+  videoPlayer.addEventListener(BCMediaEvent.CHANGE, onMediaChange);
+}
+// listener for media change
+function onMediaChange(event) {
+  getThumbnailURL();
+}
+// listener for player load errors
+function onPlayerError(event) {
+   alert("info: " + event.info);
+}
+// get the thumbnailURL for the current video
+function getThumbnailURL() {
+  var thisThumbnailURL = videoPlayer.getCurrentVideo().thumbnailURL;
+  document.getElementById("displayImage").src=thisThumbnailURL;
+  document.getElementById("displayText").innerHTML=" The thumbnailURL is "+thisThumbnailURL;
+}
+</script>
+<h3>Getting information about the current video</h3>
+<p>There are all kinds of reasons why you might want to retrieve information about the video currently in the player. Here's a simple example that shows you how easy it is to do that using the Player API -- here I'm just getting the thumbnail URL and display the image and URL under the player. I'm using the getCurrentVideo() method of the VideoPlayer Module, and set up a listener for MediaChange events, so that I can make a new call to the method when a new video is loaded. You can get this sample at <a href="http://files.brightcove.com/BCLGetThumbnailURL.html">http://files.brightcove.com/BCLGetThumbnailURL.html</a></p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="640" />
+  <param name="height" value="297" />
+  <param name="playerID" value="742128481001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag2Gnriv8BsJm8grL6FYi66" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+  <param name="myText" value="Foo" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<!-- Begin Script Logger -->
+<h4>Now Playing</h4>
+<div id="BCLLog">
+<img id="displayImage" src=""/><div id="displayText" class="BCLnote"></div><ul>
+  <li>
+    <p>New or updated Support Documents:&nbsp;</p>
+    <ul>
+      <li><a href="http://developer.brightcove.com/en/articles/adding-brightcove-player-your-facebook-fan-page">Adding a Brightcove Player to your Facebook Fan Page</a>: you may have noticed that Facebook has deprecated the FBML language that provided a way of embedding a Brightcove Player in your Fan Page. So we've found another way to do it -- read the document to find out how.</li>
+    </ul>
+  </li>
+</ul>
+<p>Free online training classe schedule: </p>
+<p>[view:www_events=block_3]</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

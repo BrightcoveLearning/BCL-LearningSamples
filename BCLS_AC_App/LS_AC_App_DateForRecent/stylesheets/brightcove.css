@@ -1,0 +1,12 @@
+.nav-pills > .active > a {
+  background-color: #888
+}
+
+.nav-pills > .active > a:hover {
+  background-color: #888
+}
+
+.unread {
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 75%,  from(#888), to(#717171));
+}
+

@@ -1,0 +1,253 @@
+<!--
+====================================================================
+brightcove_publisher_upload_manifest_1.4.dtd
+XML DTD for BrightCove Publisher product asset upload manifest.
+@version $Id$$Change$
+====================================================================
+-->
+
+<!ELEMENT publisher-upload-manifest ((notify+)?,
+                                     (asset+)?,
+                                     (remote-asset+)?,
+                                     (title+)?,
+                                     (manual-lineup+)?,
+                                     (automatic-lineup+)?,
+                                     (reencode-from-existing-source+)?,
+                                     (reencode-from-new-source+)?)>
+<!ATTLIST publisher-upload-manifest publisher-id  CDATA #REQUIRED>
+<!ATTLIST publisher-upload-manifest upload-authentication  CDATA #REQUIRED>
+<!ATTLIST publisher-upload-manifest preparer CDATA #REQUIRED>
+<!ATTLIST publisher-upload-manifest report-success (TRUE | FALSE) #IMPLIED>
+
+
+<!-- === Notification ================================================ -->
+<!ELEMENT notify EMPTY>
+<!ATTLIST notify email CDATA #REQUIRED>
+
+<!-- === Callbacks ================================================ -->
+<!ELEMENT callback EMPTY>
+<!ATTLIST callback entity-url CDATA #REQUIRED>
+
+
+<!-- === Asset ======================================================= -->
+<!ELEMENT asset EMPTY>
+<!ATTLIST asset refid CDATA #REQUIRED>
+<!ATTLIST asset filename CDATA #REQUIRED>
+<!ATTLIST asset size CDATA #REQUIRED>
+<!ATTLIST asset hash-code CDATA #IMPLIED>
+<!ATTLIST asset display-name CDATA #REQUIRED>
+<!ATTLIST asset encoding-rate CDATA #IMPLIED>
+<!ATTLIST asset frame-width CDATA #IMPLIED>
+<!ATTLIST asset frame-height CDATA #IMPLIED>
+<!ATTLIST asset encode-to (FLV | MP4) #IMPLIED>
+<!ATTLIST asset encode-multiple (TRUE | FALSE) #IMPLIED>
+<!ATTLIST asset h264-no-processing (TRUE | FALSE) #IMPLIED>
+<!ATTLIST asset h264-preserve-as-rendition (TRUE | FALSE) #IMPLIED>
+<!ATTLIST asset type (FLV_PREVIEW  | 
+                      FLV_FULL     | 
+                      FLV_BUMPER   | 
+                      WMV_FULL     |
+                      VIDEO_FULL   |
+                      THUMBNAIL    |
+                      BACKGROUND   |
+                      VIDEO_STILL  |
+                      LOGO         |
+                      LOGO_OVERLAY |
+                      OTHER_IMAGE) #REQUIRED>
+<!ATTLIST asset controller-type (DEFAULT        | 
+                                 LIVE_STREAMING | 
+                                 LIMELIGHT_LIVE | 
+                                 AKAMAI_SECURE_STREAMING |
+                                 AKAMAI_HD_LIVE |
+                                 LIMELIGHT_MEDIAVAULT) #IMPLIED>
+
+<!-- === RemoteAsset ================================================= -->
+<!ELEMENT remote-asset EMPTY>
+<!ATTLIST remote-asset refid CDATA #REQUIRED>
+<!ATTLIST remote-asset display-name CDATA #REQUIRED>
+<!ATTLIST remote-asset encoding-rate CDATA #IMPLIED>
+<!ATTLIST remote-asset frame-width CDATA #IMPLIED>
+<!ATTLIST remote-asset frame-height CDATA #IMPLIED>
+<!ATTLIST remote-asset type (FLV_PREVIEW   | 
+                             FLV_FULL      | 
+                             FLV_BUMPER    | 
+                             THUMBNAIL     |
+                             BACKGROUND    |
+                             VIDEO_STILL   |
+                             LOGO          |
+                             LOGO_OVERLAY  |
+                             OTHER_IMAGE) #REQUIRED>
+<!ATTLIST remote-asset controller-type (DEFAULT        | 
+                                        LIVE_STREAMING | 
+                                        LIMELIGHT_LIVE | 
+                                        AKAMAI_SECURE_STREAMING |
+                                        AKAMAI_HD_LIVE |
+                                        LIMELIGHT_MEDIAVAULT) #IMPLIED>
+<!ATTLIST remote-asset remote-url CDATA #REQUIRED>
+<!ATTLIST remote-asset remote-stream-name CDATA #IMPLIED>
+<!ATTLIST remote-asset size CDATA #REQUIRED>
+<!ATTLIST remote-asset video-duration CDATA #REQUIRED>
+<!ATTLIST remote-asset video-codec (SORENSON | 
+                                    ON2) #REQUIRED>
+
+
+<!-- === Title (Video) =============================================== -->
+<!ELEMENT title (short-description,
+                 (long-description)?,
+                 (related-link-url)?,
+                 (related-link-text)?,
+                 (logo-overlay)?,
+                 (award+)?,
+                 (tag+)?,
+                 (share-to-id+)?,
+                 (custom+)?,
+                 (allowed-country+)?,
+				 rendition-refid*,
+                 custom-enum-value*,
+                 custom-string-value*) >
+<!ATTLIST title name CDATA #REQUIRED>
+<!ATTLIST title refid CDATA #REQUIRED>
+<!ATTLIST title overlay-update (TRUE | FALSE) #IMPLIED>
+<!ATTLIST title active (TRUE | FALSE) #IMPLIED>
+<!ATTLIST title start-date CDATA #IMPLIED>
+<!ATTLIST title end-date CDATA #IMPLIED>
+<!ATTLIST title shared (TRUE | FALSE) #IMPLIED>
+<!ATTLIST title flash-preview-refid CDATA #IMPLIED>
+<!ATTLIST title flash-prebumper-refid CDATA #IMPLIED>
+<!ATTLIST title flash-full-refid CDATA #IMPLIED>
+<!ATTLIST title wmv-full-refid CDATA #IMPLIED>
+<!ATTLIST title video-full-refid CDATA #IMPLIED>
+<!ATTLIST title thumbnail-refid CDATA #IMPLIED>
+<!ATTLIST title video-still-refid CDATA #IMPLIED>
+<!ATTLIST title color (TRUE | FALSE) #IMPLIED>
+<!ATTLIST title language CDATA #IMPLIED>
+<!ATTLIST title rating (TV-Y |
+                        TV-Y7 |
+                        TV-Y7-FV |
+                        TV-G |
+                        TV-PG |
+                        TV-14 |
+                        TV-MA |
+                        G |
+                        PG |
+                        PG-13 |
+                        R |
+                        NC-17 |
+                        Not-Rated |
+                        Parental-Advisory |
+                        No-Parental-Advisory) #IMPLIED>
+<!ATTLIST title release-date CDATA #IMPLIED>
+<!ATTLIST title genre1 CDATA #IMPLIED>
+<!ATTLIST title genre2 CDATA #IMPLIED>
+<!ATTLIST title economic-type (FREE |
+                               AD |
+                               PAID) #IMPLIED>
+<!ATTLIST title ad-keys CDATA #IMPLIED>
+<!ATTLIST title rental-price CDATA #IMPLIED>
+<!ATTLIST title rental-period (1 |
+                               3 |
+                               7 |
+                               30) #IMPLIED>
+<!ATTLIST title purchase-price CDATA #IMPLIED>
+<!ATTLIST title auto-accept-shared (TRUE | FALSE) #IMPLIED>
+<!ATTLIST title allow-viral-syndication (TRUE | FALSE) #IMPLIED>
+
+<!ELEMENT short-description (#PCDATA)>
+<!ELEMENT long-description (#PCDATA)>
+
+<!ELEMENT related-link-url (#PCDATA)>
+<!ELEMENT related-link-text (#PCDATA)>
+
+<!ELEMENT award (#PCDATA)>
+
+<!ELEMENT allowed-country (#PCDATA)>
+
+<!ELEMENT tag (#PCDATA)>
+<!ELEMENT share-to-id (#PCDATA)>
+
+<!ELEMENT rendition-refid (#PCDATA)>
+
+<!ELEMENT custom-string-value (#PCDATA)>
+<!ATTLIST custom-string-value name CDATA #REQUIRED>
+
+<!ELEMENT custom-enum-value (#PCDATA)>
+<!ATTLIST custom-enum-value name CDATA #REQUIRED>
+
+<!ELEMENT logo-overlay EMPTY>
+<!ATTLIST logo-overlay asset-refid CDATA #REQUIRED>
+<!ATTLIST logo-overlay click-thru CDATA #IMPLIED>
+<!ATTLIST logo-overlay tooltip CDATA #IMPLIED>
+<!ATTLIST logo-overlay alignment (top-left |
+                                  top-right |
+                                  bottom-left |
+                                  bottom-right) #IMPLIED>
+                                  
+<!-- === Cuepoint ====================================================== --> 
+<!ELEMENT cuepoint (metadata)?>
+<!ATTLIST cuepoint name CDATA #REQUIRED>
+<!ATTLIST cuepoint video-refid CDATA #REQUIRED>
+<!ATTLIST cuepoint time CDATA #REQUIRED>
+<!ATTLIST cuepoint forcestop (TRUE | FALSE) #IMPLIED>
+<!ATTLIST cuepoint type (AD | CODE | CHAPTER) #REQUIRED>  
+                          
+<!ELEMENT metadata (#PCDATA)>
+
+<!-- === Lineup ====================================================== -->
+<!ELEMENT manual-lineup ((description)?,
+                         title-refid+)>
+<!ATTLIST manual-lineup name CDATA #REQUIRED>
+<!ATTLIST manual-lineup refid CDATA #REQUIRED>
+<!ATTLIST manual-lineup overlay-update (TRUE | FALSE) #IMPLIED>
+<!ATTLIST manual-lineup thumbnail-refid CDATA #IMPLIED>
+
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT title-refid (#PCDATA)>
+
+
+<!ELEMENT automatic-lineup ((description)?,
+                            (title-tag+)?)>
+<!ATTLIST automatic-lineup name CDATA #REQUIRED>
+<!ATTLIST automatic-lineup refid CDATA #REQUIRED>
+<!ATTLIST automatic-lineup overlay-update (TRUE | FALSE) #IMPLIED>
+<!ATTLIST automatic-lineup type (OLDEST_TO_NEWEST |
+                                 NEWEST_TO_OLDEST |
+                                 START_DATE_NEWEST_TO_OLDEST |
+                                 START_DATE_OLDEST_TO_NEWEST |
+                                 ALPHABETICAL     |
+                                 PLAYS_TOTAL      |
+                                 PLAYS_TRAILING_WEEK) #IMPLIED>
+<!ATTLIST automatic-lineup title-limit CDATA #IMPLIED>
+<!ATTLIST automatic-lineup tag-filter (AND | OR) #IMPLIED>
+<!ATTLIST automatic-lineup thumbnail-refid CDATA #IMPLIED>
+
+<!ELEMENT title-tag (#PCDATA)>
+
+
+<!-- === Maintenance Elements ======================================== -->
+<!ELEMENT delete-asset EMPTY>
+<!ATTLIST delete-asset refid CDATA #REQUIRED>
+
+<!ELEMENT delete-title EMPTY>
+<!ATTLIST delete-title refid CDATA #REQUIRED>
+
+<!ELEMENT delete-lineup EMPTY>
+<!ATTLIST delete-lineup refid CDATA #REQUIRED>
+
+<!ELEMENT delete-cuepoint EMPTY>
+<!ATTLIST delete-cuepoint video-refid CDATA #REQUIRED>
+<!ATTLIST delete-cuepoint id CDATA #REQUIRED>
+
+<!-- === Re=Transcoding Elements ======================================== -->
+<!ELEMENT reencode-from-existing-source EMPTY>
+<!ATTLIST reencode-from-existing-source title-refid CDATA #REQUIRED>
+<!ATTLIST reencode-from-existing-source encode-to (MP4 | FLV) #IMPLIED>
+<!ATTLIST reencode-from-existing-source encode-multiple (TRUE | FALSE) #IMPLIED>
+<!ATTLIST reencode-from-existing-source overwrite-images (TRUE | FALSE) #IMPLIED>
+<!ATTLIST reencode-from-existing-source preserve-source-as-rendition (TRUE | FALSE) #IMPLIED>
+
+<!ELEMENT reencode-from-new-source EMPTY>
+<!ATTLIST reencode-from-new-source title-refid CDATA #REQUIRED>
+<!ATTLIST reencode-from-new-source new-source-refid CDATA #REQUIRED>
+<!ATTLIST reencode-from-new-source overwrite-images (TRUE | FALSE) #IMPLIED>
+
+

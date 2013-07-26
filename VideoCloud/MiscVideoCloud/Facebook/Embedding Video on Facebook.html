@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <!--?xml version="1.0" encoding="UTF-8"?-->
+    <meta http-equiv="content-type" content="text/html;
+      charset=ISO-8859-1">
+    <title>&lt;!-- Insert your title here --&gt;</title>
+  </head>
+  <body>
+    <p>This article will provide you with an understanding of how
+      embedding
+      video in a Facebook news feed works, so that you can make it easy
+      for your viewers to embed your videos in their news feeds. There
+      are different stages,
+      depending how you want to provide the embedding:<br>
+    </p>
+    <ul>
+      <li><a href="#BasicEmbedding">Basic embedding</a></li>
+      <li><a href="#AddingInformation">Adding information to embed</a><br>
+      </li>
+      <li><a href="#EmbeddingTheVideo">Embedding the video and a preview
+          image</a><br>
+      </li>
+      <li><a href="#AddingLink">Adding a link to promote Facebook
+          embedding</a><br>
+      </li>
+      <li><a href="#Automation">Automation </a><br>
+      </li>
+    </ul>
+    <h3><a name="BasicEmbedding"></a>Basic Embedding</h3>
+    <p>The most basic way to embed your video is as follows:</p>
+    <ol>
+      <li>Choose the player you will use for Facebook embedding -- this
+        can
+        be a single video player or a playlist player, but be aware that
+        only a
+        single video player will enable you to embed the video itself
+        into a
+        Facebook news feed, rather than just a link to the player.</li>
+      <li>To send viewers to the original page and player, rather than
+        having them view the video on a plain white page, go to the
+        player
+        settings in the Publishing Module and select the <span
+          style="font-weight: bold;">Host on your own URL</span> option,
+        entering the URL for the page where the player will be
+        published.</li>
+    </ol>
+    <div style="margin-left: 40px;"><img style="width: 827px; height:
+        269px;" alt="Host on your own URL"
+        src="images/HostOnYourURL.png"><br>
+    </div>
+    <ol start="3">
+      <li>Publish your video by embedding the player publishing code in
+        a
+        web page; you can publish a single video player or a playlist
+        player. <br>
+      </li>
+      <li>Go to your Facebook account, and in the entry field for the
+        news
+        feed entry, click the <span style="font-weight: bold;">Attach:
+          Link</span> button and paste in the URL to your
+        page.</li>
+    </ol>
+    <blockquote>
+      <p style="margin-left: 40px;"><img
+          src="images/FBNewsFeedEntry.png" alt="Facebook News Feed
+          Entry" height="213" width="524"></p>
+    </blockquote>
+    <p>Your users can enter any text they like to accompany the video
+      link. The link will send viewers back to your page to view the
+      video.<br>
+    </p>
+    <blockquote> </blockquote>
+    <h3><a name="AddingInformation"></a>Adding information to the embed<br>
+    </h3>
+    <blockquote> </blockquote>
+    <p>If you want to add additional information about the embedded
+      video
+      automatically into the news feed, you can use &lt;meta&gt; tags to
+      do
+      so.&nbsp; Facebook will automatically look at the &lt;meta&gt; and
+      &lt;link&gt; tags in the page and use that information. For
+      instance,
+      you might want to add a title and description to the embedded
+      video.
+      The following meta tags will provide this information -- you can
+      replace the bolded text with whatever you like:</p>
+    <blockquote>
+    </blockquote>
+    <pre>	&lt;meta name="title" content="<span style="font-weight: bold;">Facebook Embed Test</span>" /&gt;<br>	&lt;meta name="description" content="<span style="font-weight: bold;">I'm just testing embedding of a Brightcove video player in a Facebook news feed</span>" /&gt;</pre>
+    <blockquote> </blockquote>
+    <p>Facebook incorporates the title and description so that the
+      resulting entry looks like this:</p>
+    <blockquote>
+      <blockquote>
+        <p><img src="images/Facebook_embed_result_1.png" alt="Facebook
+            News Feed Entry Result" height="138" width="510"></p>
+      </blockquote>
+    </blockquote>
+    <p>The link here will still point back to your original page,
+      provided you entered the URL for it in the Host on your URL
+      setting. <br>
+    </p>
+    <blockquote> </blockquote>
+    <h3><a name="EmbeddingTheVideo"></a>Embedding the video and a
+      preview
+      image</h3>
+    <blockquote> </blockquote>
+    <p>You can add additional &lt;link&gt; tags to provide a preview
+      image for the video and even allow viewers to watch the video in
+      the
+      news feed itself. <br>
+    </p>
+    <p>To add a preview image, include the following link tag, with a
+      URL
+      pointing to your preview image (change the bolded portion of the
+      code
+      below to point to your own image):</p>
+    <blockquote>
+      <pre style="margin-left: 40px;">&lt;link rel="image_src" href="<span style="font-weight: bold;">http://mysite.verizon.net/vzeqny48/images/HTML5VideoPreview.jpg</span>" /&gt;</pre>
+    </blockquote>
+    <p>To allow your viewers to watch the video in the Facebook news
+      feed, first make sure that you Facebook player meets Facebook
+      guidelines:</p>
+    <blockquote>
+      <ul>
+        <li>Turn off full-screen viewing in the player settings found in
+          the Publishing Module</li>
+      </ul>
+      <div style="margin-left: 40px;"><img style="width: 487px; height:
+          217px;" alt="Disable Fullscreen Viewing"
+          src="images/TurnOffFullscreenViewing.png"><br>
+      </div>
+      <ul>
+        <li>If you have advertising enabled for the player, that's fine,
+          but do not set any key/value pairs that would target
+          advertising
+          specifically for the Facebook environment.<br>
+        </li>
+      </ul>
+    </blockquote>
+    <p>To allow viewing of the embedded video within the Facebook news
+      feed, include the following link tag, with the URL used below, but
+      substituting your publisher, player, and video IDs (bolded below):<br>
+    </p>
+    <blockquote>
+      <blockquote>
+        <pre>&lt;link rel="video_src" href="http://c.brightcove.com/services/viewer/federated_f9?isVid=1&amp;isUI=1&amp;publisherID=<span style="font-weight: bold;">20318290001</span>&amp;playerID=<span style="font-weight: bold;">674388892001</span>&amp;domain=embed&amp;videoId=<span style="font-weight: bold;">589233309001</span>" /&gt;<br></pre>
+      </blockquote>
+    </blockquote>
+    Note that this works for single videos -- for playlists, all you can
+    do
+    is provide the link back to your page, unless you use the Player API
+    to update the link tags as described in the <a href="#Automation">Automation</a>
+    section below.<br>
+    You can also add a perview image using another link tag that
+    provides
+    the URL for your preview image:<br>
+    <blockquote>
+      <pre style="margin-left: 40px;">&lt;link rel="image_src" href="<span style="font-weight: bold;">http://mysite.verizon.net/vzeqny48/images/HTML5VideoPreview.jpg</span>" /&gt;<br></pre>
+    </blockquote>
+    Now your video will have a preview image in the Facebook newsfeed,
+    and
+    viewers will be able to play the video itself within the news feed:<br>
+    <blockquote>
+      <div style="margin-left: 40px;"><img style="width: 487px; height:
+          175px;" alt="Facebook embed video"
+          src="images/FacebookEmbed.png"><br>
+        <img style="width: 520px; height: 310px;" alt="Embedded Video"
+          src="images/EmbeddedVideo.png"><br>
+      </div>
+    </blockquote>
+    <h3><a name="AddingLink"></a>Adding a link to promote Facebook
+      embedding</h3>
+    Your viewers can add your video to their Facebook news feeds using
+    the
+    Share tool in the player:<br>
+    <blockquote>
+      <div style="margin-left: 40px;"><img style="width: 503px; height:
+          259px;" alt="Share Video" src="images/ShareVideo.png"><br>
+      </div>
+    </blockquote>
+    If you would like to provide a more prominent link to encourage
+    sharing
+    on Facebook, you can add code like this to your page:<br>
+    <blockquote>
+      <pre>&lt;!-- facebook button --&gt;<br>&lt;script type="text/javascript"&gt;function fbs_click() {<br>u=location.href;<br>t=document.title;<br>window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&amp;t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');<br>return false;<br>}<br>&lt;/script&gt;<br>&lt;style type="text/css"&gt; <br>  .fb_share_link { <br>	padding:2px 0 0 20px; <br>	height:16px; <br>	background:url(http://b.static.ak.fbcdn.net/images/share/facebook_share_icon.gif?8:26981) no-repeat top left; <br>	}<br>&lt;/style&gt;<br>&lt;!-- In the tag below, replace the value of the u parameter in the href value with URL for your own page --&gt;<br>&lt;a href="http://www.facebook.com/share.php?u=<span style="font-weight: bold;">http://mysite.verizon.net/vzeqny48/facebook_newsfeed_ver.html</span>" target="_blank" class="fb_share_link" onClick="return fbs_click()"&gt;Share on Facebook&lt;/a&gt; <br></pre>
+    </blockquote>
+    The only thing you have to change in this code is the bolded URL for
+    the page where your own video is published, though you can also
+    modify
+    the CSS code to style the link in any way you like.<br>
+    <blockquote>
+      <div style="margin-left: 40px;"><img style="width: 522px; height:
+          332px;" alt="Facebook Link" src="images/AddFBLink.png"><br>
+      </div>
+    </blockquote>
+    The JavaScript function that the link points to opens the same
+    dialog
+    used by the standard Share tool:<br>
+    <blockquote>
+      <div style="margin-left: 40px;"><img style="width: 556px; height:
+          344px;" alt="Facebook Share Dialog"
+          src="images/FaceBookShareDialog.png"> <br>
+      </div>
+    </blockquote>
+    <h3><a name="Automation"></a>Automation</h3>
+    Using the Brightcove Media API read methods or the Player API to
+    retrieve information from the Video DTO, you can automate some or
+    all of the production of meta and link tags, and custom links to
+    promote Facebook sharing. The details will depend on the&nbsp;
+    application language you are using, You can retriieve the videoName
+    and shortDescription for the name and description values in the meta
+    tags, and the videoStillURL for the image preview link tag. If you
+    want to embed the actual video in the news feed, you can also
+    retrieve the Id for the video_src link tag.<br>
+    <blockquote> <br>
+      <div style="margin-left: 40px;"> </div>
+    </blockquote>
+    <!-- Insert your content here -->
+  </body>
+</html>

@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">प्ले करें</label>
+        <label key="controls pause">रोकें</label>
+        <label key="controls menu">मेन्यू</label>
+        <label key="controls play tooltip">प्ले करें</label>
+        <label key="controls pause tooltip">रोकें</label>
+        <label key="controls volume tooltip">आवाज नियंत्रणों को खोलें</label>
+        <label key="controls maximize tooltip">फुल स्क्रीन पर जायें</label>
+        <label key="controls minimize tooltip">फुल स्क्रीन से बाहर निकल</label>
+        <label key="community share">ई-मेल</label>
+        <label key="community socialShare">साझा करें</label>
+        <label key="community link">लिंक प्राप्त करें</label>
+        <label key="community code">कोड प्राप्त करें</label>
+        <label key="community share tooltip">मित्र को वीडियो ई-मेल करें</label>
+        <label key="community socialShare tooltip">इस वीडियो को साझा करें</label>
+        <label key="community link tooltip">वीडियो के लिये प्रत्यक्ष लिंक प्राप्त करें</label>
+        <label key="community code tooltip">प्लेयर को एम्बेड करने के लिये एच.टी.एम.एल.प्राप्त करें</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[फैलायें  >]]></label>
+        <label key="collapse banner">सिकोडें X</label>
+        <label key="sponsor message">प्रायोजित संदेश।</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">आवाज बन्द करें</label>
+        <label key="unmute tooltip">आवाज खोलें</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">मेन्यू को खोलें</label>
+        <label key="rightclick fullscreen">फुल स्क्रीन पर जायें</label>
+        <label key="rightclick exit fullscreen">फुल स्क्रीन से बाहर निकल</label>
+        <label key="rightclick show debug">डिबग जानकारी दर्शायें</label>
+        <label key="rightclick hide debug">डिबग जानकारी छिपायें</label>
+<!-- Error messaging -->
+        <label key="noContent">इस समय\nकोई वीडियो उपलब्ध नहीं है।
+            \n\nकृपया बाद में देखें।</label>
+        <label key="unavailableContent">वह वीडियो जिसको देखने का आप प्रयास कर रहे हैं, फिलहाल उपलब्ध नहीं है।\n\nकृपया थोड़ी देर बाद देखें।</label>
+        <label key="upgradeRequired">इस सामग्री को देखने के लिये फ्लैश 9.0.115.0 या उच्चतर की आवश्यकता है।\n\nअपने प्लेयर को उन्नत करने के लिये&lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;यहाँ&lt;/u&gt;&lt;/a&gt; क्लिक करें।</label>
+        <label key="messaging OK">ठीक है</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">आप देख रहे हैं:</label>
+        <label key="connecting">वीडियो लोड हो रहा है</label>
+        <label key="please select:">कृपया चुनें:</label>
+<!-- General menu navigation -->
+        <label key="menu info">जानकारी</label>
+        <label key="menu email">वीडियो को ई-मेल करें</label>
+        <label key="menu link">लिंक प्राप्त करें</label>
+        <label key="menu share">वीडियो को साझा करें</label>
+        <label key="expand">फैलायें</label>
+        <label key="menu embed">कोड प्राप्त करें</label>
+        <label key="menu play">वीडियो को चलायें</label>
+        <label key="menu replay">दोबारा चलायें</label>
+        <label key="menu resume">पुन: चालू करें</label>
+        <label key="cancel button">निरस्त करें</label>
+        <label key="continue button">जारी रखें</label>
+        <label key="close tooltip">बंद करें</label>
+<!-- Email video menu screen -->
+        <label key="email page title">मित्र को ई-मेल करें</label>
+        <label key="email your email">आपका ई-मेल</label>
+        <label key="email friend email"><![CDATA[मित्र का ई-मेल]]></label>
+        <label key="email message">संदेश (वैकल्पिक)</label>
+        <label key="email send">भेजें</label>
+        <label key="email video">वीडियो को ई-मेल करें</label>
+        <label key="email error">कृपया सही ई-मेल पते प्रविष्ट करें।</label>
+        <label key="email confirmation text">आपका ई-मेल भेज दिया गया</label>
+<!-- Share video menu screen -->
+        <label key="share title">इस वीडियो को साझा करें</label>
+        <label key="share directions">सीधे ही इन साइटों पर साझा करें</label>
+        <label key="share facebook">फेसबुक पर साझा करें</label>
+        <label key="share twitter">%E0%A4%9F%E0%A5%8D%E0%A4%B5%E0%A4%BF%E0%A4%9F%E0%A4%B0%20%E0%A4%AA%E0%A4%B0%20%E0%A4%B8%E0%A4%BE%E0%A4%9D%E0%A4%BE%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82
+</label>
+        <label key="share twitter message">चैक+आउट+</label>
+        <label key="share link">लिंक को कॉपी करें</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">वेबसाइट या ब्लॉग पर जोडें</label>
+        <label key="embed directions">कोड को कॉपी करें या ब्लॉग सेवा को चुनें</label>
+        <label key="embed code">कोड को एम्बेड करें</label>
+        <label key="embed copy code">कोड को कॉपी करें</label>
+        <label key="embed copied">कॉपी किया गया</label>
+        <label key="blog processing">प्रसंस्करण हो रहा है...</label>
+        <label key="blog username">प्रयोक्ता नाम</label>
+        <label key="blog password">पासवर्ड</label>
+        <label key="blog blogger">ब्लॉगर</label>
+        <label key="blog livejournal">लाईवजर्नल</label>
+        <label key="blog typepad">टाईपपैड</label>
+        <label key="blog wordpress">वर्डप्रैस</label>
+        <label key="blog error">गलत लॉगइन/पासवर्ड युग्म।</label>
+        <label key="blog post select directions">ब्लॉग को चुनें</label>
+        <label key="blog post enter title">शीर्षक को प्रकाशित करें</label>
+        <label key="blog post enter description">विवरण को प्रकाशित करें (वैकल्पिक)</label>
+        <label key="blog post post video">वीडियो को प्रकाशित करें</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">त्रुटि हो गयी है। कृपया फिर से कोशिश करें।</label>
+        <label key="blog confirmation text">प्रकाशन जमा किया गया</label>
+<!-- Link to video menu screen -->
+        <label key="link title">इस विडियो से लिंक करें</label>
+        <label key="link directions">ई-मेल या आई.एम. के माध्यम से साझा करें</label>
+        <label key="link copy link">लिंक को कॉपी करें</label>
+        <label key="link copied">कॉपी किया गया</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">नियम व शर्तें</label>
+        <label key="related videos">संबंधित वीडियोज्</label>
+        <label key="most viewed videos">सबसे अधिक देखे गये</label>
+        <label key="newest videos">नवीनतम</label>
+</labels>

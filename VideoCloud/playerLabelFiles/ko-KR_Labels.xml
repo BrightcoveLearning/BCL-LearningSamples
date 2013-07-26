@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">재생</label>
+        <label key="controls pause">정지</label>
+        <label key="controls menu">메뉴</label>
+        <label key="controls play tooltip">비디오 재생</label>
+        <label key="controls pause tooltip">비디오 일시중지</label>
+        <label key="controls volume tooltip">볼륨 조절</label>
+        <label key="controls maximize tooltip">전체화면 보기</label>
+        <label key="controls minimize tooltip">전체화면 닫기</label>
+        <label key="community share">이메일</label>
+        <label key="community socialShare">소셜공유</label>
+        <label key="community link">링크</label>
+        <label key="community code">코드</label>
+        <label key="community share tooltip">비디오를 친구에게 이메일하기</label>
+        <label key="community socialShare tooltip">이 비디오 소셜쉐어링 사이트에 공유하기</label>
+        <label key="community link tooltip">비디오에 직접 링크하기</label>
+        <label key="community code tooltip">블로그에 퍼가기 위한 코드</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[배너보기  >]]></label>
+        <label key="collapse banner">배너숨기기   X</label>
+        <label key="sponsor message">스폰서 메시지.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">음소거</label>
+        <label key="unmute tooltip">음소거 해제</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">메뉴 열기</label>
+        <label key="rightclick fullscreen">전체화면 보기</label>
+        <label key="rightclick exit fullscreen">전체화면 닫기</label>
+        <label key="rightclick show debug">디버그 정보 보기</label>
+        <label key="rightclick hide debug">디버그 정보 숨기기</label>
+<!-- Error messaging -->
+        <label key="noContent">현재 \n에서 볼 수 있는 비디오가 없습니다.
+            \n\n나중에 확인해 주십시오.</label>
+        <label key="unavailableContent">시청하려는 비디오는 현재
+            이용할 수 없습니다.\n\n 나중에 확인해 주십시오.</label>
+        <label key="upgradeRequired">본 콘텐츠를 보려면 Flash 9.0.115.0 이상 버전이 필요합니다.플레이어를 업그레이드하려면 \n\n &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;여기&lt;/u&gt;&lt;/a&gt;를 클릭하십시오.</label>
+        <label key="messaging OK">확인</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">현재 시청중인 비디오:</label>
+        <label key="connecting">비디오 로딩 중</label>
+        <label key="please select:">선택하십시오:</label>
+<!-- General menu navigation -->
+        <label key="menu info">비디오 정보</label>
+        <label key="menu email">이메일 보내기</label>
+        <label key="menu link">링크 보내기</label>
+        <label key="menu share">비디오 공유</label>
+        <label key="expand">확장</label>
+        <label key="menu embed">코드 표시</label>
+        <label key="menu play">비디오 재생</label>
+        <label key="menu replay">다시 재생</label>
+        <label key="menu resume">다시 시작</label>
+        <label key="cancel button">취소</label>
+        <label key="continue button">계속</label>
+        <label key="close tooltip">닫기</label>
+<!-- Email video menu screen -->
+        <label key="email page title">이메일 제목</label>
+        <label key="email your email">보내는 사람의 이메일</label>
+        <label key="email friend email"><![CDATA[받는 사람의 이메일]]></label>
+        <label key="email message">메시지 (선택사항)</label>
+        <label key="email send">전송</label>
+        <label key="email video">비디오 이메일</label>
+        <label key="email error">정확한 이메일 주소를 입력하십시오.</label>
+        <label key="email confirmation text">이메일이 발송되었습니다.</label>
+<!-- Share video menu screen -->
+        <label key="share title">이 비디오 공유하기</label>
+        <label key="share directions">이메일이나 메신저에서 공유하기</label>
+        <label key="share facebook">페이스북에서 공유</label>
+        <label key="share twitter">%ED%8A%B8%EC%9C%84%ED%84%B0%EC%97%90%EC%84%9C%20%EA%B3%B5%EC%9C%A0</label>
+        <label key="share twitter message">트위터 메시지 공유</label>
+        <label key="share link">링크 공유</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">웹 사이트 또는 블로그에 비디오 공유</label>
+        <label key="embed directions">코드를 복사하거나 블로그를 선택하세요</label>
+        <label key="embed code">임베드할 코드</label>
+        <label key="embed copy code">임베드할 코드 복사</label>
+        <label key="embed copied">복사되었습니다.</label>
+        <label key="blog processing">처리중입니다.</label>
+        <label key="blog username">블로그 아이디</label>
+        <label key="blog password">암호</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">로그인/암호 조합이 틀렸습니다.</label>
+        <label key="blog post select directions">블로그 메뉴를 선택하세요</label>
+        <label key="blog post enter title">블로그 제목을 입력하세요</label>
+        <label key="blog post enter description">설명문구를 입력하세요 (선택사항)</label>
+        <label key="blog post post video">비디오 게시</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">오류가 발생했습니다. 다시 시도해 주십시오.</label>
+        <label key="blog confirmation text">블로그에 게시 되었습니다.</label>
+<!-- Link to video menu screen -->
+        <label key="link title">이 비디오에 링크 걸기</label>
+        <label key="link directions">이메일 또는 메신저로 공유하기</label>
+        <label key="link copy link">링크 복사</label>
+        <label key="link copied">복사되었습니다.</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">비디오 정보</label>
+        <label key="related videos">연관된 비디오</label>
+        <label key="most viewed videos">가장 인기있는 비디오</label>
+        <label key="newest videos">최신 비디오</label>
+</labels>

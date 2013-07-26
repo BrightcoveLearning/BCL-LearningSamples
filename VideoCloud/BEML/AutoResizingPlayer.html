@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.code {
+	font-family: Monaco, Courier, monospace;
+	font-size: small;
+}
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<h3>Tip of the week: create an auto-resizing player in BEML</h3>
+<p>In this example, I'm trying to solve two problems at once:</p>
+<ul>
+  <li>when viewers start a video, you want them to watch it, without being distracted by the other items in a playlist or the surrounding decor</li>
+  <li>you want to take advantage of all the real estate you have to show the video in as large a size as possible</li>
+</ul>
+<p>The solution below is  pure BEML, no programming required. Click play or select a video from the playlist to see how it works -- and pause the video to see the full dynamics.</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="800" />
+  <param name="height" value="450" />
+  <param name="playerID" value="973251454001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaixwjoeLP5foh9r-ghFUvZe" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>Here's how it's done. The layout has fixed dimensions, and is divided into two HBoxes, with an explicit height only for the lower one. The upper HBox is divided between the player and the simple playlist, with the width of List component set explicitly:</p>
+<p><img src="images/AutoResizePlayerLayout.png" width="800" height="450" alt="Template Layout" /></p>
+<p>The key to the magic resizing of the player is that the List component and the whole lower HBox have their includeInLayout attributes data-bound to <span class="code">!videoPlayer.playing</span>, meaning they are there when no video is playing, and disappear whenever playback occurs. Since the video player and its surrounding layout container are sized relatively, they fill up the space of the layout during playback. Here's the complete BEML code:</p>
+<pre>&lt;Runtime&gt;
+	&lt;Theme name=&quot;Deluxe&quot; style=&quot;Light&quot;&gt;
+		&lt;Style id=&quot;default&quot;&gt;&lt;![CDATA[.titleText {fontSize: 12;}.bodyText {fontSize: 10;}.linkText {fontSize: 10;}]]&gt;&lt;/Style&gt;
+	&lt;/Theme&gt;
+	&lt;Layout id=&quot;application&quot; width=&quot;800&quot; height=&quot;450&quot; boxType=&quot;vbox&quot; padding=&quot;6&quot; gutter=&quot;4&quot;&gt;
+		&lt;HBox gutter=&quot;6&quot;&gt;
+			&lt;ChromelessVideoPlayer id=&quot;videoPlayer&quot; video=&quot;{videoList.selectedItem}&quot;/&gt;
+			&lt;List id=&quot;videoList&quot; width=&quot;177.78&quot; rowHeight=&quot;78&quot; automaticAdvance=&quot;false&quot; 
+				selectOnClick=&quot;true&quot; itemInsetV=&quot;4&quot; itemLeading=&quot;2&quot; i<strong>ncludeInLayout=&quot;{!videoPlayer.playing}&quot;</strong>&gt;
+					&lt;ListItem boxType=&quot;hbox&quot; hAlign=&quot;center&quot; vAlign=&quot;middle&quot;&gt;
+						&lt;ThumbnailButton height=&quot;60&quot; width=&quot;107&quot; 
+							data=&quot;{currentItem}&quot; source=&quot;{currentItem.thumbnailURL}&quot;/&gt;
+					&lt;/ListItem&gt;
+			&lt;/List&gt;
+		&lt;/HBox&gt;
+		&lt;HBox height=&quot;100&quot; padding=&quot;5&quot; hAlign=&quot;center&quot; 
+			<strong>includeInLayout=&quot;{!videoPlayer.playing}&quot;</strong> &gt;
+			&lt;Image id=&quot;bottomImage&quot; width=&quot;728&quot; height=&quot;90&quot; source=&quot;http://files.brightcove.com/BCL_bannerImage.jpg&quot;/&gt;
+		&lt;/HBox&gt;
+	&lt;/Layout&gt;
+&lt;/Runtime&gt;</pre>
+<p>Next time I'll show a slightly different take on auto-resizing a player, combining the BEML technique with some CSS.</p>
+<ul>
+    <li>
+    <p>New in <a href="http://opensource.brightcove.com/project/Omniture-SWF/">Open Source</a>: out-of-the-box Omniture Analytics integration with a nice new plug-in!</p>
+  </li>
+    <li>
+      <p>New or updated Support Documents:&nbsp;</p>
+      <ul>
+        <li><a href="http://support.brightcove.com/en/docs/changing-video-without-changing-page">Changing the Video without Changing the Page</a>: ways to change the video in a player without having to modify the HTML code of the page.</li>
+      </ul>
+    </li>
+</ul>
+<p>Free online training classe schedule:</p>
+<p>[view:www_events=block_3]</p>
+<div id="BCToolKitContainer" style="width: 400px; ">&nbsp;</div>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

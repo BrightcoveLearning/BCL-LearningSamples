@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Video Changer for New Playlist</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--
+The following script tags call the JavaScript for the player and the Player API
+-->
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<!--
+Style for the Event Logger, BCNote class, and body
+-->
+<style type="text/css">
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+#BClogger {
+	background-color: #EEEEEE;
+	font-size: 11pt;
+	color: #990000;
+}
+.BCNote {
+	background-color: #EEEEEE;
+	color: #990000;
+	font-style: italic;
+	font-weight: bold;
+	width: 600px;
+	padding: 5px;
+}
+</style>
+</head>
+
+<body>
+<h1>Video Changer for New Playlist</h1>
+<p>This file contains a script that loads the first item of a new playlist into the video player when a new tab is clicked, unless a video is currently playing.</p>
+<p class="BCNote">Don't forget to enable the player APIs in the player settings (Publishing Module) or the script will fail silently!</p>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none"> </div>
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="732947645001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahJz3DFZLC7ExXGuJqgE1B7" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <!-- The following 3 params establish the listeners for initial player events -->
+  
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon as the line is read by the browser. If you wish to have the player instantiated only after the rest of the HTML is processed and the page load is complete, remove the line.
+--> 
+<script type="text/javascript">brightcove.createExperiences();</script> 
+<!-- End of Brightcove Player --> 
+
+<!-- Begin Event Logger -->
+<h2>Event Log</h2>
+<div id="BCscriptingLog">
+  <p>
+    <textarea id="BClogger" name="BClogger" rows="20" cols="50"></textarea>
+  </p>
+</div>
+<!-- End Event Logger --> 
+
+<!-- Now add your custom script for the Player API --> 
+<script type="text/javascript">
+/*
+Don't forget to enable the player APIs in the player settings (Publishing Module) or this script will fail silently!
+*/
+// define global variables used in the functions
+
+var player;
+var experienceModule;
+var videoPlayer;
+var tabBar;
+var newPlaylist;
+
+// initial setup in the special onTemplateLoaded() function
+
+function onPlayerLoaded(id) {
+
+// new log
+  newLog();
+  log("EVENT: Player Loaded");
+// get a reference to the overall player object
+  player = brightcove.getExperience(id);
+// get a reference to the Experience module
+  experienceModule = player.getModule(APIModules.EXPERIENCE);
+}
+
+// event listener for the player being ready
+function onPlayerReady(event) {
+  log("EVENT: Player Ready");
+// get references to the video player and TabBar
+  videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+  tabBar = experienceModule.getElementByID("playlistTabs");
+//  set an event listener for TabBar changes
+  tabBar.addEventListener("propertyChange", onTabChange);
+}
+
+function onPlayerError(event) {
+   log("type: " + event.type);
+   log("errorType: " + event.errorType)
+   log("code: " + event.code);
+   log("info: " + event.info);
+}
+
+// event listener for TabBar changes
+function onTabChange(event) {
+  log("EVENT: TabBar Property Change");
+  log(event);
+// make sure it's the selectedItem that changed
+if (event.property == "selectedItem") {
+// get a reference to the playlist object for the currently selected tab
+  newPlaylist = tabBar.getSelectedData();  
+// only if there is no video currently playing, cue up the first video of the new playlist
+  if (videoPlayer.isPlaying() == false) {
+    videoPlayer.cueVideo(newPlaylist.videoIds[0]);
+  }
+}
+}
+
+  // clear the textarea of messages
+function newLog() {
+  document.getElementById("BClogger").value = "";;
+}
+
+/*
+log a message to our debug window to simply show what's
+happening in this example
+*/
+function log(message) {
+// check to see if the message is complex data and decompose if so
+  if (typeof message == "object"){
+	  for (var prop in message){
+		if (typeof message[prop] == "object") {
+			log(prop+": ");
+			log(message[prop]);
+		}
+		else {
+			log(prop+": "+message[prop]);
+		}
+	}
+  }
+  else {
+	  document.getElementById("BClogger").value += message + "\n";
+  }
+}
+</script>
+</body>
+</html>

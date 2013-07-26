@@ -1,0 +1,32 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light" />
+  <Layout id="application" boxType="vbox" padding="8" gutter="4">
+    <HBox gutter="4">
+      <ChromelessVideoPlayer id="videoPlayer" video="{videoList.selectedItem}"/>
+      <List id="videoList" width="300" rowHeight="78" automaticAdvance="true" selectOnClick="true" itemInsetV="4" itemLeading="2">
+        <ListItem boxType="hbox">
+          <Spacer width="8"/>
+          <VBox width="80" height="74" vAlign="middle">
+            <ThumbnailButton height="60" data="{currentItem}" source="{currentItem.thumbnailURL}"/>
+          </VBox>
+          <Spacer width="7"/>
+          <VBox>
+            <Spacer height="4"/>
+            <TitleLabel height="16" text="{currentItem.displayName}" truncate="true"/>
+            <Label height="52" multiline="true" text="{currentItem.shortDescription}" truncate="true"/>
+          </VBox>
+          <Spacer width="3"/>
+        </ListItem>
+      </List>
+    </HBox>
+    <HBox height="190">
+      <Spacer width="7"/>
+      <VBox>
+        <TitleLabel height="24" width="765" id="videoTitle" text="{videoPlayer.video.displayName}" selected="true" size="18" truncate="true"/>
+        <Label multiline="true" text="videoPlayer.video.tags" autoSize="true"/>
+        <ComboBox id="videoTags" data="{videoPlayer.video.tags}" labelField="name" />
+          
+      </VBox>
+    </HBox>
+  </Layout>
+</Runtime>

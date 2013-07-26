@@ -1,0 +1,18 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout width="470" height="264">
+    <ChromelessVideoPlayer id="videoPlayer"/>
+    <TileList id="playlistTiles" y="10" height="120" columnWidth="130" rowHeight="120" columnGutter="4" rowGutter="0" visible="false">
+      <ListItem boxType="vbox" padding="4">
+        <ThumbnailButton source="{currentItem.thumbnailURL}" tooltip="{currentItem.shortDescription}"/>
+        <TitleLabel text="{currentItem.displayName}" height="12" size="10"/>
+      </ListItem>
+    </TileList>
+    <TileList id="myVideoList" y="10" height="200" columnWidth="100" rowHeight="100" columnGutter="0" rowGutter="0" automaticAdvance="false" visible="false" data="{playlistTiles.selectedItem.videoDTOs}">
+      <ListItem boxType="vbox" padding="4">
+        <ThumbnailButton source="{currentItem.thumbnailURL}" tooltip="{currentItem.shortDescription}"/>
+        <TitleLabel text="{currentItem.displayName}" height="12" size="10"/>
+      </ListItem>
+    </TileList>
+  </Layout>
+</Runtime>

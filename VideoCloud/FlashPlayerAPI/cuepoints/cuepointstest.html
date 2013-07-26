@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+<head>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+  		function logData(data) {
+  		var newData = prettyPrint(data);
+  		document.getElementById("videoData").appendChild(newData);
+  		}
+
+		</script>
+
+</head>
+<body>
+<!-- Start of Brightcove Player -->
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<object id="myExperience928199562001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="921267190001" />
+  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WG3MLvDx9F9zkV06cNK00ey" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="@videoPlayer" value="928199562001" />
+</object>
+<script type="text/javascript">brightcove.createExperiences();</script>
+<!-- End of Brightcove Player -->
+    <fieldset>
+      <legend>API Query</legend> <p id="query" style="width:100%;border:none"></p>
+    </fieldset><br>
+    <fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset><br>
+
+ <script>
+			log("script started");
+			// namespace for everything global
+			var BCLS = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCLS.player = brightcove.getExperience(id);
+			  BCLS.experienceModule = BCLS.player.getModule(APIModules.EXPERIENCE);
+			  BCLS.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCLS.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCLS.onTemplateReady = function(event) {
+			  log("BCLS.onTemplateReady");
+			  BCLS.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCLS.onTemplateReady);
+			  // get a reference to the logo image in the player
+			  BCLS.logo = BCLS.experienceModule.getElementByID("logo");
+			  // get a reference to the video player module
+			  BCLS.videoPlayer = BCLS.player.getModule(APIModules.VIDEO_PLAYER);
+			  // get reference to Cue Points and set up listener for cue point events
+			  BCLS.cuePointsModule = BCLS.player.getModule(APIModules.CUE_POINTS);
+			  BCLS.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCLS.onCue);
+			  BCLS.cuePointsArray = [];
+			  BCLS.cuePointsArray = BCLS.cuePointsModule.getCuePoints(928199562001);
+			  log(BCLS.cuePointsArray);
+			  log(BCLS.cuePointsModule.getCuePoints(928199562001));
+			  log(BCLS.videoPlayer.getCurrentVideo());
+			}
+			
+			// add handler for cue points
+			BCLS.onCue = function(event) {
+				log("EVENT: Cue Point");
+				// set the new source for the bottom image
+				BCLS.logo.setSource("http://files.brightcove.com/BCLSsponsorlogo1.png");
+			}
+
+</script>
+
+
+</body>
+</html>

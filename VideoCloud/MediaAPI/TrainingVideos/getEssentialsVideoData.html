@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+      * {
+        font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+      }
+      table {
+        border-collapse: collapse;
+        font-size: small;
+      }
+      table td {
+        border: 1px #999 solid;
+        padding: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Essentials Training Videos Metadata</h1>
+    <div class="metadata">
+      
+    </div>
+    <script type="text/javascript" src="http://docs.brightcove.com/en/scripts/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://docs.brightcove.com/en/scripts/bc-mapi.js"></script>
+    <script src="http://docs.brightcove.com/en/scripts/handlebars.js"></script>
+    <script>
+      var BCLS = ( function () {
+        var dataTemplate = "<table><tbody><tr><th>Video ID</th><th>Title</th><th>Short Description</th></tr>{{#items}}<tf><td>{{id}}</td><td>{{name}}</td><td>{{shortDescription}}</td></tr>{{/items}}</tbody></table>",
+        params = {};
+        // MAPI setup
+        BCMAPI.token = "v87kWelIdjUwVm7_Rzv09k-KqtLz-ty8ONbMxVYAI7-Q0eOilegqqg..";
+        BCMAPI.callback = "BCLS.onGetData";
+        // params
+        params.all = "topic:VC - Getting Started";
+        params.video_fields = "id,name,shortDescription";
+        BCMAPI.search(params);
+        return {
+          onGetData : function (jsonData) {
+            var template = Handlebars.compile(dataTemplate);
+            var data = jsonData;
+            var results = template(data);
+            $(".metadata").html(results);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

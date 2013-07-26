@@ -1,0 +1,16 @@
+<Runtime>
+	<Theme name="Deluxe" style="Dark" />
+	<!-- You can adjust height and width values in the line below -->
+	<Layout id="application" boxType="vbox" padding="3" width="486" height="400">
+		<!-- Enter URL for Logo Image for source value below, or enter in player Style Editor -->
+		<Image id="logo" height="55" source="" scaleMode="scaleDown" hAlign="left" vAlign="bottom"/>
+		<Spacer height="6"/>
+		<!-- If you prefer the player with fixed controls, change "ChromelessVideoPlayer" to "VideoPlayer" -->
+		<ChromelessVideoPlayer id="videoPlayer"/>
+		<Spacer height="6"/>
+		<!-- Change text below to anything you want -->
+		<TitleLabel height="24" id="videoTitle" text="Type anything you like here" selected="true" size="18" truncate="true"/>
+		<!-- You can change the the text and URL for the link in the line below -->
+		<Link height="22" size="10" id="relatedLink" text="Current TV" vAlign="bottom" url="http://current.com/"/>
+	</Layout>
+</Runtime>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Call to Actions Example</title>
+<style type="text/css">
+<!--
+.jn {
+	text-align: center;
+}
+-->
+</style>
+<script type="text/javascript">
+
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  // log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  /* log("BCL.onTemplateReady"); */
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  // get a reference to the video player module
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+			  // get a reference to the parent container
+			  BCL.layout = BCL.videoPlayer.getContainer();
+			  // append an invisible image element over the lower part of the player
+			  BCL.layout.appendChild("<Image id=\"overlayImage\" y=\"264\" height=\"74\" visible=\"false\"/>")
+			  // get a reference to the overlay image in the player
+			  BCL.overlayImage = BCL.layout.getChildAt(1);
+			  BCL.videoPlayer.play();
+			  // add listener for media complete
+			  BCL.videoPlayer.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+			  
+			  // get reference to cuepoint module and set up listener 
+			  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+			  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+			}
+
+			// add handler for cue points
+			BCL.onCue = function(event) {
+				// log(event); 
+				// make the overlay image visible
+				BCL.overlayImage.setVisible(true);
+				// get the image data - it's a comma delimited list source,URL
+				BCL.imageDataArray = event.cuePoint.metadata.split(",");
+				// set the new source and URL for the bottom image
+				BCL.overlayImage.setSource(BCL.imageDataArray[0]);
+				BCL.overlayImage.setURL(BCL.imageDataArray[1]);
+			}
+			BCL.onMediaComplete = function(event) {
+				/* log("EVENT: media complete"); */
+				// make the overlay image invisible
+				BCL.overlayImage.setVisible(false);
+			}
+    </script>
+</head>
+
+<body class="jn">
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<p>
+  <!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+  
+  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script>
+</p>
+<p>&nbsp;</p>
+<p>
+  <object id="bc001" class="BrightcoveExperience">
+    <param name="bgcolor" value="#FFFFFF" />
+    <param name="width" value="600" />
+    <param name="height" value="338" />
+    <param name="playerID" value="1170996363001" />
+    <param name="playerKey" value="AQ~~,AAAAALchrvE~,r1Dpgz6apxNA6wFAf1qgt5LnbI5oMMAg" />
+    <param name="isVid" value="true" />
+    <param name="isUI" value="true" />
+    <param name="dynamicStreaming" value="true" />
+    
+    <param name="@videoPlayer" value="1174140573001" />
+  </object>
+  
+  <!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+  <script type="text/javascript">brightcove.createExperiences();</script>
+</p>
+
+<!-- End of Brightcove Player -->
+
+</body>
+</html>

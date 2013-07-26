@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mulitiple Playlist Exercise</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="SmartPlayerAPI.css" />
+	</head>
+	<body>
+		<h2>Smart Player API Updating Media Example</h2>
+		<p><em>The buttons below are for development purposes only, to switch between Flash and  HTML5 players. Do not use these in production, as the method is unsupported. You should let the Smart Player decide whether to load Flash or HTML5 instead.</em></p>
+		<div id="modeSwitch">
+			<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+			<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+		</div>
+		<table>
+			<tbody>
+				<tr>
+					<td valign="top">
+						<!-- Start of Brightcove Player - replace with your player code - remember that the ActionScript/JavaScript APIs MUST be enabled in the player settings, and you must add two additonal param tags to the publishing code as I have done below, and that the <object> id value must match the id in the BCL.onTemplateReady function BCL.player = brightcove.api.getExperience("myExperience"); line -->
+								<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+								<object id="myExperience" class="BrightcoveExperience">
+								  <param name="bgcolor" value="#FFFFFF" />
+								  <param name="width" value="480" />
+								  <param name="height" value="270" />
+								  <param name="playerID" value="1146049103001" />
+								  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEd1K9zn5lA_OOffNUFbVae" />
+								  <param name="isVid" value="true" />
+								  <param name="isUI" value="true" />
+								  <param name="dynamicStreaming" value="true" />
+								  <param name="@videoPlayer" value="928121847001" />
+								  <!-- params for Smart Player API -->
+								  <param name="includeAPI" value="true" />
+								  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+								</object>
+
+								<script type="text/javascript">brightcove.createExperiences();</script>
+
+								<!-- End of Brightcove Player -->
+					</td>
+					<td>
+						<div id="BCL_playlist"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="BCL_playlistSelector"></div>
+					</td>
+			</tbody>
+		</table>
+    <fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset><br>
+		<!-- include handlebars.js templating system -->
+		<script type="text/javascript" src="http://files.brightcove.com/handlebars-1.0.0.beta.6.js"></script>
+		<script type="text/javascript">
+			// namespace to keep all the "global" vars together
+			var BCL = {};
+			BCL.resultsTemplate = "<img src=\"{{videoStillURL}}\"/><br/><p>New Video Still</p>";
+			BCL.onTemplateReady = function(event) {
+			  console.log("onTemplateReady");
+			  /***
+			  get references to the player and modules - the argument "myExperience" MUST match the value of the id attribute for the <object> tag in the player publishing code - adjust here or there to make them match
+			  ***/
+			  BCL.player = brightcove.api.getExperience("myExperience");
+			  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+			  BCL.contentModule = BCL.player.getModule(brightcove.api.modules.APIModules.CONTENT);
+			  // get the current video DTO
+			  BCL.videoPlayer.getCurrentVideo( function(videoDTO) {
+			  	var newVideoDTO = videoDTO;
+			  	newVideoDTO.videoStillURL = "http://files.brightcove.com/BCL_alternateStill.png";
+			  	BCL.contentModule.updateMedia(newVideoDTO, function(videoDTO){
+			  		console.log(videoDTO);
+			  		var template = Handlebars.compile(BCL.resultsTemplate);
+			  		var data = videoDTO;
+			  		var results = template(data);
+			  		document.getElementById("results").innerHTML = results;
+			  	});
+			  });
+			}
+			// for development purposes only: reopen page with HTML5 player
+			BCL.switchToHTML5 = function() {
+				var separator = "?";
+				if (document.location.href.indexOf("?", 0) > -1) {
+					separator = "&";
+				}
+				window.location = document.location.href + separator + "forceHTML=true";
+			};
+			// for development purposes only: switch back to Flash
+			BCL.switchToFlash = function() {
+				var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+				window.location = document.location.href.substring(0, startOfQuery);
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Resizing Player Test</title>
+		<!-- scripts for debugging -->
+
+</head>
+
+<body>
+<h1>Resizing a Player via the JavaScript Player API</h1>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience734462567001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="100%" />
+  <param name="height" value="270" />
+  <param name="playerID" value="620280460001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="734462567001" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<!-- Player API script -->
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+<script type="application/javascript">
+var BCL = {};
+function onPlayerLoaded(id) {
+  console.log("EVENT: onPlayerLoaded");
+  BCL.player = brightcove.getExperience(id);
+}
+function onPlayerReady(event) {
+  console.log("EVENT: onPlayerReady");
+  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+  var currentWidth = BCL.videoPlayer.getWidth();
+  var aspectRatio = 16 / 9;
+  console.log("Aspect Ratio = "+aspectRatio);
+  var newHeight = currentWidth/aspectRatio;
+  console.log("new height = "+newHeight);
+  BCL.videoPlayer.setSize(currentWidth,newHeight);
+  console.log("New Height: " + BCL.videoPlayer.getHeight());
+}
+
+
+
+</script>
+</body>
+</html>

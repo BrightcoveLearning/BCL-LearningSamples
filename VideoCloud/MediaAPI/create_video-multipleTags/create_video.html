@@ -1,0 +1,79 @@
+
+<html> 
+<head>
+  <title>Media API: JavaScript Example - create_video with tags and itemState</title>
+</head>
+<script type="text/javascript">
+function doFileUpload(){
+  form = document.getElementById("create_video_sample");
+  buildJSONRequest(form);
+  form.action = document.getElementById("yourAPILocation").value;
+  form.submit();
+}
+
+function buildJSONRequest(form){
+  if(document.getElementById('name').value =="" || document.getElementById('shortDescription').value =="" || form.filePath.value ==""){
+    alert("Require Name, Short Description and File");
+    return;
+  }else{
+    json = form.JSONRPC
+    //Construct the JSON request:
+    json.value = '{"method": "create_video", "params": {"video": {"name": "' + 
+    document.getElementById('name').value +  '","tags": ["'+ document.getElementById('tagvalue1').value +'","'+ document.getElementById('tagvalue2').value +'","'+ document.getElementById('tagvalue3').value +'"],"shortDescription": "' + document.getElementById('shortDescription').value +'","itemState": "'+document.getElementById('itemstate').value+'"},"token": "'+ document.getElementById('yourWriteToken').value + '","encode_to":"'+document.getElementById('encodeto').value+'","create_multiple_renditions": "'+document.getElementById('rendition').value+'"}}';   
+    form.JSONView.value = json.value;
+  }
+}
+</script>
+
+<div style="font-weight:bold;font-size:24">create_video example: Upload a Video</div>
+(Only a Name, Short Description and Video File are required to create a video) <br/>
+<!-- Exposing the token like this is a *Bad_Idea* !! Please don't do this in production, it makes it less than trivial for someone to steal your token.
+See http://help.brightcove.com/developer/docs/mediaapi/security.cfm for more info -->
+
+<table style="width:50%">
+<tr><td style="width:20%">Write Token: </td><td style="width:100%"><input id="yourWriteToken" size="55" value="SK33xEQ03p9NjsOYACSv41yQOzuTbi2s8EORtJjATCUQImUgORx57g.."/><br/>
+</td></tr> 
+<tr><td>API Location: </td><td><input id="yourAPILocation" size="55" value="http://api.brightcove.com/services/post" /></td></tr>
+<tr><td>Video Name: </td><td><input id="name" size="55" type="text"/></td>
+      <tr><td>Tag1: </td><td><input id="tagvalue1" size="55" type="text"/></td></tr>
+      <tr><td>Tag2: </td><td><input id="tagvalue2" size="55" type="text"/></td></tr>
+      <tr><td>Tag3: </td><td><input id="tagvalue3" size="55" type="text"/></td></tr>
+      <tr><td>Short description: </td><td><input id="shortDescription" size="55" type="text"/></td></tr>
+      <tr><td>Create Multiple Renditions(TRUE/FALSE): </td><td><input id="rendition" size="55" type="text"/></td></tr>
+      <tr><td>Encode to(MP4/FLV): </td><td><input id="encodeto" size="55" type="text"/></td></tr>
+      <tr><td>Video State </td><td><input id="itemstate" size="55" type="text"/></td></tr>
+      
+      
+      
+      
+      
+      
+      
+<br/> <br/>
+<form id="create_video_sample" method="POST" enctype="multipart/form-data" target="postFrame">
+  <!--This is where the actual json request lives, it has to come before the file input -->
+  <input type="hidden" name="JSONRPC" />
+  <tr><td>File:</td><td><input type="file" name="filePath"/></td></tr>
+</table><br/><br/>
+  <button id="submitButton" onclick="doFileUpload()">Upload</button> <br/>
+  <!--display the json request -->
+  <fieldset>
+  <legend>JSON Request</legend>
+    <input name="JSONView" id="JSONView" style="width:100%;border:none"/>
+  </fieldset><br/>
+</form>
+
+<br/>
+
+<fieldset>
+<legend>Response:</legend>
+  <iframe id="postFrame" name="postFrame" style="width:100%;border:none"></iframe>
+</fieldset>
+
+<br/><br/>
+
+
+</html>
+
+
+

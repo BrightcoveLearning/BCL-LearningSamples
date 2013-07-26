@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">AFSPELEN</label>
+        <label key="controls pause">PAUZEREN</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Afspelen</label>
+        <label key="controls pause tooltip">Pauzeren</label>
+        <label key="controls volume tooltip">Volumeregelingen openen</label>
+        <label key="controls maximize tooltip">Naar volledig scherm gaan</label>
+        <label key="controls minimize tooltip">Volledig scherm afsluiten</label>
+        <label key="community share">e-mailen</label>
+        <label key="community socialShare">delen</label>
+        <label key="community link">koppeling ophalen</label>
+        <label key="community code">code ophalen</label>
+        <label key="community share tooltip">Video e-mailen naar vriend</label>
+        <label key="community socialShare tooltip">Deze video delen</label>
+        <label key="community link tooltip">Directe koppeling naar video</label>
+        <label key="community code tooltip">HTML naar ingesloten speler</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[UITVOUWEN  >]]></label>
+        <label key="collapse banner">SAMENVOUWEN  X</label>
+        <label key="sponsor message">Bericht van sponsor.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">Dempen</label>
+        <label key="unmute tooltip">Dempen uit</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Menu openen</label>
+        <label key="rightclick fullscreen">Naar volledig scherm gaan</label>
+        <label key="rightclick exit fullscreen">Volledig scherm afsluiten</label>
+        <label key="rightclick show debug">Info over foutopsporing weergeven</label>
+        <label key="rightclick hide debug">Info over foutopsporing verbergen</label>
+<!-- Error messaging -->
+        <label key="noContent">Er zijn momenteel geen video's\nbeschikbaar.
+            \n\nProbeer het later nog eens.</label>
+        <label key="unavailableContent">De video die u wilt
+            bekijken, is momenteel niet beschikbaar.\n\nProbeer het binnenkort nog eens.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 of later is vereist om deze inhoud te bekijken.\n\nKlik &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;hier&lt;/u&gt;&lt;/a&gt; voor een upgrade van uw speler.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">U BEKIJKT MOMENTEEL:</label>
+        <label key="connecting">BEZIG MET LADEN VIDEO</label>
+        <label key="please select:">Selecteer:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Info</label>
+        <label key="menu email">E-mailen</label>
+        <label key="menu link">Koppeling ophalen</label>
+        <label key="menu share">Video delen</label>
+        <label key="expand">Uitvouwen</label>
+        <label key="menu embed">Code ophalen</label>
+        <label key="menu play">Video afspelen</label>
+        <label key="menu replay">Opnieuw afspelen</label>
+        <label key="menu resume">Hervatten</label>
+        <label key="cancel button">Annuleren</label>
+        <label key="continue button">Doorgaan</label>
+        <label key="close tooltip">Sluiten</label>
+<!-- Email video menu screen -->
+        <label key="email page title">E-mailen naar vriend</label>
+        <label key="email your email">Uw e-mailadres</label>
+        <label key="email friend email"><![CDATA[E-mailadres van vriend]]></label>
+        <label key="email message">Bericht (optioneel)</label>
+        <label key="email send">Verzenden</label>
+        <label key="email video">Video e-mailen</label>
+        <label key="email error">Voer juiste e-mailadressen in.</label>
+        <label key="email confirmation text">Uw e-mail is verzonden</label>
+<!-- Share video menu screen -->
+        <label key="share title">Deze video delen</label>
+        <label key="share directions">Direct delen op deze sites</label>
+        <label key="share facebook">Delen op Facebook</label>
+        <label key="share twitter">Delen%20op%20Twitter</label>
+        <label key="share twitter message">Uitchecken+</label>
+        <label key="share link">Koppeling kopiëren</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Toevoegen aan website of blog</label>
+        <label key="embed directions">Code kopiëren of blogservice selecteren</label>
+        <label key="embed code">Invoegcode</label>
+        <label key="embed copy code">Code kopiëren</label>
+        <label key="embed copied">Gekopieerd</label>
+        <label key="blog processing">Bezig met verwerken ...</label>
+        <label key="blog username">Gebruikersnaam</label>
+        <label key="blog password">Wachtwoord</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Onjuiste combinatie aanmeldingsnaam/wachtwoord.</label>
+        <label key="blog post select directions">Blog selecteren</label>
+        <label key="blog post enter title">Berichttitel</label>
+        <label key="blog post enter description">Berichtbeschrijving (optioneel)</label>
+        <label key="blog post post video">Video posten</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Er is een fout opgetreden. Probeer het opnieuw.</label>
+        <label key="blog confirmation text">Bericht ingediend</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Koppeling naar deze video</label>
+        <label key="link directions">Delen via e-mail of IM</label>
+        <label key="link copy link">Koppeling kopiëren</label>
+        <label key="link copied">Gekopieerd</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Algemene voorwaarden</label>
+        <label key="related videos">Soortgelijke video's</label>
+        <label key="most viewed videos">Meest bekeken</label>
+        <label key="newest videos">Nieuwste</label>
+</labels>

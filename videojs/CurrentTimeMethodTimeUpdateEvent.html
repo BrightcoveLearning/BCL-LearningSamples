@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+	why does spinner appear when setting the currentTime?
+	why can't the currentTime be set right after video starts?
+	jumping to time and see spinner?
+	how to test if can use currentTime(#)?
+-->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Video JS Quick Start</title>
+
+	<!-- Added following 2 lines using Video.js-->
+	<link href="video-js-build/video-js.css" rel="stylesheet">
+	<script src="video-js-build/video.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+   <video id="example_video_1"
+      class="video-js vjs-default-skin"
+      controls
+      preload="none"
+      width="640" height="264"
+      poster="http://video-js.zencoder.com/oceans-clip.png"
+      data-setup="{}">
+      <source src="http://video-js.zencoder.com/oceans-clip.mp4" type='video/mp4' />
+      <source src="http://video-js.zencoder.com/oceans-clip.webm" type='video/webm' />
+      <source src="http://video-js.zencoder.com/oceans-clip.ogv" type='video/ogg' />
+    </video>
+
+	<br />
+
+	<button id="theButton">Click Me</button>
+
+	<div id="checks"></div><br /><br />
+	<div id="display"></div>
+
+<script type="text/javascript">
+		var myPlayer;
+
+		$( '#theButton' ).on( 'click', eventHandler );
+
+		function eventHandler( evt ){
+			myPlayer.currentTime( 15 );
+		}
+
+		_V_("example_video_1").ready(function(){
+			myPlayer = this;
+			myPlayer.play();
+			myPlayer.on("timeupdate", displayCurrentTime);
+		});
+
+		function displayCurrentTime(){
+			$("#checks").html('in event handler');
+			theText="current time "+ myPlayer.currentTime();
+			$("#display").html(theText);
+		}
+
+</script>
+
+
+</body>
+</html>

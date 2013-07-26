@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  p { margin:0; color:blue; }
+  div,p { margin-left:10px; }
+  span { color:red; }
+  </style>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+</head>
+<body>
+  <p>Type 'correct' to validate.</p>
+  <form id="theForm" action="javascript:alert('success!');">
+    <div>
+      <input type="text" />
+
+      <input type="submit" />
+    </div>
+  </form>
+  <span></span>
+<script>
+
+    $("#theForm").submit(function() {
+
+      $("span").text("in handler").show().fadeOut(1000);
+      return false;
+    });
+</script>
+
+</body>
+</html>

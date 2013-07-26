@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>MRSS Feeds Sample</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		body {
+	color: #619FA8;
+	font-family: Helvetica,Arial,sans-serif;
+	background-color: #F5F5F5;
+		}
+img {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.BCLhighlight {
+	font-weight: bold;
+	color: #C00;
+	background-color: #FFC;
+}
+		a {
+		color: #A2B200;
+		text-decoration: none;
+		}
+		a:hover {
+		font-weight: bold;
+		color: #CF0050;
+		}
+		</style>
+	</head>
+	<body>
+	<h1>MRSS Feeds	</h1>
+	<p> 
+	<a href="http://api.brightcove.com/services/library?command=search_videos&sort_by=MODIFIED_DATE:DESC&token=w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..&output=mrss"><img src="http://files.brightcove.com/BCLrss-small.png"/> All Videos</a>
+  </p>
+	<p> 
+	<a href="http://api.brightcove.com/services/library?command=search_videos&sort_by=MODIFIED_DATE:DESC&token=w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..&output=mrss&all=subject:Bird"><img src="http://files.brightcove.com/BCLrss-small.png"/> Bird Videos</a>
+  </p>
+	<p> 
+	<a href="http://api.brightcove.com/services/library?command=search_videos&sort_by=MODIFIED_DATE:DESC&token=w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..&output=mrss&all=subject:Sea"><img src="http://files.brightcove.com/BCLrss-small.png"/> Sea Videos</a>
+  </p>
+	<p> 
+	<a href="http://api.brightcove.com/services/library?command=search_videos&sort_by=MODIFIED_DATE:DESC&token=w8DSqB3RP9cd1-PDaowHd9CNwCXVC4XiDTuDeoxvmGqkGPt4dP3IHQ..&output=mrss&all=subject:Wildlife"><img src="http://files.brightcove.com/BCLrss-small.png"/> Animal Videos</a>
+  </p>
+	<p>This is a really simple approach to creating MRSS feeds from your Brightcove video library using the search_videos method of the Media API. The feed links above are simple links pointing to API calls -- for example:</p>
+	<pre>&lt;a 
+href=&quot;<span class="BCLhighlight">http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/</span>&quot;&gt;
+  &lt;img src=&quot;http://files.brightcove.com/BCLrss-small.png&quot;/&gt; Animal Videos
+&lt;/a&gt;
+</pre>
+	<p>You can think of this link as have 4 parts:</p>
+	<ul>
+	  <li>The standard part: <span class="BCLhighlight">http://link.brightcove.com/services/mrss/</span></li>
+	  <li>The Player ID for the player that will play the videos: <span class="BCLhighlight">player835199013001</span></li>
+	  <li>The account ID for your account: <span class="BCLhighlight">835233035001</span></li>
+	  <li>Parameters to qualify the results returned: <span class="BCLhighlight">/tags/sea/</span></li>
+    </ul>
+	<p>You can add more tags to search on: <span class="BCLhighlight">/tags/sea/land/air/</span></p>
+	<p>You can also use other parameters besides <strong>tags</strong>:</p>
+	<ul>
+	  <li><span class="BCLhighlight">/new</span> - returns the most recent videos</li>
+	  <li><span class="BCLhighlight">/video[videoID here]/related</span> - videos related to the specified video</li>
+	  <li><span class="BCLhighlight">/top/alltime</span> - most viewed videos in the account</li>
+	  <li><span class="BCLhighlight">/top/trailingweek</span> - videos most viewed in the previous week</li>
+	  <li><span class="BCLhighlight">/playlist[playlistID here]</span> - the videos in the specified playlist</li>
+    </ul>
+	<p><br />
+    </p>
+    </body>
+</html>
+

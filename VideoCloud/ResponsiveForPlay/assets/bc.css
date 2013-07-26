@@ -1,0 +1,236 @@
+/* General */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v5/toadOcfmlt9b38dHJxOBGC-IiwWNzQT_LXAtr-Ee9Pw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v5/toadOcfmlt9b38dHJxOBGCmgpmuQqK2I-L2S9cF65Ek.woff) format('woff');
+}
+
+html, body {
+  font-family: 'Source Sans Pro', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+body {
+  background-color: #151B17;
+}
+.video-js {
+  /* problem: the aspect ratio of the video must be known in advance */
+  bottom: 0;
+  height: 41.64vw; /* height / width * 100, 16:9 => 56.25vw */
+  left: 0;
+  margin: auto;
+  max-height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 240vh; /* width / height * 100, 16:9 => 177.7vh */
+}
+.vjs-tech {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* poster */
+.wrap {
+  background-size: contain;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  bottom: 0;
+  display: table;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+.vjs-poster {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Controls */
+.vjs-big-play-button {
+  width: 144px;
+  height: 96px;
+  border-radius: 21px;
+  background: url('play.png') no-repeat 50% 50% rgba(0, 0, 0, 0.45);
+  top: 21px;
+  left: 23px;
+  position: absolute;
+}
+
+/* image replacement */
+.vjs-play-control,
+.vjs-mute-control,
+.vjs-fullscreen-control {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  /* IE <= 7 */
+  *text-indent:-9999px;
+}
+.vjs-play-control::before,
+.vjs-mute-control::before,
+.vjs-fullscreen-control::before {
+  content:"";
+  display: block;
+  width: 0;
+  height: 150%;
+}
+
+/* 3 column fixed-fluid-fixed layout: http://alistapart.com/article/holygrail */
+.vjs-control-bar {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.45);
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  padding: 0 94px 0 174px;
+
+  -webkit-backface-visibility: hidden;
+  -webkit-transition:-webkit-transform 0.5s, padding 0.5s, margin 0.5s;
+  -moz-transition:-moz-transform 0.5s, padding 0.5s, margin 0.5s;
+  -ms-transition:-ms-transform 0.5s, padding 0.5s, margin 0.5s;
+  -o-transition:-o-transform 0.5s, padding 0.5s, margin 0.5s;
+  transition:transform 0.5s, padding 0.5s, margin 0.5s;
+}
+.vjs-control-bar .vjs-progress-control {
+  -webkit-transition:-webkit-transform 0.5s;
+  -moz-transition:-moz-transform 0.5s;
+  -ms-transition:-ms-transform 0.5s;
+  -o-transition:-o-transform 0.5s;
+  transition:transform 0.5s;
+}
+.vjs-control-bar.vjs-fade-out {
+  padding: 0;
+  margin-left: -18px;
+  -webkit-transform:translateY(50px);
+  -moz-transform:translateY(50px);
+  -ms-transform:translateY(50px);
+  -o-transform:translateY(50px);
+  transform:translateY(50px);
+}
+.vjs-control-bar.vjs-fade-out .vjs-progress-control {
+  -webkit-transform:translateY(-28px);
+  transform:translateY(-28px);
+}
+
+.vjs-control,
+.vjs-time-divider,
+.vjs-play-progress,
+.vjs-load-progress,
+.vjs-seek-handle {
+  float: left;
+  display: block;
+}
+.vjs-control {
+  padding: 0 18px;
+  width: 22px;
+  height: 50px;
+}
+/* center */
+.vjs-progress-control {
+  width: 100%;
+}
+.vjs-progress-holder {
+  background-clip: content-box;
+  height: 4px;
+  padding: 24px 0 22px;
+  -webkit-user-select: none;
+}
+.vjs-play-progress,
+.vjs-load-progress {
+  height: 4px;
+  float: none;
+}
+.vjs-play-progress {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAHElEQVQIW2P8//+/DyMj4xYGIGAEETABMAcmAADkAAtNi9y2WAAAAABJRU5ErkJggg==') #d52484 repeat;
+  margin-top: -4px;
+}
+.vjs-progress-holder,
+.vjs-load-progress {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+/* left */
+.vjs-play-control {
+  background: url('play.png') center no-repeat;
+  margin-left: -174px;
+}
+.vjs-play-control.vjs-playing {
+  background-image: url('pause.png');
+}
+.vjs-current-time {
+  margin-left: -116px;
+}
+.vjs-time-divider {
+  margin-left: -58px;
+}
+.vjs-duration {
+  margin-left: -58px;
+}
+/* right */
+.vjs-mute-control,
+.vjs-volume-control {
+  display: none;
+}
+.vjs-mute-control,
+.vjs-volume-control,
+.vjs-fullscreen-control {
+  margin-right: -94px;
+}
+.vjs-mute-control {
+  background: url('sound.png') center no-repeat;
+  display: none;
+  pointer-events: none;
+}
+.vjs-volume-control {
+  left: 58px;
+  color: transparent;
+  pointer-events: none;
+  display: none;
+}
+.vjs-fullscreen-control {
+  background: url('fullscreen.png') center no-repeat;
+}
+
+/* misc */
+.vjs-current-time .vjs-control-text,
+.vjs-duration .vjs-control-text,
+.vjs-progress-control .vjs-control-text,
+.vjs-volume-control .vjs-control-text {
+  display: none;
+}
+.vjs-volume-handle > .vjs-control-text {
+  display: inline;
+}
+.vjs-volume-handle > .vjs-control-text::before {
+  content: '0'
+}
+.vjs-remaining-time {
+  display:none;
+}

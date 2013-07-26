@@ -1,0 +1,10 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout id="application" width="650" height="500" boxType="vbox" hAlign="center" vAlign="middle">
+    <HBox width="650" height="50" padding="10" gutter="20" hAlign="center">
+      <Image id="zoomInButton" source="http://files.brightcove.com/BCLZoomIn.png" click="{videoPlayer.setSize(650,366)}" width="100" height="30"/>
+      <Image id="zoomOutButton" source="http://files.brightcove.com/BCLZoomOut.png" click="{videoPlayer.setSize(250,140)}" width="100" height="30"/>
+    </HBox>
+      <ChromelessVideoPlayer id="videoPlayer" width="300" height="215"/>
+  </Layout>
+</Runtime>

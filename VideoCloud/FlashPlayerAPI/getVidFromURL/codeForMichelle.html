@@ -1,0 +1,26 @@
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script></p>
+<script type="text/javascript">
+	var BCL = {};
+function onTemplateLoaded(id) {
+	BCL.Player = brightcove.getExperience(id);
+	BCL.experienceModule = BCL.Player.getModule(APIModules.EXPERIENCE);
+	BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onPlayerReady)
+}
+BCL.onPlayerReady = function (event) {
+	BCL.videoPlayer = BCL.Player.getModule(APIModules.VIDEO_PLAYER);
+	// get video id from URL and play it, if any
+	BCL.videoID = BCL.getQuerystring("bctid");
+	if (BCL.videoID != "") {
+		BCL.videoPlayer.loadVideo(BCL.videoID);
+	}	
+}
+BCL.getQuerystring = function(key, default_) {
+	if (default_==null) default_="";
+	key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	var regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+	var qs = regex.exec(window.location.href);
+	if(qs == null)
+		return default_;
+	else
+		return qs[1];
+}

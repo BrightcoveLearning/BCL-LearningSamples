@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Training Videos</title>
+	<meta name="description" content="">
+    <meta name="author" content="">
+	
+	<!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset-min.css">
+	
+	<!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/styles-ie.css" />
+	<![endif]-->
+	<!--[if IE 9]>
+    <link href="css/styles.css" rel="stylesheet">
+	<![endif]-->
+	<!--[if !IE]><!-->
+    <link href="css/styles.css" rel="stylesheet">
+	<!--<![endif]-->
+	
+</head>
+
+<body>
+	<div id="topbar">
+		<a href="#"><div class="logo"></div></a>
+		<!--<div id="toplinks">
+			<p>Other sites:&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.chipotle.com">Chipotle.com</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://chipnet/Pages/Default.aspx">Chipnet</a></p>
+			<!--<form id="searchForm" method="get" action="http://www.chipotle.com/en-US/site_search.aspx?q=">
+				<input id="searchField" type="text" value="Search Chipotle.com" />
+				<input type="submit" id="submitButton" />
+			</form>-->
+		<!--</div>-->
+	</div>
+	<div class="container">
+		<div id="leftBar">
+			<div id="mainMenu"></div>
+		</div> <!-- end leftBar -->
+		
+		<!-- begin main content -->
+		<div id="mainContent">
+			<div id="tabbedMenu"></div>
+			<div id="fullWidthContent">
+			<div id="tabbedContent"></div>
+			</div>
+			<div id="centerContent">
+				<div class="loading">Retrieving Videos...</div>
+			</div>
+			<div id="rightBar" class="roundedCorners"></div>
+		</div> <!-- end mainContent -->
+    </div> <!-- /container -->
+	
+	
+	<!-- Templates! -->
+	
+	<!-- Renders left sidebar menu -->
+	<script id="playlistMenuTemplate" type="text/x-jquery-tmpl">
+		<div id="backLink"></div>
+		<h4 class="title"><a href="#">Overview</a></h4>
+		<ul id="leftNav">{{each(i, playlist) playlists}}
+			<li class="leftNavItem ${getListClass(i, playlists.length)}"><a id="${playlist.referenceId}" href="#playlist/${formatURL(playlist.name)}/${formatURL(playlist.subcat)}/${playlist.firstVideoId}">${playlist.name}</a></li>
+		{{/each}}</ul>
+	</script>
+	
+	<script id="playlistsHeaderTemplate" type="text/x-jquery-template">
+		<h2>Welcome</h2>
+		<h3>Here you&#39;ll find content to help you on your journey from crew to Restaurateur. Be sure to check back for new and updated videos.</h3>
+	</script>
+	
+	<!-- Renders a recently added video as a list item -->
+	<script id="recentlyAddedVideosTemplate" type="text/x-jquery-tmpl">
+		<h3>Recently Added</h3>
+		<ul id="recentlyAddedList">{{each(i, item) items}}
+		<li id="${item.id}" class="${getListClass(i, items.length)}">
+			<a href="#singlevideo/${item.id}" id="${item.id}">
+			<img class="videoThumb" src=${item.thumbnailURL} alt="Video Thumb" width="70" height="52">
+			<img class="playArrowSmall" src="images/playArrowSmall.png" title="Play Video">
+			<div class="copy">
+				<p class="title">${truncate(item.name, 17)}</p>
+				<p class="desc">${truncate(item.shortDescription, 34)}</p>
+				<p class="uploaded">Added ${formatDate(item.creationDate)}</p>
+			</div>
+			</a>
+		</li>
+		{{/each}}</ul>
+	</script>
+	
+	<!-- Renders a playlist as a box. The playlist gets further broken down by the custom field "playlistsubcategory"  -->
+	<script id="playlistBoxTemplate" type="text/x-jquery-tmpl">
+		<div id='groupedPlaylists'>
+		{{each(i, playlist) playlists}}
+		<div class="playlistBox">
+			<div class="playlistBoxBanner">
+				<h4>${playlist.name}</h4>
+				<img class="corner" src="images/corner.png">
+			</div>
+			<img class="playlistBoxImg" src="images/playlists/${playlist.referenceId}.png">
+			<ul>{{each(k, subcat) subcategories}}<li class="${getListClass(k, subcategories.length)}" id="${subcat.subcategory}"><a href="#playlist/${formatURL(playlist.name)}/${formatURL(subcat.subcategory)}/${subcat.id}" id="${subcat.subcategory}">${subcat.subcategory}</a></li>{{/each}}</ul>
+		</div>
+		{{/each}}
+		</div>
+	</script>
+	
+	<!-- Renders the category tabs for a playlist, as well as a container underneath for the tabbed content -->
+	<script id="playlistTabsTemplate" type="text/x-jquery-tmpl">
+		<h1>${playlistTitle}</h1>
+		<div id="tabbedPlaylists">
+			<ul class="tabs">{{each(i, category) categories}}
+			<a href="#playlist/${formatURL(playlistTitle)}/${formatURL(category.title)}/${category.id}"><li>${category.title}</li></a>
+			{{/each}}</ul>
+		</div>
+	</script>
+	
+	<!-- Renders a list of videos from a category in a playlist -->
+	<script id="singleCatTemplate" type="text/x-jquery-tmpl">
+		<div class="videoListContainer">
+			<ul>{{each(i, video) videos}}
+			<li id="${video.id}">
+				<a href="#playlist/${formatURL(video.refId)}/${formatURL(video.customFields.playlistsubcategory)}/${video.id}" id="${video.id}" class="videoListItem">
+				<img src="${video.thumbnailURL}" width="70" height="52">
+				<img class="playArrowSmall" src="images/playArrowSmall.png" title="Play Video">
+				<h4>${truncate(video.name, 18)}</h4>
+				<p>${truncate(video.shortDescription, 62)}</p>
+				</a>
+			</li>
+			{{/each}}</ul>
+		</div>
+	</script>
+	
+	<script id="videoTitleTemplate" type="text/x-jquery-template">
+		<div id="videoTitle">
+			<h3>${videoTitle.name}</h3>
+			<p>${videoTitle.shortDescription}</p>
+		</div>
+	</script>
+	
+	<!-- Renders the Brightcove player container -->
+	<script id="brightcovePlayerTemplate" type="text/x-jquery-template">
+		<div id="videoPlayer">
+		<div class="loading">Loading video...</div>
+		</div>
+	</script>
+	
+	
+	
+	<!-- end Templates -->
+	
+	<script type="text/javascript" src="js/LAB.min.js"></script>
+	<script type="text/javascript">
+	$LAB
+	.script("http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js").wait()
+	.script("js/jquery.tmpl.js").wait()
+	.script("js/jquery.corner.js").wait()
+	.script("js/underscore-min.js").wait()
+	.script("js/backbone.js").wait()
+	.script("http://admin.brightcove.com/js/BrightcoveExperiences.js").wait()
+	.script("http://admin.brightcove.com/js/APIModules_all.js").wait()
+	.script("js/page.js");
+	</script>
+</body>
+</html>
+

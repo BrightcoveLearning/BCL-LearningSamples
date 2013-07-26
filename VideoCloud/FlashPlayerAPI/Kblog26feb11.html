@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="file:///Macintosh HD/Users/rcrooks1969/Dropbox/Learning_Services/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<p>Here's what's new in Brightcove Knowledge:</p>
+<p>The <a href="http://support.brightcove.com/en/training-videos">Training Videos page</a> on the Brightcove Support site has been rewritten use the Media and Player APIs to make it easier to navigate. Let <a href="mailto:rcrooks@brightcove.com">me</a> know know what you think.</p>
+<ul>
+  <li>Free online training classes available next week -- go to the <a href="http://www.brightcove.com/en/services/training">Training Class Schedule</a> to sign up:
+    <ul>
+      <li>Brightcove Essentials (Tuesday and Thursday)</li>
+    </ul>
+  </li>
+  <li>
+    <p>New Support Document: <a href="http://support.brightcove.com/en/docs/delivering-live-video-dvr">Delivering Live Video with DVR</a></p>
+</li>
+  <li>
+    <p>New Video Tutorial on <a href="http://support.brightcove.com/en/training-videos?id=780110967001">Video Analytics</a></p>
+  </li>
+</ul>
+<p><strong>Tip of the week:</strong> Do you have video of mixed sizes and aspect ratios? Using the Brightcove Player API, you can dynamically resize your video player to match the size of the rendition when a new video is loaded into the player. You just need to get the frameHeight and frameWidth properties of the current rendition, which you can obtain using the getCurrentRendition() method of the video player module. Then you can either reset the height and width of the player to match exactly, or adjust one or the other to match the aspect ratio and avoid letterboxing. Remember that if the player uses the VideoPlayer component rather than ChromelessVideoPlayer, the height will include 45 pixels for the media controls. You can see a <a href="http://files.brightcove.com/ResizingPlayerSample.html">sample page</a> where I hold the width of the player constant and adjust the height to match the aspect ratio of the current video (view source to see the code).</p>
+
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

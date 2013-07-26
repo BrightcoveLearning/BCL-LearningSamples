@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 1</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #835004}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+		<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="486" />
+  <param name="height" value="412" />
+  <param name="playerID" value="1585847251001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaiwEyxGb6cYUO5Sbsoa0YMo" />
+  <param name="isVid" value="true" />
+  <param name="dynamicStreaming" value="true" />
+    
+  <param name="@videoPlayer" value="734445534001" />
+  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+</object>
+		<!--
+		This script tag will cause the Brightcove Players defined above it to be created as soon
+		as the line is read by the browser. If you wish to have the player instantiated only after
+		the rest of the HTML is processed and the page load is complete, remove the line.
+		-->
+		<script type="text/javascript">brightcove.createExperiences();</script>
+
+		<!-- End of Brightcove Player -->
+		<fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset>
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+		// listener for the Template Ready event
+			BCL.onTemplateReady = function(event) {
+				console.log("EVENT: TEMPLATE_READY");
+				console.log(event);
+			  BCL.player = brightcove.getExperience("myExperience");
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.buttonsArray = BCL.experienceModule.getElementsByType("MediaControls");
+			  console.log(BCL.buttonsArray);
+			}
+		</script>
+
+	</body>
+</html>

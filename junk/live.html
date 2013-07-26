@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style type="text/css">
+		#placeholder {
+			width:480px;
+			height:270px;
+		}
+		#overlay {
+			position:absolute;
+			z-index: 10;
+			width:480px;
+			height:270px;
+			background-color: #000;
+			text-align: center;
+		}
+
+		.BrightcoveExperience {
+			position: absolute;
+		}
+		#message {
+			color: #FFF;
+			padding: 20px;
+			text-transform: uppercase;
+			font-size: 2em;
+		}
+	</style>
+</head>
+<body>
+
+<div id="placeholder">
+	<div id="overlay"> <!-- MESSAGE SHOWN BEFORE STREAM -->
+		<p id="message">Video is not yet live</p>
+		<img id="progress" src="data:image/gif;base64,R0lGODlhWgALAIQAAJyanMzOzPTy9KyqrNze3NTW1Pz6/LSytKSmpJyenNTS1PT29KyurOTm5Nza3Pz+/LS2tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQIBwAAACwAAAAAWgALAAAF8CAgjsFjntAoIsJpNqpYuk+qsjQcz6494i6darajGXyrVjAG4JmOMeBJSDIiAdIXkzdcuKA35YmQ2HlP4J/YRDZ/r9lHu3uqfg/R9cNRHhrxYTR8RXd5gn12dU00D4BqNHOJJ45JkIgyjJRYepGYNItfDFFnY1tGojekbKaho5CsaAcONAuaCKp7TAW0trgOuryuLr8xuy61AMGpNAqXAMYnyMsuzcXKP7jVKtAm0l8DMQzZztwPBuAq4szkRugj6tTs3yPR7iLwJ8TbtPYA+Cb6RpRb0O9fLmvH7HXrd4sZsITCTih4WC+iiYkIK6oIAQAh+QQIBwAAACwAAAAAWgALAIScmpzMzszs6uy0trSsqqzc3tz09vTExsSkoqTU1tT08vS8vry0srTk5uT8/vycnpzU0tTs7uy8urysrqzk4uT8+vzMysykpqTc2twAAAAAAAAAAAAAAAAAAAAAAAAAAAAF+yAgioljmsY0ilN1mthKvk4qt3Qsl6+94i/diucY0gyMm4GWkAGIqORv+WrujtLRhHqyGk8jaC3L4pogj2uPDNjS0OoTUvlOf8FPWoVArzrFe31df3p8U0yELxUABUeGWmYOXmGOgiaTMz2PZYhxKAQUNAqbbTQOEE6NL6M3pqgyqiesP66ponyiF600FrarurS8vrLAWqa9sLkivzIDkcgrsSYKxSLOwsnMK9cv0CPSDtQjsgjNzzIP4Arl2+cr6aLsI9wn3gDwq/IAJhHVAPQm7AFoQKOfOWwrCL4w2A7hCIUnGI5bt6ubE4jT9JVyKAJjOI0Tjl2M1ywEACH5BAgHAAAALAAAAABaAAsAhJyanOTi5Ly6vPTy9LSytMTGxKSipOzq7MTCxPz6/JyenOTm5Ly+vMzKzKSmpOzu7Pz+/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXvICAqAWSagyOuxHk261i6aQy0LgTHZF7HONdu1TvJfCpgTmcrnn6s5fBIS0ZzU4DTpJ09DTZBAtv0osAxMZlnhgzQK7Ww7NtCHlZR8EV34W17Jll2f0prRG14Bz5welI2AAuMgI82kjSNN5Uxl18AOQ+ZgRAIkJ0moZQ5pZagokusnK4iLgeZDEsMTacQtja4Obo8vL4xwC7CRMRwJ8UrxyexI8u/sLs5ziLQJtJa1CsmC7c5Cd0KDzni1S7lTegu6sbk5u8n8eD32rnu6ePB/PD8IQNo79YBBetcCLhWC6G8HAuHYXP4bElEZROrhQAAIfkECAcAAAAsAAAAAFoACwCEnJqczM7MtLa07OrsrKqs3N7cxMLE9Pb0pKKk3NrcvL689PL05ObkzMrM/P78nJ6c1NLUvLq87O7stLK05OLkxMbE/Pr8pKakAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABf4gADyDY5oDIq7KeRqrSLpOGgMtDceza8c5127VOwEuJZfkcQu+bkXTsklzDGXJ0xRYvY6yUgSD9ltVLC6L9yEhq2Ln9Lrte5vRJzWUfkrxTQx2Ik4Oejx/DoFUcns0ilyMh44qbosuCo11lieYkpqQl5l9by4MNwAVVRGigKepNKueJ6Y3ry6xRIi0IicUrjQWuDKIvrXAwiPEv2nIbDTFKyYUTHDAAlAHz9Rm1tjaxmnXPNku0zcOCdsitiYW4kTkJ+ngee8y8Sbz1eHeLvpmBdShAjbhxgVEAem1KxjjII2E+/IwXOHQBURupwJUmSiiYq+MGw0qu6GRBscjIwRjlAwBACH5BAgHAAAALAAAAABaAAsAAAXxIIAIT1k2QKoGpgmp6dg+KAyw8wvLbQ3jLZ2KZ2oMSD3bbWYQxpBFJbDUtBFPUqZTBMV2H4SELbBoVXff8LhsOg/T4h+bur2CxTNHfMU8WL96Y31/eXspUw8GfmiFKS1qPzMPi28zkHwzlE+WhkuZhI97JgRZZgxWcyWkgqaolqVtpzupYDYlDkoFMwuaIrS4NrotvK4twDDCJsSzeUoPCp3JJctDtNDBu70I1tHZxSbXyOEq0okDNgzc2GbnMOkz4ynlBu0q7y3xALq5u/Up9yaOkeuH7he/Yf4AALx10AYBgszwHVSWcBu8idMqWpsYAgAh+QQIBwAAACwAAAAAWgALAIScmpzMzszs6uy0trSsqqzc3tz09vTExsSkoqTU1tT08vS8vry0srTk5uT8/vycnpzU0tTs7uy8urysrqzk4uT8+vzMysykpqTc2twAAAAAAAAAAAAAAAAAAAAAAAAAAAAF+OBUOSSJAWialKQxpajIOicMrKxry2wN4yUdjFc6jVgJ221mYOwMs6QN2HIOoUgl1dF8RlEzyGPKtKYm2JKYnDPH0qT1r+xlybPsUoVQL0nnLHt9JH8qM4JXXyl+Wkx8iXiAQY9ncA6FKFsGlG+Kiw4QSgUzCpwAEzOgoqSmqGGrLKU7qaE2DhawJQoXszO4NqOxvEOpvzDBusNnxaLGKcgkuzYDls4o0A7SMNS+udHKKNws1g+jNuWkCNPV59gK6tvsMOix8CniJdYAwTYNMxHgAOAjoc8fC4DruvX7F3DgLSUGHcCIGM1eDGYL6/UaBzHdxnwdS4QAACH5BAgHAAAALAAAAABaAAsAhJyanOTi5Ly6vPTy9LSytMTGxKSipOzq7MTCxPz6/JyenOTm5Ly+vMzKzKSmpOzu7Pz+/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXrICSODWCaSjCKg3OaxCqWbyq3LxDL9GmvuNduRePlfqPgaUg6qoAuoQzSQz2T0eW0R3TeDDlBwli7ssAvMdlnhgzQJ3X31CzLHlnY1rvC55gzfCN+UmsmgTkLX397iYuFcy+KQHB6hocIOQCTg5U6U5mOfZ6AEKGSd6SgmgsMR5wiB54MU641sBCyObQytj64ui+8K74oiq8ywSfDI6fGybOrt9C70r8iNQ8yC9ErCc4ACtor3NXe4OLb3SPfR+MQPu8i5cK17urmxPfk6yPF4fJQyMulIN8IAchWHChYTwbCaQoZLpvy8NqKEAAh+QQIBwAAACwAAAAAWgALAIScmpzMzsy0trTs6uysqqzc3tzEwsT09vSkoqTc2ty8vrz08vTk5uTMysz8/vycnpzU0tS8urzs7uy0srTk4uTExsT8+vykpqQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF/qAjigZgms8wigNymspKvkAqt3Qsl6+94i/digcY0nwjySMncxBRqpWSuTtGk8tg8ymyPGuSm+tVsay8x/BvfCqfvw/1CNg2j9AvB/4UlzHYMDJ7KHIif1R3cIUOh1pvRw4KaWKII5I9i3SBMpd8mYAAQpZpApMrDDQAFU0RpiOoNKsyrZh+qbIrtJ4OriIUt4K6hDK/scG9DsVkx7W8JxeLFFltgqU9B8TTJrhd1nzYK9LGZ94o4M4A0DIJ2qrVR+ci7ON35TXxDvPL5PArJuorCrTjpmcCDYAjBNLrYvAFQhEK991p+GxROnzKTgRoQvFftFQbZXRM95FGyBUjBB8mCwEAIfkECAcAAAAsAAAAAFoACwAABfPgIz4QYJqIMIrNeQarWLpp3LoAHM9nvd4u3YoHEBmIAN8I+IodcUoWLudERh9Mk9CIfDxpqhUhgQssVt9eeDQun0dp1FrUDr65UMMBOn84yEFOe2Axf2WCfIWATWiDagyJYotaMQ+OcjF1jCuXSX2alDGdNVB3dFNbXpA0pg8EqE6rPa2vh2iyKG+shVMFMQujrQ69v8G8OL4rwKUjszEKkwDJI8u7K9DIxczX0dMi1c7NAAyt2C7eXgM45M/dTuou7NzZaPAn8s34IsP01PYm+vwQU/ZvnLCB/ta1KsCgkgKE3woiKAfxwQKJFPtF3DbiYQgAIfkECAcAAAAsAAAAAFoACwCEnJqczM7M7OrstLa0rKqs3N7c9Pb0xMbEpKKk1NbU9PL0vL68tLK05Obk/P78nJ6c1NLU7O7svLq8rK6s5OLk/Pr8zMrMpKak3NrcAAAAAAAAAAAAAAAAAAAAAAAAAAAABfeg4xgTYJpTJa7YeSarSLpAGjstDceza8c5127VO40YtInhlqABhjKkbxlr6m4G6UnJdEKPyWz4BnlceVoUdVU+E9O1tagtxMKVhHHVe6vkp11uIn56K1Z1MYSAhSKHL1h/W3IOjiZfBpFqgYhEmXEigDEQTgU3Cp4TNw6jNKUxp0mqrC6uK7A+MVuqFqSmF7E3vK2+wDHCtMS4uQADk8cntSIKvy7Nwb2v1CfWxti22ibcK8zONA/RDgoINOIizwDnpuvV5S7xr/PbzhK7Tg03EcCRu0bjX4yA7Oq5MLgCIb1r/QrKK7biHQCG0vKhiLhworJuAEIAACH5BAgHAAAALAAAAABaAAsAhJyanOTi5Ly6vPTy9LSytMTGxKSipOzq7MTCxPz6/JyenOTm5Ly+vMzKzKSmpOzu7Pz+/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAXqIDQ4QFkSUKo2ZqkEajq2ABpDbPvec2vHOdMu1jMRiqcbjjZUIWvKoAtGJPmiTKrTaoQYaILETQpoyr6t8DjLQ5vUQDbRXVLTfiu56sFNrnVaKXx3WIA3g1cpiXE0C22Efy2Oc5CMko+LEF03CDQAk3t0UJyeoIKieCmdjYeoNyUMSgxMphAHorE3szq1tzS5MbtCvbhKAMAqq8M3vi3IqrTMxaS80r9KCAU3CcouDzcL0yrcTN8x4dcx5DrmKujO252y5eDiKsLe9enB9Of2KbtuCIgW44CCfSoGVit4EJ5AgioMIkyhEEAIACH5BAgHAAAALAAAAABaAAsAhJyanMzOzLS2tOzq7KyqrNze3MTCxPT29KSipNza3Ly+vPTy9OTm5MzKzPz+/JyenNTS1Ly6vOzu7LSytOTi5MTGxPz6/KSmpAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX+4IAAJKk4aGqU5DOkqMgCJ+ysrGvLbA3jJR2MVzo9Zj7VTJiSHHu22/IFcyKjwBa1+SyiZhULzJIFPCS7ESs8Lp/TYHGKvEQP1SW2A9qu2xh4JjZ0OXYpgFd9hX+BNDBeNgp+d4kwkouUfJaTKUSCjwAVURGcKAwzoaOlDqdgqpiHqKI2AAGDpLAoFLK3q7uuY7hBhrq8wbZjAksHNhRdJLNzyjnMMM7A0svNz6nJAIPTQdUpCdzRKBbhLeMo5djo6mbsDu5r4CRjEzMXxA4F5oP0seBn4987BxYEliAIw6C9fCVgKCTBMMUvFsgk7ut3sUTGFBMBVCw24yOKiSEBAAA7" />
+	</div>
+	<!-- PLAYER WILL BE INSERTED HERE -->
+</div>
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript">
+if (typeof console == "undefined") {window.console = {log: function () {}};}
+
+/*	A proof of concept of having a banner displayed over the player until a live event starts.
+	Not tested for all possible situations nor supported by Brightcove
+*/
+var player,experienceModule,videoPlayer,
+	errorTime=0,
+	placeholderElem = document.getElementById("placeholder"),
+	overlayElem = document.getElementById("overlay"),
+	progressElem = document.getElementById("progress"),
+	messageElem = document.getElementById("message"),
+	retryTime = 10000;
+
+// All "param" elements that will go into the player object
+var playerConfig = {
+	"width": "480",
+	"height": "270",
+	"playerID": "2152002721001",
+	"playerKey": "AQ~~,AAABWOeFoCE~,s9prJpgtIb_cs1xf82U4g43FCYl-fGPR",
+	"isVid": "true",
+	"isUI": "true",
+	"autoStart": "true",
+	"wmode": "transparent",
+	"@videoPlayer": "2491514863001",
+	"templateErrorHandler": "onTemplateError",
+	"includeAPI": "true",
+	"templateLoadHandler": "onTemplateLoaded",
+	"templateReadyHandler": "onTemplateReady"
+};
+
+function onTemplateLoaded(id) {
+	console.log("LOADED");
+	// Show the loading bar to give viewer feedback that we are checking if the stream is available
+	progressElem.style.visibility = "visible";
+	player = brightcove.api.getExperience(id);
+	videoPlayer = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+	// Event listener so we know if the stream is successful
+    videoPlayer.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onBegin);
+}
+
+function onTemplateReady(event) {
+	console.log("READY");
+    // We're not doing anything on ready, but we could be
+}
+
+function onTemplateError(event) {
+	// An error has occurred. This is either the stream not yet ready or a transient error.
+	console.log("ERROR");
+	console.log("Old: " + errorTime);
+	console.log("New: " + Date.now());
+	// If an error is fired very soon afterwards, ignore it
+	if (Date.now() - errorTime > 500) {
+		// In ten seconds, try again
+		console.log("ADD TIMEOUT FOR READDING PLAYER");
+		//window.setTimeout(addPlayer, 2000, playerConfig, placeholderElem); // Grrr IE doesn't send the parameters
+		window.setTimeout(function() {addPlayer(playerConfig, placeholderElem)}, retryTime);
+		// Remove the player.
+		console.log("REQUEST REMOVE");
+		window.setTimeout(removePlayer, 2); // Delay is for IE
+		// Remove the progress bar
+		console.log("HIDE SPINNER");
+		progressElem.style.visibility = "hidden";
+	} else {
+		console.log ("DOUBLE EVENT IGNORED");
+	}
+	errorTime = Date.now();
+}
+
+function onBegin(e) {
+	console.log("BEGIN");
+	// Playback has begun, remove the overlay
+	overlayElem.style.display = "none";
+	// If we get an error once playback starts (like an CDN server problem), we'd want to try reconnecting more quickly
+	retryTime = 1000;
+	// And the message shown will be different
+	messageElem.innerHTML = "Please wait";
+	// Set event handler for complete - when the stream is finished
+	videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onComplete);
+}
+
+function onComplete(e) {
+	console.log("COMPLETE");
+	// Playback has finished, show the overlay with a new message
+	progressElem.style.visibility = "hidden";
+	overlayElem.style.display = "block";
+	messageElem.innerHTML = "Thank you for watching";
+}
+
+function addPlayer(config,elem) {
+	console.log("ADD");
+	// Create an object element with the above player parameters
+	var playerObj = document.createElement("object");
+	playerObj.id = "myExperience";
+	playerObj.className = "BrightcoveExperience";
+	console.log(playerObj);
+	for (var param in config) {
+		var playerParam = document.createElement("param");
+		playerParam.setAttribute("name",param);
+		playerParam.setAttribute("value",config[param]);
+		console.log("ADD-APPEND PARAM TO OBJECT");
+		playerObj.appendChild(playerParam);
+	}
+	//console.log(JSON.stringify(playerObj));
+	// Create a new player appended to the "elem" element
+	console.log("ADD-CREATE EXPERIENCE");
+	brightcove.createExperience(playerObj,elem,true)
+}
+
+function removePlayer() {
+	// Remove the player
+	brightcove.removeExperience("myExperience");
+}
+
+// Add the player for the first time
+addPlayer(playerConfig,placeholderElem);
+</script>
+
+</body>
+</html>

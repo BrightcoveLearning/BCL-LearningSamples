@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<!-- InstanceBeginEditable name="Body" -->
+	<style type="text/css">
+	.headline {
+	font-size: large;
+	font-weight: bold;
+	}
+	.code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: small;
+	}
+	.floatleft {
+	float: left;
+	padding-right: 5px;
+	}
+	.floatright {
+	float: right;
+	padding-left: 5px;
+	}
+
+	</style>
+	<p class="headline">Sponsorship and Promotions</p>
+	<p>Even if you don't include ads with your videos, you may wish run promotions or feature sponsor messaging. There are variety of ways to do this using Brightcove Video Cloud. The techniques described here can be implemented with any type of account, from Express to Enterprise.</p>
+	<h4>Basic Techniques for Standard Players</h4>
+	<p>If you just want to display a single set of messages, you can do this by configuring player settings and styles.</p>
+	<h5>Putting Images into Your Player</h5>
+	<p>Using the Styles editor, you can easily add images to any player that has images built into the template. The Tabbed Navigation 3.0 player, for instance, has both a logo image component above the player, and a banner image component at the bottom. Simply open the Styles editor in the Publishing Module, click on the image components, and you can upload images to fill the space, and also add click-through URLs and tooltips:</p>
+	<img src="images/stylesEditorSponsor.png" alt="stylesEditorSponsor" width="680" height="406" />
+	<p>For more on using the Styles eSetting Styles for Playersditor, see <a href="http://support.brightcove.com/en/docs/setting-styles-players" title="">Setting Styles for Players</a> or watch the <a href="http://support.brightcove.com/en/docs/video-tutorial-styling-players" title="Styling Players">video tutorial</a>.</p>
+	<h5>Use Player-Level Bumpers</h5>
+	<p>You can also set player-level bumper to play when your player loads in the player settings. The bumper is a 5-15 second video clip that plays automatically when the player loads. You can use it to show a sponsor message or anything that you like. See <a href="http://support.brightcove.com/en/docs/video-tutorial-adding-bumpers-players-and-videos" title="Adding Bumpers to Players and Videos">Adding Bumpers to Players and Videos</a> for more information on setting bumpers.</p>
+	<h4>Basic Sponsorship for Videos</h4>
+	<p>If you have more than one sponsor, You can also choose to play video-level bumpers instead of one player-bumper in the player settings. Then you can add different bumpers to specific videos in the <a href="http://support.brightcove.com/en/docs/editing-video-properties-media-module#econ" title="Video Settings">video settings</a>, and a bumper will play at the start of the video instead. Note that you have to choose one or the other - if the player-level bumper option is on, video-level bumpers will not play in that player.</p>
+	<h5>Adding Logo Overlays</h5>
+	<p>Another simple technique for sponsorship is to add logo overlays to your videos. Logo overlays can be <a href="http://support.brightcove.com/en/docs/editing-video-properties-media-module#overlay2" title="Logo Overlays for Videos">added to individual videos</a>, or you can add one for all your videos in your <a href="http://support.brightcove.com/en/docs/creating-logo-overlays#account" title="Logo Overlay for Account">account settings</a>, and then override the default one for individual videos. Like the images in videos players, the logo overlays can have a click-through URL and tooltip assigned to them.</p>
+	<img src="images/logooverlay.png" alt="logooverlay" width="680" height="425" />
+	<h4>Advanced Sponsorship Techniques Using the Player API</h4>
+	<h5>Player API: Changing Player Images for Each Video</h5>
+	<p>With a little help from the Video Cloud Player API, there's a lot more you can do! <img src="images/SponsorSample1.png" class="floatright" alt="SponsorSample1" width="208" height="157" />For the first example, we'll change the logo and banner images in the Compact Navigation 3.0 player for each video. To do this, you need to store paths to images in the video metadata. If you have a Professional or Enterprise account, you could set up <a href="http://support.brightcove.com/en/docs/creating-custom-metadata-fields">custom fields</a> to do this, or if you have an Express account, you can use one of the standard fields like the <a href="http://support.brightcove.com/en/docs/editing-video-properties-media-module">Long Description</a>.</p>
+	<p>The rest is simple, and you can look at the full sample for more detail and to see the code: <a href="http://files.brightcove.com/BCLSponsorSample-ChangeImages.html">http://files.brightcove.com/BCLSponsorSample-ChangeImages.html</a>.</p>
+	<h5>Player API: Changing a Player Banner on Cue Points</h5>
+	<p><img src="images/SponsorSample2.png" class="floatleft" alt="SponsorSample2" width="208" height="157" />The second Player API sample is a little more prominent. It requires <a href="http://support.brightcove.com/en/docs/adding-cue-points-videos">adding cue points to a video</a> with an image URL set as the metadata for each cue point. An event listener for the cue points then resets the source for the banner image beneath the player using the URL from the cue point metadata.</p>
+	<p>You can view the sample, with additional explanation at <a href="http://files.brightcove.com/BCLSponsorSample-ChangeImagesOnCuePoints.html">http://files.brightcove.com/BCLSponsorSample-ChangeImagesOnCuePoints.html</a>.</p>
+	<h5>Player API: Replace the Playlist with Sponsor Messages on Cue Points</h5>
+	<p><img src="images/SponsorSample3.png" class="floatright" alt="SponsorSample3" width="208" height="157" />The third Player API sample is more prominent still. It works similarly to the previous one, but inserts a new Image component into the player that is hidden until cue points are reached, and then expands to replace the Playlist with an image whose URL is again stored in the cue point metadata.</p> 
+	<p>See the full sample page at <a href="http://files.brightcove.com/BCLSponsorSample-ReplacePlaylistOnCuePoints.html">http://files.brightcove.com/BCLSponsorSample-ReplacePlaylistOnCuePoints.html</a>.</p>
+	<h5>Player API: Replacing the Video with a Sponsor Message on Cue Points</h5>
+	<p>The final example, makes the sponsor messages most striking. Here, the video is paused on cue points, and a hidden image inserted into the player replaces the player itself. After a delay of three seconds, the player returns and video resumes. You can see this player in action below, or view the full sample page with further explanation at <a href="http://files.brightcove.com/BCLSponsorSample-HideVideoOnCuePoints_v2.html">http://files.brightcove.com/BCLSponsorSample-HideVideoOnCuePoints_v2.html</a></p>
+	<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="798" />
+  <param name="height" value="603" />
+  <param name="playerID" value="1031989184001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXajBzVQ-3nIlGGc3z2dSv8Bu" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="@videoPlayer" value="734451478001" />
+  
+</object>
+
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset>
+    </div>
+    		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js - the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		};
+		</script>
+
+    <script type="text/javascript">
+      /* script here */
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  log("BCL.onTemplateReady");
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  // get a reference to the logo image in the player
+			  BCL.logoImage = BCL.experienceModule.getElementByID("logo");
+			  // get a reference to the bottom image in the player
+			  BCL.bottomImage = BCL.experienceModule.getElementByID("bottomImage");
+			  // get a reference to the video player module
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+				/*
+				get a reference to HBox that contains the video player and playlist;
+				note that if you examine the BEML code for the player, you will
+				find that it's the second child of the overall layout, which has
+				the id "application"
+				*/
+				BCL.hbox = BCL.experienceModule.getElementByID("application").getChildAt(1);
+				// add an image to the HBox
+				BCL.hbox.insertChildAt('<Image id="sponsorImage" width="0" includeInLayout="true" />',0);
+				// get a reference to the image
+				BCL.sponsorImage = BCL.hbox.getChildAt(0);
+			  // add listener for media change events
+			  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+			  /* since there's no media change event for the loading of the 
+			  initial video, fire the media change handler manually */
+				BCL.onMediaChange(null);
+				// add a listener for playback stop
+				BCL.videoPlayer.addEventListener(BCMediaEvent.STOP, BCL.onMediaStop);
+			  // get reference to Cue Points and set up listener for cue point events
+			  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+			  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue)
+			  // set the selected video to the one made for this sample page
+			  BCL.setSelectedVideo(1);
+			}
+
+			// handler for media change events
+			BCL.onMediaChange = function(event) {
+			  log("EVENT: Media Change");
+			  /*
+				get the long description for the current video and
+			  parse it to create an object -- note that this
+			  works because I stored a JSON
+			  string in the longDescription field for the videos -- the
+			  JSON string is an object with two properties:
+			  logo : URL for a logo image
+			  bottomImage: URL for a banner image
+			  if I had just stored the URLs as a list, 
+			  I'd need to parse that to extract
+			  the URLs to use for the source of the two player images
+				*/
+			  var images = JSON.parse(BCL.videoPlayer.getCurrentVideo().longDescription);
+			  /*
+				Set the source of the two images in the player to
+				images stored for the video in the long description field. 
+				*/
+			  BCL.logoImage.setSource(images.logo);
+			  BCL.bottomImage.setSource(images.bottomImage);
+			}
+			// add handler for cue points
+			BCL.onCue = function(event) {
+				log("EVENT: Cue Point");
+				// pause the video
+				BCL.videoPlayer.pause();
+				// give width to the image and make the player invisible
+				BCL.videoPlayer.setVisible(false);
+				BCL.sponsorImage.setSize(480,406);
+				BCL.sponsorImage.setSource(event.cuePoint.metadata);
+				// resume playback after 2 seconds
+				var t = setTimeout("BCL.restoreVideoPlayer()",3000);
+			}
+			// add function to restore the player
+			BCL.restoreVideoPlayer = function() {
+				log("Restoring Video Player");
+				// hide the image, restore the player
+				BCL.sponsorImage.setSize(0,406);
+				BCL.videoPlayer.setVisible(true);
+				// resume the video
+				BCL.videoPlayer.play();
+				
+			}
+			// set the selected video -- just for this sample, because there's a particular video in the playlist that has the right images
+			BCL.setSelectedVideo = function(index) {
+				log("setting selected video");
+				var playList = BCL.experienceModule.getElementByID("videoList");
+				playList.setSelectedIndex(index);
+			}
+    </script>
+
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

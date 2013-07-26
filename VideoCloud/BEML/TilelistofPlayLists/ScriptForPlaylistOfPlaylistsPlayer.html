@@ -1,0 +1,150 @@
+<!-- including Player API -->
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+<script type="text/javascript">
+// our namespace
+var BCL = {};
+BCL.nextPlayIndex = 0;
+// create an empty array to hold "playlist" objects
+BCL.playlistArray = [];
+// counter to keep track of how many lists there are
+BCL.listCount = 0;
+// initial setup in the special onTemplateLoaded() function
+function onTemplateLoaded(id) {
+  BCL.player = brightcove.getExperience(id);
+  // get the experience module
+  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+  // set template ready listener
+  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+}
+// listener for the Template Ready event
+BCL.onTemplateReady = function(event) {
+	// remove the event listener
+	BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+	// get a reference to the video player module
+	BCL.videoPlayerModule = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+	// add listeners for begin, complete, and change events
+	BCL.videoPlayerModule.addEventListener(BCMediaEvent.BEGIN, BCL.onMediaBegin);
+	BCL.videoPlayerModule.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+	BCL.videoPlayerModule.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+	// execute the change event handler to get tags for the initial video
+	BCL.onMediaChange(null);
+	// get a reference to the hidden list for playlists
+	BCL.playlistTiles = BCL.experienceModule.getElementByID("playlistTiles");
+	// add listener for click events on the playlists
+	BCL.playlistTiles.addEventListener("elementClick", BCL.playlistClick);
+	// get a reference to the videoList
+	BCL.videoList = BCL.experienceModule.getElementByID("myVideoList");
+	// event listener for click events on the video List
+	BCL.videoList.addEventListener("elementClick", BCL.videoClick);
+	// get a reference to the menu module
+	BCL.menuModule = BCL.player.getModule(APIModules.MENU);				
+	// get a reference to the search module and add listener for search results
+	BCL.searchModule = BCL.player.getModule(APIModules.SEARCH);
+	BCL.searchModule.addEventListener(BCSearchEvent.RESULT, BCL.onSearchResult);
+	// set up a search for each tag and initialize the playlist objects
+	var tag = [];
+	for (var i in BCL.videoTags) {
+		// set the initial data for the playlist objects
+		BCL.playlistArray[i] = {};
+		BCL.playlistArray[i].displayName = BCL.videoTags[i];
+		BCL.playlistArray[i].videoDTOs = [];
+		tag[0] = BCL.videoTags[i];
+		BCL.searchModule.findVideosByTags(tag);
+	}
+}
+
+// function to get video tags
+BCL.onMediaChange = function() {
+	// get the tag array from the current video
+	BCL.videoTags = BCL.videoPlayerModule.getCurrentVideo().tags;
+}
+
+// listener for media collection load
+BCL.onSearchResult = function(event) {
+	// var to hold length of current videoDTOs array to set the next element
+	var DTOsLength;
+	// loop over the playlist objects
+	for (var k in BCL.playlistArray) {
+		// loop over the returned video objects
+		for (var i in event.items) {
+			// loop over the tags for each video to get matches
+			for (var j in event.items[i].tags) {
+				if (event.items[i].tags[j] == 
+				  BCL.playlistArray[k].displayName) {
+				  DTOsLength = BCL.playlistArray[k].videoDTOs.length;
+				  BCL.playlistArray[k].videoDTOs[DTOsLength] = {};
+					BCL.playlistArray[k].videoDTOs[DTOsLength] = event.items[i];
+				}
+			}
+		}
+	}
+	// increment the list count to know when we're done searching
+	BCL.listCount++;
+	
+	// if the listcount is the same as the number of tags, we're done
+	if (BCL.listCount == BCL.videoTags.length) {
+		// set thumbnails for the playlists
+		for (var m in BCL.playlistArray) {
+			BCL.playlistArray[m].thumbnailURL = BCL.playlistArray[m].videoDTOs[0].thumbnailURL;
+		}
+		// set the data for the playlist tile list
+		BCL.playlistTiles.setData(BCL.playlistArray);
+	}
+}
+
+// listener for playlistTiles clicks
+BCL.playlistClick = function(event) {
+	// hide the playlist list and show the selected playlist
+	BCL.playlistTiles.setVisible(false);
+	BCL.videoList.setVisible(true);
+	// log(BCL.videoList.getData());
+}
+
+// listener for playlistTiles clicks
+BCL.videoClick = function(event) {
+	// close the menu
+	BCL.menuModule.closeMenuPage();
+	// load the video
+	BCL.videoPlayerModule.loadVideo(event.elementData.id);
+	// hide the video list
+	BCL.videoList.setVisible(false);
+}
+
+
+// listener for media begin
+BCL.onMediaBegin = function(event) {
+	// let's make sure the lists are hidden
+	BCL.playlistTiles.setVisible(false);
+	BCL.videoList.setVisible(false);
+}
+	
+// listener for media complete
+BCL.onMediaComplete = function(event) {
+	// display the list of playlists
+	BCL.playlistTiles.setVisible(true);
+	/* set a timer to play the first video in the related list if the viewer hasn't chosen one - this is set for 7 seconds - change 7000 to 10000 for 10 seconds, etc. */
+	var t = setTimeout("BCL.playNext()", 7000);
+}
+
+// playNext function
+BCL.playNext = function() {
+	// need to make sure a video isn't already playing
+	if (BCL.videoPlayerModule.isPlaying() == false) {
+		// close the menu
+		BCL.menuModule.closeMenuPage();
+		// get the data from the videoList
+		var currentList = BCL.videoList.getData();
+		// play the next video in the list
+		BCL.videoPlayerModule.loadVideo(currentList[BCL.nextPlayIndex].id);
+		// increment the next play index or set it to 0 if we reached the end of the list
+		if (BCL.nextPlayIndex < currentList.length) {
+			BCL.nextPlayIndex++;
+		}
+		else {
+			BCL.nextPlayIndex = 0;
+		}
+	}
+}	
+
+
+</script>

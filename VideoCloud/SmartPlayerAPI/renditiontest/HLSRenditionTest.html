@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 4</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Smart Player API Training</h1>
+		<p>The buttons below are for development purposes only, to switch between Flash and  HTML5 players. Do not use these in production, as the method is unsupported. You should let the Smart Player decide whether to load Flash or HTML5 instead.</p>
+		<div id="modeSwitch">
+			<button onclick="BCL.switchToHTML5()" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</button>
+			<button onclick="BCL.switchToFlash()" style="margin-bottom: 20px;">Switch to Flash Player</button>
+		</div>
+		<script type="text/javascript">
+		    var src = "http://qrcode.kaywa.com/img.php?s=8&d=" + location.href;
+		</script>
+		<div style="margin:10px;float:right;width:220px;">
+		  <script>document.write('<img src="' + src + '" width="200" height="200" style="border:1px solid #CCC"/><br>');</script>
+		  <small style="font-size:10px;">Scan the QR from your iPhone or iPad to load this page on your device<br/>QR code from <a href="http://qrcode.kaywa.com/">http://qrcode.kaywa.com/</a></small>
+		</div>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="640" />
+  <param name="height" value="360" />
+  <param name="playerID" value="1507765252001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXai4BH53NcjEpLBj5ZJxJq_A" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="1524883093001" />
+    <!-- params for Universal Player API -->
+  <param name="includeAPI" value="true" />
+  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<fieldset>
+<legend>Results</legend>
+<div id="results"></div>
+</fieldset>
+
+	<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  console.log("BCL.onTemplateReady");
+			  BCL.player = brightcove.api.getExperience("myExperience");
+			  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+			  // add event listener for progress on the main video
+			  BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, BCL.onMainProgress);
+			  // capture the original video id and the bumper id (stored as JSON string in the long description)
+			 } 
+			
+			// main video progress handler
+			BCL.onMainProgress = function(event) {
+				console.log(event.rendition);
+					BCL.videoPlayer.getCurrentRendition(function(renditionObject) {
+					 document.getElementById("results").innerHTML += "container: " + renditionObject.videoContainer + "<br/>encoding rate: " + renditionObject.encodingRate + "<br/>";
+					});
+			}
+
+			// for development purposes only: reopen page with HTML5 player
+			BCL.switchToHTML5 = function() {
+				var separator = "?";
+				if (document.location.href.indexOf("?", 0) > -1) {
+					separator = "&";
+				}
+				window.location = document.location.href + separator + "forceHTML=true";
+			};
+			// for development purposes only: switch back to Flash
+			BCL.switchToFlash = function() {
+				var startOfQuery = document.location.href.indexOf("forceHTML", 0) -1;
+				window.location = document.location.href.substring(0, startOfQuery);
+			};
+			
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">REPRODUZIR</label>
+        <label key="controls pause">PAUSA</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Reproduzir</label>
+        <label key="controls pause tooltip">Pausa</label>
+        <label key="controls volume tooltip">Abrir controlos de volume</label>
+        <label key="controls maximize tooltip">Ir para ecrã completo</label>
+        <label key="controls minimize tooltip">Sair do ecrã completo</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">partilhar</label>
+        <label key="community link">obter ligação</label>
+        <label key="community code">obter código</label>
+        <label key="community share tooltip">Enviar vídeo por e-mail a um amigo</label>
+        <label key="community socialShare tooltip">Partilhar este vídeo</label>
+        <label key="community link tooltip">Obter ligação directa ao vídeo</label>
+        <label key="community code tooltip">Obter HTML para incorporar leitor</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[EXPANDIR  >]]></label>
+        <label key="collapse banner">FECHAR  X</label>
+        <label key="sponsor message">Mensagem do patrocinador.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">desactivar som</label>
+        <label key="unmute tooltip">activar som</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Abrir menu</label>
+        <label key="rightclick fullscreen">Ir para ecrã completo</label>
+        <label key="rightclick exit fullscreen">Sair de ecrã completo</label>
+        <label key="rightclick show debug">Mostrar informação de depuração</label>
+        <label key="rightclick hide debug">Ocultar informação de depuração</label>
+<!-- Error messaging -->
+        <label key="noContent">Actualmente não há vídeos \ndisponíveis.
+            \n\nVerifique mais tarde.</label>
+        <label key="unavailableContent">O vídeo que está a tentar
+            ver não está actualmente disponível.\n\nVerifique mais tarde.</label>
+        <label key="upgradeRequired">É requerido o Flash 9.0.115.0 ou versão posterior para ver este conteúdo.\n\nFaça clique &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;aqui&lt;/u&gt;&lt;/a&gt; para actualizar o leitor.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">ESTÁ A VER:</label>
+        <label key="connecting">A CARREGAR O VÍDEO</label>
+        <label key="please select:">seleccione:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Info</label>
+        <label key="menu email">Enviar por e-mail</label>
+        <label key="menu link">Obter ligação</label>
+        <label key="menu share">Partilhar vídeo</label>
+        <label key="expand">Expandir</label>
+        <label key="menu embed">Obter código</label>
+        <label key="menu play">Reproduzir vídeo</label>
+        <label key="menu replay">Repetir</label>
+        <label key="menu resume">Retomar</label>
+        <label key="cancel button">Cancelar</label>
+        <label key="continue button">Continuar</label>
+        <label key="close tooltip">Fechar</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Enviar a um amigo por e-mail</label>
+        <label key="email your email">O seu endereço electrónico</label>
+        <label key="email friend email"><![CDATA[O endereço electrónico do seu amigo]]></label>
+        <label key="email message">Mensagem (opcional)</label>
+        <label key="email send">Enviar</label>
+        <label key="email video">Enviar vídeo por e-mail</label>
+        <label key="email error">Introduza endereços electrónicos correctos.</label>
+        <label key="email confirmation text">Mensagem enviada</label>
+<!-- Share video menu screen -->
+        <label key="share title">Partilhar este vídeo</label>
+        <label key="share directions">Partilhar directamente através dos seguintes sítios</label>
+        <label key="share facebook">Partilhar no Facebook</label>
+        <label key="share twitter">Partilhar%20no%20Twitter</label>
+        <label key="share twitter message">Vê+isto+</label>
+        <label key="share link">Copiar ligação</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Adicionar a sítio da Web ou a blogue</label>
+        <label key="embed directions">Copiar código ou seleccionar serviço de blogue</label>
+        <label key="embed code">Incorporar código</label>
+        <label key="embed copy code">Copiar código</label>
+        <label key="embed copied">Copiado</label>
+        <label key="blog processing">A processar...</label>
+        <label key="blog username">Nome de utilizador</label>
+        <label key="blog password">Palavra-passe</label>
+        <label key="blog blogger">Bloguista</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Combinação incorrecta de nome de utilizador/palavra-passe.</label>
+        <label key="blog post select directions">Seleccione um blogue</label>
+        <label key="blog post enter title">Publicar título</label>
+        <label key="blog post enter description">Publicar descrição (opcional)</label>
+        <label key="blog post post video">Publicar vídeo</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Ocorreu um erro. Tente novamente.</label>
+        <label key="blog confirmation text">Publicação enviada</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Ligar a este vídeo</label>
+        <label key="link directions">Partilhar através de correio electrónico ou mensagens instantâneas</label>
+        <label key="link copy link">Copiar ligação</label>
+        <label key="link copied">Copiado</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Termos e condições</label>
+        <label key="related videos">Vídeos relacionados</label>
+        <label key="most viewed videos">Mais vistos</label>
+        <label key="newest videos">Mais recentes</label>
+</labels>

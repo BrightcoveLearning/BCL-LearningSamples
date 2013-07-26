@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">YÜRÜT</label>
+        <label key="controls pause">DURAKLAT</label>
+        <label key="controls menu">MENÜ</label>
+        <label key="controls play tooltip">Yürüt</label>
+        <label key="controls pause tooltip">Duraklat</label>
+        <label key="controls volume tooltip">Ses Ayarlarını Aç</label>
+        <label key="controls maximize tooltip">Tam Ekran Yap</label>
+        <label key="controls minimize tooltip">Tam Ekrandan Çık</label>
+        <label key="community share">eposta</label>
+        <label key="community socialShare">paylaş</label>
+        <label key="community link">linki al</label>
+        <label key="community code">kodu al</label>
+        <label key="community share tooltip">Videoyu Bir Arkadaşına E-postayla Gönder</label>
+        <label key="community socialShare tooltip">Bu Videoyu Paylaş</label>
+        <label key="community link tooltip">Videonun Doğrudan Linkini Al</label>
+        <label key="community code tooltip">Oynatıcıyı Gömmek İçin HTML’yi Al</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[GENİŞLET  >]]></label>
+        <label key="collapse banner">KAPAT  X</label>
+        <label key="sponsor message">Sponsor mesajı.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">sessiz</label>
+        <label key="unmute tooltip">sesli</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Menüyü Aç</label>
+        <label key="rightclick fullscreen">Tam Ekran Yap</label>
+        <label key="rightclick exit fullscreen">Tam Ekrandan Çık</label>
+        <label key="rightclick show debug">Hata Ayıklama Bilgisini Göster</label>
+        <label key="rightclick hide debug">Hata Ayıklama Bilgisini Gizle</label>
+<!-- Error messaging -->
+        <label key="noContent">Şu anda hiçbir video mevcut\ndeğil.
+            \n\nLütfen daha sonra deneyin.</label>
+        <label key="unavailableContent">İzlemeye çalıştığınız video
+            şu anda izlenememektedir.\n\nLütfen kısa süre sonra tekrar deneyin.</label>
+        <label key="upgradeRequired">Bu içeriği izlemek için Flash 9.0.115.0 veya daha yeni sürümü gerekmektedir.\n\nOynatıcınızı yükseltmek için &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;burayı&lt;/u&gt;&lt;/a&gt; tıklayın.</label>
+        <label key="messaging OK">TAMAM</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">İZLEDİĞİNİZ:</label>
+        <label key="connecting">VİDEO YÜKLENİYOR</label>
+        <label key="please select:">lütfen seçiniz:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Bilgi</label>
+        <label key="menu email">E-postayla Gönder</label>
+        <label key="menu link">Linki Al</label>
+        <label key="menu share">Videoyu Paylaş</label>
+        <label key="expand">Genişlet</label>
+        <label key="menu embed">Kodu Al</label>
+        <label key="menu play">Videoyu Oynat</label>
+        <label key="menu replay">Yeniden Oynat</label>
+        <label key="menu resume">Sürdür</label>
+        <label key="cancel button">İptal</label>
+        <label key="continue button">Devam</label>
+        <label key="close tooltip">Kapat</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Bir Arkadaşına E-postayla Gönder</label>
+        <label key="email your email">Senin e-postan</label>
+        <label key="email friend email"><![CDATA[Arkadaşının e-postası]]></label>
+        <label key="email message">Mesaj (isteğe bağlı)</label>
+        <label key="email send">Gönder</label>
+        <label key="email video">Videoyu E-postayla Gönder</label>
+        <label key="email error">Lütfen doğru e-posta adresleri girin.</label>
+        <label key="email confirmation text">E-postanız gönderildi</label>
+<!-- Share video menu screen -->
+        <label key="share title">Bu videoyu paylaş</label>
+        <label key="share directions">Doğrudan aşağıdaki sitelerde paylaş</label>
+        <label key="share facebook">Facebook’ta Paylaş</label>
+        <label key="share twitter">Twitter%E2%80%99da%20Payla%C5%9F</label>
+        <label key="share twitter message">Git+seyret+</label>
+        <label key="share link">Linki Kopyala</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Web sitesine veya bloga ekle</label>
+        <label key="embed directions">Kodu kopyalayın veya blog hizmetini seçin</label>
+        <label key="embed code">Kodu Göm</label>
+        <label key="embed copy code">Kodu Kopyala</label>
+        <label key="embed copied">Kopyalandı</label>
+        <label key="blog processing">İşleniyor ...</label>
+        <label key="blog username">Kullanıcı Adı</label>
+        <label key="blog password">Şifre</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Yanlış oturum açma adı/şifre kombinasyonu.</label>
+        <label key="blog post select directions">Bir blog seçin</label>
+        <label key="blog post enter title">Gönderi başlığı</label>
+        <label key="blog post enter description">Gönderi açıklaması (isteğe bağlı)</label>
+        <label key="blog post post video">Videoyu Yayınla</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Bir sorun çıktı. Lütfen Tekrar deneyin.</label>
+        <label key="blog confirmation text">Gönderi sunuldu</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Bu videoya link ver</label>
+        <label key="link directions">E-posta veya IM ile paylaş</label>
+        <label key="link copy link">Linki Kopyala</label>
+        <label key="link copied">Kopyalandı</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Kayıt ve Şartlar</label>
+        <label key="related videos">İlgili Videolar</label>
+        <label key="most viewed videos">En Çok İzlenenler</label>
+        <label key="newest videos">En Yeniler</label>
+</labels>

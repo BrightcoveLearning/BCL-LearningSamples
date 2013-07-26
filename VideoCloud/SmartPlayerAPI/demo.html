@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience921449663001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="2253104599001" />
+  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WE4_qp5mKd71xnYPe9zKDk-" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+  <param name="@videoPlayer" value="921449663001" />
+  <param name="includeAPI" value="true">
+  <param name="templateLoadHandler" value="BCLS.onTemplateLoad">
+  <param name="templateReadyHandler" value="BCLS.onTemplateReady">
+</object>
+<div id="results">
+  You are watching:
+</div>
+<div id="progress">
+  Progress: <span id="progbar" style="background-color:#63A7CE"></span>
+</div>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+    <script>
+      var BCLS = ( function () {
+        var player,
+            videoPlayer,
+            mediaEvent,
+            progress = document.getElementById("progress"),
+            results = document.getElementById("results"),
+            progbar = document.getElementById("progbar");
+        return {
+          onTemplateLoad : function (experienceID) {
+            player = brightcove.api.getExperience(experienceID);
+            APIModules = brightcove.api.modules.APIModules;
+            mediaEvent = brightcove.api.events.MediaEvent;
+          },
+          onTemplateReady : function (evt) {
+            console.log("ready");
+            videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+            videoPlayer.getCurrentVideo( function(videoDTO) {
+              results.innerHTML += videoDTO.displayName;
+              videoPlayer.getVideoDuration (true, function(data) {
+                results.innerHTML += " " + data;
+              });
+            } );
+            videoPlayer.addEventListener(mediaEvent.PROGRESS, BCLS.onProgress)
+          },
+          onProgress : function (evt) {
+            if (evt.duration - evt.position > .2) {
+              progbar.innerHTML += "&nbsp;";
+            } else {
+              videoPlayer.removeEventListener(mediaEvent.PROGRESS, BCLS.onProgress);
+              progress.innerHTML += "Complete!";
+            }
+            
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

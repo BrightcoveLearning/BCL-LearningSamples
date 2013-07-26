@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Tile List with Playlists</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #835004}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Player with a List of Playlists</h1>
+		<p>The tile list displays a collection of playlists; when you click on a playlist image, the videos in the list will play automatically.</p>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="470" />
+  <param name="height" value="264" />
+  <param name="playerID" value="1217200426001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXag7F0HUs8_aqdDrkmAVEYmZ" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+		<!-- including Player API -->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<script type="text/javascript">
+			// our namespace
+			var BCL = {};
+			function onTemplateLoaded(id) {
+			  BCL.player = brightcove.getExperience(id);
+			  // get the experience module
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  // set template ready listener
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+		// listener for the Template Ready event
+			BCL.onTemplateReady = function(event) {
+				// remove the event listener
+				BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+				// get a reference to the video player module
+				BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+				// get a reference to the content module
+				BCL.contentModule = BCL.player.getModule(APIModules.CONTENT);
+				// get a reference to the hidden list for playlists
+				BCL.playlistTiles = BCL.experienceModule.getElementByID("playlistTiles");
+				// add listener for click events on the playlists
+				BCL.playlistTiles.addEventListener("elementClick", BCL.playlistClick);
+				BCL.videoList = BCL.experienceModule.getElementByID("videoList");
+				// set data in the playlist tile list from the hidden tabbar
+				BCL.playlistTiles.setData(BCL.experienceModule.getElementByID("playlistTabs").getData());
+				// console.log(BCL.tabbar.getSelectedData());
+				console.log(BCL.playlistTiles.getData());
+			}
+			// listener for playlistTiles clicks
+			BCL.playlistClick = function(event) {
+				console.log(event);
+				BCL.videoDTOs = [];
+				BCL.playlistLength = event.elementData.mediaIds.length;
+				BCL.contentModule.addEventListener(BCContentEvent.MEDIA_LOAD, BCL.onMediaLoad);
+				for ( var i = 0; i < event.elementData.mediaIds.length; i++ ) {
+					BCL.contentModule.getMediaAsynch(event.elementData.mediaIds[i]);
+				}
+			}
+			// listener for mediaCollectionLoad
+			BCL.onMediaLoad = function(event) {
+				console.log(event);
+				BCL.videoDTOs.push(event.media);
+				if (BCL.videoDTOs.length == BCL.playlistLength) {
+					BCL.videoList.setData(BCL.videoDTOs);
+					console.log(BCL.videoList.getData());
+					BCL.videoPlayer.play();
+					console.log(BCL.videoPlayer.getCurrentVideo());
+				}
+				
+			}
+
+
+		
+		</script>
+
+	</body>
+</html>

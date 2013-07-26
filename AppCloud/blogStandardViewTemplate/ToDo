@@ -1,0 +1,15 @@
+*Run scaffolding script
+
+*Copy files
+	-/blogdemoapp/javascripts/views/blog.js
+	-/blogdemoapp/stylesheets/blog.css
+	-/blogdemoapp/txt/markup/blog.txt
+
+*Add code in blogdemo.html to link to js and css files
+	-<link rel="stylesheet" href="../stylesheets/blog.css" />
+	-<script type="text/javascript" src="../javascripts/views/blog.js"></script>
+
+*Copy from README.txt to the manifest, and make changes to locales and markup paths
+
+*Create the feed to a blog
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Fixed Player Sample</title>
+    <style type="text/css">
+      body {
+        font-family: Arial,Helvetica,sans-serif;
+      }
+      /* the overall content wrapper,
+      positioned relatively,
+      to allow other positionings inside it */
+      .BCLbodyContent {
+        margin-left: 20px;
+        margin-right: 20px;
+        position: relative;
+      }
+      /* the main content, positioned absolutely,
+      to shift it to the right, 
+      but it's allowed to scroll */
+      .BCLscrollingContent {
+        position: absolute;
+        left: 340px;
+        margin-left: 20px;
+        margin-right: 40px;
+      }
+      /* the video player column, with fixed
+      postioning, so that it remains in
+      view even when the viewer scrolls down */
+      .BCLfixedContent {
+        position: fixed;
+        left: 40px;
+        top: 70px;
+        width: 320px;
+      }
+      .BCLvideoWrapper {
+        position: relative;
+        padding-top: 1px;
+        padding-bottom: 56.25%;
+        height: 0;
+      }
+
+      * html .BCLvideoWrapper {
+        margin-bottom: 45px;
+        margin-top: 0;
+      }
+      pre, code {
+        font-size: 14px;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="http://files.brightcove.com/google-code-prettify/prettify.css" />
+    <link href="http://files.brightcove.com/google-code-prettify/styles/brightcove.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div class="BCLbodyContent">
+      <div class="BCLfixedContent">
+        <div class="BCLvideoWrapper">
+          <!-- Start of Brightcove Player -->
+          <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+          <object id="myExperience" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="320" />
+            <param name="height" value="180" />
+            <param name="playerID" value="1655292658001" />
+            <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXai4AfuyXjS4fpJNnDLOcLqh" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            <param name="@videoPlayer" value="1195804260001" />
+          </object>
+          <script type="text/javascript">brightcove.createExperiences();</script>
+          <!-- End of Brightcove Player -->
+        </div>
+        <ul>
+          <li>Other content</li>
+          <li>Which could be...</li>
+          <li>Navigation or ...</li>
+          <li>Whatever....</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="BCLscrollingContent">
+        <h1>Fixed Player Sample</h1>
+        <p>For fixing the position of a player on the page, you need to think outside box &mdash; specifically, the player box. The player is just another element in the HTML, and there for you can manipulate its appearance, including its size and position, using CSS.</p>
+        <p>An important thing to remember is that you probably will not get the results you want if you try to fix just the video player itself, with other content flowing around it. Fixing content on a page really only works for a whole <strong>column</strong> of content.</p>
+        <p>The column can be on the right or left side, and you can fix it completely, so that it will not move at all, or you can let it be scrolled independently of the other column(s).</p>
+        <p>Here the video is at the top of a fixed column on the left side. The solution here uses CSS - no JavaScript required.</p>
+        <div class="image">
+          <img src="diagram.png">
+        </div>
+        <p>The key is the CSS <code>position</code> property, which can have values of:</p>
+        <ul>
+          <li>static &mdash; normal positioning, so this does nothing</li>
+          <li>relative &mdash; a block with this positioning will behave exactly like a static block, but positioning it relatively allows you to nest other blocks with absolute or fixed positioning</li>
+          <li>abolute &mdash; this positions the block absolutely based on distances from the top, left, bottom, and/or right boundaries of the block that contains this one, its <em>parent</em></li>
+          <li>fixed &mdash; a fixed block will not move at all</li>
+        </ul>
+  <p>The key style classes here, then, are as follows:</p>
+  <pre class="prettyprint"><code class="language-css">
+  /* the overall content wrapper,
+  positioned relatively,
+  to allow other positionings inside it */
+  .BCLbodyContent {
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+  }
+  /* the main content, positioned absolutely,
+  to shift it to the right, 
+  but it's allowed to scroll */
+  .BCLscrollingContent {
+    position: absolute;
+    left: 340px;
+    margin-left: 20px;
+  }
+  /* the video player column, with fixed
+  postioning, so that it remains in
+  view even when the viewer scrolls down */
+  .BCLfixedContent {
+    position: fixed;
+    left: 20px;
+    top: 70px;
+    width: 320px;
+  }
+</code></pre>
+      </div>    
+    </div>
+
+    <script src="http://files.brightcove.com/google-code-prettify/prettify.js"></script>
+     <script src="http://files.brightcove.com/google-code-prettify/lang-css.js"></script>
+     <script>
+      document.onload = prettyPrint();
+    </script>
+  </body>
+</html>

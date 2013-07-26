@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">REDARE</label>
+        <label key="controls pause">PAUZĂ</label>
+        <label key="controls menu">MENIU</label>
+        <label key="controls play tooltip">Redare</label>
+        <label key="controls pause tooltip">Pauză</label>
+        <label key="controls volume tooltip">Deschidere comenzi de volum</label>
+        <label key="controls maximize tooltip">Accesare ecran complet</label>
+        <label key="controls minimize tooltip">Ieşire ecran complet</label>
+        <label key="community share">e-mail</label>
+        <label key="community socialShare">partajare</label>
+        <label key="community link">Legătură</label>
+        <label key="community code">cod</label>
+        <label key="community share tooltip">Trimitere fişier video prin e-mail</label>
+        <label key="community socialShare tooltip">Se partajează acest fişier video</label>
+        <label key="community link tooltip">Se obţine legătură directă la fişier video</label>
+        <label key="community code tooltip">Se obţine HTML la player integrat</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[EXTINDERE  >]]></label>
+        <label key="collapse banner">RESTRÂNGERE X</label>
+        <label key="sponsor message">Mesaj sponsor.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">dezactivare sunet</label>
+        <label key="unmute tooltip">anulare dezactivare sunet</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Deschidere meniu</label>
+        <label key="rightclick fullscreen">Accesare ecran complet</label>
+        <label key="rightclick exit fullscreen">Ieşire ecran complet</label>
+        <label key="rightclick show debug">Se afişează informaţii de depanare</label>
+        <label key="rightclick hide debug">Se ascund informaţiile de depanare</label>
+<!-- Error messaging -->
+        <label key="noContent">Nu există fişiere video disponibile în\nacest moment.
+            \n\nVă rugăm verificaţi din nou mai târziu.</label>
+        <label key="unavailableContent">Fişierul video pe care încercaţi să-l
+            vizionaţi este indisponibil în acest moment.\n\nVă rugăm încercaţi din nou mai târziu.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 sau ulterior este necesar pentru vizionarea acestui conţinut.\n\nExecutaţi clic <a href='http://www.adobe.com/go/getflash/' target='_blank'><u>aici</u></a> pentru a vă moderniza playerul.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">ACUM VIZIONAŢI:</label>
+        <label key="connecting">ÎNCĂRCARE FIŞIER VIDEO</label>
+        <label key="please select:">vă rugăm selectaţi:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Info</label>
+        <label key="menu email">Trimitere fişier</label>
+        <label key="menu link">Obţinere</label>
+        <label key="menu share">Partajare fişier video</label>
+        <label key="expand">Extindere</label>
+        <label key="menu embed">Obţinere cod</label>
+        <label key="menu play">Redare</label>
+        <label key="menu replay">Repetare redare</label>
+        <label key="menu resume">Reluare</label>
+        <label key="cancel button">Anulare</label>
+        <label key="continue button">Continuare</label>
+        <label key="close tooltip">Închidere</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Trimitere prin e-mail unui prieten</label>
+        <label key="email your email">Adresa dumneavoastră de e-mail</label>
+        <label key="email friend email"><![CDATA[Adresa de e-mail a prietenului dumneavoastră]]></label>
+        <label key="email message">Mesaj (opţional)</label>
+        <label key="email send">Trimitere</label>
+        <label key="email video">Trimitere fişier video prin e-mail</label>
+        <label key="email error">Vă rugăm introduceţi adresele de e-mail corecte.</label>
+        <label key="email confirmation text">E-mail-ul dumneavoastră a fost trimis</label>
+<!-- Share video menu screen -->
+        <label key="share title">Se partajează acest fişier video</label>
+        <label key="share directions">Se partajează direct la aceste site-uri</label>
+        <label key="share facebook">Se partajează pe Facebook</label>
+        <label key="share twitter">Se%20partajeaz%C4%83%20pe%20Twitter</label>
+        <label key="share twitter message">Ieşire</label>
+        <label key="share link">Copiere legătură</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Adăugare la website sau blog</label>
+        <label key="embed directions">Copiere cod sau selectare serviciu blog</label>
+        <label key="embed code">Cod integrat</label>
+        <label key="embed copy code">Copiere cod</label>
+        <label key="embed copied">Copiat</label>
+        <label key="blog processing">Procesare...</label>
+        <label key="blog username">Nume utilizator</label>
+        <label key="blog password">Parolă</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Combinaţie nume/parolă incorectă.</label>
+        <label key="blog post select directions">Selectare blog</label>
+        <label key="blog post enter title">Depunere titlu</label>
+        <label key="blog post enter description">Depunere descriere (opţional)</label>
+        <label key="blog post post video">Depunere fişier video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">A apărut o eroare. Vă rugăm încercaţi din nou.</label>
+        <label key="blog confirmation text">Depunere trimisă</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Legătură la acest fişier video</label>
+        <label key="link directions">Se partajează prin e-mail sau IM</label>
+        <label key="link copy link">Copiere legătură</label>
+        <label key="link copied">Copiat</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Termeni şi Condiţii</label>
+        <label key="related videos">Fişiere video asociate</label>
+        <label key="most viewed videos">Cele mai vizionate</label>
+        <label key="newest videos">Cele mai noi</label>
+</labels>

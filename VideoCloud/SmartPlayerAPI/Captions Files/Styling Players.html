@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Styling Players</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Styling Players</h1>
+		
+				
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		
+		<object id="myExperience1403696109001" class="BrightcoveExperience">
+		  <param name="bgcolor" value="#FFFFFF" />
+		  <param name="width" value="640" />
+		  <param name="height" value="360" />
+		  <param name="playerID" value="1403311912001" />
+		  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXaizwBE7NYDi3ilP3Rmsu-5c" />
+		  <param name="isVid" value="true" />
+		  <param name="isUI" value="true" />
+		  <param name="dynamicStreaming" value="true" />
+		  <param name= "forceHTML" value="true" />
+		  <param name="includeAPI" value="true" />
+		  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+		  <param name="@videoPlayer" value="1403696109001" />
+		  </object>
+		  
+		  <!-- End of Brightcove Player -->
+		  			
+		<div>
+				<form>
+					Select language for subtitles: <select id="languageSelector" onChange="setLanguage(this.options[this.selectedIndex].value)">
+						<option value="">None</option>
+						<option value="de">Deutsch</option>
+						<option value="es">español</option>
+						<option value="fr">français</option>
+						<option value="ja">日本語</option>
+					</select>
+					</form>			
+				</div>
+				
+		<script type="text/javascript">brightcove.createExperiences();
+		</script>
+		<script type="text/javascript">
+
+	// namespace for everything global
+	var BCL = {};
+	
+	BCL.onTemplateReady = function(event) {
+		console.log("EVENT: TEMPLATE_READY");
+		BCL.player = brightcove.api.getExperience("myExperience1403696109001");
+		// get a reference to the video player module
+				
+	    BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+	    // set listener for media change event
+	  
+	    BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.CHANGE, BCL.onMediaChange);
+	  
+		// get a reference to the captions module
+		BCL.captionsModule = BCL.player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
+		// add success/error listeners for captions load
+		BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, BCL.onDFXPLoadSuccess);
+		BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_ERROR, BCL.onDFXPLoadError);
+		BCL.captionsModule.loadDFXP("http://files.brightcove.com/BCL_601401284001.xml", BCL.videoPlayer.id);
+		
+		BCL.captionsModule.setLanguage("jp");
+		}
+	
+	//  get language
+		
+		function getLanguage() {
+		BCL.captionsModule.getLanguages(videoID, languagesResultHandler);
+		}
+		function languagesResultHandler(result) {
+		     console.log(result);
+		}
+		
+		//set language
+	
+	 function setLanguage(language) {
+	 
+	   BCL.captionsModule.setLanguage(document.getElementById('languageSelector').value);
+	   BCL.captionsModule.setLanguage(language);
+	
+	}
+	
+			// captions load success handler
+		
+	BCL.onDFXPLoadSuccess = function(event) {
+		console.log("DFXP Load Success");
+		console.log(event);
+		// need to set the language based on selected language
+		BCL.captionsModule.setLanguage(BCL.language);
+	}
+	// captions load error handler
+	BCL.onDFXPLoadError = function(event) {
+		console.log("DFXP Load Error");
+		console.log(event);
+	}
+	// set up captions
+	BCL.showSubTitles = function(language) {
+		console.log("In BCL.showSubTitles "+ language);
+		// only do this if a subtitles language has been selected
+		if (language != "") {
+			// set a flag to remember that subtitles are on
+			BCL.subTitlesOn = true;
+			// keep track of the language
+			BCL.language = language;
+			// get the filename stub for the captions from the video custom field and construct the path
+			BCL.videoPlayer.getCurrentVideo( function(videoDTO) {
+				 /**
+				 this is a training workaround to allow viewing captions in either the Flash or HTML5
+				 player on a local web server - for HTML5, the captions files must be on the same
+				 domain as the page; for Flash, getting captions files from the local domain 
+				 requires some complicated configuration of the local web server; so here we're
+				 using a local path for HTML5 and the server URL for Flash 
+				 **/
+				if (document.location.href.indexOf("forceHTML=true", 0) > 0) {
+					// in html mode, use local dfxp file
+					var pathPrefix = "../http://files.brightcove.com/BCL_601401284001.xml";
+				}
+								// construct the captions path
+				var captionsPath = pathPrefix + videoDTO.customFields.dfxppath + language.toUpperCase() + ".xml";
+				console.log(captionsPath);
+				var videoID = videoDTO.id;
+				console.log(videoID);
+				// load the captions file
+				BCL.captionsModule.loadDFXP(captionsPath,videoID);
+			});
+		}
+		else {
+			// if no language was selected, set flag to know that captions are off
+			BCL.subTitlesOn = false;
+		}
+	}
+	BCL.onMediaChange = function(event) {
+		console.log("EVENT: media change");
+		// load captions if subtitles are on
+		if (BCL.subTitlesOn) {
+			BCL.showSubTitles(BCL.language);
+		}
+	}
+	
+	// for development purposes only: reopen page with HTML5 player
+	</script>
+
+	</body>
+</html>

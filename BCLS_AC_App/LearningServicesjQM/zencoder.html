@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="bc-manifest" content="manifest.json" />
+		<title>App Cloud</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+		<link type="text/css" rel="stylesheet" href="stylesheets/styles.css"/>
+		<script type="text/javascript" src="javascripts/lib/brightcove-app-cloud-1.12.min.js"></script>
+		<script type="text/javascript" src="javascripts/views/zencoder.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+	</head>
+<body>
+
+<div id="twitter" data-role="page">
+
+	<div id="nav-top">
+		<span data-role="controlgroup" data-type="horizontal">
+			<a rel="external" data-role="button" class="mainNavTargetBC"><img src="images/icons/logo-corporate.png" width="159" height="30"></a>
+			<a rel="external" data-role="button" class="mainNavTargetVC"><img src="images/icons/VideoCloud.png" width="218" height="30"></a>
+			<a rel="external" data-role="button" class="mainNavTargetAC"><img src="images/icons/AppCloud.png" width="184" height="30"></a>
+			<a data-role="button" class="nav-top-selected-product"><img src="images/icons/zencoder.png" width="173" height="30"></a>
+		</span>
+	</div>
+
+	<div data-role="content">
+
+		<h1>Zencoder resources</h1>
+
+		<ul class="nav-left" data-role="listview" data-inset="true">
+			<li data-theme="a"><a href="#twitter">Twitter feed<span class="ui-li-count twitter"></span></a></li>
+			<li><a href="#corporate-blog">Corporate blog<span class="ui-li-count corpblog"></span></a></li>
+			</li>
+		</ul>
+
+		<section id="twitter-list">
+
+		</section>
+
+		<br/><br/><br/>
+	</div><!-- /twitter -->
+
+</div><!-- /page -->
+
+
+<div id="corporate-blog" data-role="page">
+
+	<div id="nav-top">
+		<span data-role="controlgroup" data-type="horizontal">
+			<a rel="external" data-role="button" class="mainNavTargetBC"><img src="images/icons/logo-corporate.png" width="159" height="30"></a>
+			<a rel="external" data-role="button" class="mainNavTargetVC"><img src="images/icons/VideoCloud.png" width="218" height="30"></a>
+			<a rel="external" data-role="button" class="mainNavTargetAC"><img src="images/icons/AppCloud.png" width="184" height="30"></a>
+			<a data-role="button" class="nav-top-selected-product"><img src="images/icons/zencoder.png" width="173" height="30"></a>
+		</span>
+	</div>
+
+	<div data-role="content">
+
+		<h1>Zencoder resources</h1>
+
+		<ul class="nav-left" data-role="listview" data-inset="true">
+			<li><a href="#twitter">Twitter feed<span class="ui-li-count twitter"></span></a></li>
+			<li data-theme="a"><a href="#corporate-blog">Corporate blog<span class="ui-li-count corpblog"></span></a></li>
+			</li>
+		</ul>
+
+		<section id="corporate-blog-list">
+
+		</section>
+
+		<br/><br/><br/>
+	</div><!-- /content -->
+</div><!-- / corporate blog page -->
+
+
+<div id="content-details" data-role="page">
+	<div id="nav-top">
+		<span data-role="controlgroup" data-type="horizontal">
+			<a data-rel="back" data-role="button" data-icon="arrow-l"><img src="images/icons/back_button.png" width="51" height="30"></a>
+			<a href="" data-role="button"><img src="images/icons/zencoder.png" width="173" height="30"></a>
+		</span>
+
+	</div>
+
+	<section id="drill-down-detail-page">
+
+	</section>
+
+</div> <!-- /endo content details-->
+
+
+</body>
+</html>

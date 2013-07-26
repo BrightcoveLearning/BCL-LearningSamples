@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script type="text/javascript" src="http://docs.brightcove.com/en/scripts/bc-mapi.js"></script>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    
+    <object id="myExperience921449663001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="2253104599001" />
+      <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WE4_qp5mKd71xnYPe9zKDk-" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+    
+      <param name="@videoPlayer" value="921449663001" />
+      <param name="includeAPI" value="true">
+      <param name="templateLoadHandler" value="BCLS.onTemplateLoad">
+      <param name="templateReadyHandler" value="BCLS.onTemplateReady">
+    </object>
+
+<div id="results"></div>
+    <script>
+      BCMAPI.token = "WDGO_XdKqXVJRVGtrNuGLxCYDNoR-SvA5yUqX2eE6KjgefOxRzQilw..";
+      BCMAPI.callback = "myCallback";
+      params = {};
+      params.any = ["tag:sea","tag:fish","bird","nature"];
+      params.none = "tag:water";
+      params.video_fields = "id,name,shortDescription";
+      params.page_size = 8;
+      params.page_number = 1;
+      params.get_item_count = true;
+      params.media_delivery = "http";
+      //params.output = "rss";
+      
+      BCMAPI.search(params);
+      
+      
+      myCallback = function (jsonData) {
+        console.log(jsonData);
+        for (var i=1; i < jsonData.items.length; i++) {
+            document.getElementById("results").innerHTML += "<a href=\"javascript:BCLS.playVideo(" + jsonData.items[i].id + ")\"" + jsonData.items[i].name + "</a><br>";
+      
+        }
+        
+      }
+      var BCLS = ( function () {
+        var player,
+            videoPlayer,
+            mediaEvent;
+        return {
+          onTemplateLoad : function (experienceID) {
+            player = brightcove.api.getExperience(experienceID);
+            APIModules = brightcove.api.modules.APIModules;
+            mediaEvent = brightcove.api.events.MediaEvent;
+          },
+          onTemplateReady : function (evt) {
+            console.log("ready");
+            videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+          },
+          playVideo : function(id) {
+            videoPlayer.loadVideoByID(id);
+          }
+        }
+      })();
+
+    </script>
+  </body>
+</html>

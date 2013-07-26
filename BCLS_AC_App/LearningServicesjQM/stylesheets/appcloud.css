@@ -1,0 +1,33 @@
+.content ul {
+  list-style-type: none;
+}
+
+.content ul li {
+  padding: 0px 20px;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: #3b3b3b solid 1px;
+  background-color: #fff;
+}
+
+.content ul li:active {
+  background-color: #336699;
+  color: #fff;
+}
+
+.content ul li .arrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -6px;
+}
+
+#second-page-content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+#second-page-content h2 {
+  margin-bottom: 20px;
+}

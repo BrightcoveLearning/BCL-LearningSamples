@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		body {font-family: sans-serif;}
+		#myExperience {
+		display: block;
+		}
+		</style>
+	  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+	  <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<script type="text/javascript">
+			var player;
+			var experienceModule;
+			function onTemplateLoaded(id) {
+			  newLog();
+			  log("EVENT: onTemplateLoaded");
+			  player = brightcove.getExperience(id);
+			  experienceModule = player.getModule(APIModules.EXPERIENCE);
+			}
+			function onTemplateReady(event) {
+			  log("EVENT: onTemplateReady");
+			}
+			function onPlayerError(event) {
+			   log("type: " + event.type);
+			   log("errorType: " + event.errorType);
+			   log("code: " + event.code);
+			   log("info: " + event.info);
+			   if (event.errorType == "noContent") {
+			     log("time to hide the player");
+			     hidePlayer();
+			   }
+			}
+			function hidePlayer() {
+			  log("hiding player");
+			  document.getElementById("myExperience").style.display = "none";
+			}
+			// clear the textarea of messages
+			function newLog() {
+			  document.getElementById("logger").value = "";;
+			}
+			/*
+			log a message to our debug window to simply show what's
+			happening in this example
+			*/
+			function log(message) {
+			// check to see if the message is complex data and decompose if so
+			  if (typeof message == "object"){
+				  for (var prop in message){
+					if (typeof message[prop] == "object") {
+						log(message[prop]);
+					}
+					else {
+						log(prop+": "+message[prop]);
+					}
+				}
+			  }
+			  else {
+				  document.getElementById("logger").value += message + "\n";
+			  }
+			}
+
+		</script>
+  </head>
+	<body>
+	<h1>Test Page for Hiding Player if It Has No Content</h1>
+	<p>Using the JavaScript Player API and CSS to hide the video player if the playlist assigned to it has no videos, or if it is a single video player that has no video assigned it (or if the video has been deleted or deactivated).</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="620280460001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateLoadHandler" value="onPlayerLoaded" />
+  <param name="templateReadyHandler" value="onPlayerReady" />
+  <param name="templateErrorHandler" value="onPlayerError" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->	<!-- Begin Script Logger -->
+	<h2>Results</h2>
+	<div id="BCscriptingLog">
+	<p><textarea id="logger" name="logger" rows="30" cols="60"></textarea></p></div>
+	<!-- End Debugging Helper -->
+	</body>
+</html>

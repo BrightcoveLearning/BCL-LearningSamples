@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap 2 Navbars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">BRIGHTCOVE DEVELOPER DOCUMENTATION : Smart Player API</a>
+        <div id="others"
+          <ul class="nav pull-right">
+            <li><a href="#">BRIGHTCOVE.COM</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">SUPPORT</a></li>
+            <li><a href="#">TRAINING VIDEOS</a></li>
+          </ul>
+       </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+    		<ul class="nav pull-right">
+    		  <li class="dropdown">
+    		    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+    		      Dropdown Two
+    		      <strong class="caret"></strong>
+    		    </a>
+    		    <ul class="dropdown-menu">
+    		      <li><a href="#">item1</a></li>
+    		      <li><a href="#">item2</a></li>
+    		      <li><a href="#">item3</a></li>
+    		      <li><a href="#">item4</a></li>
+    		    </ul>
+    		  </li>
+    		</ul>
+      </div>
+    </div>
+
+    <h1>Hello, world!</h1>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      var dummy = 'hello',
+          theList='<ul class="nav pull-right">\
+            <li><a href="#">BRIGHTCOVE.COM</a></li>\
+            <li><a href="#">BLOG</a></li>\
+            <li><a href="#">SUPPORT</a></li>\
+            <li><a href="#">TRAINING VIDEOS</a></li>\
+          </ul>',
+          theDropdown='<ul class="nav pull-right">\
+          <li class="dropdown">\
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">\
+              Dropdown One\
+              <strong class="caret"></strong>\
+            </a>\
+            <ul class="dropdown-menu">\
+              <li><a href="#">item1</a></li>\
+              <li><a href="#">item2</a></li>\
+              <li><a href="#">item3</a></li>\
+              <li><a href="#">item4</a></li>\
+            </ul>\
+          </li>\
+        </ul>';
+
+      $(window).on('resize',function(evt) {
+        if (window.innerWidth < 980) {
+          $('#others').html(theDropdown);
+        }
+        if (window.innerWidth > 980) {
+          $('#others').html(theList);
+        }
+
+      })
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

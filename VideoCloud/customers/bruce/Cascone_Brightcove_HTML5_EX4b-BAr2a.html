@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mulitiple Playlist Exercise</title>
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {
+				font-family: "Trebuchet MS", sans-serif;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: normal;
+				text-transform: normal;
+				letter-spacing: normal;
+				line-height: 1.1em;
+				color: #CCC;
+				width: 640px;
+			}
+			#BCL_playlist {
+				height: 480px;
+				overflow: scroll;
+			}
+			table {
+				font-size: 10px;
+				height: 480px;
+			}
+			table.playlist {
+				border: 1px solid #999;
+			}
+			td {
+				margin: 2px 2px 2px 2px;
+			}
+			td.playlistItem {
+				padding: 1px;
+			}
+			td.videoTitle {
+
+			}
+			tr.playlistItem {
+				border: 1px solid #999;
+				padding: 1px 1px 1px 1px;
+			}
+			a {
+				cursor: pointer;
+				text-decoration: none;
+				color: #64A8B0;
+			}
+			#playlist {
+				height: 480px;
+				overflow: scroll;
+				border: 1px solid #999;
+			}
+			strong {
+				color: #F4901E;
+			}
+			fieldset {
+				position: relative;
+				top: 100%;
+				width: 620px;
+			}
+			#results {
+				margin: 2px 2px 2px 2px;
+				padding: 2px 2px 2px 2px;
+			}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+
+	</head>
+	<body>
+		<fieldset>
+	      <legend>Playlist Selector</legend>
+				<div id="results"></div>
+	    </fieldset><br>
+		<table>
+			<tbody>
+				<tr>
+					<td valign="top">
+										<!-- Start of Brightcove Player -->
+
+										<div style="display:none">
+										Chromeless Video Player for WK AspenLaw site.
+										</div>
+
+										<!--
+										By use of this code snippet, I agree to the Brightcove Publisher T and C
+										found at https://accounts.brightcove.com/en/terms-and-conditions/.
+										-->
+
+										<script language="JavaScript" type="text/javascript" 		src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+										<object id="myExperience1524919187001" class="BrightcoveExperience">
+										  <param name="bgcolor" value="#FFFFFF" />
+										  <param name="width" value="640" />
+										  <param name="height" value="480" />
+										  <param name="playerID" value="1557777480001" />
+										  <param name="playerKey" value="AQ~~,AAAABNa5hoE~,ruH2nxQOkuQnjzB5lT_ffcdKeZ-VtePC" />
+										  <param name="isVid" value="true" />
+										  <param name="isUI" value="true" />
+										  <param name="dynamicStreaming" value="true" />
+										  <param name="@videoPlayer" value="1524919187001" />
+										  <param name="includeAPI" value="true" />
+									    <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+										</object>
+
+										<!--
+										This script tag will cause the Brightcove Players defined above it to be created as soon
+										as the line is read by the browser. If you wish to have the player instantiated only after
+										the rest of the HTML is processed and the page load is complete, remove the line.
+										-->
+										<script type="text/javascript">brightcove.createExperiences();</script>
+
+										<!-- End of Brightcove Player -->
+					</td>
+					<td>
+						<div id="BCL_playlist"></div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div id="BCL_playlistSelector"></div>
+					</td>
+			</tbody>
+		</table>
+
+		<!-- include markup.js templating system (https://github.com/adammark/Markup.js) -->
+		<script type="text/javascript" src="http://files.brightcove.com/markup.min.js"></script>
+		<script type="text/javascript">
+			// namespace to keep all the "global" vars together
+			var BCL = {};
+			// array of playlist IDs - substitute your list of playlist IDs in quotation marks
+			BCL.playlists = ["1525579196001","1525579173001","1525579202001","1525579203001","1525579204001","1525579205001","1525579206001","1525579207001"];
+			// master array to hold retrieved playlist data
+			BCL.playlistsData = [];
+			// markup templates for the playlist selector and playlist
+			BCL.playlistSelectorTemplate = "{{playlistsData}}<button onclick=\"BCL.onPlaylistSelect(this.value)\" value=\"{{id}}\">{{displayName}}</button>{{/playlistsData}}";
+			BCL.playlistTemplate = "<table class=\"playlist\"><tbody>{{videos}}<tr class=\"playlistItem\"><td class=\"playlistItem\"><a onclick=\"BCL.playVideo({{id}})\"><img style=\"float:left;clear:left\" height=\"90\" width=\"120\" src=\"{{thumbnailURL}}\"/></a></td><td class=\"videoTitle\" width=\"130\"><a onclick=\"BCL.playVideo({{id}})\"><strong>{{displayName}}</strong><br/>{{shortDescription}}</a></td></tr>{{/videos}}</tbody></table>";
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  console.log("onTemplateReady");
+			  // get references to the player and modules
+			  BCL.player = brightcove.api.getExperience("myExperience1524919187001");
+			  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+			  BCL.contentModule = BCL.player.getModule(brightcove.api.modules.APIModules.CONTENT);
+			  // start retrieving the playlists
+			  BCL.buildPlaylistsData(0);
+			}
+			// retrieves the playlists from the Video Cloud service - because the calls are asynchronous, this function needs to keep calling itself until it has looped over the entire playlist ids array
+			BCL.buildPlaylistsData = function(counter) {
+				console.log(parseInt(BCL.playlists[counter]));
+				BCL.contentModule.getPlaylistByID(BCL.playlists[counter] , function(jsonData) {
+					BCL.playlistsData.push(jsonData);
+					if (counter < BCL.playlists.length - 1) {
+						// not done yet, function increments the counter and recalls itself
+						counter++;
+						BCL.buildPlaylistsData(counter);
+					}
+					else {
+						// now we're done, buid the selector
+						BCL.buildPlaylistSelector();
+					}
+				})
+			}
+			// function that builds the playlist selector
+			BCL.buildPlaylistSelector = function() {
+			  // call Mark.up() to populate the template with data
+			  var str = Mark.up(BCL.playlistSelectorTemplate , BCL);
+			  document.getElementById("results").innerHTML = str;
+			}
+			// listener for playlist selection - builds the playlist
+			BCL.onPlaylistSelect = function(playlistID) {
+			  // call Mark.up() to populate the template with data
+			  console.log(playlistID);
+			  console.log(BCL.playlists.indexOf(playlistID));
+				var str = Mark.up(BCL.playlistTemplate , BCL.playlistsData[BCL.playlists.indexOf(playlistID)]);
+ 				document.getElementById("BCL_playlist").innerHTML = str;
+			}
+			// play video function
+			BCL.playVideo = function(videoID) {
+				BCL.videoPlayer.loadVideoByID(videoID);
+			}
+		</script>
+		<br>
+	<p>Not all of the chapters in "The Practice of Mediation" have accompanying video.<br />
+		As noted in the book index, chapters 1, 2, 4, and 5 do not have videos.</p>
+	</body>
+</html>

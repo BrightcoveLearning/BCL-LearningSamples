@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Mid-roll Bumper</title>
+</head>
+<body>
+	<!-- Start of Brightcove Player -->
+	<div style="display:none">&nbsp;</div>
+	<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script> 			 			<object id="myExperience734451479001" class="BrightcoveExperience">
+		<param name="bgcolor" value="#FFFFFF" />
+		<param name="width" value="600" />
+		<param name="height" value="338" />
+		<param name="playerID" value="620280460001" />
+		<param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+		<param name="isVid" value="true" />
+		<param name="isUI" value="true" />
+		<param name="dynamicStreaming" value="true" />
+		<param name="@videoPlayer" value="1194921694001" /> 			</object> 			 			<!-- 
+	This script tag will cause the Brightcove Players defined above it to be created as soon
+	as the line is read by the browser. If you wish to have the player instantiated only after
+	the rest of the HTML is processed and the page load is complete, remove the line.
+	--> 			<script type="text/javascript">brightcove.createExperiences();</script> 			 			<!-- End of Brightcove Player -->
+  <fieldset>
+    <legend>API Query</legend> 
+    <div id="query" style="width:100%;border:none"></div>
+  </fieldset><br>
+  <fieldset>
+    <legend>Results</legend>
+		<div id="results"></div>
+  </fieldset><br>
+
+	<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+			<!-- the script below is just included for debugging -->
+	<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+	<!-- script for debugging -->
+	<script type="text/javascript">
+	/*
+  This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+  */
+		function log(message) {
+  		var logEntry = prettyPrint(message);
+  		document.getElementById("results").appendChild(logEntry);
+		}
+		function logData(data) {
+		var newData = prettyPrint(data);
+		document.getElementById("videoData").appendChild(newData);
+		}
+
+	</script>
+
+	<script type="text/javascript">
+      /* script here */
+		// namespace for everything global
+		var BCL = {};
+		// initial setup in the special onTemplateLoaded() function
+		function onTemplateLoaded(id) {
+		  /* log("EVENT: TEMPLATE_LOADED"); */
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+	 	BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		}
+		// event listener for the player being ready
+		BCL.onTemplateReady = function(event) {
+		  /* log("BCL.onTemplateReady"); */
+		  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		  // get a reference to the video player module
+		  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // retrieve the "bumper" IDs from the video long description
+		  BCL.bumpers = JSON.parse(BCL.videoPlayer.getCurrentVideo().longDescription);
+		  // save the original video id
+		  BCL.originalVideoID = BCL.videoPlayer.getCurrentVideo().id;
+		  // add listener for media complete
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+		  
+		  // get reference to cuepoint module and set up listener 
+		  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+		  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+		  // get a reference to the menu module
+		  BCL.menuModule = BCL.player.getModule(APIModules.MENU);
+		}
+
+		// handler for cue points
+		BCL.onCue = function(event) {
+			BCL.videoPlayer.pause();
+			BCL.restartPosition = BCL.videoPlayer.getVideoPosition();
+			BCL.nowPlaying = "bumper1";
+			BCL.videoPlayer.loadVideo(BCL.bumpers.bumper1);
+		}
+		BCL.onMediaComplete = function(event) {
+			log("EVENT: media complete");
+			if (BCL.nowPlaying == "bumper1") {
+				// mid-roll bumper finished - restart video
+				BCL.nowPlaying = "mainVideo";
+				BCL.videoPlayer.loadVideo(BCL.originalVideoID);
+				// BCL.menuModule.setOverlayMenuVisible(false);
+				BCL.videoPlayer.pause();
+				BCL.videoPlayer.seek(BCL.restartPosition);
+				log(BCL.videoPlayer.getVideoPosition());
+				BCL.videoPlayer.play()
+				BCL.cuePointsModule.clearCodeCuePoints();
+			}
+			if (BCL.videoPlayer.nowPlaying == "mainVideo") {
+				// load the post-roll bumper
+				BCL.videoPlayer.loadVideo(BCL.bumpers.bumper2);
+			}
+		}
+  </script>
+</body>
+</html>

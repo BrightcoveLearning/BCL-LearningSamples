@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Change the publisher-id and preparer values -->
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert" report-success="TRUE">
+  <notify email="rcrooks@brightcove.com"/>
+  <reencode-from-existing-source
+     title-refid="956561276001"
+     encode-to="MP4"
+     encode-multiple="TRUE"
+     overwrite-images="TRUE"
+  />
+</publisher-upload-manifest>

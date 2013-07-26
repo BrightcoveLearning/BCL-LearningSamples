@@ -1,0 +1,5 @@
+===== hello-tmpl
+<h2>{{hello_msg}} {{fname}} {{lname}}</h2>
+
+===== goodbye-tmpl
+<h2>{{goodbye_msg}} {{view_name}} view</h2>

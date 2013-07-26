@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 9</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Captions for HTML5 Players Using the Smart Player API</h1>
+		<p>The new Smart Player API that works for both HTML5 and Flash players brings many benefits, including the ability to display captions or subtitles for you videos.</p>
+		<p>To view a sample, go to <a href="http://files.brightcove.com/BCL_SmartPlayerAPI_captions.html">http://files.brightcove.com/BCL_SmartPlayerAPI_captions.html</a></p>
+
+<p>The implementation here has to account for the fact that my subtitles in multiple languages are stored in separate files. The stem of the file name is stored in a custom field (I could have used a standard field like longDescription just as well), so I'm constructing the full URL in JavaScript. The full script is below. To learn more about using the Smart Player API, <a href="mailto:rcrooks@brightcove.com">contact me</a> to sign up for our next free online training class.</p>
+
+
+<pre>
+// namespace for everything global
+var BCL = {};
+// listener for the Template Ready event
+BCL.onTemplateReady = function(event) {
+	console.log("EVENT: TEMPLATE_READY");
+	BCL.player = brightcove.api.getExperience("myExperience");
+	// get a reference to the video player module
+  BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+  // set listener for media change event
+  BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.CHANGE, BCL.onMediaChange);
+	// get a reference to the captions module
+	BCL.captionsModule = BCL.player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
+	// add success/error listeners for captions load
+	BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, BCL.onDFXPLoadSuccess);
+	BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_ERROR, BCL.onDFXPLoadError);
+}
+// captions load success handler
+BCL.onDFXPLoadSuccess = function(event) {
+	console.log("DFXP Load Success");
+	console.log(event);
+	// need to set the language based on selected language
+	BCL.captionsModule.setLanguage(BCL.language);
+}
+// captions load error handler
+BCL.onDFXPLoadError = function(event) {
+	console.log("DFXP Load Error");
+	console.log(event);
+}
+// set up captions
+BCL.showSubTitles = function(language) {
+	console.log("In BCL.showSubTitles "+ language);
+	// only do this if a subtitles language has been selected
+	if (language != "") {
+		// set a flag to remember that subtitles are on
+		BCL.subTitlesOn = true;
+		// keep track of the language
+		BCL.language = language;
+		// get the filename stub for the captions from the video custom field and construct the path
+		BCL.videoPlayer.getCurrentVideo( function(videoDTO) {
+			var pathPrefix = "./";
+			var captionsPath = pathPrefix + videoDTO.customFields.dfxppath + language.toUpperCase() + ".xml";
+			console.log(captionsPath);
+			var videoID = videoDTO.id;
+			console.log(videoID);
+			// load the captions file
+			BCL.captionsModule.loadDFXP(captionsPath,videoID);
+		});
+	}
+	else {
+		// if no language was selected, set flag to know that captions are off
+		BCL.subTitlesOn = false;
+	}
+}
+BCL.onMediaChange = function(event) {
+	console.log("EVENT: media change");
+	// load captions if subtitles are on
+	if (BCL.subTitlesOn) {
+		BCL.showSubTitles(BCL.language);
+	}
+}
+// for development purposes only: reopen page with HTML5 player
+BCL.switchToHTML5 = function() {
+	var html5URL = document.location.href + "?forceHTML=true";
+	window.location = html5URL;
+}
+// for development purposes only: switch back to Flash
+BCL.switchToFlash = function() {
+	var startOfQuery = document.location.href.indexOf("?", 0);
+	var flashURL = document.location.href.substring(0, startOfQuery);
+	window.location = flashURL;
+}	
+</pre>
+
+	</body>
+</html>

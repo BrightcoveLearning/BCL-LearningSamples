@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<!-- InstanceBeginEditable name="Body" -->
+	<style type="text/css">
+	.headline {
+	font-size: large;
+	font-weight: bold;
+	}
+	.code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: small;
+	}
+	.floatleft {
+	float: left;
+	padding-right: 5px;
+	}
+	.floatright {
+	float: right;
+	padding-left: 5px;
+	}
+
+	</style>
+	<p class="headline">Roll Your Own Logo Overlay</p>
+	<p>Logo overlays can be <a href="http://support.brightcove.com/en/docs/editing-video-properties-media-module#overlay2" title="Logo Overlays for Videos">added to individual videos</a>, or you can add one for all your videos in your <a href="http://support.brightcove.com/en/docs/creating-logo-overlays#account" title="Logo Overlay for Account">account settings</a>, and then override the default one for individual videos. You can also create your own in BEML or using the Player API, however. The advantage of this is that you can then get programmatic control of the logo.</p>
+	<p>Here I'm going to add an overlay using the Player API, and make it display only for the first three and last three seconds of the video. I'll also change the logo image and its click-through URL for the second appearance. I'm just working with the standard chromeless video player and the Player API, so this is something you can do with any edition of Brightcove Video Cloud. You can see the result in the player below.</p>
+		
+	<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience734462567001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="270" />
+  <param name="playerID" value="620280460001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="734462567001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+    </div>
+    		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js - the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		};
+		</script>
+
+<!--
+		<section>
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset
+    </section>
+-->
+	<p>So here's how I did it. First of all, of course, I enabled the ActionScript/JavaScript APIs in the Player settings, and imported the JavaScript Player API.</p>
+	<pre>&lt;script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"&gt; </script></pre>
+	<p>Next, I stored links to images and their respective click-through URLs in the Long Description field of the video settings - I stored these as a JSON string to make the data easier to work with in JavaScript.</p>
+	<pre>{"imageStart" : "http://files.brightcove.com/BCL-Training-Logo-small.png" , 
+"urlStart" : "http://support.brightcove.com/en/training-videos" , 
+"imageEnd" : "http://files.brightcove.com/BCLapp-cloud-small.png" , 
+"urlEnd" : "http://www.brightcove.com/en/content-app-platform"}</pre>
+<p>In the TEMPLATE_READY event handler I set up, I get a reference to the player Layout using the getContainer() method of the video player module, and then use the appendChild() method of the Layout container to add the image component.</p>
+<pre>
+// get a reference to the video player module
+BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+// get a reference to the parent container
+BCL.layout = BCL.videoPlayer.getContainer();
+// append a image element over the lower part of the player
+BCL.layout.appendChild("<Image id=\"overlayImage\" y=\"200\" x=\"275\" height=\"48\" width=\"200\" visible=\"true\"/>");
+</pre>
+<p>Next, I get a reference to the new image component, and also use JSON.parse() to turn the long description of the video into an object with the properties: imageStart, urlStart, imageEnd, and urlEnd. I use the first two of these to set the source and the URL values for the image.</p>
+<pre>
+// get a reference to the overlay image in the player
+BCL.overlayImage = BCL.layout.getChildAt(1);
+// get the long description of the video and parse it into an object
+BCL.imageData = JSON.parse(BCL.videoPlayer.getCurrentVideo().longDescription);
+// set the source of the image
+BCL.overlayImage.setSource(BCL.imageData.imageStart);
+// set the click-through URL for the image
+BCL.overlayImage.setURL(BCL.imageData.urlStart);
+// add a listener for progress events
+</pre>
+<p>The last part of the TEMPLATE_READY handler adds listeners for the Media STOP and PROGRESS events, and then starts the video.</p>
+<pre>
+BCL.videoPlayer.addEventListener(BCMediaEvent.PROGRESS, BCL.onMediaProgress);
+// add a listener for stop events
+BCL.videoPlayer.addEventListener(BCMediaEvent.STOP, BCL.onMediaStop);
+// start the video
+BCL.videoPlayer.play();
+</pre>
+<p>In the PROGRESS event delivers and object that contains the current position and duration of the video, so it just takes a little conditional logic to make the image visible only during the first three and last seconds, and reset the source and URL during the last three seconds, using the other set of data I retrieved from the video long description. (The script isn't as efficient as it might be here, as I'm executing actions every time the event fires - every 33 milliseconds - but I'm keeping the code simple. You could check for a position within 33 milliseconds of the point you want execution to occur and just make the changes once for the <em>3 seconds</em> and <em>Duration - 3 seconds</em> positions.)</p>
+<pre>
+// add handler for progress events
+BCL.onMediaProgress = function(event) {
+	/* log("EVENT: Progress"); */
+	// if postion is more less than 2 sec or 2 sec from end, set overlay visible; else set it invisible
+	if (event.position &lt; 3) {
+		BCL.overlayImage.setVisible(true);
+	}
+	else if ((event.duration - event.position) &lt; 3) {
+		// set the new source and click-through URL
+		BCL.overlayImage.setSource(BCL.imageData.imageEnd);
+		BCL.overlayImage.setURL(BCL.imageData.urlEnd);
+		// make it visible
+		BCL.overlayImage.setVisible(true);
+	}
+	else {
+		// make image invisible
+		BCL.overlayImage.setVisible(false);
+	}
+}
+</pre>
+<p>The STOP event handler just makes the logo visible, in case the viewer pauses the video somewhere in the middle. You can find the full script in the source for this page.</p>
+    <!-- import player api -->
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+    <script type="text/javascript">
+    /* script here */
+		// namespace for everything global
+		var BCL = {};
+		// initial setup in the special onTemplateLoaded() function
+		function onTemplateLoaded(id) {
+		  /* log("EVENT: TEMPLATE_LOADED"); */
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+		  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		}
+		// event listener for the player being ready
+		BCL.onTemplateReady = function(event) {
+		  /* log("BCL.onTemplateReady"); */
+		  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		  // get a reference to the video player module
+		  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // get a reference to the parent container
+		  BCL.layout = BCL.videoPlayer.getContainer();
+		  // append a image element over the lower part of the player
+		  BCL.layout.appendChild("<Image id=\"overlayImage\" y=\"200\" x=\"275\" height=\"48\" width=\"200\" visible=\"true\"/>");
+		  // get a reference to the overlay image in the player
+		  BCL.overlayImage = BCL.layout.getChildAt(1);
+		  // get the long description of the video and parse it into an object
+		  BCL.imageData = JSON.parse(BCL.videoPlayer.getCurrentVideo().longDescription);
+		  // set the source of the image
+		  BCL.overlayImage.setSource(BCL.imageData.imageStart);
+		  // set the click-through URL for the image
+		  BCL.overlayImage.setURL(BCL.imageData.urlStart);
+		  // add a listener for progress events
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.PROGRESS, BCL.onMediaProgress);
+		  // add a listener for stop events
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.STOP, BCL.onMediaStop);
+		  // start the video
+		  BCL.videoPlayer.play();
+		}
+
+		// add handler for progress events
+		BCL.onMediaProgress = function(event) {
+			/* log("EVENT: Progress"); */
+			// if postion is more less than 2 sec or 2 sec from end, set overlay visible; else set it invisible
+			if (event.position < 3) {
+				BCL.overlayImage.setVisible(true);
+			}
+			else if ((event.duration - event.position) < 3) {
+				// set the new source and click-through URL
+				BCL.overlayImage.setSource(BCL.imageData.imageEnd);
+				BCL.overlayImage.setURL(BCL.imageData.urlEnd);
+				// make it visible
+				BCL.overlayImage.setVisible(true);
+			}
+			else {
+				// make image invisible
+				BCL.overlayImage.setVisible(false);
+			}
+		}
+		BCL.onMediaStop = function(event) {
+			BCL.overlayImage.setVisible(true);
+		}
+    </script>
+
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+  </head>
+
+  <body>
+<h2>Resizing players by modifying the template BEML code</h2>
+<p>Using BEML (the Brightcove Experience Markup Language), you can size the video player and any other component. You must have a Professional or Enterprise account to use BEML. If you are new to creating templates with BEML, you should read <a href="internal:node/1387">Customizing Players with BEML</a> before proceeding. </p>
+<p>To modify a standard Video Cloud player template, you will need to duplicate the template and edit the copy to access the BEML code. You can also create a new template and construct a whole new player template using BEML.</p>
+<p>Every visual element of a BEML template has height and width parameters. To size the video player component, set values for these parameters in the VideoPlayer, ChromelessVideoPlayer, or VideoDisplay tag, depending on which is used.</p>
+<pre>
+&lt;Runtime&gt;
+  &lt;Theme name="Deluxe" style="Light"/&gt;
+  &lt;Layout id="application" boxType="vbox" gutter="5" width="405" height="340"&gt;
+    &lt;VideoPlayer id="videoPlayer" <strong style="color:red">width="405" height="280"</strong> video="{videoList.selectedItem}"/&gt;
+    &lt;TileList id="videoList" automaticAdvance="true" height="60" columnWidth="80" rowHeight="60" columnGutter="3" buttonSize="26"&gt;
+      &lt;ListItem showBack="false"&gt;
+        &lt;ThumbnailButton imageInset="3" data="{currentItem}" source="{currentItem.thumbnailURL}"/&gt;
+      &lt;/ListItem&gt;
+    &lt;/TileList&gt;
+  &lt;/Layout&gt;
+&lt;/Runtime&gt;
+</pre>
+<p>
+  Here is the player created from the BEML code above.<br/>
+</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="405" />
+  <param name="height" value="340" />
+  <param name="playerID" value="1197194546001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahn2NvYmBZJx9Daj-G9T7Kg" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<p>If you are sizing the player to match the aspect ratio of your content (usually 4:3 or 16:9) then the aspect ratio of the ChromelessVideoPlayer or VideoDisplay component should be the same as that of the videos. For the VideoPlayer component, you will need to add an additional 46 pixels to the height for the media controls.</p>
+  </body>
+
+</html> 

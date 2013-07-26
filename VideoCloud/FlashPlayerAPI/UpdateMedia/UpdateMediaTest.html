@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 7</title>
+		<style type="text/css">
+		body {font-family : Helvetica,Arial,sans-serif;color : #619FA8;}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.body.appendChild(logEntry);
+  		}
+
+		</script>
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="605" />
+  <param name="playerID" value="961771608001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahmBXe6D1qJgPoInypl6tvp" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<div id="MediaUpdater">
+			<button onclick="BCL.resetImages()">Change the Video Thumbnails</button> (uses updateMedia() to change the thumbnail for each of the videos in the playlist)
+		</div>
+<div id="VideoListUpdater">
+			<button onclick="BCL.resetImages()">Update the Playlist Display</button> (resets data for the list with the array of objects with the new thumbnails)
+		</div>
+<h2>Event Log</h2>
+		<script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+			BCL.altThumbnail = "http://files.brightcove.com/BCL_AlternateThumbnail.png";
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  log("TemplateReady");
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+				BCL.contentModule = BCL.player.getModule(APIModules.CONTENT);
+				//log(BCL.videoData);
+				//BCL.resetImages();
+			}
+
+			BCL.resetImages = function() {
+				log("changing images");
+				BCL.videoData = BCL.experienceModule.getElementByID("videoList").getData();
+				log(BCL.videoData.length);
+				var video;
+				for (var i = 0; i < BCL.videoData.length; i++) {
+					video = BCL.videoData[i];
+					video.thumbnailURL = BCL.altThumbnail;
+					BCL.contentModule.updateMedia(BCL.videoData[i]);
+				}
+				log(BCL.videoData);
+				//BCL.experienceModule.getElementByID("videoList").setData(BCL.videoData);
+			}
+			BCL.updateVideoList = function() {
+				BCL.experienceModule.getElementByID("videoList").setData(BCL.videoData);
+			}
+		</script>
+
+	</body>
+</html>

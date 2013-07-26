@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">MAIN</label>
+        <label key="controls pause">JEDA</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Main</label>
+        <label key="controls pause tooltip">Jeda</label>
+        <label key="controls volume tooltip">Buka Kawalan Bunyi</label>
+        <label key="controls maximize tooltip">Pergi Ke Skrin Penuh</label>
+        <label key="controls minimize tooltip">Keluar Dari Skrin Penuh</label>
+        <label key="community share">e-mel</label>
+        <label key="community socialShare">kongsi</label>
+        <label key="community link">dapatkan pautan</label>
+        <label key="community code">dapatkan kod</label>
+        <label key="community share tooltip">E-melkan Video kepada Kawan</label>
+        <label key="community socialShare tooltip">Kongsi Video Ini</label>
+        <label key="community link tooltip">Dapatkan Pautan Terus ke Video</label>
+        <label key="community code tooltip">Dapatkan HTML untuk Membenamkan Pemain</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[KEMBANGKAN  >]]></label>
+        <label key="collapse banner">RUNTUHKAN X</label>
+        <label key="sponsor message">Mesej penaja.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">matikan bunyi</label>
+        <label key="unmute tooltip">hidupkan bunyi</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Buka Menu</label>
+        <label key="rightclick fullscreen">Pergi Ke Skrin Penuh</label>
+        <label key="rightclick exit fullscreen">Keluar Dari Skrin Penuh</label>
+        <label key="rightclick show debug">Tunjukkan Maklumat Nyahpepijat</label>
+        <label key="rightclick hide debug">Sembunyikan Maklumat Nyahpepijat</label>
+<!-- Error messaging -->
+        <label key="noContent">Tiada video tersedia pada\nmasa ini.
+            \n\nSila semak semula kemudian.</label>
+        <label key="unavailableContent">Video yang anda cuba
+            tonton tidak tersedia pada masa ini.\n\nSila semak semula sebentar lagi.</label>
+        <label key="upgradeRequired">Flash 9.0.115.0 atau lebih baru diperlukan untuk menonton kandungan ini.\n\nKlik &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;di sini&lt;/u&gt;&lt;/a&gt; untuk menatar pemain anda.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">ANDA SEDANG MENONTON:</label>
+        <label key="connecting">MEMUAT VIDEO</label>
+        <label key="please select:">sila pilih:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Maklumat</label>
+        <label key="menu email">E-melkan Video</label>
+        <label key="menu link">Dapatkan Pautan</label>
+        <label key="menu share">Kongsi Video</label>
+        <label key="expand">Kembangkan</label>
+        <label key="menu embed">Dapatkan Kod</label>
+        <label key="menu play">Mainkan Video</label>
+        <label key="menu replay">Main Semula</label>
+        <label key="menu resume">Sambung Semula</label>
+        <label key="cancel button">Batal</label>
+        <label key="continue button">Teruskan</label>
+        <label key="close tooltip">Tutup</label>
+<!-- Email video menu screen -->
+        <label key="email page title">E-melkan kepada Kawan</label>
+        <label key="email your email">E-mel anda</label>
+        <label key="email friend email"><![CDATA[E-mel kawan]]></label>
+        <label key="email message">Mesej (pilihan)</label>
+        <label key="email send">Hantar</label>
+        <label key="email video">E-melkan Video</label>
+        <label key="email error">Sila masukkan alamat e-mel yang betul.</label>
+        <label key="email confirmation text">E-mel anda telah dihantar</label>
+<!-- Share video menu screen -->
+        <label key="share title">Kongsi video ini</label>
+        <label key="share directions">Kongsi terus dengan laman sebegini</label>
+        <label key="share facebook">Kongsi pada Facebook</label>
+        <label key="share twitter">Kongsi%20pada%20Twitter</label>
+        <label key="share twitter message">Tontonlah</label>
+        <label key="share link">Salin Pautan</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Tambah ke laman web atau blog</label>
+        <label key="embed directions">Salin kod atau pilih perkhidmatan blog</label>
+        <label key="embed code">Benamkan Kod</label>
+        <label key="embed copy code">Salin Kod</label>
+        <label key="embed copied">Disalin</label>
+        <label key="blog processing">Sedang diproses ...</label>
+        <label key="blog username">Nama Pengguna</label>
+        <label key="blog password">Kata Laluan</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Kombinasi log masuk/kata laluan tidak betul.</label>
+        <label key="blog post select directions">Pilih blog</label>
+        <label key="blog post enter title">Tajuk catatan</label>
+        <label key="blog post enter description">Penerangan catatan (pilihan)</label>
+        <label key="blog post post video">Catat Video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Ralat telah berlaku. Sila cuba lagi.</label>
+        <label key="blog confirmation text">Catatan telah dihantar</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Pautan ke video ini</label>
+        <label key="link directions">Kongsi melalui e-mel atau IM</label>
+        <label key="link copy link">Salin Pautan</label>
+        <label key="link copied">Disalin</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Terma & Syarat</label>
+        <label key="related videos">Video Berkaitan</label>
+        <label key="most viewed videos">Paling Banyak Ditonton</label>
+        <label key="newest videos">Terbaru</label>
+</labels>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+    <style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #666666;
+			margin-left: 100px;
+			width: 800px;
+			}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+  		function logData(data) {
+  		var newData = prettyPrint(data);
+  		document.getElementById("videoData").appendChild(newData);
+  		}
+
+		</script>
+  </head>
+
+  <body>
+    <header>
+      <img src="http://img.brightcove.com/bc-training-logo.png"  alt="Brightcove Training" />
+    </header>
+    <section>
+      
+<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+
+      <h1>Brightcove Learning Sample: Display Overlay Images for Cue Points</h1>
+      <p>This is a follow-up to my previous blog post on sponsorship and promotions. Here I'll show an additional technique to display sponsor messages in overlays, rather than replacing the whole video player.</p> 
+      <p>This sample works off the standard Chromeless Video Player, so you can implement this in any Brightcove Video Cloud account. The only change I made to player is to increase the size the setting the height and width param values in the publishing code.</p>
+      <p>This player displays a semi-transparent image over the lower part of the video at cue points. Watch the video below to see it work.</p>
+      <!-- Start of Brightcove Player -->
+
+			<div style="display:none">
+			
+			</div>
+			
+			<!--
+			By use of this code snippet, I agree to the Brightcove Publisher T and C 
+			found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+			-->
+			
+			<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+			
+			<object id="myExperience734451479001" class="BrightcoveExperience">
+				<param name="bgcolor" value="#FFFFFF" />
+				<param name="width" value="600" />
+				<param name="height" value="338" />
+				<param name="playerID" value="620280460001" />
+				<param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXagAaBS7fBojcPoHLrsCEka3" />
+				<param name="isVid" value="true" />
+				<param name="isUI" value="true" />
+				<param name="dynamicStreaming" value="true" />
+				
+				<param name="@videoPlayer" value="734451479001" />
+			</object>
+			
+			<!-- 
+			This script tag will cause the Brightcove Players defined above it to be created as soon
+			as the line is read by the browser. If you wish to have the player instantiated only after
+			the rest of the HTML is processed and the page load is complete, remove the line.
+			-->
+			<script type="text/javascript">brightcove.createExperiences();</script>
+			
+			<!-- End of Brightcove Player -->
+      <p>The semi-transparent images are created simply by using PNG images with the opacity set to 60%. The images are stored on a server, and URLs are stored in the metadata for code  cue points in the video, which I set using the <a href="http://support.brightcove.com/en/docs/setting-cue-points-media-module">cue point editor</a> in the Studio Media Module.</p>
+      <p>The rest is done using the Player API. I get a reference to the VIDEO_PLAYER module, and then use the getContainer() method to get a reference to the overall Layout container for the player. Then, using the container's appendChild() method, I add an invisible Image element that sits over roughly the bottom fourth of the player.</p>
+      <p>A cue point listener sets the visibility of the image to true, and then sets the source of the image to the metadata for the cue point.</p>
+      <p>There is also a listener for the media complete event that sets the image visibility back to false.</p>
+      <pre>
+	// namespace for everything global
+	var BCL = {};
+	// initial setup in the special onTemplateLoaded() function
+	function onTemplateLoaded(id) {
+		BCL.player = brightcove.getExperience(id);
+		BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+		BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+	}
+	// event listener for the player being ready
+	BCL.onTemplateReady = function(event) {
+		BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		// get a reference to the video player module
+		BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		// get a reference to the parent container
+		BCL.layout = BCL.videoPlayer.getContainer();
+		// append an invisible image element over the lower part of the player
+		BCL.layout.appendChild("&lt;Image id=\"overlayImage\" y=\"264\" height=\"74\" visible=\"false\"/&gt;")
+		// get a reference to the overlay image in the player
+		BCL.overlayImage = BCL.layout.getChildAt(1);
+		BCL.videoPlayer.play();
+		// add listener for media complete
+		BCL.videoPlayer.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+		// get reference to cuepoint module and set up listener 
+		BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+		BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+	}
+
+	// add handler for cue points
+	BCL.onCue = function(event) {
+		// make the overlay image visible
+		BCL.overlayImage.setVisible(true);
+		// set the new source for the bottom image
+		BCL.overlayImage.setSource(event.cuePoint.metadata);
+	}
+	BCL.onMediaComplete = function(event) {
+		// make the overlay image invisible
+		BCL.overlayImage.setVisible(false);
+	}
+      </pre>
+      <p>Want to give the overlay a click-through URL as well? That just requires a simple modification. First, in the cue point metadata, save two URLs, one for the image and one for the click-through, separated by commas:</p>
+      <pre>
+  http://my.sponsor.com/image1.png,http://my.sponsor.com/landingpage.html
+      </pre>
+      <p>Then a simple modification of the listener for cue points will do it:</p>
+      <pre>
+	BCL.onCue = function(event) {
+		// split the metadata into an array
+		var URLarray = event.cuepoint.metadata.split(",");
+		// make the overlay image visible
+		BCL.overlayImage.setVisible(true);
+		// set the new source and URL for the bottom image
+		BCL.overlayImage.setSource(URLarray[0]);
+		BCL.overlayImage.setURL(URLarray[1]);
+	}
+      </pre>
+		<fieldset>
+			<legend>Video Data</legend>
+			<div id="videoData"></div>
+		</fieldset>
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset
+    </section>
+    <script type="text/javascript">
+      /* script here */
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  /* log("EVENT: TEMPLATE_LOADED"); */
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  /* log("BCL.onTemplateReady"); */
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  // get a reference to the video player module
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+			  // get a reference to the parent container
+			  BCL.layout = BCL.videoPlayer.getContainer();
+			  // append an invisible image element over the lower part of the player
+			  BCL.layout.appendChild("<Image id=\"overlayImage\" y=\"264\" height=\"74\" visible=\"false\"/>")
+			  // get a reference to the overlay image in the player
+			  BCL.overlayImage = BCL.layout.getChildAt(1);
+			  BCL.videoPlayer.play();
+			  // add listener for media complete
+			  BCL.videoPlayer.addEventListener(BCMediaEvent.COMPLETE, BCL.onMediaComplete);
+			  
+			  // get reference to cuepoint module and set up listener 
+			  BCL.cuePointsModule = BCL.player.getModule(APIModules.CUE_POINTS);
+			  BCL.cuePointsModule.addEventListener(BCCuePointEvent.CUE, BCL.onCue);
+			}
+
+			// add handler for cue points
+			BCL.onCue = function(event) {
+				/* log("EVENT: Cue Point"); */
+				// make the overlay image visible
+				BCL.overlayImage.setVisible(true);
+				// set the new source for the bottom image
+				BCL.overlayImage.setSource(event.cuePoint.metadata);
+			}
+			BCL.onMediaComplete = function(event) {
+				/* log("EVENT: media complete"); */
+				// make the overlay image invisible
+				BCL.overlayImage.setVisible(false);
+			}
+    </script>
+
+  </body>
+
+</html> 

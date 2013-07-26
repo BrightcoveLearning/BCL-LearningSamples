@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+.BCLhighlight {font-weight: bold;
+	color: #C00;
+	background-color: #FFC;
+}
+.BCLnote {		font-family: Monaco, monospace;
+		background-color: #FFFFCC;
+}
+</style>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<style type="text/css">
+.BCLhighlight {font-weight: bold;
+	color: #C00;
+	background-color: #FFC;
+}
+.BCLnote {		font-family: Monaco, monospace;
+		background-color: #FFFFCC;
+}
+</style><p>&nbsp;Here's what's new in Brightcove Knowledge:</p>
+<p><strong>Tip of the week:</strong> Easy MRSS Feeds </p>
+<p> <a href="http://link.brightcove.com/services/mrss/player835199013001/835233035001/new"><img src="http://files.brightcove.com/BCLrss-small.png" alt="rss icon"/> Most Recent Videos</a> <span class="BCLnote">[Link href: http://link.brightcove.com/services/mrss/player835199013001/835233035001/new]</span> </p>
+<p> <a href="http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/"><img src="http://files.brightcove.com/BCLrss-small.png" alt="rss icon"/> Videos tagged &quot;sea&quot;</a> <span class="BCLnote">[Link href: http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/]</span> </p>
+<p> <a href="http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/land/air/&quot;"><img src="http://files.brightcove.com/BCLrss-small.png" alt="rss icon"/> Videos tagged &quot;sea&quot;, &quot;land&quot;, or &quot;air&quot;</a> <span class="BCLnote">[Link href: http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/land/air/]</span></p>
+<p>This is a really simple approach to creating MRSS feeds from your Brightcove video library using the search_videos method of the Media API. The feed links above are simple links pointing to a Brightcove feed generator-- for example:</p>
+<pre>&lt;a 
+href=&quot;<span class="BCLhighlight">http://link.brightcove.com/services/mrss/player835199013001/835233035001/tags/sea/</span>&quot;&gt;
+  &lt;img src=&quot;http://files.brightcove.com/BCLrss-small.png&quot;/&gt; Animal Videos
+&lt;/a&gt;
+    </pre>
+<p>You can think of this link as have 4 parts:</p>
+<ul>
+  <li>The standard part: <span class="BCLhighlight">http://link.brightcove.com/services/mrss/</span></li>
+  <li>The Player ID for the player that will play the videos: <span class="BCLhighlight">player835199013001</span></li>
+  <li>The account ID for your account: <span class="BCLhighlight">835233035001</span></li>
+  <li>Parameters to qualify the results returned: <span class="BCLhighlight">/tags/sea/</span></li>
+</ul>
+<p>You can add more tags to search on: <span class="BCLhighlight">/tags/sea/land/air/</span></p>
+<p>You can also use other parameters besides <strong>tags</strong>:</p>
+<ul>
+  <li><span class="BCLhighlight">/new</span> - returns the most recent videos (the first link above)</li>
+  <li><span class="BCLhighlight">/video[videoID here]/related</span> - videos related to the specified video</li>
+  <li><span class="BCLhighlight">/top/alltime</span> - most viewed videos in the account</li>
+  <li><span class="BCLhighlight">/top/trailingweek</span> - videos most viewed in the previous week</li>
+  <li><span class="BCLhighlight">/playlist[playlistID here]</span> - the videos in the specified playlist</li>
+</ul>
+<ul>
+  <li>
+    <p>New or updated Support Documents:&nbsp;</p>
+    <ul>
+      <li><a href="http://support.brightcove.com/en/docs/analytics-report-reference">Analytics Report Reference</a></li>
+      <li><a href="http://support.brightcove.com/en/docs/searching-videos-media-module">Searching for Videos in the Media Module</a> (covers new advanced search features we have started to roll out)</li>
+    </ul>
+  </li>
+</ul>
+<p>Free online training classe schedule: </p>
+<p>[view:www_events=block_3]</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

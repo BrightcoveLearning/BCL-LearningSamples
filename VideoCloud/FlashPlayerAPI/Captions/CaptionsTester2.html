@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 9</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+				<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+	    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+	    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+
+		</script>
+
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience1353788004001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="400" />
+  <param name="height" value="300" />
+  <param name="playerID" value="1253722855001" />
+  <param name="playerKey" value="AQ~~,AAABHJQEOek~,0b2UWLa6_VAJqvVY9RXg8-PmvFVoMLrB" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="1353788004001" />
+  <param name="includeAPI" value="true" />
+  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+</object>
+
+<script type="text/javascript">brightcove.createExperiences();</script>
+<script type="text/javascript">
+		    var src = "http://qrcode.kaywa.com/img.php?s=8&d=" + location.href;
+		</script>
+		<div style="margin:10px;float:right;width:220px;">
+		  <script>document.write('<img src="' + src + '" width="200" height="200" style="border:1px solid #CCC"/><br>');</script>
+		  <small style="font-size:10px;">Scan the QR from your iPhone or iPad to load this page on your device<br/>QR code from <a href="http://qrcode.kaywa.com/">http://qrcode.kaywa.com/</a></small>
+		</div>
+<script type="text/javascript">
+
+var BCL = {};
+// listener for the Template Ready event
+BCL.onTemplateReady = function(event) {
+	console.log("EVENT: TEMPLATE_READY");
+	BCL.player = brightcove.api.getExperience("myExperience1353788004001");
+    BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+	BCL.captionsModule = BCL.player.getModule(brightcove.api.modules.APIModules.CAPTIONS);
+	BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_SUCCESS, BCL.onDFXPLoadSuccess);
+	BCL.captionsModule.addEventListener(brightcove.api.events.CaptionsEvent.DFXP_LOAD_ERROR, BCL.onDFXPLoadError);
+	BCL.showSubTitles("en");
+}
+
+// captions load success handler
+BCL.onDFXPLoadSuccess = function(event) {
+	console.log("DFXP Load Success");
+	console.log(event);
+	// need to set the language based on selected language
+    BCL.captionsModule.getLanguages(null, log);
+}
+
+// captions load error handler
+BCL.onDFXPLoadError = function(event) {
+	console.log("DFXP Load Error");
+	console.log(event);
+}
+
+// set up captions
+BCL.showSubTitles = function(language) {
+	console.log("In BCL.showSubTitles "+ language);
+	// only do this if a subtitles language has been selected
+	if (language != "") {
+		// set a flag to remember that subtitles are on
+		BCL.subTitlesOn = true;
+		// keep track of the language
+		BCL.language = language;
+		// load the captions file
+		BCL.captionsModule.loadDFXP("http://mv0.qa.mellon.com/test/brightcove/captionexample_dfxp.xml");
+	}
+	else {
+		// if no language was selected, set flag to know that captions are off
+		BCL.subTitlesOn = false;
+	}
+}
+
+</script>
+<!-- End of Brightcove Player -->	</body>
+</html>

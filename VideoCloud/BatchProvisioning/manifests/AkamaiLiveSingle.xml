@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<publisher-upload-manifest publisher-id="57838016001" preparer="Robert" report-success="true">
+	<notify email="rcrooks@brightcove.com"/>	
+
+<remote-asset refid="livetest"
+	display-name="livetest"
+	type="FLV_FULL"
+	remote-url="rtmp://cp101680.live.edgefcs.net/live/"
+	remote-stream-name="livetest_01_500@56974"
+	video-duration="-1"
+	video-codec="ON2"
+	controller-type="AKAMAI_LIVE"
+    />	
+	<title name="Live Test" refid="livetest" active="TRUE" video-full-refid="livetest">
+		<short-description>Live Test</short-description>
+	</title>
+    
+</publisher-upload-manifest>

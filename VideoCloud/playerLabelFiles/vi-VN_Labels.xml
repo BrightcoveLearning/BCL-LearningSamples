@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">PHÁT</label>
+        <label key="controls pause">TẠM DỪNG</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Phát</label>
+        <label key="controls pause tooltip">Tạm dừng</label>
+        <label key="controls volume tooltip">Mở Chức năng Điều khiển Âm lượng</label>
+        <label key="controls maximize tooltip">Vào Chế độ Toàn màn hình</label>
+        <label key="controls minimize tooltip">Thoát khỏi Chế độ Toàn màn hình</label>
+        <label key="community share">email</label>
+        <label key="community socialShare">chia sẻ</label>
+        <label key="community link">Nối kết</label>
+        <label key="community code">nhận mã</label>
+        <label key="community share tooltip">Gửi Phim đến Bạn bè bằng Email</label>
+        <label key="community socialShare tooltip">Chia sẻ Phim này</label>
+        <label key="community link tooltip">Nhận Liên kết Trực tiếp đến Phim</label>
+        <label key="community code tooltip">Nhận mã HTML đến Trình xem Phim nhúng</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[MỞ RỘNG  >]]></label>
+        <label key="collapse banner">THU NHỎ  X</label>
+        <label key="sponsor message">Thông điệp của nhà tài trợ.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">tắt tiếng</label>
+        <label key="unmute tooltip">mở tiếng</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Mở Menu</label>
+        <label key="rightclick fullscreen">Vào Chế độ Toàn màn hình</label>
+        <label key="rightclick exit fullscreen">Thoát khỏi Chế độ Toàn màn hình</label>
+        <label key="rightclick show debug">Hiển thị Thông tin Gỡ rối</label>
+        <label key="rightclick hide debug">Ẩn Thông tin Gỡ rối</label>
+<!-- Error messaging -->
+        <label key="noContent">Không có phim nào\nlúc này.
+            \n\nVui lòng kiểm tra lại.</label>
+        <label key="unavailableContent">Phim mà bạn đang cố
+            xem hiện không có.\n\nVui lòng kiểm tra lại.</label>
+        <label key="upgradeRequired">Cần cài đặt phần mềm Flash 9.0.115.0 hoặc mới hơn để có thể xem được nội dung này.\n\nHãy nhấp &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;vào đây&lt;/u&gt;&lt;/a&gt; để nâng cấp trình xem phim của bạn.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">BẠN ĐANG XEM:</label>
+        <label key="connecting">ĐANG TẢI PHIM</label>
+        <label key="please select:">vui lòng chọn:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Thông tin</label>
+        <label key="menu email">Email Phim</label>
+        <label key="menu link">Nhận Liên kết</label>
+        <label key="menu share">Chia sẻ Phim</label>
+        <label key="expand">Mở rộng</label>
+        <label key="menu embed">Nhận Mã</label>
+        <label key="menu play">Phát Phim</label>
+        <label key="menu replay">Phát lại</label>
+        <label key="menu resume">Phát tiếp</label>
+        <label key="cancel button">Hủy bỏ</label>
+        <label key="continue button">Tiếp tục</label>
+        <label key="close tooltip">Đóng</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Gửi Email cho Bạn bè</label>
+        <label key="email your email">Địa chỉ Email của bạn</label>
+        <label key="email friend email"><![CDATA[Địa chỉ email của bạn bè]]></label>
+        <label key="email message">Tin nhắn (tùy chọn)</label>
+        <label key="email send">Gửi</label>
+        <label key="email video">Gửi phim qua email</label>
+        <label key="email error">Vui lòng nhập chính xác địa chỉ email.</label>
+        <label key="email confirmation text">Email của bạn đã được gửi</label>
+<!-- Share video menu screen -->
+        <label key="share title">Chia sẻ Phim này</label>
+        <label key="share directions">Chia sẻ trực tiếp với những trang web này</label>
+        <label key="share facebook">Chia sẻ trên Facebook</label>
+        <label key="share twitter">Chia%20s%E1%BA%BB%20tr%C3%AAn%20Twitter</label>
+        <label key="share twitter message">Kiểm tra</label>
+        <label key="share link">Sao chép Liên kết</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Thêm vào trang web hoặc blog</label>
+        <label key="embed directions">Sao chép mã hoặc chọn dịch vụ blog</label>
+        <label key="embed code">Mã Nhúng</label>
+        <label key="embed copy code">Sao chép Mã</label>
+        <label key="embed copied">Đã sao chép</label>
+        <label key="blog processing">Đang xử lý ...</label>
+        <label key="blog username">Tên đăng nhập</label>
+        <label key="blog password">Mật khẩu</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Tổ hợp tên đăng nhập/mật khẩu không đúng.</label>
+        <label key="blog post select directions">Chọn blog</label>
+        <label key="blog post enter title">Đăng tải tiêu đề</label>
+        <label key="blog post enter description">Đăng tải phần mô tả (tùy chọn)</label>
+        <label key="blog post post video">Đăng tải Phim</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Lỗi xảy ra. Vui lòng thử lại.</label>
+        <label key="blog confirmation text">Nội dung đăng tải đã được gửi</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Liên kết với phim này</label>
+        <label key="link directions">Chia sẻ qua email hoặc tin nhắn nhanh</label>
+        <label key="link copy link">Sao chép Liên kết</label>
+        <label key="link copied">Đã sao chép</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Điều kiện & Điều khoản</label>
+        <label key="related videos">Các phim liên quan</label>
+        <label key="most viewed videos">Được xem nhiều nhất</label>
+        <label key="newest videos">Mới nhất</label>
+</labels>

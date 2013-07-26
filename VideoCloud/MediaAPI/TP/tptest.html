@@ -1,0 +1,195 @@
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+	
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+	<title></title> 
+</head> 
+<script>
+var BCL = {};
+function addScriptTag(id, url, callback) {
+	var scriptTag = document.createElement("script");
+   
+   // Add script object attributes
+   scriptTag.setAttribute("type", "text/javascript");
+   scriptTag.setAttribute("charset", "utf-8");
+   scriptTag.setAttribute("src", url + "&callback=" + callback);
+   scriptTag.setAttribute("id", id);
+	
+	var head = document.getElementsByTagName("head").item(0);
+	head.appendChild(scriptTag);
+	
+}
+ //Playlist ID for America Speaks! PreRecorded 1067618001001
+ //TPR Token tGbgnNfqMqBkiZBSI1YHH5UU5DpGfjxZSDcLoGZrzVXd7EVqI_hkow..
+ 
+// Find All Video - Working
+/*function getTopVideos() {
+	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_videos&token=tGbgnNfqMqBkiZBSI1YHH5UU5DpGfjxZSDcLoGZrzVXd7EVqI_hkow..&video_fields=id,name,thumbnailURL,&page_size=20", "response");
+}*/
+ 
+// Find All Playlists - Working
+/*function getTopVideos() {
+	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_all_playlists&playlist_id=1067618001001&token=tGbgnNfqMqBkiZBSI1YHH5UU5DpGfjxZSDcLoGZrzVXd7EVqI_hkow..&video_fields=id,name,thumbnailURL,&page_size=20", "response");
+}*/
+ 
+// Find By Playlist ID - Not Working
+function getTopVideos() {
+	addScriptTag("topVideos", "http://api.brightcove.com/services/library?command=find_playlist_by_id&token=tGbgnNfqMqBkiZBSI1YHH5UU5DpGfjxZSDcLoGZrzVXd7EVqI_hkow..&playlist_id=1067618001001&playlist_fields=videos,playlistType&video_fields=id,name,thumbnailURL", "response");
+}
+ 
+function response(jsonData) {
+	var resp = document.getElementById("resp");
+	for (var i=0; i<jsonData["videos"].length; i++) {
+		var title = jsonData["videos"][i];
+		var str = "";
+		str += '<div class="video" onClick="BCL.playVideo(' + title.id + ')">';
+		str += '<p  class="title">';
+		str += '<img class="thumb" src="' + title.thumbnailURL + '"/><br />';
+		str += '' + title.name + '';
+		str += '</p></div>';
+		resp.innerHTML += str;
+	}
+}
+ 
+function onTemplateLoaded(id) {
+log("loaded");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, onTemplateReady);
+			  }
+// event listener for the player being ready
+function onTemplateReady(event) {
+log("ready");
+	BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, onTemplateReady);
+	BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+	BCL.menuModule = BCL.player.getModule(APIModules.MENU);
+			}
+			
+// play video function
+BCL.playVideo = function(titleID) {
+log("in play");
+	if (BCL.menuModule.isMenuPageShowing()) {
+		BCL.menuModule.closeMenuPage();
+				}
+		BCL.videoPlayer.loadVideo(titleID);
+			}
+</script> 
+ 
+ 
+ <style> 
+ul li{
+	display: inline;
+}
+ 
+.title {
+	/*height:46px;*/
+	margin-bottom:2px;
+	padding:4px;
+	font:normal 9pt arial;
+	overflow:hidden;
+	cursor:pointer;
+	width: 120px;
+}
+ 
+.title p {
+	margin:0;
+	padding:0;
+}
+ 
+p.displayName {
+	color:#000000;
+}
+ 
+p.shortDescription {
+	font-weight:normal;
+	color:#cccccc;
+}
+#container
+{
+	width: 600px;
+	height:100px;
+}
+.video
+{
+	float: left;
+	width: 120px;
+	height: 100px;
+	padding: 10px;
+}
+</style> 
+ 
+<body onload="getTopVideos()"> 
+<div ="bcPlayer"> 
+<!-- Start of Brightcove Player --> 
+ 
+<div style="display:none"> 
+America Speaks! Player with Playlist 
+</div> 
+    <fieldset>
+      <legend>API Query</legend> <p id="query" style="width:100%;border:none"></p>
+    </fieldset><br>
+    <fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset><br>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+  		function logData(data) {
+  		var newData = prettyPrint(data);
+  		document.getElementById("videoData").appendChild(newData);
+  		}
+
+		</script>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+<script src="http://admin.brightcove.com/js/APIModules_all.js"> </script> 
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="486" />
+  <param name="height" value="412" />
+  <param name="playerID" value="956378570001" />
+  <param name="playerKey" value="AQ~~,AAAA3qiGz7k~,qUrkMdE0e5X8S4Zlc55GWafLHDtod2s7" />
+  <param name="isVid" value="true" />
+  <param name="dynamicStreaming" value="true" />
+    
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+</div> 
+<div id="container"> 
+	<div id="resp"> 
+	</div> 
+</div> 
+ 
+</body> 
+</html>

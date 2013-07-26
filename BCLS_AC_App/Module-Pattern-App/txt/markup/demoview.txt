@@ -1,0 +1,16 @@
+===== first-page-tmpl
+<ul>
+  {{listitems}}
+    <li class="desc-a">
+      {{title}}
+      <div class="arrow"></div>
+    </li>
+  {{/listitems}}
+</ul>
+
+===== second-page-tmpl
+<!-- The details_msg comes from the locale.txt file.  Any strings that are hardcoded for your app should go into the locale files -->
+<h2 class="desc-c">{{details_msg}}</h2>
+<p>
+  {{text}}
+</p>

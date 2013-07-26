@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chaptered Video Sample</title>
+	</head>
+	<body>
+		<h1>Chaptered Video</h1>
+  		<div id="BCL_player">
+				<div style="display:none"></div>
+        <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+          <object id="myExperience" class="BrightcoveExperience">
+              <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="960" />
+  <param name="height" value="445" />
+  <param name="playerID" value="1651420050001" />
+  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEh_ESE4RYJUGyoTZueLq5e" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+              <!-- params for Smart Player API -->
+              <param name="includeAPI" value="true" />
+              <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+            </object>
+
+
+        <script type="text/javascript">brightcove.createExperiences();</script>
+
+        <!-- End of Brightcove Player -->
+			</div>
+			<div id="BCL_chapters"></div>
+		  <!-- include handlebars.js templating system -->
+      <script type="text/javascript" src="http://files.brightcove.com/handlebars-1.0.0.beta.6.js"></script>
+
+    <script type="text/javascript">
+			// namespace for everything global
+			var BCL = {};
+      // handlebar template for selector
+      BCL.chaptersTemplate = "<select id='chapterSelector' onChange=\"BCL.playChapter(this.options[this.selectedIndex].value)\"><option>Go to Chapter</option>{{#cuePointData}}<option value=\"{{time}}\">{{name}}</option>{{/cuePointData}}</select>";
+
+      // event listener for the player being ready
+      BCL.onTemplateReady = function(event) {
+        console.log("BCL.onTemplateReady");
+        // get modules
+        BCL.player = brightcove.api.getExperience("myExperience");
+        BCL.videoPlayer = BCL.player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+        BCL.cuePointsModule = BCL.player.getModule(brightcove.api.modules.APIModules.CUE_POINTS);
+        // set event listener for media change
+        BCL.videoPlayer.addEventListener(brightcove.api.events.MediaEvent.CHANGE, BCL.onMediaChange);
+        // call media change handler for first video
+        BCL.onMediaChange(null);
+       }
+      BCL.onMediaChange = function(event) {
+        console.log(event);
+        // capture the video id
+        BCL.videoPlayer.getCurrentVideo( function(videoDTO) {
+            // get cue points for the video
+            BCL.getCuePoints(videoDTO.id);
+          });
+      }
+      // get cue points
+      BCL.getCuePoints = function(videoID) {
+        BCL.cuePointsModule.getCuePoints(videoID, function(cuePointData) {
+          // make an object to pass to Mark.up
+          var cuePointDataObj = {};
+          // sort the array to get cue points in order
+          cuePointData.sort( function(a,b) {
+            return a.time - b.time;
+          });
+          // remove the preroll and postroll cue points
+          cuePointData.splice(0,1);
+          cuePointData.splice((cuePointData.length -1),1);
+          console.log(cuePointData);
+          // if there are cue points left, chapter them
+          if (cuePointData.length > 0) {
+            cuePointDataObj.cuePointData = cuePointData;
+            // populate the template with data
+            var template = Handlebars.compile(BCL.chaptersTemplate);
+            var data = cuePointDataObj;
+            var results = template(data);
+            document.getElementById("BCL_chapters").innerHTML = results;
+            // BCL.videoPlayer.play();
+          }
+          else {
+            document.getElementById("BCL_chapters").innerHTML = "";
+          }
+        });
+      };
+      // play the chapter
+      BCL.playChapter = function(time) {
+        console.log("starting the chapter");
+        // call recursive function to see if video is playing
+        BCL.time = time;
+        BCL.videoPlaying();
+      }
+      // bumper complete handler
+      BCL.videoPlaying = function () {
+        // make sure the video is playing before seeking
+        BCL.videoPlayer.getIsPlaying(function(data) {
+          if (data == true) {
+            console.log(BCL.time);
+            BCL.videoPlayer.seek(BCL.time);
+          }
+          else {
+            // function recalls itself till result is true
+            BCL.videoPlayer.play();
+            BCL.videoPlaying();
+          }
+        });
+      }
+		</script>
+	</body>
+</html>

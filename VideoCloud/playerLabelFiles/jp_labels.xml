@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- This file was translated by Katsuyuki Sakai and verified by Gus, Sept 16, 2008 -->
+
+  <!-- Video player chrome controls -->
+    <label key="controls play">PLAY</label>
+    <label key="controls pause">PAUSE</label>
+    <label key="controls menu">MENU</label>
+    <label key="controls play tooltip">再生する</label>
+    <label key="controls pause tooltip">一時停止する</label>
+    <label key="controls volume tooltip">音量を設定する</label>
+    <label key="controls maximize tooltip">全画面表示モードにする</label>
+    <label key="controls minimize tooltip">全画面表示モードを終了する</label>
+    <label key="community share">email</label>
+    <label key="community link">link</label>
+    <label key="community code">code</label>
+    <label key="community socialShare">share</label>
+    <label key="community share tooltip">動画をメールで紹介する</label>
+    <label key="community link tooltip">URLをコピーしてリンクを貼る</label>
+    <label key="community code tooltip">埋め込みコードをコピーする</label>
+    <label key="community socialShare tooltip">この動画を共有</label>
+
+  <!-- Advertising -->
+    <label key="expand banner"><![CDATA[表示 >]]></label>
+    <label key="collapse banner">非表示 X</label>
+    <label key="sponsor message" xsi:nil="true"/>
+
+  <!-- Volume controls -->
+    <label key="mute tooltip">音を消す</label>
+    <label key="unmute tooltip">音を出す</label>
+
+  <!-- Right click context menu options -->
+    <label key="rightclick menu">Open Menu</label>
+    <label key="rightclick fullscreen">Go Full Screen</label>
+    <label key="rightclick exit fullscreen">Exit Full Screen</label>
+    <label key="rightclick branding">About Brightcove Platform</label>
+
+  <!-- Error messaging -->
+    <label key="noContent">只今、動画をご覧頂けません。後ほど再度ご確認下さい</label>
+    <label key="unavailableContent">選択された動画は現在閲覧できません。後ほど、ご確認下さい</label>
+    <label key="upgradeRequired">内容を表示するには、Flash 9.0.115.0 以降が必要です\n\n&lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;ここをクリックして Flash Player をアップグレードしてください&lt;/u&gt;&lt;/a&gt;</label>
+    <label key="messaging OK">OK</label>
+
+  <!-- General messaging -->
+    <label key="YOU ARE WATCHING:">閲覧中の動画:</label>
+    <label key="connecting">読み込み中</label>
+    <label key="please select:">選んでください</label>
+    <label key="live media message">ライブストリーミング</label>
+
+  <!-- General menu navigation -->
+    <label key="menu info">情報</label>
+    <label key="menu email">メールで紹介</label>
+    <label key="menu link">リンクをコピー</label>
+    <label key="menu embed">コードをコピー</label>
+    <label key="menu share">動画を共有</label>
+    <label key="menu blog">ブログへ貼る</label>
+    <label key="menu play">動画を再生する</label>
+    <label key="menu replay">もう一度観る</label>
+    <label key="menu resume">再開する</label>
+    <label key="cancel button">キャンセル</label>
+    <label key="continue button">続ける</label>
+    <label key="close tooltip">閉じる</label>
+    <label key="expand">開く</label>
+
+  <!-- Email video menu screen -->
+    <label key="email page title">動画をメールで友人に紹介する</label>
+    <label key="email your email">あなたのメールアドレス</label>
+    <label key="email friend email">友人のメールアドレス</label>
+    <label key="email message">メッセージ(オプション）</label>
+    <label key="email send">送信</label>
+    <label key="email video">動画をメールで紹介</label>
+    <label key="email error">正しいメールアドレスを入力してください</label>
+    <label key="email confirmation text">メールを送信しました</label>
+
+  <!-- Embed code menu screen -->
+    <label key="embed title">埋め込みコード</label>
+    <label key="embed directions">サイトやブログに動画を貼る</label>
+    <label key="embed code">埋め込み用コード</label>
+    <label key="embed copy code">コードをコピー</label>
+    <label key="embed copied">コピーしました</label>
+    <label key="blog processing">投稿中</label>
+    <label key="blog username">ユーザ名を入力</label>
+    <label key="blog password">パスワード入力</label>
+    <label key="blog blogger" xsi:nil="true"/>
+    <label key="blog livejournal" xsi:nil="true"/>
+    <label key="blog typepad" xsi:nil="true"/>
+    <label key="blog wordpress" xsi:nil="true"/>
+    <label key="blog error">上記の記入欄にご記入下さい</label>
+    <label key="blog post select directions">投稿するブログを選択</label>
+    <label key="blog post enter title">タイトルを入力(オプション）</label>
+    <label key="blog post enter description">説明を入力(オプション）</label>
+    <label key="blog post post video">動画を投稿</label>
+    <label key="blog post small video">動画サイズ小</label>
+    <label key="blog post large video">動画サイズ大</label>
+    <label key="blog post error">エラーが発生しました。もう一度行ってください</label>
+    <label key="blog confirmation text">ブログへ動画を投稿することに成功しました</label>
+
+  <!-- Link to video menu screen -->
+    <label key="link title">リンク</label>
+    <label key="link directions">動画へのリンクを貼る</label>
+    <label key="link copy link">リンクをコピー</label>
+    <label key="link copied">コピーしました</label>
+
+  <!-- Share video menu screen -->
+    <label key="share title">この動画を共有</label>
+    <label key="share directions">次のサイトへ直接共有</label>
+    <label key="share facebook">Facebook で共有</label>
+    <label key="share twitter">Twitter%20%E3%81%A7%E5%85%B1%E6%9C%89</label>
+    <!-- This is escaped as it is used in the Twitter URL request -->
+    <label key="share twitter message">%E3%82%B3%E3%83%AC%E8%A6%8B%E3%81%A6%E3%82%8B+</label>
+    <label key="share link">リンクをコピー</label>
+
+  <!-- Info and additional videos menu screen -->
+    <label key="related videos">関連した動画</label>
+    <label key="most viewed videos">よく見られている動画</label>
+    <label key="newest videos">新着動画</label>
+
+</labels>

@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">PREHRÁVAŤ</label>
+        <label key="controls pause">POZASTAVIŤ</label>
+        <label key="controls menu">MENU</label>
+        <label key="controls play tooltip">Prehrávať</label>
+        <label key="controls pause tooltip">Pozastaviť</label>
+        <label key="controls volume tooltip">Otvoriť ovládanie hlasitosti</label>
+        <label key="controls maximize tooltip">Na celú obrazovku</label>
+        <label key="controls minimize tooltip">Opustiť celú obrazovku</label>
+        <label key="community share">odoslať e-mailom</label>
+        <label key="community socialShare">podeliť sa</label>
+        <label key="community link">získať odkaz</label>
+        <label key="community code">získať kód</label>
+        <label key="community share tooltip">Odoslať video priateľovi e-mailom</label>
+        <label key="community socialShare tooltip">Zdieľať toto video</label>
+        <label key="community link tooltip">Získať priamu linku na toto video</label>
+        <label key="community code tooltip">Získať HTML kód na vloženie prehrávača na vlastnú stránku</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[ZVAČŠIŤ  >]]></label>
+        <label key="collapse banner">ZMENŠIŤ   X</label>
+        <label key="sponsor message">Sponzorský odkaz.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">Vypnúť zvuk</label>
+        <label key="unmute tooltip">Zapnúť zvuk</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Otvoriť menu</label>
+        <label key="rightclick fullscreen">Na celú obrazovku</label>
+        <label key="rightclick exit fullscreen">Opustiť celú obrazovku</label>
+        <label key="rightclick show debug">Zobraziť informácie na identifikáciu problémov</label>
+        <label key="rightclick hide debug">Skryť informácie na identifikáciu problémov</label>
+<!-- Error messaging -->
+        <label key="noContent">V tejto chvíli nie sú k dispozícii \nžiadne videá.
+            \n\nDostupnosť skontrolujte neskôr.</label>
+        <label key="unavailableContent">Video, ktoré sa snažíte
+            pozerať, nie je momentálne dostupné. \n\nDostupnosť skontrolujte neskôr.</label>
+        <label key="upgradeRequired">Na zobrazenie tohto obsahu potrebujete Flash 9.0.115.0 alebo neskoršiu verziu. \n\nŤuknite <a href='http://www.adobe.com/go/getflash/' target='_blank'><u>sem</u></a> a aktualizujte svoj prehrávač.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">MOMENTÁLNE POZERÁTE:</label>
+        <label key="connecting">VIDEO SA NAČÍTAVA</label>
+        <label key="please select:">Zvoľte:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Informácie</label>
+        <label key="menu email">odoslať e-mailom</label>
+        <label key="menu link">Získať odkaz</label>
+        <label key="menu share">Zdieľať video</label>
+        <label key="expand">Zväčšiť</label>
+        <label key="menu embed">Získať kód</label>
+        <label key="menu play">Prehrať video</label>
+        <label key="menu replay">Znovu prehrať</label>
+        <label key="menu resume">Pokračovať</label>
+        <label key="cancel button">Zrušiť</label>
+        <label key="continue button">Pokračovať</label>
+        <label key="close tooltip">Zatvoriť</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Odoslať video priateľovi e-mailom</label>
+        <label key="email your email">Váš e-mail</label>
+        <label key="email friend email"><![CDATA[Priateľov e-mail]]></label>
+        <label key="email message">Správa (nepovinná)</label>
+        <label key="email send">Odoslať</label>
+        <label key="email video">Odoslať video e-mailom</label>
+        <label key="email error">Napíšte správnu e-mailovú adresu.</label>
+        <label key="email confirmation text">Váš e-mail bol odoslaný.</label>
+<!-- Share video menu screen -->
+        <label key="share title">Zdieľať toto video</label>
+        <label key="share directions">Zdieľať priamo na nasledujúcich stránkach</label>
+        <label key="share facebook">Zdieľať cez Facebook</label>
+        <label key="share twitter">Zdie%C4%BEa%C5%A5%20cez%20Twitter</label>
+        <label key="share twitter message">Check+out+</label>
+        <label key="share link">Kopírovať odkaz</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Pridať na internetovú stránku alebo blog</label>
+        <label key="embed directions">Kopírovať kód alebo zvoliť blogovaciu službu</label>
+        <label key="embed code">Vložiť kód</label>
+        <label key="embed copy code">Kopírovať kód</label>
+        <label key="embed copied">Skopírované</label>
+        <label key="blog processing">Spracováva sa...</label>
+        <label key="blog username">Meno používateľa</label>
+        <label key="blog password">Heslo</label>
+        <label key="blog blogger">Blogger</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Nesprávna kombinácia mena používateľa a hesla.</label>
+        <label key="blog post select directions">Vyberte si blog</label>
+        <label key="blog post enter title">Názov príspevku</label>
+        <label key="blog post enter description">Popis príspevku (nepovinné)</label>
+        <label key="blog post post video">Odoslať video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">Vyskytla sa chyba. Zopakujte operáciu.</label>
+        <label key="blog confirmation text">Príspevok odoslaný</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Odkaz na toto video</label>
+        <label key="link directions">Zdieľať cez e-mail alebo IM</label>
+        <label key="link copy link">Kopírovať odkaz</label>
+        <label key="link copied">Skopírované</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Podmienky používania</label>
+        <label key="related videos">Podobné videá</label>
+        <label key="most viewed videos">Najviac zobrazené</label>
+        <label key="newest videos">Najnovšie</label>
+</labels>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE publisher-upload-manifest SYSTEM "publisher_upload_manifest_1.4.dtd">
+
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert" report-success="TRUE" upload-authentication="none">
+  <notify email="rcrooks@brightcove.com"/>
+<asset filename="BC_29_PublishingPlayersPlaylists.mp4"
+  refid="731140804001"
+  size="17300896"
+  hash-code="d6d3ed58660f1ddd9542c5915dfcfe12"
+  display-name="BC_29 Publishing Playlists"
+   type="VIDEO_FULL"
+         encode-to="MP4"
+         encode-multiple="TRUE"
+         h264-preserve-as-rendition="TRUE"
+         />
+  <title name="BC_29 Publishing Playlists"
+       refid="731140804001"
+       active="TRUE"
+       color="TRUE"
+       language="English"
+>
+
+  <short-description>This video shows you how to assign playlists to a player and then publish a player with playlists</short-description>
+  <related-link-url>http://support.brightcove.com/en/docs/publishing-brightcove-player</related-link-url>
+  <related-link-text>Publishing a Brightcove Player</related-link-text>
+
+  <tag>studio</tag>
+    <tag>players</tag>
+    <tag>mediamodule</tag>
+  </title>
+
+  
+</publisher-upload-manifest>

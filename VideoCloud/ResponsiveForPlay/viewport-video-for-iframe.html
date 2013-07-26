@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Viewport W & H</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=0, width=device-width, maximum-scale=1">
+<style type="text/css">
+  .BrightcoveExperience{
+    width: 100vh;
+    height: 56.25vw;
+  }
+</style>
+</head>
+
+<body>
+
+      <!-- Start of Brightcove Player -->
+      <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+      <object id="myExperience1754261437001" class="BrightcoveExperience">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="480" />
+        <param name="height" value="270" />
+        <param name="playerID" value="2292582048001" />
+        <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrez4qHriKHGD82W_z7BO_iJ" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+
+        <param name="@videoPlayer" value="1754261437001" />
+      </object>
+
+      <!--
+      This script tag will cause the Brightcove Players defined above it to be created as soon
+      as the line is read by the browser. If you wish to have the player instantiated only after
+      the rest of the HTML is processed and the page load is complete, remove the line.
+      -->
+      <script type="text/javascript">brightcove.createExperiences();</script>
+
+      <!-- End of Brightcove Player -->
+
+</body>
+</html>

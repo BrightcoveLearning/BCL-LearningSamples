@@ -1,0 +1,37 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout id="application" padding="10">
+    <VBox>
+      <HBox height="52">
+        <VBox padding="4">
+          <TitleLabel id="titleLabel" height="22" size="18" truncate="true" text="{videoPlayer.video.displayName}" tabIndex="0"/>
+          <Label id="descriptionLabel" truncate="true" text="{videoPlayer.video.shortDescription}" tabIndex="1"/>
+        </VBox>
+        <Image id="logo" width="180" tabIndex="2" accessibleName="acc image name"/>
+      </HBox>
+      <ChromelessVideoPlayer id="videoPlayer">
+        <ChromelessControls height="90%" width="100%" hAlign="center" boxType="vbox" vAlign="bottom" padding="6">
+          <HBox vAlign="bottom" hAlign="center" height="90%" width="90%">
+            <ToggleButton id="playButton" height="20" size="10" tabIndex="3" accessibleName="acc play pause name" showBack="false" iconName="play" iconScale="1.3" toggledIconName="pause" label="controls play" toggledLabel="controls pause" tooltip="controls play tooltip" toggledTooltip="controls pause tooltip" autoSize="true" lockHeight="true" iconAlignmentH="left" iconOffsetY="1" labelAlignmentH="left" labelOffsetX="23" click="{videoPlayer.play()}" toggledClick="{videoPlayer.pause()}" toggled="{videoPlayer.playing}"/>
+            <Spacer width="18"/>
+            <Playhead id="playhead" tabIndex="4" accessibleName="acc playhead name" height="12" mediaController="{videoPlayer}" enabled="{videoPlayer.video}" autohideSlider="false"/>
+            <Spacer width="10"/>
+            <HBox height="20" width="88" vAlign="top">
+              <Label id="positionLabel" tabIndex="5" vAlign="middle" hAlign="right" text="{format(videoPlayer.mediaPosition, SecondsTimecodeFormatter)}"/>
+              <Label width="8" vAlign="middle" text="/"/>
+              <Label id="durationLabel" tabIndex="6" vAlign="middle" hAlign="left" text="{format(videoPlayer.mediaDuration, SecondsTimecodeFormatter)}"/>
+            </HBox>
+            <Spacer width="5"/>
+            <ComboBox id="closedCaptionsCombo" height="20" width="78" tabIndex="7" accessibleName="acc cc menu name" label="CC off" includeInLayout="false"/>
+            <Spacer width="17"/>
+            <Button id="maximizeButton" tabIndex="8" accessibleName="acc fullscreen name" showBack="false" iconName="maximize" iconScale="1.3" tooltip="controls maximize tooltip" width="22" height="20" click="{videoPlayer.goFullScreen()}"/>
+            <Spacer width="15"/>
+            <VolumeControl id="volumeButton" tabIndex="9" accessibleName="acc volume name" showBack="false" iconName="volume" iconScale="1.3" iconOffsetY="1" mutedIconName="muted" tooltip="mute tooltip" mutedTooltip="unmute tooltip" width="22" height="20" mediaController="{videoPlayer}"/>
+            <Spacer width="6"/>
+          </HBox>
+          <Spacer height="20"/>
+        </ChromelessControls>
+      </ChromelessVideoPlayer>
+    </VBox>
+  </Layout>
+</Runtime>

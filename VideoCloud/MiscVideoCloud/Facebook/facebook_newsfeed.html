@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+	<!-- Replace the text for the content attributes in the two meta tags that follow with whatever you like -->
+	<meta name="title" content="FaceBook Embed Test" />
+	<meta name="description" content="I'm just testing embedding of a Brightcove video player in a Facebook news feed" />
+	<!-- You can modify or add to the styles as you wish -->
+	<style type="text/css">
+	<!--
+	.style1 {
+		color: #3b5998;
+		font-weight: bold;
+	}
+	.style2 {
+		color: #3b5998; 
+		text-align: right;
+	}
+	#Content {
+		width: 570px;
+		text-align: center;
+		margin-left: 50px;
+	}
+	-->
+	</style>
+</head>
+<body>
+	<div id="Content">
+	<!-- Replace the Brightcove publishing code below with the code for your own player -->
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience589233309001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="520" />
+  <param name="height" value="292" />
+  <param name="playerID" value="674388892001" />
+  <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLAS_8Ejyp47jWB_ng8LYXxSb" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="589233309001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+		   <div>
+		   <!-- facebook Like button -->
+			 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Ffiles.brightcove.com%2Ffacebook_newsfeed.html&amp;layout=button_count&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
+		   <!-- facebook button end -->
+</div></body>
+</html>

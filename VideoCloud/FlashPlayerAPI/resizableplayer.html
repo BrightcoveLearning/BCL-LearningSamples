@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<script type="text/javascript">
+			// Store reference to the player
+			var player;
+			// Store reference to the modules in the player
+			var videoPlayer;
+			var experience;
+			// This method is called when the player loads with the ID of the player
+			// We can use that ID to get a reference to the player, and then the modules
+			// The name of this method can vary but should match the value you specified
+			// in the player publishing code for “templateLoadHandler”.
+			function onTemplateLoad(experienceID) {
+				// Get a reference to the player itself
+				player = brightcove.api.getExperience(experienceID);
+				// Get a reference to individual modules in the player
+				experience = player.getModule(brightcove.api.modules.APIModules.EXPERIENCE);
+				videoPlayer = player.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+				experience.addEventListener(brightcove.api.events.ExperienceEvent.TEMPLATE_READY, onTemplateReady);
+			}
+
+			function onTemplateReady(evt) {
+				console.log("Template ready");
+			}
+		</script>
+		<title>Dynamic Resizing Player</title>
+		<style type="text/css">
+			#containingBlock {
+				width: 100%;
+			}
+			.videoWrapper {
+				position: relative;
+				padding-bottom: 56.25%;
+				/*padding-bottom: 56.25%;  the ratio: 9/16 = 0.5625 */
+				padding-top: 0px;      /* the height of the chrome - we use padding vs. height to avoid issues with the box model */
+				height: 0;
+			}
+			/* FF needs "embed" here */
+			.videoWrapper object, .videoWrapper embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+	</head>
+	<body style="margin:0; padding:0; background-color:#231f20;" bgcolor="#231f20">
+		<table width="630" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="298" align="left" valign="top"  style="padding-top:30px;"><a href="http://www.brightcove.com/en/"><img src="http://img.brightcove.com/email/vsf-email-logo.png" width="193" height="52" alt="Brightcove Logo" border="0" /></a></td>
+				<td width="1" align="right" valign="top" style="padding:0px 0 0 0;"></td>
+			</tr>
+		</table>
+		<div id="containingBlock">
+			<div class="videoWrapper">
+				<!--<object width="480" height="295">
+				<param name="movie" value="http://www.youtube.com/v/mDRYnaajUcY&hl=en&fs=1&showinfo=0">
+				</param>
+				<param name="allowFullScreen" value="true">
+				</param>
+				<param name="allowscriptaccess" value="always">
+				</param>
+				<embed src="http://www.youtube.com/v/mDRYnaajUcY&hl=en&fs=1&showinfo=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="480" height="295"></embed>
+				</object>-->
+
+				<!-- Start of Brightcove Player -->
+
+				<div style="display:none">
+
+				</div>
+
+				<!--
+				By use of this code snippet, I agree to the Brightcove Publisher T and C
+				found at https://accounts.brightcove.com/en/terms-and-conditions/.
+				-->
+
+				<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+				<object id="myExperience1558502412001" class="BrightcoveExperience">
+					<param name="bgcolor" value="#FFFFFF" />
+					<param name="width" value="480" />
+					<param name="height" value="318" />
+					<param name="playerID" value="407432044001" />
+					<param name="playerKey" value="AQ~~,AAAAB-1oZYk~,gUFOreLH78fCdRRSaiXSMNgBfuVbeDQ8" />
+					<param name="isVid" value="true" />
+					<param name="isUI" value="true" />
+					<param name="dynamicStreaming" value="true" />
+
+					<param name="@videoPlayer" value="1558502412001" />
+				</object>
+
+				<!--
+				This script tag will cause the Brightcove Players defined above it to be created as soon
+				as the line is read by the browser. If you wish to have the player instantiated only after
+				the rest of the HTML is processed and the page load is complete, remove the line.
+				-->
+				<script type="text/javascript">
+					brightcove.createExperiences();
+				</script>
+
+				<!-- End of Brightcove Player -->
+			</div>
+		</div>
+
+		<table width="630" cellpadding="0" cellspacing="0">
+			<tr>
+				<td colspan="2" valign="top" style="padding:25px 20px 30px;"><font style="font-family:arial, helvetica, sans-serif; font-size:11px; color:#7b7b7b; line-height:20px;"> Brightcove Inc., a leading global provider of cloud content services, provides a family of products used to publish and distribute the world's professional digital media. The company's products include Brightcove Video Cloud, the market-leading online video platform, and Brightcove App Cloud, the pioneering content app platform. Together, more than 3,800 customers in 50 countries rely on Brightcove's cloud content services to build and operate exceptional media experiences across PCs, smartphones, tablets and connected TVs.
+					<br />
+					<br />
+					&copy; 2012 Brightcove, Inc.&nbsp;&nbsp;&nbsp;One Cambridge Center, Cambridge, MA 02142, USA
+					<br />
+				</font></td>
+			</tr>
+		</table>
+
+	</body>
+</html>

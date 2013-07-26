@@ -1,0 +1,15 @@
+<html>
+	<head>
+		<title>File Upload Form</title>
+	</head>
+	<body>
+		<h2>This form allows you to upload a Video to the Brightcove Video Cloud.</h2>
+		<form action="BCLuploadVideo.php" method="post" enctype="multipart/form-data"><br>
+			<p>Video Name: <input type="text" name="bcVideoName" size="50" /></p>
+			<p>Video Description:<br/><textarea name="bcShortDescription" rows="5" cols="50"></textarea></p>
+			<p>Type (or select) Filename: <input type="file" name="videoFile"></p>
+			<p><input type="submit" value="Upload File"></p>
+		</form>
+		
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<p>&nbsp;Here's what's new in Brightcove Knowledge:</p>
+<p><strong>Tip of the week:</strong> Want to allow your viewers to download a copy of the current video? Here's a way to automate the generation of a download link, provided that you have a URLAccess Read Token for the Media API. The account delivery method must also be progressive download, or have Universal Delivery Service enabled. I'm going to use the find_video_by_id method (borrowing the JavaScript Media API wrapper from <a href="http://opensource.brightcove.com/">opensource.brightcove.com</a> to simplify the code). This is just the scripting part, but you can view the complete sample page at <a href="http://files.brightcove.com/BCLAutomatedVideoDownload.html">http://files.brightcove.com/BCLAutomatedVideoDownload.html</a>.</p>
+<pre>		&lt;script language=&quot;JavaScript&quot; type=&quot;text/javascript&quot; src=&quot;http://admin.brightcove.com/js/BrightcoveExperiences.js&quot;&gt;&lt;/script&gt;<br />		&lt;script type=&quot;text/javascript&quot; src=&quot;http://admin.brightcove.com/js/APIModules_all.js&quot;&gt; &lt;/script&gt;<br />		&lt;!-- add MAPI wrapper from http://opensource.brightcove.com/ --&gt;<br />		&lt;script type=&quot;text/javascript&quot; src=&quot;http://files.brightcove.com/bc-mapi.js&quot;&gt;&lt;/script&gt;<br />		&lt;!-- add logging script for debugging --&gt;<br />		&lt;script type=&quot;text/javascript&quot; src=&quot;http://files.brightcove.com/BCLlogging.js&quot;&gt;&lt;/script&gt;<br />		&lt;!-- custom script --&gt;<br />		&lt;script type=&quot;text/javascript&quot;&gt;<br />		/* vars */<br />		var BCLplayer;<br />		var BCLexperienceModule;<br />		var BCLvideoPlayer;<br />		var BCLcurrentVideo;<br />		/* initial event listeners */<br />		function onPlayerError(event) {<br />		   log(&quot;info: &quot; + event.info);<br />		}<br />		function onPlayerLoaded(id) {<br />		  newLog();<br />		  log(&quot;EVENT: onPlayerLoaded&quot;);<br />		  BCLplayer = brightcove.getExperience(id);<br />		  BCLexperienceModule = BCLplayer.getModule(APIModules.EXPERIENCE);<br />		}<br />		function onPlayerReady(event) {<br />		  log(&quot;EVENT: onPlayerReady&quot;);<br />		  // get a reference to the video player module<br />		  BCLvideoPlayer = BCLplayer.getModule(APIModules.VIDEO_PLAYER);<br />		  // add a listener for media change events<br />		  BCLvideoPlayer.addEventListener(BCMediaEvent.BEGIN, onMediaBegin);<br />		}<br />		// listener for media change events<br />		function onMediaBegin(event) {<br />		log(&quot;EVENT: MediaBegin&quot;);<br />       // get the ID of the current video as it starts playing<br />		BCLcurrentVideoID = BCLvideoPlayer.getCurrentVideo().id;<br />		// pass the video ID to getDownloadLink()<br />		getDownloadLink(BCLcurrentVideoID);<br />		}<br />		function getDownloadLink(id) {<br />		// object for search parameters<br />		var searchParams = new Object();<br />		// set Media API token - MUST BE URL ACCESS READ token!!<br />		BCMAPI.token = &quot;jskS1rEtQHy9exQKoc14IcMq8v5x2gCP6yaB7d0hraRtO__6HUuxMg..&quot;;<br />		// set callback for Media API call<br />		BCMAPI.callback = &quot;onSearchResult&quot;;<br />		// set command<br />		BCMAPI.command = &quot;find_video_by_id&quot;;<br />		// set search params<br />		searchParams.video_id = id;<br />		// need this if the delivery for the account is streaming, and Universal Delivery Service must be enabled!<br />		searchParams.media_delivery = &quot;HTTP&quot;;<br />		// just get the field we need for better performance<br />		searchParams.video_fields = &quot;FLVURL&quot;;<br />		// execute the search<br />		BCMAPI.find(BCMAPI.command,searchParams);<br />		}<br />		// handler for the media API search<br />		function onSearchResult(jsondata) {<br />		log(jsondata.FLVURL);<br />		// create the link and write it into the HTML<br />		var str = &quot;&quot;;<br />		str += &quot;&lt;a href='&quot;+jsondata.FLVURL+&quot;'&gt;Download the Video&lt;/a&gt;&quot;;<br />		document.getElementById(&quot;downloadLink&quot;).innerHTML = str;<br />		}<br />		&lt;/script&gt;
+</pre>
+<ul>
+  <li>
+    <p>New or updated Support Documents:&nbsp;</p>
+    <ul>
+      <li><a href="http://support.brightcove.com/en/docs/media-sharing-media-api">Media Sharing with the Media API</a> (you can now un-share media programmatically using the Media API)</li>
+      <li><a href="http://support.brightcove.com/en/docs/player-label-reference">Player Label Reference</a> (a reference to help you create label files to localize player controls)  </li>
+    </ul>
+  </li>
+</ul>
+<p>Free online training classe schedule: </p>
+<p>[view:www_events=block_3]</p>
+<p>&nbsp;</p>
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>

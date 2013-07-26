@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Brightcove Learning Sample</title>
+    <style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #835004}
+			legend {
+				color: #CF0050;
+			}
+		</style>
+		<!-- the script below is just included for debugging -->
+		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js -- the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		}
+  		function logData(data) {
+  		var newData = prettyPrint(data);
+  		document.getElementById("videoData").appendChild(newData);
+  		}
+
+		</script>
+		<!-- including Player API -->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="http://img.brightcove.com/bc-training-logo.png"  alt="Brightcove Training" />
+    </header>
+    <section>
+      <h1>Brightcove Learning Sample: Sponsorship</h1>
+      <p>This is a sample of implementing sponsorship using the Video Cloud Player API. The Player API is used to get image URLs from the video data and load them into the player in Image components that are pre-defined - here the standard Compact Tabbed Navigation Player is used. The objective here is to be able to display information about different sponsors for specific videos.</p>
+      <p>You can see the results in the player below - the first three videos in the playlist have image URLs provided in the Long Description for the video. The image URLs are specified in a JSON string to make it easy to tell which is which:</p>
+      <pre>
+      {"logo":"http://files.brightcove.com/BCLsponsorlogo1.png",
+      "bottomImage":"http://files.brightcove.com/BCLsponsorbanner1.png"}
+      </pre>
+      <p>The use of JSON is not necessary - I could have just separated the URLs by a comma, being careful to put them in the correct order, and then used parsing or the split() method for strings in JavaScript to extract the separate URLs. The JSON string allows me to just use the JSON.parse() method to turn the string into an object.</p>
+      <p>It is useful to look at the BEML code for the player that you're working with. You can download the BEML code for all the standard Brightcove players here: <a href="http://files.brightcove.com/templates.zip">http://files.brightcove.com/templates.zip</a>. In the case of the Compact Tabbed Navigation Player, what's important here is that the Image components for the images above and below the player have the ids "logo" and "bottomImage." This makes it easy to get references to them in the JavaScript code. I could easily store an additional URL here to add a click-through URL for the images as well.</p>
+      <p>Use View Source to see the complete code for this page.</p>
+      <p>This sample is discussed in a blog entry on Sponsorship and Promotions. There are also three related samples that use cue points to display sponsor messages in more prominent ways.</p>
+      <ul>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-ChangeImagesOnCuePoints.html">Displaying sponsor banners at cue points</a></li>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-ReplacePlaylistOnCuePoints.html">Replacing a playlist with sponsor messages at cue points</a></li>
+      	<li><a href="http://files.brightcove.com/BCLSponsorSample-HideVideoOnCuePoints.html">Pausing a video to display sponsor messages at cue points</a></li>
+      </ul>
+      <!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="798" />
+  <param name="height" value="603" />
+  <param name="playerID" value="1031989184001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXajBzVQ-3nIlGGc3z2dSv8Bu" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+</object>
+
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+		<fieldset>
+			<legend>Video Data</legend>
+			<div id="videoData"></div>
+		</fieldset>
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset
+    </section>
+    <script type="text/javascript">
+      /* script here */
+			// namespace for everything global
+			var BCL = {};
+			// initial setup in the special onTemplateLoaded() function
+			function onTemplateLoaded(id) {
+			  log("EVENT: TEMPLATE_LOADED");
+			  BCL.player = brightcove.getExperience(id);
+			  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+			  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			}
+			// event listener for the player being ready
+			BCL.onTemplateReady = function(event) {
+			  log("BCL.onTemplateReady");
+			  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+			  // get a reference to the logo image in the player
+			  BCL.logoImage = BCL.experienceModule.getElementByID("logo");
+			  // get a reference to the bottom image in the player
+			  BCL.bottomImage = BCL.experienceModule.getElementByID("bottomImage");
+			  // get a reference to the video player module
+			  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+			  // add listener for media change events
+			  BCL.videoPlayer.addEventListener(BCMediaEvent.CHANGE, BCL.onMediaChange);
+			  /* since there's no media change event for the loading of the 
+			  initial video, fire the media change handler manually */
+				BCL.onMediaChange(null);
+			}
+
+			// handler for media change events
+			BCL.onMediaChange = function(event) {
+			  log("EVENT: Media Change");
+			  /*
+				get the long description for the current video and
+			  parse it to create an object -- note that this
+			  works because I stored a JSON
+			  string in the longDescription field for the videos -- the
+			  JSON string represents an object with two properties:
+			  logo : URL for a logo image
+			  bottomImage: URL for a banner image
+			  if I had just stored the URLs as a list, 
+			  I'd need to parse that to extract
+			  the URLs to use for the source of the two player images
+				*/
+			  var images = JSON.parse(BCL.videoPlayer.getCurrentVideo().longDescription);
+			  logData("Images for this video:");
+			  logData(images);
+			  /*
+				Set the source of the two images in the player to
+				images stored for the video in the long description field. 
+				*/
+			  BCL.logoImage.setSource(images.logo);
+			  BCL.bottomImage.setSource(images.bottomImage);
+			}
+
+    </script>
+
+  </body>
+
+</html> 

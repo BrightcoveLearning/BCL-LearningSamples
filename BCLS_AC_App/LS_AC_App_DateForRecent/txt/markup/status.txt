@@ -1,0 +1,7 @@
+===== table-rows-tmpl
+{{services}}
+  <tr>
+    <td width="150">{{title}}</td>
+    <td id="{{dataSource}}"><a href="#" rel="tooltip"><div class="icon"></div></a></td>
+  </tr>
+{{/services}}

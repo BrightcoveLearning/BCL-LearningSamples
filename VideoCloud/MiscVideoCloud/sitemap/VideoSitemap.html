@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title></title>
+		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
+		<script type="text/javascript">
+		document.addEventListener("load",BCLgetData,true);
+		var str = "";
+		var title;
+		function BCLgetData() {
+		  document.removeEventListener("load",BCLgetData,true);
+		  BCLgetCollection("onDataResult","instudiooverview:true");
+		  BCLgetCollection("onDataResult","inaccountsettings:true");
+		  BCLgetCollection("onDataResult","inmediamanagement:true");
+		  BCLgetCollection("onDataResult","inplayers:true");
+		  BCLgetCollection("onDataResult","inanalytics:true");
+		  BCLgetCollection("onDataResult","inadvertising:true");
+		  BCLgetCollection("onDataResult","indevloper:true");
+		}    
+	
+		function BCLgetCollection(callback,params) {
+			BCMAPI.token = "S0la8DZ0Bz4T8EI_doFa2K1acfXKR0pQhZalkWJqM0hqlmI5cLhylA..";
+			var searchParams = new Object();
+			BCMAPI.callback = callback;
+			searchParams.all = params;
+			searchParams.sort_by = "DISPLAY_NAME";
+		//	searchParams.video_fields = "id,name";
+			BCMAPI.search(searchParams);
+		}
+		function onDataResult(jsonData) {
+			for (var i = 0; i<jsonData["items"].length; i++) {
+				title = jsonData.items[i];
+				str += '&lt;url&gt;';
+			    str += '&lt;loc&gt;http://support.brightcove.com/en/training-videos&lt;/loc&gt;';
+			     str += '&lt;video:video&gt;';
+			       str += '&lt;video:thumbnail_loc&gt;'+title.thumbnailURL+'&lt;/video:thumbnail_loc&gt;'; 
+			       str += '&lt;video:title&gt;'+title.name+'&lt;/video:title&gt;';
+			       str += '&lt;video:description&gt;'+title.shortDescription+'&lt;/video:description&gt;';
+			       str += '&lt;video:content_loc&gt;http://support.brightcove.com/en/training-videos/'+title.id+'&lt;/video:content_loc&gt;';
+			       str += '&lt;video:duration&gt;'+title.length+'&lt;/video:duration&gt;';
+			       for (var j=0; j<title.tags.length; j++) {
+				       str += '&lt;video:tag&gt;'+title.tags[j]+'&lt;/video:tag&gt;';
+			       }
+			       str += '&lt;video:category&gt;Brightcove Training&lt;/video:category&gt;';
+			       str += '&lt;video:gallery_loc title="Brightcove Training Videos"&gt;http://support.brightcove.com/en/training-videos&lt;/video:gallery_loc&gt;';
+			     str += '&lt;/video:video&gt;';
+			   str += '&lt;/url&gt;';
+			}
+			document.getElementById("siteMap").innerHTML += str;
+		}
+		
+	
+		</script>
+
+	</head>
+	<body onload="BCLgetData()">
+	<div id="siteMap"></div>
+	</body>
+</html>

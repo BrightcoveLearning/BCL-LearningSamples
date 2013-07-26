@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Video JS Quick Start</title>
+
+	<!-- Added following 2 lines using Video.js-->
+	<link href="video-js/video-js.css" rel="stylesheet">
+	<script src="video-jss/video.js"></script>
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+	<video id="example_video_1"
+		class="video-js vjs-default-skin"
+	  controls
+	  preload="auto"
+	  width="640" height="264"
+	  poster="http://video-js.zencoder.com/oceans-clip.png">
+	 <source src="http://brightcove.vo.llnwd.net/e1/uds/pd/1481353044001/1481353044001_1896652236001_Feeding-the-Giraffes.mp4" type='video/mp4' />
+	</video>
+
+	<div id="display"></div>
+
+<!-- <iframe style="width: 100%; height: 500px" src="http://jsfiddle.net/swinginsam/NWbUG/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe> -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+			var myPlayer = _V_("example_video_1");
+
+			myPlayer.ready(function(){
+				myPlayer.play();
+				//myPlayer.currentTime(10);
+				myPlayer.addEvent("durationchange", displayDuration);
+			});
+
+			function displayDuration(){
+				durationText="Duration "+ myPlayer.duration();
+				$("#display").html(durationText);
+			}
+
+	 });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light"/>
+  <Layout width="800" height="450">
+    <ChromelessVideoPlayer id="videoPlayer" video="{relatedList.selectedItem}"/>
+    <TileList id="relatedList" y="30" height="390" columnWidth="198" rowHeight="100" columnGutter="0" rowGutter="0" automaticAdvance="false" data="{videoPlayer.relatedMedia}" visible="false">
+    <ListItem boxType="vbox" padding="4">
+    	<ThumbnailButton source="{currentItem.thumbnailURL}" tooltip="{currentItem.shortDescription}"/>
+    	<Label text="{currentItem}" height="12" size="10"/>
+    </ListItem>
+    </TileList>
+  </Layout>
+</Runtime>

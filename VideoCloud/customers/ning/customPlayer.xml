@@ -1,0 +1,51 @@
+<Runtime>
+  <Theme name="Deluxe" style="Light">
+    <Style id="videoPlayer">
+      <![CDATA[
+      .video {
+        background: #02B0EF;
+      }
+      .playerChrome {
+        gradientTop: #F3C141;
+        gradientMiddle: #F3C141;
+        gradientBottom: #F3C141;
+        border: #F3C141;
+      }
+      .buttons {
+        text: #000000;
+        rolloverText: #666666;
+        disabledText: #CCCCCC;
+        icons: #000000;
+        rolloverIcons: #666666;
+        disabledIcons: #CCCCCC;
+      }
+      .menuButton {
+        borderGradientTop: #666666;
+        borderGradientBottom: #000000;
+      }
+      .time {
+        text: #000000;
+      }
+      .playhead {
+        icon: #000000;
+        gradientBottom: #666666;
+        gradientTop: #999999;
+      }
+      .playheadWell {
+        unloadedGradientTop: #02B0EF;
+        unloadedGradientBottom: #000000;
+        bufferedGradientTop: #CCCCCC;
+        bufferedGradientBottom: #999999;
+        watchedGradientTop: #999999;
+        watchedGradientBottom: #666666;
+      }
+      .volumeControl {
+        face: #000000;
+      }
+      ]]>
+    </Style>
+  </Theme>
+  <Layout width="352" height="324">
+      <VideoPlayer id="videoPlayer"/>
+  </Layout>
+</Runtime>

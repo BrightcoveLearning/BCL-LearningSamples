@@ -1,0 +1,104 @@
+<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">נגינה</label>
+        <label key="controls pause">השהייה</label>
+        <label key="controls menu">תפריט</label>
+        <label key="controls play tooltip">לחץ לנגינה</label>
+        <label key="controls pause tooltip">לחץ להשהייה</label>
+        <label key="controls volume tooltip">פתח בקרת עוצמת קול</label>
+        <label key="controls maximize tooltip">עבור לתצוגה במלא המסך</label>
+        <label key="controls minimize tooltip">צא מתצוגה במלא המסך</label>
+        <label key="community share">דוא"ל</label>
+        <label key="community socialShare">שיתוף</label>
+        <label key="community link">קבל קישור</label>
+        <label key="community code">קבל קוד</label>
+        <label key="community share tooltip">שלח וידאו בדוא"ל לחבר</label>
+        <label key="community socialShare tooltip">שתף וידאו זה</label>
+        <label key="community link tooltip">קבל קישור ישיר לווידאו</label>
+        <label key="community code tooltip">קבל קוד לשיבוץ הנגן</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[הרחב  >]]></label>
+        <label key="collapse banner">צמצם X</label>
+        <label key="sponsor message">.הודעת חסות</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">השתק</label>
+        <label key="unmute tooltip">בטל השתקה</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">פתח תפריט</label>
+        <label key="rightclick fullscreen">מסך מלא</label>
+        <label key="rightclick exit fullscreen">יציאה ממסך מלא</label>
+        <label key="rightclick show debug">הצג מידע לפתרון בעיות</label>
+        <label key="rightclick hide debug">הסתר מידע לפתרון בעיות</label>
+<!-- Error messaging -->
+        <label key="noContent">כעת.\nאין וידאו זמין
+            .בדוק שוב מאוחר יותר\n\n</label>
+        <label key="unavailableContent">הווידאו שבו אתה מנסה
+            .בדוק שוב עוד מעט\n\n.לצפות אינו זמין כעת</label>
+        <label key="upgradeRequired">דרוש Flash 9.0.115.0 או מתקדם יותר לצפייה בתוכן זה.\n\nלחץ &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;כאן&lt;/u&gt;&lt;/a&gt; לשדרוג הנגן שלך.</label>
+        <label key="messaging OK">אישור</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">:אתה צופה ב</label>
+        <label key="connecting">טוען וידאו</label>
+        <label key="please select:">:אנא בחר</label>
+<!-- General menu navigation -->
+        <label key="menu info">מידע</label>
+        <label key="menu email">שלח וידאו בדוא"ל</label>
+        <label key="menu link">קבל קישור</label>
+        <label key="menu share">שתף וידאו</label>
+        <label key="expand">הרחב</label>
+        <label key="menu embed">קבל קוד</label>
+        <label key="menu play">נגן וידאו</label>
+        <label key="menu replay">נגן שוב</label>
+        <label key="menu resume">המשך</label>
+        <label key="cancel button">ביטול</label>
+        <label key="continue button">המשך</label>
+        <label key="close tooltip">סגור</label>
+<!-- Email video menu screen -->
+        <label key="email page title">שלח בדוא"ל לחבר</label>
+        <label key="email your email">הדוא"ל שלך</label>
+        <label key="email friend email"><![CDATA[דוא"ל של חבר]]></label>
+        <label key="email message">(הודעה (אופציונלי</label>
+        <label key="email send">שלח</label>
+        <label key="email video">שלח וידאו בדוא"ל</label>
+        <label key="email error">.אנא הזן כתובות דוא"ל נכונות</label>
+        <label key="email confirmation text">הדוא"ל נשלח</label>
+<!-- Share video menu screen -->
+        <label key="share title">שתף וידאו זה</label>
+        <label key="share directions">שתף ישירות לאתרים אלה</label>
+        <label key="share facebook">שתף בפייסבוק</label>
+        <label key="share twitter">%D7%A9%D7%AA%D7%A3%20%D7%91%D7%98%D7%95%D7%95%D7%99%D7%98%D7%A8</label>
+        <label key="share twitter message">Check+out+</label>
+        <label key="share link">העתק קישור</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">הוסף לאתר אינטרנט או לבלוג</label>
+        <label key="embed directions">העתק קוד או בחר שירות בלוג</label>
+        <label key="embed code">שבץ קוד</label>
+        <label key="embed copy code">העתק קוד</label>
+        <label key="embed copied">הועתק</label>
+        <label key="blog processing">...מעבד</label>
+        <label key="blog username">שם משתמש</label>
+        <label key="blog password">סיסמה</label>
+        <label key="blog blogger">בלוגר</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">.שילוב שגוי של שם/סיסמה</label>
+        <label key="blog post select directions">בחר בלוג</label>
+        <label key="blog post enter title">כותרת מאמר</label>
+        <label key="blog post enter description">(תיאור מאמר (אופציונלי</label>
+        <label key="blog post post video">פרסם וידאו</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">אירעה שגיאה. נסה שוב.</label>
+        <label key="blog confirmation text">המאמר נשלח</label>
+<!-- Link to video menu screen -->
+        <label key="link title">קישור לווידאו זה</label>
+        <label key="link directions">שתף בדוא"ל או בצ'אט</label>
+        <label key="link copy link">העתק קישור</label>
+        <label key="link copied">הועתק</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">תנאים והתניות</label>
+        <label key="related videos">וידאו קשור</label>
+        <label key="most viewed videos">נצפה ביותר</label>
+        <label key="newest videos">הכי חדש</label>
+</labels>

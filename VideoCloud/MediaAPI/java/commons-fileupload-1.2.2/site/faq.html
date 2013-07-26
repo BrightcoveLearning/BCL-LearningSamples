@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>FileUpload - FileUpload FAQ</title>
+    <style type="text/css" media="all">
+      @import url("./css/maven-base.css");
+      @import url("./css/maven-theme.css");
+      @import url("./css/site.css");
+    </style>
+    <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
+          </head>
+  <body class="composite">
+    <div id="banner">
+                  <a href="../" id="bannerLeft">
+    
+                                            <img src="../images/logo.png" alt="" />
+    
+            </a>
+                        <a href="index.html" id="bannerRight">
+    
+                                            <img src="images/logo.png" alt="" />
+    
+            </a>
+            <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="breadcrumbs">
+          
+  
+
+  
+    
+            
+  
+    
+            <div class="xleft">
+        Last Published: 14 July 2010
+                  &nbsp;| Version: 1.2.2
+                      </div>
+            <div class="xright">            <a href="http://www.apachecon.com/" class="externalLink">ApacheCon</a>
+            |
+                <a href="http://www.apache.org" class="externalLink">Apache</a>
+            |
+                <a href="../">Commons</a>
+            
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+    <div id="leftColumn">
+      <div id="navcolumn">
+           
+  
+
+  
+    
+            
+  
+    
+                   <h5>Commons FileUpload</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="index.html">Overview</a>
+          </li>
+              
+    <li class="none">
+                    <a href="using.html">User guide</a>
+          </li>
+              
+    <li class="none">
+                    <a href="streaming.html">Streaming API</a>
+          </li>
+              
+    <li class="none">
+              <strong>FAQ</strong>
+        </li>
+              
+    <li class="none">
+                    <a href="apidocs/index.html">Javadoc</a>
+          </li>
+              
+    <li class="none">
+                    <a href="mail-lists.html">Mailing lists</a>
+          </li>
+              
+    <li class="none">
+                    <a href="issue-tracking.html">Issue Tracking</a>
+          </li>
+              
+    <li class="none">
+                    <a href="team-list.html">Team</a>
+          </li>
+              
+    <li class="none">
+                    <a href="tasks.html">Tasks</a>
+          </li>
+              
+    <li class="none">
+                    <a href="source-repository.html">SVN repository</a>
+          </li>
+          </ul>
+              <h5>Project Documentation</h5>
+            <ul>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-info.html">Project Information</a>
+                </li>
+              
+                
+              
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+            
+      
+              
+        <li class="collapsed">
+                    <a href="project-reports.html">Project Reports</a>
+                </li>
+          </ul>
+              <h5>Commons</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="../">Home</a>
+          </li>
+              
+                
+              
+      
+              
+        <li class="collapsed">
+                    <a href="../components.html">Components</a>
+                </li>
+              
+                
+              
+      
+              
+        <li class="collapsed">
+                    <a href="../sandbox/index.html">Sandbox</a>
+                </li>
+              
+                
+              
+      
+              
+        <li class="collapsed">
+                    <a href="../dormant/index.html">Dormant</a>
+                </li>
+              
+    <li class="none">
+                    <a href="../volunteering.html">Volunteering</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../patches.html">Contributing Patches</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../building.html">Building Components</a>
+          </li>
+              
+    <li class="none">
+                    <a href="../releases/index.html">Releasing Components</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://wiki.apache.org/commons/FrontPage" class="externalLink">Wiki</a>
+          </li>
+          </ul>
+              <h5>ASF</h5>
+            <ul>
+              
+    <li class="none">
+                    <a href="http://www.apache.org/foundation/sponsorship.html" class="externalLink">Sponsorship</a>
+          </li>
+              
+    <li class="none">
+                    <a href="http://www.apache.org/foundation/thanks.html" class="externalLink">Thanks</a>
+          </li>
+          </ul>
+                                           <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
+            <img alt="Built by Maven" src="./images/logos/maven-feather.png"></img>
+          </a>
+                       
+  
+
+  
+    
+            
+  
+    
+        </div>
+    </div>
+    <div id="bodyColumn">
+      <div id="contentBox">
+        <div class="section"><h2><a name="top">FileUpload FAQ</a></h2>
+<p><b>General</b></p>
+<ol type="1"><li><a href="#empty-parse">
+        Why is parseRequest() returning no items?
+      </a></li>
+<li><a href="#read-timeout">
+        Why am I getting "Read timed out" exceptions while parsing?
+      </a></li>
+<li><a href="#class-not-found">
+        Why is NoClassDefFoundError being thrown?
+      </a></li>
+<li><a href="#whole-path-from-IE">
+        Why does FileItem.getName() return the whole path, and not just the file name?
+      </a></li>
+</ol>
+<p><b>FileUpload and Struts 1</b></p>
+<ol type="1"><li><a href="#parse-in-action-fails">
+        I'm using FileUpload in an Action, but it's not working. Why?
+      </a></li>
+<li><a href="#howto-parse-in-action">
+        But I need to parse the request myself. How can I do that?
+      </a></li>
+</ol>
+</div>
+<div class="section"><h2>General</h2>
+<dl><dt><a name="empty-parse">
+        Why is parseRequest() returning no items?
+      </a></dt>
+<dd>
+        This most commonly happens when the request has already been parsed, or
+        processed in some other way. Since the input stream has aleady been
+        consumed by that earlier process, it is no longer available for parsing
+        by Commons FileUpload.
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="read-timeout">
+        Why am I getting "Read timed out" exceptions while parsing?
+      </a></dt>
+<dd>
+        The most common cause of these exceptions is when FileUpload is being
+        used on a site that is using the Tomcat ISAPI redirector. There was a
+        bug in earlier versions of that component that caused problems with
+        multipart requests. The bug was fixed some time ago, so you probably
+        just need to pick up a newer version. See the
+        <a href="http://issues.apache.org/bugzilla/show_bug.cgi?id=15278">Tomcat bug report</a>
+        for full details.
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="class-not-found">
+        Why is NoClassDefFoundError being thrown?
+      </a></dt>
+<dd>
+        <p>There are two common causes for this error.</p>
+        
+        <p>Firstly, it might simply mean that you do not have the Commons IO 
+        jar in your classpath. FileUpload depends on IO (see 
+        <a href="dependencies.html">dependencies</a>) - you can tell if 
+        this is the case if the missing class is within the 
+        <code>org.apache.commons.io</code> package.</p>
+
+        <p>Secondly this happens when attempting to rely on a shared copy of
+        the Commons FileUpload jar file provided by your web container. The
+        solution is to include the FileUpload jar file as part of your own
+        web application, instead of relying on the container. The same may 
+        hold for FileUpload's IO dependency.</p>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="whole-path-from-IE">
+        Why does FileItem.getName() return the whole path, and not just the file name?
+      </a></dt>
+<dd>
+        Internet Explorer provides the entire path to the uploaded file and not
+        just the base file name. Since FileUpload provides exactly what was
+        supplied by the client (browser), you may want to remove this path
+        information in your application. You can do that using the following
+        method from Commons IO (which you already have, since it is used by
+        FileUpload).
+        <pre>
+    String fileName = item.getName();
+    if (fileName != null) {
+        filename = FilenameUtils.getName(filename);
+    }
+       </pre>
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table></dd>
+</dl>
+</div>
+<div class="section"><h2>FileUpload and Struts 1</h2>
+<dl><dt><a name="parse-in-action-fails">
+        I'm using FileUpload in an Action, but it's not working. Why?
+      </a></dt>
+<dd>
+        Struts 1 recognises multipart requests, and parses them automatically,
+        presenting the request parameters to your code in the same manner as
+        if they were regular request parameters. Since Struts has already
+        processed the request, and made it available in your form bean, the
+        input stream is no longer available for parsing, so attempting to do
+        so with FileUpload will fail.
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table><hr />
+</dd>
+<dt><a name="howto-parse-in-action">
+        But I need to parse the request myself. How can I do that?
+      </a></dt>
+<dd>
+        Struts 1 parses multipart a request as a part of the process of populating
+        your form bean from that request. If, for some reason, you need to have
+        full control over the multipart parsing, you can do so by configuring
+        your action mapping without an associated form bean. (A better way of
+        doing this, however, is to replace the default multipart handler with
+        your own. See the Struts 1 documentation for details.)
+      <table border="0"><tr><td align="right"><a href="#top">[top]</a></td></tr></table></dd>
+</dl>
+</div>
+
+      </div>
+    </div>
+    <div class="clear">
+      <hr/>
+    </div>
+    <div id="footer">
+      <div class="xright">&#169;  
+          2002-2010
+    
+          The Apache Software Foundation
+          
+  
+
+  
+    
+            
+  
+    
+  </div>
+      <div class="clear">
+        <hr/>
+      </div>
+    </div>
+  </body>
+</html>

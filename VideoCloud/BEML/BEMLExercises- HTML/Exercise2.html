@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />		
+    <title>Create a video player from a template</title>
+    <style type="text/css">
+    .BCL_topic {
+      width:700px;
+      font-family: Helvetica,Arial,sans-serif;
+    }
+    img {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .BCL_introduction {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_concept {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_task {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+	.BCL_topicSteps {
+		clear:both;
+    }
+    .BCL_references {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_nextSteps {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    .BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 40px;
+    float: right;
+    height: 270px;
+    width: 480px;
+    }
+    .BCL_subsection {
+    border: solid thin #CCC;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 20px;    
+    }
+    table {
+    border: solid thin #999;
+    clear: both;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th {
+    background-color: #CCC;
+    padding: 5px;
+    font-weight: bold;
+    }
+    td {
+    padding: 5px;
+    }
+	.BCL_videoTutorial {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    }
+    .BCL_aside {
+      font-style: italic;
+      background-color: #DDD;
+      padding: 10px;
+    }
+    .BCL_uiCommand {
+      font-weight: bold;
+    }
+    .BCL_uiDialog {
+      font-weight: bold;
+      font-style: italic;
+    }
+    .BCL_halfWidthImage {
+      margin-left: 10px;
+      float: right;
+      margin-bottom: 10px;
+    }
+    figure figcaption {
+      font-size: 10px;
+    }
+    .BCL_userInput {
+      font-family: Consolas,Courier,monospace;
+      font-weight: bold;
+    }
+	pre {
+    padding: 10px;
+    background-color: #CCC;
+    clear: both;
+    width: 100%;
+    }
+    .BCL_codeBlock {
+      font-family: Consolas,Courier,monospace;
+      padding: 5px;
+      background-color: #E7E7E7;
+    }
+    </style>
+  </head>
+  <body>
+    <article class="BCL_topic">
+      <header class="BCL_topicHeader">
+        <h1 class="BCL_topicTitle">Create a video player from a template</h1>
+      </header>
+      <section class="BCL_introduction">
+        <p><strong>In this exercise, you will learn how to create a simple BEML template and then create a video player from that template.</strong></p>
+        <p class="BCL_teaser">BEML is an HTML/XML language which is used to create a custom template.</p>
+        <!--break-->
+        <p class="BCL_objective">This is the objectives for the document:</p>
+        <ol class="BCL_objectives">
+          <li>Create a BEML template</li>
+          <li>Create a video player from a template</li>
+        </ol>
+      </section>
+      <section class="BCL_concept">
+        <header class="BCL_conceptHeader">
+          <h2 class="BCL_sectionTitle">Create a video player from a template</h2>
+        </header>
+          <div class="BCL_videoTutorial">
+            <strong>Video Tutorial</strong><br/>
+            <!-- Start of Brightcove Player -->
+            <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>   <object id="myExperience1482024659001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="1482015250001" />
+            <param name="playerKey" value="AQ~~,AAAABLsQgFE~,jGXrTxeVLATm9KISLxm9sSGt0zoK7YyP" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            <param name="@videoPlayer" value="1488679270001" /> </object> <script type="text/javascript">brightcove.createExperiences();</script> <!-- End of Brightcove Player -->
+          </div>
+          <p>You may need to replace an existing video in your Video Cloud account for various reasons, such as:</p>
+          <ul>
+            <li>You re-edit the video</li>
+            <li>You shoot a new version of the video to replace the old one</li>
+            <li>You set up a video as a remote asset, but now wish to store it on Video Cloud</li>
+            <li>You set up a video for a live streaming broadcast, but now that the event has passed, want to replace this with video-on-demand recording</li>
+          </ul>
+          <section class="BCL_subsection">
+          <header class="BCL_subsectionHeader">
+            <h3 class="BCL_subsectionTitle">Subsection Title in &lt;header&gt;</h3>
+          </header>
+          <figure class="BCL_halfWidthImage">
+            <img height="300" width="350" src="http://img.brightcove.com/BCL_sampleImage.png" alt="Sample image"/>
+            <figcaption>Image Caption</caption>
+          </figure>
+          <p>You can do this within the Media Module in Video Cloud Studio.</p>
+          <p>You can also replace videos using <a href="#">Batch Provisioning</a>.</p>
+          <p>We might have half- or full-width images in the sections. Half-width should have text wrapping around the image.</p>
+          <p>We will also have <code>inline code</code> all over the place.</p>
+          
+          </section>
+      </section>
+      <section class="BCL_task">
+        <p></p>
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Exercise: Create a video player from a template</h2>
+        </header>
+          <p>In this exercise, you will learn how to create a simple BEML template and then create a video player from that template.</p>
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Create a BEML template</h4>
+          <ol>
+            <li>Login to your Brightcove Video Cloud account.</li>
+            <li>Navigate to the <span class="BCL_uiCommand">Publishing </span>module.</li>
+            <li>In the <span class="BCL_uiCommand">Publishing </span>module, select <span class="BCL_uiCommand">New Template</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Template </span>dialog, name your template <span class="BCL_userInput">SimpleBEMLTemplate </span>and locate the editor window.</li>
+            <li>To the <code>Layout</code> element, add the <code>width</code> property with a value of <span class="BCL_userInput">486</span> and the <code>height</code> property with a value of <span class="BCL_userInput">416</span>.</li>
+            </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout id="application"
+   <span class="BCL_uiCommand">width="486" height="416"&gt;</span>
+   &lt;!--Insert layout here--&gt;
+&lt;/Layout&gt;
+          </pre>
+          
+          <ol start="6">
+          	<li>Within the <code>Layout</code> tag block, add an instance of the <code>VideoPlayer</code> component with an <code>id</code> attribute of <code>videoPlayer</code>.</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Layout id="application"
+   width="486" height="416"&gt;
+   <span class="BCL_uiCommand">&lt;VideoPlayer id="videoPlayer"/&gt;</span>
+&lt;/Layout&gt;
+          </pre>
+            
+          <ol start="7">
+          	<li>Your code should look as follows:</li>
+          </ol>
+            
+          <pre class="BCL_codeBlock">
+          
+&lt;Runtime&gt;
+	&lt;Layout id="application"
+  	 width="486" height="416"&gt;
+  	 &lt;VideoPlayer id="videoPlayer"/&gt;
+	&lt;/Layout&gt;
+&lt;/Runtime&gt;
+          </pre>
+            
+          <ol start="8">
+          	<li>Select <span class="BCL_uiCommand">Validate Code</span> to verify that your code is correct.</li>
+            <li>Click <span class="BCL_uiCommand">Preview Template</span>.</li>
+   
+            <figure>
+            	<img height="300" width="350" src="http://img.brightcove.com/BCL_sampleImage.png" alt="Sample image"/>
+            	<figcaption>Image Caption</caption>
+          	</figure>
+            
+            <li>In the preview window, click <span class="BCL_uiCommand">Close</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Template</span> dialog, click <span class="BCL_uiCommand">Create Template</span>.</li>
+          </ol> 
+              
+          <!-- Steps subheading -->
+          <h4 class="BCL_stepsSubHeading">Create a video player from a template</h4>
+          <!-- use the start attribute to continue numbering -->
+          <ol start="12">
+         	<li>In the <span class="BCL_uiCommand">Publishing</span> module, click <span class="BCL_uiCommand">New Player</span>.</li>
+            <li>In the <span class="BCL_uiDialog">Create New Player</span> dialog, name the player <span class="BCL_userInput">SimpleBEMLPlayer</span> and select <span class="BCL_uiCommand">SimpleBEMLTemplate</span> as the template.</li>
+            <li>Select <span class="BCL_uiCommand">Create Player</span>.</li>
+          </ol>
+          
+          <p class="BCL_aside">Note: If you try to add a playlist to the player, your videos will not play because you have not bound any data to the components. You will learn how to bind data in a later exercise.</p>
+        
+      </section>
+      <section class="BCL_references">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Related Documents</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Using Batch Provisioning</a></li>
+        </ul>
+      </section>
+      <section class="BCL_nextSteps">
+        <header class="BCL_taskHeader">
+          <h2 class="BCL_topicSteps">Next Steps</h2>
+        </header>
+        <ul>
+          <li><a href="internal:node/1144">Link to Next Step doc</a></li>
+        </ul>
+      </section>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+			body {font-family : Helvetica,Arial,sans-serif; color : #619FA8;}
+			legend {
+				color: #CF0050;
+			}
+			table {font-size: 10px;
+			}
+			.player {
+			   height: 310px;
+			}
+			#playlist {
+				 border: 1px solid #666;
+				 overflow-y: scroll;
+				 height: 305px;
+			}
+			a {
+			   cursor: pointer;
+			}
+			.playlist {
+			   border: 1px solid #CCC;
+			   padding: 2px;
+			}
+			img.thumbnail {
+			   float:left;
+			   clear:left;
+			   margin-right: 5px;
+			}
+			.description {
+			   height: 40px;
+			}

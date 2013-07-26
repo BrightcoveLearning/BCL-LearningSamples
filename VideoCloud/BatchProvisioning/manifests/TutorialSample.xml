@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE publisher-upload-manifest SYSTEM "/Users/rcrooks/Dropbox/Learning_Services/Code/DTDs/publisher_upload_manifest_1-1.4.dtd">
+
+<publisher-upload-manifest publisher-id="10145" preparer="Swift Video">
+  <notify email="dsmith@example.com" /> 
+  <asset filename="airport_firetruck_120x90_thumb.jpg" 
+      refid="airport_firetruck_120x90_thumb.jpg-3070f541a52ece058d847149ad464f8e" 
+      size="9541" 
+      hash-code="3070f541a52ece058d847149ad464f8e" 
+      type="THUMBNAIL" />  
+  <asset filename="airport_firetruck_480x360_still.jpg" 
+      refid="airport_firetruck_480x360_still.jpg-693cbdac413c8f3deadf34e907525427" 
+      size="76193" 
+      hash-code="693cbdac413c8f3deadf34e907525427" 
+      type="VIDEO_STILL" /> 
+  <asset filename="airport_gibbous_full.flv" 
+      refid="airport_gibbous_full.flv-52aaedfc6f568c8c86472c2df324050f" 
+      size="31590808" 
+      hash-code="52aaedfc6f568c8c86472c2df324050f" 
+      type="VIDEO_FULL" /> 
+  <title name="NYPA Fire Fight" 
+      refid="NYPAFireFightTitle" 
+      active="TRUE" 
+      flash-preview-refid="airport_firetruck_30sec_preview.flv-6d77209fa60f5de6b7bf068" 
+      video-full-refid="airport_gibbous_full.flv-52aaedfc6f568c82df324050f" 
+      thumbnail-refid="airport_firetruck_120x90_thumb.jpg-3070f5e058d847149ad464f8e" 
+      video-still-refid="airport_firetruck_480x360_still.jpg-693cbdaceadf34e907525427" > 
+    <short-description>The men of the New York Port Authority demonstrate modern fire fighting techniques.</short-description> 
+    <long-description>The men of the New York Port Authority demonstrate modern fire fighting techniques under a gibbous moon (long).</long-description> 
+  </title>
+  <manual-lineup name="NYPA Fire Fight" 
+      refid="NYPAFireFightLineup" 
+      thumbnail-refid="airport_firetruck_120x90_thumb.jpg-3070f541a52ece058d847149ad464f8e">
+    <title-refid>NYPAFireFightTitle</title-refid> 
+    <description>The men of the New York Port Authority demonstrate modern fire fighting techniques.</description> 
+  </manual-lineup>
+</publisher-upload-manifest>

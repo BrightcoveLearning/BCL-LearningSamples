@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Fading Overlay</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+			body {font-family: Helvetica,Arial,sans-serif;color: #619FA8;margin-left: 50px;background-color: #619FA8;text-align: center;}
+		</style>
+
+	</head>
+	<body>
+		<div id="logo"><img src="http://img.brightcove.com/brightcove-logo.png" alt="BC-Training-Logo-PNG" width="443" height="107" /><br /><br /></div>
+		<div id="player">
+			<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="640" />
+  <param name="height" value="360" />
+  <param name="playerID" value="1507765252001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXai4BH53NcjEpLBj5ZJxJq_A" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  
+  <param name="@videoPlayer" value="1194921694001" />
+  <!-- insert the following line into the publishing code -->
+  <param name="templateReadyHandler" value="BCL.onTemplateReady" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+
+		</div>
+    <!-- insert everything from here down through the final </script> tag after the player publishing code -->
+    <!-- Player API Script -->
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+    <script type="text/javascript">
+    // namespace for global vars
+    var BCL = {};
+    // simple counter
+    BCL.counter = 0;
+    // template ready handler
+		BCL.onTemplateReady = function(event) {
+    	console.log("EVENT: TEMPLATE_READY");
+      BCL.player = brightcove.getExperience("myExperience");
+      BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+      // get a reference to the image
+      BCL.overlayImage = BCL.experienceModule.getElementByID("overlayImage");
+      BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+      BCL.videoPlayer.addEventListener(BCMediaEvent.PROGRESS, BCL.onProgress);
+      BCL.videoPlayer.addEventListener(BCMediaEvent.COMPLETE, BCL.onComplete);
+    }
+    BCL.onProgress = function (event) {
+			BCL.counter ++;
+			// execute on every 30th event
+			if (BCL.counter%5 === 0 && BCL.overlayImage.getAlpha() >= 0) {
+  			BCL.overlayImage.setAlpha(BCL.overlayImage.getAlpha() - .1);
+			}
+		}
+		BCL.onComplete = function (event) {
+  			BCL.overlayImage.setAlpha(1);
+		}
+
+    </script>
+	</body>
+</html>

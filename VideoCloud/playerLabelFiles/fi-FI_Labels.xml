@@ -1,0 +1,104 @@
+﻿<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">TOISTA</label>
+        <label key="controls pause">TAUKO</label>
+        <label key="controls menu">VALIKKO</label>
+        <label key="controls play tooltip">Toista</label>
+        <label key="controls pause tooltip">Tauko</label>
+        <label key="controls volume tooltip">Avaa äänenvoimakkuuden säätimet</label>
+        <label key="controls maximize tooltip">Koko näyttö</label>
+        <label key="controls minimize tooltip">Poistu koko näytöstä</label>
+        <label key="community share">sähköposti</label>
+        <label key="community socialShare">jaa</label>
+        <label key="community link">hae linkki</label>
+        <label key="community code">hae koodi</label>
+        <label key="community share tooltip">Lähetä video ystävälle sähköpostitse</label>
+        <label key="community socialShare tooltip">Jaa tämä video</label>
+        <label key="community link tooltip">Hae suora linkki videoon</label>
+        <label key="community code tooltip">Hae HTML Playerin upotusta varten</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[LAAJENNA  >]]></label>
+        <label key="collapse banner">KUTISTA  X</label>
+        <label key="sponsor message">Sponsoriviesti.</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">Mykistä</label>
+        <label key="unmute tooltip">Poista mykistys</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">Avaa valikko</label>
+        <label key="rightclick fullscreen">Koko näyttö</label>
+        <label key="rightclick exit fullscreen">Poistu koko näytöstä</label>
+        <label key="rightclick show debug">Näytä vianmääritystiedot</label>
+        <label key="rightclick hide debug">Piilota vianmääritystiedot</label>
+<!-- Error messaging -->
+        <label key="noContent">Videoita ei ole tällä hetkellä\nkäytettävissä.
+            \n\nTarkista tilanne myöhemmin uudelleen.</label>
+        <label key="unavailableContent">Video, jota yrität katsella,
+            ei ole tällä hetkellä käytettävissä.\n\nTarkista tilanne myöhemmin uudelleen.</label>
+        <label key="upgradeRequired">Tämän sisällön katselu edellyttää Flash 9.0.115.0:aa tai uudempaa.\n\nVoit päivittää soittimen napsauttamalla &lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;tätä&lt;/u&gt;&lt;/a&gt;.</label>
+        <label key="messaging OK">OK</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">KATSOT SEURAAVAA:</label>
+        <label key="connecting">VIDEOTA LADATAAN</label>
+        <label key="please select:">tee valinta:</label>
+<!-- General menu navigation -->
+        <label key="menu info">Tiedot</label>
+        <label key="menu email">Sähköpostita</label>
+        <label key="menu link">Hae linkki</label>
+        <label key="menu share">Jaa video</label>
+        <label key="expand">Laajenna</label>
+        <label key="menu embed">Hae koodi</label>
+        <label key="menu play">Toista video</label>
+        <label key="menu replay">Toista uudelleen</label>
+        <label key="menu resume">Jatka</label>
+        <label key="cancel button">Peruuta</label>
+        <label key="continue button">Jatka</label>
+        <label key="close tooltip">Sulje</label>
+<!-- Email video menu screen -->
+        <label key="email page title">Lähetä ystävälle sähköpostitse</label>
+        <label key="email your email">Sähköpostiosoitteesi</label>
+        <label key="email friend email"><![CDATA[Ystäväsi sähköpostiosoite]]></label>
+        <label key="email message">Viesti (valinnainen)</label>
+        <label key="email send">Lähetä</label>
+        <label key="email video">Lähetä video sähköpostitse</label>
+        <label key="email error">Anna kelvolliset sähköpostiosoitteet.</label>
+        <label key="email confirmation text">Sähköpostiviestisi on lähetetty</label>
+<!-- Share video menu screen -->
+        <label key="share title">Jaa tämä video</label>
+        <label key="share directions">Jaa suoraan näihin sivustoihin</label>
+        <label key="share facebook">Jaa Facebookissa</label>
+        <label key="share twitter">Jaa%20Twitteriss%C3%A4</label>
+        <label key="share twitter message">Katso++</label>
+        <label key="share link">Kopioi linkki</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">Lisää verkkosivustoon tai blogiin</label>
+        <label key="embed directions">Kopioi koodi tai valitse blogipalvelu</label>
+        <label key="embed code">Upota koodi</label>
+        <label key="embed copy code">Kopioi koodi</label>
+        <label key="embed copied">Kopioitu</label>
+        <label key="blog processing">Käsitellään...</label>
+        <label key="blog username">Käyttäjätunnus</label>
+        <label key="blog password">Salasana</label>
+        <label key="blog blogger">Bloggaaja</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">Virheellinen käyttäjätunnuksen ja salasanan yhdistelmä.</label>
+        <label key="blog post select directions">Valitse blogi</label>
+        <label key="blog post enter title">Lähetä otsikko</label>
+        <label key="blog post enter description">Lähetä kuvaus (valinnainen)</label>
+        <label key="blog post post video">Lähetä video</label>
+        <label key="blog post small video">300 x 225</label>
+        <label key="blog post large video">480 x 360</label>
+        <label key="blog post error">On ilmennyt virhe. Yritä uudelleen.</label>
+        <label key="blog confirmation text">Viesti on lähetetty</label>
+<!-- Link to video menu screen -->
+        <label key="link title">Linkki tähän videoon</label>
+        <label key="link directions">Jaa sähköpostitse tai chat-viestinä</label>
+        <label key="link copy link">Kopioi linkki</label>
+        <label key="link copied">Kopioitu</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">Ehdot</label>
+        <label key="related videos">Samankaltaisia videoita</label>
+        <label key="most viewed videos">Katsotuimmat</label>
+        <label key="newest videos">Uusimmat</label>
+</labels>

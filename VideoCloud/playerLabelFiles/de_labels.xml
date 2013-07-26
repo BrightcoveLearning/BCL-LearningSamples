@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<labels xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!-- Video player chrome controls -->
+    <label key="controls play">ABSPIELEN</label>
+    <label key="controls pause">PAUSE</label>
+    <label key="controls menu">MENÜ</label>
+    <label key="controls play tooltip">Abspielen</label>
+    <label key="controls pause tooltip">Pause</label>
+    <label key="controls volume tooltip">Lautstärkeregler öffnen</label>
+    <label key="controls maximize tooltip">Video vergrößern</label>
+    <label key="controls minimize tooltip">Zur Originalgröße zurückkehren</label>
+    <label key="community share">E-Mail</label>
+    <label key="community link">Link anzeigen</label>
+    <label key="community code">Code erhalten</label>
+    <label key="community socialShare">Freigeben</label>
+    <label key="community share tooltip">Video an einen Freund weiterleiten</label>
+    <label key="community link tooltip">Direkter Link zum Video</label>
+    <label key="community code tooltip">HTML, um Player einzubetten</label>
+    <label key="community socialShare tooltip">Dieses Video freigeben</label>
+
+  <!-- Advertising -->
+    <label key="expand banner"><![CDATA[ÖFFNEN >]]></label>
+    <label key="collapse banner">SCHLIESSEN  X</label>
+    <label key="sponsor message">Nachricht des Sponsors.</label>
+
+  <!-- Volume controls -->
+    <label key="mute tooltip">Ton aus</label>
+    <label key="unmute tooltip">Ton ein</label>
+
+  <!-- Right click context menu options -->
+    <label key="rightclick menu">Menü öffnen</label>
+    <label key="rightclick fullscreen">Vollbildmodus</label>
+    <label key="rightclick exit fullscreen">Vollbildmodus verlassen</label>
+    <label key="rightclick branding">Info Brightcove-Plattform</label>
+
+  <!-- Error messaging -->
+    <label key="noContent">Zur Zeit sind keine Videos verfügbar.\n\nBitte versuchen Sie es später nochmal.</label>
+    <label key="unavailableContent">Dieses Video ist zur Zeit nicht verfügbar.\n\nBitte versuchen Sie es zu einem späteren Zeitpunkt erneut.</label>
+    <label key="upgradeRequired">Zum Anzeigen dieses Inhalts ist Flash 9.0.115.0 oder höher erforderlich.\n&lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;Klicken Sie hier, um Ihren Player zu aktualisieren.&lt;/u&gt;&lt;/a&gt;</label>
+    <label key="messaging OK">OK</label>
+
+  <!-- General messaging -->
+    <label key="YOU ARE WATCHING:">GERADE LÄUFT:</label>
+    <label key="connecting">VIDEO WIRD GELADEN</label>
+    <label key="please select:">Bitte wählen Sie aus</label>
+    <label key="live media message">Live Video Ãœbertragung.</label>
+
+  <!-- General menu navigation -->
+    <label key="menu info">Info</label>
+    <label key="menu email">Weiterleiten</label>
+    <label key="menu link">Link anzeigen</label>
+    <label key="menu embed">Code erhalten</label>
+    <label key="menu share">Video freigeben</label>
+    <label key="menu play">Video abspielen</label>
+    <label key="menu replay">Wiederholen</label>
+    <label key="menu resume">Weiter</label>
+    <label key="cancel button">Abbrechen</label>
+    <label key="continue button">Weiter</label>
+    <label key="close tooltip">Schließen</label>
+    <label key="expand">Erweitern</label>
+
+  <!-- Email video menu screen -->
+    <label key="email page title">Dieses Video an einen Freund weiterleiten</label>
+    <label key="email your email">Ihre E-Mail</label>
+    <label key="email friend email"><![CDATA[E-Mail Ihrer Freunde]]></label>
+    <label key="email message">Nachricht (optional)</label>
+    <label key="email send">Abschicken</label>
+    <label key="email video">Email Video</label>
+    <label key="email error">Bitte geben Sie korrekte E-Mail-Adressen ein.</label>
+    <label key="email confirmation text">Die E-Mail wurde abgeschickt.</label>
+
+  <!-- Embed code menu screen -->
+    <label key="embed title">Code für das Einbetten</label>
+    <label key="embed directions">Dieses Video Ihrer Website oder Ihrem Blog hinzufügen.</label>
+    <label key="embed code">Code einbetten</label>
+    <label key="embed copy code">Code kopieren</label>
+    <label key="embed copied">kopiert</label>
+    <label key="blog processing">In Bearbeitung ...</label>
+    <label key="blog username">Benutzernamen eingeben</label>
+    <label key="blog password">Passwort eingeben</label>
+    <label key="blog blogger">Blogger</label>
+    <label key="blog livejournal">LiveJournal</label>
+    <label key="blog typepad">TypePad</label>
+    <label key="blog wordpress">WordPress</label>
+    <label key="blog error">Falsche Benutzername-/Passwort-Kombination.</label>
+    <label key="blog post select directions">Blog für das Veröffentlichen auswählen</label>
+    <label key="blog post enter title">Titel des Eintrags (optional)</label>
+    <label key="blog post enter description">Beschreibung des Eintrags (optional) </label>
+    <label key="blog post post video">Video einstellen</label>
+    <label key="blog post small video">Video verkleinern</label>
+    <label key="blog post large video">Video vergrößern</label>
+    <label key="blog post error">Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.</label>
+    <label key="blog confirmation text">Das Video wurde Ihrem Blog erfolgreich hinzugefügt.</label>
+
+  <!-- Link to video menu screen -->
+    <label key="link title">Link anzeigen</label>
+    <label key="link directions">Dieses Video verlinken.</label>
+    <label key="link copy link">Link kopieren</label>
+    <label key="link copied">kopiert</label>
+
+  <!-- Share video menu screen -->
+    <label key="share title">Dieses Video freigeben</label>
+    <label key="share directions">Direkt auf diesen Websites freigeben</label>
+    <label key="share facebook">In Facebook freigeben</label>
+    <label key="share twitter">In%20Twitter%20freigeben</label>
+    <label key="share twitter message">Schau+hier+</label>
+    <label key="share link">Link kopieren</label>
+
+  <!-- Info and additional videos menu screen -->
+    <label key="info terms">Nutzungsbedingungen:</label>
+    <label key="related videos">Ähnliche Videos</label>
+    <label key="most viewed videos">Die meist gesehenen Videos</label>
+    <label key="newest videos">Die neuesten Videos</label>
+
+
+</labels>

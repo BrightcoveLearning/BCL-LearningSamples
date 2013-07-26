@@ -1,0 +1,18 @@
+<publisher-upload-manifest publisher-id="20318290001" preparer="Robert"
+													 report-success="TRUE">
+	<notify email="rcrooks@brightcove.com"/>
+	<asset
+		 refid="feb13-wirecast"
+		 type="VIDEO_FULL"
+		 encode-to="MP4"
+		 encode-multiple="true"
+		 size="39163704"
+		 hash-code="ef4a1e77562a72bb4d6ec6a8c380678e"
+		 filename="Live Streaming with Wirecast.mov"/>
+	<reencode-from-new-source
+		 title-refid="956561276001"
+		 new-source-refid = "feb13-wirecast"
+		 overwrite-images="TRUE"
+/>
+
+</publisher-upload-manifest>

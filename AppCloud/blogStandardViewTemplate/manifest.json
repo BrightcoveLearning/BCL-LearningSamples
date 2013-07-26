@@ -1,0 +1,82 @@
+{
+		"name": "blogdemoapp",
+		"description": "Please provide a description for this template.",
+		"version": "1.0",
+		"devices": [
+				"iPhone",
+				"Android"
+		],
+		"platformConfig": {
+				"android": {
+						"nativeNavigation": true
+				},
+				"iOS": {
+						"nativeNavigation": true
+				}
+		},
+		"views": [
+			{
+					"navigationTitle": "blogdemo",
+					"navigationIcon": "images/icons/blogdemo.png",
+					"uri": "./html/blogdemo.html",
+					"locales": "./txt/locales/en.txt",
+					"markup": "./txt/markup/blog.txt",
+					"data": [
+							{
+									"name": "blog",
+									"contentFeed": "4f9ee176499a022e8e000edf",
+									"type": "feed",
+									"configs": {
+											"items": {
+													"type": "array",
+													"items": {
+															"title": {
+																	"type": "text"
+															},
+															"description": {
+																	"type": "text"
+															},
+															"pubDate": {
+																	"type": "date"
+															}
+													}
+											}
+									}
+							}
+					],
+					"settings": [
+							{
+									"name": "titleOfPage",
+									"type": "string",
+									"value": "Blog"
+							}
+					],
+					"styles": [
+							{
+									"name": "listItemTitleTextColor",
+									"type": "color",
+									"attribute": "color",
+									"value": ""
+							},
+							{
+									"name": "listItemDateTextColor",
+									"type": "color",
+									"attribute": "color",
+									"value": ""
+							},
+							{
+									"name": "listDetailTitleTextColor",
+									"type": "color",
+									"attribute": "color",
+									"value": ""
+							},
+							{
+									"name": "listDetailPostTextColor",
+									"type": "color",
+									"attribute": "color",
+									"value": ""
+							}
+					]
+			}
+		]
+}

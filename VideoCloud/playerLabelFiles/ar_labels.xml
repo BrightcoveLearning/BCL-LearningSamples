@@ -1,0 +1,104 @@
+<labels>
+<!-- Video player chrome controls -->
+        <label key="controls play">تشغيل</label>
+        <label key="controls pause">إيقاف مؤقت</label>
+        <label key="controls menu">القائمة</label>
+        <label key="controls play tooltip">تشغيل</label>
+        <label key="controls pause tooltip">إيقاف مؤقت</label>
+        <label key="controls volume tooltip">فتح عناصر التحكم في مستوى الصوت</label>
+        <label key="controls maximize tooltip">الدخول إلى ملء الشاشة</label>
+        <label key="controls minimize tooltip">الخروج من ملء الشاشة</label>
+        <label key="community share">بريد إلكتروني</label>
+        <label key="community socialShare">مشاركة</label>
+        <label key="community link">الحصول على ارتباط</label>
+        <label key="community code">الحصول على رمز</label>
+        <label key="community share tooltip">إرسال فيديو إلى صديق بالبريد الإلكتروني</label>
+        <label key="community socialShare tooltip">مشاركة هذا الفيديو</label>
+        <label key="community link tooltip">الحصول على ارتباط مباشر إلى فيديو</label>
+        <label key="community code tooltip">لتضمين المشغل HTML الحصول على</label>
+<!-- Advertising -->
+        <label key="expand banner"><![CDATA[توسيع  >]]></label>
+        <label key="collapse banner">X..طي</label>
+        <label key="sponsor message">رسالة الراعي</label>
+<!-- Volume controls -->
+        <label key="mute tooltip">كتم</label>
+        <label key="unmute tooltip">إلغاء الكتم</label>
+<!-- Right click context menu options -->
+        <label key="rightclick menu">فتح القائمة</label>
+        <label key="rightclick fullscreen">الدخول إلى ملء الشاشة</label>
+        <label key="rightclick exit fullscreen">الخروج من ملء الشاشة</label>
+        <label key="rightclick show debug">إظهار معلومات التصحيح</label>
+        <label key="rightclick hide debug">إخفاء معلومات التصحيح</label>
+<!-- Error messaging -->
+        <label key="noContent">.بهذا الاسم\nلا يوجد فيديو متاح
+            .الرجاء التحقق فيما بعد\n\n</label>
+        <label key="unavailableContent">الفيديو الذي تحاول
+            ا.لرجاء التحقق بعد قليل\n\n.مشاهدته حاليًا غير متاح</label>
+        <label key="upgradeRequired">.لترقية المشغل&lt;a href='http://www.adobe.com/go/getflash/' target='_blank'&gt;&lt;u&gt;هنا&lt;/u&gt;&lt;/a&gt;انقر\n\n.يتطلب عرض هذا المحتوى فلاش 9.0.115.0 أو أحدث</label>
+        <label key="messaging OK">موافق</label>
+<!-- General messaging -->
+        <label key="YOU ARE WATCHING:">:أنت تشاهد حاليًا</label>
+        <label key="connecting">جارٍ تحميل الفيديو</label>
+        <label key="please select:">:الرجاء تحديد</label>
+<!-- General menu navigation -->
+        <label key="menu info">معلومات</label>
+        <label key="menu email">إرسال فيديو بالبريد الإلكتروني</label>
+        <label key="menu link">الحصول على ارتباط</label>
+        <label key="menu share">مشاركة فيديو</label>
+        <label key="expand">توسيع</label>
+        <label key="menu embed">الحصول على رمز</label>
+        <label key="menu play">تشغيل فيديو</label>
+        <label key="menu replay">إعادة التشغيل</label>
+        <label key="menu resume">استئناف</label>
+        <label key="cancel button">إلغاء</label>
+        <label key="continue button">متابعة</label>
+        <label key="close tooltip">إغلاق</label>
+<!-- Email video menu screen -->
+        <label key="email page title">إرسال بريد إلكتروني إلى صديق</label>
+        <label key="email your email">عنوان بريدك الإلكتروني</label>
+        <label key="email friend email"><![CDATA[عنوان بريد صديقك الإلكتروني]]></label>
+        <label key="email message">(رسالة (اختيارية</label>
+        <label key="email send">إرسال</label>
+        <label key="email video">إرسال فيديو بالبريد الإلكتروني</label>
+        <label key="email error">.الرجاء إدخال عناوين بريد إلكتروني صحيحة</label>
+        <label key="email confirmation text">.تم إرسال رسالتك</label>
+<!-- Share video menu screen -->
+        <label key="share title">مشاركة هذا الفيديو</label>
+        <label key="share directions">مشاركة مباشرة إلى هذه المواقع</label>
+        <label key="share facebook">Facebook مشاركة على</label>
+        <label key="share twitter">Twitter%20%D9%85%D8%B4%D8%A7%D8%B1%D9%83%D8%A9%20%D8%B9%D9%84%D9%89</label>
+        <label key="share twitter message">%D8%B3%D8%AD%D8%A8</label>
+        <label key="share link">نسخ الارتباط</label>
+<!-- Embed code menu screen -->
+        <label key="embed title">إضافة إلى موقع ويب أو مدونة</label>
+        <label key="embed directions">نسخ الرمز أو تحديد خدمة مدونة</label>
+        <label key="embed code">تضمين رمز</label>
+        <label key="embed copy code">نسخ الرمز</label>
+        <label key="embed copied">تم النسخ</label>
+        <label key="blog processing">جار المعالجة</label>
+        <label key="blog username">اسم المستخدم</label>
+        <label key="blog password">كلمة المرور</label>
+        <label key="blog blogger">المدون</label>
+        <label key="blog livejournal">LiveJournal</label>
+        <label key="blog typepad">TypePad</label>
+        <label key="blog wordpress">WordPress</label>
+        <label key="blog error">تسجيل دخول/كلمة مرور غير صحيحة</label>
+        <label key="blog post select directions">حدد مدونة</label>
+        <label key="blog post enter title">انشر عنوانًا</label>
+        <label key="blog post enter description">(انشر وصفًا (اختياري</label>
+        <label key="blog post post video">انشر فيديو</label>
+        <label key="blog post small video">300 پ~ 225</label>
+        <label key="blog post large video">480 پ~ 360</label>
+        <label key="blog post error">.حدث خطأ ما. الرجاء المحاولة مرة أخرى</label>
+        <label key="blog confirmation text">.تم إرسال المشاركة</label>
+<!-- Link to video menu screen -->
+        <label key="link title">ارتباط بهذا الفيديو</label>
+        <label key="link directions">المشاركة عبر البريد الإلكتروني أو رسالة فورية</label>
+        <label key="link copy link">نسخ ارتباط</label>
+        <label key="link copied">تم النسخ</label>
+<!-- Info and additional videos menu screen -->
+        <label key="info terms">البنود والشروط</label>
+        <label key="related videos">مقاطع فيديو ذات صلة</label>
+        <label key="most viewed videos">الأكثر مشاهدة</label>
+        <label key="newest videos">الأحدث</label>
+</labels>

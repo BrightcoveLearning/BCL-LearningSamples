@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="../../TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Untitled Document</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<!-- InstanceBeginEditable name="Body" -->
+<h3>Tip of the week: provide custom error messages</h3>
+<p>Sometimes errors happen: someone accidentally deletes or deactivates the wrong video, or someone tries to watch a video that is domain- or geo-restricted, and can't be watched from the viewer's location. In these cases, Brightcove players will display standard error messages (the player is this page is domain-restricted so that it will not work here):</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience734462567001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="320" />
+  <param name="height" value="180" />
+  <param name="playerID" value="948002990001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahtqXYbcdNzgMLGj_pXIZ6b" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+  <param name="@videoPlayer" value="654553710001" />
+
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+
+<p> But you can replace these with your own custom messages - maybe you want to localize  the standard messages, because your primary audience's language is not English, or perhaps you just prefer to offer a different message.</p>
+<p>To implement custom error messages, you first need to wrap them in a standard XML file:</p>
+<pre>&lt;errors&gt;<br />	&lt;domainRestricted&gt;<br />		Robert's custom domain restriction message<br />	&lt;/domainRestricted&gt;<br />	&lt;geoRestricted&gt;<br />		Robert's custom geo-restriction message<br />	&lt;/geoRestricted&gt;<br />	&lt;invalidID&gt;<br />		Robert's custom invalid ID message<br />	&lt;/invalidID&gt;<br />	&lt;default&gt;<br />		Robert's custom default error message<br />	&lt;/default&gt;<br />&lt;/errors&gt;
+</pre>
+<p>Next, post the XML file to your web server (it's best to host on the same server as your web site, to avoid cross-domain XML issues). I've stored the code above as: <a href="http://files.brightcove.com/BCL_RobertCustomErrorMessages.xml">http://files.brightcove.com/BCL_RobertCustomErrorMessages.xml</a>.</p>
+<p>Now, add a <span style="font-family: monospaced">&lt;param&gt;</span> to the <span style="font-family: monospaced">&lt;object&gt;</span> in your publishing code with the name &quot;localizedErrorXML&quot; and set the value to the URL for your XML file:</p>
+<pre>&lt;param name=&quot;localizedErrorXML&quot; value=&quot;http://files.brightcove.com/BCL_RobertCustomErrorMessages.xml&quot; /&gt;
+</pre>
+<p>And that's it -- your player will now display your custom messages if errors occur:<br>
+</p>
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C
+found at https://accounts.brightcove.com/en/terms-and-conditions/.
+-->
+
+<object id="myExperience734462567001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="320" />
+  <param name="height" value="180" />
+  <param name="playerID" value="948002990001" />
+  <param name="playerKey" value="AQ~~,AAAADXdqFgE~,aEKmio9UXahtqXYbcdNzgMLGj_pXIZ6b" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+
+  <param name="@videoPlayer" value="654553710001" />
+	<param name="localizedErrorXML" value="http://files.brightcove.com/BCL_RobertCustomErrorMessages.xml" />
+</object>
+
+<!--
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<ul>
+    <li>
+    <p>New or updated Support Documents:&nbsp;</p>
+    <ul>
+        <li><a href="http://support.brightcove.com/en/docs/searching-videos-media-module">New Enhancements to Advanced Search in the Media Module</a>: you can now search your video library by custom fields.</li>
+    </ul>
+    </li>
+</ul>
+<p>Free online training classe schedule:</p>
+<p>[view:www_events=block_3]</p>
+</div>
+
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
