@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Banner Ad</title>
+   
+</head>
+
+<body>
+    <!-- top logo image -->
+    <img id="logoImage"/>
+    <br/>
+   
+   <!-- Start of Brightcove Player -->
+
+    <div style="display:none">
+    
+    </div>
+    
+    <!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C 
+    found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+    -->
+    
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    
+    <object id="myExperience" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="798" />
+      <param name="height" value="500" />
+      <param name="playerID" value="2534998063001" />
+      <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrcwtI9lRuX4UZaA6B6424B5" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      
+      <!-- smart player api params -->
+	  <param name="includeAPI" value="true" />
+	  <param name="templateLoadHandler" value="onTemplateLoad" />
+	  <param name="templateReadyHandler" value="onTemplateReady" />
+      
+    </object>
+    
+    <!-- 
+    This script tag will cause the Brightcove Players defined above it to be created as soon
+    as the line is read by the browser. If you wish to have the player instantiated only after
+    the rest of the HTML is processed and the page load is complete, remove the line.
+    -->
+    <script type="text/javascript">brightcove.createExperiences();</script>
+    
+    <!-- End of Brightcove Player -->
+    
+    <br/>
+    <!-- bottom banner image -->
+    <img id="bottomImage"/>
+    
+    
+     <!-- custom script -->
+ 	<script type="text/JavaScript">
+		var player,
+			APIModules,
+			videoPlayer,
+			logoImage,
+			bottomImage,
+			images;
+
+		var onTemplateLoad = function(experienceID){
+			console.log("EVENT: onTemplateLoad");
+			player = brightcove.api.getExperience(experienceID);
+			APIModules = brightcove.api.modules.APIModules;
+		};
+	 
+		var onTemplateReady = function(evt) {
+			console.log("EVENT.onTemplateReady");
+			
+			videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+			videoPlayer.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onChange);
+			/* since there's no media change event for the loading of the 
+		    initial video, fire the media change handler manually */
+			onChange(null);
+		}
+		
+		var onChange = function(evt) {
+			console.log("EVENT.onChange");
+			 /*
+			  get the long description for the current video and
+			  parse it to create an object -- note that this
+			  works because I stored a JSON
+			  string in the longDescription field for the videos -- the
+			  JSON string represents an object with two properties:
+			  logo : URL for a logo image
+			  bottomImage: URL for a banner image
+			 */
+			videoPlayer.getCurrentVideo( function(videoDTO) {
+				images = JSON.parse(videoDTO.longDescription);
+				console.log("Images for this video:");
+				console.log("logo image: " + images.logo);
+				console.log("bottom image: " + images.bottomImage);
+				/*
+					Set the source of the two images in the player to
+					images stored for the video in the long description field. 
+				*/
+				document.getElementById("logoImage").src = images.logo;
+				document.getElementById("bottomImage").src = images.bottomImage;
+			});
+			  
+		}
+
+  </script>
+    
+
+</body>
+</html>

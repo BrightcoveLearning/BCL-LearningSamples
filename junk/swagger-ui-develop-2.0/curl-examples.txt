@@ -1,0 +1,142 @@
+**CREATE TOKEN
+export BC_ACCESS_TOKEN=`curl -s -L https://gist.github.com/sh1ps/c7c8b68724885da667c2/raw/63adfeadc43e0e30ad8f8243b05ef6efb207d307/create_access_tokens.sh | bash -s 969bf8b6-de9d-4a5a-ac40-6a6fb476c67f LA3Q4FbeUZ1Dpn-DTY3e7U__BQZXtdcMCWz-IEZ3QAVSnKtOB_iJ0WWa94MUhayJ_atH5KM8T42ZGKDYonfFXQ` && echo 'Token has been updated'
+
+
+**REQUEST - Create player
+curl -k -H "Authorization: Bearer $BC_ACCESS_TOKEN" -H "Content-Type: application/json" -X POST --data '{"name": "Sample Player 909", "configuration": { "player": { "technology": "html", "autoplay": true }, "media": { "name":"Sample Video", "sources": [ {"type":"video/mp4", "src":"http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4"}] }}}' http://players.api.brightcove.com/v1/accounts/57838016001/players
+**RESPONSE:
+{
+  "id": "095d1c20-d9a0-4689-bd72-23209115d651",
+  "preview_url": "http://players.api.brightcove.com/57838016001/095d1c20-d9a0-4689-bd72-23209115d651/preview/index.html",
+  "preview_embed_code": "<iframe src='//players.api.brightcove.com/57838016001/095d1c20-d9a0-4689-bd72-23209115d651/preview/index.html'></iframe>"
+}
+
+
+**REQUEST - Get all players
+curl -k -H "Authorization: Bearer $BC_ACCESS_TOKEN" https://players.api.brightcove.com/v1/accounts/57838016001/players/
+**RESPONSE
+[
+  {
+    "__v": 0,
+    "_id": "51e695c960619eba38000068",
+    "accountId": "57838016001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "media": {
+            "sources": [
+              {
+                "src": "http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4",
+                "type": "video/mp4"
+              }
+            ],
+            "name": "Sample Video"
+          },
+          "player": {
+            "autoplay": true,
+            "technology": "html"
+          }
+        },
+        "_id": "51e695c960619eba38000067",
+        "preview_url": "http:/players.api.brightcove.com/57838016001/095d1c20-d9a0-4689-bd72-23209115d651/preview/index.html"
+      },
+      "master": {
+        "_id": "51e695c960619eba38000069",
+        "configuration": {
+          "player": {
+            "technology": "html",
+            "autoplay": true
+          },
+          "media": {
+            "name": "Sample Video",
+            "sources": [
+              {
+                "type": "video/mp4",
+                "src": "http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4"
+              }
+            ]
+          }
+        },
+        "preview_url": "http:/players.api.brightcove.com/57838016001/095d1c20-d9a0-4689-bd72-23209115d651/master/index.html"
+      }
+    },
+    "id": "095d1c20-d9a0-4689-bd72-23209115d651",
+    "name": "Sample Player 901",
+    "url": "http:/players.brightcove.com/57838016001/095d1c20-d9a0-4689-bd72-23209115d651/index.html"
+  },
+  {
+    "__v": 0,
+    "_id": "51e6980160619eba3800006b",
+    "accountId": "57838016001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "media": {
+            "sources": [
+              {
+                "src": "http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4",
+                "type": "video/mp4"
+              }
+            ],
+            "name": "Sample Video"
+          },
+          "player": {
+            "autoplay": true,
+            "technology": "html"
+          }
+        },
+        "_id": "51e6980160619eba3800006a",
+        "preview_url": "http:/players.api.brightcove.com/57838016001/e4eea356-8c74-4ca2-8a68-e628f96d72ba/preview/index.html"
+      },
+      "master": {
+        "_id": "51e6980160619eba3800006c",
+        "configuration": {
+          "player": {
+            "technology": "html",
+            "autoplay": true
+          },
+          "media": {
+            "name": "Sample Video",
+            "sources": [
+              {
+                "type": "video/mp4",
+                "src": "http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4"
+              }
+            ]
+          }
+        },
+        "preview_url": "http:/players.api.brightcove.com/57838016001/e4eea356-8c74-4ca2-8a68-e628f96d72ba/master/index.html"
+      }
+    },
+    "id": "e4eea356-8c74-4ca2-8a68-e628f96d72ba",
+    "name": "Sample Player 909",
+    "url": "http:/players.brightcove.com/57838016001/e4eea356-8c74-4ca2-8a68-e628f96d72ba/index.html"
+  }
+]
+
+
+
+
+{
+  "apiVersion":"0.1",
+  "swaggerVersion":"2.0",
+  "basePath":"https://internal.api.brightcove.com",
+  "apis":[
+    {
+      "path":" /v1/accounts/{accountID}/videos",
+      "description":"Displays videos in account",
+      "operations":[
+      	"httpMethod": "GET",
+      	"nickname": "get videos nickname",
+      	"parameters":[
+      		{
+      			"paramType": "path",
+            "name": "accountID",
+            "description": "Account ID",
+            "required": "true"
+      		}
+      	]
+      ]
+    }
+  ]
+}

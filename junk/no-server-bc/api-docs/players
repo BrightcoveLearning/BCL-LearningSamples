@@ -1,0 +1,31 @@
+{
+  "apiVersion":"0.2",
+  "swaggerVersion":"1.1",
+  "basePath":"https://players.api.brightcove.com/v1/accounts/57838016001",
+  "resourcePath":"/players",
+  "apis":[
+    {
+      "path":"/players",
+      "description":"Operations about players",
+      "operations":[
+        {
+          "httpMethod":"GET",
+          "summary":"summary Get all players",
+          "notes":"notes Get all players",
+          "nickname":"all players",
+          "parameters":[
+          ],
+          "errorResponses":[
+            {
+              "code":400,
+              "reason":"error 400"
+            },
+            {
+              "code":404,
+              "reason":"error 404"
+            }
+          ]
+        }
+      ]
+    }
+}

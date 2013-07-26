@@ -1,0 +1,11 @@
+{
+  "apiVersion":"0.2",
+  "swaggerVersion":"1.1",
+  "basePath":"https://players.api.brightcove.com/v1/accounts/57838016001",
+  "apis":[
+    {
+      "path":"/players",
+      "description":"Player information"
+    }
+  ]
+}
