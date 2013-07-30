@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Projects/TrainingVideo/scripts/Templates/Knowledge Blog Post.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<!-- InstanceBeginEditable name="Body" -->
+	<style type="text/css">
+	.headline {
+	font-size: large;
+	font-weight: bold;
+	}
+	.code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: small;
+	}
+	.floatleft {
+	float: left;
+	padding-right: 5px;
+	}
+	.floatright {
+	float: right;
+	padding-left: 5px;
+	}
+
+	</style>
+	<p class="headline">Roll Your Own Logo Overlay</p>
+	<p>Logo overlays can be <a href="http://support.brightcove.com/en/docs/editing-video-properties-media-module#overlay2" title="Logo Overlays for Videos">added to individual videos</a>, or you can add one for all your videos in your <a href="http://support.brightcove.com/en/docs/creating-logo-overlays#account" title="Logo Overlay for Account">account settings</a>, and then override the default one for individual videos. You can also create your own in BEML or using the Player API, however. The advantage of this is that you can then get programmatic control of the logo.</p>
+	<p>Here I'm going to add an overlay using the Player API, and make it display only for the first three and last three seconds of the video. I'll also change the logo image and its click-through URL for the second appearance. I'm just working with the standard chromeless video player and the Player API, so this is something you can do with any edition of Brightcove Video Cloud. You can see the result in the player below.</p>
+		
+	<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+For Player API testing 
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+<object id="myExperience2572563713001" class="BrightcoveExperience">
+  <param name="bgcolor" value="#FFFFFF" />
+  <param name="width" value="480" />
+  <param name="height" value="400" />
+   <param name="playerID" value="645708467001" />
+  <param name="playerKey" value="AQ~~,AAAAAFigZAk~,3mLHk34QtPexpbCka4ec7PVidZ0nxvbU" />
+  <param name="isVid" value="true" />
+  <param name="isUI" value="true" />
+  <param name="dynamicStreaming" value="true" />
+  <param name="templateErrorHandler" value="BCL.onTemplateError"/>
+  
+  <param name="@videoPlayer" value="1524793342001" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+
+<!-- End of Brightcove Player -->
+<button id="theButton"></button>
+    </div>
+    		<script type="text/javascript" src="http://files.brightcove.com/prettyprint.js"></script>
+		<!-- script for debugging -->
+		<script type="text/javascript">
+		/*
+    This log function for debugging depends on James Padolsey's prettyprint.js, which you can download from http://james.padolsey.com/javascript/prettyprint-for-javascript/, or reference from http://files.brightcove.com/prettyprint.js - the version there is very slightly modified
+    */
+  		function log(message) {
+    		var logEntry = prettyPrint(message);
+    		document.getElementById("results").appendChild(logEntry);
+  		};
+		</script>
+
+<!--
+		<section>
+		<fieldset>
+      <legend>Log</legend>
+			<div id="results"></div>
+    </fieldset
+    </section>
+-->
+    <!-- import player api -->
+    <script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+
+    <script type="text/javascript">
+    /* script here */
+		// namespace for everything global
+		var BCL = {};
+		BCL.button = document.getElementById("theButton");
+		BCL.button.addEventListener("click", function (evt) {
+			console.log("in button handler");
+			var videoDTO = BCL.videoPlayer.getCurrentVideo();
+			BCL.videoPlayer.cueVideo(1234);
+			console.log(videoDTO);
+		})
+		// initial setup in the special onTemplateLoaded() function
+		function onTemplateLoaded(id) {
+		  console.log("EVENT: TEMPLATE_LOADED");
+		  BCL.player = brightcove.getExperience(id);
+		  BCL.experienceModule = BCL.player.getModule(APIModules.EXPERIENCE);
+		  BCL.experienceModule.addEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		}
+		// event listener for the player being ready
+		BCL.onTemplateReady = function(event) {
+		  console.log("BCL.onTemplateReady");
+		  BCL.experienceModule.removeEventListener(BCExperienceEvent.TEMPLATE_READY, BCL.onTemplateReady);
+		  // get a reference to the video player module
+		  BCL.videoPlayer = BCL.player.getModule(APIModules.VIDEO_PLAYER);
+		  // get a reference to the parent container
+		  // add a listener for progress events
+		  BCL.videoPlayer.addEventListener(BCMediaEvent.ERROR, BCL.onMediaError);
+		  console.log("finish template ready");
+		  // start the video
+		}
+
+		BCL.onTemplateError = function (evt) {
+			console.log("template error");
+			console.log(evt);
+		}
+
+		// add handler for progress events
+		BCL.onMediaError = function(event) {
+			console.log("EVENT: Error"); 
+			console.log(event);
+		}
+    </script>
+
+<!-- InstanceEndEditable -->
+</body>
+<!-- InstanceEnd --></html>
