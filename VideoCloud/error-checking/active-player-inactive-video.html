@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ready for API Work</title>
+</head>
+
+<body>
+
+    <!-- Start of Brightcove Player -->
+
+    <div style="display:none">
+
+    </div>
+
+    <!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C 
+    found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+    -->
+
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+    <object id="myExperience2568006310001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="2567866176001" />
+      <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrdcK--xX0k8sFqgsRa0hbUJ" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+      
+      <param name="@videoPlayer" value="2568006310001" />
+
+      <!-- smart player api params -->
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="onTemplateLoad" />
+      <param name="templateReadyHandler" value="onTemplateReady" />
+      <param name="templateErrorHandler" value="onTemplateError">
+    </object>
+
+    <!-- 
+    This script tag will cause the Brightcove Players defined above it to be created as soon
+    as the line is read by the browser. If you wish to have the player instantiated only after
+    the rest of the HTML is processed and the page load is complete, remove the line.
+    -->
+    <script type="text/javascript">brightcove.createExperiences();</script>
+
+    <!-- End of Brightcove Player -->  
+  <br />
+  <button id="theButton">Button to load video</button>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var player,
+      APIModules,
+      videoPlayer;
+
+    var buttonObj = document.getElementById("theButton");
+
+    buttonObj.addEventListener("click", function (evt) {
+      console.log("in button handler");
+      videoPlayer.loadVideoByID(2568006310001);
+    });
+
+    function onTemplateLoad(experienceID){
+      console.log("Event: onTemplateLoad");
+      player = brightcove.api.getExperience(experienceID);
+      APIModules = brightcove.api.modules.APIModules;
+      videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+      videoPlayer.addEventListener(brightcove.api.events.MediaEvent.ERROR,onMediaError);
+    }
+
+    function onTemplateReady(evt){
+      console.log("Event: onTemplateReady");
+      videoPlayer.play();
+    }
+
+    function onTemplateError(templateError){
+      console.log("Event: onTemplateError");
+      console.log(templateError);
+    }
+
+    function onMediaError(mediaError){
+      console.log("Event: onMediaError");
+      console.log(mediaError);
+    }
+  </script>
+
+</body>
+</html>
