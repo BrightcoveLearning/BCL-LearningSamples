@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	<head>
+		<title>Player API Exercise 1</title>
+		<style type="text/css">
+			body {font-family : Helvetica,Arial,sans-serif; color : #835004}
+			legend {
+				color: #CF0050;
+			}
+			.btn {
+				border: 1px #000 solid;
+				border-radius: 5px;
+				padding: 5px;
+				background-color: #666;
+				color: #F5F5F5;
+				cursor: pointer;
+			}
+		</style>
+
+	</head>
+	<body>
+		<h1>Player API Training</h1>
+		<!-- Start of Brightcove Player -->
+
+		<div style="display:none">
+
+		</div>
+
+		<!--
+		By use of this code snippet, I agree to the Brightcove Publisher T and C
+		found at https://accounts.brightcove.com/en/terms-and-conditions/.
+		-->
+
+		<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+		<!-- including Player API -->
+		<script type="text/javascript" src="http://admin.brightcove.com/js/APIModules_all.js"> </script>
+		<object id="myExperience928199562001" class="BrightcoveExperience">
+		  <param name="bgcolor" value="#FFFFFF" />
+		  <param name="width" value="480" />
+		  <param name="height" value="270" />
+		  <param name="playerID" value="2079935931001" />
+		  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WE0z3yX6Xw29sdCvkH5GCJv" />
+		  <param name="isVid" value="true" />
+		  <param name="isUI" value="true" />
+		  <param name="dynamicStreaming" value="true" />
+
+		  <param name="@videoPlayer" value="928199562001" />
+		  <param name="templateReadyHandler" value="onTemplateReady"/>
+		</object>
+
+		<script type="text/javascript">brightcove.createExperiences();</script>
+
+		<!-- End of Brightcove Player -->
+		<p><span class="btn" id="playNext" onclick="video.cueVideo(video2);">Change Video</span></p>
+		<fieldset>
+      <legend>Results</legend>
+			<div id="results"></div>
+    </fieldset>
+		<script type="text/javascript">
+
+        var video, player, socialMod,
+        // next 3 vars for test only
+        results = document.getElementById("results"),
+        play = document.getElementById("playnext"),
+        video2 = 1187544998001;
+
+
+        function onTemplateLoaded(pPlayer) {
+	        logit("template Loaded");
+        	player = bcPlayer.getPlayer(pPlayer);
+	        video 	= player.getModule(APIModules.VIDEO_PLAYER);
+	        socialMod = player.getModule(APIModules.SOCIAL);
+        }
+
+        function onTemplateReady() {
+        	logit("template ready");
+        	video.addEventListener(BCMediaEvent.CHANGE, onMediaChange);
+	        onMediaChange(null);
+        }
+
+        function onMediaChange(e) {
+        	logit("media change");
+            socialMod.setLink(video.getCurrentVideo().linkURL);
+	        logit("social link: " + socialMod.getLink());
+        }
+
+        function logit(message) {
+        	results.innerHTML += message + "<br/>"
+        }
+
+</script>
+
+	</body>
+</html>
