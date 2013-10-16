@@ -11,36 +11,48 @@
 		</style>
 		<!-- Javascript Media API wrapper from opensource.brightcove.com -->
 		<script type="text/javascript" src="http://files.brightcove.com/bc-mapi.js"></script>
-		
+
 	</head>
 	<body>
 		<h2>Get All Tags For Your Media Library</h2>
+		<p class="text-warning">Note that app will retrieve <em>all</em> active videos in your account &mdash; if you have a large number of videos, that could take quite awhile.</p>
 		<p>Enter a Read API token for your account:</p>
 		<p><input id="BCLtoken" type="text" name="BCLtoken" size="100" value="WDGO_XdKqXVJRVGtrNuGLxCYDNoR-SvA5yUqX2eE6KjgefOxRzQilw.." /></p>
-		<p><button onclick="BCL.runQuery(document.getElementById('BCLtoken').value)">Go</button></p>
+		<p><button id="runButton">Go</button></p>
     <fieldset>
       <legend>Tags</legend>
 			<div id="results"></div>
     </fieldset><br>
 		<!-- This is the script to modify for the exercise -->
 		<script type="text/javascript">
-			// BCL Media API search maker -- adapted from JS-MAPI on opensource.brightcove.com
 			// namespace to keep all the "global" vars together
 			var BCL = {};
 			BCL.tagArray = [];
+			BCL.token = document.getElementById("BCLtoken").value;
+			BCL.pageNumber = 0;
+			BCL.totalCalls = 0;
+			BCL.pageSize = 100;
+			BCL.callNumber = 1;
+			BCL.getItemCount = true;
 			BCL.results = document.getElementById("results");
-			BCL.runQuery = function(token) {
-				console.log(token);
-				BCMAPI.token = token;
+			document.getElementById("runButton").addEventListener("click", function () {
+					BCL.token = document.getElementById("BCLtoken").value;
+					BCL.runQuery();
+			})
+			BCL.runQuery = function() {
+				console.log("call number: " + BCL.callNumber);
+				console.log("page number: " + BCL.pageNumber);
+				BCMAPI.token = BCL.token;
 				BCMAPI.callback = "BCL.onSearchResponse";
 				BCL.params = {};
-				// BCL.srcValue = "";
-				// BCL.params.any = "water";
+				BCL.params.page_size = BCL.pageSize;
+				BCL.params.page_number = BCL.pageNumber;
+				BCL.params.get_item_count = BCL.getItemCount;
 				BCL.params.video_fields = "tags";
 				BCMAPI.search(BCL.params);
 			}
 			BCL.onSearchResponse = function(jsonData) {
-				console.log(jsonData["items"][0].tags);
+				console.log(jsonData);
 				BCL.tagArray = jsonData["items"][0].tags;
 				for (var i = 1; i < jsonData["items"].length; i++) {
 					BCL.tagArray.push.apply(BCL.tagArray, jsonData["items"][i].tags);
@@ -49,15 +61,27 @@
 				for (var j = 0; j < BCL.tagArray.length; j++) {
 					BCL.results.innerHTML += BCL.tagArray[j] + "<br />";
 				}
+				// handle call looping
+				if (BCL.callNumber === 1) {
+					BCL.getItemCount = false;
+					BCL.totalCalls = Math.ceil(jsonData.total_count / BCL.pageSize);
+					console.log("total calls: " + BCL.totalCalls);
+				}
+				BCL.callNumber++;
+				BCL.pageNumber++;
+				if (BCL.callNumber <= BCL.totalCalls) {
+					BCL.runQuery();
+				}
+
 			}
 			BCL.removeDuplicateElements = function(arrayName)
 			  {
 			  var newArray=new Array();
 			  label:for(var i=0; i<arrayName.length;i++ )
-			  {  
+			  {
 			  for(var j=0; j<newArray.length;j++ )
 			  {
-			  if(newArray[j]==arrayName[i]) 
+			  if(newArray[j]==arrayName[i])
 			  continue label;
 			  }
 			  newArray[newArray.length] = arrayName[i];
