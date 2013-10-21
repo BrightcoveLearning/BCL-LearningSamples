@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Simulated Live Event</title>
+</head>
+<body>
+    <script language="javascript" type="text/javascript">
+    // Retrieves the correct video ID and position within the video
+        function getPositionAsync(){
+            var ajaxRequest;  // The variable that makes Ajax possible!
+
+            try{
+                // Opera 8.0+, Firefox, Safari
+                ajaxRequest = new XMLHttpRequest();
+            } catch (e){
+                // Internet Explorer Browsers
+                try{
+                    ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+                } catch (e) {
+                    try{
+                        ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+                    } catch (e){
+                        // Something went wrong
+                        alert("Your browser doesn't support Ajax!");
+                        return false;
+                    }
+                }
+            }
+
+            // Create a function that will receive data sent from the server
+            ajaxRequest.onreadystatechange = function(){
+                if(ajaxRequest.readyState == 4){
+                    var responseStr = ajaxRequest.responseText;
+                    var results = JSON.parse(responseStr);
+                    // expected response will contain the current video, the position, and the array of videos in the playlist
+                    playvideo(results.currentVideoId, results.videoPosition, results.videoIDs);
+                }
+            }
+
+            var myRand = parseInt(Math.random()*99999999);  // cache buster
+            ajaxRequest.open("GET", "livestreaming.php?rand=" + myRand, true);
+            ajaxRequest.send(null);
+        }
+    </script>
+
+    <!-- Start of Brightcove Player -->
+
+    <div style="display:none">
+        For simulated live events
+    </div>
+
+    <!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C
+    found at https://accounts.brightcove.com/en/terms-and-conditions/.
+    -->
+
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+    <object id="myExperience" class="BrightcoveExperience">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="480" />
+        <param name="height" value="270" />
+        <param name="playerID" value="2520497780001" />
+        <param name="playerKey" value="AQ~~,AAABwDLRzVk~,_KCs2P4_GShvRsqiTyR-ih1HudiuXl3t" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <param name="includeAPI" value="true" />
+        <param name="templateLoadHandler" value="myTemplateLoad" />
+        <param name="templateReadyHandler" value="myTemplateReady" />
+    </object>
+
+    <!--
+    This script tag will cause the Brightcove Players defined above it to be created as soon
+    as the line is read by the browser. If you wish to have the player instantiated only after
+    the rest of the HTML is processed and the page load is complete, remove the line.
+    -->
+    <script type="text/javascript">brightcove.createExperiences();</script>
+
+    <div id="debugView">
+
+    </div>
+
+    <!-- End of Brightcove Player -->
+
+    <script type="text/javascript">
+        var bcExp;
+        var modVP;
+        var modCon;
+        var doonce = true;
+        var position;
+        var plist;
+        var plist_loc;
+        var current_position;
+        var donext = false;
+
+        // called when template loads, this function stores a reference to the player
+        function myTemplateLoad(experienceID) {
+            console.log("template load")
+            bcExp = brightcove.api.getExperience(experienceID);
+        }
+
+        function myTemplateReady() {
+            modVP = bcExp.getModule(brightcove.api.modules.APIModules.VIDEO_PLAYER);
+            modCon = bcExp.getModule(brightcove.api.modules.APIModules.CONTENT);
+
+            // Register for PROGRESS event to seek the first time
+            modVP.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onMediaProgress);
+
+            // Register for media complete to load the next video in the "playlist"
+            modVP.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onMediaComplete);
+
+            // Register for seek to prevent user seeking
+            modVP.addEventListener(brightcove.api.events.MediaEvent.SEEK_NOTIFY, onSeek);
+
+            // retrieve correct video and position
+            getPositionAsync();
+        }
+
+        function onMediaBegin()
+        {
+            if (doonce) {
+                setTimeout(function(){modVP.seek(position);},1000);
+                doonce = false;
+            }
+        }
+
+        // once playback begins, seek to the appropriate place in the video
+        function onMediaProgress(evt)
+        {
+            if (doonce) {
+                // seek immediately for Flash
+                if (bcExp.type == 'flash')
+                    modVP.seek(position);
+                // set a timeout to seek to give some time for HTML5 - limitation of HTML5 player
+                else
+                    setTimeout(function(){modVP.seek(position);},1000);
+                doonce = false;
+            } else {
+                // record current position
+                current_position = evt.position;
+                console.log(current_position);
+            }
+        }
+
+        // if user scrubs, seek back to current position
+        function onSeek() {
+            console.log("doonce = " + doonce + " and donext = " + donext);
+            // don't stop the seek we're initiating
+            if (!doonce && !donext) {
+                // keep the progress handler from recording the new position
+                modVP.removeEventListener(brightcove.api.events.MediaEvent.SEEK_NOTIFY, onSeek);
+                modVP.seek(current_position);
+                donext = true;
+                console.log("seeking to " + current_position)
+            }
+            // if we did the seek back to current position, turn progress listener back on
+            if (donext) {
+                console.log("turning progress listener back on")
+                modVP.addEventListener(brightcove.api.events.MediaEvent.SEEK_NOTIFY, onSeek);
+                donext = false;
+            }
+        }
+
+        // called to load the video and begin playback
+        function playvideo(id, vpos, plistVideos)
+        {
+            //document.getElementById('debugView').innerHTML = "ID: " + id + "<br>Position: " + vpos + "<br>Videos: " + plistVideos;
+            modVP.loadVideoByID(id);
+            position = vpos;
+            plist = plistVideos;
+            plist_loc = plist.indexOf(id);
+        }
+
+        // when video completes, advance to the next video in the playlist
+        function onMediaComplete()
+        {
+            plist_loc = (plist_loc + 1) % plist.length;
+            modVP.loadVideoByID(plist[plist_loc]);
+        }
+    </script>
+
+</body>
+</html>
