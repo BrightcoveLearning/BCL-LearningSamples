@@ -1,0 +1,137 @@
+{
+  "smart-player-api": {
+  "items": [
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/index.html",
+      "name": "Home"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/reference/index.html",
+      "name": "API Reference"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/quick-start.html",
+      "name": "Quick Start"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/basic-setup.html",
+          "name": "Basic Setup"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/autoplay-with-captions.html",
+          "name": "Auto-Play with Captions On"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/call-to-action.html",
+          "name": "Call to Action"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/display-tags-custom-fields.html",
+          "name": "Display Custom Fields"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/playlist-duration.html",
+          "name": "Display Playlist Duration"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/get-video-metadata.html",
+          "name": "Get Video Metadata"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/language-select.html",
+          "name": "Language Selection"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/simple-lightbox-player.html",
+          "name": "Lightbox"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/load-multiple-videos.html",
+          "name": "Load Multiple Videos"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/load-player-dynamically.html",
+          "name": "Load Player Dynamically"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/simple-related-videos.html",
+          "name": "Related Videos"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/update-media.html",
+          "name": "Update Video Metadata"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/load-videos-by-select.html",
+          "name": "Videos by Select"
+        }
+      ],
+      "name": "Sample Code"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/overlay-message_agegate.html",
+          "name": "Age Gate"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/chaptered-video.html",
+          "name": "Chaptered Video"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/related-videos.html",
+          "name": "Custom Related Videos"
+        },
+        {
+          "url": "http://solutions.brightcove.com/bcls/smart-player-api/do-not-track/do-not-track.html",
+          "name": "Do Not Follow"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/smart-player-api/newURLOnVideoComplete/NewURLOnVideoComplete.html",
+          "name": "Go to New URL on Video Complete"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/lightbox-player.html",
+          "name": "Lightbox Player"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/localization.html",
+          "name": "Localization"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/mid-roll-bumper.html",
+          "name": "Midroll Bumper"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/overlay-message_2.html",
+          "name": "Overlay Message"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/overlay-message-3.html",
+          "name": "Overlay Plugin"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/fetch-playlists.html",
+          "name": "Playlists in the HTML"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/smart-player-api/ScrollIntoViewStartVideo/ScrollIntoViewStartVideo.html",
+          "name": "Start Video when Player is Scrolled into View"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/are-you-watching.html",
+          "name": "Still Watching?"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/timeline-thumbnails.html",
+          "name": "Thumbnails on the Timeline"
+        }
+      ],
+      "name": "Solutions"
+    }
+  ],
+  "name": "Smart PLayer API"
+}
+}

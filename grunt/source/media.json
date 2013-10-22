@@ -1,0 +1,215 @@
+{
+  "media": {
+  "items": [
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/media/index.html",
+      "name": "Home"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/media/reference.html",
+      "name": "API Reference"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/media/quick-start.html",
+      "name": "Quick Start"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/media/guides/search_videos-guide.html",
+          "name": "Using search_videos"
+        }
+      ],
+      "name": "Guides"
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/search_videos.html",
+              "name": "search_videos"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_modified_videos.html",
+              "name": "find_modified_videos"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_video_by_id.html",
+              "name": "find_video_by_id"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_video_by_id_unfiltered.html",
+              "name": "find_video_by_id_unfiltered"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_videos_by_ids.html",
+              "name": "find_videos_by_ids"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_videos_by_ids_unfiltered.html",
+              "name": "find_videos_by_ids_unfiltered"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_video_by_reference_id.html",
+              "name": "find_video_by_reference_id"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_video_by_reference_id_unfiltered.html",
+              "name": "find_video_by_reference_id_unfiltered"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_videos_by_reference_ids.html",
+              "name": "find_videos_by_reference_ids"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_videos_by_reference_ids_unfiltered.html",
+              "name": "find_videos_by_reference_ids_unfiltered"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_all_videos.html",
+              "name": "find_all_videos"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_related_videos.html",
+              "name": "find_related_videos"
+            }
+          ],
+          "name": "Video Read Methods"
+        },
+        {
+          "items": [
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_all_playlists.html",
+              "name": "find_all_playlists"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_playlist_by_id.html",
+              "name": "find_playlist_by_id"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_playlist_by_reference_id.html",
+              "name": "find_playlist_by_reference_id"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_playlists_by_ids.html",
+              "name": "find_playlists_by_ids"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_playlists_by_reference_ids.html",
+              "name": "find_playlists_by_reference_ids"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/find_playlists_for_player_id.html",
+              "name": "find_playlists_for_player_id"
+            }
+          ],
+          "name": "Playlist Read Methods"
+        }
+      ],
+      "name": "READ Samples"
+    },
+    {
+      "items": [
+        {
+          "items": [
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/create_video.html",
+              "name": "create_video"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/update_video.html",
+              "name": "update_video"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/delete_video.html",
+              "name": "delete_video"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/add_captioning.html",
+              "name": "add_captioning"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/add_logo_overlay.html",
+              "name": "add_logo_overlay"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/delete_captioning.html",
+              "name": "delete_captioning"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/get_upload_status.html",
+              "name": "get_upload_status"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/remove_logo_overlay.html",
+              "name": "remove_logo_overlay"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/share_video.html",
+              "name": "share_video"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/unshare_video.html",
+              "name": "unshare_video"
+            }
+          ],
+          "name": "Video Write Methods"
+        },
+        {
+          "items": [
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/create_playlist.html",
+              "name": "create_playlist"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/delete_playlist.html",
+              "name": "delete_playlist"
+            },
+            {
+              "url": "//docs.brightcove.com/en/video-cloud/media/samples/update_playlist.html",
+              "name": "update_playlist"
+            }
+          ],
+          "name": "Playlist Write Methods"
+        }
+      ],
+      "name": "WRITE Samples"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/media/samples/related-videos.html",
+          "name": "Custom Related Videos"
+        },
+        {
+          "url": "http://solutions.brightcove.com/bcls/media/getAllTags/getAllTags.html",
+          "name": "Get All Tags"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/media/api-test-tool/media-api-test-tool.html",
+          "name": "Media API Test Tool"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/media/ReferenceIDGenerator/reference-id-generator.html",
+          "name": "Reference ID Generator"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/media/SchemaTool/schema-tool.html",
+          "name": "Schema Tool"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/media/VideoDataToCSV/renditions-size-in-csv.html",
+          "name": "Total renditions size in CSV"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/media/VideoDataToCSV/video-data-to-csv.html",
+          "name": "Video Data in CSV Format"
+        }
+      ],
+      "name": "Solutions"
+    }
+  ],
+  "name": "Media API"
+}
+}

@@ -1,0 +1,70 @@
+{
+  "index": {
+  "items": [
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/index.html",
+      "name": "Home"
+    },
+    {
+      "items": [
+        {
+          "url": "http://docs.brightcove.com/en/video-cloud/advertising/index.html",
+          "Name": "Advertising"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/index.html",
+          "name": "Analytics API"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/media/index.html",
+          "name": "Media API"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/index.html",
+          "name": "Smart Player API"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/player/index.html",
+          "name": "Flash-only Player API"
+        }
+      ],
+      "name": "APIs"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/brightcove-player-sdk-for-ios/index.html",
+          "name": "iOS SDK"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/brightcove-player-sdk-for-android/index.html\n\n",
+          "name": "Android SDK"
+        }
+      ],
+      "name": "SDKs"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/beml/index.html",
+      "name": "BEML"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/open-source/index.html",
+      "name": "Open Source"
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/concepts/debugging-basics/debugging-basics.html",
+          "name": "Debugging Basics"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/concepts/intro-to-JSON/intro-to-JSON.html",
+          "name": "Using JSON"
+        }
+      ],
+      "name": "Concepts"
+    }
+  ],
+  "name": "Home"
+}
+},
