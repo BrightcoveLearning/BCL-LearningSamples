@@ -10,20 +10,20 @@ module.exports = function(grunt) {
     minjson: {
       compile:{
         files: {
-          'dist/docs-nav-data-from-minjson.json':
-          ['source-minjson/smart-player-api.json',
-              'source-minjson/index.json',
-              'source-minjson/brightcove-player-sdk-for-ios.json',
-              'source-minjson/brightcove-player-sdk-for-android.json',
-              'source-minjson/analytics-api.json',
-              'source-minjson/media.json']
+          'working/docs-nav-data-from-minjson.json':
+          ['source/smart-player-api.json',
+              'source/index.json',
+              'source/brightcove-player-sdk-for-ios.json',
+              'source/brightcove-player-sdk-for-android.json',
+              'source/analytics-api.json',
+              'source/media.json']
         },
       },
     },
     replace: {
       example: {
-        src: ['dist/docs-nav-data-from-minjson.json'],
-        dest: 'dist/docs-nav-data-from-minjson-replace.json',
+        src: ['working/docs-nav-data-from-minjson.json'],
+        dest: 'working/docs-nav-data-from-minjson-replace.json',
         replacements: [{ 
           from: '\[{"smart-player-api',
           to: '\{"smart-player-api'
@@ -41,25 +41,25 @@ module.exports = function(grunt) {
     concat: {
       buildjson: {
         src: ['source/header.json',
-              'dist/docs-nav-data-from-minjson-replace.json',
+              'working/docs-nav-data-from-minjson-replace.json',
               'source/footer.json'],
-        dest: 'dist/docs-nav-data.json'
+        dest: 'working/docs-nav-data.json'
       },
       buildvar: {
         src: ['source/var-name.txt',
-              'dist/docs-nav-data.json',
+              'working/docs-nav-data.json',
               'source/semicolon.txt'],
-        dest: 'dist/docs-nav-data.min.js'
+        dest: 'working/docs-nav-data.min.js'
       },
     },
     jsonlint: {
       sample: {
-        src: [ 'dist/docs-nav-data.json' ]
+        src: [ 'working/docs-nav-data.json' ]
       }
     },
     uglify: {
       dist: {
-        src: 'dist/docs-nav-data.min.js',
+        src: 'working/docs-nav-data.min.js',
         dest: 'dist/docs-nav-data.min.js'
       }
     }

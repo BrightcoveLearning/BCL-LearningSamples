@@ -1,74 +1,74 @@
 {
-  "analytics-api": {
-    "items": [
-      {
-        "url": "//docs.brightcove.com/en/video-cloud/analytics-api/index.html",
-        "name": "Home"
-      },
-      {
-        "url": "//docs.brightcove.com/en/video-cloud/analytics-api/reference/versions/v1/reference.html",
-        "name": "API Reference"
-      },
-      {
-        "name": "Guides",
-        "items": [
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/quick-start.html",
-            "name": "Quick Start"
-          }
-        ]
-      },
-      {
-        "items": [
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/account-level-request.html",
-            "name": "Account Summary"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/filter_video_player.html",
-            "name": "Filters"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/player-report.html",
-            "name": "Player Report"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/referrer_domain_report.html",
-            "name": "Referrer Domain Report for Player"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/referrer_domain_video_report.html",
-            "name": "Referrer Domain Report for Video"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/video-report.html",
-            "name": "Video Report"
-          }
-        ],
-        "name": "Samples"
-      },
-      {
-        "items": [
-          {
-            "url": "//solutions.brightcove.com/bcls/analytics-api/aapi-request-builder.html",
-            "name": "API Request Builder"
-          },
-          {
-            "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/video-engagement.html",
-            "name": "Create Engagement Graph"
-          },
-          {
-            "url": "//solutions.brightcove.com/bcls//analytics-api/analytics-by-playlist.html",
-            "name": "Get Analytics for Playlists"
-          },
-          {
-            "url": "//solutions.brightcove.com/bcls/analytics-api/most-popular-videos.html",
-            "name": "Most Popular Videos"
-          }
-        ],
-        "name": "Solutions"
-      }
-    ],
-    "name": "Analytics API"
-  }
-},
+"analytics-api": {
+  "items": [
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/analytics-api/index.html",
+      "name": "Home"
+    },
+    {
+      "url": "//docs.brightcove.com/en/video-cloud/analytics-api/reference/versions/v1/reference.html",
+      "name": "API Reference"
+    },
+    {
+      "name": "Guides",
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/quick-start.html",
+          "name": "Quick Start"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/account-level-request.html",
+          "name": "Account Summary"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/filter_video_player.html",
+          "name": "Filters"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/player-report.html",
+          "name": "Player Report"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/referrer_domain_report.html",
+          "name": "Referrer Domain Report for Player"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/referrer_domain_video_report.html",
+          "name": "Referrer Domain Report for Video"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/video-report.html",
+          "name": "Video Report"
+        }
+      ],
+      "name": "Samples"
+    },
+    {
+      "items": [
+        {
+          "url": "//solutions.brightcove.com/bcls/analytics-api/aapi-request-builder.html",
+          "name": "API Request Builder"
+        },
+        {
+          "url": "//docs.brightcove.com/en/video-cloud/analytics-api/samples/video-engagement.html",
+          "name": "Create Engagement Graph"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls//analytics-api/analytics-by-playlist.html",
+          "name": "Get Analytics for Playlists"
+        },
+        {
+          "url": "//solutions.brightcove.com/bcls/analytics-api/most-popular-videos.html",
+          "name": "Most Popular Videos"
+        }
+      ],
+      "name": "Solutions"
+    }
+  ],
+  "name": "Analytics API"
+}
+}
