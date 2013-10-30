@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Smart Player API: Play Random Bumper</title>
+</head>
+
+<body>
+
+  <!-- Start of Brightcove Player -->
+
+  <div style="display:none">
+
+  </div>
+
+  <!--
+  By use of this code snippet, I agree to the Brightcove Publisher T and C 
+  found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+  -->
+
+  <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+  <object id="myExperience" class="BrightcoveExperience">
+    <param name="bgcolor" value="#FFFFFF" />
+    <param name="width" value="480" />
+    <param name="height" value="270" />
+    <param name="playerID" value="2777517096001" />
+    <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrdOEKhkvvjNiKQev78EzkwS" />
+    <param name="isVid" value="true" />
+    <param name="isUI" value="true" />
+    <param name="dynamicStreaming" value="true" />
+
+    <!-- smart player api params -->
+    <param name="includeAPI" value="true" />
+    <param name="templateLoadHandler" value="onTemplateLoad" />
+    <param name="templateReadyHandler" value="onTemplateReady" />
+
+    
+  </object>
+
+  <!-- 
+  This script tag will cause the Brightcove Players defined above it to be created as soon
+  as the line is read by the browser. If you wish to have the player instantiated only after
+  the rest of the HTML is processed and the page load is complete, remove the line.
+  -->
+  <script type="text/javascript">brightcove.createExperiences();</script>
+
+  <!-- End of Brightcove Player -->
+  <script type="text/JavaScript">
+     var player,
+       APIModules,
+       videoPlayer,
+       contentModule,
+       videosAra,
+       bumperVideosAra,
+       bumperVideosAraLength,
+       videoIndexToPlay=0,
+       playBumper=true;
+
+     var onTemplateLoad = function(experienceID){
+       player = brightcove.api.getExperience(experienceID);
+       APIModules = brightcove.api.modules.APIModules;
+     };
+
+     var onTemplateReady = function(evt){
+       videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+       contentModule = player.getModule(APIModules.CONTENT);
+       contentModule.getPlaylistByID("1754200320001", onGetPlaylist);
+       contentModule.getPlaylistByID("2777614845001", onGetBumperPlaylist);
+       videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, playVideo);
+     };
+
+     var onGetPlaylist = function(playlistDTO){
+      console.log(playlistDTO);
+      videosAra = playlistDTO.videos;
+     };
+
+     var onGetBumperPlaylist = function(playlistDTO){
+      console.log(playlistDTO);
+      bumperVideosAra = playlistDTO.videos;
+      bumperVideosAraLength = playlistDTO.videoCount;
+      playVideo();
+     };
+
+     var playVideo = function(evt){
+      var toPlayID;
+      var bumperRandomNumber = Math.floor(Math.random()*bumperVideosAraLength);
+      console.log(bumperRandomNumber);
+      if (playBumper){
+        playBumper = false;
+        toPlayID = bumperVideosAra[bumperRandomNumber].id;
+        videoPlayer.loadVideoByID(toPlayID);
+      } else {
+        playBumper = true;
+        toPlayID = videosAra[videoIndexToPlay].id;
+        videoPlayer.loadVideoByID(toPlayID);
+        videoIndexToPlay++;
+      }
+     };
+  </script>
+
+</body>
+</html>
