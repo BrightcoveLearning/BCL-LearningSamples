@@ -64,6 +64,10 @@
             "name": "Related Videos"
           },
           {
+            "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/shopping-highlights.html",
+            "name": "Shopping Highlights"
+          },
+          {
             "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/samples/update-media.html",
             "name": "Update Video Metadata"
           },
