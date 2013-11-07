@@ -1,0 +1,14 @@
+{
+    "product1": {
+        "images": {
+            "large": "/SmartPlayerAPI/shopping-highlights/assets/shopping-highlights-product-1-large.png",
+            "small": "/SmartPlayerAPI/shopping-highlights/assets/shopping-highlights-product-1.png"
+        }
+    },
+    "product2": {
+        "images": {
+            "large": "/SmartPlayerAPI/shopping-highlights/assets/shopping-highlights-product-2-large.png",
+            "small": "/SmartPlayerAPI/shopping-highlights/assets/shopping-highlights-product-2.png"
+        }
+    }
+}

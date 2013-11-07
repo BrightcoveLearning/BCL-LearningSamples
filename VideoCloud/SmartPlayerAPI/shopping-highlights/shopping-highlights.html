@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping Highlights</title>
+    
+    <style id="pageStyles">
+      #imageSmall {
+        position: absolute;
+        left: 320px;
+        top: 130px;
+        cursor: pointer;
+      }
+      #imageLarge {
+        position: absolute;
+        left: 490px;
+        top: 0;
+        cursor: pointer;
+      }
+      #shoppingCart {
+        width: 50px;
+        height: 30px;
+        border: 2px #F3951D solid;
+        border-radius: 10px;
+        background-color: #64AAB2;
+        color: #FFFFFF;
+        margin-left: 400px;
+        margin-bottom: 10px;
+        padding: 10px;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .player-block {
+        position: relative;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div id="shoppingCart">Items:<br /><span id="itemCount">0</span></div>
+      
+      <div class="player-block">
+        
+        <!-- Start of Brightcove Player -->
+        <script language="JavaScript" type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+        <object id="myExperience2812920328001" class="BrightcoveExperience">
+          <param name="bgcolor" value="#FFFFFF" />
+          <param name="width" value="480" />
+          <param name="height" value="270" />
+          <param name="playerID" value="1753810340001" />
+          <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrdihurn3hYnYJWo8k_gM6uF" />
+          <param name="isVid" value="true" />
+          <param name="isUI" value="true" />
+          <param name="dynamicStreaming" value="true" />
+          <param name="@videoPlayer" value="2812920328001" />
+          <!-- params for Smart Player API -->
+          <param name="includeAPI" value="true" />
+          <param name="templateLoadHandler" value="onTemplateLoad" />
+          <param name="templateReadyHandler" value="onTemplateReady" />
+        </object>
+        <script type="text/javascript">brightcove.createExperiences();</script>
+        <!-- End of Brightcove Player -->
+        
+        <!-- shopping image placeholders -->
+        <div id="imageLarge"></div>
+        <div id="imageSmall"></div>
+        
+      </div>
+      
+      <script id="pageScript" type="text/javascript">
+
+      // variables
+      var shoppingCart = [],
+          shoppingCartItems = document.getElementById("itemCount"),
+          productData,
+          currentProduct,
+          player,
+          APIModules,
+          cuePointEvent,
+          videoPlayer,
+          eimageSmall = document.getElementById("imageSmall"),
+          eimageLarge = document.getElementById("imageLarge"),
+          // private functions
+          // show the product thumbnail over the player
+          showProductThumbnail = function () {
+            var t;
+            eimageSmall.innerHTML = "<img src=\"" + currentProduct.images.small + "\">";
+            // set timeout to disappear the image after 5 sec
+            t = setTimeout(function () {
+              eimageSmall.innerHTML = "";
+            }, 5000);
+          },
+          // show the product image beside the player
+          showProductImage = function () {
+            var t;
+            eimageLarge.innerHTML = "<img src=\"" + currentProduct.images.large + "\">";
+            // disappear the image after 3 sec
+            t = setTimeout(function () {
+              eimageLarge.innerHTML = "";
+            }, 3000);
+          },
+          // add the product to the cart
+          addToCart = function () {
+            shoppingCart.push(currentProduct);
+            shoppingCartItems.innerHTML = shoppingCart.length;
+          };
+          // add event listeners for the image blocks
+          if (!eimageLarge.addEventListener) {
+              // work around for IE 7 & 8
+              eimageSmall.attachEvent("onclick", function (){
+                showProductImage(product);
+              });
+              eimageLarge.attachEvent("onclick", function (){
+                addToCart();
+              });
+            } else {
+              // have a standard-compliant browser, addEventListener works
+              eimageSmall.addEventListener("click", function (){
+                showProductImage();
+              });
+              eimageLarge.addEventListener("click", function (){
+                addToCart();
+              });
+            }
+      // public functions and data
+        /**** template loaded event handler ****/
+        var onTemplateLoad = function (experienceID) {
+          // get a reference to the player and API Modules and Events
+          player = brightcove.api.getExperience(experienceID);
+          APIModules = brightcove.api.modules.APIModules;
+          cuePointEvent = brightcove.api.events.CuePointEvent;
+        }
+        /**** template ready event handler ****/
+        var onTemplateReady = function (evt) {
+          // get references to modules
+          videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+          // get the video data for the current video
+          videoPlayer.getCurrentVideo( function(videoDTO) {
+            productData = JSON.parse(videoDTO.longDescription);
+          } );
+          // add an event listener for PROGRESS events
+          // note that handler name must be the *public* name
+          videoPlayer.addEventListener(cuePointEvent.CUE, onCue);
+        }
+        /**** cue point handler ****/
+        var onCue = function (evt) {
+          currentProduct = productData[evt.cuePoint.name];
+          console.log(currentProduct);
+          showProductThumbnail();
+        }
+    </script>
+    
+  </body>
+</html>
