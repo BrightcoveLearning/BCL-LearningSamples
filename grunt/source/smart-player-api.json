@@ -125,6 +125,10 @@
             "name": "Playlists in the HTML"
           },
           {
+            "url": "//docs.brightcove.com/en/video-cloud/smart-player-api/solutions/scroll-into-view.html",
+            "name": "Scroll Into View: Play"
+          },
+          {
             "url": "//solutions.brightcove.com/bcls/smart-player-api/ScrollIntoViewStartVideo/ScrollIntoViewStartVideo.html",
             "name": "Start Video when Player is Scrolled into View"
           },
