@@ -6,7 +6,7 @@
   </head>
   <body>
     
-    <h3>Video loop with PROGRESS event</h3>
+    <h3>Video loop with STOP event</h3>
     <!-- Start of Brightcove Player -->
             
     <div style="display:none">
@@ -97,9 +97,9 @@
       var onProgress = function(evt) {
         console.log('onProgress');
               
-        if ((evt.duration - evt.position) < .25) {
-             videoPlayer.seek(0);
-         }
+//        if ((evt.duration - evt.position) < .25) {
+//             videoPlayer.seek(0);
+//        }
       };
       
       var onSeek = function(evt) {
@@ -110,7 +110,8 @@
         console.log('onStop');
         
 //        videoPlayer.seek(0);
-//        videoPlayer.play();
+        
+        videoPlayer.play();
       };
       
     </script>
