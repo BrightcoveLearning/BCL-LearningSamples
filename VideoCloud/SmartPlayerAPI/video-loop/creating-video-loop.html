@@ -5,21 +5,21 @@
     <title>Video Loop</title>
   </head>
   <body>
-    
+
     <h3>Video loop with STOP event</h3>
     <!-- Start of Brightcove Player -->
-            
+
     <div style="display:none">
-    
+
     </div>
-    
+
     <!--
-    By use of this code snippet, I agree to the Brightcove Publisher T and C 
-    found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+    By use of this code snippet, I agree to the Brightcove Publisher T and C
+    found at https://accounts.brightcove.com/en/terms-and-conditions/.
     -->
-    
+
     <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-    
+
     <object id="myExperience1754276221001" class="BrightcoveExperience">
       <param name="bgcolor" value="#FFFFFF" />
       <param name="width" value="480" />
@@ -29,36 +29,36 @@
       <param name="isVid" value="true" />
       <param name="isUI" value="true" />
       <param name="dynamicStreaming" value="true" />
-      
+
       <param name="@videoPlayer" value="1754276221001" />
-      
+
       <!-- smart player api params -->
       <param name="includeAPI" value="true" />
       <param name="templateLoadHandler" value="onTemplateLoad" />
       <param name="templateReadyHandler" value="onTemplateReady" />
     </object>
-    
-    <!-- 
+
+    <!--
     This script tag will cause the Brightcove Players defined above it to be created as soon
     as the line is read by the browser. If you wish to have the player instantiated only after
     the rest of the HTML is processed and the page load is complete, remove the line.
     -->
 <!--    <script type="text/javascript">brightcove.createExperiences();</script>-->
-    
+
     <!-- End of Brightcove Player -->
-    
-    
+
+
     <!-- custom script -->
     <script type="text/JavaScript">
       var player,
          APIModules,
          videoPlayer;
-         
+
       var onTemplateLoad = function(experienceID) {
          player = brightcove.api.getExperience(experienceID);
          APIModules = brightcove.api.modules.APIModules;
       };
-    
+
       var onTemplateReady = function(evt) {
          videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
          videoPlayer.play();
@@ -71,49 +71,49 @@
          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.SEEK_NOTIFY, onSeek);
          videoPlayer.addEventListener(brightcove.api.events.MediaEvent.STOP, onStop);
       };
-      
+
       var onBegin = function(evt) {
         console.log('onBegin');
       };
-      
+
       var onChange = function(evt) {
         console.log('onChange');
       };
-          
+
       var onComplete = function(evt) {
         console.log('onComplete');
-        
+
 //        videoPlayer.play();
       };
-      
+
       var onError = function(evt) {
         console.log('onError');
       };
-      
+
       var onPlay = function(evt) {
         console.log('onPlay');
       };
-      
+
       var onProgress = function(evt) {
         console.log('onProgress');
-              
-//        if ((evt.duration - evt.position) < .25) {
-//             videoPlayer.seek(0);
-//        }
+
+       if ((evt.duration - evt.position) < .25) {
+            videoPlayer.seek(0);
+       }
       };
-      
+
       var onSeek = function(evt) {
         console.log('onSeek');
       };
-      
+
       var onStop = function(evt) {
         console.log('onStop');
-        
-//        videoPlayer.seek(0);
-        
+
+       videoPlayer.seek(0);
+
         videoPlayer.play();
       };
-      
+
     </script>
   </body>
 </html>
