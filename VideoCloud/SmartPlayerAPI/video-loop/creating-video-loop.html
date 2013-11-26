@@ -5,14 +5,9 @@
     <title>Video Loop</title>
   </head>
   <body>
-<<<<<<< HEAD
     
     <h3>Video loop</h3>
 
-=======
-
-    <h3>Video loop with STOP event</h3>
->>>>>>> cf9c8a49288e34e5eddb4dd7231b1a3fa0041cc6
     <!-- Start of Brightcove Player -->
 
     <div style="display:none">
@@ -52,7 +47,6 @@
 <!--    <script type="text/javascript">brightcove.createExperiences();</script>-->
 
     <!-- End of Brightcove Player -->
-<<<<<<< HEAD
     
     <p>Uses PROGRESS event on desktop and STOP event on Android and iOS devices.</p>
     
@@ -63,15 +57,6 @@
         videoPlayer,
         android = ( navigator.userAgent.match(/Android/g) ? true : false ),
         iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-=======
-
-
-    <!-- custom script -->
-    <script type="text/JavaScript">
-      var player,
-         APIModules,
-         videoPlayer;
->>>>>>> cf9c8a49288e34e5eddb4dd7231b1a3fa0041cc6
 
       var onTemplateLoad = function(experienceID) {
         player = brightcove.api.getExperience(experienceID);
@@ -79,7 +64,6 @@
       };
 
       var onTemplateReady = function(evt) {
-<<<<<<< HEAD
         videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
         videoPlayer.play();
         
@@ -93,69 +77,19 @@
         else {
           videoPlayer.addEventListener(brightcove.api.events.MediaEvent.STOP, onStop);
         }
-=======
-         videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
-         videoPlayer.play();
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.BEGIN, onBegin);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.CHANGE, onChange);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.COMPLETE, onComplete);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.ERROR, onError);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PLAY, onPlay);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.PROGRESS, onProgress);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.SEEK_NOTIFY, onSeek);
-         videoPlayer.addEventListener(brightcove.api.events.MediaEvent.STOP, onStop);
-      };
-
-      var onBegin = function(evt) {
-        console.log('onBegin');
-      };
-
-      var onChange = function(evt) {
-        console.log('onChange');
-      };
-
-      var onComplete = function(evt) {
-        console.log('onComplete');
-
-//        videoPlayer.play();
-      };
-
-      var onError = function(evt) {
-        console.log('onError');
-      };
-
-      var onPlay = function(evt) {
-        console.log('onPlay');
->>>>>>> cf9c8a49288e34e5eddb4dd7231b1a3fa0041cc6
       };
 
       var onProgress = function(evt) {
         console.log('onProgress');
-<<<<<<< HEAD
               
         if ((evt.duration - evt.position) < .25) {
              videoPlayer.seek(0);
         }
-=======
-
-       if ((evt.duration - evt.position) < .25) {
-            videoPlayer.seek(0);
-       }
       };
-
-      var onSeek = function(evt) {
-        console.log('onSeek');
->>>>>>> cf9c8a49288e34e5eddb4dd7231b1a3fa0041cc6
-      };
-
+      
       var onStop = function(evt) {
         console.log('onStop');
 
-<<<<<<< HEAD
-=======
-       videoPlayer.seek(0);
-
->>>>>>> cf9c8a49288e34e5eddb4dd7231b1a3fa0041cc6
         videoPlayer.play();
       };
 
