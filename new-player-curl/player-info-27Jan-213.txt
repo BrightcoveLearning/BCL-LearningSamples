@@ -1,0 +1,200 @@
+[
+  {
+    "accountId": "1507807800001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "player": {
+            "template": {
+              "version": "0.3.0",
+              "name": "single-video-template"
+            }
+          },
+          "media": {
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4",
+            "name": "Sample Video"
+          }
+        },
+        "updated_at": "2014-01-27T18:46:48.182Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/64641afb-2d11-4886-ba23-53f9a0aa207c/preview/index.html"
+      },
+      "master": {
+        "configuration": {
+          "media": {
+            "name": "Sample Video",
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4"
+          },
+          "player": {
+            "template": {
+              "name": "single-video-template",
+              "version": "0.3.0"
+            }
+          }
+        },
+        "updated_at": "2014-01-27T19:07:43.080Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/64641afb-2d11-4886-ba23-53f9a0aa207c/master/index.html"
+      }
+    },
+    "id": "64641afb-2d11-4886-ba23-53f9a0aa207c",
+    "name": "Sample Player",
+    "created_at": "2014-01-27T18:46:48.182Z",
+    "url": "http://players.brightcove.com/1507807800001/64641afb-2d11-4886-ba23-53f9a0aa207c_default/index.html"
+  },
+  {
+    "accountId": "1507807800001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "player": {
+            "template": {
+              "version": "0.3.0",
+              "name": "single-video-template"
+            }
+          },
+          "media": {
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4",
+            "name": "Sample Video"
+          }
+        },
+        "updated_at": "2014-01-24T16:06:16.584Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/72db06e6-878f-43b8-81bb-cc5074763e2f/preview/index.html"
+      },
+      "master": {
+        "configuration": {
+          "media": {
+            "name": "Sample Video",
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4"
+          },
+          "player": {
+            "template": {
+              "name": "single-video-template",
+              "version": "0.3.0"
+            }
+          }
+        },
+        "updated_at": "2014-01-24T16:06:16.656Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/72db06e6-878f-43b8-81bb-cc5074763e2f/master/index.html"
+      }
+    },
+    "id": "72db06e6-878f-43b8-81bb-cc5074763e2f",
+    "name": "Sample Player",
+    "created_at": "2014-01-24T16:06:16.584Z",
+    "url": "http://players.brightcove.com/1507807800001/72db06e6-878f-43b8-81bb-cc5074763e2f_default/index.html"
+  },
+  {
+    "accountId": "1507807800001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "player": {
+            "template": {
+              "version": "0.3.0",
+              "name": "single-video-template"
+            }
+          },
+          "media": {
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4",
+            "name": "Sample Video"
+          }
+        },
+        "updated_at": "2014-01-24T16:12:04.878Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/ad8261ff-94c8-4b26-84f7-96332b3a48b9/preview/index.html"
+      },
+      "master": {
+        "configuration": {
+          "media": {
+            "name": "Sample Video",
+            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4"
+          },
+          "player": {
+            "template": {
+              "name": "single-video-template",
+              "version": "0.3.0"
+            }
+          }
+        },
+        "updated_at": "2014-01-24T16:15:55.157Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/ad8261ff-94c8-4b26-84f7-96332b3a48b9/master/index.html"
+      }
+    },
+    "id": "ad8261ff-94c8-4b26-84f7-96332b3a48b9",
+    "name": "Sample Player",
+    "created_at": "2014-01-24T16:12:04.878Z",
+    "url": "http://players.brightcove.com/1507807800001/ad8261ff-94c8-4b26-84f7-96332b3a48b9_default/index.html"
+  },
+  {
+    "accountId": "1507807800001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "player": {
+            "template": {
+              "version": "0.3.0",
+              "name": "single-video-template"
+            }
+          }
+        },
+        "updated_at": "2014-01-27T18:53:43.814Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/default/preview/index.html"
+      },
+      "master": {
+        "configuration": {
+          "player": {
+            "template": {
+              "name": "single-video-template",
+              "version": "0.3.0"
+            }
+          }
+        },
+        "updated_at": "2014-01-27T18:53:43.915Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/default/master/index.html"
+      }
+    },
+    "description": "This is an instance of the Brightcove Default Player.  You can modify this or choose to create your own.",
+    "id": "default",
+    "name": "Brightcove Default Player",
+    "created_at": "2014-01-27T18:53:43.815Z",
+    "url": "http://players.brightcove.com/1507807800001/default_default/index.html"
+  },
+  {
+    "accountId": "1507807800001",
+    "branches": {
+      "preview": {
+        "configuration": {
+          "player": {
+            "template": {
+              "version": "0.3.0",
+              "name": "single-video-template"
+            }
+          },
+          "media": {
+            "src": "http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718",
+            "name": "Sample Video"
+          }
+        },
+        "updated_at": "2014-01-24T15:04:10.789Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/e2279cfe-5d01-481b-82fd-bea6f0a8c9d9/preview/index.html"
+      },
+      "master": {
+        "configuration": {
+          "media": {
+            "name": "Sample Video",
+            "src": "http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718"
+          },
+          "player": {
+            "template": {
+              "name": "single-video-template",
+              "version": "0.3.0"
+            }
+          }
+        },
+        "updated_at": "2014-01-24T16:10:08.972Z",
+        "preview_url": "https://players.api.brightcove.com/1507807800001/e2279cfe-5d01-481b-82fd-bea6f0a8c9d9/master/index.html"
+      }
+    },
+    "id": "e2279cfe-5d01-481b-82fd-bea6f0a8c9d9",
+    "name": "Sample Player",
+    "created_at": "2014-01-24T15:04:10.789Z",
+    "url": "http://players.brightcove.com/1507807800001/e2279cfe-5d01-481b-82fd-bea6f0a8c9d9_default/index.html"
+  }
+]

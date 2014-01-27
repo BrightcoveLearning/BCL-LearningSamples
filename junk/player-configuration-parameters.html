@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Player Configuration Parameters</title>
+<link rel="stylesheet" type="text/css" href="http://files.brightcove.com/BCL-document.css">
+</head>
+<body style="font-family:sans-serif;">
+<h1 class="node-title" title="Player Configuration Parameters">Player Configuration Parameters</h1>
+
+  <div class="content clearfix">
+	<div class="producteditions"><table class="sticky-enabled">
+ <thead><tr><th>Product</th><th>Edition</th> </tr></thead>
+<tbody>
+ <tr class="product-videocloud odd"><td>Video Cloud</td><td>Express I, Express II, Express III, Professional, Enterprise</td> </tr>
+</tbody>
+</table>
+</div> 
+    <!-- beginning of Drupal content -->
+<div class="BCL_introduction">
+<p class="BCL_objective">You can configure some aspects of the behavior of a Video Cloud player by editing the player's publishing code. This reference topic  lists the supported player configuration parameters in Video Cloud, and shows the different syntax used in specifying player configuration parameters in JavaScript, ActionScript, and HTML embed code.</p>
+</div>
+
+<p>Configuring player parameters  can be helpful when you need the same player instance to behave differently in two different places.</p>
+<!--c:overview:end--> <!--c:navigation:start-->
+<p>In this topic, you will learn about:</p>
+<ul>
+    <li><a href="#syntax">Syntax for player configuration parameters in JavaScript, ActionScript, and HTML embed code</a></li>
+    <li><a href="#supported">Supported player configuration parameters</a></li>
+    <li><a href="#querystring">Using player parameters in URL query strings</a></li>
+    <li><a href="#ad">Ad request player configuration parameters</a></li>
+</ul>
+<!--c:navigation:end--> <!--c:mainbody:start-->
+<h2><a name="syntax" id="syntax"></a>Syntax for player configuration parameters in JavaScript, ActionScript, and Flash-only Embed code</h2>
+<p>The configuration parameter names are the same regardless of which type  of publishing code you use, but, the syntax varies for JavaScript,  ActionScript, and Flash-only Embed code. <a href=http://support.brightcove.com/en/video-cloud/docs/publishing-brightcove-player>Read about player publishing codes</a>.</p>
+<h4>JavaScript publishing code configuration parameters</h4>
+<p>If you are using JavaScript,&nbsp;you include&nbsp;configuration parameters between the <span style="font-family: Courier New;">&lt;object&gt;</span> tags in the player publishing code. The JavaScript player configuration parameters take this form:</p>
+<pre>
+&lt;param name=&quot;param_name&quot; value=&quot;param_value&quot; /&gt;</pre>
+<h4>ActionScript publishing code configuration parameters</h4>
+<p>If you are using ActionScript, you include configuration parameters in the <code>init</code> function in the player publishing code. The ActionScript player configuration parameters take this form:</p>
+<pre>
+config[&quot;param_name&quot;] = &quot;param_value&quot;;</pre>
+<h4>Flash-only Embed publishing code configuration parameters</h4>
+<p>If you are using Flash-only Embed code, you include configuration parameters in the <code>flashVars</code> param in the player publishing code. The HTML <code>embed</code> code player configuration parameters take this form:</p>
+<pre>
+&lt;param name=&quot;flashVars&quot; value=&quot;playerID=13578640001&amp;domain=embed
+             &amp;param_name1=param_value1&amp;param_name2=param_value2&quot; /&gt;</pre>
+<h2><a name="supported" id="supported"></a>Supported player configuration parameters</h2>
+<p>The following table lists the supported player configuration parameters in Video Cloud. Note that all of these parameter names are case-sensitive.</p>
+<table>
+    <tbody>
+        <tr>
+            <th><strong>Parameter</strong></th>
+            <th><strong>Type</strong></th>
+            <th><strong>Description</strong></th>
+        </tr>
+        <tr>
+            <td><code>@videoPlayer</code></td>
+            <td>String</td>
+            <td>The ID or refid of a video to program into the player. See <a href=http://support.brightcove.com/en/video-cloud/docs/assigning-content-players-programmatically>Assigning content to players programmatically</a>.</td>
+        </tr>
+        <tr>
+            <td><code>@playlistTabs</code></td>
+            <td>String</td>
+            <td>The ID or refid of one or more playlists to program into a player that uses tabs for playlist selection. See <a href=http://support.brightcove.com/en/video-cloud/docs/assigning-content-players-programmatically>Assigning content to players programmatically</a>.</td>
+        </tr>
+        <tr>
+            <td><code>@playlistCombo</code></td>
+            <td>String</td>
+            <td>The ID or refid of one or more playlists to program into a player that uses a ComboBox (dropdown) for playlist selection. See <a href=http://support.brightcove.com/en/video-cloud/docs/assigning-content-players-programmatically>Assigning content to players programmatically</a>.</td>
+        </tr>
+        <tr>
+            <td><code>@videoList</code></td>
+            <td>String</td>
+            <td>The ID or refid of a playlist to program into the player. See <a href=http://support.brightcove.com/en/video-cloud/docs/designating-featured-content-players>Designating featured content</a>.</td>
+        </tr>
+        <tr>
+            <td><code>width</code></td>
+            <td>Number</td>
+            <td>The total width of the player, in pixels.</td>
+        </tr>
+        <tr>
+            <td><code>height</code></td>
+            <td>Number</td>
+            <td>The total height of the player, in pixels.</td>
+        </tr>
+        <tr>
+            <td><code>autoStart</code></td>
+            <td>Boolean</td>
+            <td>If true, the video begins to play as soon as the player loads.</td>
+        </tr>
+        <tr>
+            <td><code>bgcolor</code></td>
+            <td>String</td>
+            <td>A <a target="_blank" href="http://www.w3schools.com/html/html_colors.asp">six-digit  hexadecimal representation</a> of the player's background color. For  example, <code>bgcolor = &quot;#FFFFFF;&quot;</code> (the default) represents white. If you omit this parameter, the player has a white background until it fully loads, which might not be the appearance you want. One suggestion is to match the background color to the color of the page the player loads within.</td>
+        </tr>
+        <tr>
+            <td><a name="dynamicStreaming"></a><code>dynamicStreaming</code></td>
+            <td>Boolean</td>
+            <td>If true (the default setting), the player can take advantage of Flash Media Server 3.5 and Flash Player 10 smooth streaming capabilities. See <a href=http://support.brightcove.com/en/video-cloud/docs/using-multi-bitrate-streaming#dynamicStreaming>Dynamic streaming</a>.</td>
+        </tr>
+        <tr>
+            <td><code>htmlDefaultBitrate</code></td>
+            <td>Number</td>
+            <td>The default progressive download bitrate to use for HTML5 players. For example, <code>&lt;param name=&quot;htmlDefaultBitrate&quot; value=&quot;384000&quot; /&gt;</code></td>
+        </tr>
+        <tr>
+            <td><code>htmlFallback</code></td>
+            <td>Boolean</td>
+            <td>Allows the HTML5 player to be loaded on devices that support Flash but do not have Flash installed. See <a href=http://support.brightcove.com/en/video-cloud/docs/allow-html5-players-flash-supported-environments>Allow HTML5 Players in Flash-Supported Environments</a> for more details.</td>
+        </tr>
+        <tr>
+            <td><code>includeAPI</code></td>
+            <td>Boolean</td>
+            <td>Required to be true in order to use the <a href=http://support.brightcove.com/en/video-cloud/docs/getting-started-smart-player-api>Smart Player&nbsp;API</a> with this player.</td>
+        </tr>
+        <tr>
+            <td><code>isUI</code></td>
+            <td>Boolean</td>
+            <td>Required to be true for video players whose templates include UI elements other than the  <code>VideoPlayer</code> component, such as a <code>ChromelessVideoPlayer</code> or <code>VideoDisplay</code> and <code>MediaControls</code> components.</td>
+        </tr>
+        <tr>
+            <td><code>isVid</code></td>
+            <td>Boolean</td>
+            <td>Required to be true for all video players.</td>
+        </tr>
+        <tr>
+            <td><a name="labels"></a><code>labels</code></td>
+            <td>String</td>
+            <td>The URL of an XML file that describes the label set to use for this player. See <a href=http://support.brightcove.com/en/video-cloud/docs/localizing-players>Localizing Players</a> for information about how to create a label set file.</td>
+        </tr>
+        <tr>
+            <td><a name="language"></a><code>language</code></td>
+            <td>Enum</td>
+            <td>The language to use for the default player labels; one of en (English), fr (French), de (German), it (Italian), jp (Japanese), or es (Spanish). This value overrides the <a href=http://support.brightcove.com/en/video-cloud/docs/editing-settings-players#language>language setting set for the player in the Video Cloud Studio Publishing module</a>.</td>
+        </tr>
+        <tr>
+            <td><code>linkBaseURL</code></td>
+            <td>String</td>
+            <td>The base URL to use when the viewer clicks the &quot;Share&quot;, &quot;Get Link&quot;, or &quot;Email&quot; button in the player. Overrides the default <code>linkBaseURL</code> and enables linking to the parent page of the player. See <a href=http://support.brightcove.com/en/video-cloud/docs/customizing-link-url>Customizing the link URL</a>.</td>
+        </tr>
+        <tr>
+            <td><code>localizedErrorXML</code></td>
+            <td>String</td>
+            <td>The URL of a player error message file. This XML file specifies the messages to be displayed in case of player errors. See <a href=http://support.brightcove.com/en/video-cloud/docs/localizing-player-error-messages>Localizing player error messages</a>.</td>
+        </tr>
+        <tr>
+            <td><a name="majorRev" id="majorRev"></a><code>majorVersion</code></td>
+            <td>String</td>
+            <td>The major version number of Flash that is required. By default, Video Cloud players require Flash version 9.0.28 or later. To require Flash 10, use this parameter: <code>&lt;param name=&quot;majorVersion&quot; value=&quot;10&quot; /&gt;</code>.</td>
+        </tr>
+        <tr>
+            <td><a name="minorRev" id="minorRev"></a><code>minorRevision</code></td>
+            <td>String</td>
+            <td>The minor revision number of Flash 9 that is required. By default, Video Cloud players require Flash version 9.0.28 or later. To require a later Flash 9 version, use a parameter like <code>&lt;param name=&quot;minorRevision&quot; value=&quot;115&quot; /&gt;</code>.</td>
+        </tr>
+        <tr>
+            <td><code>playerId</code></td>
+            <td>Number</td>
+            <td>The player ID. This parameter is being replaced by the <span style="font-family: Courier New;">playerKey</span> parameter. If you want to change which player is loaded on a page, you should change the values of both the <span style="font-family: Courier New;">playerId</span> and the <span style="font-family: Courier New;">playerKey</span> parameters.</td>
+        </tr>
+        <tr>
+            <td><code><a name="playerKey"></a>playerKey</code></td>
+            <td>String</td>
+            <td>A unique identifier for the player, including an encrypted representation of the player ID.</td>
+        </tr>
+        <tr>
+            <td><a name="https" id="https"></a><code>secureConnections</code></td>
+            <td>Boolean</td>
+            <td>If true, prevents a Flash-based player that is published on a page that uses HTTPS from triggering security warnings. Note that this only prevents security warnings; it does not cause the player to use HTTPS. Also note that you should use this setting only on HTTPS pages along with the <code>secureHTMLConnections</code> parameter; using it on HTTP pages  may cause errors. This is only relevant for JavaScript publishing code. See <a href=http://support.brightcove.com/en/video-cloud/docs/publishing-video-cloud-player-https-page>Publishing a Video Cloud Player on an HTTPS Page</a> for more information.</td>
+        </tr>
+        <tr>
+            <td><code>secureHTMLConnections</code></td>
+            <td>Boolean</td>
+            <td>If true, prevents an HTML5 player that is published on a page that uses HTTPS from triggering security warnings. Note that this only prevents security warnings; it does not cause the player to use HTTPS. Also note that you should use this setting only on HTTPS pages along with the <code>secureConnections</code> parameter; using it on HTTP pages  may cause errors. This is only relevant for JavaScript publishing code. See <a href=http://support.brightcove.com/en/video-cloud/docs/publishing-video-cloud-player-https-page>Publishing a Video Cloud Player on an HTTPS Page</a> for more information.</td>
+        </tr>
+        <tr>
+            <td><code>skipContentCall</code></td>
+            <td>Boolean</td>
+            <td>If true, prevents a content call from being made, if you are using the Flash-only Player API to retrieve content.</td>
+        </tr>
+        <tr>
+            <td><code>showNoContentMessage</code></td>
+            <td>Boolean</td>
+            <td>If true, enables the display of a warning message if no content has been assigned to the player.</td>
+        </tr>
+        <tr>
+            <td><code>templateErrorHandler</code></td>
+            <td>String</td>
+            <td>The name of a user-defined JavaScript function to be automatically invoked in response to <a href=http://support.brightcove.com/en/video-cloud/docs/player-error-handling>player error events</a>.</td>
+        </tr>
+        <tr>
+            <td><code>templateLoadHandler</code></td>
+            <td>String</td>
+            <td>The name of a user-defined JavaScript function to be automatically invoked when the player loads. This provides an entry point for the <a href=http://support.brightcove.com/en/video-cloud/docs/getting-started-smart-player-api>Smart Player API</a>.</td>
+        </tr>
+        <tr>
+            <td><code>templateReadyHandler</code></td>
+            <td>String</td>
+            <td>The name of a user-defined JavaScript function to be automatically invoked <a href=http://support.brightcove.com/en/video-cloud/docs/player-error-handling>player ready events</a>.</td>
+        </tr>
+        <tr>
+            <td><a name="videoSmoothing"></a><code>videoSmoothing</code></td>
+            <td>Boolean</td>
+            <td>Overrides the <a href=http://support.brightcove.com/en/video-cloud/docs/video-smoothing>default video smoothing behavior</a> for the player; if true (the default value), always applies video smoothing and if false, never applies video smoothing. If absent, the player uses video smoothing.</td>
+        </tr>
+        <tr>
+            <td><code>wmode</code></td>
+            <td>String</td>
+            <td>Sets the Window Mode property of the SWF file for transparency, layering, positioning, and rendering in the browser. If this attribute is omitted, the default value is <code>window</code>.<br />
+            <br />
+            Possible values:
+            <ul>
+                <li><code>window</code> - The SWF content plays in its own rectangle (&quot;window&quot;) on a web page.</li>
+                <li><code>direct</code> - Use direct to path rendering. This attribute bypasses compositing in the screen buffer and renders the SWF content directly to the screen.</li>
+                <li><code>opaque</code> - The SWF content is layered together with other HTML elements on the page. The SWF file is opaque and hides everything layered behind<strong> it.</strong></li>
+                <li><code>transparent</code> - The SWF content is layered together with other HTML elements on the page. The SWF file background color (Stage color) is transparent. HTML elements beneath the SWF file are visible through any transparent areas of the SWF, with alpha blending.</li>
+                <li><code>gpu</code> - Use additional hardware acceleration on some Internet-connected TVs and mobile devices. In contrast to other wmode values, pixel fidelity for display list graphics is not guaranteed.</li>
+            </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2><a name="querystring" id="querystring"></a>Using player parameters in URL query strings</h2>
+<p>With URL query strings, you can pass player configuration parameters to Video Cloud.</p>
+<p>First, copy the publishing code URL from Video Cloud Studio to your clipboard. Notice that this URL is a TinyURL format. You cannot add URL query strings to this format, but you can easily convert it to a long format by pasting the TinyURL into a browser.</p>
+<p>The following TinyURL:</p>
+<pre>
+<a href="http://bcove.me/87tjemnr">http://bcove.me/87tjemnr</a>;</pre>
+<p>expands into this URL:</p>
+<pre>
+<a href="http://bcove.me/87tjemnr">http://link.brightcove.com/services/player/bcpid2041213080001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKRKOhRLZ7yCOnp00AmK9wBD&amp;bctid=2193277789001</a></pre>
+<p>Here are some examples of how you can use URL query strings to customize the player behavior:</p>
+<h4>Specify an HD video player</h4>
+<p>The following query string sets the <code>width</code> and <code>height</code> player parameters for a High Definition player size:</p>
+<pre>
+<a href="http://link.brightcove.com/services/player/bcpid2041213080001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKRKOhRLZ7yCOnp00AmK9wBD&bctid=2193277789001&width=1920&height=1080">http://link.brightcove.com/services/player/bcpid2041213080001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKRKOhRLZ7yCOnp00AmK9wBD&amp;bctid=2193277789001&amp;width=1920&amp;height=1080</a></pre>
+<h4>Publish your video player on a secure page</h4>
+<p>The following query string uses the <code>secureConnections</code> player parameter for running your player on a secure page. Notice that we have to use the <code>HTTPS</code> protocol with this parameter.</p>
+<pre><a href="https://link.brightcove.com/services/player/bcpid2144431163001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKQ5_jDw69OsKjmHIIu7o21Z&bctid=2193277789001&secureConnections=true">https://link.brightcove.com/services/player/bcpid2144431163001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKQ5_jDw69OsKjmHIIu7o21Z&amp;bctid=2193277789001&amp;secureConnections=true</a></pre>
+<h4>Stop the video from automatically playing</h4>
+<p>The following query string uses the <code>autoStart</code> player parameter to stop the video from automatically playing when the player loads.</p>
+<pre><a href="http://link.brightcove.com/services/player/bcpid2144431163001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKQ5_jDw69OsKjmHIIu7o21Z&bctid=2193277789001&autoStart=false">http://link.brightcove.com/services/player/bcpid2144431163001?bckey=AQ~~,AAABjnKM-Ck~,C_Yw07pWMKQ5_jDw69OsKjmHIIu7o21Z&amp;bctid=2193277789001&amp;autoStart=false</a></pre>
+<h2><a name="ad" id="ad"></a>Ad request player configuration parameters</h2>
+<p>In addition, the following player configuration parameters modify a player's ad request behavior. For information about them, see <a href=http://support.brightcove.com/en/video-cloud/docs/player-configuration-parameters-ads>Player configuration parameters for ad operations</a>. Player configuration parameters for a player's ad request behavior include the following:</p>
+<ul>
+    <li><code>additionalAdTargetingParams</code></li>
+    <li><code>adServerURL</code></li>
+    <li><code>overrideAds</code></li>
+    <li><code>externalAds</code></li>
+    <li><code>playlistTargeting</code></li>
+</ul>
+<!-- End of Drupal content -->  </div>
+
+
+
+</body>
+</html>

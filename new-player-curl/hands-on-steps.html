@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Steps for New Player Creation</title>
+</head>
+<body>
+<ol>
+  <li>From the <strong>Player Tour</strong> complete the <strong>Security setup</strong> section and be sure you see your access token echoed back to you.
+  <ul><li>Copy and save the statement from step 5 for later use. This is the statement that starts with <code>export</code>. The reason you will need this is that your authenticated access times out at 5 minute intervals. You will receive authentication errors periodically, and to resolve the error you will need to copy and past the <code>export</code> statement to see your token has been updated.</li></ul>
+  </li>
+  <li>In Video Cloud Studio copy your publisher ID, then export it in terminal with this command:</li>
+  <pre><code>export BC_ACCOUNT_ID=<em>YourAccountID</em></code></pre>
+  <li>Export the name for your new player using this terminal command:</li>
+  <pre><code>export PLAYER_NAME=<em>YourPlayerName</em></code></pre>
+  <li>Create a new player using this curl statement:</li>
+  <pre><code>curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request POST \
+  --data-binary '{"name": "$PLAYER_NAME"}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players
+</code></pre>
+  <li>In the JSON response from the Player Service, you will see a lengthy id returned. Export the player id using this command:</li>
+  <pre><code>export PLAYER_ID=<em>ReturnedPlayerID</em></code></pre>
+  <li>Make the player active by using this curl statement:</li>
+  <pre><code>curl \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --header "Content-Type: application/json" \
+  -X PUT \
+  --data '{"options" : { "comment": "Publishing a player" }}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/active</code></pre>
+  <li>In the JSON response from the Player Service, copy the URL and browse it. At this time you see the player, but not video playing as yet you have not assigned a video to play.</li>
+  <li>You will assign a source to your player using the curl statement below. You must supply your own video <code>id</code>, <code>src</code>, <code>codec</code> and <code>container</code> values.</li>
+  <pre><code>curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request POST \
+  --data-binary '{ "media": 
+    { 
+      "id": "<em>YourVideoID</em>", 
+      "sources": 
+      [ 
+        { 
+          "src": "<em>YourRenditionURL</em>", 
+          "codec": "h264",
+          "container": "mp4" 
+        }
+      ] 
+    } 
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds</code></pre>
+  <li>In the JSON response from the Player Service, copy the embed ID and export it using this terminal command:</li>
+  <pre><code>export EMBED_ID=<em>ReturnedEmbedID</em></code></pre>
+  <li>Make the embed active by using the following curl statement:</li>
+  <pre><code>curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request PUT \
+  --data-binary '{}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/active</code></pre>
+  <li>In the JSON response from the Player Service, copy the URL and browse it. You will now see your assigned video playing in the newly created player.</li>
+</ol>
+</body>
+</html>

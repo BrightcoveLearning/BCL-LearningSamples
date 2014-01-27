@@ -1,0 +1,74 @@
+//From link to autogenerate request for token
+curl -L http://players.brightcove.com/docs/alpha/create_client_credentials.sh | bash -s AEnTxTi2qk1fIB5adNKr9XuahxSiW5KZIAK1pnJ0zD9u3GshaXbyGwheKvWD5mBTUN-yxcU5aCyZFCjdY6a7InHSKiCXyN-RbNVza4gRVtaqGzMg9j1sB2s 1507807800001 video-cloud/player/all
+
+//To refresh token
+export BC_ACCESS_TOKEN=`curl -s -L http://players.brightcove.com/docs/alpha/create_access_token.sh | bash -s a295fe12-15b1-48c9-82a4-14b03fff7a95 KkdqZ-i9rcERi6pu2fyVP4myNYHDLEmW4siqBDxDI5fIr7ewWvGH9cEVH1kWVu24JXGG3y48E7E3yDb1b24Tnw` && echo 'Token has been updated'
+
+//Pub ID from Video Cloud account 
+Publisher ID: 1507807800001
+
+//Get players from account
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request GET \
+  --data-binary "{}" \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players
+
+//Retrieve existing player config
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request GET \
+  --data-binary "{}" \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+//Create empty player
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request POST \
+  --data-binary '{"name": "yourNewPlayersName"}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players
+
+//Make the player active
+curl \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --header "Content-Type: application/json" \
+  -X PUT \
+  --data '{"options" : { "comment": "Publishing a player" }}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/active
+
+//Assign empty player a source
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request POST \
+  --data-binary '{ "media": 
+    { 
+      "id": "2114345471001", 
+      "sources": 
+      [ 
+        { 
+          "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4", 
+          "codec": "h264",
+          "container": "mp4" 
+        }
+      ] 
+    } 
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+//Make the embed active
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --request PUT \
+  --data-binary '{}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/active
