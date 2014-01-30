@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>New Player and Add Source</title>
+</head>
+<body>
+
+  <div id="injectionDiv">
+  </div>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+<script type="text/javascript">
+  var account_id="1507807800001",
+  displayPlayersTemplate = "<ul>{{#each players}}<li>{{name}}</li>{{/each}}</ul>";
+    bc_access_token="AH-otYKa43ue3YQdI_TWECuQyAQECdDP1j29kzVc9SSKIEevitUvvaDgVOLWHIJAC4AE7mEAHDMNdyeuU3ypLIPqfPtrQ7vXX5wCSxLKRXuhBH9e8ePhXVWjD5TMLFWgfskbcKMbQYN_slADZmETAY5IMSFgCQ4tzXehoXWn0MrvzIgQCEmGUWJwFbxPX0QTMWVTjJ2kcFqA-PhoVEzpg-SheOeaEwKKNJOf04YOegQ6fD_0toB052WwQk-RJ2PZ5rZqG-6HL7tWaqCEotn91D5OtRse7frJk_pGu9pYrLugMKTWN5K57cZb2xVyrmLJcqyogHHq7_mfbvPU74vmelH_HTIaH7gsf4N9Qaosx1rQb3i2FNkyHg_QEneGFlTUhVFyMyocbanGotEulxXwxtsreZgiA2geXC2rSGXl2vDNdKtis-ZWwCEy65oQ-c175So09Wxd6oVKrVn9ICn68E-FMx3-jDztE6xUnEYJ6EtUZ5P_Njz4wesZ3AXAqmGcne05uZ4NJqe0HEdRzPVhkxXLjBs3FeI8QaLgLcVvm4qsDaR-Bd8We-efKcysAr6I0CLrOoAzaFR8zu4_g0w9KT4Vd4e1v0MmPpuaxuFOxe1ZsuJQRAzODjpPETx372mv0SOMq_JUChJxfmZT1i4Em8cEpKG1GkX7ztO6PwhCdwxQ3O2_KZjKWMbWwvdq9B1clrANRnJKOe7x_-ccoxhysoCwoco-PB645FilY0owLWoDQpLfK5sjny19_P2p5JzD5PVeTjlpvsZnUi0iwKDLB9NwYfaexMIUuSATK7GtJH56aVOd-mxQOCIuoKsglNQbhtVUYCYLQY1upxNHDUpuF5BEonUW5sWQg2B10yqONVdcdoy7OuUbjE00rmuqdQkFO4pH8VoK-ISN2KEnj2-CtBuKQWsq21nE4-M4XCh4kFrJC8nfQQtgg2kDe3eC-B7K4yZAvat729kUBEXipJEgwcrY4hwe0bhU98HPS2LWKVe8IvR4oDXCnJCeluYGRH9Q0qAjozhz9o9vyY8wwetU0Atb4DJvwfaOPz-C24OxY8qd5TVTYxlgkcC6Y_rl2lRe4XNLpwh4EKaGiUmdAbjOwQ9RIwMZey_s1OoftSLPlNWG9xNsRhNg61FQl68U88guclFDsdxrnS11EmpfL3KG-vp1Qwf2XSTeQjF-tB5djEedwuW6K79I-SmgXU8jYtJ7DJS1qqbX56RR652Gi_5tnBzpPQHCSAyWnruYIneU9rrgGZF3MCJh75134Aa2ivvn4SJk2q-U0pkgwDKz8azDncRT4_mznReB0dsxZOEC26qhNKnwhDnc58eLkjBqA9eqQZz_qCtC1pjNvbHHdvuXDpXRDG7PXHsIe_NxN_Oqwy-Bu3QF0GeCT4-X7wpfO0rPmmNRmupwrYB2_cZeV9ZoHuLE1tMYyNEOo5LN5BsxEBZeC9WGx-SvPSYhN-SYdSoLR4RL024BA07jZJ7WNfUmQhbIK45sRBDQHw";
+
+    var ajaxSuccess = function(data){
+      console.log("success data: ");
+      console.log(data);
+      displayData(data);
+    },
+
+    ajaxError = function(data){
+      console.log("error data: ");
+      console.log(data);
+    },
+
+    makeAjaxCall = function(callURL, callType, callData){
+      console.log(callData);
+
+      if (callData) {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Bearer " + bc_access_token,
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          data: JSON.stringify(callData),
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      } else {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Bearer " + bc_access_token
+          },
+          url: callURL,
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      }
+    };
+
+    var getPlayerInfo = function(){
+      call_url="https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
+      makeAjaxCall(call_url, "GET", null);
+    };
+
+    var displayData = function(playerData){
+      var wrapper = {players: playerData},
+        template = Handlebars.compile(displayPlayersTemplate),
+        dynamicHTML = template(wrapper);
+      document.getElementById("injectionDiv").innerHTML = dynamicHTML;
+    };
+
+  getPlayerInfo();
+</script>
+
+</body>
+</html>
