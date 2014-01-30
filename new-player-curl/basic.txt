@@ -42,6 +42,15 @@ curl \
   --data '{"options" : { "comment": "Publishing a player" }}' \
   https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/active
 
+//Delete player
+curl \
+  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --header "Content-Type: application/json" \
+  --request DELETE \
+  --data '{}' \
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/478772a5-a2f2-44c6-a26b-2d7234bd97f5 \
+  -w "HTTP Status: %{http_code}"
+
 //Assign empty player a source
 curl \
   --include \
