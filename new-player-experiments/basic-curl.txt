@@ -6,6 +6,10 @@ export BC_ACCESS_TOKEN=`curl -s -L http://players.brightcove.com/docs/alpha/crea
 
 //Pub ID from Video Cloud account 
 Publisher ID: 1507807800001
+export ACCOUNT_ID=1507807800001
+export EMAIL=mboles@brightcove.com
+
+https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/myFirstRepo
 
 //Get players from account
 curl \
@@ -18,12 +22,10 @@ curl \
 
 //Retrieve existing player config
 curl \
-  --include \
   --header "Content-Type: application/json" \
-  --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
+  --user $EMAIL \
   --request GET \
-  --data-binary "{}" \
-  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/configuration
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
 //Create empty player
 curl \
@@ -81,3 +83,379 @@ curl \
   --request PUT \
   --data-binary '{}' \
   https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/active
+
+
+//For player tour
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  -X POST \
+  --data '{
+    "name": "My Sample Player 425",
+      "configuration": {
+        "media": {
+          "name":"Sample Video",
+          "src": "http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players 
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  -X PUT \
+  --data '{"options" : { "comment": "Publishing a player" }}' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/active
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "media": {
+      "poster": {
+        "highres":"http://static02.mediaite.com/geekosystem/uploads/2013/12/doge.jpg"
+      }
+    }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  -request PATCH \
+  --data '{
+      "media": {
+        "poster": {
+          "highres":"http://video-js.zencoder.com/oceans-clip.png"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  -X PUT \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/active
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --X GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718", 
+            "type":"video/mp4"
+          }],
+          "poster": {
+            "highres":"http://static02.mediaite.com/geekosystem/uploads/2013/12/doge.jpg"
+          }
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "poster": {
+          "highres":"http://static02.mediaite.com/geekosystem/uploads/2013/12/doge.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+//add plugin script to configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/plugins/first-plugin.js"
+    ]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+//publish
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PUT \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/active
+
+//add plugin to configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "plugins": [{
+      "name": "firstPlugin"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+//add plugin to configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://players.brightcove.com/1507807800001/repoTest/first-plugin.js"
+    ],
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.css"
+    ],
+    "plugins": [{
+      "name": "firstPlugin"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+//get configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "poster": {
+          "highres":"http://static02.mediaite.com/geekosystem/uploads/2013/12/doge.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+{
+    "player": {
+        "template": {
+            "version": "0.4.0",
+            "name": "single-video-template"
+        }
+    },
+    "media": {
+        "poster": {
+            "highres": "http://solutions.brightcove.com/bcls/video-js/new-player/oceans-clip.jpg"
+        },
+        "sources": [{
+            "type": "video/mp4",
+            "src": "http://video-js.zencoder.com/oceans-clip.mp4"
+        }]
+    },
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.js"
+    ],
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.css"
+    ],
+    "plugins": [{
+        "name": "firstPlugin"
+    }]
+}
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+  "scripts": [
+    "http://players.brightcove.com/videojs/plugins/videojs-ima3/1.0.1/videojs.ima3.min.js"
+  ],
+  "stylesheets": [
+    "http://players.brightcove.com/videojs/plugins/videojs-ima3/1.0.1/videojs.ima3.css"
+  ],
+  "plugins": [{
+    "name": "ima3",
+    "options": {
+      "adTechOrder": ["html5", "flash"],
+      "serverUrl": "http://pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fiab_vast_samples&ciu_szs=300x250%2C728x90&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&cust_params=iab_vast_samples%3Dlinear"
+    }
+  }]
+}' \
+https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+//get repo list
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos
+
+{
+  "repos": [
+    {
+      "name": "05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9",
+      "public_url": "http://players.brightcove.com/1507807800001/05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9"
+    },
+    {
+      "name": "05234d8e-84ab-478b-a50f-2e853b4888c4_default",
+      "public_url": "http://players.brightcove.com/1507807800001/05234d8e-84ab-478b-a50f-2e853b4888c4_default"
+    },
+    {
+      "name": "09c3324e-63a5-4ebd-b296-48910b68ce4c_default",
+      "public_url": "http://players.brightcove.com/1507807800001/09c3324e-63a5-4ebd-b296-48910b68ce4c_default"
+    },
+    {
+      "name": "0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_default",
+      "public_url": "http://players.brightcove.com/1507807800001/0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_default"
+    },
+    {
+      "name": "0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_fd6081e2-6646-4460-ad9b-9943178e3d7b",
+      "public_url": "http://players.brightcove.com/1507807800001/0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_fd6081e2-6646-4460-ad9b-9943178e3d7b"
+    },
+    {
+      "name": "0d3491e6-02e5-40b6-9264-8eb1468eac06_default",
+      "public_url": "http://players.brightcove.com/1507807800001/0d3491e6-02e5-40b6-9264-8eb1468eac06_default"
+    },
+    {
+      "name": "1034752d-24c0-45d9-a260-241dab80db23_default",
+      "public_url": "http://players.brightcove.com/1507807800001/1034752d-24c0-45d9-a260-241dab80db23_default"
+    }
+  ]
+}
+
+//create repo
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PUT \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/repoTest
+
+{
+  "name":"myRepoName",
+  "public_url":"http://players.brightcove.com/1507807800001/myFirstRepo"
+}
+
+
+//get repo details
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PUT \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/repoTest
+
+{
+  "name":"myRepoName",
+  "public_url":"http://players.brightcove.com/1507807800001/myFirstRepo"
+}
+
+//git commands
+/Users/mboles/git
+mboles-mac:git mboles$ mkdir myFirstRepo
+mboles-mac:git mboles$ cd myFirstRepo
+mboles-mac:myFirstRepo mboles$ git init
+Initialized empty Git repository in /Users/mboles/git/myFirstRepo/.git/
+mboles-mac:myFirstRepo mboles$ git remote add origin https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/repoTest
+mboles-mac:myFirstRepo mboles$ 
+
+mboles-mac:repoTest mboles$ git add -A
+mboles-mac:repoTest mboles$ git commit -m 'Changed text again'
+[master 73206d7] Changed text again
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+mboles-mac:repoTest mboles$ git push origin master
+Username for 'https://repos.api.brightcove.com': mboles@brightcove.com
+Password for 'https://mboles@brightcove.com@repos.api.brightcove.com': 
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: found changes to deploy
+remote: Saving http://players.brightcove.com/1507807800001/repoTest/first-plugin.js
+remote: Files updated successfully.
+remote: dangerzone.gitPushToS3:1|c
+remote: dangerzone.purgeCDN:1|c
+remote: Files purged from the edge cache.
+To https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/repoTest
+   cbbc165..73206d7  master -> master
+mboles-mac:repoTest mboles$ 
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+
+{
+  "repos": [
+    {
+      "name": "05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9",
+      "public_url": "http://players.brightcove.com/1507807800001/05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9"
+    },
+    {
+      "name": "05234d8e-84ab-478b-a50f-2e853b4888c4_default",
+      "public_url": "http://players.brightcove.com/1507807800001/05234d8e-84ab-478b-a50f-2e853b4888c4_default"
+    },
+    {
+      "name": "09c3324e-63a5-4ebd-b296-48910b68ce4c_default",
+      "public_url": "http://players.brightcove.com/1507807800001/09c3324e-63a5-4ebd-b296-48910b68ce4c_default"
+    },
+    {
+      "name": "0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_default",
+      "public_url": "http://players.brightcove.com/1507807800001/0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_default"
+    },
+    {
+      "name": "0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_fd6081e2-6646-4460-ad9b-9943178e3d7b",
+      "public_url": "http://players.brightcove.com/1507807800001/0b159294-f6c2-49c9-9e40-a2d17b3aa2cd_fd6081e2-6646-4460-ad9b-9943178e3d7b"
+    },
+    {
+      "name": "0d3491e6-02e5-40b6-9264-8eb1468eac06_default",
+      "public_url": "http://players.brightcove.com/1507807800001/0d3491e6-02e5-40b6-9264-8eb1468eac06_default"
+    },
+    {
+      "name": "1034752d-24c0-45d9-a260-241dab80db23_default",
+      "public_url": "http://players.brightcove.com/1507807800001/1034752d-24c0-45d9-a260-241dab80db23_default"
+    }
+  ]
+}
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request DELETE \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/testRepo
+
+mboles-mac:~ mboles$ curl \
+>   --header "Content-Type: application/json" \
+>   --user $EMAIL \
+>   --request DELETE \
+>   https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9
+Enter host password for user 'mboles@brightcove.com':
+Successfully deleted repo 05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9.
+
+
+
+
+
