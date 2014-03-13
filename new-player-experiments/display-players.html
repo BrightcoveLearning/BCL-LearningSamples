@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Display Players</title>
+</head>
+
+<body>
+  <div id="injectionDiv"></div>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    var account_id = "1507807800001",
+    ajaxSuccess = function (data) {
+      console.log("success data: ");
+      console.log(data);
+      displayData(data);
+    },
+    ajaxError = function (data) {
+      console.log("error data: ");
+      console.log(data);
+    },
+    makeAjaxCall = function (callURL, callType, callData) {
+      console.log(callData);
+      if (callData) {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa("mboles@brightcove.com:Ioioio&8"),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          data: JSON.stringify(callData),
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      } else {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa("mboles@brightcove.com:Ioioio&8"),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      }
+    };
+    var getPlayerInfo = function () {
+      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
+      makeAjaxCall(call_url, "GET", null);
+    };
+    var displayData = function (playerData) {
+      var numPlayers = playerData.length,
+        dynamicHTML = "<ol>";
+      for (var i = 0; i < numPlayers; i++) {
+        dynamicHTML += "<li>Player Name: " + playerData[i].name + "</li><ul><li>ID: " + playerData[i].id + "</li><li>Creation Date: " + playerData[i].created_at + "</li></ul>";
+      };
+      dynamicHTML += "</ol>";
+      document.getElementById("injectionDiv").innerHTML = dynamicHTML;
+    };
+    getPlayerInfo();
+  </script>
+</body>
+
+</html>

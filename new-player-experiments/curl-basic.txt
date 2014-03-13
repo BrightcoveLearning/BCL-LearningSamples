@@ -4,10 +4,136 @@ curl -L http://players.brightcove.com/docs/alpha/create_client_credentials.sh | 
 //To refresh token
 export BC_ACCESS_TOKEN=`curl -s -L http://players.brightcove.com/docs/alpha/create_access_token.sh | bash -s a295fe12-15b1-48c9-82a4-14b03fff7a95 KkdqZ-i9rcERi6pu2fyVP4myNYHDLEmW4siqBDxDI5fIr7ewWvGH9cEVH1kWVu24JXGG3y48E7E3yDb1b24Tnw` && echo 'Token has been updated'
 
+_default/in_page.embed
+
 //Pub ID from Video Cloud account 
 Publisher ID: 1507807800001
 export ACCOUNT_ID=1507807800001
 export EMAIL=mboles@brightcove.com
+export PLAYER_ID=
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.js"
+    ],
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.css"
+    ],
+    "plugins": [{
+      "name": "firstPlugin"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/multi-session-playback.js"
+    ],
+    "plugins": [{
+      "name": "multiSessionPlayback"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.js",
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/multi-session-playback.js"
+    ],
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.css"
+    ],
+    "plugins": [{
+      "name": "firstPlugin"},
+      {"name": "multiSessionPlayback"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+http://c.brightcove.com/services/mobile/streaming/index/rendition.m3u8?assetId=3203841216001
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/multi-session-playback.js"
+    ],
+    "plugins": [{
+      "name": "multiSessionPlayback"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "sources": [
+          {
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "type":"application/x-mpegURL"
+          },
+          {
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }
+        ],
+        "poster": {
+          "highres":"http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "sources": [{
+          "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+          "type":"application/x-mpegURL"
+        }],
+        "poster": {
+          "highres":"http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+--data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
 
 https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/myFirstRepo
 
@@ -52,6 +178,16 @@ curl \
   --data '{}' \
   https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/478772a5-a2f2-44c6-a26b-2d7234bd97f5 \
   -w "HTTP Status: %{http_code}"
+
+//Delete player
+curl \
+  --header "Content-Type: application/json" \
+  --user mboles@brightcove.com \
+  --request DELETE \
+  --data '{}' \
+  -w "HTTP Status: %{http_code}" \
+  https://players.api.brightcove.com/v1/accounts/1507807800001/players/c92dd065-a9df-44e8-a5e2-b4bf47dc63a4
+
 
 //Assign empty player a source
 curl \
@@ -455,7 +591,17 @@ mboles-mac:~ mboles$ curl \
 Enter host password for user 'mboles@brightcove.com':
 Successfully deleted repo 05234d8e-84ab-478b-a50f-2e853b4888c4_4b097264-7b3a-4e99-842e-870dd1b431e9.
 
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "linkURL": "http://www.brightcove.com"
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
-
-
-
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration

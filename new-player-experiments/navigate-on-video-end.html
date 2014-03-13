@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+  <title id="bclPageTitle">Smart Player API Sample: Navigate On Video End</title>
+  <link rel="stylesheet" href="/en/scripts/bootstrap/css/bootstrap.min.css" type="text/css">
+  <script src="//use.edgefonts.net/source-code-pro.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.3/gist-embed.min.js"></script>
+  <link rel="stylesheet" href="//files.brightcove.com/proxima-nova/font-faces.css" type="text/css">
+  <link rel="stylesheet" href="/en/styles/bcls-doc-site.css" type="text/css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/zenburn.css" />
+  <link rel="stylesheet" href="/en/styles/anytime.5.0.0-1401232312.min.css" type="text/css"/>
+  <link rel="stylesheet" href="/en/video-cloud/smart-player-api/samples/css/api-samples.css" type="text/css">
+  <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ["_setAccount", "UA-2728311-23"], ["_setDomainName", ".brightcove.com"], ["_trackPageview"]);
+      (function() {
+        var ga = document.createElement("script");
+        ga.type = "text/javascript";
+        ga.async = true;
+        ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+  </script>
+  
+  <!-- styles for hyperlink sample -->
+  <style id="pageStyles">
+    .BrightcoveExperience {
+    margin-top: 10px;
+    }
+    .player-block {
+    position: relative;
+    }
+    #continueButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    padding-top: 80px;
+    margin-top: 10px;
+    margin-left:0;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #333;
+    opacity: 0.7;
+    border-radius: 5px;
+    z-index:20;
+    overflow: hidden;
+    -webkit-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -moz-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -ms-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -o-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955); /* easeInOutQuad */
+    }
+    .buttonShow {
+    width: 480px;
+    height: 190px;
+    padding: 10px;
+    margin-top: 10px;
+    }
+    .buttonHide {
+    width: 0;
+    height: 0;
+    padding: 0;
+    }
+  </style>
+
+</head>
+
+<body data-spy="scroll" data-target=".sub-menu" data-offset="100">
+  <!-- header navbar -->
+  <div id="titleBar" class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div id="otherSites">
+        <ul class="nav pull-right small">
+          <li>
+            <a href="//brightcove.com">BRIGHTCOVE.COM</a>
+          </li>
+          <li>
+            <a href="//support.brightcove.com">SUPPORT</a>
+          </li>
+          <li>
+            <a href="//support.brightcove.com/video-cloud/training-videos">TRAINING VIDEOS</a>
+          </li>
+        </ul>
+      </div>
+      <a class="brand" href="//docs.brightcove.com/en/index.html">BRIGHTCOVE DEVELOPER DOCUMENTATION</a>
+    </div>
+  </div>
+  <!-- end header navbar -->
+  <!-- nav navbar -->
+  <div id="navBar" class="navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <ul id="sectionNav" class="nav"></ul>
+    </div>
+  </div>
+  <!-- end nav navbar -->
+  <!-- Content -->
+  <div class="row">
+    <div id="sidenav" class="span2"></div>
+    <div id="main" class="span10">
+      <div id="top" class="section">
+        <h1 id="bclPageHeading">Smart Player API Sample: Navigate On Video End</h1>
+        <!-- content starts here -->
+
+        <!-- Start of content -->
+
+        <p class="BCL-objective">When the video has finished playing, this example will prompt the user to continue. Selecting the Continue button will navigate the page to a new URL. We use the Smart Player API <code>getCurrentVideo()</code> method to retrieve the data for the video that is currently loaded in the player. From the video object, we get the new destination's URL from the <code>linkURL</code> property. We then use the <code>window.location</code> object's <code>href</code> property to redirect the browser to the URL.</p>
+        
+      </div><!-- div id="top" -->
+
+      <!-- every div class section must have an id -->
+      <!--break-->
+      <div id="resources" class="section">
+        <!-- h2 contents will be in page navigation label - 21 characters (including spaces) maximum -->
+        <h2><a name="resources"></a>API resources used</h2>
+        <h3>Smart Player API</h3>
+        <p>This sample uses the following API resources</p>
+        <h4>Modules and methods</h4>
+        <ul>
+          <li>VIDEO_PLAYER
+            <ul>
+              <li>getCurrentVideo()</li>
+            </ul>
+          </li>  
+        </ul>
+        <h4>Events</h4>
+        <ul>
+          <li>onTemplateLoad</li>
+          <li>onTemplateReady</li>
+          <li>Media: Complete</li>
+        </ul>
+        <p class="text-warning">Note that the read methods of the Smart Player API are available to Express 3, Professional, and Enterprise accounts.</p>
+      </div><!-- div id="resources" -->
+
+      <div id="player" class="section">
+        <h2><a name="player"></a>The player</h2>
+        <p class="text-warning">Note that the buttons below are for development purposes only &mdash; do not use in production.</p>
+          <!-- buttons to switch between HTML and Flash Players -->
+          <div id="modeSwitch">
+            <span class="button" id="switchToHTML5" style="margin-bottom: 20px;margin-right: 10px;">Switch to HTML5 Player</span>
+            <span class="button" id="switchToFlash" style="margin-bottom: 20px;">Switch to Flash Player</span>
+          </div>
+          
+          <br/>
+          <p>This sample prompts the user to navigate to a new URL page when the video is complete. You can easily modify this sample to automatically navigate to a new URL on video end.</p>
+
+          <div id="player" class="player-block">
+            <div id="continueButton" class="buttonHide" onClick="onButtonSelect();">Continue</div>
+            
+          <!-- Start of Brightcove Player -->
+
+          <div style="display:none">
+
+          </div>
+
+          <!--
+          By use of this code snippet, I agree to the Brightcove Publisher T and C 
+          found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+          -->
+
+          <script language="JavaScript" type="text/javascript" src="//admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+          <object id="myExperience2893697156001" class="BrightcoveExperience">
+            <param name="bgcolor" value="#FFFFFF" />
+            <param name="width" value="480" />
+            <param name="height" value="270" />
+            <param name="playerID" value="2807046872001" />
+            <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrekQXrin1OH6so-OhtAlbn9" />
+            <param name="isVid" value="true" />
+            <param name="isUI" value="true" />
+            <param name="dynamicStreaming" value="true" />
+            
+            <param name="@videoPlayer" value="2893697156001" />
+
+            <!-- smart player api params -->
+            <param name="includeAPI" value="true" />
+            <param name="templateLoadHandler" value="onTemplateLoad" />
+            <param name="templateReadyHandler" value="onTemplateReady" />
+          </object>
+
+          <!-- 
+          This script tag will cause the Brightcove Players defined above it to be created as soon
+          as the line is read by the browser. If you wish to have the player instantiated only after
+          the rest of the HTML is processed and the page load is complete, remove the line.
+          -->
+          <script type="text/javascript">brightcove.createExperiences();</script>
+
+          <!-- End of Brightcove Player -->
+
+      </div><!-- div id="player" -->
+
+      <div id="logic" class="section" >
+        <h2><a name="logic"></a>How it is done</h2>
+        <p>This sample uses the Smart Player API.</p>
+        <h3>The Smart Player API part</h3>
+        <p>When the player is ready, we get a reference to the <code>VIDEO_PLAYER</code> module. Then we add a listener for the Media <code>COMPLETE</code> event, which will be triggered when the video finishes playing. Next, we use the <code>getCurrentVideo()</code> method to retrieve the data for the current video. </p>
+        <p>In this case, we have stored the destination URL in the <code>linkURL</code> property for the video object. This property can be found in Video Cloud Studio by selecting the <strong>Edit</strong> button for the video, selecting the <strong>Basic</strong> category tab and scrolling down to the <strong>Related Link</strong> section of the page.</p>
+        <img src="//img.brightcove.com/node11191_relatedLink.png">
+    
+        <h3>The rest</h3>
+        <p>In the <code>COMPLETE</code> event handler function, we use CSS to overlay the Continue button over the player.</p>
+        <p>When the Continue button is selected, we use the <code>window.location</code> object's <code>href</code> property to redirect the browser to the URL.</p>
+      </div><!-- div id="logic" -->
+
+      <div id="code" class="section">
+        <h2><a name="code"></a>The code</h2>
+        <p>View or download the full code <a href="https://gist.github.com/bcls/7379298">here</a>.</p>
+
+        <h3>CSS needed for the Continue button:</h3>
+        <p><code data-gist-id="7379298" data-gist-hide-footer="true" data-gist-line="6-48"></code></p>
+        
+        <h3>HMTL around the Brightcove player code:</h3>
+        <p><code data-gist-id="7379298" data-gist-hide-footer="true" data-gist-line="56-59,95-98"></code></p>
+        
+        <h3>Modifications made to the player publishing code:</h3>
+        <p><code data-gist-id="7379298" data-gist-hide-footer="true" data-gist-line="83-86"></code></p>
+        
+        <h3>JavaScript used for this sample:</h3>
+        <code data-gist-id="7379298" data-gist-hide-footer="true" data-gist-line="100-140"></code>
+      </div><!-- div id="code" -->
+
+    </div><!-- div id="main" -->
+  </div><!-- <div class="row"> -->
+
+  <!-- bcl scripts ============================================================ -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="/en/scripts/bootstrap/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.3/gist-embed.min.js"></script>
+
+
+  <script src="/en/scripts/docs-nav-data.min.js"></script>
+  <script src="/en/scripts/bcls-doc-site.js"></script>
+  <script src="/en/scripts/flashHTMLswitch-nojQ.js"></script>
+
+  <!--******** Any scripts specific to page samples should go here *********-->
+  <script type="text/javascript">
+    var player,
+      APIModules,
+      videoPlayer,
+      redirectURL;
+    
+    var onTemplateLoad = function(experienceID) {
+      //console.log("onTemplateLoad");
+      // get a reference to the first player and API Modules
+      player = brightcove.api.getExperience(experienceID);
+      APIModules = brightcove.api.modules.APIModules;
+    };
+    
+    var onTemplateReady = function(evt) {
+      //console.log("onTemplateReady");
+      // get references to modules for the first player
+      videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+      // add a listener for when the video finishes playing
+      videoPlayer.addEventListener( brightcove.api.events.MediaEvent.COMPLETE, onComplete);
+      // get the URL link from the video meta data
+      videoPlayer.getCurrentVideo( function (videoDTO) {
+        redirectURL = videoDTO.linkURL;
+      });
+    };
+    
+    var onComplete = function() {
+      //console.log("onComplete");
+      // reveal the Continue button
+      document.getElementById("continueButton").className = "buttonShow";
+      
+    };
+      
+    var onButtonSelect = function() {
+      //console.log("onButtonSelect");
+      // redirect the page to the specified URL link
+      window.location.href = redirectURL;
+      
+    };
+	
+  </script>
+
+</body>
+</html>
