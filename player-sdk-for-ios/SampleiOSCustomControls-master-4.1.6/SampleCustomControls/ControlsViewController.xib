@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControlsViewController">
+            <connections>
+                <outlet property="durationLabel" destination="sck-PM-fg9" id="ViR-t9-vgq"/>
+                <outlet property="elapsedTimeLabel" destination="Igd-zG-RyT" id="yZc-A8-fNI"/>
+                <outlet property="playPauseButton" destination="0J8-kz-M3F" id="rcg-ba-Xma"/>
+                <outlet property="progressSlider" destination="cbG-NT-fla" id="CAx-io-Zlv"/>
+                <outlet property="view" destination="1" id="3"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0J8-kz-M3F" userLabel="playPauseButton">
+                    <rect key="frame" x="20" y="5" width="40" height="40"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal" image="play_btn.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="pause_btn.png"/>
+                    <connections>
+                        <action selector="playPauseButtonPressed:" destination="-1" eventType="touchUpInside" id="jwc-KF-Wde"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igd-zG-RyT" userLabel="elapsedTimeLabel">
+                    <rect key="frame" x="68" y="14" width="67" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cbG-NT-fla">
+                    <rect key="frame" x="141" y="8" width="86" height="34"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="sliderTouchBegin:" destination="-1" eventType="touchDown" id="Owc-Rf-O97"/>
+                        <action selector="sliderTouchEnd:" destination="-1" eventType="touchUpInside" id="2in-j2-Slx"/>
+                        <action selector="sliderTouchEnd:" destination="-1" eventType="touchUpOutside" id="kuu-17-2zR"/>
+                        <action selector="sliderValueChanged:" destination="-1" eventType="valueChanged" id="pxW-xM-DZA"/>
+                    </connections>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sck-PM-fg9" userLabel="durationLabel">
+                    <rect key="frame" x="233" y="14" width="67" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sck-PM-fg9" firstAttribute="leading" secondItem="cbG-NT-fla" secondAttribute="trailing" constant="8" id="0gC-Cu-jGG"/>
+                <constraint firstItem="Igd-zG-RyT" firstAttribute="leading" secondItem="0J8-kz-M3F" secondAttribute="trailing" constant="8" id="2AO-Wd-zaC"/>
+                <constraint firstAttribute="trailing" secondItem="sck-PM-fg9" secondAttribute="trailing" constant="20" id="5Et-nf-IcV"/>
+                <constraint firstAttribute="centerY" secondItem="cbG-NT-fla" secondAttribute="centerY" id="8g9-Ts-gfe"/>
+                <constraint firstAttribute="centerY" secondItem="Igd-zG-RyT" secondAttribute="centerY" id="YXR-MB-SDa"/>
+                <constraint firstItem="0J8-kz-M3F" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="bXz-by-TVV"/>
+                <constraint firstAttribute="centerY" secondItem="sck-PM-fg9" secondAttribute="centerY" id="mgd-mO-x0i"/>
+                <constraint firstItem="cbG-NT-fla" firstAttribute="leading" secondItem="Igd-zG-RyT" secondAttribute="trailing" constant="8" id="ui8-qh-Jqe"/>
+                <constraint firstAttribute="centerY" secondItem="0J8-kz-M3F" secondAttribute="centerY" id="xrC-zl-iu9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pause_btn.png" width="40" height="40"/>
+        <image name="play_btn.png" width="40" height="40"/>
+    </resources>
+</document>

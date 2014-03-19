@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ikd-d0-T5I"/>
+                        <viewControllerLayoutGuide type="bottom" id="LAQ-HI-y7X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMd-SF-cUS" userLabel="videoContainerView">
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePK-q6-nqm" userLabel="controlsContainerView">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ePK-q6-nqm" secondAttribute="trailing" id="34r-NK-wVk"/>
+                                    <constraint firstAttribute="bottom" secondItem="ePK-q6-nqm" secondAttribute="bottom" id="Af3-7l-kim"/>
+                                    <constraint firstItem="ePK-q6-nqm" firstAttribute="leading" secondItem="aMd-SF-cUS" secondAttribute="leading" id="U5J-ld-5CM"/>
+                                    <constraint firstAttribute="centerY" secondItem="ePK-q6-nqm" secondAttribute="centerY" id="Z2j-MT-7B6"/>
+                                    <constraint firstItem="ePK-q6-nqm" firstAttribute="top" secondItem="aMd-SF-cUS" secondAttribute="top" id="li5-xZ-39k"/>
+                                    <constraint firstAttribute="centerX" secondItem="ePK-q6-nqm" secondAttribute="centerX" id="wdc-f0-xGi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aMd-SF-cUS" secondAttribute="bottom" id="22G-Nj-rRz"/>
+                            <constraint firstAttribute="trailing" secondItem="aMd-SF-cUS" secondAttribute="trailing" id="3nL-vU-jza"/>
+                            <constraint firstItem="aMd-SF-cUS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FKM-Ec-EGZ"/>
+                            <constraint firstAttribute="centerY" secondItem="aMd-SF-cUS" secondAttribute="centerY" constant="-10" id="bdD-qO-b7H"/>
+                            <constraint firstAttribute="centerX" secondItem="aMd-SF-cUS" secondAttribute="centerX" id="igc-En-1JU"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="controlsContainerView" destination="ePK-q6-nqm" id="eW4-rb-DIB"/>
+                        <outlet property="videoContainerView" destination="aMd-SF-cUS" id="r75-PB-pOt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackOpaque"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>

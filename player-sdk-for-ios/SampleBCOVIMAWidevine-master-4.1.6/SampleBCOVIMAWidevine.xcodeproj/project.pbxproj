@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		495B0A6A18A0854300EACF6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A6918A0854300EACF6F /* Foundation.framework */; };
+		495B0A6C18A0854300EACF6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A6B18A0854300EACF6F /* CoreGraphics.framework */; };
+		495B0A6E18A0854300EACF6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A6D18A0854300EACF6F /* UIKit.framework */; };
+		495B0A7418A0854300EACF6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 495B0A7218A0854300EACF6F /* InfoPlist.strings */; };
+		495B0A7618A0854300EACF6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 495B0A7518A0854300EACF6F /* main.m */; };
+		495B0A7A18A0854300EACF6F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 495B0A7918A0854300EACF6F /* AppDelegate.m */; };
+		495B0A7D18A0854300EACF6F /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B0A7B18A0854300EACF6F /* Main_iPhone.storyboard */; };
+		495B0A8018A0854300EACF6F /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495B0A7E18A0854300EACF6F /* Main_iPad.storyboard */; };
+		495B0A8318A0854300EACF6F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 495B0A8218A0854300EACF6F /* ViewController.m */; };
+		495B0A8518A0854300EACF6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495B0A8418A0854300EACF6F /* Images.xcassets */; };
+		495B0A8C18A0854300EACF6F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A8B18A0854300EACF6F /* XCTest.framework */; };
+		495B0A8D18A0854300EACF6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A6918A0854300EACF6F /* Foundation.framework */; };
+		495B0A8E18A0854300EACF6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495B0A6D18A0854300EACF6F /* UIKit.framework */; };
+		495B0A9618A0854300EACF6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 495B0A9418A0854300EACF6F /* InfoPlist.strings */; };
+		495B0A9818A0854300EACF6F /* SampleBCOVIMAWidevineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 495B0A9718A0854300EACF6F /* SampleBCOVIMAWidevineTests.m */; };
+		CE0AA7EA88C34791BB8338B1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12240653D0E64FA8A3B0E7F3 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		495B0A8F18A0854300EACF6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495B0A5E18A0854200EACF6F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495B0A6518A0854300EACF6F;
+			remoteInfo = SampleBCOVIMAWidevine;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		12240653D0E64FA8A3B0E7F3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		495B0A6618A0854300EACF6F /* SampleBCOVIMAWidevine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleBCOVIMAWidevine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		495B0A6918A0854300EACF6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		495B0A6B18A0854300EACF6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		495B0A6D18A0854300EACF6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		495B0A7118A0854300EACF6F /* SampleBCOVIMAWidevine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleBCOVIMAWidevine-Info.plist"; sourceTree = "<group>"; };
+		495B0A7318A0854300EACF6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		495B0A7518A0854300EACF6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		495B0A7718A0854300EACF6F /* SampleBCOVIMAWidevine-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleBCOVIMAWidevine-Prefix.pch"; sourceTree = "<group>"; };
+		495B0A7818A0854300EACF6F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		495B0A7918A0854300EACF6F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		495B0A7C18A0854300EACF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		495B0A7F18A0854300EACF6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		495B0A8118A0854300EACF6F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		495B0A8218A0854300EACF6F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		495B0A8418A0854300EACF6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		495B0A8A18A0854300EACF6F /* SampleBCOVIMAWidevineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleBCOVIMAWidevineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		495B0A8B18A0854300EACF6F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		495B0A9318A0854300EACF6F /* SampleBCOVIMAWidevineTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleBCOVIMAWidevineTests-Info.plist"; sourceTree = "<group>"; };
+		495B0A9518A0854300EACF6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		495B0A9718A0854300EACF6F /* SampleBCOVIMAWidevineTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleBCOVIMAWidevineTests.m; sourceTree = "<group>"; };
+		7B65458282164EA0BC09711A /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		495B0A6318A0854300EACF6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A6C18A0854300EACF6F /* CoreGraphics.framework in Frameworks */,
+				495B0A6E18A0854300EACF6F /* UIKit.framework in Frameworks */,
+				495B0A6A18A0854300EACF6F /* Foundation.framework in Frameworks */,
+				CE0AA7EA88C34791BB8338B1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495B0A8718A0854300EACF6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A8C18A0854300EACF6F /* XCTest.framework in Frameworks */,
+				495B0A8E18A0854300EACF6F /* UIKit.framework in Frameworks */,
+				495B0A8D18A0854300EACF6F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		495B0A5D18A0854200EACF6F = {
+			isa = PBXGroup;
+			children = (
+				495B0A6F18A0854300EACF6F /* SampleBCOVIMAWidevine */,
+				495B0A9118A0854300EACF6F /* SampleBCOVIMAWidevineTests */,
+				495B0A6818A0854300EACF6F /* Frameworks */,
+				495B0A6718A0854300EACF6F /* Products */,
+				7B65458282164EA0BC09711A /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		495B0A6718A0854300EACF6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A6618A0854300EACF6F /* SampleBCOVIMAWidevine.app */,
+				495B0A8A18A0854300EACF6F /* SampleBCOVIMAWidevineTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		495B0A6818A0854300EACF6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A6918A0854300EACF6F /* Foundation.framework */,
+				495B0A6B18A0854300EACF6F /* CoreGraphics.framework */,
+				495B0A6D18A0854300EACF6F /* UIKit.framework */,
+				495B0A8B18A0854300EACF6F /* XCTest.framework */,
+				12240653D0E64FA8A3B0E7F3 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		495B0A6F18A0854300EACF6F /* SampleBCOVIMAWidevine */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A7818A0854300EACF6F /* AppDelegate.h */,
+				495B0A7918A0854300EACF6F /* AppDelegate.m */,
+				495B0A7B18A0854300EACF6F /* Main_iPhone.storyboard */,
+				495B0A7E18A0854300EACF6F /* Main_iPad.storyboard */,
+				495B0A8118A0854300EACF6F /* ViewController.h */,
+				495B0A8218A0854300EACF6F /* ViewController.m */,
+				495B0A8418A0854300EACF6F /* Images.xcassets */,
+				495B0A7018A0854300EACF6F /* Supporting Files */,
+			);
+			path = SampleBCOVIMAWidevine;
+			sourceTree = "<group>";
+		};
+		495B0A7018A0854300EACF6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A7118A0854300EACF6F /* SampleBCOVIMAWidevine-Info.plist */,
+				495B0A7218A0854300EACF6F /* InfoPlist.strings */,
+				495B0A7518A0854300EACF6F /* main.m */,
+				495B0A7718A0854300EACF6F /* SampleBCOVIMAWidevine-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		495B0A9118A0854300EACF6F /* SampleBCOVIMAWidevineTests */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A9718A0854300EACF6F /* SampleBCOVIMAWidevineTests.m */,
+				495B0A9218A0854300EACF6F /* Supporting Files */,
+			);
+			path = SampleBCOVIMAWidevineTests;
+			sourceTree = "<group>";
+		};
+		495B0A9218A0854300EACF6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				495B0A9318A0854300EACF6F /* SampleBCOVIMAWidevineTests-Info.plist */,
+				495B0A9418A0854300EACF6F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		495B0A6518A0854300EACF6F /* SampleBCOVIMAWidevine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495B0A9B18A0854300EACF6F /* Build configuration list for PBXNativeTarget "SampleBCOVIMAWidevine" */;
+			buildPhases = (
+				23A9AB2974A14A00A2962BC8 /* Check Pods Manifest.lock */,
+				495B0A6218A0854300EACF6F /* Sources */,
+				495B0A6318A0854300EACF6F /* Frameworks */,
+				495B0A6418A0854300EACF6F /* Resources */,
+				F93D62B27D0647DA95B5979D /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleBCOVIMAWidevine;
+			productName = SampleBCOVIMAWidevine;
+			productReference = 495B0A6618A0854300EACF6F /* SampleBCOVIMAWidevine.app */;
+			productType = "com.apple.product-type.application";
+		};
+		495B0A8918A0854300EACF6F /* SampleBCOVIMAWidevineTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495B0A9E18A0854300EACF6F /* Build configuration list for PBXNativeTarget "SampleBCOVIMAWidevineTests" */;
+			buildPhases = (
+				495B0A8618A0854300EACF6F /* Sources */,
+				495B0A8718A0854300EACF6F /* Frameworks */,
+				495B0A8818A0854300EACF6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				495B0A9018A0854300EACF6F /* PBXTargetDependency */,
+			);
+			name = SampleBCOVIMAWidevineTests;
+			productName = SampleBCOVIMAWidevineTests;
+			productReference = 495B0A8A18A0854300EACF6F /* SampleBCOVIMAWidevineTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		495B0A5E18A0854200EACF6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Brightcove;
+				TargetAttributes = {
+					495B0A8918A0854300EACF6F = {
+						TestTargetID = 495B0A6518A0854300EACF6F;
+					};
+				};
+			};
+			buildConfigurationList = 495B0A6118A0854200EACF6F /* Build configuration list for PBXProject "SampleBCOVIMAWidevine" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 495B0A5D18A0854200EACF6F;
+			productRefGroup = 495B0A6718A0854300EACF6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				495B0A6518A0854300EACF6F /* SampleBCOVIMAWidevine */,
+				495B0A8918A0854300EACF6F /* SampleBCOVIMAWidevineTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		495B0A6418A0854300EACF6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A8018A0854300EACF6F /* Main_iPad.storyboard in Resources */,
+				495B0A8518A0854300EACF6F /* Images.xcassets in Resources */,
+				495B0A7D18A0854300EACF6F /* Main_iPhone.storyboard in Resources */,
+				495B0A7418A0854300EACF6F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495B0A8818A0854300EACF6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A9618A0854300EACF6F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23A9AB2974A14A00A2962BC8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F93D62B27D0647DA95B5979D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		495B0A6218A0854300EACF6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A8318A0854300EACF6F /* ViewController.m in Sources */,
+				495B0A7A18A0854300EACF6F /* AppDelegate.m in Sources */,
+				495B0A7618A0854300EACF6F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495B0A8618A0854300EACF6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495B0A9818A0854300EACF6F /* SampleBCOVIMAWidevineTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		495B0A9018A0854300EACF6F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 495B0A6518A0854300EACF6F /* SampleBCOVIMAWidevine */;
+			targetProxy = 495B0A8F18A0854300EACF6F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		495B0A7218A0854300EACF6F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				495B0A7318A0854300EACF6F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		495B0A7B18A0854300EACF6F /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				495B0A7C18A0854300EACF6F /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		495B0A7E18A0854300EACF6F /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				495B0A7F18A0854300EACF6F /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		495B0A9418A0854300EACF6F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				495B0A9518A0854300EACF6F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		495B0A9918A0854300EACF6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		495B0A9A18A0854300EACF6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		495B0A9C18A0854300EACF6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B65458282164EA0BC09711A /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Prefix.pch";
+				INFOPLIST_FILE = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		495B0A9D18A0854300EACF6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B65458282164EA0BC09711A /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Prefix.pch";
+				INFOPLIST_FILE = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		495B0A9F18A0854300EACF6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SampleBCOVIMAWidevine.app/SampleBCOVIMAWidevine";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SampleBCOVIMAWidevineTests/SampleBCOVIMAWidevineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		495B0AA018A0854300EACF6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SampleBCOVIMAWidevine.app/SampleBCOVIMAWidevine";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleBCOVIMAWidevine/SampleBCOVIMAWidevine-Prefix.pch";
+				INFOPLIST_FILE = "SampleBCOVIMAWidevineTests/SampleBCOVIMAWidevineTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		495B0A6118A0854200EACF6F /* Build configuration list for PBXProject "SampleBCOVIMAWidevine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495B0A9918A0854300EACF6F /* Debug */,
+				495B0A9A18A0854300EACF6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495B0A9B18A0854300EACF6F /* Build configuration list for PBXNativeTarget "SampleBCOVIMAWidevine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495B0A9C18A0854300EACF6F /* Debug */,
+				495B0A9D18A0854300EACF6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495B0A9E18A0854300EACF6F /* Build configuration list for PBXNativeTarget "SampleBCOVIMAWidevineTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495B0A9F18A0854300EACF6F /* Debug */,
+				495B0AA018A0854300EACF6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 495B0A5E18A0854200EACF6F /* Project object */;
+}
