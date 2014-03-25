@@ -11,6 +11,142 @@ Publisher ID: 1507807800001
 export ACCOUNT_ID=1507807800001
 export EMAIL=mboles@brightcove.com
 export PLAYER_ID=
+export EMBED_ID=
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "media": {
+        "sources": [
+          {
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "type":"application/x-mpegURL"
+          },
+          {
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }
+        ],
+        "poster": {
+          "highres":"http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/publish
+
+http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html
+http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html
+http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_default/index.html
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+[{
+  "configuration": {
+    "player": {
+      "template": {
+        "version": "0.6.0-1",
+        "name": "single-video-template"
+      }
+    },
+    "media": {
+      "sources": [{
+        "type": "video/mp4",
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4"
+      }]
+    }
+  },
+  "publish_request": {
+    "elapsed_time": 29,
+    "retries": 0,
+    "queue_msg_id": "9211b4b2-5b47-4693-abfb-a866cedf62b8",
+    "requested_at": "2014-03-25T15:11:44.392Z",
+    "status": "COMPLETE"
+  },
+  "name": "MySamplePlayer",
+  "id": "default",
+  "url": "http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_default/index.html",
+  "embed_code": "<iframe src='//players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+}, {
+  "configuration": {
+    "player": {
+      "template": {
+        "version": "0.6.0-1",
+        "name": "single-video-template"
+      }
+    },
+    "media": {
+      "sources": [{
+        "type": "application/x-mpegURL",
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8"
+      }, {
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": {
+        "highres": "http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg"
+      }
+    }
+  },
+  "configuration_override": {
+    "media": {
+      "sources": [{
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
+        "type": "application/x-mpegURL"
+      }, {
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": {
+        "highres": "http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg"
+      }
+    }
+  },
+  "publish_request": {
+    "elapsed_time": 1288,
+    "retries": 0,
+    "errorMessage": "Builder failed.  Expected the status code to be 42 or 99 but got 1. ",
+    "errorCode": "ERROR",
+    "queue_msg_id": "1d24a5d1-176c-4b55-bbd2-7d96d0e0058c",
+    "requested_at": "2014-03-25T18:14:51.843Z",
+    "status": "FAILURE"
+  },
+  "name": "MySamplePlayer",
+  "id": "c912d695-9756-4a07-84a3-4d14ed88665e",
+  "url": "http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html",
+  "embed_code": "<iframe src='//players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+}]
+
+
+
 
 curl \
   --header "Content-Type: application/json" \
@@ -18,13 +154,32 @@ curl \
   --request PATCH \
   --data '{
     "scripts": [
-      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.js"
-    ],
-    "stylesheets": [
-      "http://solutions.brightcove.com/bcls/video-js/new-player/first-plugin.css"
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/navigate-on-video-end-data.js"
     ],
     "plugins": [{
-      "name": "firstPlugin"
+      "name": "navigateOnVideoEnd",
+      "options" : [
+        {"redirectURL": "http://docs.brightcove.com"},
+        {"redirectURL2": ""}
+      ]
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/navigate-on-video-end.js"
+    ],
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/navigate-on-video-end.css"
+    ],
+    "plugins": [{
+      "name": "navigateOnVideoEnd"
     }]
   }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration

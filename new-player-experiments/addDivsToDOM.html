@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link href="//players.brightcove.com/1507807800001/3fec33c4-8b86-4e95-9cfb-e3ae9718be90_default/bc.min.css" rel="stylesheet">
+  <style id="pageStyles">
+    .player-block {
+    position: relative;
+    }
+    #continueButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    padding-top: 80px;
+    margin-top: 10px;
+    margin-left:0;
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    cursor: pointer;
+    background-color: #333;
+    opacity: 0.7;
+    border-radius: 5px;
+    z-index:20;
+    overflow: hidden;
+    -webkit-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -moz-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -ms-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    -o-transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+    transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955); /* easeInOutQuad */
+    }
+    .buttonShow {
+    width: 720px;
+    height: 355px;
+    padding: 10px;
+    margin-top: 10px;
+    }
+    .buttonHide {
+    width: 0;
+    height: 0;
+    padding: 0;
+    }
+  </style>
+  <style type="text/css">
+    .video-js {
+      height: 480px;
+      width: 720px;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <video id="myPlayerID"
+    data-account="1507807800001"
+    data-player="3fec33c4-8b86-4e95-9cfb-e3ae9718be90"
+    data-embed="default"
+    data-id=""
+    class="video-js" controls></video>
+  <script src="//players.brightcove.com/1507807800001/3fec33c4-8b86-4e95-9cfb-e3ae9718be90_default/node_modules/video.js/dist/video-js/video.js"></script>
+  <script src="//players.brightcove.com/1507807800001/3fec33c4-8b86-4e95-9cfb-e3ae9718be90_default/bc.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $( ".video-js" ).wrap( "<div id="player" class="player-block"></div>" );
+
+  </script>
+
+</body>
+</html>
