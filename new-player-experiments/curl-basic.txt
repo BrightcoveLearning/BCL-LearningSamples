@@ -42,11 +42,16 @@ curl \
   --request POST \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/publish
 
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request DELETE \
+  --write-out "HTTP Status: %{http_code}" \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
+
 http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html
 http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html
 http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_default/index.html
-
-
 
 curl \
   --header "Content-Type: application/json" \
