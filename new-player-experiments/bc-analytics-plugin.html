@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <title id="bclPageTitle">New Player Plugin: Analytics</title>
+    <link href="/en/scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="//use.edgefonts.net/source-code-pro.js"></script>
+    <link href="//files.brightcove.com/proxima-nova/font-faces.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/en/styles/bcls-doc-site.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/7.3/styles/github.css" />
+    <link rel="stylesheet" type="text/css" href="/en/styles/anytime.5.0.0-1401232312.min.css" />
+    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+        var _gaq = _gaq || [];
+        _gaq.push(
+            ["_setAccount", "UA-2728311-23"], ["_setDomainName", ".brightcove.com"], ["_trackPageview"]);
+        (function () {
+            var ga = document.createElement("script");
+            ga.type = "text/javascript";
+            ga.async = true;
+            ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+         //--><!]]>
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".sub-menu" data-offset="100">
+    <!-- header navbar -->
+    <div id="titleBar" class="navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div id="otherSites">
+                <ul class="nav pull-right small">
+                    <li> <a href="//brightcove.com">BRIGHTCOVE.COM</a>
+                    </li>
+                    <li> <a href="//support.brightcove.com">SUPPORT</a>
+                    </li>
+                    <li> <a href="//support.brightcove.com/video-cloud/training-videos">TRAINING VIDEOS</a>
+                    </li>
+                </ul>
+            </div> <a class="brand" href="//docs.brightcove.com/en/index.html">BRIGHTCOVE DEVELOPER DOCUMENTATION</a>
+        </div>
+    </div>
+    <!-- end header navbar -->
+    <!-- nav navbar -->
+    <div id="navBar" class="navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar pull-right" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <!-- Everything you want hidden at 940px or less, place within here -->
+            <ul id="sectionNav" class="nav"></ul>
+        </div>
+    </div>
+    <!-- end nav navbar -->
+    <!-- Content -->
+    <div class="row">
+        <div id="sidenav" class="span2"></div>
+        <div id="main" class="span10">
+            <div id="top" class="section">
+                <h1 id="bclPageHeading">New Player Plugin: Analytics</h1>
+                <!-- content starts here -->
+                <p class="BCL-objective">A video.js plugin that sends player events to the Video Cloud analytics system.</p>
+            </div>
+            <div id="gettingstarted" class="section">
+                <h2><a name="gettingstarted"></a>Getting started</h2>
+                <div class="BCL-concept">
+                    <p>Download the Video Cloud analytics plugin and include it in your web page. Then, you can activate the analytics plugin on any video.js player
+                        by supplying your account ID:</p>
+<pre><code class="html">&lt;script src=&quot;dist/videojs-bc-analytics.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var video = videojs(document.querySelector(&#39;video&#39;));
+video.bcAnalytics({
+  account: 5,
+  player: &#39;players.brightcove.com/123/456_789/index.html&#39;
+});
+&lt;/script&gt;
+</code></pre>
+                    <p>You can see an example player configured with the plugin in <code>example.html</code> at the root of this project.</p>
+                </div>
+            </div>
+            <div id="requiredFields" class="section">
+                <h2><a name="requiredFields"></a>Required fields</h2>
+                <div class="BCL-concept">
+                    <ul>
+                        <li><code>account</code> - The account ID for the account we want the analytics to be sent to</li>
+                        <li><code>player</code> - the player URI from analytics&#39; perspective. I.e. players.brightcove.com/123/456_789/index.html</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="testing" class="section">
+                <h2><a name="testing"></a>Testing</h2>
+                <div class="BCL-concept">
+                    <p>Tests are written with <a href="http://qunitjs.com/">QUnit</a>. Open <code>test/index.html</code> to run them in your browser.</p>
+                    <p>There is a staging version of the analytics system which is preferred for testing. To send events to that server, you need to override the base
+                        URL for collection:</p>
+<pre><code class="js">video.bcAnalytics({
+  account: 5,
+  analyticsUrl: &quot;http://data.aws-qa.rnatest.brightcove.com/&quot;
+})
+</code></pre>
+                </div>
+            </div>
+            <div id="analyticparameters" class="section">
+                <h2><a name="analyticparameters"></a>Analytics parameters</h2>
+                <div class="BCL-concept">
+                    <p>Here is a list of analytics parameters that you can send:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="text-align: right">Parameter</th>
+                                <th style="text-align: center">inline</th>
+                                <th style="text-align: center">iframe</th>
+                                <th style="text-align: center">3rd party iframe + inline</th>
+                                <th style="text-align: center">same domain iframe + inline</th>
+                                <th style="text-align: center">iframe + iframe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="text-align: right"><code>player</code>
+                                </td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right"><code>destination</code>
+                                </td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✔/✖</td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: right"><code>source</code>
+                                </td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✖</td>
+                                <td style="text-align: center">✖</td>
+                                <td style="text-align: center">✔</td>
+                                <td style="text-align: center">✖</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Inline</h3>
+                    <p>Inline refers to a video that has been embeded via the inline embed option. This means that the video element about our javascript have been
+                        put directly on the destination page. Because we are directly on the page, we have access to all the information. Currently, we cannot get
+                        the <code>player</code> property, but it is possible to have it.</p>
+                    <h4>Example</h4>
+                    <h5>nytimes</h5>
+                    <ul>
+                        <li><code>destination</code>: <a href="http://nytimes.com">http://nytimes.com</a>
+                        </li>
+                        <li><code>source</code>: <a href="http://google.com">http://google.com</a>
+                        </li>
+                        <li><code>player</code>: players.brightcove.com/accountId/playerId_embedId/index.html</li>
+                    </ul>
+                    <h3>Iframe</h3>
+                    <p>This means that the iframe embed is used. Because our iframe is a cross-origin iframe, we will not be able to get the <code>destination</code> and <code>source</code> properties.</p>
+                    <h4>Example</h4>
+                    <h5>twitter</h5>
+                    <ul>
+                        <li><code>destination</code>: <a href="https://twitter.com">https://twitter.com</a>
+                        </li>
+                        <li><code>player</code>: players.brightcove.com/accountId/playerId_embedId/index.html</li>
+                    </ul>
+                    <h3>Third Party iframe + inline</h3>
+                    <p>The <code>destination</code> page has a 3rd party, neither brightcove nor <code>destination</code>, frame that includes our inline embed. Because
+                        we are, again, in an iframe that is not of the same domain as the <code>destination</code>, we cannot retrieve the <code>destination</code> and <code>source</code> properties.</p>
+                    <h4>Example</h4>
+                    <h5>Weather.com</h5>
+                    <ul>
+                        <li><code>destination</code>: should be, <a href="http://weather.com">http://weather.com</a>, iframe is set to <a href="http://5minvideo.com">http://5minvideo.com</a>
+                        </li>
+                        <li><code>player</code>: players.brightcove.com/accountId/playerId_embedId/index.html</li>
+                    </ul>
+                    <h3>Same domain iframe + inline</h3>
+                    <p>This uses the inline embed inside an iframe with the same domain as the <code>destination</code>. Because the iframe and the <code>destination</code> are
+                        on the same domain, the cross-origin restirctions don&#39;t apply and thus we are able to collect the <code>destination</code> and <code>source</code> properties.</p>
+                    <h3>iframe + iframe</h3>
+                    <p>This puts out iframe embed inside another iframe. Because of our iframe embeds, we cannot access the outer iframe since they are from different
+                        domains, so, we won&#39;t even be able to access to <code>destination</code> anyway. <code>destination</code> and <code>source</code> are inaccessible
+                        in this case as well. We can provide a <code>source</code> which would point to the outer iframe.</p>
+                </div>
+            </div>
+            <div class="BCL-references">
+                <h2>Related Topics</h2>
+                <ul>
+                    <li><a href="//docs.brightcove.com/en/video-cloud/players/plugins/hls-plugin.html">New Player Plugin: HLS</a>
+                    </li>
+                    <li><a href="//docs.brightcove.com/en/video-cloud/players/plugins/ima-plugin.html">New Player Plugin: IMA</a>
+                    </li>
+                    <li><a href="//docs.brightcove.com/en/video-cloud/players/plugins/plugin-tour.html">Plugin Tour</a>
+                    </li>
+                    <li><a href="//docs.brightcove.com/en/video-cloud/players/guides/playertour.html">Player Tour</a>
+                    </li>
+                </ul>
+            <p>Copyright (c) 2013 Brightcove. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <!-- bcl scripts============================================================-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.6/gist-embed.min.js"></script>
+    <script src="/en/scripts/bootstrap/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+    <script src="/en/scripts/docs-nav-data.min.js"></script>
+    <script src="/en/scripts/bcls-doc-site.js"></script>
+    <script id="pageScript" type="text/javascript">
+        /******** Any scripts specific to page samples should go here *********/
+    </script>
+    </div>
+</body>
+
+</html>
