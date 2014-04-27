@@ -3,57 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Create Player Learning App</title>
 </head>
 
 <body>
-  <!-- Place form here -->    
-  <!-- Gather vital info -->    
-  <h2>Player info input</h2>
-  <p>Username:
-    <input class="checkForValue" name="account_username" id="account_username" type="text" size="100" value="mboles@brightcove.com">
-  </p>
-  <p>Account ID:
-    <input class="checkForValue" name="account_id" id="account_id" type="text" size="40" value="1507807800001">
-  </p>
-  <p>Password:
-    <input class="checkForValue" name="account_password" id="account_password" type="password" size="40">
-  </p>
-  <p>Player Name:
-    <input class="checkForValue" name="player_name" id="player_name" type="text" size="40">
-  </p>
-  <p>Media URL:
-    <input class="checkForValue" name="media_url" id="media_url" type="text" size="100" value="http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4">
-  </p>
-  <p>Media Type:
-    <select id="media_type">
-      <option value="video/mp4" selected>video/mp4</option>
-      <option value="application/x-mpegURL">HLS (application/x-mpegURL)</option>
-    </select>
-  </p>
-  <!-- Check to be sure all inputs have values on button click -->
-  <button onclick="checkInputs()">Create Player</button>
+<!-- Place form here -->    
 
-  <!-- Place display here -->    
-  <!-- Create div in which to inject preview iframe -->
-  <h2>Preview iframe Player</h2>
-  <div id="previewPlayer"></div>
-
-  <!-- Create div in which to inject master iframe -->
-  <h2>Master iframe Player</h2>
-  <div id="masterPlayer"></div>
-  <!-- Chances are player will not be available imediately, so user can check periodically -->
-  <button onclick="reloadMasterIframe()">Check if player is complete</button>
-
-  <!-- Create divs in which to inject returned data -->
-  <h2>JSON responses</h2>
-  <p>Below is the JSON data returned by the player creation:</p>
-  <p><pre><code id="jsonCreation"></code></pre></p>
-  <p>Below is the JSON data returned by the player publish:</p>
-  <p><pre><code id="jsonPublish"></code></pre></p>
-  <h2>Processed response</h2>
-  <p>Below is simple HTML output of some of the player information:</p>
-  <div id="htmlOutput"></div>
+<!-- Place display here -->    
 
   <!-- Import jQuery for AJAX functionality -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -70,56 +26,8 @@
       masterIframe = "";
   
 //CODE SNIPPETS GO HERE
-    var ajaxSuccess = function (data) {
-      //Display the returned data here using console.log()
-      console.log(data);
-      document.getElementById("previewPlayer").innerHTML = data.preview_embed_code;
-    }
+    
 
-    var makeAjaxCall = function (callURL, callType, callData) {
-      if (callData) {
-        $.ajax({
-          type: callType,
-          headers: {
-            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
-            "Content-Type": "application/json"
-          },
-          url: callURL,
-          data: JSON.stringify(callData),
-          success: ajaxSuccess
-        });
-      };
-    };
-
-
-    var createPlayer = function () {
-      //Place form values into variables
-      account_id = document.getElementById("account_id").value,
-      account_password = document.getElementById("account_password").value,
-      account_username = document.getElementById("account_username").value,
-      player_name = document.getElementById("player_name").value,
-      media_url = document.getElementById("media_url").value,
-      media_type = document.getElementById("media_type").value,
-      //Set purpose for if condition
-      callPurpose = "makeNewPlayer";
-      //Create data to pass to with AJAX call
-      playerData = {
-        "name": player_name,
-        "configuration": {
-          "media": {
-            "sources": [{
-              "src": media_url,
-              "type": media_type
-            }]
-          }
-        }
-      };
-      //Dynamically build the AJAX URL
-      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
-      //Call function that makes AJAX call
-      makeAjaxCall(call_url, "POST", playerData);
-    };
-  
     var checkInputs = function () {
       var proceed = true;
       $(".checkForValue").each(function () {

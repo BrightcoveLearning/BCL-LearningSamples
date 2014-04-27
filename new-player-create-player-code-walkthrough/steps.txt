@@ -1,10 +1,23 @@
-Open create-player-starting.html
-Copy in the form
-Browse
-Copy in the display divs
-Browse
-Copy in createPlayer() function
-Copy in ajaxSuccess() and makeAjaxCall() functions
-Fill in form and submit (should see preview player)
-Turn on Dev Tools and display all returned data in ajaxSuccess using console.log
+1. Open create-player-starting.html
+2. Copy in the form
+3. Browse
+4. Copy in the display divs
+5. Browse
+6. Copy in createPlayer() function
+7. Copy in ajaxSuccess() and makeAjaxCall() functions
+8. Browse: Fill in form and submit (should see preview player)
+9. Turn on Dev Tools and display all returned data in ajaxSuccess using console.log
+10. Browse: Fill in form and submit
+  **Check Console for data object
+11. Remove existing ajaxSuccess() and makeAjaxCall() functions
+12. Copy in final versions of ajaxSuccess() and makeAjaxCall() functions (also includes ajaxError() function)
+13. Copy in publishPlayer() and displayPlayerInfo() functions
+  **Note in createPlayer success the publishPlayer() function is called and another AJAX call is made
+14. Browse: Fill in form and submit
+  **Note that master player most likely not immediately available
+15. Copy in reloadMasterIframe() function
+16. Browse: Fill in form and submit
+  **May have to click "Check if player is complete" button several times
+
+
 
