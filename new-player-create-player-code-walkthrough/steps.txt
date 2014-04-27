@@ -1,0 +1,10 @@
+Open create-player-starting.html
+Copy in the form
+Browse
+Copy in the display divs
+Browse
+Copy in createPlayer() function
+Copy in ajaxSuccess() and makeAjaxCall() functions
+Fill in form and submit (should see preview player)
+Turn on Dev Tools and display all returned data in ajaxSuccess using console.log
+

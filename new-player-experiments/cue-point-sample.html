@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cue Point Sample</title>
+</head>
+
+<body>
+    <!-- Start of Brightcove Player -->
+    <div style="display:none"></div>
+    <!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C 
+    found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+    -->
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+    <object id="myExperience3479661427001" class="BrightcoveExperience">
+        <param name="bgcolor" value="#FFFFFF" />
+        <param name="width" value="480" />
+        <param name="height" value="270" />
+        <param name="playerID" value="3479617268001" />
+        <param name="playerKey" value="AQ~~,AAABmA9XpXk~,-Kp7jNgisrdGPvvW3e5kmhpzh0wQbS6O" />
+        <param name="isVid" value="true" />
+        <param name="isUI" value="true" />
+        <param name="dynamicStreaming" value="true" />
+        <param name="@videoPlayer" value="3479661427001" />
+        <!-- smart player api params -->
+        <param name="includeAPI" value="true" />
+        <param name="templateLoadHandler" value="onTemplateLoad" />
+        <param name="templateReadyHandler" value="onTemplateReady" />
+    </object>
+    <!-- 
+    This script tag will cause the Brightcove Players defined above it to be created as soon
+    as the line is read by the browser. If you wish to have the player instantiated only after
+    the rest of the HTML is processed and the page load is complete, remove the line.
+    -->
+    <script type="text/javascript">brightcove.createExperiences();</script>
+    <!-- End of Brightcove Player -->
+    <p><strong>Text below here will change as cue points are reached.</strong>
+    </p>
+    <div id="displayInfo" style="color: #ff0000"></div>
+    <br />
+    <p><strong>Cue point details extracted from the cue point event object:</strong>
+    </p>
+    <div id="cpInfo"></div>
+  <script type="text/javascript">
+    /******** Any scripts specific to page samples should go here *********/
+    var player,
+      APIModules,
+      videoPlayer,
+      //Data for display, most likely would come from external source such as database
+      cuePointData = {
+        foo: "This is the information for product foo",
+        bar: "Bar is the next product on the list",
+        baz: "The final product in the list is baz"
+      },
+      onTemplateLoad = function (experienceID) {
+        player = brightcove.api.getExperience(experienceID);
+        APIModules = brightcove.api.modules.APIModules;
+        cuePointEvent = brightcove.api.events.CuePointEvent;
+      },
+      onTemplateReady = function (evt) {
+        videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+        videoPlayer.play();
+        videoPlayer.addEventListener(cuePointEvent.CUE, onCue);
+      },
+      onCue = function (evt) {
+        console.log(evt);
+        var thisCutPointName = evt.cuePoint.name;
+        console.log(thisCutPointName);
+        displayInfo.innerHTML = cuePointData[thisCutPointName];
+        cpInfo.innerHTML += "Cue point name: <em>" + evt.cuePoint.name + "</em>,  cue point time: <em>" + evt.cuePoint.time + "</<em><br />";
+      };
+  </script></body>

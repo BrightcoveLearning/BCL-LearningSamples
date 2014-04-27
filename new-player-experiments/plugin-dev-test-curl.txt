@@ -1,0 +1,19 @@
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugin-dev-test.css"
+    ],
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugin-dev-test.js"
+    ],
+    "plugins": [{
+      "name": "pluginDevTest"
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+  
+  
+  

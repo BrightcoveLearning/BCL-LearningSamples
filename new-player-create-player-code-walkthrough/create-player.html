@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+  <!-- -->
+  <h2>Player info input</h2>
+  <p>Username:
+    <input class="checkForValue" name="account_username" id="account_username" type="text" size="100" value="mboles@brightcove.com">
+  </p>
+  <p>Account ID:
+    <input class="checkForValue" name="account_id" id="account_id" type="text" size="40" value="1507807800001">
+  </p>
+  <p>Password:
+    <input class="checkForValue" name="account_password" id="account_password" type="password" size="40">
+  </p>
+  <p>Player Name:
+    <input class="checkForValue" name="player_name" id="player_name" type="text" size="40">
+  </p>
+  <p>Media URL:
+    <input class="checkForValue" name="media_url" id="media_url" type="text" size="100" value="http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4">
+  </p>
+  <p>Media Type:
+    <select id="media_type">
+      <option value="video/mp4" selected>video/mp4</option>
+      <option value="application/x-mpegURL">HLS (application/x-mpegURL)</option>
+    </select>
+  </p>
+  <button onclick="checkInputs()">Create Player</button>
+  <h2>Preview iframe Player</h2>
+  <div id="previewPlayer"></div>
+  <h2>Master iframe Player</h2>
+  <div id="masterPlayer"></div>
+  <button onclick="reloadMasterIframe()">Check if player is complete</button>
+  <h2>JSON responses</h2>
+  <p>Below is the JSON data returned by the player creation:</p>
+  <p><pre><code id="jsonCreation"></code></pre>
+  </p>
+  <p>Below is the JSON data returned by the player publish:</p>
+  <p><pre><code id="jsonPublish"></code></pre>
+  </p>
+  <h2>Processed response</h2>
+  <p>Below is simple HTML output of some of the player information:</p>
+  <div id="htmlOutput"></div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    /******** Any scripts specific to page samples should go here *********/
+    var account_id = "",
+      account_password = "",
+      account_username = "",
+      player_name = "",
+      media_url = "",
+      media_type = "",
+      callPurpose = "",
+      masterIframe = "";
+    var ajaxSuccess = function (data) {
+      switch (callPurpose) {
+      case "makeNewPlayer":
+        document.getElementById("previewPlayer").innerHTML = data.preview_embed_code;
+        var tempString = JSON.stringify(data, null, 2);
+        tempString = tempString.replace("<ifra", "&lt;ifra");
+        document.getElementById("jsonCreation").innerHTML = tempString;
+        publishPlayer(data.id);
+        break;
+      case "publishPlayer":
+        masterIframe = data.embed_code;
+        document.getElementById("masterPlayer").innerHTML = data.embed_code;
+        var tempString = JSON.stringify(data, null, 2);
+        tempString = tempString.replace("<ifra", "&lt;ifra");
+        document.getElementById("jsonPublish").innerHTML = tempString;
+        displayPlayerInfo(tempString);
+        break;
+      }
+    };
+    var ajaxError = function (data) {
+      console.log("error data: ");
+      console.log(data);
+    };
+    var makeAjaxCall = function (callURL, callType, callData) {
+      if (callData) {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          data: JSON.stringify(callData),
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      } else {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      };
+    };
+    var checkInputs = function () {
+      var proceed = true;
+      $(".checkForValue").each(function () {
+        if (!$.trim(this.value).length) {
+          alert("Be sure all form fields have values");
+          proceed = false;
+          return false;
+        };
+      });
+      if (proceed) {
+        createPlayer();
+      };
+    };
+    var createPlayer = function () {
+      account_id = document.getElementById("account_id").value,
+      account_password = document.getElementById("account_password").value,
+      account_username = document.getElementById("account_username").value,
+      player_name = document.getElementById("player_name").value,
+      media_url = document.getElementById("media_url").value,
+      media_type = document.getElementById("media_type").value,
+      callPurpose = "makeNewPlayer";
+      playerData = {
+        "name": player_name,
+        "configuration": {
+          "media": {
+            "sources": [{
+              "src": media_url,
+              "type": media_type
+            }]
+          }
+        }
+      };
+      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
+      makeAjaxCall(call_url, "POST", playerData);
+    };
+    var publishPlayer = function (paramPlayerID) {
+      callPurpose = "publishPlayer";
+      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players/" + paramPlayerID + "/publish";
+      makeAjaxCall(call_url, "POST", null)
+    };
+    var displayPlayerInfo = function (playerData) {
+      var jsonObj = JSON.parse(playerData);
+      var dynamicHTML = "<strong>Player ID:</strong> " + jsonObj.id + "<br />";
+      dynamicHTML += "<strong>Player URL:</strong> " + jsonObj.url;
+      document.getElementById("htmlOutput").innerHTML = dynamicHTML;
+    };
+    var reloadMasterIframe = function () {
+      document.getElementById("masterPlayer").innerHTML = masterIframe;
+    };
+  </script>
+</body>
+
+</html>
