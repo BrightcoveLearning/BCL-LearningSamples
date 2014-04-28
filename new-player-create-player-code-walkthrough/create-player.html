@@ -87,28 +87,28 @@
       document.getElementById("htmlOutput").innerHTML = dynamicHTML;
     };
 
-    var ajaxSuccess = function (data) {
+    var ajaxSuccess = function (returnedData) {
       switch (callPurpose) {
       case "makeNewPlayer":
-        document.getElementById("previewPlayer").innerHTML = data.preview_embed_code;
-        var tempString = JSON.stringify(data, null, 2);
+        document.getElementById("previewPlayer").innerHTML = returnedData.preview_embed_code;
+        var tempString = JSON.stringify(returnedData, null, 2);
         tempString = tempString.replace("<ifra", "&lt;ifra");
         document.getElementById("jsonCreation").innerHTML = tempString;
-        publishPlayer(data.id);
+        publishPlayer(returnedData.id);
         break;
       case "publishPlayer":
-        masterIframe = data.embed_code;
-        document.getElementById("masterPlayer").innerHTML = data.embed_code;
-        var tempString = JSON.stringify(data, null, 2);
+        masterIframe = returnedData.embed_code;
+        document.getElementById("masterPlayer").innerHTML = returnedData.embed_code;
+        var tempString = JSON.stringify(returnedData, null, 2);
         tempString = tempString.replace("<ifra", "&lt;ifra");
         document.getElementById("jsonPublish").innerHTML = tempString;
         displayPlayerInfo(tempString);
         break;
       }
     };
-    var ajaxError = function (data) {
+    var ajaxError = function (returnedData) {
       console.log("error data: ");
-      console.log(data);
+      console.log(returnedData);
     };
     var makeAjaxCall = function (callURL, callType, callData) {
       if (callData) {
