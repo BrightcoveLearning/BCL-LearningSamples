@@ -1,21 +1,14 @@
-	
 David LaPalomento	10:20 AM
 http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_english/398/master.m3u8?playerId=2551661482001&lineupId=&affiliateId=&pubId=2402232199001&videoId=2552000984001
 
-
-
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
-
-
 
 //From link to autogenerate request for token
 curl -L http://players.brightcove.com/docs/alpha/create_client_credentials.sh | bash -s AEnTxTi2qk1fIB5adNKr9XuahxSiW5KZIAK1pnJ0zD9u3GshaXbyGwheKvWD5mBTUN-yxcU5aCyZFCjdY6a7InHSKiCXyN-RbNVza4gRVtaqGzMg9j1sB2s 1507807800001 video-cloud/player/all
 
 //To refresh token
 export BC_ACCESS_TOKEN=`curl -s -L http://players.brightcove.com/docs/alpha/create_access_token.sh | bash -s a295fe12-15b1-48c9-82a4-14b03fff7a95 KkdqZ-i9rcERi6pu2fyVP4myNYHDLEmW4siqBDxDI5fIr7ewWvGH9cEVH1kWVu24JXGG3y48E7E3yDb1b24Tnw` && echo 'Token has been updated'
-
-_default/in_page.embed
 
 //Pub ID from Video Cloud account 
 Publisher ID: 1507807800001
@@ -32,6 +25,18 @@ curl \
       "stylesheets": [
         "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/listen-for-play-button.css"
       ]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "stylesheets": [
+          "http://players.brightcove.com/507017973001/stuff/styles/green.css",
+          "http://players.brightcove.com/507017973001/stuff/styles/blueControlBar.css"
+       ]
     }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
 
