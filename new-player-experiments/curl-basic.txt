@@ -1,6 +1,3 @@
-David LaPalomento	10:20 AM
-http://bcoveliveios-i.akamaihd.net/hls/live/215102/master_english/398/master.m3u8?playerId=2551661482001&lineupId=&affiliateId=&pubId=2402232199001&videoId=2552000984001
-
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
 
@@ -10,12 +7,255 @@ curl -L http://players.brightcove.com/docs/alpha/create_client_credentials.sh | 
 //To refresh token
 export BC_ACCESS_TOKEN=`curl -s -L http://players.brightcove.com/docs/alpha/create_access_token.sh | bash -s a295fe12-15b1-48c9-82a4-14b03fff7a95 KkdqZ-i9rcERi6pu2fyVP4myNYHDLEmW4siqBDxDI5fIr7ewWvGH9cEVH1kWVu24JXGG3y48E7E3yDb1b24Tnw` && echo 'Token has been updated'
 
-//Pub ID from Video Cloud account 
+//Pub ID from Video Cloud account
 Publisher ID: 1507807800001
 export ACCOUNT_ID=1507807800001
 export EMAIL=mboles@brightcove.com
 export PLAYER_ID=
 export EMBED_ID=
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  --data '{}' \
+  --write-out "HTTP Status: %{http_code}" \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "stylesheets": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/plugin-dev.css"
+    ],
+    "scripts": [
+      "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/plugin-dev.js"
+    ],
+    "plugins": [{
+      "name": "pluginDev",
+      "options": {"overlayText": "This data supplied at initialization"}
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  --data '{}' \
+  --write-out "HTTP Status: %{http_code}" \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/firstRepo/purge
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request DELETE \
+  --data '{}' \
+  --write-out "HTTP Status: %{http_code}" \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/firstRepo
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  --data '{}' \
+  --write-out "HTTP Status: %{http_code}" \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "css": {
+        "controlColor": "green",
+        "controlBarColor": "green",
+        "progressColor": "green"
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "scripts": [
+      "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.js"
+    ],
+    "stylesheets": [
+      "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css", 
+      "https://players.brightcove.com/svt-videojs-thumbnails/svt.thumbnails.css"
+    ],
+    "plugins": [{
+      "name": "thumbnails",
+      "options": {
+        "0": {
+          "src": "http://solutions.brightcove.com/bcls/assets/images/Tiger-4-preview.jpg",
+          "width": ""
+        },
+        "5": {
+          "src": "http://solutions.brightcove.com/bcls/assets/images/Water-4-preview.jpg"
+        },
+        "10": {
+          "src": "http://solutions.brightcove.com/bcls/assets/images/BirdsOfAFeather-4-preview.jpg"
+        },
+        "15": {
+          "src": ""
+        }
+      }
+    }]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+{
+  "scripts": [
+    "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.js"
+  ],
+  "stylesheets": [
+    "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css", 
+    "https://players.brightcove.com/svt-videojs-thumbnails/svt.thumbnails.css"
+  ],
+  "plugins": [{
+    "name": "thumbnails",
+    "options": {
+      "0": {
+        "src": "http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg",
+        "width": "120px"
+      },
+      "5": {
+        "src": "http://solutions.brightcove.com/bcls/assets/images/Water.jpg"
+      }
+      "10": {
+        "src": "http://solutions.brightcove.com/bcls/assets/images/BirdsOfAFeather.jpg"
+      }
+    }
+  }]
+}
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "name": "newPlayerName"
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "poster": {
+          "highres":"http://solutions.brightcove.com/bcls/assets/images/TigerTest.jpg"
+        }
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "plugins": [
+          "hls": "false",
+          "debuggerWindow": "false",
+          "bcAnalytics": "false"
+       ]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        },
+        "hls": false,
+        "debugger": false,
+        "analytics": false
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        },
+        "hls": false,
+        "debugger": false,
+        "analytics": false,        
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "plugins": [
+          "hls": "false",
+          "debuggerWindow": "false",
+          "bcAnalytics": "false"
+       ]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "player": {
+        "inactive": true
+    }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 
 curl \
   --header "Content-Type: application/json" \
@@ -64,9 +304,9 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
-          }]        
+          }]
         },
         "scripts": [
           "http://solutions.brightcove.com/bcls/video-js/new-player/plugins-doc-samples/listen-for-play-button.js"
@@ -135,7 +375,7 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.mp4",
             "type":"video/mp4"
           }
         ]
@@ -152,15 +392,15 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Redfish.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Redfish.mp4",
             "type":"video/mp4"
           },
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Bluefish.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Bluefish.mp4",
             "type":"video/mp4"
           },
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Snook.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Snook.mp4",
             "type":"video/mp4"
           }
         ]
@@ -176,10 +416,10 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           }]
-      }    
+      }
     }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
 
@@ -194,7 +434,7 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.m3u8",
             "type":"application/x-mpegURL"
           }
         ],
@@ -214,7 +454,7 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Lion.m3u8",
             "type":"application/x-mpegURL"
           }
         ],
@@ -248,11 +488,11 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           },
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }
         ],
@@ -273,7 +513,6 @@ curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
   --request DELETE \
-  --write-out "HTTP Status: %{http_code}" \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
 
 http://players.brightcove.com/1507807800001/0181ea5c-5b4d-46f5-bae9-c16b092c20d3_c912d695-9756-4a07-84a3-4d14ed88665e/index.html
@@ -476,11 +715,11 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           },
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }
         ],
@@ -500,7 +739,7 @@ curl \
   --data '{
       "media": {
         "sources": [{
-          "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+          "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
           "type":"application/x-mpegURL"
         }],
         "poster": {
@@ -515,7 +754,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         }
@@ -563,8 +802,7 @@ curl \
   --header "Content-Type: application/json" \
   --request DELETE \
   --data '{}' \
-  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/478772a5-a2f2-44c6-a26b-2d7234bd97f5 \
-  -w "HTTP Status: %{http_code}"
+  https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID 
 
 //Delete player
 curl \
@@ -582,18 +820,18 @@ curl \
   --header "Content-Type: application/json" \
   --header "Authorization: Bearer $BC_ACCESS_TOKEN" \
   --request POST \
-  --data-binary '{ "media": 
-    { 
-      "id": "2114345471001", 
-      "sources": 
-      [ 
-        { 
-          "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4", 
+  --data-binary '{ "media":
+    {
+      "id": "2114345471001",
+      "sources":
+      [
+        {
+          "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/1507807800001/1507807800001_2114524848001_Bird-Titmouse7.mp4",
           "codec": "h264",
-          "container": "mp4" 
+          "container": "mp4"
         }
-      ] 
-    } 
+      ]
+    }
   }' \
   https://players.api.brightcove.com/v1/accounts/$BC_ACCOUNT_ID/players/$PLAYER_ID/embeds
 
@@ -622,7 +860,7 @@ curl \
         }
       }
     }' \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players 
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
 
 curl \
   --header "Content-Type: application/json" \
@@ -681,7 +919,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718", 
+            "src":"http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718",
             "type":"video/mp4"
           }],
           "poster": {
@@ -900,7 +1138,7 @@ mboles-mac:git mboles$ cd myFirstRepo
 mboles-mac:myFirstRepo mboles$ git init
 Initialized empty Git repository in /Users/mboles/git/myFirstRepo/.git/
 mboles-mac:myFirstRepo mboles$ git remote add origin https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/repoTest
-mboles-mac:myFirstRepo mboles$ 
+mboles-mac:myFirstRepo mboles$
 
 mboles-mac:repoTest mboles$ git add -A
 mboles-mac:repoTest mboles$ git commit -m 'Changed text again'
@@ -908,7 +1146,7 @@ mboles-mac:repoTest mboles$ git commit -m 'Changed text again'
  1 file changed, 1 insertion(+), 1 deletion(-)
 mboles-mac:repoTest mboles$ git push origin master
 Username for 'https://repos.api.brightcove.com': mboles@brightcove.com
-Password for 'https://mboles@brightcove.com@repos.api.brightcove.com': 
+Password for 'https://mboles@brightcove.com@repos.api.brightcove.com':
 Counting objects: 5, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
@@ -922,7 +1160,7 @@ remote: dangerzone.purgeCDN:1|c
 remote: Files purged from the edge cache.
 To https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/repoTest
    cbbc165..73206d7  master -> master
-mboles-mac:repoTest mboles$ 
+mboles-mac:repoTest mboles$
 
 
 curl \

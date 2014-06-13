@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta name="robots" content="noindex" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<title></title>
+<meta name="Generator" content="Cocoa HTML Writer">
+<meta name="CocoaVersion" content="1265">
+</head>
+<body>
+<h1>Building Blocks</h1>
+
+<p>The player management system comprises of three key objects.  They are templates, players and embeds.</p>
+
+<p><em>Template</em> - (not currently exposed to end users).  A template is set of files and settings used as the basis for creating the viewing experiences presented to users.  These files are eventually compiled (combined with customized player settings) and result in the actual code that is loaded in the browser (a player embed).  There is currently only one single template which is used system-wide - the Brightcove single-video-template.  As such there is no visibility into the template via the API.  This may be expanded in the future.</p>
+
+<p><em>Player</em> - customer-specific settings that capture general information and customizations to be applied to a template.  Customizations can include settings, styles and plugins.  Player settings will apply to all player embeds spawned from the player.</p>
+
+<p><em>Embed</em> - a browser-ready instance of a player.  It either includes everything needed for user viewing or will be provided content somehow at runtime.  Every player has at least one Embed.  Additional Embed objects can be created via the Quick Publish widget in the studio.  An Embed may only define media to add to a given player.  It could also define any setting or style overrides that it may want to alter compared to the player that it belongs to (though this is a more advanced configuration and is not yet fully supported - no update methods exist for Embed objects at this time).</p>
+
+<p><img src="/en/video-cloud/player-management-api/reference/versions/v1/assets/player-entity-hierarchy.png" alt="player-entity-hierarchy.png"></p>
+<p>A diagram which shows the relationships between templates, players and embeds.</p>
+
+
+<p>When a Video Cloud customer accesses Player Management for the first time (specifically the list call) we generate a Brightcove Default Player in their account.  That player object is for the customer to do with as they choose.  They could use it as is, change some settings, restyle it, add some plugins.</p>
+
+<p>Customers could choose to use only the Brightcove Default Player (with their customizations) or they could choose to create other players to capture different looks and settings for different locations on their website.</p>
+
+<p>Each player comes with its own default embed object.  This is published to dangerzone and is the embed code that they would include on their pages if the player is consumable as is.  For example if the customer assigns a plugin to the player to get content or if client-side APIs will be used to inject content then this default embed is what they would use.</p>
+
+<p>If they choose to use the Quick Publish widget to marry content with a player then new embed objects are generated each time they click Generate.</p>
+
+<h1>Example Workflows</h1>
+
+<h3>Default player / default embed only</h3>
+<p>In this scenario media content is provided to the player either via direct configuration params or by use of a plugin.  </p>
+
+<p>Steps:</p>
+<ol>
+    <li>update BC Default Player via UI or API to supply content or plugin info</li>
+    <li>publish changes (Save in UI)</li>
+    <li>copy default embed code to your site</li>
+</ol>
+
+<h3>Custom player / default embed only</h3>
+<p>The only difference between this case and the previous one is that a non-default player is used.  </p>
+
+<p>Steps:</p>
+<ol>
+    <li>create a player via the UI or API </li>
+    <li>update the player via UI or API to supply content or plugin info if this info was not provided during creation</li>
+    <li>publish changes (Save in the UI)</li>
+    <li>copy embed code to your site</li>
+</ol>
+
+<h3>Default player / quick publish</h3>
+<p>In this scenario the default player is used as is.  A new embed that is statically bound to a single video is created via the Quick Publish widget.</p>
+
+<p>Steps:</p>
+<ol>
+    <li>choose a video in the media browser UI</li>
+    <li>click on it and choose Quick Publish (this creates an Embed object and publishes it)</li>
+    <li>generate when ready</li>
+    <li>copy embed code to your site</li>
+</ol>
+
+<h3>Custom player / quick publish</h3>
+<p>The only difference between this case and the previous one is that a non-default player is used.  </p>
+
+<p>Steps:</p>
+<ol>
+    <li>create a player via the UI or API with whatever customizations you desire </li>
+    <li>choose a video in the media browser UI</li>
+    <li>click on it and choose Quick Publish (this creates an Embed object and publishes it)</li>
+    <li>generate when ready</li>
+    <li>copy embed code to your site</li>
+</ol>
+
+<h1>Publishing</h1>
+
+<p>One of the features of the new system is our ability to separate changes that you want to test out from the version of your player which is publically published.  In both the UI and the API when you make changes to a player's configuration the changes are made available immediately via the preview URL.  </p>
+
+<p>The changes are saved across sessions so you can share out the preview URL for approval or just come back to finish later.  However, the changes are not made public until you publish (in the UI - push the Save button, the API is PUT v1/accounts/123/players/xyz/active).  </p>
+
+<p>In the UI we have made it easy to discard all changes on the preview branch - just click Revert Settings.  In the API it is more of a manual process.  You would do a get for the config on master and then push that object to the preview branch iff there are differences. </p>
+
+
+<p class="p1">Update Waterfalls</p>
+<p>A separate document will follow to detail out the batch publish service.  But the short version is that publish actions affect everything downhill from them.</p>
+
+<ul class="ul1">
+<li>an Embed publish affects only that Embed</li>
+<li>a Player publish triggers a re-publish of all Embeds created for that Player</li>
+<li>a Template update (BC controlled) will trigger a re-publish of all players and the player re-publish will in turn trigger a re-publish of all Embeds created from each player.</li>
+</ul>
+
+<p>Settings are applied in a child wins manner.  If a template defines foo=1 and a player defines setting foo = 2 then the compiled player embed will have foo = 2.  Moreover, if the embed settings include foo = 3 then the compiled player will have foo = 3.</p>
+
+<p>These same rules hold true for player activation and deactivation.</p>
+
+<h1>Embed APIs</h1>
+
+<p>The embed APIs follow a similar implementation to the player APIs though embed objects do not have branches at this time.  The initial implementation includes only list, create and publish actions though we will open this up in the future to include update and delete.</p>
+
+<p><strong>List</strong></p>
+<p>GET v1/accounts/123/players/345/embeds</p>
+<p>    Request body: none</p>
+
+<p>    Response: a list of player embeds for the given player. </p>
+<p>    Example:</p>
+<pre><code>[
+      {          
+          "name": "Brightcove Default Player",
+          "description": "This is an instance of the Brightcove Default Player...",
+          "id": "default",
+          "url": "http://127.0.0.1:1337/507017973001/default_default/index.html",
+          "embed_code": "&lt;iframe src='//127.0.0.1:1337/507017973001/default_default/index.html'&gt;&lt;/iframe&gt;",
+          "configuration": {}
+      },
+
+      {
+          "name": "This is the parent player's name",
+          "description": "This is the parent player's description",
+          "id": "5c69c1ad-09aa-48f5-b954-a434997c3a00",
+          "url": "http://players.brightcove.com/.../index.html",
+          "embed_code": "&lt;iframe src='//players.brightcove.com/.../index.html'&gt;&lt;/iframe&gt;",          
+          // This is the combination of the parent player and embed configuration
+          "configuration": {  
+              "media": {
+                  "id": "51c60d12e4b01a8dd69b1ebb",
+                  "poster": {
+                      "highres": "http://brightcove.vo.llnwd.net/.../some.jpg"
+                  },
+                  "sources": [
+                      {
+                          "src": "http://c.brightcove.com/.../master.m3u8",
+                          "codec": "h264",
+                          "container": "m2ts"
+                      },
+                      {
+                          "src": "http://brightcove.vo.llnwd.net/.../some.mp4",
+                          "codec": "h264",
+                          "container": "mp4",
+                          "height": 320,
+                          "width": 416
+                      }
+                  ]
+              }
+          },
+          // This is only the config settings that were provided when the embed was created
+          "configuration_override": {
+              "media": {
+                  "id": "51c60d12e4b01a8dd69b1ebb",
+                  "poster": {
+                      "highres": "http://brightcove.vo.llnwd.net/.../some.jpg"
+                  },
+                  "sources": [
+                      {
+                          "src": "http://c.brightcove.com/.../master.m3u8",
+                          "codec": "h264",
+                          "container": "m2ts"
+                      },
+                      {
+                          "src": "http://brightcove.vo.llnwd.net/.../some.mp4",
+                          "codec": "h264",
+                          "container": "mp4",
+                          "height": 320,
+                          "width": 416
+                      }
+                  ]
+              }
+          }
+      }
+  ]</code></pre>
+
+
+<p><strong>Create</strong></p>
+<p>POST v1/accounts/123/players/345/embeds/</p>
+<p>    Request body:  similar to player create - pass in configuration options.  </p>
+<p>    Example:</p>
+
+
+<pre><code>{
+   "media": {
+        "id": "51c60d12e4b01a8dd69b1ebb",
+        "poster": {
+            "highres": "http://brightcove.vo.llnwd.net/....some.jpg"
+        },
+        "sources": [
+            {
+                "src": "http://c.brightcove.com/some/master.m3u8",
+                "codec": "h264",
+                "container": "m2ts"
+            },
+            {
+                "src": "http://brightcove.vo.llnwd.net/some.mp4",
+                "codec": "h264",
+                "container": "mp4",
+                "height": 320,
+                "width": 416
+            }
+        ]        
+    }
+}</code></pre>
+
+<p>    Response:  ID of the new embed object</p>
+<pre><code>{
+            "id": "c7e0599c-5e8c-427d-916d-808b17040018"
+        }</code></pre>
+
+
+<p><strong>Publish</strong></p>
+<p>PUT v1/accounts/123/players/345/embeds/567/active</p>
+<p>    Request body: none</p>
+
+<p>    Response: embed info</p>
+<p>    Example:</p>
+
+<pre><code>{
+    "url": "http://players.brightcove.com/.../index.html",
+    "embed_code": "&lt;iframe src='//players.brightcove.com/.../index.html'&gt;&lt;/iframe&gt;"
+}</code></pre>
+</body>
+</html>

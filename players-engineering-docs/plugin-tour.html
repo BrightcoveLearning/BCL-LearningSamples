@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="noindex" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <!-- change title to match the h1 heading -->
+    <title>Plugin Tour</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/css/foundation.min.css" />
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/css/normalize.css" />
+    <script src="//use.edgefonts.net/source-code-pro.js"></script>
+    <link href="//files.brightcove.com/proxima-nova/font-faces.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/en/styles/bcls-doc-site.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css">
+    <script type="text/JavaScript">
+        <!--//--><![CDATA[//><!--
+        var _gaq = _gaq || [];
+        _gaq.push(
+            ["_setAccount", "UA-2728311-23"], ["_setDomainName", ".brightcove.com"], ["_trackPageview"]
+        );
+        (function () {
+            var ga = document.createElement("script");
+            ga.type = "text/JavaScript";
+            ga.async = true;
+            ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+         //--><!]]>
+	</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  </head>
+
+<body>
+  <!-- header navbar -->
+  <div id="navWrapper" class="fixed"></div>
+  <!-- search -->
+  <div id="searchModal" class="reveal-modal" data-reveal></div>
+  <!-- content -->
+    <div class="row">
+        <div class="large-2 columns show-for-large-up">
+            <div id="sidenav"></div>
+        </div>
+        <div id="main" class="large-10 small-12 columns">
+            <div id="top" class="section">
+                <h1>Plugin Tour</h1>
+                <p>Plugins allow you to customize your video player's look-and-feel, change its behavior, or include additional functionality like advertising. The Brightcove video player is compatible with regular video.js plugins so you can include any from the <a href="https://github.com/videojs/video.js/wiki/Plugins">growing list of open-source plugins</a> or build your own.</p>
+                <p>You will find steps for adding a plugin to your Brightcove player in the <a href="//docs.brightcove.com/en/video-cloud/players/guides/player-mgmt-quick-start.html">Quick Start to Player Management</a>.</p>
+            </div>
+            <div class="section" id="useExistingPlugin">
+                <h2>Use Existing Plugins</h2>
+                <p>Before you get started using plugins, you should be familiar with creating and configuring video players. If you haven't already, go check out <a href="/en/video-cloud/player-management-api/index.html">the player management APIs</a> to see how that is accomplished.</p>
+                <p>Plugins are made up of JavaScript files and, optionally, some CSS. To include a plugin in your player, the plugin's resources must be available at a URL that is publicly accessible. The player management system will access those files when it's building your player, so hosting your plugin behind a company firewall will cause errors when you try to create your player. Once you have the resource URLs in hand, you can include them in your player configuration.</p>
+                <p>Say you wanted to add a plugin that overlayed an animated buddy onto the player that would entertain your viewers while the video was playing. Maybe it consists of a stylesheet and two JavaScript files to animate the buddy. All those files could be hosted by the fine folks at example.com at the following URLs:</p> <ul>
+                    <li><a href="http://www.example.com/videojs-buddy/videojs.buddy.css">http://www.example.com/videojs-buddy/videojs.buddy.css</a>
+                    </li>
+                    <li><a href="http://www.example.com/videojs-buddy/videojs.buddy.js">http://www.example.com/videojs-buddy/videojs.buddy.js</a>
+                    </li>
+                    <li><a href="http://www.example.com/videojs-buddy/videojs.buddy-animations.js">http://www.example.com/videojs-buddy/videojs.buddy-animations.js</a>
+                    </li>
+                </ul>
+                <p>You can tell the player management APIs to pull those files into your player by adding additional properties to the configuration:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;Buddy Plugin Player&quot;,
+  &quot;configuration&quot;: {
+    &quot;media&quot;: {
+      &quot;src&quot;: &quot;http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4?pub-id=1336762718&quot;
+    },
+    &quot;stylesheets&quot;: [
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy.css&quot;
+    ],
+    &quot;scripts&quot;: [
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy.js&quot;,
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy-animations.js&quot;
+    ]
+  }
+}
+</code></pre>
+                <p>Note that <code>stylesheets</code> and <code>scripts</code> are arrays: their contents will be inlined directly into your player, in the order you define them in your configuration.</p>
+                <p>Inlining all of your CSS and JavaScript is normally a good thing. There can be a lot of overhead creating a new request to fetch a file from a mobile phone, for instance, and delivering all the resources necessary to make your player in a single request means it will show up and be ready to start playing faster.</p>
+                <p>However, sometimes you absolutely want a request to be made from the browser to fetch your plugin. If you're in that situation, you can make a lightweight plugin that loads the rest of your JavaScript or stylesheets dynamically.</p>
+                <p>There's one last step before you can start enjoying videos with the animated buddy plugin: initializing it and deciding whether you'd like to override the default settings. In video.js, you intialize a plugin by invoking it and passing along any non-default settings:</p>
+<pre><code>player.buddy({
+  type: &quot;turtle&quot;
+});
+</code></pre>
+                <p>You don't have to worry about writing code to fire up your plugin directly but you do need to tell the player management APIs how to do it. For each plugin you include, you add a configuration object with the name of the plugin and optionally your settings overrides. For the fictional buddy plugin, the entire configuration would look like this:</p>
+<pre><code>{
+  &quot;name&quot;: &quot;Buddy Plugin Player&quot;,
+  &quot;configuration&quot;: {
+    &quot;media&quot;: {
+      &quot;src&quot;: &quot;http://brightcove.vo.llnwd.net/e1/pd/1336762718/1336762718_2404676426001_trailer-720p.mp4&quot;
+    },
+    &quot;stylesheets&quot;: [
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy.css&quot;
+    ],
+    &quot;scripts&quot;: [
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy.js&quot;,
+      &quot;http://www.example.com/videojs-buddy/videojs.buddy-animations.js&quot;
+    ],
+    &quot;plugins&quot;: [
+      {
+        &quot;name&quot;: &quot;buddy&quot;,
+        &quot;options&quot;: {
+          &quot;type&quot;: &quot;turtle&quot;
+        }
+      }
+    ]
+  }
+}</code></pre>
+                <p>Multiple plugins can be added to the plugins array and they're each initialized in the order you define them in your configuration. Now you can use the player management APIs to preview your player and make sure the plugin is working as you expect; then publish it to the world when you're satisfied.</p> </div>
+            <div class="section" id="createPlugin">
+                <h2>Creating a Plugin</h2>
+                <p>You can create your own custom plugins and use them just as easily as existing open-source ones. New player plugins are just like video.js plugins, so the best place to get started is in the <a href="https://github.com/videojs/video.js/blob/v4.3.0/docs/guides/plugins.html">video.js plugin tutorial</a>.</p>
+                <p>Once you're happy with your new plugin, you'll need to host it somewhere. You can use a web server of your own or make a new repo with the <a href="/en/video-cloud/delivery-system-api/index.html">Delivery System APIs</a> if you don't have one handy.</p> <h3>Example</h3>
+                <p>The easiest way to understand a new technology is often to build something with it, so we're going to develop an example plugin that will overlay some text on top of the video. A video.js plugin can be as simple as a single JavaScript file but more interesting plugins will probably want to have a &quot;sandbox&quot; page to try out the plugin, unit tests to verify it's functioning correctly and a build process that minifies up all the files for a release.</p>
+                <p>To get a head-start on video.js plugin develpoment, consider the <a href="http://github.com/dmlap/grunt-init-videojs">grunt-init video.js template</a>. grunt-init will create a standard plugin directory layout and configure the <a href="http://gruntjs.com/">grunt</a> build tool with a bunch of useful tasks:</p>
+                <ul>
+                    <li>automatically concatenate and minify JavaScript</li>
+                    <li>setup a <a href="http://qunitjs.com/">QUnit</a> test page and configure it to run from the command-line with <a href="http://phantomjs.org/">phantomjs</a>
+                    </li>
+                    <li>check for common programming errors and enforce some style guidelines with <a href="http://www.jshint.com/">jshint</a>
+                    </li>
+                </ul>
+                <p>The video.js grunt-init template can be <a href="http://gruntjs.com/project-scaffolding">installed fairly easily</a> on any computer that can run grunt. Once that's in place, we can create a new directory for our plugin and create the project scaffolding:</p>
+<pre><code>$ mkdir videojs-script-loader
+$ cd videojs-script-loader
+$ grunt-init videojs
+Running &quot;init:videojs&quot; (init) task
+This task will create one or more files in the current directory, based on the
+environment and the answers to a few questions.
+Note that answering &quot;?&quot; to any
+question will show question-specific help and answering &quot;none&quot; to most questions
+will leave its value blank.
+
+&quot;videojs&quot; template notes:
+Project name should not contain &quot;videojs&quot; or &quot;js&quot; and should be a unique ID
+not already in use at github.com/videojs/video.js/wiki/Plugins.
+Project title
+should be a human-readable title, and doesn't need to contain the word
+&quot;videojs&quot;, although it may.
+For example, a plugin titled &quot;Awesome Plugin&quot; might
+have the name &quot;awesome-plugin&quot;.
+
+For more information, please see the following
+documentation:https://github.com/videojs/video.js/blob/v4.3.0/docs/guides/plugins.md
+
+Please answer the following:
+[?] Project name (simpleoverlay)
+[?] Project title (Simpleoverlay) Simple Overlay
+[?] Description (The best video.js plugin ever.) A video.js plugin that will overlay some text on top of a video
+[?] Version (0.1.0)
+[?] Project git repository (git://github.com/brightcove/videojs-simpleoverlay)
+[?] Project homepage (https://github.com/brightcove/videojs-simpleoverlay)
+[?] Project issues tracker (https://github.com/brightcove/videojs-simpleoverlay/issues)
+[?] Licenses (MIT)
+[?] Author name (Brightcove)
+[?] Author email (noreply@brightcove.com)
+[?] Author url (none) http://www.brightcove.com
+[?] videojs_version (4.1.0)
+[?] Do you need to make any changes to the above before continuing? (y/N)
+
+Writing .gitignore...OK
+Writing .jshintrc...OK
+Writing CONTRIBUTING.md...OK
+Writing Gruntfile.js...OK
+Writing README.md...OK
+Writing example.html...OK
+Writing libs/qunit/qunit.css...OK
+Writing libs/qunit/qunit.js...OK
+Writing libs/video-js-4.1.0/demo.captions.vtt...OK
+Writing libs/video-js-4.1.0/demo.html...OK
+Writing libs/video-js-4.1.0/font/vjs.eot...OK
+Writing libs/video-js-4.1.0/font/vjs.svg...OK
+Writing libs/video-js-4.1.0/font/vjs.ttf...OK
+Writing libs/video-js-4.1.0/font/vjs.woff...OK
+Writing libs/video-js-4.1.0/video-js.css...OK
+Writing libs/video-js-4.1.0/video-js.min.css...OK
+Writing libs/video-js-4.1.0/video-js.png...OK
+Writing libs/video-js-4.1.0/video-js.swf...OK
+Writing libs/video-js-4.1.0/video.dev.js...OK
+Writing libs/video-js-4.1.0/video.js...OK
+Writing src/.jshintrc...OK
+Writing src/videojs.simpleoverlay.js...OK
+Writing test/.jshintrc...OK
+Writing test/simpleoverlay.html...OK
+Writing test/simpleoverlay.test.js...OK
+Writing LICENSE-MIT...OK
+Writing package.json...OK
+
+Initialized from template &quot;videojs&quot;.
+You should now install project dependencies with npm install.
+After that, you
+may execute project tasks with grunt.
+For more information about installing
+and configuring Grunt, please see the Getting Started guide:
+
+http://gruntjs.com/getting-started
+
+Done, without errors.
+</code></pre>
+                <p>At this point, we should have a fully-functional plugin, although it doesn't do much yet. We can download the project dependencies with <a href="https://npmjs.org/">npm</a> and then run the QUnit tests to verify that:</p>
+<pre><code>$ npm install
+$ grunt
+</code></pre>
+                <p>If that all goes well, we're ready to get coding. Start by opening the plugin's test file in the text editor of your choice. For our scripts-loader plugin, that file will be in the <code>test</code> folder, called <code>script-loader.test.js</code>. There are a few sample tests in that file already. Our new test will initialize the plugin and configure an overlay and then test that the overlay was created. In <code>simpleoverlay.test.js</code>:</p>
+<pre><code>test('displays an overlay at the correct time', function() {
+  var overlay;
+  expect(3);
+  this.player.simpleOverlay({
+    'vjs-test-overlay': {
+      start: 6,
+      end: 9,
+      textContent: 'I am a test'
+    }
+  });
+  this.player.currentTime = function() {
+    return 7;
+  };
+  this.player.trigger('timeupdate');
+
+  overlay = this.player.el().querySelector('.vjs-test-overlay');
+  ok(overlay, 'the overlay is present');
+  ok(!(/vjs-hidden/).test(overlay.className), 'the overlay is showing');
+  strictEqual(overlay.textContent, 'I am a test', 'the content is set');
+});
+</code></pre>
+                <p>Now we can open the QUnit test harness at <code>test/simpleoverlay.html</code> in a browser and see the results as we develop the plugin. Right now, that test is going to fail because we haven't actually written anything yet. Let's open up <code>src/videojs.simpleoverlay.js</code> and write the plugin init function:</p>
+<pre><code>simpleOverlay = function(options) {
+  var
+    // save a reference to the player instance
+    player = this,
+
+    // merge options and defaults
+    settings = extend({}, defaults, options || {}),
+
+    i,
+    overlay;
+
+  // insert the overlays into the player but keep them hidden initially
+  for (i in settings) {
+    overlay = settings[i];
+    overlay.el = document.createElement('div');
+    overlay.el.className = i + ' vjs-hidden';
+    overlay.el.textContent = overlay.textContent;
+    player.el().appendChild(overlay.el);
+  }
+
+  // show and hide the overlays for this time period
+  player.on('timeupdate', function() {
+    var
+      currentTime = player.currentTime(),
+      i,
+      overlay;
+
+    // iterate over all the defined overlays
+    for (i in settings) {
+      overlay = settings[i];
+      if (overlay.start &lt;= currentTime &amp;&amp; overlay.end &gt; currentTime) {
+
+        // if the overlay isn't already showing, show it
+        if (/vjs-hidden/.test(overlay.el.className)) {
+          overlay.el.className = overlay.el.className.replace(/\s?vjs-hidden/, '');
+        }
+
+      // if the overlay isn't already hidden, hide it
+      } else if (!(/vjs-hidden/).test(overlay.el.className)) {
+        overlay.el.className += ' vjs-hidden';
+      }
+    }
+  });
+};
+
+// register the plugin with video.js
+vjs.plugin('simpleOverlay', simpleOverlay);
+</code></pre>
+                <p>The plugin does two main jobs: creates the overlay <code>div</code>s when it's initialized and show and hide them based on <code>timeupdate</code> events.</p>
+                <p>Next, take a look at the sandbox page created by the grunt-init template. This page serves as an example of how to use the plugin and an easy way to experiment with changes during development. If you open <code>example.html</code> in the root of the plugin project, you should see a very minimal page that includes the plugin we're building. It's a great place for people discovering your project to see it working without taking the effort to read through your docs and get an idea of how to configure it. You'll probably want to make some tweaks to it in your own plugins.</p>
+                <p>All that's really left at this point is to minify the plugin so it can be loaded as fast as possible in the browser. That's just a single command for grunt:</p>
+<pre><code>$ grunt
+Running &quot;jshint:gruntfile&quot; (jshint) task
+&gt;&gt; 1 file lint free.
+
+Running &quot;jshint:src&quot; (jshint) task
+&gt;&gt; 1 file lint free.
+
+Running &quot;jshint:test&quot; (jshint) task
+&gt;&gt; 1 file lint free.
+
+Running &quot;qunit:files&quot; (qunit) task
+Testing test/simpleoverlay.html ..OK
+&gt;&gt; 4 assertions passed (40ms)
+
+Running &quot;clean:files&quot; (clean) task
+Cleaning &quot;dist&quot;...OK
+
+Running &quot;concat:dist&quot; (concat) task
+File &quot;dist/videojs-simpleoverlay.js&quot; created.
+
+Running &quot;uglify:dist&quot; (uglify) task
+File &quot;dist/videojs-simpleoverlay.min.js&quot; created.
+
+Done, without errors.
+</code></pre>
+                <p>You can put the minified version of your plugin up on any web server and use it with the player just like you would any <a href="#using-an-existing-plugin">existing video.js plugin</a>. The full source of this example is <a href="http://github.com/brightcove/videojs-simpleoverlay">available on github</a>. If you've made a cool plugin that you think might be useful to someone else it the world, make sure you add it to the <a href="https://github.com/videojs/video.js/wiki/Plugins">plugins page</a> on the video.js wiki!</p>
+            </div>
+            <div class="section" id="communicating">
+                <h2>Interact with Page</h2>
+                <p>By default, new players are embedded through an iframe. Iframes ensure that players can be easily shared in social sites with security restrictions, and ensure that JavaScript and CSS defined for the player never affect the site that has embedded it. Sometimes you'll <em>want</em> to communicate with the page that is embedding the player, though, to share information or to trigger behavior based on user-interaction. There are a <a href="https://github.com/oyvindkinsey/easyXDM">number of techniques</a> to communicate across an iframe but the simplest is <a href="https://developer.mozilla.org/en-US/docs/Web/API/window.postMessage">cross-document messaging</a>. To communicate from a plugin to the embedding page, you would add a script to your configuration that contained code like this:</p>
+ <pre><code>window.postMessage('talking across an iframe!', 'https://example.com');</code></pre>
+                <p>The first argument is the message you'd like to send. It can be a string like in the example above, or a more complex object <a href="http://dev.w3.org/html5/postmsg/#posting-messages">with a couple caveats</a>. The second argument allows you to control what embedding pages are able to &quot;hear&quot; your message. In this example, only pages hosted on <a href="https://example.com">https://example.com</a> would be notified when this message was sent. If you're not concerned with the recipients of your message, you can use the special string <code>'*'</code> to indicate that any page should be allowed to listen and respond. In the page that is embedding the player, you'd write an event handler to be notfied when a message was sent:</p>
+<pre><code>window.addEventListener('message', function(event) {
+  if (event.origin !== 'https://players.brightcove.com') {
+    // always check message origins to make sure you're responding to messages
+    // from the sender you expect!
+    return;
+  }
+  console.log('Got a message from the video player:', event.data);
+});
+</code></pre>
+                <p>Communication can go in the opposite direction, too. With <code>postMessage</code> in your toolbox, you're all set to create highly interactive video players that cooperate with the pages they're embedded in. Have fun!</p>
+            </div>
+        </div>
+    </div>
+    <!-- bcl scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.0/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.2.2/js/foundation.min.js"></script>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+    <script src="/en/scripts/docs-nav-data.min.js"></script>
+    <script src="/en/scripts/bcls-doc-site.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <script type="text/JavaScript">
+        /******** Any scripts specific to page samples should go here *********/
+    </script>
+    <div class="footer text-center"><a href="mailto:docs@brightcove.com">Questions or comments?</a></div>
+	</body>
+
+</html>

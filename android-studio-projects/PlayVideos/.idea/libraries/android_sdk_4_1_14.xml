@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="android-sdk-4.1.14">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/exploded-aar/com.brightcove.player/android-sdk/4.1.14/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/exploded-aar/com.brightcove.player/android-sdk/4.1.14/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
