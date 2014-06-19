@@ -1,0 +1,31 @@
+Get Started
+
+This page provides some suggestions on how to start learning about the Next Brightcove Player, as well as how our documentation is categorized and the types of documents available.
+
+Start learning
+
+If you are just getting started with the new player, start with these documents:
+
+Player System Overview
+Quick Start to Player Management
+Category definitions
+
+The documents for the new player are grouped into five categories:
+
+Player Management: Creates, updates and generally manages players using the server-side, REST-based API.
+Player: Customizes the client-side video player and its behavior through components, CSS, methods, events, etc.
+Plugins: Encapsulates player customization through a combination of HTML, JavaScript and/or CSS. Broadly, plugins can be developed to:
+Modify default behavior
+Add functionality
+Customize appearance (that cannot be done in standard CSS)
+API Reference: Provides complete definitions of the various APIs.
+Sample Code: Provides examples that combine using player functionality and APIs with JavaScript and HTML to demonstrate solutions for various use cases.
+Document types
+
+The listed documents are of four types:
+
+Overview: Explanatory content on a topic
+Quick Start: A hands-on, guided introduction to a topic
+Guide: Content that has both explanatory information as well as hands-on practice
+"How To" Document: Content that provides explanations, steps and tips to carry out a solution to a specific use case; these documents' titles will begin with a verb
+Questions or comments?
