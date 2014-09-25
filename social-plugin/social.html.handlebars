@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Enabling Social Sharing</title>
+    <style type="text/css">
+      body {
+        font-family: Helvetica, Arial;
+        line-height: 150%;
+        margin: 30px;
+      }
+      ul {
+        list-style-type: square;
+      }
+      a,a:link,a:visited {
+        color: #006699;
+        text-decoration: none;
+      }
+      a:active, a:hover, a:focus {
+        color: red;
+        text-decoration: underline;
+      }
+      h1 {
+        color: #000000;
+      }
+      h2,h3,h4,h5 {
+        color: #0099CC;
+        margin-bottom: 0px;
+      }
+      p {
+        margin-top: 4px;
+      }
+
+    </style>
+  </head>
+  <body onload="document.getElementById('code-block').select(0,-1)">
+
+    <h1>Enabling Social Sharing</h1>
+    <p>
+      If you would like to enable social sharing for your videos just follow the <a href="#instructions">instructions</a> below.
+      The following code block below will enable social sharing on your custom video page.<br/>
+    </p>
+
+
+
+    <h2>Facebook / Open Graph</h2>
+    <p>
+      Facebook created the Open Graph protocol to enable rich social sharing. Since its release it has been embraced by other social networks, including both Twitter and Google+. <br/>
+    </p>
+    <p>Some Useful Open Graph Tags:</p>
+    <ul>
+      <li>og:site_name  -  Insert the name of your website</li>
+      <li>og:title - A title for the video post you would like to create</li>
+      <li>og:description  -  A description of your video</li>
+      <li>og:image  -  Thumbnail for your video</li>
+      <li>og:video:secure_url  -  https url for your video if accessible via ssl</li>
+    </ul>
+    <p>Support links:
+      <a href="http://ogp.me" target="_blank">The Open Graph Protocol</a>, 
+      <a href="https://developers.facebook.com/tools/debug" target="_blank">Facebook Open Graph Debugger</a>
+    </p>
+
+
+    <h2>Twitter Cards</h2>
+    <p>
+      Twitter Cards are designed to help you share your rich story on Twitter. Twitter Player Cards enable the sharing of video.
+      Your cards may require approval which can be applied for through the Twitter Card Validator. Once you have validated your player card
+      you will want to click the <b>Request Approval</b> button, which will whitelist your website.
+    </p>
+    <p>Some Useful Twitter Player Card Tags:</p>
+    <ul>
+      <li>twitter:title - The Title of your Tweet (keep it short, as the link needs to be included as well)</li>
+      <li>twitter:description - Description for your video</li>
+      <li>twitter:image - The thumbnail for your video</li>
+    </ul>
+    <p>
+      Support links: 
+      <a href="https://dev.twitter.com/docs/cards">Twitter Cards</a>, 
+      <a href="https://dev.twitter.com/docs/cards/types/player-card#Player_Card_examples" target="_blank">Twitter Player Card Definition</a>,
+      <a href="https://dev.twitter.com/docs/cards/validation/validator" target="_blank">Twitter Card Validator</a>,
+      <a href="https://dev.twitter.com/docs/cards/troubleshooting" target="_blank">Twitter Card Troubleshooter</a>
+      <br/>
+      <small>* The Twitter Card Validator may not working properly in Google Chrome. You should validate your player cards in Safari.</small>
+    </p>
+
+    <h2>Implementation Notes</h2>
+    <p>
+      Please be aware of the following issues when adding social sharing to your page:
+      <ul>
+        <li>You may only share a single video per page, because the social metatags refer to the page, not a specific video.</li>
+        <li>Facebook, Twitter, and other sites may cache your page, making testing of newer versions very difficult, so try as hard as possible to get it right the first time.</li>
+      </ul>
+    </p>
+
+    <h2 id="instructions">Instructions</h2>
+    <p>
+      Follow the step-by-step instructions below to include social sharing support on your page:
+    </p>
+    <ol>
+      <li>Copy all the text inside the code block into the <code style="color:green; font-size:larger;">&lt;head&gt;</code> section of your html page</li>
+      <li>Modify the metatags that you would like to change</li>
+      <li>Publish your page to a publicly reachable area.</li>
+      <li>Test your page by using the <a href="https://developers.facebook.com/tools/debug" target="_blank">Facebook Open Graph Debugger</a> and the <a href="https://dev.twitter.com/docs/cards/validation/validator" target="_blank">Twitter Card Validator</a></li>
+      <li>Finally, make sure you test sharing your video on each of the supported social services.</li>
+    </ol>
+    <code style="color:green;">
+      &lt;CODE&gt;<br/>
+      <form>
+      <textarea id="code-block" style="width:100%; height:200px; color: green; background-color: #E0E0E0; font-family: Courier New;" readonly="readonly" onclick="this.select(0,-1)">
+        {{~#inline~}}social{{/inline}}
+      </textarea>
+      </form>
+      &lt;/CODE&gt;<br/>
+    </code>
+  </body>
+</html>

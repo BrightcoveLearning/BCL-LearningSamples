@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ads Test</title>
+</head>
+
+<body>
+
+  <video id="myVideo"
+    data-account="1507807800001"
+    data-player="d50c5882-05bc-45cd-a64c-823793dad708"
+    data-embed="default"
+    data-id=""
+    class="video-js" controls></video>
+
+    What is your age? <input id="userAge" type="text"><br />
+    <button onclick="adSelection()">Proceed</button>
+
+  <script src="//players.brightcove.net/1507807800001/d50c5882-05bc-45cd-a64c-823793dad708_default/bundle.js"></script>
+
+  <script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+ 
+  <script type="text/javascript">
+    function adSelection(){
+      var player = videojs('myVideo');
+
+      //some logic to assign appropriate ad tag to variable
+      if (parseInt(userAge.value) >= 21){
+        var adTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]";
+      }
+      else
+      {
+        var adTag ="http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]";
+      }
+
+      player.ima3({
+        "serverUrl": adTag
+      });
+    }
+  </script>
+ </body>
+
+</html>

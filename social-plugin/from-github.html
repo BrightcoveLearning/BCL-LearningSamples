@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Video.js Social Example</title>
+
+  <!-- Open Graph Sharing Metadata -->
+  <meta property="og:site_name" content=""/>
+  <meta property="og:title" content=""/>
+  <meta property="og:description" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="http://www.videojs.com/img/poster.jpg"/>
+  <meta property="og:type" content="video"/>
+  <meta property="og:video" content="http://vjs.zencdn.net/v/oceans.mp4"/>
+  <meta property="og:video:secure_url" content=""/>
+  <meta property="og:video:type" content="application/x-shockwave-flash"/>
+  <meta property="og:video:width" content="240vh"/>
+  <meta property="og:video:height" content="41.6667vw"/>
+
+  <!-- Twitter: card/meta-tags -->
+  <meta name="twitter:card" content="player"/>
+  <meta name="twitter:title" content=""/>
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:url" content=""/>
+  <meta name="twitter:image" content="http://www.videojs.com/img/poster.jpg"/>
+  <meta name="twitter:player" content="<iframe src='//players.brightcove.com/{{account_id}}/{{player_id}}_{{embed_id}}/index.html?autoplay=false'></iframe>"/>
+  <meta name="twitter:player:steam" content="http://vjs.zencdn.net/v/oceans.mp4"/>
+  <meta name="twitter:player:width" content="480"/>
+  <meta name="twitter:player:height" content="270"/>
+
+  <link href="node_modules/video.js/dist/video-js/video-js.css" rel="stylesheet">
+  <link href="lib/videojs-social.flex.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      background-color: #eee;
+      border: thin solid #333;
+      border-radius: 3px;
+      padding: 0 5px;
+      text-align: center;
+    }
+    .video-js {
+      margin: 40px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="info">
+    <p>
+      You can see the Video.js Social plugin in action below.
+      Look at the source of this page to see how to use it with your videos.
+    </p>
+  </div>
+
+  <video id="video-js-player"
+         class="video-js vjs-default-skin"
+         height="300"
+         width="600"
+         controls>
+    <p>
+      Your browser doesn't support video. Please <a href="http://browsehappy.com/">upgrade your browser</a> to see the example.
+    </p>
+    <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+    <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+  </video>
+
+  <script src="node_modules/video.js/dist/video-js/video.js"></script>
+  <script src="lib/videojs-social.js"></script>
+  <script>
+
+  // Create the video player
+  var player = videojs('video-js-player');
+
+  // Declare the social settings object
+  var socialObject = {
+      "title": "Disney Seas of Life",
+      "description": "A documentary on the wonders of the sea.",
+      "url": "http://www.cnn.com/",
+      "deeplinking": true,
+      "offset": "00:00:30",
+      "services": {
+         "facebook": true,
+         "google": true,
+         "twitter": true,
+         "tumblr": true,
+         "pinterest": true,
+         "linkedin": true
+      }
+    };
+
+    // Initialize the plugin
+    player.social(socialObject);
+
+    // Start playing
+    player.play();
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="robots" content="noindex" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+	<!-- change title to match the h1 heading -->
+	<title>Brightcove Player Sample:</title>
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.min.css" />
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/normalize.css" />
+	<script src="//use.edgefonts.net/source-code-pro.js"></script>
+	<link href="//files.brightcove.com/proxima-nova/font-faces.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="/en/styles/bcls-doc-site.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/styles/github.min.css">
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2728311-29', 'auto');
+  ga('send', 'pageview');
+
+</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+	<!-- header navbar -->
+	<div id="navWrapper" class="fixed"></div>
+	<!-- breadcrumbs -->
+	<nav id="breadCrumbWrapper" class="breadcrumbs show-for-medium-up"></nav>
+	<!-- search -->
+	<div id="searchModal" class="reveal-modal" data-reveal></div>
+	<!-- content -->
+	<!-- content -->
+	<div class="row">
+		<div class="large-2 columns show-for-large-up">
+			<div id="sidenav"></div>
+		</div>
+		<div id="main" class="large-10 small-12 columns">
+			<div id="top" class="section">
+				<h1>Brightcove Player Sample: </h1>
+				<!-- Place document intro sentence(s) here -->
+				<p></p>
+			</div>
+			<div id="developmentsequence" class="section">
+			  <h2>Development sequence</h2>
+			  <p>Here is the recommended development sequence:</p>
+			  <ol>
+			    <li>Use the embed_in_page player implementation to test the functionality of your player, plugin and CSS (if CSS is needed)</li>
+			    <li>Put the plugin's JavaScript and CSS into separate files for local testing</li>
+			    <li>Deploy the plugin code and CSS to your server once you have worked out any errors</li>
+			    <li>Use the HTTP <code>PATCH</code> method to add the plugin and styles to your player</li>
+			    <li>Replace the embed_in_page player implementation if you determine that the iframe implementation is a better fit (detailed in next section)</li>
+			  </ol>
+			  <p>For details about these steps, review the <a href="//docs.brightcove.com/en/video-cloud/player-management/guides/plugin-dev-quick-start.html">Quick Start to Plugin Development</a> guide.</p>
+			  <h3>iframe or embed_in_page</h3> 
+			  <p>When developing enhancements for the Brightcove player you will need to decide if the code is a best fit for the iframe or embed_in_page implementation. The best practice recommendation is to build a plugin for use with an iframe implementation. The
+			    advantages of using the iframe player are:</p>
+			  <ul>
+			    <li>No collisions with existing JavaScript and/or CSS</li>
+			    <li>Automatically responsive</li>
+			    <li>The iframe eases use in social media apps (or whenever the video will need to "travel" into other apps)</li>
+			  </ul>
+			  <p>Although integrating the embed_in_page player can be more complex, there are times when you will plan your code around that implementation. To generalize, this approach is best when the containing page needs to communicate to the player. Specifically,
+			    here are some examples:</p>
+			  <ul>
+			    <li>Code in the containing page needs to listen for and act on player events</li>
+			    <li>The player uses styles from the containing page</li>
+			    <li>The iframe will cause app logic to fail, like a redirect from the containing page</li>
+			  </ul>
+			  <p>Even if your final implementation does not use the iframe code, you can still use the embed_in_page code with a plugin for your JS and a separate file for your CSS. This encapsulates your logic so that you can easily use it in multiple players.</p>
+			  <h4>Select implementation for this sample</h4>
+			  <p>In this sample, you will test with the embed_in_page code and then move the CSS and JS into a plugin. Since the lightbox interacts with the page elements, the iframe implementation will not be used.</p>
+			</div>
+			<div id="resources" class="section">
+				<h2>API resources used</h2>
+				<p>The following sections detail resources used from various APIs.</p>
+				<h3>Brightcove Player API</h3>
+				<p></p>
+				<h3>Player Management API</h3>
+				<p></p>
+				<h3>Delivery System API</h3>
+				<p></p>
+			</div>
+			<div id="player" class="section">
+				<h2>The player</h2>
+				<p></p>
+			</div>
+			<div id="code" class="section">
+				<h2>How it works</h2>
+				<p>The following sections explain the player, JavaScript and CSS code used in the example.</p>
+				<h3>The player code</h3>
+				<p></p>
+				<h3>The JavaScript code</h3>
+				<p></p>
+			</div>
+			<div id="plugin" class="section">
+				<h2>Using a plugin</h2>
+				<p>It is a best practice to use a plugin so that you can easily add this functionality to multiple players.</p>
+				<h3>Create the JavaScrit file</h3>
+				<p>Move the plugin's JavaScript code into a file and place it in an Internet accessible URL.</p>
+				<h3>Create the CSS file</h3>
+				<p>If you are using CSS, move styles into a file and place it in an Internet accessible URL.</p>
+				<h3>Deploy plugin and CSS</h3>
+				<p>Use the HTTP <code>PATCH</code> method to add the plugin and styles to your player.</p>
+				<p>The following curl statement can be used to associate the ***NAME HERE*** plugin with a player. As described in the <a href="http://docs.brightcove.com/en/video-cloud/players/guides/playertour.html">Player Tour</a>, the environment variables <code>ACCOUNT_ID</code>, <code>EMAIL</code> and <code>PLAYER_ID</code> must be defined .</p>
+				<p><code data-gist-id="xxxxx" data-gist-hide-footer="true" data-gist-line="" data-gist-highlight-line=""></code></p>
+				<p class="BCL-aside">If you have an existing plugin already associated with a particular player and you perform another PATCH operation, it will replace the <code>scripts</code> and <code>plugins</code> data. If you wish to add, and not replace, the curl statement will need to reflect cumulative data, that is, multiple <code>scripts</code> and <code>plugin</code> name objects. Alternatively, for properties that are datatyped as arrays, which both <code>scripts</code> and <code>plugins</code> are, you can use inheritance behavior to be overwrite, prepend or append additional values. For details on this functionality, see the <a href="//docs.brightcove.com/en/video-cloud/player-management/guides/embeds.html#arrayfields"><strong>Array fields</strong></a> section of the <strong>Embed APIs Guide</strong>.</p>
+			</div>
+      <div id="useiframe" class="section">
+        <h2>Use iframe</h2>
+        <p>It is a best practice to use the iframe player implementation. If it is possible for this example, replace the embed_in_page implementation with the iframe implementation.</p>
+				<p><code data-gist-id="xxxxx" data-gist-hide-footer="true" data-gist-line="" data-gist-highlight-line=""></code></p>
+      </div>
+			<div class="section" id="BCLreferences">
+				<h2>Related Topics</h2>
+				<ul>
+					<li> <a href="internal:node/XXXX">DOC TITLE</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- bcl scripts -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.7/gist-embed.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.2/fastclick.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/js/foundation.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.0/highlight.min.js"></script>
+	<script src="/en/scripts/log.js"></script>
+	<script src="/en/scripts/docs-nav-data.min.js"></script>
+	<script src="/en/scripts/bcls-doc-site.js"></script>
+	<script src="/en/scripts/bc-mapi.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
+	<script type="text/javascript">
+		/******** Any scripts specific to page samples should go here *********/
+	</script>
+	<div class="footer text-center"><a href="mailto:docs@brightcove.com">Questions or comments?</a></div>
+</body>
+
+</html>

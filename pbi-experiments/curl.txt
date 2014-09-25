@@ -1,0 +1,59 @@
+//base URL
+https://ingest.api.brightcove.com/v1/accounts/video/
+
+
+//client credentials
+{
+  "client_secret": "ASQqJtq3mxI88uIdTJoIMCKR_nKWxVkBwLeQPskYCuJniCFGt03ucSiE0HR59Vi1aDzoWKaPyjHViPvl0KGFkQ",
+  "issued_at": "2014-09-24T19:18:37Z",
+  "name": "pbiClient",
+  "redirect_url": null,
+  "description_html": null,
+  "issued_to": "mboles@brightcove.com",
+  "client_id": "85d79322-a3fa-4cf6-b7d5-120d7b3124fc",
+  "maximum_scope": [{
+    "identity": {
+      "type": "video-cloud-account",
+      "account-id": 1507807800001
+    },
+    "operations": ["video-cloud/ingest-profiles/account/read", "video-cloud/ingest-profiles/profile/read", "video-cloud/video/update", "video-cloud/video/read"]
+  }],
+  "trusted": null,
+  "type": "credential",
+  "description": null,
+  "expires_at": null,
+  "revoked": null,
+  "name_html": "pbiClient",
+  "issued_user": 76075641802
+}
+
+
+//get credentials
+curl \
+  --include \
+  --header 'Authorization: BC_TOKEN AEnTxThc5I9FzsXcRNc7K2vi0gEPO94GgIHZatyWYvKU6JOFLv1oM01ZBdt9xTcAFAH_tWoKaS3I2Fuj0MtqzUANaRM-cE_j_VjiKNWfO7SF84vG-Vd4jAY' \
+  --data 'name=pbiClient&maximum_scope=[{
+    "identity": {
+      "type": 
+        "video-cloud-account", 
+        "account-id": 1507807800001
+      }, 
+      "operations": [
+        "video-cloud/video/read", 
+        "video-cloud/video/update", 
+        "video-cloud/ingest-profiles/profile/read", 
+        "video-cloud/ingest-profiles/account/read"
+      ]
+    }]'\
+  https://oauth.brightcove.com/v3/client_credentials
+
+
+// data for body
+{
+  "master": {
+    "url": "s3://bucket/file.mp4"
+  },
+  "profile": "mp4-only"
+}
+
+{"master":{"url": "s3://bucket/file.mp4"},"profile": "mp4-only"}

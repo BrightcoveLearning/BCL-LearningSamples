@@ -1,0 +1,9 @@
+{
+    "name": "bcls-proxy",
+    "description": "proxy for for Brightcove API calls",
+    "version": "0.0.1",
+    "private": "true",
+    "dependencies": {
+        "request": "2.x.x"
+    }
+}

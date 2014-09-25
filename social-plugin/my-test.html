@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title> 
+  <link href="//players.brightcove.net/1507807800001/c6b639ba-aae6-4cf1-970d-3b32a1189ad0_default/bc.min.css" rel="stylesheet">
+
+  <!-- Open Graph Sharing Metadata -->
+  <meta property="og:site_name" content=""/>
+  <meta property="og:title" content=""/>
+  <meta property="og:description" content=""/>
+  <meta property="og:url" content=""/>
+  <meta property="og:image" content="http://www.videojs.com/img/poster.jpg"/>
+  <meta property="og:type" content="video"/>
+  <meta property="og:video" content="http://vjs.zencdn.net/v/oceans.mp4"/>
+  <meta property="og:video:secure_url" content=""/>
+  <meta property="og:video:type" content="application/x-shockwave-flash"/>
+  <meta property="og:video:width" content="240vh"/>
+  <meta property="og:video:height" content="41.6667vw"/>
+
+  <!-- Twitter: card/meta-tags -->
+  <meta name="twitter:card" content="player"/>
+  <meta name="twitter:title" content=""/>
+  <meta name="twitter:description" content=""/>
+  <meta name="twitter:url" content=""/>
+  <meta name="twitter:image" content="http://www.videojs.com/img/poster.jpg"/>
+  <meta name="twitter:player" content="<iframe src='//players.brightcove.com/{{account_id}}/{{player_id}}_{{embed_id}}/index.html?autoplay=false'></iframe>"/>
+  <meta name="twitter:player:steam" content="http://vjs.zencdn.net/v/oceans.mp4"/>
+  <meta name="twitter:player:width" content="480"/>
+  <meta name="twitter:player:height" content="270"/>
+
+  <link href="videojs-social.flex.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .info {
+      background-color: #eee;
+      border: thin solid #333;
+      border-radius: 3px;
+      padding: 0 5px;
+      text-align: center;
+    }
+    .video-js {
+      margin: 40px auto;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video id="player"
+    data-account="1507807800001"
+    data-player="c6b639ba-aae6-4cf1-970d-3b32a1189ad0"
+    data-embed="default"
+    data-id=""
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/c6b639ba-aae6-4cf1-970d-3b32a1189ad0_default/node_modules/video.js/dist/video-js/video.js"></script>
+  <script src="//players.brightcove.net/1507807800001/c6b639ba-aae6-4cf1-970d-3b32a1189ad0_default/bc.min.js"></script>
+  <script type="text/javascript" src="videojs-social.js"></script>
+  <script type="text/javascript">
+
+    var myPlayer = videojs('player');
+
+    var options = {
+        "title": "Tiger",
+        "description": "Video of two tigers",
+        "url": "http://players.brightcove.net/1507807800001/c6b639ba-aae6-4cf1-970d-3b32a1189ad0_default/index.html",
+        "deeplinking": false,
+        "offset": "00:00:00",
+        "services": {
+          "facebook": true,
+          "google": true,
+          "twitter": true,
+          "tumblr": true,
+          "pinterest": true,
+          "linkedin": true
+        }
+    };
+
+    myPlayer.social(options);
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

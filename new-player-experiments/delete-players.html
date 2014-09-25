@@ -1,59 +1,149 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+ 
 <head>
-<meta charset="UTF-8">
-<title>Steps for New Player Creation</title>
+  <title>New Player Sample Code: Delete Players</title>
+  <style type="text/css">
+    .formylabel {
+        display: block;
+        padding-left: 15px;
+        text-indent: -15px;
+    }
+    .formycheckbox {
+        width: 13px;
+        height: 13px;
+        padding: 0;
+        margin:0;
+        vertical-align: bottom;
+        position: relative;
+        top: -5px;
+        *overflow: hidden;
+    }
+  </style>
 </head>
+ 
 <body>
-
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
-<script type="text/javascript">
-  var account_id="1507807800001",
-    call_url="",
-    newPlayerName="338",
-    callPurpose="";
-    bc_access_token="ADO3QGIrq_6QQ7XI1YFdUtb9as7xMxdDY7Yb80HAo6H48UYlXOAMHtbU4ldWhP-88yQfrCLNHt_AJcrMuasp0GQ8lqPhNHLckI7hWY-6EcHoAu80TW2QHZcfKkckH5guD8_qwSHuKY0Sj5Qvw4ugtEjbc21HWXq0msdZXCBGCvhHYFF5SLBKyuHWZs4cOdHwPCv1xWngexmO6aLwT9POF_-USE2flBwBqUqUtUOEOBAnPYCuvXJ7leMfnFgFUwBTWvx4ZC3VHwfrzGHqm-eC9LmAATubHqIkTpPoJ3P7RYypyNEpi93S_u-byVx-6OEPTjUQm4A8Dt9ZH3pt9TZ0C1C9CQewQDc3Uvy0Os6fqC8NRXHQ77GOpqUkaoBlxyggqa8jbJL1LXlo2ry3Ha2pTGR11kEBw_C7AP3vsXmqNlglN-7U1_O-SbLjDEJQu66JFeOw27T7t-LsfXByzrmiWHG89IJtqQn03__nPk-HU32llhnViaGsaOSnhbRbwUFFbjbgQA98sa-7x8x5HWTc4LeJATwkBam5iSgK_YIA_Icf-awAMMha-5AP4D0osir1jrKrG04in1RawGLItPsAnxjHftftKAnxwZxxn681PcAPF2ZXIWj0AEXurkSg7SEn6w6QhCcHtob1mv8WhF-AzS0GXlUpZd0oPAEhXILegZasAgPhrWme23ePQZ-tJqhvrbUJBpNoGX4QYXDMBxCrw9hrRspQ_5JCSAwy5Ybn3MqX35Pr_uZ60ASS-wuOCciAU-9AfAmnyevZ-fv7wKzAZ6DdwyLHWPbOD04RWgF7eQLF-yYZ9VQI0XCDIu5xP_5q3sqp9PggQPM1Ss0YeQqInomw9G5Cr-0HYDPfn59T1Z6zjmi7hS1NB_XepH98OJ3-74r8DdRGmrg69yPQxig0u3HuFvfTCt9ZGyuZOn-lzjeUMaCkw499VW8R85bIJWbBDELNwxjCP8d8pj0MzNDDQjHOb3qV1JlXB0VmFudNU6cL0C3F9_t_GdnrUUpx7X1afd7BnTIdtE634Qwze38CWVWMHmyn6EzpAppiYnfC5dM1ijBc9DebvvMe9Wa2IpnfY1Gcs6SrD7xW_4UFzzbpFuZKVUKX2ZI5pwfUV1-heN-0_3F1gFZ_ziLohSyGp4gAU4M_8yoATt__BoHNVuJsIb-OX2BlqSYqUx22pwdUN-dxPsecLosoS9dfd3Yfc-Tu8qxjtZbLuMt12iOID1TMVf-aa0d5U4sqmPSHzlHuSuCxsRuZxn8qN54vlr7ofEMs3cNyQYnpKioHtm5xlQoOoDagnbMboCiI6uN41WeLhY8I4O-ERm-iBbyAXjrut6sN9X4Ryr8S7yC7baZCorKNVgs-4Rwm-FsM0Dv35TOiq_MmyV6C7d2euXiDK8EsymM7-xW1slH9dA26goWt2_Z1eTapg9nJR5uTtWsdaUeWoKaYbZulAokWtOqK_gP43F28gHpjNc7sgHL_hzU4MTVoiA1VXpOcBC51YA";
-    makeAjaxCall = function(callURL, callType, callData){
-      console.log("call purpose: " + callPurpose);
-      $.ajax({
-        type: callType,
-        headers: {
-          "Authorization": "Bearer " + bc_access_token,
-          "Content-Type": "application/json"
-        },
-        url: callURL,
-        "data-binary": callData,
-        success: function(data){
-          console.log("success data: ");
-          console.log(data);
-          var mappedData = $.map(data,function(){
-            return data.id;
-          })
-          console.log("mapped data: ");
-          console.log(mappedData);
-        },
-        error: function(data){
-          console.log("error data: ");
-          console.log(data);
-        }
+      <div>
+        <h2><a name="accountinput"></a>Account input</h2>
+        <p>Username:
+          <input name="account_username" id="account_username" type="text" size="100" value="mboles@brightcove.com">
+        </p>
+        <p>Account ID:
+          <input name="account_id" id="account_id" type="text" size="40" value="1507807800001">
+        </p>
+        <p>Password:
+          <input name="account_password" id="account_password" type="password" size="40">
+        </p>
+        <p><button onclick="getPlayerInfo()">Display Players</button>
+        </p>
+        <p>
+          <div id="choosePlayers">Your players will be displayed here. <br /></div>
+        </p>
+        <p><button onclick="deletePlayers()">Delete Players</button>
+      </div>
+      <div id="processedResponse" class="section">
+        <h2><a name="processedResponse"></a>Processed response</h2>
+        <p>No response data is returned on a player delete, so the successful delete code of <code>204</code> is retrieved and displayed from the AJAX object for each deletion:</p>
+        <div id="htmlOutput"></div>
+      </div>
+    </div>
+  </div>
+  <!-- bcl scripts ============================================================ -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+  <script type="text/javascript">
+    /******** Any scripts specific to page samples should go here *********/
+    var account_id = "",
+      account_password = "",
+      account_username = "",
+      callPurpose = "",
+      toDelete = [];
+ 
+    var ajaxSuccess = function (data,textStatus,jqXHR) {
+console.log("in ajaxSuccess");
+      switch (callPurpose) {
+        case "getPlayers":
+console.log(data);
+          createCheckboxes(data);
+          watchCheckboxes();
+          break;
+        case "deletePlayer":
+          document.getElementById("choosePlayers").innerHTML = "Your players will be displayed here. <br />";
+          document.getElementById("htmlOutput").innerHTML += jqXHR.status +"<br />";
+          break;
+      }
+    },
+    ajaxError = function (data) {
+console.log("in ajaxError");
+      console.log("error data: ");
+      console.log(data);
+    },
+    makeAjaxCall = function (callURL, callType, callData) {
+      if (callData) {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          data: JSON.stringify(callData),
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      } else {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      }
+    },
+    getPlayerInfo = function () {
+      account_id = document.getElementById("account_id").value,
+      account_password = document.getElementById("account_password").value,
+      account_username = document.getElementById("account_username").value;
+      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
+      callPurpose = "getPlayers"
+      makeAjaxCall(call_url, "GET", null);
+    },
+    createCheckboxes = function (playerData) {
+      var playerData = playerData.items, 
+        numPlayers = playerData.length,
+        dynamicHTML = "";
+      for (var i = 0; i < numPlayers; i++) {
+        dynamicHTML += "<label class='formylabel'><input class='formycheckbox' id='" + playerData[i].id + "' type='checkbox' /> " + playerData[i].name + "</label>";
+      };
+      document.getElementById("choosePlayers").innerHTML = dynamicHTML;
+      document.getElementById("htmlOutput").innerHTML = "";
+    },
+    deletePlayers = function(){
+      callPurpose = "deletePlayer";
+      var numToDelete = toDelete.length;
+ 
+      for (var i = 0; i < numToDelete; i++) {
+        call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players/" + toDelete[i];
+        makeAjaxCall(call_url, "DELETE", null);
+      };
+    },
+    watchCheckboxes = function(){
+      $("input:checkbox").change(function() {
+        toDelete = [];
+ 
+          $("input:checkbox").each(function() {
+              if ($(this).is(":checked")) {
+                  toDelete.push($(this).attr("id"));
+              }
+          });
+console.log(toDelete);
       });
     };
-
-    getPlayerInfo = function(){
-      call_url="https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
-      makeAjaxCall(call_url, "GET", null);
-    };
-
-    deletePlayer = function(){
-      callPurpose = "deletePlayer";
-      //playerData = {"name": newPlayerName};
-      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players/7b25e064-eb08-47d9-b1c6-4a5aeb9356bb";
-      makeAjaxCall(call_url, "DELETE", null);
-    };
-
-  deletePlayer();
-</script>
-
+  </script>
 </body>
+ 
 </html>

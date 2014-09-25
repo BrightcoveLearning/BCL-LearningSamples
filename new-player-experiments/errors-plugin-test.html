@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+ 
+<head>
+    <title>Error Messages Plugin using embed code</title>
+    <link href="//players.brightcove.net/57838016001/e1176c07-ecaf-491f-99db-fcea2a3c76c0_default/bc.min.css" rel="stylesheet">
+</head>
+ 
+<body>
+    <h1>Error Messages Plugin using embed code</h1>
+
+<video id="myPlayerID"
+  data-account="57838016001"
+  data-player="f44f66e0-afdf-496b-9940-2f3631dc9f74"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/57838016001/f44f66e0-afdf-496b-9940-2f3631dc9f74_default/index.js"></script>
+
+  <script id="pageScript" type="text/javascript">
+    
+  var myPlayer = videojs("myPlayerID");
+    
+  //override standard message
+  myPlayer.errors({
+      'errors': {
+    '4': {
+        'headline': 'This is a custom error message',
+        'type': 'custom type',
+        'message': 'these are details'
+    }
+      }
+  });
+  
+    </script>
+ 
+</body>
+</html>

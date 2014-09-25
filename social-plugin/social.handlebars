@@ -1,0 +1,51 @@
+{{~#each plugins~}}
+  {{~#if this.options.services~}}
+<!-- Open Graph Sharing Metadata -->
+<meta property="og:site_name" content=""/>
+{{#if this.options.title~}}<meta property="og:title" content="{{this.options.title}}"/>{{else~}}<meta property="og:title" content="{{../../media.title}}"/>{{/if}}
+<meta property="og:description" content=""/>
+{{#if this.options.url~}}
+<meta property="og:url" content="{{this.options.url}}"/>
+{{else~}}
+<meta property="og:url" content=""/>
+{{/if}}
+{{~#if ../../media.poster.highres~}}
+<meta property="og:image" content="{{../../../media.poster.highres}}"/>
+{{~else~}}
+  {{~#if ../../../media.poster.lowres~}}
+<meta property="og:image" content="{{../../../media.poster.lowres}}"/>
+  {{~else~}}
+<meta property="og:image" content="{{../../../media.poster.orig}}"/>
+  {{/if}}
+{{/if}}
+<meta property="og:type" content="video"/>
+{{#each ../../media.sources~}}<meta property="og:video" content="{{this.src}}"/>{{/each}}
+<meta property="og:video:secure_url" content=""/>
+<meta property="og:video:type" content="application/x-shockwave-flash"/>
+<meta property="og:video:width" content="{{../../media.width}}"/>
+<meta property="og:video:height" content="{{../../media.height}}"/>
+
+<!-- Twitter: card/meta-tags -->
+<meta name="twitter:card" content="player"/>
+{{#if this.options.title~}}<meta name="twitter:title" content="{{this.options.title}}"/>{{else~}}<meta name="twitter:title" content="{{../../media.title}}"/>{{/if}}
+<meta name="twitter:description" content=""/>
+{{#if this.options.url~}}
+<meta name="twitter:url" content="{{this.options.url}}"/>
+{{else~}}
+<meta name="twitter:url" content=""/>
+{{/if}}
+{{~#if ../../media.poster.highres~}}
+<meta name="twitter:image" content="{{../../../media.poster.highres}}"/>
+{{~else~}}
+  {{~#if ../../../media.poster.lowres~}}
+<meta name="twitter:image" content="{{../../../media.poster.lowres}}"/>
+  {{~else~}}
+<meta name="twitter:image" content="{{../../../media.poster.orig}}"/>
+  {{/if}}
+{{/if}}
+<meta name="twitter:player" content="https://players.brightcove.net/{{../../account_id}}/{{../../player_id}}_{{../../embed_id}}/index.html?autoplay=false"/>
+{{#each ../../media.sources~}}<meta name="twitter:player:stream" content="{{this.src}}"/>{{/each}}
+<meta name="twitter:player:width" content="{{../../media.width}}"/>
+<meta name="twitter:player:height" content="{{../../media.height}}"/>
+  {{/if}}
+{{/each}}

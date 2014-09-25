@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>bcls-proxy tester</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+            font-size: .9em;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+        }
+        input {
+            width: 80%;
+        }
+        textarea {
+            width: 80%
+        }
+        #callBody {
+            height: 100px;
+        }
+        #submit {
+            width: 100px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>bcls-proxy tester</h1>
+    <p>Welcome to the Brightcove Learning Services proxy tester. The tester can be used currently for the following APIs:
+        <ul>
+            <li>Perform: Player Management</li>
+            <li>Video Cloud: Analytics</li>
+        </ul>
+    </p>
+    <p>To get a <code>client_id</code> and <code>client_secret</code>, you will need to go to the OAuth UI and register this app:
+        <ul>
+            <li>Perform: <a href="https://studio.brightcove.com/products/perform/admin/oauthsettings">https://studio.brightcove.com/products/perform/admin/oauthsettings</a></li>
+            <li>Video Cloud: <a href="https://sadmin.brightcove.com/oauth_module/v1/">https://sadmin.brightcove.com/oauth_module/v1/</a></li>
+        </ul>
+    </p>
+    <form action="//localhost:8003" method="post" enctype="application/x-www-form-urlencoded" target="responseFrame">
+        <p>
+            Client id:
+            <input name="client_id" id="client_id" type="text" value="45ddce85-e9e1-4ecc-8562-3f97ead6b048">
+        </p>
+        <p>
+            Client secret:
+            <input name="client_secret" id="client_secret" type="text" value="WnoEbQM6aslaUcY9eqG8AJs8hXvjDjpnxDJYI4JHpdTo7vb1wpBFJMGlYC0BPdvtlZxyhd7UCpn0F1m5wF1Ccw">
+        </p>
+        <p>
+            Call type:
+            <select name="requestType" id="requestType">
+                <option selected="selected">GET</option>
+                <option>POST</option>
+                <option>PUT</option>
+                <option>PATCH</option>
+                <option>DELETE</option>
+            </select>
+        </p>
+        <p>
+            Call body (optional - include if you need to submit data with the request):<br />
+            <textarea name="callBody" id="callBody"></textarea>
+        </p>
+        <p>
+            Full request URL for the API call:<br />
+            <textarea name="url" id="url">https://data.brightcove.com/analytics-api/videocloud/account/20318290001/report/?dimensions=account&limit=10&offset=0&fields=all&sort=account&format=json</textarea>
+        </p>
+        <p>
+            <input id="submit" type="submit" value="Submit">
+        </p>
+    </form>
+    <iframe name="responseFrame" id="responseFrame" src=""></iframe>
+    <script>
+        var iframe = document.getElementById("responseFrame"),
+            btn = document.getElementById("submit");
+            btn.addEventListener("click", iframe.setAttribute("src", "about:blank"));
+    </script>
+</body>
+
+</html>
+</script>

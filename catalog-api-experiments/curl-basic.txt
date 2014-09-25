@@ -1,0 +1,9 @@
+curl \
+  --include \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  http://catalog.api.brightcove.com/v1alpha2/accounts/{accountId}/videos
+
+
+chown mboles ~/Users/mboles/.config/configstore/insight-yo.yml

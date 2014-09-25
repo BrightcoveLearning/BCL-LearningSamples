@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang=”en”>
+
+<head>
+  <meta charset=”utf-8”>
+  <title>Deep Linking</title>
+  <meta name=”description” content=”A discussion of deep linking and ”>
+  <meta name=”author” content=”Gerry Polucci”>
+  <link rel=”stylesheet” href=”style.css”>
+  <style type="text/css">
+    body {
+      font-family: Helvetica, Arial;
+      line-height: 150%;
+      margin: 30px;
+    }
+    ul {
+      list-style-type: square;
+    }
+    a,a:link,a:visited {
+      color: #006699;
+      text-decoration: none;
+    }
+    a:active, a:hover, a:focus {
+      color: red;
+      text-decoration: underline;
+    }
+    h1 {
+      color: #000000;
+    }
+    h2,h3,h4,h5 {
+      color: #0099CC;
+      margin-bottom: 0px;
+    }
+    p {
+      margin-top: 4px;
+    }
+
+    code {
+      background-color: #F0F0E8;
+      color: green;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Deep Linking</h1>
+  <p>
+    Deep linking is a feature that allows a user to start viewing a video from a specific time offset.
+    This is a very useful feature for sharing a video like a newscast, where the user may want people to view a certain segment of the program without having to watch everything that precedes it.
+  </p>
+
+  <h2>Limitations</h2>
+  <p>
+    Although native players such as Windows Media Player, Flash Player, and Quicktime support deep linking through different mechanisms,
+    this behavior is not directly exposed through the HTML <code>video</code> or <code>source</code> elements.
+    It is, however, indirectly exposed through the <code>currentTime</code> property of the <code>video</code> element.
+    This effectively allows HTML players like videojs and YouTube to layer deep linking support on top of native video players.
+  </p>
+
+  <h2>Support in Social Services</h2>
+  <p>
+    As we learned above, HTML players can support deep linking, but this necessitates that the player be either embedded in the page, or included as an <code>iframe</code>.
+    Unfortunately, most social services do not follow this practice, and instead substitute a native player which does not support deep linking.
+    As of July 1st, 2014 only one major social network, Twitter, supports direct inclusion of the videojs player in the social feed using an iframe, making deep linking possible.
+  </p>
+
+  <h2>Specifying Deep Linking</h2>
+  <p>
+    To specify a deep link in the videojs player the YouTube offset format is used.
+    It follows the format: 00h00m00s, where each of the 3 parts represents a different unit of time (hours, minutes, seconds).
+    Each of the parts must be present, so to go to offset 30 seconds, you would write:  0h0m315s.
+    This is then added as a named bookmark at the end of the query string, as in: <code>#t=0h0m15s</code>.<br/>
+    An example of a deep link to a video is as follows:<br/>
+    <br/>
+    <a target="_blank" href="https://players.brightcove.com/3303963094001/137b5cd5-467b-4d90-a01f-85f7238a92b5_default/index.html#t=0h0m15s">
+      https://players.brightcove.com/3303963094001/137b5cd5-467b-4d90-a01f-85f7238a92b5_default/index.html?t=0h0m15s
+    <a>
+
+  </p>
+
+</body>
+
+</html>
