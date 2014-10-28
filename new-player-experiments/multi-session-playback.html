@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+    
+<video id="myPlayerID"
+  data-account="1752604059001"
+  data-player="4bbe4539-ff99-4dfe-a1d3-da554399d064"
+  data-embed="default"
+  class="video-js" controls></video>
+
+<p>video start cookie value = <span id="cookieDisplay1"></span></p>
+<p>current cookie value = <span id="cookieDisplay2"></span></p>
+
+
+<script src="//players.brightcove.net/1752604059001/4bbe4539-ff99-4dfe-a1d3-da554399d064_default/index.js"></script>
+
+<script type="text/javascript">
+    /******** Any scripts specific to page samples should go here *********/
+    
+  var read_cookie = function(key){
+    var result;
+    return (result = new RegExp('(^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? result[2] : null;
+  }
+    
+  var myPlayer = videojs("myPlayerID"),
+    videoStart = 0,
+    currentPosition,
+    cookie = read_cookie("BC_position");
+    
+  if(cookie != null){
+    videoStart = cookie;
+  } else {
+    videoStart = 0;
+  }
+  document.getElementById("cookieDisplay1").innerHTML = cookie;
+    
+  myPlayer.on("loadedmetadata", function () {
+    if (videoStart > 0) {
+      myPlayer.currentTime(videoStart);
+      myPlayer.play();
+    }
+  });
+    
+  myPlayer.on("timeupdate", function() {
+    currentPosition = myPlayer.currentTime();
+    if (Math.round(currentPosition) != videoStart) {
+      videoStart = Math.round(currentPosition);
+      document.cookie="BC_position=" + escape(videoStart) + ";";
+      document.getElementById("cookieDisplay2").innerHTML = read_cookie("BC_position");
+    }
+  });
+    
+  myPlayer.on("ended", function () {
+    videoStart = 0;
+    document.cookie="BC_position=0;";
+  });
+  </script>
+
+</body>
+
+</html>

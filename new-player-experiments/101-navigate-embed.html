@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Navigate Link</title>
+	
+	<!-- Page styles -->
+	<style>
+    /**
+     * override default styles for overlay
+     */
+    .vjs-overlay {
+      width: 100%;
+      height: 100%;
+      color: #FFF;
+      background-color: rgba(255, 255, 255, 0.6);
+      left: 0;
+      top: 0;
+      padding-top: 100px;
+      font-size: 24px;
+      text-align: center;
+      padding-left: 0;
+    }
+/*
+    #video_1.video-agelist .vjs-control-bar,
+    #video_1.video-agelist .vjs-big-play-button {
+      display: none;
+    .vjs-mouse
+    }
+*/
+    .video-agelist.video-js .vjs-control-bar,
+    .video-agelist .vjs-big-play-button {
+      display: none;
+    }
+    #ageGateButton {
+     cursor: pointer;
+    }
+    /* set player size */
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+    
+	</style>
+</head>
+ 
+<body>
+  
+<!--
+  <video id="video_1"
+      data-account="1507807800001"
+      data-player="193ad62e-8788-4dd1-94e1-a778728d03fa"
+      data-embed="default"
+      data-video-id="2114345471001"
+
+      class="video-js" controls></video>
+    <script src="//players.brightcove.net/1507807800001/193ad62e-8788-4dd1-94e1-a778728d03fa_default/index.min.js"></script>
+-->
+  
+  <video id="video_1"
+      data-account="1507807800001"
+      data-player="6fd44204-53c1-4070-bc2d-37ec18c06858"
+      data-embed="default"
+      data-video-id="2114345471001"
+
+      class="video-js" controls></video>
+    <script src="//players.brightcove.net/1507807800001/6fd44204-53c1-4070-bc2d-37ec18c06858_default/index.min.js"></script>
+
+
+
+
+  
+  <!-- custom script -->
+	<script type="text/JavaScript">
+//		var myPlayer;
+    var eVideoDetails;
+    
+    videojs("video_1").ready(function(){
+      
+      videojs.players.video_1.bcCatalog.getVideo(video_1.dataset.videoId, function(error, video) { 
+        console.log("bcCatalog" , videojs.players.video_1.bcCatalog);
+        console.log(video); 
+        console.log(video.data.description);
+
+//        video_1.addEventListener("ended", function() {
+//          console.log("add listener");
+//          eVideoDetails = document.getElementById("videoDetails");
+//          console.log("item clicked");
+//          eVideoDetails.innerHTML = video.data.description;
+//        });
+        
+        videojs.players.video_1.on("ended", function() {
+          console.log("add listener");
+          eVideoDetails = document.getElementById("videoDetails");
+          eVideoDetails.innerHTML = video.data.description;
+        });
+
+      });
+    }); 
+    
+//		videojs("video_1").ready(function(){
+//      video_1 = this;
+//      console.log("player ready");
+      
+//      video_1.bcCatalog.getVideo(video_1.dataset.videoId, function(error, video) { 
+//        console.log("bcCatalog" , videojs.players.video_1.bcCatalog);
+//          console.log(video);   
+//      })
+      
+      
+//    }); 
+    
+  
+	</script>
+  
+</body>
+</html>

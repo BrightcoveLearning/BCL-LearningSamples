@@ -1,16 +1,16 @@
 //base URL
 https://edge.api.brightcove.com/cms
-
+https://edge.api.brightcove.com/v1beta1/accounts/1234/videos
 
 //client credentials
 {
-  "client_secret": "ZxZ8UOXaXBFbAn2ny1cpYTlET2xEMh-ViRpzqmNncenMXoDaxbSUV0L8QA3FZKs9kcF6WWx7Ky9MzdJ6bMSo4g",
-  "issued_at": "2014-09-23T12:44:40Z",
+  "client_secret": "KLwqa9yx5npgu9enFHglI9GFff39StO0Id1ytaZBWXg2pQ_7DiH-XUjg3_svKNBSkB0KN21sYrvfKnALcBLOLA",
+  "issued_at": "2014-10-14T15:16:32Z",
   "name": "SampleClient",
   "redirect_url": null,
   "description_html": null,
   "issued_to": "mboles@brightcove.com",
-  "client_id": "b780c05f-2efc-480b-930a-eea4cd53df20",
+  "client_id": "5fbee876-9ac3-419f-b1b9-5878282964b9",
   "maximum_scope": [{
     "identity": {
       "type": "video-cloud-account",
@@ -31,10 +31,76 @@ https://edge.api.brightcove.com/cms
 //get credentials
 curl \
   --include \
-  --header 'Authorization: BC_TOKEN AEnTxTiZY8MquOkLXCmzE3EbvPUnwFLJFp-T80gRmAlkJdqARc8SEfGkLUv4W37LgXQq7Zg2VkTPsxZ_TSxv9Z47B4mmzD814bbu7DDTvCvVMXnnLs6n_2Y' \
+  --header 'Authorization: BC_TOKEN AEnTxTiEPYyoOLEfifaJHOVgT1RdI1h0rJloj3vbMQR25vfscoivqvPapqHCzCPpNOwW-LEpJ9_6FZi8JtP6XZGsRcEQzmPRW1v76aMuLY-DCQxnw-tahN4' \
+  --data 'name=SampleClient&maximum_scope=[{
+      "identity": {
+        "type": "video-cloud-account", 
+        "account-id": 1507807800001
+      }, 
+      "operations": [
+        "video-cloud/video/all"
+      ]
+    }]' \
+  https://oauth.brightcove.com/v3/client_credentials
+
+
+curl \
+  --include \
+  --header "Authorization: BC_TOKEN AEnTxTiTMh-_0ZgKIaG8ZzGMWiMFmtYt9XNwqrLwwXVl6gfauqQNduMKU0W8rUPDBpNT0Q0sd6Na0s90Ww93Xqe-4CmMW4o-Usz0RkbtT6zHFRxlSmcoWWk" \
+  --data '{
+    "type": "credential",
+    "maximum_scope": [{
+      "identity": {
+        "type": "video-cloud-account",
+        "account-id": 1507807800001
+      },
+      "operations": [
+        "video-cloud/player/all"
+      ]
+    }],
+    "name": "CMS credential",
+    "description": "Done on Oct 16 2014"
+}' \
+https://oauth.brightcove.com/v3/client_credentials
+
+
+
+
+
+
+
+******Training Videos account*******
+//credentials
+{
+  "client_secret": "ao5LEy34NQvlv-O1pessCuNd3kMNbd6j3nqcYNin4TayZtP4gMw1dyZOAIv7teTsHMT2xB6mQppda1X2Akp_xQ",
+  "issued_at": "2014-10-01T16:15:00Z",
+  "name": "SampleClient",
+  "redirect_url": null,
+  "description_html": null,
+  "issued_to": "mboles@brightcove.com",
+  "client_id": "b572e19a-92fd-42aa-bc92-c987b484186c",
+  "maximum_scope": [{
+    "identity": {
+      "type": "video-cloud-account",
+      "account-id": 20318290001
+    },
+    "operations": ["video-cloud/video/all"]
+  }],
+  "trusted": null,
+  "type": "credential",
+  "description": null,
+  "expires_at": null,
+  "revoked": null,
+  "name_html": "SampleClient",
+  "issued_user": 76075641802
+}
+//get credentials
+curl \
+  --include \
+  --header 'Authorization: BC_TOKEN AEnTxThe24iOSegQZCWRTXNUyuh-B39K3b03q0HihRlAhpSj-y1qKwPGeLMbuM8Kc0fJ3Hd0kF93YNdoBbzaACtz2JJ5hcXCnkKCd-Oe-qojtsTBeDqOVFo' \
   --data 'name=SampleClient&maximum_scope=[
     {"identity": {
-        "type": "video-cloud-account", "account-id": 1507807800001
+        "type": "video-cloud-account", "account-id": 20318290001
       }, 
       "operations": [
         "video-cloud/video/all"
@@ -42,5 +108,6 @@ curl \
     }
   ]' \
   https://oauth.brightcove.com/v3/client_credentials
+
 
 

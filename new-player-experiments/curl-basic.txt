@@ -15,6 +15,19 @@ export PLAYER_ID=
 export EMBED_ID=
 
 
+{"name":"MySamplePlayer","configuration":{"video_cloud":{"video":"2114345471001"}}}
+
+
+{"name": "MySamplePlayer",
+  "configuration": {
+    "video_cloud": {
+        "video": "2114345471001"
+      }
+  }
+}
+
+
+
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \

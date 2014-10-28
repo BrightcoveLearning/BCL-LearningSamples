@@ -1,22 +1,21 @@
 //base URL
 https://ingest.api.brightcove.com/v1/accounts/video/
 
-
 //client credentials
 {
-  "client_secret": "ASQqJtq3mxI88uIdTJoIMCKR_nKWxVkBwLeQPskYCuJniCFGt03ucSiE0HR59Vi1aDzoWKaPyjHViPvl0KGFkQ",
-  "issued_at": "2014-09-24T19:18:37Z",
+  "client_secret": "2zezOl4d6F8_jPhbitlHYhUr88dq6OWhomgHbuQ7-RvkSUw-ETZvtiVWxgzvWlQhQthBdupRiD-xoiI7KS50oA",
+  "issued_at": "2014-10-17T17:21:17Z",
   "name": "pbiClient",
   "redirect_url": null,
   "description_html": null,
   "issued_to": "mboles@brightcove.com",
-  "client_id": "85d79322-a3fa-4cf6-b7d5-120d7b3124fc",
+  "client_id": "541de4c9-860d-4f64-9503-6803e8b7236a",
   "maximum_scope": [{
     "identity": {
       "type": "video-cloud-account",
       "account-id": 1507807800001
     },
-    "operations": ["video-cloud/ingest-profiles/account/read", "video-cloud/ingest-profiles/profile/read", "video-cloud/video/update", "video-cloud/video/read"]
+    "operations": ["video-cloud/ingest-profiles/account/read", "video-cloud/video/all", "video-cloud/ingest-profiles/profile/read"]
   }],
   "trusted": null,
   "type": "credential",
@@ -31,7 +30,7 @@ https://ingest.api.brightcove.com/v1/accounts/video/
 //get credentials
 curl \
   --include \
-  --header 'Authorization: BC_TOKEN AEnTxThc5I9FzsXcRNc7K2vi0gEPO94GgIHZatyWYvKU6JOFLv1oM01ZBdt9xTcAFAH_tWoKaS3I2Fuj0MtqzUANaRM-cE_j_VjiKNWfO7SF84vG-Vd4jAY' \
+  --header 'Authorization: BC_TOKEN AEnTxTjiaUpV4sUC6bbVk8B5WYTQRXo01D0PZDR4RylbLW5e5-U0QmOqZQxNlWLFWxft2covQNS1keBuqz3Gym9AarJdkvSpodR8LjV3cU-n7Szik3tB7xI' \
   --data 'name=pbiClient&maximum_scope=[{
     "identity": {
       "type": 
@@ -39,8 +38,7 @@ curl \
         "account-id": 1507807800001
       }, 
       "operations": [
-        "video-cloud/video/read", 
-        "video-cloud/video/update", 
+        "video-cloud/video/all", 
         "video-cloud/ingest-profiles/profile/read", 
         "video-cloud/ingest-profiles/account/read"
       ]

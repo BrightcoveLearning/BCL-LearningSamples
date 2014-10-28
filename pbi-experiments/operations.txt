@@ -1,0 +1,185 @@
+video-cloud/live-event/create
+video-cloud/player/all
+video-cloud/playlist/delete
+video-cloud/asset/list
+video-cloud/asset/create
+roebuck_asset-delete-read
+video-cloud/player-services-internal/read
+video-cloud/video/update
+video-cloud/player-services-internal/write
+analytics_admin
+analytics_read
+video-cloud/playlist/list
+video-cloud/player/delete
+video-cloud/player/list
+video-cloud/setting/write
+video-cloud/live-event/read
+video-cloud/account/create
+video-cloud/ingest-profiles/profile/read
+video-cloud/account/read
+video-cloud/player/update
+profiles_account-write
+video-cloud/activity/write
+video-cloud/asset/all
+video-cloud/ingest-profiles/account/read
+video-cloud/live-event/list
+benson_write
+video-cloud/analytics/read
+video-cloud/account-user/read
+video-cloud/live-event/delete
+video-cloud/user/authenticate
+profiles_profile-read
+video-cloud/account/list
+wd_write
+wd_read
+benson_read
+roebuck_asset-delete-write
+video-cloud/account/delete
+wd_admin
+video-cloud/video/read
+video-cloud/playlist/all
+video-cloud/account-user/delete
+video-cloud/asset/delete
+video-cloud/activity/read
+video-cloud/video/delete
+video-cloud/live-event/update
+
+
+   },
+   "" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/live-event/read"
+      ]
+   },
+   "video-cloud/asset/read" : {
+      "privilege" : 10,
+      "inferiors" : []
+   },
+   "cathy_THOR" : {
+      "privilege" : 30,
+      "inferiors" : []
+   },
+   "video-cloud/playlist/read" : {
+      "privilege" : 10,
+      "inferiors" : []
+   },
+   "video-cloud/account/all" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/account/create",
+         "video-cloud/account/list",
+         "video-cloud/account/delete"
+      ]
+   },
+   "video-cloud/video/create" : {
+      "inferiors" : [
+         "video-cloud/video/read"
+      ],
+      "privilege" : 10
+   },
+   "cathy_nagios" : {
+      "privilege" : 10,
+      "inferiors" : []
+   },
+   "video-cloud/ingest-profiles/account/write" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/ingest-profiles/account/read"
+      ]
+   },
+   "video-cloud/video/all" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/video/delete",
+         "video-cloud/video/create",
+         "video-cloud/video/list"
+      ]
+   },
+   "video-cloud/account-user/update" : {
+      "ui-optype" : null,
+      "ui-visible" : null,
+      "privilege" : 10,
+      "inferiors" : [],
+      "ui-category" : null
+   },
+   "video-cloud/account-user/create" : {
+      "inferiors" : [],
+      "privilege" : 10,
+      "ui-category" : null,
+      "ui-optype" : null,
+      "ui-visible" : null
+   },
+   "video-cloud/asset/update" : {
+      "inferiors" : [
+         "video-cloud/asset/read"
+      ],
+      "privilege" : 10
+   },
+   "video-cloud/player/read" : {
+      "ui-visible" : true,
+      "ui-optype" : "read",
+      "ui-category" : "video-cloud/player",
+      "privilege" : 10,
+      "inferiors" : []
+   },
+   "video-cloud/ingest-profiles/profile/write" : {
+      "inferiors" : [
+         "video-cloud/ingest-profiles/profile/read"
+      ],
+      "privilege" : 10
+   },
+   "profiles_profile-write" : {
+      "inferiors" : [
+         "profiles_profile-read"
+      ],
+      "privilege" : 10
+   },
+   "video-cloud/setting/read" : {
+      "inferiors" : [],
+      "privilege" : 10
+   },
+   "video-cloud/analytics/logsource/read" : {
+      "ui-optype" : null,
+      "ui-visible" : null,
+      "privilege" : 10,
+      "inferiors" : [],
+      "ui-category" : null
+   },
+   "video-cloud/live-event/all" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/live-event/create",
+         "video-cloud/live-event/list",
+         "video-cloud/live-event/delete"
+      ]
+   },
+   "video-cloud/video/list" : {
+      "inferiors" : [
+         "video-cloud/video/read"
+      ],
+      "privilege" : 10
+   },
+   "video-cloud/account/update" : {
+      "inferiors" : [
+         "video-cloud/account/read"
+      ],
+      "privilege" : 10
+   },
+   "video-cloud/playlist/update" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/playlist/read"
+      ]
+   },
+   "video-cloud/playlist/create" : {
+      "privilege" : 10,
+      "inferiors" : [
+         "video-cloud/playlist/read"
+      ]
+   },
+   "profiles_account-read" : {
+      "privilege" : 10,
+      "inferiors" : []
+   }
+}

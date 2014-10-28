@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Localization Test</title>
+
+   <style>
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+
+<video 
+  data-account="1507807800001"
+  data-player="be77728c-ed24-4751-add2-788c5e3f8cd1"
+  data-embed="default"
+  class="video-js" 
+  controls
+  data-setup='{"language":"de"}'></video>
+
+<script src="//players.brightcove.net/1507807800001/be77728c-ed24-4751-add2-788c5e3f8cd1_default/index.min.js"></script>    
+    <script type="text/javascript">
+    videojs.addLanguage("de",{
+     "Share": "Freigeben",
+     "Share Video": "Video freigeben",
+     "Share via": "Freigeben über",
+     "Share on": "Freigeben in",
+     "Direct Link": "Direkter Link",
+     "Start From": "Start ab",
+     "Embed Code": "Code einbetten",
+     "Sharing Dialog": "Freigabedialogfeld"
+    });
+  </script>
+
+</body>
+
+</html>
