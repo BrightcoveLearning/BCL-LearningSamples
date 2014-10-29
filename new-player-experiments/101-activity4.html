@@ -53,7 +53,6 @@
 
       myPlayer.on("ended", function() {
         myPlayer.bcCatalog.getVideo(myPlayerID.dataset.videoId, function(error, video){ 
-          console.log(video);
           eVideoDetails = document.getElementById("videoDetails");
           eVideoDetails.innerHTML = video.data.description;
         });
