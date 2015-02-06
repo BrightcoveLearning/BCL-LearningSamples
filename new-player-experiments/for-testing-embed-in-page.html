@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>for testing</title>
+<style>
+    .outer {
+      width: 80%;
+      display: block;
+      position: relative;
+      margin: 20px auto;
+    }
+    .outer:after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+    }
+    .video-js {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .video-js.video-js .vjs-big-play-button {
+      top:0;
+      left:0;
+      right:0;
+      bottom:0;
+      margin:auto;
+    }
+  </style>  
+</head>
+
+<body>
+
+<div class="outer"> <video id="myPlayerID"
+  width="640" 
+  height="360" 
+  data-account="1752604059001"
+  data-player="0b0bd7d7-6907-4e12-a644-747b38fab305"
+  data-embed="default"
+  data-video-id="4034039924001"
+  
+  class="video-js" controls></video></div>
+<script src="//players.brightcove.net/1752604059001/0b0bd7d7-6907-4e12-a644-747b38fab305_default/index.min.js"></script>
+ 
+
+<script>
+  videojs("myPlayerID").ready(function(){
+    var myPlayer = this;
+//    myPlayer.play();
+    myPlayer.options().inactivityTimeout = 0;
+  });
+</script>
+
+style="margin:0px auto;display:block"
+</body>
+
+</html>
+
