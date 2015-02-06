@@ -1,0 +1,10 @@
+1. Add a div for info
+	<div id="displayArea">
+	</div>
+2. Add a call in onTemplateReady to getCurrentVideo and display videoDTO in console
+        videoPlayer.getCurrentVideo( function(videoDTO){
+       		console.log(videoDTO);
+       });
+3. Browse and look at DTO
+4. Display name and short description from DTO
+ 		displayArea.innerHTML = "Currently watching: <strong>" + videoDTO.displayName + ": " + videoDTO.shortDescription + "</strong>";

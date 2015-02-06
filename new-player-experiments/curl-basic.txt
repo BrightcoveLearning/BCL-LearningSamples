@@ -14,6 +14,108 @@ export EMAIL=mboles@brightcove.com
 export PLAYER_ID=
 export EMBED_ID=
 
+Video Cloud video: 3674727957001
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySampleVideo CloudPlayer",
+      "configuration": {
+        "video_cloud": [{
+          "video": "3674727957001"
+        }]
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "languages": [
+        "de",
+        "es"
+      ]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "Localization Example",
+      "configuration": {
+        "languages": [
+          "de",
+          "es"
+        ],
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "new skin test",
+      "configuration": {
+        "skin": false,
+        "stylesheets": [
+          "http://solutions.brightcove.com/bcls/tests/player/videojs-sublime-skin.min.css"
+        ],
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "languages": ["de","es"],
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "skin": false
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
 {"name":"MySamplePlayer","configuration":{"video_cloud":{"video":"2114345471001"}}}
 

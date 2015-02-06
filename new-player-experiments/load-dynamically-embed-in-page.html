@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Load Player Dynamically</title>
+   
+    <!-- Page styles -->
+    <style id="pageStyles">
+        #video_1 {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="player-block">
+        <div id="placeHolder" style="background-color:#64AAB2;width:640px;height:360px;text-align: center;">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+    </div>
+
+    <!-- custom script -->
+    <script type="text/JavaScript">
+        var myPlayer,
+            playerHTML,
+            playerData = { 
+                "accountID" : "1752604059001",
+                "playerID" : "0a69b53e-92cf-40b5-b17e-3ff6b09a3f1b"
+            };
+    
+        function addPlayer (){
+            // dynamically build the player video element
+            playerHTML = "<video id=\"video_1\" data-account=\"" + playerData.accountID + "\" data-player=\"" + playerData.playerID + "\" data-embed=\"default\" class=\"video-js\" controls></video>";
+            // inject the player code into the DOM
+            document.getElementById("placeHolder").innerHTML = playerHTML;
+
+            // add and execute the player script tag
+            var s = document.createElement("script");
+            s.src = "//players.brightcove.net/" + playerData.accountID + "/" + playerData.playerID + "_default/index.min.js";
+            document.body.appendChild(s); 
+            s.onload = callback;
+        } 
+
+        function callback(){
+            myPlayer = videojs("video_1");
+            myPlayer.play();
+        }
+    </script>
+  
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamically Change Video</title>
+    
+    <!-- Page styles -->
+    <style id="pageStyles">
+        #myPlayer {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+ 
+<body>
+  
+    <video id="myPlayer"
+     data-account="1752604059001"
+     data-player="2e0cea1a-e74e-4dd8-9e13-ed8550981660"
+     data-embed="default"
+     data-video-id="1754276205001"
+     class="video-js" controls></video>
+ 
+    <br/>
+    <button onclick="changeVideo()">change video</button>
+      
+    <script src="//players.brightcove.net/1752604059001/2e0cea1a-e74e-4dd8-9e13-ed8550981660_default/index.min.js"></script>
+     
+    <!-- custom script -->
+    <script type="text/JavaScript">
+        var myPlayer;
+    
+        function changeVideo(){
+            myPlayer.catalog.getVideo('3851389913001', function(error, video) { 
+                //console.log(video) 
+                myPlayer.catalog.load(video);
+                myPlayer.play();
+            })
+        }
+    
+        videojs("myPlayer").ready(function(){
+            myPlayer = this;
+        }); 
+    </script>
+ 
+  </body>
+</html>

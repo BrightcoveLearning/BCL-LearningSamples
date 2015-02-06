@@ -1,0 +1,12 @@
+1. Create player
+2. Add video ID Video Content
+3. Publish player
+4. Copy published In-Page Embed Code and paste into body of demo1.html HTML page
+5. Add an id to video tag with value of myPlayerID
+6. Add a script block below existing script tag 
+7. Use videojs' ready() method to create block for startup code
+6. In the block, assign the player instance to a variable named myPlayer
+7. Use the play() method to start the video
+8. Browse page and see the video plays but in the default size of 300 x 150
+9. Add CSS to videojs class to set width to 480px and height to 270px
+10. Browse again to see new dimensions  

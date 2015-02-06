@@ -1,0 +1,110 @@
+  <!doctype html>
+  <html>
+  <head>
+  <meta charset="UTF-8">
+  <title>Demo 4 Solution</title>
+  </head>
+
+  <body>
+    <!-- Start of Brightcove Player -->
+
+    <div style="display:none">
+    Used for related videos API sample
+    </div>
+
+    <!--
+    By use of this code snippet, I agree to the Brightcove Publisher T and C
+    found at https://accounts.brightcove.com/en/terms-and-conditions/.
+    -->
+
+    <script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+    <object id="myExperience922656010001" class="BrightcoveExperience">
+      <param name="bgcolor" value="#FFFFFF" />
+      <param name="width" value="480" />
+      <param name="height" value="270" />
+      <param name="playerID" value="3500779531001" />
+      <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEb8DQAYioIHfW8TyGzdo2X" />
+      <param name="isVid" value="true" />
+      <param name="isUI" value="true" />
+      <param name="dynamicStreaming" value="true" />
+
+      <param name="@videoPlayer" value="922656010001" />
+
+      <!-- smart player api params -->
+      <param name="includeAPI" value="true" />
+      <param name="templateLoadHandler" value="onTemplateLoad" />
+      <param name="templateReadyHandler" value="onTemplateReady" />
+
+    </object>
+
+    <div id="displayArea">
+    </div>
+
+    <!--
+    This script tag will cause the Brightcove Players defined above it to be created as soon
+    as the line is read by the browser. If you wish to have the player instantiated only after
+    the rest of the HTML is processed and the page load is complete, remove the line.
+    -->
+    <script type="text/javascript">brightcove.createExperiences();</script>
+
+    <!-- End of Brightcove Player -->
+
+    <div id="displayInfo"></div>
+
+    <script src="/en/scripts/handlebars.js"></script>
+    <script type="text/JavaScript">
+      var player,
+         APIModules,
+         videoPlayer,
+         template,
+         results,
+         videoInfoTemplate = "<h3>About this video</h3><h4>Title: {{displayName}}</h4><p>Description: {{shortDescription}}</p><p>Tags:</p><ul>{{#tags}}<li>{{.}}</li>{{/tags}}</ul>",
+         customFieldsTemplate = "<p>Custom Fields:</p><ul>{{#each customFields}}<li><strong>{{@key}}</strong>: {{this}}</li>{{/each}}</ul>";
+
+       var onTemplateLoad = function(experienceID){
+         player = brightcove.api.getExperience(experienceID);
+         APIModules = brightcove.api.modules.APIModules;
+       };
+
+       var onTemplateReady = function(evt){
+         videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+         videoPlayer.play();
+         videoPlayer.getCurrentVideo( function(videoDTO){
+           //Use Handlebars to display most of the information from the videoDTO
+           template = Handlebars.compile(videoInfoTemplate);
+           results = template(videoDTO);
+           displayInfo.innerHTML = results;
+            
+           template = Handlebars.compile(customFieldsTemplate);
+           results = template(videoDTO);
+           displayInfo.innerHTML += results;
+
+           //Use JavaScript to display the tags
+           var numTags = videoDTO.tags.length;
+           displayInfo.innerHTML += "<p>Tags:</p><ul>";
+           for (var i = 0; i < numTags; i++) {
+             displayInfo.innerHTML += "<li>" + videoDTO.tags[i] + "</li>"; 
+           };
+           displayInfo.innerHTML += "</ul><br />";
+
+           //Use JavaScript to display custom fields
+           displayInfo.innerHTML += "<p>Custom Fields:</p><ul>";
+           for (var key in videoDTO.customFields) {
+            displayInfo.innerHTML += "<li><strong>" + key + "</strong>: " + videoDTO.customFields[key] + "</li>";
+           }
+           displayInfo.innerHTML += "</ul>";
+           displayDuration();
+         });
+       };
+
+       //Display duration from method
+       var displayDuration = function(){
+         videoPlayer.getVideoDuration( true, function(duration) {
+            displayInfo.innerHTML += "<p>Duration: " + duration + "</p>";
+         });
+       };
+    </script>
+
+  </body>
+  </html>

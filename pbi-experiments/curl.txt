@@ -1,15 +1,19 @@
 //base URL
 https://ingest.api.brightcove.com/v1/accounts/video/
 
+//video
+2114345471001
+
+
 //client credentials
 {
-  "client_secret": "2zezOl4d6F8_jPhbitlHYhUr88dq6OWhomgHbuQ7-RvkSUw-ETZvtiVWxgzvWlQhQthBdupRiD-xoiI7KS50oA",
-  "issued_at": "2014-10-17T17:21:17Z",
+  "client_secret": "mFiAuM7hyAl67s_UrFLywlcx8oKDZu0yHZg_gAuWF8V1EsgNk3H_ev6NGQwtZY1J5ZlUzX35fvd2fm4Y1CwL3w",
+  "issued_at": "2014-11-10T17:03:01Z",
   "name": "pbiClient",
   "redirect_url": null,
   "description_html": null,
   "issued_to": "mboles@brightcove.com",
-  "client_id": "541de4c9-860d-4f64-9503-6803e8b7236a",
+  "client_id": "a492b9f9-cedf-4005-bbdd-7a4aa0a6b224",
   "maximum_scope": [{
     "identity": {
       "type": "video-cloud-account",
@@ -30,7 +34,7 @@ https://ingest.api.brightcove.com/v1/accounts/video/
 //get credentials
 curl \
   --include \
-  --header 'Authorization: BC_TOKEN AEnTxTjiaUpV4sUC6bbVk8B5WYTQRXo01D0PZDR4RylbLW5e5-U0QmOqZQxNlWLFWxft2covQNS1keBuqz3Gym9AarJdkvSpodR8LjV3cU-n7Szik3tB7xI' \
+  --header 'Authorization: BC_TOKEN AEnTxTi16_exL67V9q5ON5GDT8N9NVqDbToPQ-TLNsJx-CFVtFVsM77d5AvFSNfN9y8Ou2CspbM29_SGIPbpO4vY--5cVD0VZxdXDBLdIuYHZTuoAgmDqeM' \
   --data 'name=pbiClient&maximum_scope=[{
     "identity": {
       "type": 

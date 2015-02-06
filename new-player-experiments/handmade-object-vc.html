@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>VC mediainfo</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+  }
+</style>  
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-account="3676484086001"
+    data-player="2433352b-a2e2-4b7e-9a15-2d9ec7f07e9d"
+    data-embed="default"
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/3676484086001/2433352b-a2e2-4b7e-9a15-2d9ec7f07e9d_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    //Populate video object (normally from database or CMS)
+    var videoObject = new Object();
+    videoObject.name = "Hand made video object test";
+    videoObject.id = "1234msb";
+    videoObject.description = "short description for hand made video object";
+    videoObject.account_id = "1507807800001";
+    videoObject.sources = [{
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
+        "type": "application/x-mpegURL"
+      }, {
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+        "type": "video/mp4"
+      }];
+
+    //Use load method to load video into player  
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this;
+      console.log("mediainfo before load: ", myPlayer.mediainfo);
+      myPlayer.catalog.load(videoObject);
+      console.log("mediainfo after load: ", myPlayer.mediainfo);
+    });
+  </script>
+
+ </body>
+</html>

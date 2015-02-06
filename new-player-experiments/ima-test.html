@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+
+    
+
+<link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+ 
+<video id="video_1"
+  data-account="1752604059001"
+  data-player="bd7ca5b9-673b-4657-a2f7-8e63f9061e8f"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/1752604059001/bd7ca5b9-673b-4657-a2f7-8e63f9061e8f_default/index.min.js"></script>
+ 
+<script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+ 
+<script>
+  var myPlayer;
+    
+  videojs("video_1").ready(function() {
+    // get a reference to the player
+    myPlayer = this;
+      
+    // initialize the ima3 plugin that was registered in ima3.min.js with custom options
+    myPlayer.ima3({
+      adSwf: "https://players.brightcove.net/videojs-ima3/VideoJSIMA3.swf",
+      serverUrl: "http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6390/Marks-Ads-Test-Unit-1&ciu_szs=728x90&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&ad_rule=1&cmsid=580&vid=1760859514001"
+    });
+  }); 
+</script>
+</body>
+
+</html>

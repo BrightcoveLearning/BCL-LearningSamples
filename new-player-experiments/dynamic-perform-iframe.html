@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <iframe src='//players.brightcove.net/3676484086001/a8f4710c-d982-4303-828e-a44ded4f0f6b_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
+  <br/>
+  <button onclick="changeVideo()">change video</button>
+
+  <script type="text/javascript">
+    var iframeTag = document.querySelector("iframe"),
+      win = iframeTag.contentWindow;
+   
+    function changeVideo(){
+      console.log("in changeVideo");
+      var changeVideoObj = {"command": "changeVideo", "videoURL": "https://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4"};
+      win.postMessage(changeVideoObj,"http://players.brightcove.net");
+    }
+  </script>
+
+</body>
+</html>

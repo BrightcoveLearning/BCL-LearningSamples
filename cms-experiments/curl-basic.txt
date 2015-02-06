@@ -2,15 +2,30 @@
 https://edge.api.brightcove.com/cms
 https://edge.api.brightcove.com/v1beta1/accounts/1234/videos
 
+//video id to use
+2114345471001
+
+AGlgNDfy0Y4LPbAEZe-hCT6Ht7JAvXa91Ca8yr9VSr8x6Ka0_Ja0vD714VEmWExLW5PIa-TPHhpA3Uwy2wwXNviC8ovLDcubc1MPldB68yFt9zMDOBK2GxfvvOow9ZC3ER73H9hi88YdZnkZgpOMRVnghSvgnbh9Np434tWMdzdMsLuqC2JnvkOQ_Rj9xtKU6jnY0qEC_cUKkJWAdQq6bcoeCNvqMRww-wOOQotlcXnCZjddSaE7lx-oJ4ch9z6qR5zxCd6v5eg5YwfYxPJWrqWMHjnW3w46J_zWzXzDby3jl-vKA4C-1N0HwZnKQ8aAivfySOze-0M2
+
+curl  \
+  --header "Authorization: Bearer AGlgNDeGl6ENyUdyOz57HT6S7pGMXhfQzWgtP1QZfRya-TY8il2NJf0wlcnYrl45IDsidJ9bm1WWc_DqgdK1zFuk4q5bKHN-LBmFqIY9Snvs8a6L0IMyX70A4EO9Y2zXgxVAvI_i3zZibWhO5WYLEuRM11eyVhrmCmOYhuOmfhcrYsgxRUVHGxEXvMMQAI76Ip3VT2SU2xPe40V0vE3AjVjbBoLXPzY708xZn4tjkIr7n231YPt5oxRHVRx8pRVHEITMCznqUxJu9V8yrfgrHxbw9ra14JVmKTvN9ll0Xk2RHs_2rkuGiZTS5kP2WruN9glKX1PXLRi7" \
+  --request PATCH \
+  --data '{"name": "Updated Name"}' \
+  https://cms.api.brightcove.com/v1beta1/accounts/1507807800001/videos/2114345471001
+
+
+curl -i -X PATCH -H "Authorization: Bearer AGlgNDfy0Y4LPbAEZe-hCT6Ht7JAvXa91Ca8yr9VSr8x6Ka0_Ja0vD714VEmWExLW5PIa-TPHhpA3Uwy2wwXNviC8ovLDcubc1MPldB68yFt9zMDOBK2GxfvvOow9ZC3ER73H9hi88YdZnkZgpOMRVnghSvgnbh9Np434tWMdzdMsLuqC2JnvkOQ_Rj9xtKU6jnY0qEC_cUKkJWAdQq6bcoeCNvqMRww-wOOQotlcXnCZjddSaE7lx-oJ4ch9z6qR5zxCd6v5eg5YwfYxPJWrqWMHjnW3w46J_zWzXzDby3jl-vKA4C-1N0HwZnKQ8aAivfySOze-0M2" -d '{"name": "updated"}' https://cms.api.brightcove.com/v1beta1/accounts/1507807800001/videos/2114345471001
+
+
 //client credentials
 {
-  "client_secret": "KLwqa9yx5npgu9enFHglI9GFff39StO0Id1ytaZBWXg2pQ_7DiH-XUjg3_svKNBSkB0KN21sYrvfKnALcBLOLA",
-  "issued_at": "2014-10-14T15:16:32Z",
+  "client_secret": "Zlv_Poya17gl5kr2y6vdKdffFX9jrVrY8Jws8eLViw5GVKrl7sHs0dvdtdmjIC0Cxegi9FxlW7q0xzLskRHE1w",
+  "issued_at": "2014-11-17T17:57:38Z",
   "name": "SampleClient",
   "redirect_url": null,
   "description_html": null,
   "issued_to": "mboles@brightcove.com",
-  "client_id": "5fbee876-9ac3-419f-b1b9-5878282964b9",
+  "client_id": "1efefe61-6207-48c3-aa8d-818f259c1fc9",
   "maximum_scope": [{
     "identity": {
       "type": "video-cloud-account",
@@ -31,7 +46,7 @@ https://edge.api.brightcove.com/v1beta1/accounts/1234/videos
 //get credentials
 curl \
   --include \
-  --header 'Authorization: BC_TOKEN AEnTxTiEPYyoOLEfifaJHOVgT1RdI1h0rJloj3vbMQR25vfscoivqvPapqHCzCPpNOwW-LEpJ9_6FZi8JtP6XZGsRcEQzmPRW1v76aMuLY-DCQxnw-tahN4' \
+  --header 'Authorization: BC_TOKEN AEnTxTgAROtMalMzg4w_39b3-TnsXgouR1hXP0ie6iIBb2sxHzLCQbXm_ImYvXr4-nG7oe-vvAEM5oLbRpCwMJJ3OlSkBubFU-xKLj-awRdr5XDEGQVLnDg' \
   --data 'name=SampleClient&maximum_scope=[{
       "identity": {
         "type": "video-cloud-account", 

@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <style id="pageStyles">
+      /************************************
+      styles for fetch playlists sample
+      ************************************/
+      .playlist-item {
+      	height: 40px;
+        border: 1px solid #CCC;
+        padding: 2px;
+        font-size: x-small;
+        cursor: pointer;
+        background-color: #fbfcfe;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#fbfcfe), to(#dedfe1));
+        background-image: -webkit-linear-gradient(top, #fbfcfe, #dedfe1);
+        background-image: -moz-linear-gradient(top, #fbfcfe, #dedfe1);
+        background-image: -o-linear-gradient(top, #fbfcfe, #dedfe1);
+        background-image: -ms-linear-gradient(top, #fbfcfe, #dedfe1);
+        background-image: linear-gradient(top, #fbfcfe, #dedfe1);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fbfcfe', EndColorStr='#dedfe1');
+      }
+      .playlist-item-selected {
+        color: #F5F5F5;
+        background-color: #8e9090;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#8e9090), to(#5c5c5d));
+        background-image: -webkit-linear-gradient(top, #8e9090, #5c5c5d);
+        background-image: -moz-linear-gradient(top, #8e9090, #5c5c5d);
+        background-image: -o-linear-gradient(top, #8e9090, #5c5c5d);
+        background-image: -ms-linear-gradient(top, #8e9090, #5c5c5d);
+        background-image: linear-gradient(top, #8e9090, #5c5c5d);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#8e9090', EndColorStr='#5c5c5d');
+      }
+      .playlist-item h6, .playlist-item p {
+        margin: 0;
+      }
+      .playlist-item img {
+        float:left;
+        clear:left;
+        margin-right: 5px;
+        width: 72;
+        height: 40;
+      }
+      #BCL_playlist {
+        height: 270px;
+        width: 260px;
+        overflow: scroll;
+      }
+    </style>
+
+<title>Demo 7 Solution</title>
+</head>
+
+<body>
+	<!-- Start of Brightcove Player -->
+
+	<div style="display:none">
+	Used for related videos API sample
+	</div>
+
+	<!--
+	By use of this code snippet, I agree to the Brightcove Publisher T and C
+	found at https://accounts.brightcove.com/en/terms-and-conditions/.
+	-->
+
+	<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+	<object id="myExperience922656010001" class="BrightcoveExperience">
+	  <param name="bgcolor" value="#FFFFFF" />
+	  <param name="width" value="480" />
+	  <param name="height" value="270" />
+	  <param name="playerID" value="3500779531001" />
+	  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEb8DQAYioIHfW8TyGzdo2X" />
+	  <param name="isVid" value="true" />
+	  <param name="isUI" value="true" />
+	  <param name="dynamicStreaming" value="true" />
+
+	  <param name="@videoPlayer" value="922656010001" />
+
+		<!-- smart player api params -->
+	  <param name="includeAPI" value="true" />
+	  <param name="templateLoadHandler" value="onTemplateLoad" />
+	  <param name="templateReadyHandler" value="onTemplateReady" />
+
+	</object>
+
+	<!--
+	This script tag will cause the Brightcove Players defined above it to be created as soon
+	as the line is read by the browser. If you wish to have the player instantiated only after
+	the rest of the HTML is processed and the page load is complete, remove the line.
+	-->
+	<script type="text/javascript">brightcove.createExperiences();</script>
+
+	<!-- End of Brightcove Player -->
+
+
+<div id="BCL_playlist"></div>
+
+	<script src="/en/scripts/jquery-1.9.1.min.js"></script>
+  <script src="/en/scripts/handlebars.js"></script>
+
+  <script type="text/JavaScript">
+     var player,
+       APIModules,
+       videoPlayer,
+       contentModule,
+       videosAra,
+       template,
+       data,
+       results,
+       playlistTemplate = "{{#videos}}<div class=\"playlist-item\" data-id=\"{{id}}\"><img height=\"40\" width=\"72\" src=\"{{thumbnailURL}}\"/><h6>{{displayName}}</h6><p>{{shortDescription}}</p></div>{{/videos}}";
+
+     var onTemplateLoad = function(experienceID){
+       player = brightcove.api.getExperience(experienceID);
+       APIModules = brightcove.api.modules.APIModules;
+     };
+
+     var onTemplateReady = function(evt){
+       videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+       contentModule = player.getModule(APIModules.CONTENT);
+       contentModule.getPlaylistByID("1323984733001", onGetPlaylist);
+     };
+
+    var onGetPlaylist = function (playlistDTO) {
+      //load first video in list
+      videoPlayer.loadVideoByID(playlistDTO.videos[0].id);
+
+      //Display all videos in list
+      template = Handlebars.compile(playlistTemplate);
+      data = playlistDTO;
+      results = template(data);
+      $("#BCL_playlist").html(results);
+      // add event listener for playlist items
+      $(".playlist-item").on("click", function (evt) {
+        $this = $(this);
+        // highlight selected item
+        $this.siblings().removeClass("playlist-item-selected");
+        $this.addClass("playlist-item-selected");
+        // play the video
+        videoPlayer.loadVideoByID($this.attr("data-id"));
+      });
+    }
+	</script>
+
+</body>
+</html>

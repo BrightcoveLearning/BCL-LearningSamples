@@ -1,0 +1,10 @@
+http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4
+video/mp4
+
+http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8
+application/x-mpegURL
+
+http://solutions.brightcove.com/bcls/assets/images/Tiger.jpg
+
+
+

@@ -1,0 +1,22 @@
+1. Create player instance
+2. Enable API use
+3. Associate video with player
+4. Copy website code and paste into HTML doc
+5. Get JS API param code from website and paste into player code (REMOVE BCLS prefix if there)
+6. Add script block and create variables
+   <script type="text/JavaScript">
+     var player,
+       APIModules,
+       videoPlayer;
+	</script>
+7. Add onTemplateLoad event handler
+     var onTemplateLoad = function(experienceID){
+       player = brightcove.api.getExperience(experienceID);
+       APIModules = brightcove.api.modules.APIModules;
+     }
+8. Add onTemplateReady handler
+     var onTemplateReady = function(evt){
+       videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+       videoPlayer.play();
+     }
+9. Browse page and see video start

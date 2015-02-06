@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>geo restrict</title>
+  <style type="text/css">
+    #myPlayerID {
+      width: 600px;
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1486906377"
+    data-player="1272021e-b4cb-4b15-99bc-aa16cb0bbaa0"
+    data-embed="default"
+    data-video-id="3930525483001"
+    class="video-js" 
+    controls></video>
+
+  <p id="textTarget"></p>
+    
+  <script src="//players.brightcove.net/1486906377/1272021e-b4cb-4b15-99bc-aa16cb0bbaa0_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this,
+        specificError;
+      if (myPlayer.catalog.error !== undefined) {
+        specificError = myPlayer.catalog.error.data[0];
+        if (specificError !== undefined & specificError.error_subcode == "CLIENT_GEO") {
+          document.getElementById("textTarget").innerHTML = "The video you are trying to watch cannot be viewed from your current country or location.";
+        };
+      };
+    });
+  </script>
+    
+</body>
+
+</html>

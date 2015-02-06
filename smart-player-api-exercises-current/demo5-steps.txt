@@ -1,0 +1,27 @@
+1. View HTML <select> tag in <div>
+2. Add variables contentModule and videosAra
+3. Remove play() method
+4. Get the content module (after getting the VIDEO_PLAYER module)
+			contentModule = player.getModule(APIModules.CONTENT);
+5. Get the playlist
+			contentModule.getPlaylistByID("1323984733001", onGetPlaylist);
+6. Create the event handler function and log playlistDTO
+	     var onGetPlaylist = function(playlistDTO){
+	     	console.log(playlistDTO);
+	     };
+7. In the new event handler create and inject <option> tags
+     	videosAra = playlistDTO.videos;
+     	for (var i = 0; i < playlistDTO.videoCount; i++) {
+     		videoSelect.innerHTML += '<option value="' + playlistDTO.videos[i].id +'">' + playlistDTO.videos[i].displayName + '</option>';
+     	}
+8. Add event on select statement
+			onChange="javascript:onVideoSelected(event)"
+9. Create new event handler for select
+     var onVideoSelected = function(evt){
+     	var selectedIndex = videoSelect.selectedIndex;
+			var toPlayID = videosAra[selectedIndex].id;
+     	videoPlayer.loadVideoByID(toPlayID);
+     };
+10. Test and see new videos loaded
+11. Add code just above loop to display first video in list
+     	videoPlayer.loadVideoByID(videosAra[0].id);

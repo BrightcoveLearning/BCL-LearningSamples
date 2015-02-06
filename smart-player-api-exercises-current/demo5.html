@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo 6</title>
+</head>
+
+<body>
+	<!-- Start of Brightcove Player -->
+
+	<div style="display:none">
+	Used for related videos API sample
+	</div>
+
+	<!--
+	By use of this code snippet, I agree to the Brightcove Publisher T and C
+	found at https://accounts.brightcove.com/en/terms-and-conditions/.
+	-->
+
+	<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
+
+	<object id="myExperience922656010001" class="BrightcoveExperience">
+	  <param name="bgcolor" value="#FFFFFF" />
+	  <param name="width" value="480" />
+	  <param name="height" value="270" />
+	  <param name="playerID" value="3500779531001" />
+	  <param name="playerKey" value="AQ~~,AAAA1oy1bvE~,ALl2ezBj3WEb8DQAYioIHfW8TyGzdo2X" />
+	  <param name="isVid" value="true" />
+	  <param name="isUI" value="true" />
+	  <param name="dynamicStreaming" value="true" />
+
+	  <param name="@videoPlayer" value="922656010001" />
+
+		<!-- smart player api params -->
+	  <param name="includeAPI" value="true" />
+	  <param name="templateLoadHandler" value="onTemplateLoad" />
+	  <param name="templateReadyHandler" value="onTemplateReady" />
+
+	</object>
+
+	<!--
+	This script tag will cause the Brightcove Players defined above it to be created as soon
+	as the line is read by the browser. If you wish to have the player instantiated only after
+	the rest of the HTML is processed and the page load is complete, remove the line.
+	-->
+	<script type="text/javascript">brightcove.createExperiences();</script>
+
+	<!-- End of Brightcove Player -->
+
+	<div id="videoSelector">
+		<select id="videoSelect">
+		</select>
+	</div>
+
+
+  <script type="text/JavaScript">
+     var player,
+       APIModules,
+       videoPlayer;
+
+     var onTemplateLoad = function(experienceID){
+       player = brightcove.api.getExperience(experienceID);
+       APIModules = brightcove.api.modules.APIModules;
+     };
+
+     var onTemplateReady = function(evt){
+       videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
+       videoPlayer.play();
+     };
+	</script>
+
+</body>
+</html>

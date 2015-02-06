@@ -1,0 +1,26 @@
+1. Add an HTML <div> block as a location in which to inject dynamically built HTML. Place this just below the player code.
+    <div id="displayInfo"></div>
+2. In the getCurrentVideo() method's callback function, loop over the array of tags and dynamically build an unordered list from the tags, injecting the HTML into the new <div> block. Use a JavaScript for loop for the loop.
+           //Use JavaScript to display the tags
+           var numTags = videoDTO.tags.length;
+           displayInfo.innerHTML += "<p>Tags:</p><ul>";
+           for (var i = 0; i < numTags; i++) {
+             displayInfo.innerHTML += "<li>" + videoDTO.tags[i] + "</li>"; 
+           };
+           displayInfo.innerHTML += "</ul><br />";
+3. Following the code to display the tags, loop over the custom fields object and dynamically build another unordered list, injecting the HTML into the new <div> block. Use a JavaScript for-in loop. 
+           //Use JavaScript to display custom fields
+           displayInfo.innerHTML += "<p>Custom Fields:</p><ul>";
+           for (var key in videoDTO.customFields) {
+            displayInfo.innerHTML += "<li><strong>" + key + "</strong>: " + videoDTO.customFields[key] + "</li>";
+           }
+           displayInfo.innerHTML += "</ul>";
+4. Create a function to display the video duration. Use the getVideoDuration() method. Inject the duration, with appropriate label, into the <div> block. 
+       //Display duration from method
+       var displayDuration = function(){
+         videoPlayer.getVideoDuration( true, function(duration) {
+            displayInfo.innerHTML += "<p>Duration: " + duration + "</p>";
+         });
+       };
+5. Call the newly created function at the end of the getCurrentVideo() callback function.
+           displayDuration();

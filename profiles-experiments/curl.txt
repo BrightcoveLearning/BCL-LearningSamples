@@ -1,0 +1,48 @@
+//credentials
+{
+  "client_secret": "KbcWo0u-M11cajPtWp3yrmFjH2l26g9AyqWOv9QhD40bQO-GZlbNv-xA79U9tzBFZXLddRjoJMPUnS3HnVPTEQ",
+  "issued_at": "2014-11-11T20:48:33Z",
+  "name": "pbiClient",
+  "redirect_url": null,
+  "description_html": null,
+  "issued_to": "mboles@brightcove.com",
+  "client_id": "0b251668-589b-412b-9577-e4bd1d3c0c3f",
+  "maximum_scope": [{
+    "identity": {
+      "type": "video-cloud-account",
+      "account-id": 1507807800001
+    },
+    "operations": ["video-cloud/ingest-profiles/account/read", "video-cloud/ingest-profiles/profile/read", "video-cloud/ingest-profiles/profile/write", "video-cloud/ingest-profiles/account/write"]
+  }],
+  "trusted": null,
+  "type": "credential",
+  "description": null,
+  "expires_at": null,
+  "revoked": null,
+  "name_html": "pbiClient",
+  "issued_user": 76075641802
+}
+
+//get credentials
+curl \
+  --include \
+  --header 'Authorization: BC_TOKEN AEnTxTgawy6k-u40nbcmwRuA02Wh81BpBPDurNUVkoWB4nLd7OTSxEMZc1zWQHAfreJro52sTIIESJnw1U_uimp4UYhNhAeAO9vyxK-0oDGjeeLArmXINZo' \
+  --data 'name=pbiClient&maximum_scope=[{
+    "identity": {
+      "type": 
+        "video-cloud-account", 
+        "account-id": 1507807800001
+      }, 
+      "operations": [
+        "video-cloud/ingest-profiles/profile/read", 
+        "video-cloud/ingest-profiles/profile/write", 
+        "video-cloud/ingest-profiles/account/read", 
+        "video-cloud/ingest-profiles/account/write"
+      ]
+    }]'\
+  https://oauth.brightcove.com/v3/client_credentials
+
+
+
+
+

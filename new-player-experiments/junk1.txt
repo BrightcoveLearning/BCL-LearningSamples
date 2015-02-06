@@ -1,0 +1,37 @@
+When you create a player you see three implementations for publishing the player. These implementations are:
+
+URL
+In-page embed
+iframe
+
+Each of these implementations can take two approaches. The most common approach is to use a dynamic player. This player can play many different videos. To accomplish this, the video ID is passed to the player at runtime, via a URL parameter, video tag attribute or JavaScript APIs. This is technically similar to a template web page that can be used for many different instances of content. A use case for this approach is a generic video player that is assigned different videos depending on which article or video the user is accessing.
+
+A more specialized approach is to statically bind the video to the player by including it in the player configuration itself. This approach is similar to creating a static web page. The advantage is to reduce the number of calls the player must make to display a poster image or start playing the video, thus increasing performance. This can be done in Studio or using the API directly. A use case of this approach is a product page built with a player that contains a video detailing the single product.
+
+Note: Although it is possible to change the video statically bound to a player, it is not a good practice. If you do this, it is possible you will see the poster for the statically bound video briefly appear in the player before the video dynamically added is displayed. For this reason is it a best practice to create a player that does not have a video initially associated with it for use in a situation where the video will be dynamically changed.
+
+It is possible to use the URL implementation and dynamically change the video that is played. To do this you use a query string at the end of the URL in the form ?videoId=YOUR_VIDEO_ID as shown in the following example.
+
+The In-page embed code contains the <video> tag. The Video Cloud ID for the video statically bound to the player is associated with the data-video-id HTML 5 data attribute.
+
+Note: When the player JavaScript executes, it reads the video ID from the data-video-id attribute. However, it only does so at startup. Changing the value with, for example, JavaScript's setAttribute() method, does not cause the player to load the video. To change the video after the player has loaded, you should use the JavaScript method described below.
+
+In many cases, you want user interactions to control which video is played. To accomplish this, you can use JavaScript and the player catalog's getVideo() and load() methods to dynamically retrieve and play the desired video.
+
+Lines 26-33: In-page embed code with no value for the data-video-id attribute.
+Lines 36,42: Use the ready() method to be sure player is ready to act upon.
+Line 37: Associate the player, referred to as this in the function, with a variable.
+Line 38,41: Use the catalog's getVideo() method using the Video Cloud ID and a callback function as parameters.
+Line 40: Use the catalog's load() method to load the video and play it.
+To specify the video to a player hosted in an iframe, you can pass the video ID via a URL's query string. For example:
+
+You can also use JavaScript to add a query string to the iframe's src attribute to tell the player which video to play.
+
+Lines 47-50: The iframe implementation code.
+Line 53: Use JavaScript's getElementsByTagName() method to place the iframe tag into a variable. Note that the method returns an array of all matching elements on the page, and since you are using the first (and only) iframe tag on the page, you can use the zeroth element of the array.
+Line 54: Creates a query string that will be appended to the src attribute of the iframe.
+Line 55: Appends the query string variable to the src attribute defining the video to be placed in the player and played. This line of code uses the += operator to instruct that the query string should be appended to, not replace, the current value of the attribute.
+
+As noted above, you can statically bind a video to a player. This can be done in the player UI or via the player management API. For information see the Configuring the Video Content Properties for a Player and the Quick Start to Player Management documents.
+
+In theses cases, the video ID does not need to be included in the video URL used in the iframe or for a direct link, but it must be included in the <video> tag for an in-page embed.
