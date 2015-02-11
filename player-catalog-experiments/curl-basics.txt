@@ -1,0 +1,62 @@
+https://edge.api.brightcove.com
+
+GET /playback/v1/accounts/:accountId/videos/:videoId
+GET /playback/v1/accounts/:accountId/videos/ref::referenceId
+
+BC_TOKEN
+AEnTxThVHjasxxYqU7SzASJEir9FS42vCU5kV3d55s9m2JUKWXf2J5LyHFmHdUKKb93nD7_34_1ra9vpkRbNYTOEEnTyuvCA0F1KbjZHhbSlT87vZNZ-978
+
+BC Brightcove
+1507807800001
+
+video-cloud/video/all
+
+curl \
+  --include \
+  --header "Authorization: BC_TOKEN AEnTxThVHjasxxYqU7SzASJEir9FS42vCU5kV3d55s9m2JUKWXf2J5LyHFmHdUKKb93nD7_34_1ra9vpkRbNYTOEEnTyuvCA0F1KbjZHhbSlT87vZNZ-978" \
+  --data 'name=player-catalog-test&maximum_scope=[{
+      "identity": {
+        "type": "video-cloud-account",
+        "account-id": 1507807800001
+      },
+      "operations": [
+        "video-cloud/player/all"
+      ]
+    }]' \
+https://oauth.brightcove.com/v3/client_credentials
+
+{
+"type": "credential",
+"maximum_scope": [
+{
+    "identity": {
+        "type": "video-cloud-account",
+        
+        "account-id": 1507807800001
+    },
+    "operations": [
+    "video-cloud/player/all"
+    ]
+}
+],
+"name": "Test Client",
+"description": "My test app"
+}
+
+"client_secret": "OF178qGZLX-TMIGegq1Kc0JfSGscjPELIwaKjgnzW1E7eLL96L6-m8o2VCq2cCl_hSIb2UdZqYhyRxuycdFf_A",
+"client_id": "8f7dc833-4562-45ac-8850-6462c1c3be4b",
+
+
+NOMIC
+curl -i 
+  -k 
+  -H 'Authorization: Bearer OF178qGZLX-TMIGegq1Kc0JfSGscjPELIwaKjgnzW1E7eLL96L6-m8o2VCq2cCl_hSIb2UdZqYhyRxuycdFf_A' 
+  -H 'Content-Type: application/json' 
+  -d '{"policy": {"pattern": {"!=": ["[request.params.account-id]", "1507807800001"]}, "effect": "deny"}}' 
+  https://edge.api.qa.brightcove.com/v1/accounts/1507807800001/policy_keys
+
+
+
+
+
+  

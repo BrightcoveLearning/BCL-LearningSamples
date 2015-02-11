@@ -3,35 +3,27 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Demo 1</title>
-
-  <style type="text/css">
-    .video-js {
-      width: 480px;
-      height: 270px;
+  <title>Dynamically Change Video</title>
+  <!-- Page styles -->
+  <style>
+    iframe {
+      width: 640px;
+      height: 360px;
     }
   </style>
 </head>
 
 <body>
+  <iframe src='//players.brightcove.net/921483702001/a5f0f07c-ce3b-48a4-af02-f5f6c38546ac_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 
-  <video id="myPlayerID"
-    data-account="921483702001"
-    data-player="a5f0f07c-ce3b-48a4-af02-f5f6c38546ac"
-    data-embed="default"
-    data-video-id=""
-    class="video-js" controls></video>
+  <p><button onclick="changeVideo()">change video</button></p>
 
-  <script src="//players.brightcove.net/921483702001/a5f0f07c-ce3b-48a4-af02-f5f6c38546ac_default/index.min.js"></script>
- 
-  
-  <script type="text/javascript">
-    videojs("myPlayerID").ready(function(){
-      var myPlayer = this;
-      myPlayer.play();
-    });
-  </script> 
-    
+  <!-- custom script -->
+  <script type="text/JavaScript">
+    var iframeTag = document.getElementsByTagName("iframe")[0],
+      newVideo = "?videoId=922656010001";
+
+  </script>
 </body>
 
 </html>
