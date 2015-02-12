@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Demo 1</title>
+  <title>Solution 3</title>
   <style type="text/css">
     .video-js {
       width: 480px;
@@ -16,7 +16,8 @@
   <video id="myPlayerID" 
     data-account="921483702001" 
     data-player="a5f0f07c-ce3b-48a4-af02-f5f6c38546ac" 
-    data-embed="default" data-video-id="" 
+    data-embed="default" 
+    data-video-id="" 
     class="video-js" controls></video>
   <br />
 
@@ -25,26 +26,19 @@
   <script src="//players.brightcove.net/921483702001/a5f0f07c-ce3b-48a4-af02-f5f6c38546ac_default/index.min.js"></script>
 
   <script type="text/javascript">
-    var myPlayer,
-      dynamicHTML;
-
     videojs("myPlayerID").ready(function () {
-      myPlayer = this;
+      var myPlayer = this,
+        dynamicHTML;
       myPlayer.catalog.getVideo('922656010001', function (error, video) {
         console.log("error", error)
         myPlayer.catalog.load(video);
-console.log("mediainfo after load: ", myPlayer.mediainfo);
+        console.log("mediainfo after load: ", myPlayer.mediainfo);
         dynamicHTML = "<p>Video Title: <strong>" + myPlayer.mediainfo.name + "</strong></p>";
         dynamicHTML += "<p>Description: <strong>" + myPlayer.mediainfo.description + "</strong></p>";      
         document.getElementById("textTarget").innerHTML = dynamicHTML;      
+        myPlayer.play();
       })
-      myPlayer.play();
-      myPlayer.on("timeupdate", showUpdate);
     });
-
-    function showUpdate(evt){
-console.log(evt);      
-    }
 
   </script>
 </body>
