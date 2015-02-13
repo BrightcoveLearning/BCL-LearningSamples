@@ -6,18 +6,12 @@
   <title>Solution 8</title>
 
   <style type="text/css">
-    #myPlayerID div.vjs-control-bar div.vjs-fullscreen-control.vjs-control {
-      color: red;
-    }
-    #myPlayerID .vjs-big-play-button {
-      background-color: #B37D5B;
-      opacity: .6;
-    }
     .video-js {
       width: 480px;
       height: 270px;
     }
   </style>
+  <link href="demo8-plugin-solution.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,13 +25,15 @@
 
   <script src="//players.brightcove.net/921483702001/a5f0f07c-ce3b-48a4-af02-f5f6c38546ac_default/index.min.js"></script>
  
+  <script type="text/javascript" src="demo8-plugin-solution.js"></script>
+
   <script type="text/javascript">
-    videojs("myPlayerID").ready(function(){
-      var myPlayer = this;
-      //myPlayer.play();
-    });
-  </script> 
-    
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+      myPlayer.pluginDev();
+    })
+  </script>   
+
 </body>
 
 </html>
