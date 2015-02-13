@@ -1,0 +1,8 @@
+1. Create JavaScript variables for the iframe and newVideo query string
+    var iframeTag = document.getElementsByTagName("iframe")[0],
+      newVideo = "?videoId=922656010001";
+2. Add function to append query string to iframe's src
+    function changeVideo() {
+      iframeTag.src += newVideo;
+    }
+3. Browse and click button to see video change
