@@ -28,7 +28,7 @@
 
 
 
-
+***Core Code***
   <style type="text/css">
     .video-js {
       width: 480px;

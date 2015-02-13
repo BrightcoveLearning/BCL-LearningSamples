@@ -13,6 +13,9 @@
         myPlayer.play();
 
 
+
+
+***Core Code***
   <video id="myPlayerID" 
     data-account="921483702001" 
     data-player="a5f0f07c-ce3b-48a4-af02-f5f6c38546ac" 
