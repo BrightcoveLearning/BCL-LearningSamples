@@ -1,0 +1,32 @@
+1. View the video with Dev Tool, right click on the Big Play Button and show the "path" of the selector
+2. In the style block style the button color and opacity
+    #myPlayerID .vjs-big-play-button {
+      background-color: #B37D5B;
+      opacity: .6;
+    }
+3. Browse and see the changes to the button
+4. Add the styles to center the button
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+3. Browse and see the changes to the button
+
+
+***Core Code***
+  <style type="text/css">
+    #myPlayerID .vjs-big-play-button {
+      background-color: #B37D5B;
+      opacity: .6;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
