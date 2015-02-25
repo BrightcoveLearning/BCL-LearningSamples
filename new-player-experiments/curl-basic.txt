@@ -16,6 +16,33 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+
+curl -XPATCH --data '{
+  "player": {
+    "template": {
+      "version": "1.11.1"
+    }
+  }
+}' \
+--header 'Content-Type: application/json' \
+'https://players.api.brightcove.com/v1/accounts/123/players/1234/configuration'
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "player": {
+        "template": {
+          "version": "1.11.1"
+        }
+      }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \

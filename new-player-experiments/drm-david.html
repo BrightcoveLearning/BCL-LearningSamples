@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Video.js Html5 Dash</title>
+
+    <link href="node_modules/video.js/dist/video-js/video-js.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .info {
+            background-color: #eee;
+            border: thin solid #333;
+            border-radius: 3px;
+            padding: 0 5px;
+            text-align: center;
+        }
+        .video-js {
+            margin: 40px auto;
+        }
+    </style>
+
+    <script src="node_modules/video.js/dist/video-js/video.dev.js"></script>
+    <script src="dist/vjs-html5-dash-debug.js"></script>
+</head>
+<body>
+<div class="info">
+    <p>
+        You can see the Video.js Html5 Dash Source Handler in action below.
+        Look at the source of this page to see how to use it with your videos.
+    </p>
+</div>
+<video id="vid1" class="video-js vjs-default-skin" controls preload="auto" width="640" height="264" data-setup='{}'>
+    <p>
+        Your browser doesn't support video. Please <a href="http://browsehappy.com/">upgrade your browser</a> to see the example.
+    </p>
+    <!-- "AUDIO TYPE NOT SUPPORTED" -->
+
+    <!-- SEGMENT LIST CATEGORY: Segment Template -->
+    <!--<source src="http://dash.edgesuite.net/dash264/TestCases/1b/qualcomm/1/MultiRate.mpd" type='application/dash+xml'>-->
+
+    <!-- WORKING AUDIO & VIDEO -->
+
+    <!-- SEGMENT LIST CATEGORY: Segment Template -->
+
+    <source src="test/fixtures/car.mpd" type="application/dash+xml">
+    <!--<source src="http://dash.edgesuite.net/envivio/dashpr/clear/Manifest.mpd" type='application/dash+xml'>-->
+    <!-- <source src="http://dash.brightcove.com/assets/shiv/fire_template_5/stream.mpd" type='application/dash+xml'> -->
+    <!--<source src="http://dash.brightcove.com/assets/nine-3/M030KHWA1/dash/stream.mpd" type='application/dash+xml'>-->
+    <!--<source src="http://dash.brightcove.com/assets/nine-3/BLOCFF14_19_A/dash/stream.mpd" type='application/dash+xml'>-->
+    <!--<source src="http://dash.brightcove.com/assets/nine-3/WHWA14_946_A/dash/stream.mpd" type='application/dash+xml'>-->
+    <!--<source src="http://dash.brightcove.com/assets/seven-3/Aami_Ad_final/dash/stream.mpd" type='application/dash+xml'>-->
+    <!--<source src="http://dash.brightcove.com/assets/seven-3/MACCAS/dash/stream.mpd" type='application/dash+xml'>-->
+
+    <!-- POTENTIAL PSEUDO-LIVE STREAM DASH RESOURCES -->
+
+    <!-- PARTIALLY WORKING (CORS ISSUE W/AUDIO) -->
+    <!--<source src="http://tvnlive.dashdemo.edgesuite.net/live/manifest.mpd" type='application/dash+xml'>-->
+
+    <!-- UNVERIFIED -->
+    <!--<source src="http://24x7dash-i.akamaihd.net/dash/live/900080/elemental/dash.mpd" type='application/dash+xml'>-->
+
+    <!-- FAILING TO LOAD VIA DASH.JS SAMPLE PLAYER AND DIRECT REQUEST OF MANIFEST -->
+    <!--<source src="http://eu1.eastmark.net/pdash/testpic_6s/ManifestController.mpd" type='application/dash+xml'>-->
+    <!--<source src="http://b028.wpc.azureedge.net/80B028/SampleStream/49be9c8c-0317-470f-94a2-7472732dc844/2cfaa74d-196a-4125-9c22-b84cbe4e9df9.ism/ManifestController(format=mpd-time-csf)" type='application/dash+xml'>-->
+</video>
+<script>
+  var player = videojs('vid1');
+
+  // if "mediakeymessage" is triggered, the video is encrypted and
+  // requires a license
+  player.on('mediakeymessage', function(event) {
+
+    // make a request to the example license server
+    var xhr = new XMLHttpRequest();
+    xhr.responseType = 'arraybuffer';
+    xhr.open('POST', 'http://widevine-proxy.appspot.com/proxy');
+    xhr.onreadystatechange = function() {
+      if (this.readyState === 4) {
+
+        // supply the license to the active media key session
+        return event.mediaKeySession.update(new Uint8Array(this.response));
+      }
+    };
+    console.log("xhr.onreadystatechange",xhr.onreadystatechange);
+    xhr.send(event.message);
+  });
+</script>
+</body>
+</html>

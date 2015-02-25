@@ -1,64 +1,47 @@
 <!doctype html>
 <html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>for testing</title>
-<style>
-    .outer {
-      width: 80%;
-      display: block;
-      position: relative;
-      margin: 20px auto;
-    }
-    .outer:after {
-      padding-top: 56.25%;
-      display: block;
-      content: '';
-    }
-    .video-js {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .video-js.video-js .vjs-big-play-button {
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      margin:auto;
-    }
-  </style>  
-</head>
-
-<body>
-
-<div class="outer"> <video id="myPlayerID"
-  width="640" 
-  height="360" 
-  data-account="1752604059001"
-  data-player="0b0bd7d7-6907-4e12-a644-747b38fab305"
-  data-embed="default"
-  data-video-id="4034039924001"
-  
-  class="video-js" controls></video></div>
-<script src="//players.brightcove.net/1752604059001/0b0bd7d7-6907-4e12-a644-747b38fab305_default/index.min.js"></script>
  
+<head>
+    <meta charset="UTF-8">
+    <title>Load Player Dynamically</title>
+   
+    <!-- Page styles -->
+    <style id="pageStyles">
+        #video_1 {
+            width: 640px;
+            height: 360px;
+        }
+    </style>
+</head>
+ 
+<body>
+    <div class="player-block">
+        <div id="placeHolder" style="background-color:#64AAB2;width:640px;height:360px;text-align: center;">
+            <button onclick="addPlayer()">Add Player</button>
+        </div>
+    </div>
+ 
+ 
+    <script type="text/JavaScript">
+        var myPlayer,
+            playerHTML,
+            playerData = { 
+                "accountID" : "1752604059001",
+                "playerID" : "0a69b53e-92cf-40b5-b17e-3ff6b09a3f1b"
+            };
+    
+        function addPlayer (){
+            // dynamically build the player video element
+            playerHTML = "<video id=\"video_1\" data-account=\"" + playerData.accountID + "\" data-player=\"" + playerData.playerID + "\" data-embed=\"default\" class=\"video-js\" controls autoplay></video>";
+            // inject the player code into the DOM
+            document.getElementById("placeHolder").innerHTML = playerHTML;
 
-<script>
-  videojs("myPlayerID").ready(function(){
-    var myPlayer = this;
-//    myPlayer.play();
-    myPlayer.options().inactivityTimeout = 0;
-  });
-</script>
-
-style="margin:0px auto;display:block"
+            // add and execute the player script tag
+            var s = document.createElement("script");
+            s.src = "//players.brightcove.net/" + playerData.accountID + "/" + playerData.playerID + "_default/index.min.js";
+            document.body.appendChild(s); 
+        } 
+    </script>
+  
 </body>
-
 </html>
-
