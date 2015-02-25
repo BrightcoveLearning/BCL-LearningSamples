@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Custom Endscreen Plugin</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 345px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="https://players.brightcove.net/videojs-custom-endscreen/dist/videojs-custom-endscreen.css">
+</head>
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="decfdaf5-0a6e-43f6-82d3-39d125c413c4"
+    data-embed="default"
+    data-video-id="4077874637001"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/decfdaf5-0a6e-43f6-82d3-39d125c413c4_default/index.min.js"></script>
+
+  <script type="text/javascript" src="https://players.brightcove.net/videojs-custom-endscreen/dist/videojs-custom-endscreen.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this;
+      myPlayer.customEndscreen({
+        "content": "<strong>Content</strong> for <em>custom</em> end screen"
+      })
+    });
+  </script>
+
+</body>
+</html>
