@@ -16,6 +16,15 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --insecure \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/default
+
+https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/0d92f482-49d9-44e6-ba1d-e2360dab838a_default
+https://players.api.brightcove.com/v1/accounts/1507807800001/players/6aac508a-741e-41a2-bc7a-5805644cf089/embeds/default
 
 curl -XPATCH --data '{
   "player": {

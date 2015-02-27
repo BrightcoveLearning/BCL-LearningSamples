@@ -26,7 +26,7 @@
     videojs("myPlayerID").ready(function(){
       var myPlayer = this;
 
-myPlayer.one("loadstart",function(){
+      myPlayer.one("loadstart",function(){
 
             var enTrack = myPlayer.addRemoteTextTrack({
               kind: 'captions',
@@ -35,8 +35,6 @@ myPlayer.one("loadstart",function(){
               src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos.vtt'
             });
 
-            console.log("enTrack:", enTrack)
-
             var frTrack = myPlayer.addRemoteTextTrack({
               kind: 'captions',
               language: 'fr',
@@ -44,13 +42,7 @@ myPlayer.one("loadstart",function(){
               src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos_french.vtt'
             });
 
-            console.log("frTrack:", frTrack)
-
-            console.log ("text tracks: ",myPlayer.remoteTextTracks());
-
-            //myPlayer.controlBar.captionsButton.update();
-
-});
+      });
     });
   </script>
     
