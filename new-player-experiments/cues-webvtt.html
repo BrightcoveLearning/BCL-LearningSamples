@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-account="1507807800001"
+    data-player="1a88a157-61db-44e8-b573-2a34895e0887"
+    data-embed="default"
+    data-video-id="2114345470001"
+    class="video-js" controls></video>
+
+  <p id="insertionPoint"></p>  
+
+  <script src="//players.brightcove.net/1507807800001/1a88a157-61db-44e8-b573-2a34895e0887_default/index.min.js"></script>
+ 
+ <script type="text/javascript">
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this;
+ 
+      myPlayer.one("loadstart",function(){
+        var cueTrack = myPlayer.addRemoteTextTrack({
+          kind: 'metadata',
+          src: 'http://solutions.brightcove.com/bcls/tests/player/cuepoints.vtt'
+        }); //end addRemoteTextTrack
+      }); //end loadstart
+
+      myPlayer.one("loadedmetadata",function(){
+        var tt = myPlayer.textTracks()[1];
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/><br/>";
+            jsonData = JSON.parse(tt.activeCues[0].text);
+            document.getElementById("insertionPoint").innerHTML += jsonData.title + ": " + jsonData.description + "<br/><br/>";
+          } else {
+            document.getElementById("insertionPoint").innerHTML += "Cue point duration over" + "<br/><br/>";
+          }
+        } //end oncuechange
+        myPlayer.play();
+        myPlayer.muted(true);
+      }); //end loadedmetadata
+
+    }); //end ready
+  </script>
+
+</body>
+
+</html>
