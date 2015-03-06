@@ -4,12 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Demo 1</title>
+  <style type="text/css">
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
 </head>
 
 <body>
 
+  <video id="myPlayerID"
+    data-account="1507807800001"
+    data-player="b736bd31-9361-4a4b-a814-aa7f723b4f84"
+    data-embed="default"
+    data-video-id="2114345472001"
+    class="video-js" controls></video>
 
+  <script src="//players.brightcove.net/1507807800001/b736bd31-9361-4a4b-a814-aa7f723b4f84_default/index.min.js"></script>
+
+  <script type="text/javascript">
+
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this;
+      myPlayer.play();
+      myPlayer.on("timeupdate",showUpdate);
+    });
+
+    function showUpdate(evt){
+      console.log(evt);
+    }
+
+
+  </script>
     
 </body>
 
 </html>
+
+
+
+
+

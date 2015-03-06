@@ -26,6 +26,15 @@ curl \
 https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/0d92f482-49d9-44e6-ba1d-e2360dab838a_default
 https://players.api.brightcove.com/v1/accounts/1507807800001/players/6aac508a-741e-41a2-bc7a-5805644cf089/embeds/default
 
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "techOrder": ["html5", "flash"]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 curl -XPATCH --data '{
   "player": {
     "template": {
