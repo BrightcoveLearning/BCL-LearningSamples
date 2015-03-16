@@ -15,7 +15,6 @@
   class="video-js" controls>
 
   <track kind="metadata" src="https://solutions.brightcove.com/bcls/tests/player/cuepoints.vtt" />
-
 </video>
  
   <p id="insertionPoint2"></p>  
@@ -27,8 +26,14 @@
       var myPlayer = this;
  
       myPlayer.one("loadedmetadata",function(){
-        var trackIndex = myPlayer.textTracks().length -1;
-        var tt = myPlayer.textTracks()[trackIndex];
+        var allTracks = myPlayer.textTracks(), 
+          trackIndex = allTracks.length -1,
+          tt = allTracks[trackIndex],
+          trackLength = allTracks.length;
+
+        for (var i = 0; i < trackLength; i++) {
+          console.log('kind: ', allTracks[i].kind);
+        }
         tt.oncuechange = function() {
           if(tt.activeCues[0] !== undefined){
             var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";

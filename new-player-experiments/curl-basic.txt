@@ -19,6 +19,20 @@ Video Cloud video: 3674727957001
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "Video Cloud CURL 10 March",
+      "configuration": {
+        "video_cloud": {
+          "video": "4093372393001"
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
   --insecure \
   --request GET \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/default

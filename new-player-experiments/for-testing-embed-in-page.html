@@ -7,7 +7,7 @@
    
     <!-- Page styles -->
     <style id="pageStyles">
-        #video_1 {
+        .video-js {
             width: 640px;
             height: 360px;
         }
@@ -15,33 +15,14 @@
 </head>
  
 <body>
-    <div class="player-block">
-        <div id="placeHolder" style="background-color:#64AAB2;width:640px;height:360px;text-align: center;">
-            <button onclick="addPlayer()">Add Player</button>
-        </div>
-    </div>
- 
- 
-    <script type="text/JavaScript">
-        var myPlayer,
-            playerHTML,
-            playerData = { 
-                "accountID" : "1752604059001",
-                "playerID" : "0a69b53e-92cf-40b5-b17e-3ff6b09a3f1b"
-            };
-    
-        function addPlayer (){
-            // dynamically build the player video element
-            playerHTML = "<video id=\"video_1\" data-account=\"" + playerData.accountID + "\" data-player=\"" + playerData.playerID + "\" data-embed=\"default\" class=\"video-js\" controls autoplay></video>";
-            // inject the player code into the DOM
-            document.getElementById("placeHolder").innerHTML = playerHTML;
+<video
+  data-account="1507807800001"
+  data-player="6454befd-5fb6-483a-ac90-bd8438b58c6a"
+  data-embed="default"
+  data-video-id="3674732414001"
+  class="video-js" controls></video>
 
-            // add and execute the player script tag
-            var s = document.createElement("script");
-            s.src = "//players.brightcove.net/" + playerData.accountID + "/" + playerData.playerID + "_default/index.min.js";
-            document.body.appendChild(s); 
-        } 
-    </script>
-  
+<script src="//players.brightcove.net/1507807800001/6454befd-5fb6-483a-ac90-bd8438b58c6a_default/index.min.js"></script>
+   
 </body>
 </html>

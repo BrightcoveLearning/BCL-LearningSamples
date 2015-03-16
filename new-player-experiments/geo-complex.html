@@ -22,15 +22,15 @@ sched 3934294723001
     data-account="1486906377"
     data-player="77a8e8b7-e8d1-4a3c-8a1b-292ba8233006"
     data-embed="default"
-    data-video-id="4040394419001"
+    data-video-id="3930525483001"
     class="video-js" controls></video>
      
-    <p id="textTarget">Here is text:</p>
+  <p id="textTarget">Here is text:</p>
 
   <script src="//players.brightcove.net/1486906377/77a8e8b7-e8d1-4a3c-8a1b-292ba8233006_default/index.min.js"></script>
 
   <script type="text/javascript">
-    videojs("myPlayerID").ready(function () {
+    videojs('myPlayerID').one('bc-catalog-error', function(){
       var myPlayer = this,
         specificError;
       if (myPlayer.catalog.error != undefined) {
@@ -43,6 +43,10 @@ sched 3934294723001
           document.getElementById("textTarget").innerHTML = "The following error has occurred: " + specificError.message;
         };
       };
+    });
+
+    videojs("myPlayerID").ready(function () {
+      var myPlayer = this;
     });
   </script>
     
