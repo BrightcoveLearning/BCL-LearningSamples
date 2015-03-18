@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 480px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="82124688-845d-410f-94a5-3fada926727e"
+    data-embed="default"
+    data-video-id="3851380732001"
+    class="video-js" controls></video>
+
+  <p id="insertionPoint"></p>    
+
+  <script src="//players.brightcove.net/1752604059001/82124688-845d-410f-94a5-3fada926727e_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this,
+        videoID,
+        videoName,
+        totalRenditions,
+        mp4Ara=[],
+        highestQuality,
+        downloadString,
+        overlay,
+        cotrolBar,
+        newElement;
+      videoID = myPlayer.options()['data-video-id'];
+      myPlayer.catalog.getVideo(videoID, function(error, video) {
+        myPlayer.catalog.load(video);
+        videoName = myPlayer.mediainfo['name'];
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+        for (var i = 0; i < totalRenditions; i++) {
+          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
+            mp4Ara.push(rendtionsAra[i]);
+          };
+        };
+        mp4Ara.sort( function (a,b){
+          return b.size - a.size;
+        });
+        highestQuality= mp4Ara[0].src;
+        downloadString = "<a href='" + highestQuality + "' download='" + videoName + "'>Download the Video</a>";
+        document.getElementById('insertionPoint').innerHTML = downloadString;
+      });
+    });
+  </script>
+    
+</body>
+
+</html>

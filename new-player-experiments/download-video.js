@@ -5,13 +5,12 @@ videojs.plugin('downloadVideoPlugin', function() {
     totalRenditions,
     mp4Ara=[],
     highestQuality,
-    downloadString,
-    overlay;
+    controlBar,
+    newElement;
   videoID = myPlayer.options()['data-video-id'];
   myPlayer.catalog.getVideo(videoID, function(error, video) {
     myPlayer.catalog.load(video);
     videoName = myPlayer.mediainfo['name'];
-console.log(myPlayer.mediainfo);    
     rendtionsAra = myPlayer.mediainfo.sources;
     totalRenditions = rendtionsAra.length;
     for (var i = 0; i < totalRenditions; i++) {
@@ -23,12 +22,11 @@ console.log(myPlayer.mediainfo);
       return b.size - a.size;
     });
     highestQuality= mp4Ara[0].src;
-    downloadString = "<a href='" + highestQuality + "' download='" + videoName + "'>Download the Video</a>";
-    overlay = document.createElement('p');
-    overlay.innerHTML = downloadString;
-    overlay.className = 'download-overlay';
-    myPlayer.el().appendChild(overlay);
-    var elements = document.getElementsByClassName('vjs-fullscreen-control');
-    console.log(elements);
+    newElement = document.createElement('div');
+    newElement.style['padding-left'] = '5px';
+    newElement.style['margin-top'] = '10px';
+    newElement.innerHTML = "<a href='" + highestQuality + "' download='" + videoName + "'><img src='http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png' /></a>";
+    controlBar = document.getElementsByClassName('vjs-control-bar');
+    controlBar[0].appendChild(newElement);
   });
 });

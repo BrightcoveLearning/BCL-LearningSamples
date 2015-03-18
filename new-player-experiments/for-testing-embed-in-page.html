@@ -15,14 +15,24 @@
 </head>
  
 <body>
-<video
+  <video
   data-account="1507807800001"
   data-player="6454befd-5fb6-483a-ac90-bd8438b58c6a"
   data-embed="default"
-  data-video-id="3674732414001"
+  data-video-id=""
   class="video-js" controls></video>
 
 <script src="//players.brightcove.net/1507807800001/6454befd-5fb6-483a-ac90-bd8438b58c6a_default/index.min.js"></script>
+ 
+<script type="text/javascript" src="http://players.brightcove.net/videojs-live-dvrux/videojs-live-dvrux.min.js"></script>
+
+<script type="text/javascript">
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this;
+    myPlayer.dvrux();
+  });
+</script>
+
    
 </body>
 </html>

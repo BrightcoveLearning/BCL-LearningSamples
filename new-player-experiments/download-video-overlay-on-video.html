@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 480px;
+    }
+    .download-overlay {
+        background-color: #FFFFFF;
+        color: #000000;
+        font-size: 1em;
+        padding: 2px;
+        position: absolute;
+        top: 395px;
+        left: 485px;
+        width: 135px;
+        text-align: center;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="82124688-845d-410f-94a5-3fada926727e"
+    data-embed="default"
+    data-video-id="3851380732001"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/82124688-845d-410f-94a5-3fada926727e_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this,
+        videoID,
+        videoName,
+        totalRenditions,
+        mp4Ara=[],
+        highestQuality,
+        downloadString,
+        overlay;
+      videoID = myPlayer.options()['data-video-id'];
+      myPlayer.catalog.getVideo(videoID, function(error, video) {
+        myPlayer.catalog.load(video);
+console.log(myPlayer.mediainfo);      
+        videoName = myPlayer.mediainfo['name'];
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+        for (var i = 0; i < totalRenditions; i++) {
+          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
+            mp4Ara.push(rendtionsAra[i]);
+          };
+        };
+        mp4Ara.sort( function (a,b){
+          return b.size - a.size;
+        });
+        highestQuality= mp4Ara[0].src;
+        downloadString = "<a href='" + highestQuality + "' download='" + videoName + "'>Download the Video</a>";
+        overlay = document.createElement('p');
+        overlay.innerHTML = downloadString;
+        overlay.className = 'download-overlay';
+        myPlayer.el().appendChild(overlay);
+      });
+    });
+  </script>
+    
+</body>
+
+</html>
