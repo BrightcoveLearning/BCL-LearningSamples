@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Example: Localize Player</title>
+</head>
+
+<body>
+ <video id="myPlayerID"
+  data-account="1507807800001"
+  data-player="90ffcc80-c363-424e-96fe-3f3ff2f99e97"
+  data-embed="default"
+  data-video-id=""
+  class="video-js" controls></video>
+
+ 
+    <p id="textTarget">In here: </p>
+
+<script src="//players.brightcove.net/1507807800001/90ffcc80-c363-424e-96fe-3f3ff2f99e97_default/index.min.js"></script>
+ 
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+    });
+  </script> 
+
+</body>
+
+</html>

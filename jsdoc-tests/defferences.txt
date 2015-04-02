@@ -1,0 +1,5 @@
+videojs             JSdoc
+1. '''js            Use HTML
+2. '''html          Use HTML
+3. @constructs      @constructor
+4. 

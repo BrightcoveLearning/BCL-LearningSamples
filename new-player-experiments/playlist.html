@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Tester Perform</title>
+</head>
+
+<body>
+
+<video id="myPlayerID"
+  data-account="1507807800001"
+  data-player="959defc6-cbbb-496b-a7cf-90330875363e"
+  data-embed="default"
+  class="video-js" controls></video>
+
+<p><button onclick="nextVideo()">next video</button></p>
+<p><button onclick="previousVideo()">previous video</button></p>
+<p><button onclick="goto3()">jump to 4th video</button></p>
+
+<script src="//players.brightcove.net/1507807800001/959defc6-cbbb-496b-a7cf-90330875363e_default/index.min.js"></script>
+ 
+ 
+<script type="text/javascript">
+  var myPlayer;
+
+  videojs('myPlayerID').ready(function(){
+    myPlayer = this;
+    myPlayer.playlist([{
+      "sources": [{
+        "src": "http://media.w3.org/2010/05/sintel/trailer.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": "http://media.w3.org/2010/05/sintel/poster.png"
+    }, {
+      "sources": [{
+        "src": "http://media.w3.org/2010/05/bunny/trailer.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": "http://media.w3.org/2010/05/bunny/poster.png"
+    }, {
+      "sources": [{
+        "src": "http://vjs.zencdn.net/v/oceans.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": "http://www.videojs.com/img/poster.jpg"
+    }, {
+      "sources": [{
+        "src": "http://media.w3.org/2010/05/bunny/movie.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": "http://media.w3.org/2010/05/bunny/poster.png"
+    }, {
+      "sources": [{
+        "src": "http://media.w3.org/2010/05/video/movie_300.mp4",
+        "type": "video/mp4"
+      }],
+      "poster": "http://media.w3.org/2010/05/video/poster.png"
+    }]);
+    myPlayer.playlist.autoadvance(0);
+    console.log('playlist',myPlayer.playlist());
+  });  
+
+  function nextVideo(){
+    myPlayer.playlist.next();
+    console.log('currentItem: ', myPlayer.playlist.currentItem());
+  }
+  function previousVideo(){
+    myPlayer.playlist.previous();
+  }
+  function goto3(){
+    myPlayer.playlist.currentItem(3);
+  }
+</script>
+    
+</body>
+
+</html>
