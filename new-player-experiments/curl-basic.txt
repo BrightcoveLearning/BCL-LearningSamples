@@ -70,17 +70,6 @@ curl \
     }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
-curl -XPATCH --data '{
-  "player": {
-    "template": {
-      "version": "1.11.1"
-    }
-  }
-}' \
---header 'Content-Type: application/json' \
-'https://players.api.brightcove.com/v1/accounts/123/players/1234/configuration'
-
-
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
