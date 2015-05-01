@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="82124688-845d-410f-94a5-3fada926727e"
+    data-embed="default"
+    data-video-id="4093643993001"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/82124688-845d-410f-94a5-3fada926727e_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+        videoID,
+        rendtionsAra = [],
+        totalRenditions,
+        wantedRendition;
+      videoID = myPlayer.options()['data-video-id'];
+      myPlayer.catalog.getVideo(videoID, function(error, video) {
+        myPlayer.catalog.load(video);
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+        for (var i = 0; i < totalRenditions; i++) {
+          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src') && rendtionsAra[i].width === 640 && rendtionsAra[i].height === 360) {
+            wantedRendition = rendtionsAra[i];
+            break;
+          };
+        };
+        console.log('wantedRendition', wantedRendition);
+        myPlayer.src({"src": wantedRendition.src, "type": "video/mp4"});
+      });
+    });
+  </script>
+
+</body>
+
+</html>

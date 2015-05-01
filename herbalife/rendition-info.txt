@@ -1,0 +1,62 @@
+plugin - tester.html: 57
+[{
+  "src": "http://c.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4139728396001&pubId=4129125550001",
+  "container": "M2TS",
+  "codec": "H264",
+  "type": "application/vnd.apple.mpegurl"
+}, {
+  "src": "https://secure.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4139728396001&pubId=4129125550001&secure=true",
+  "container": "M2TS",
+  "codec": "H264",
+  "type": "application/vnd.apple.mpegurl"
+}, {
+  "width": 0,
+  "src": "https://bcsecure01-a.akamaihd.net/3/4129125550001/201504/3074/4129125550001_4156344668001_4139728396001.mp4",
+  "size": 4398355,
+  "height": 0,
+  "duration": 272578,
+  "container": "MP4",
+  "codec": "NONE",
+  "asset_id": "4156344668001",
+  "type": "video/mp4"
+}, {
+  "width": 640,
+  "src": "https://bcsecure01-a.akamaihd.net/3/4129125550001/201504/3074/4129125550001_4156345066001_4139728396001.mp4",
+  "size": 24822936,
+  "height": 360,
+  "duration": 272578,
+  "container": "MP4",
+  "codec": "H264",
+  "asset_id": "4156345066001",
+  "type": "video/mp4"
+}, {
+  "width": 480,
+  "src": "https://bcsecure01-a.akamaihd.net/3/4129125550001/201504/3074/4129125550001_4156345081001_4139728396001.mp4",
+  "size": 18707279,
+  "height": 270,
+  "duration": 272578,
+  "container": "MP4",
+  "codec": "H264",
+  "asset_id": "4156345081001",
+  "type": "video/mp4"
+}, {
+  "width": 1024,
+  "src": "https://bcsecure01-a.akamaihd.net/3/4129125550001/201504/3074/4129125550001_4156345084001_4139728396001.mp4",
+  "size": 41824873,
+  "height": 576,
+  "duration": 272578,
+  "container": "MP4",
+  "codec": "H264",
+  "asset_id": "4156345084001",
+  "type": "video/mp4"
+}, {
+  "width": 1280,
+  "src": "https://bcsecure01-a.akamaihd.net/3/4129125550001/201504/3074/4129125550001_4156346255001_4139728396001.mp4",
+  "size": 63913699,
+  "height": 720,
+  "duration": 272578,
+  "container": "MP4",
+  "codec": "H264",
+  "asset_id": "4156346255001",
+  "type": "video/mp4"
+}]

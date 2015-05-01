@@ -3,44 +3,36 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Playlist Tester Perform</title>
   <style type="text/css">
-    .video-js {
-      float: left;
-      margin: 15px;
-      width: 440px;
-      height: 280px;
-    }
-    .vjs-playlist {
-      width: 250px;
-      float: left;
-      margin: 15px;
+    button {
+      width: 120px;
     }
   </style>
 </head>
 
 <body>
+
   <video id="myPlayerID"
-    data-playlist-id="4179050855001"
     data-account="1752604059001"
     data-player="f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe"
     data-embed="default"
     class="video-js" controls></video>
 
-  <ol class="vjs-playlist"></ol>
-
   <script src="//players.brightcove.net/1752604059001/f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe_default/index.min.js"></script>
-
+   
   <script type="text/javascript">
+    var myPlayer;
+
     videojs('myPlayerID').ready(function(){
-      var myPlayer = this;
-      myPlayer.catalog.getPlaylist('4179050855001', function(error, playlist){
-        myPlayer.catalog.load(playlist);      
-        myPlayer.playlist.autoadvance(5);
-      });
+      myPlayer = this;
+      myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
+        //deal with error
+        myPlayer.catalog.load(playlist);
+      })
     });
   </script>
-   
+    
 </body>
 
 </html>

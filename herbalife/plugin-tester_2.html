@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>plugin tester</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script>document.createElement('video')</script>
+</head>
+
+<body>
+
+	<video id="myPlayerID"
+	  data-account="4005328972001"
+	  data-player="ed69c5b5-da54-40ba-854d-36f5104dca4b"
+	  data-embed="default"
+	  video-id="4198116426001"
+	  width="620px" height="350px"
+	  class="video-js" controls></video>
+
+	<script src="//players.brightcove.net/4005328972001/ed69c5b5-da54-40ba-854d-36f5104dca4b_default/index.js"></script>
+
+	<script type="text/javascript">
+		var hasFlash = false;
+		try {
+		    hasFlash = Boolean(new ActiveXObject('ShockwaveFlash.ShockwaveFlash'));
+		} catch(exception) {
+		    hasFlash = ('undefined' != typeof navigator.mimeTypes['application/x-shockwave-flash']);
+		}	
+		console.log(hasFlash);
+
+		if (/MSIE (\d+\.\d+);/.test(navigator.userAgent)) {
+			//test for MSIE x.x;
+			var ieversion=new Number(RegExp.$1)
+			var ie9orEarlier = false;
+			// capture x.x portion and store as a number
+			if (ieversion<=9){
+				ie9orEarlier = true;
+				console.log("You're using IE9 or earlier");
+			} else {
+				console.log("n/a");
+			}
+		} else {
+			console.log('not IE');	
+		}
+
+		videojs('myPlayerID').ready(function(){
+			var myPlayer = this,
+			videoID,
+			renditionsAra = [],
+			totalRenditions,
+			wantedRendition;
+		 
+			//if(!hasFlash || ie9orEarlier) {
+				videoID = myPlayer.options()['video-id'];
+				myPlayer.catalog.getVideo(videoID, function(error, video) {
+					myPlayer.catalog.load(video);
+					renditionsAra = myPlayer.mediainfo.sources;
+					totalRenditions = renditionsAra.length;
+					for (var i = 0; i < totalRenditions; i++) {
+						if (renditionsAra[i].container === "MP4" && renditionsAra[i].hasOwnProperty('src') && renditionsAra[i].width === 640 && renditionsAra[i].height === 360){ 
+							wantedRendition = renditionsAra[i];
+							video.sources = [wantedRendition];
+							break;
+					  };
+					};
+					myPlayer.catalog.load(video);
+				});
+			//}
+		});
+	</script>
+
+</body>
+</html>

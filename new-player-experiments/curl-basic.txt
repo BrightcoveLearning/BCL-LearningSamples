@@ -1,6 +1,10 @@
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
 
+//playlist API credentials
+f8abe626-fed1-4dda-af53-949b4c10b2ce
+LbKp2FoWQSmrm_TZpFducDWVCUbJN1slOyZsFImwmyniyvsSdFbBWl9zVSrMAcRAWI9NpbZ2uJpUwbtEqhPqsg
+
 //From link to autogenerate request for token
 curl -L http://players.brightcove.com/docs/alpha/create_client_credentials.sh | bash -s AEnTxTi2qk1fIB5adNKr9XuahxSiW5KZIAK1pnJ0zD9u3GshaXbyGwheKvWD5mBTUN-yxcU5aCyZFCjdY6a7InHSKiCXyN-RbNVza4gRVtaqGzMg9j1sB2s 1507807800001 video-cloud/player/all
 
@@ -15,6 +19,20 @@ export PLAYER_ID=
 export EMBED_ID=
 
 Video Cloud video: 3674727957001
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "player": {
+        "template": {
+          "version": "1.14.3"
+        }
+      }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 
 curl \
   --header "Content-Type: application/json" \
@@ -42,11 +60,12 @@ curl \
   --user $EMAIL \
   --request POST \
   --data '{
-      "name": "Video Cloud CURL 10 March",
+      "name": "For Kellie 417",
       "configuration": {
         "video_cloud": {
-          "video": "4093372393001"
-        }
+          "playlist": "1579619681001"
+        },
+        "autoadvance": 3
       }
     }' \
     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
@@ -66,7 +85,16 @@ curl \
   --user $EMAIL \
   --request PATCH \
   --data '{
-      "techOrder": ["html5", "flash"]
+      "techOrder": ["html5", "hls", "flash"]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "techOrder": ["html5", "hls", "flash"]
     }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
@@ -79,7 +107,8 @@ curl \
         "template": {
           "version": "1.14.0"
         }
-      }
+      },
+      "playlist": true
   }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
@@ -88,7 +117,8 @@ curl \
   --user $EMAIL \
   --request PATCH \
   --data '{
-      "playlist": true
+      "playlist": true,
+      "autoadvance": 5
     }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 

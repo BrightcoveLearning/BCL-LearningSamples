@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flash/HTML</title>
+  <style>
+    .video-js {
+        width: 640px;
+        height: 360px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.css">
+</head>
+<body>
+
+
+  <video
+    data-account="1752604059001"
+    data-player="616d343c-33f6-45c3-8484-b889eb8095e1"
+    data-embed="default"
+    data-video-id="4172255216001"
+    data-setup='{"techOrder": ["html5", "hls", "flash"]}'
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/616d343c-33f6-45c3-8484-b889eb8095e1_default/index.min.js"></script>
+   
+  <script src="//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.js"></script>
+
+  <script type="text/javascript">
+    var options = 
+    {
+      "Flash": {
+        "networkId": 90750,
+        "profile": "3pqa_profile",
+        "sdkurl": "http://adm.fwmrm.net/p/release/latest-AS3/adm/dbg/AdManager.swf",
+        "serverUrl": "http://cue.v.fwmrm.net/ad/g/1",
+        "siteSectionCustomId": "as3_demo_site_section",
+        "temporalSlots": [{
+          "adUnit": "preroll",
+          "id": "Preroll_1",
+          "timePosition": 0
+        }, {
+          "adUnit": "postroll",
+          "id": "Postroll_1",
+          "timePosition": 60
+        }, {
+          "adUnit": "midroll",
+          "id": "Midroll_1",
+          "timePosition": 5
+        }],
+        "videoAssetCustomId": "as3_demo_video_asset",
+        "videoAssetDuration": 500
+      },
+      "Html5": {
+        "keyValues": [{
+          "feature": "simpleAds",
+          "module": "DemoPlayer"
+        }, {
+          "feature": "trackingURLs"
+        }],
+        "networkId": 96749,
+        "profile": "global-js",
+        "sdkurl": "http://adm.fwmrm.net/p/release/5.5.0-JS/adm/prd/AdManager.js",
+        "serverUrl": "http://cue.v.fwmrm.net/ad/g/1",
+        "siteSectionCustomId": "DemoSiteGroup.01",
+        "temporalSlots": [{
+          "adUnit": "preroll",
+          "id": "Preroll_1",
+          "timePosition": 0
+        }, {
+          "adUnit": "postroll",
+          "id": "Postroll_1",
+          "timePosition": 60
+        }, {
+          "adUnit": "midroll",
+          "id": "Midroll_1",
+          "timePosition": 5
+        }],
+        "videoAssetCustomId": "DemoVideoGroup.01",
+        "videoAssetDuration": 500
+      },
+      "adTechOrder": [
+        "flash",
+        "html5"
+      ],
+      "debug": true,
+      "prerollTimeout": 1000,
+      "timeout": 5000
+    };
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.FreeWheelPlugin(options);
+    });  
+  </script>
+
+</body>
+
+</html>

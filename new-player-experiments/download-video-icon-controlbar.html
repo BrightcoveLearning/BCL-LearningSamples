@@ -49,8 +49,10 @@
         });
         highestQuality= mp4Ara[0].src;
         newElement = document.createElement('div');
-        newElement.style['padding-left'] = '5px';
-        newElement.style['margin-top'] = '10px';
+        //newElement.style['padding-left'] = '5px';
+        newElement.style['padding-right'] = '5px';
+        newElement.style['margin-top'] = '18px';
+        newElement.style['order'] = 9;  
         newElement.innerHTML = "<a href='" + highestQuality + "' download='" + videoName + "'><img src='http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png' /></a>";
         controlBar = document.getElementsByClassName('vjs-control-bar');
         controlBar[0].appendChild(newElement);
