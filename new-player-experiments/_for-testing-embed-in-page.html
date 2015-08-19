@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+ 
+<head>
+    <meta charset="UTF-8">
+    <title>Embed in page tester</title>
+</head> 
+<style type="text/css">
+  .video-js{
+    height: 343px;
+    width: 640px;
+  }
+</style>
+<body>
+
+<video id="myPlayerID"
+  data-video-id="3495887198001"
+  data-account="1507807800001"
+  data-player="default"
+  data-embed="default"
+  class="video-js" controls autoplay></video>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+<script type="text/javascript">
+  videojs("myPlayerID").on('loadedmetadata',function(){
+    var myPlayer = this;
+    myPlayer.muted(true);
+  });
+</script>
+
+
+</body>
+</html>
