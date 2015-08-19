@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Video.js Overlay</title>
+
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+  <style type="text/css">
+    .video-js {
+      width: 600px;
+      height: 338px;
+    }
+
+    .vjs-overlay, .vjsoverlay.vjs-overlay-top-left {
+      font-size: 2em;
+      width: 95%;
+      color: red;
+    }
+
+    #myPlayerID .vjs-big-play-button {
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="3495887198001"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this;
+      myPlayer.catalog.getVideo(myPlayer.options()['data-video-id'], function(error, video) {
+        //deal with error
+        myPlayer.catalog.load(video);
+        myPlayer.overlay({
+          overlays: [{
+            content: myPlayer.mediainfo.name,
+            start: 'loadedmetadata',
+            end: 'play'
+          }]
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -34,12 +34,10 @@
       myPlayer = this;
       myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
         myPlayer.catalog.load(playlist);
+        console.log('player.options()[data-playlist-id]:', myPlayer.options()['data-playlist-id']);
         console.log('mediainfo', myPlayer.mediainfo);
         myPlayer.playlist.autoadvance(0);
-        console.log(myPlayer.playlist());
-        console.log ('currentItem', myPlayer.playlist.currentItem());
-        console.log('contains', myPlayer.playlist.contains(myPlayer.currentSrc()));
-        console.log('indexOf', myPlayer.playlist.indexOf(myPlayer.currentSrc()));
+
       })
     });
     function nextVideo(){

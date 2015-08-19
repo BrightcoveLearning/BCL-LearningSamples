@@ -13,27 +13,25 @@
 </head>
 
 <body>
-  <div class="playerblock">
-    <div id="placeHolder" style="backgroundcolor:#64AAB2;width:640px;height:360px;textalign: center;">
-      <button onclick="addPlayer()">Add Player</button>
-    </div>
+  <div id="placeHolder">
+    <button onclick="addPlayer()">Add Player</button>
   </div>
-  <! custom script >
+  <!-- custom script -->
   <script type="text/JavaScript">
     var myPlayer,
       playerHTML,
-      playerData = {
-        "accountID": "1752604059001",
-        "playerID": "04ee9f58-9d08-43ea-803f-abda86776db2"
+      playerData = { 
+          'accountId' : '1752604059001',
+          'playerId' : '04ee9f58-9d08-43ea-803f-abda86776db2',
+          'videoId' : '4172255216001'
       };
 
     function addPlayer() {
       // dynamically build the player video element
-      playerHTML = "<iframe src=\"//players.brightcove.net/" + playerData.accountID + "/" +
-        playerData.playerID + "_default/index.html\"" +
-        " allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>";
+      playerHTML = '<iframe src=\"//players.brightcove.net/' + playerData.accountId + '/' + playerData.playerId + '_default/index.html?videoId=' + playerData.videoId + '\"' + ' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
+      
       // inject the player code into the DOM
-      document.getElementById("placeHolder").innerHTML = playerHTML;
+      document.getElementById('placeHolder').innerHTML = playerHTML;
     }
   </script>
 </body>

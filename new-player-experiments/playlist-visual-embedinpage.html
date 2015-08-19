@@ -5,42 +5,31 @@
   <meta charset="UTF-8">
   <title>Untitled Document</title>
   <style type="text/css">
-    .video-js {
-      float: left;
-      margin: 15px;
-      width: 440px;
-      height: 280px;
-    }
-    .vjs-playlist {
-      width: 250px;
-      float: left;
-      margin: 15px;
-    }
+.video-js {
+  width: 480px;
+  height: 270px;
+  float: left;
+  margin: 15px;
+}
+.vjs-playlist {
+  width: 500px;
+  float: left;
+}
+
   </style>
 </head>
 
 <body>
-  <video id="myPlayerID"
-    data-playlist-id="4179050855001"
-    data-account="1752604059001"
-    data-player="f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe"
+  <video
+    data-playlist-id="4400450992001"
+    data-account="1507807800001"
+    data-player="7376185c-99ed-4bad-ac6a-c0c493c6ba1f"
     data-embed="default"
     class="video-js" controls></video>
 
   <ol class="vjs-playlist"></ol>
 
-  <script src="//players.brightcove.net/1752604059001/f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe_default/index.min.js"></script>
-
-  <script type="text/javascript">
-    videojs('myPlayerID').ready(function(){
-      var myPlayer = this;
-      myPlayer.catalog.getPlaylist('4179050855001', function(error, playlist){
-        myPlayer.catalog.load(playlist);      
-        myPlayer.playlist.autoadvance(5);
-      });
-    });
-  </script>
-   
+  <script src="//players.brightcove.net/1507807800001/7376185c-99ed-4bad-ac6a-c0c493c6ba1f_default/index.min.js"></script>
 </body>
 
 </html>

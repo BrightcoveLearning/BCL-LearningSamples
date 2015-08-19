@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 3</title>
+  <style type="text/css">
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-account="1397315819001"
+    data-player="7f17515f-879d-4e5e-a0d9-123f62774c81"
+    data-embed="default"
+    class="video-js" controls></video>
+  <br />
+
+  <div id="textTarget"></div>
+
+  <script src="//players.brightcove.net/1397315819001/7f17515f-879d-4e5e-a0d9-123f62774c81_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function () {
+      var myPlayer = this,
+        dynamicHTML,
+        videoIDfromURL = getQuerystring('myVideoID');
+      console.log('videoIDfromURL',videoIDfromURL);
+      myPlayer.catalog.getVideo(videoIDfromURL, function (error, video) {
+        console.log("error", error)
+        myPlayer.catalog.load(video);
+        console.log("mediainfo after load: ", myPlayer.mediainfo);
+        dynamicHTML = "<p>Video Title: <strong>" + myPlayer.mediainfo.name + "</strong></p>";
+        dynamicHTML += "<p>Description: <strong>" + myPlayer.mediainfo.description + "</strong></p>";
+        document.getElementById("textTarget").innerHTML = dynamicHTML;
+        myPlayer.play();
+      })
+    });
+
+    /*
+    * usage: foo = getQuerystring(“bctid”, null);
+    * foo will be equal to value of query param bctid
+    * note that the default_ parameter is what you will get back
+    * if the key isn’t found
+    */
+    getQuerystring = function (key, default_) {
+        var regex, qs;
+        if (default_==null) default_="";
+        key = key.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        regex = new RegExp("[\\?&]"+key+"=([^&#]*)");
+        qs = regex.exec(window.location.href);
+        if (qs === null) {
+            return default_;
+        } else {
+            return qs[1];
+        }
+    }
+
+  </script>
+</body>
+
+</html>

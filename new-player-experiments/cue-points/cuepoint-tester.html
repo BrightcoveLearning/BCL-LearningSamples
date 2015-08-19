@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1507807800001"
+    data-player="6aac508a-741e-41a2-bc7a-5805644cf089"
+    data-embed="default"
+    data-video-id="1507781667001"
+    class="video-js" controls></video>
+
+  <p id="insertionPoint"></p>
+
+  <script src="//players.brightcove.net/1507807800001/6aac508a-741e-41a2-bc7a-5805644cf089_default/index.min.js"></script>
+
+  <script>
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this,
+        cuePointAra=[],
+        allCuePointData;
+      myPlayer.catalog.getVideo(myPlayer.options()['data-video-id'], function(error, video) {
+        //deal with error
+        myPlayer.catalog.load(video);
+        cuePointAra = myPlayer.mediainfo.cue_points;
+        console.log('All cue point info:', cuePointAra);
+        var tt = myPlayer.textTracks()[0];
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
+            allCuePointData = getSubArray(cuePointAra,'time',tt.activeCues[0].startTime);
+            console.log('cue point data:', allCuePointData);
+            console.log('cue point metadata:', allCuePointData[0].metadata);
+          }
+        }
+        myPlayer.play();
+        myPlayer.muted(true);
+      });
+
+      function getSubArray(targetArray, objProperty, value) {
+        var i, totalItems = targetArray.length,
+          objFound = false,
+          idxArr = [];
+        for (i = 0; i < totalItems; i++) {
+          if (targetArray[i][objProperty] === value) {
+            objFound = true;
+            idxArr.push(targetArray[i]);
+          }
+        }
+        return idxArr;
+      };
+    });
+  </script>
+
+</body>
+</html>

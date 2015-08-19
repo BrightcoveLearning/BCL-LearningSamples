@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 480px;
+    }
+  </style></head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="3495887198001"
+    data-account="1507807800001"
+    data-player="4c8eb732-ba76-485c-a906-407365721633"
+    data-embed="default"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1507807800001/4c8eb732-ba76-485c-a906-407365721633_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').one('bc-catalog-error', function(){
+      var myPlayer = this,
+        specificError;
+      myPlayer.errors({
+        'errors': {
+          '-3': {
+            'headline': 'The video you are trying to watch cannot be viewed because of domain restrictions.',
+            'type': 'DOMAIN'
+          }
+        }
+      });
+      if (typeof(myPlayer.catalog.error) !== 'undefined') {
+        specificError = myPlayer.catalog.error.data[0];
+        if (specificError !== 'undefined' & specificError.error_subcode == "DOMAIN") {
+          myPlayer.error({code:'-3'});
+        };
+      };
+    });
+
+    videojs("myPlayerID").ready(function(){
+      var myPlayer = this;
+    });
+  </script>
+</body>
+
+</html>

@@ -9,21 +9,19 @@
 <body>
  <video id="myPlayerID"
   data-account="1507807800001"
-  data-player="90ffcc80-c363-424e-96fe-3f3ff2f99e97"
+  data-player="ce7b9fdc-7fad-4b95-a2a7-7be6b6aacea5"
   data-embed="default"
-  data-video-id=""
-  class="video-js" controls></video>
+  class="video-js" controls
+  data-setup='{"language":"de"}'></video>
+<script src="//players.brightcove.net/1507807800001/ce7b9fdc-7fad-4b95-a2a7-7be6b6aacea5_default/index.min.js"></script>
 
- 
-    <p id="textTarget">In here: </p>
 
-<script src="//players.brightcove.net/1507807800001/90ffcc80-c363-424e-96fe-3f3ff2f99e97_default/index.min.js"></script>
- 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this;
+      myPlayer.language('de');
     });
-  </script> 
+  </script>
 
 </body>
 

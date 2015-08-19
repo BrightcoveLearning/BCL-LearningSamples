@@ -1,0 +1,25 @@
+#vjs_video_3 {
+  position: relative;
+  width: 100%;
+}
+
+.vjs-playlist.vjs-playlist {
+  width: 640px;
+  white-space: nowrap;
+  display: block;
+  overflow-x: scroll;
+  position: relative;
+  height: 130px;
+}
+
+.vjs-playlist-item {
+  display: inline-block;
+  height: 75px;
+
+}
+cite.vjs-playlist-name {
+  display:none;
+}
+.vjs-playlist-description {
+  display: none;
+}

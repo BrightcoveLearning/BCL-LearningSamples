@@ -27,7 +27,7 @@
 
     videojs('myPlayerID').ready(function(){
       myPlayer = this;
-      myPlayer.one('loadstart',function(){
+      myPlayer.on('loadstart',function(){
         console.log('mediainfo', myPlayer.mediainfo);
         myPlayer.playlist.autoadvance(0);
         console.log(myPlayer.playlist());
@@ -35,7 +35,7 @@
       });
     });
   </script>
-    
+
 </body>
 
 </html>

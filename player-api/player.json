@@ -1,0 +1,763 @@
+[
+    {
+        "comment": "/**\n * An instance of the `Player` class is created when any of the Video.js setup methods are used to initialize a video.\n *\n * ```js\n * var myPlayer = videojs('example_video_1');\n * ```\n *\n * In the following example, the `data-setup` attribute tells the Video.js library to create a player instance when the library is ready.\n *\n * ```html\n * <video id=\"example_video_1\" data-setup='{}' controls>\n *   <source src=\"my-source.mp4\" type=\"video/mp4\">\n * </video>\n * ```\n *\n * After an instance has been created it can be accessed globally using `Video('example_video_1')`.\n *\n * @param {Element} tag        The original video tag used for configuring options\n * @param {Object=} options    Player options\n * @param {Function=} ready    Ready callback function\n * @extends Component\n * @class Player\n */",
+        "meta": {
+            "range": [
+                0,
+                802
+            ],
+            "filename": "player.js",
+            "lineno": 1,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>An instance of the <code>Player</code> class is created when any of the Video.js setup methods are used to initialize a video.</p>\n<pre class=\"prettyprint source lang-js\"><code>var myPlayer = videojs('example_video_1');</code></pre><p>In the following example, the <code>data-setup</code> attribute tells the Video.js library to create a player instance when the library is ready.</p>\n<pre class=\"prettyprint source lang-html\"><code>&lt;video id=&quot;example_video_1&quot; data-setup='{}' controls>\n  &lt;source src=&quot;my-source.mp4&quot; type=&quot;video/mp4&quot;>\n&lt;/video></code></pre><p>After an instance has been created it can be accessed globally using <code>Video('example_video_1')</code>.</p>",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Element"
+                    ]
+                },
+                "description": "<p>The original video tag used for configuring options</p>",
+                "name": "tag"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "optional": true,
+                "description": "<p>Player options</p>",
+                "name": "options"
+            },
+            {
+                "type": {
+                    "names": [
+                        "function"
+                    ]
+                },
+                "optional": true,
+                "description": "<p>Ready callback function</p>",
+                "name": "ready"
+            }
+        ],
+        "augments": [
+            "Component"
+        ],
+        "kind": "class",
+        "name": "Player",
+        "longname": "Player",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * player's constructor function\n   *\n   * @constructs\n   * @method init\n   * @param {Element} tag        The original video tag used for configuring options\n   * @param {Object=} options    Player options\n   * @param {Function=} ready    Ready callback function\n   */",
+        "meta": {
+            "range": [
+                804,
+                1078
+            ],
+            "filename": "player.js",
+            "lineno": 25,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>player's constructor function</p>",
+        "alias": "{@thisClass}",
+        "kind": "function",
+        "name": "init",
+        "params": [
+            {
+                "type": {
+                    "names": [
+                        "Element"
+                    ]
+                },
+                "description": "<p>The original video tag used for configuring options</p>",
+                "name": "tag"
+            },
+            {
+                "type": {
+                    "names": [
+                        "Object"
+                    ]
+                },
+                "optional": true,
+                "description": "<p>Player options</p>",
+                "name": "options"
+            },
+            {
+                "type": {
+                    "names": [
+                        "function"
+                    ]
+                },
+                "optional": true,
+                "description": "<p>Ready callback function</p>",
+                "name": "ready"
+            }
+        ],
+        "longname": "init",
+        "scope": "global"
+    },
+    {
+        "comment": "/** \n   * Destroys the video player and does any necessary cleanup\n   *\n   *     myPlayer.dispose();\n   *\n   * This is especially helpful if you are dynamically adding and removing videos\n   * to/from the DOM.\n   * @function dispose\n   */",
+        "meta": {
+            "range": [
+                1205,
+                1443
+            ],
+            "filename": "player.js",
+            "lineno": 41,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Destroys the video player and does any necessary cleanup</p>\n<pre class=\"prettyprint source\"><code>myPlayer.dispose();</code></pre><p>This is especially helpful if you are dynamically adding and removing videos\nto/from the DOM.</p>",
+        "kind": "function",
+        "name": "dispose",
+        "longname": "dispose",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired when the user agent begins looking for media data\n   * @event loadstart\n   */",
+        "meta": {
+            "range": [
+                1937,
+                2029
+            ],
+            "filename": "player.js",
+            "lineno": 72,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the user agent begins looking for media data</p>",
+        "kind": "event",
+        "name": "loadstart",
+        "longname": "event:loadstart",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired whenever the media begins or resumes playback\n   * @event play\n   */",
+        "meta": {
+            "range": [
+                2031,
+                2114
+            ],
+            "filename": "player.js",
+            "lineno": 77,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired whenever the media begins or resumes playback</p>",
+        "kind": "event",
+        "name": "play",
+        "longname": "event:play",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired whenever the media begins waiting\n   * @event waiting\n   */",
+        "meta": {
+            "range": [
+                2116,
+                2190
+            ],
+            "filename": "player.js",
+            "lineno": 82,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired whenever the media begins waiting</p>",
+        "kind": "event",
+        "name": "waiting",
+        "longname": "event:waiting",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * A handler for events that signal that waiting has ended\n   * which is not consistent between browsers. See #1351\n   * @event canplay\n   */",
+        "meta": {
+            "range": [
+                2192,
+                2339
+            ],
+            "filename": "player.js",
+            "lineno": 87,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>A handler for events that signal that waiting has ended\nwhich is not consistent between browsers. See #1351</p>",
+        "kind": "event",
+        "name": "canplay",
+        "longname": "event:canplay",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * A handler for events that signal that waiting has ended\n   * which is not consistent between browsers. See #1351\n   * @event canplaythrough\n   */",
+        "meta": {
+            "range": [
+                2341,
+                2495
+            ],
+            "filename": "player.js",
+            "lineno": 93,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>A handler for events that signal that waiting has ended\nwhich is not consistent between browsers. See #1351</p>",
+        "kind": "event",
+        "name": "canplaythrough",
+        "longname": "event:canplaythrough",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * A handler for events that signal that waiting has ended\n   * which is not consistent between browsers. See #1351\n   * @event playing\n   */",
+        "meta": {
+            "range": [
+                2497,
+                2644
+            ],
+            "filename": "player.js",
+            "lineno": 99,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>A handler for events that signal that waiting has ended\nwhich is not consistent between browsers. See #1351</p>",
+        "kind": "event",
+        "name": "playing",
+        "longname": "event:playing",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired whenever the player is jumping to a new time\n   * @event seeking\n   */",
+        "meta": {
+            "range": [
+                2646,
+                2731
+            ],
+            "filename": "player.js",
+            "lineno": 105,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired whenever the player is jumping to a new time</p>",
+        "kind": "event",
+        "name": "seeking",
+        "longname": "event:seeking",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired when the player has finished jumping to a new time\n   * @event seeked\n   */",
+        "meta": {
+            "range": [
+                2733,
+                2823
+            ],
+            "filename": "player.js",
+            "lineno": 110,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the player has finished jumping to a new time</p>",
+        "kind": "event",
+        "name": "seeked",
+        "longname": "event:seeked",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired the first time a video is played\n   *\n   * Not part of the HLS spec, and we're not sure if this is the best\n   * implementation yet, so use sparingly. If you don't have a reason to\n   * prevent playback, use `myPlayer.one('play');` instead.\n   *\n   * @event firstplay\n   */",
+        "meta": {
+            "range": [
+                2825,
+                3113
+            ],
+            "filename": "player.js",
+            "lineno": 115,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired the first time a video is played</p>\n<p>Not part of the HLS spec, and we're not sure if this is the best\nimplementation yet, so use sparingly. If you don't have a reason to\nprevent playback, use <code>myPlayer.one('play');</code> instead.</p>",
+        "kind": "event",
+        "name": "firstplay",
+        "longname": "event:firstplay",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired whenever the media has been paused\n   * @event pause\n   */",
+        "meta": {
+            "range": [
+                3115,
+                3188
+            ],
+            "filename": "player.js",
+            "lineno": 125,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired whenever the media has been paused</p>",
+        "kind": "event",
+        "name": "pause",
+        "longname": "event:pause",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired while the user agent is downloading media data\n   * @event progress\n   */",
+        "meta": {
+            "range": [
+                3190,
+                3278
+            ],
+            "filename": "player.js",
+            "lineno": 130,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired while the user agent is downloading media data</p>",
+        "kind": "event",
+        "name": "progress",
+        "longname": "event:progress",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired when the end of the media resource is reached (currentTime == duration)\n   * @event ended\n   */",
+        "meta": {
+            "range": [
+                3280,
+                3390
+            ],
+            "filename": "player.js",
+            "lineno": 135,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the end of the media resource is reached (currentTime == duration)</p>",
+        "kind": "event",
+        "name": "ended",
+        "longname": "event:ended",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired when the duration of the media resource is first known or changed\n   * @event durationchange\n   */",
+        "meta": {
+            "range": [
+                3392,
+                3505
+            ],
+            "filename": "player.js",
+            "lineno": 140,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the duration of the media resource is first known or changed</p>",
+        "kind": "event",
+        "name": "durationchange",
+        "longname": "event:durationchange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fired when the player switches in or out of fullscreen mode\n   * @event fullscreenchange\n   */",
+        "meta": {
+            "range": [
+                3784,
+                3887
+            ],
+            "filename": "player.js",
+            "lineno": 159,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the player switches in or out of fullscreen mode</p>",
+        "kind": "event",
+        "name": "fullscreenchange",
+        "longname": "event:fullscreenchange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when an error occurred during the loading of an audio/video\n   * @event error\n   */",
+        "meta": {
+            "range": [
+                4050,
+                4148
+            ],
+            "filename": "player.js",
+            "lineno": 170,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when an error occurred during the loading of an audio/video</p>",
+        "kind": "event",
+        "name": "error",
+        "longname": "event:error",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the browser is intentionally not getting media data\n   * @event suspend\n   */",
+        "meta": {
+            "range": [
+                4150,
+                4247
+            ],
+            "filename": "player.js",
+            "lineno": 175,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the browser is intentionally not getting media data</p>",
+        "kind": "event",
+        "name": "suspend",
+        "longname": "event:suspend",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the loading of an audio/video is aborted\n   * @event abort\n   */",
+        "meta": {
+            "range": [
+                4249,
+                4333
+            ],
+            "filename": "player.js",
+            "lineno": 180,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the loading of an audio/video is aborted</p>",
+        "kind": "event",
+        "name": "abort",
+        "longname": "event:abort",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the current playlist is empty\n   * @event emptied\n   */",
+        "meta": {
+            "range": [
+                4335,
+                4410
+            ],
+            "filename": "player.js",
+            "lineno": 185,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the current playlist is empty</p>",
+        "kind": "event",
+        "name": "emptied",
+        "longname": "event:emptied",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the browser is trying to get media data, but data is not available\n   * @event stalled\n   */",
+        "meta": {
+            "range": [
+                4412,
+                4524
+            ],
+            "filename": "player.js",
+            "lineno": 190,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the browser is trying to get media data, but data is not available</p>",
+        "kind": "event",
+        "name": "stalled",
+        "longname": "event:stalled",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the browser has loaded meta data for the audio/video\n   * @event loadedmetadata\n   */",
+        "meta": {
+            "range": [
+                4526,
+                4631
+            ],
+            "filename": "player.js",
+            "lineno": 195,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the browser has loaded meta data for the audio/video</p>",
+        "kind": "event",
+        "name": "loadedmetadata",
+        "longname": "event:loadedmetadata",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the browser has loaded the current frame of the audio/video\n   * @event loaddata\n   */",
+        "meta": {
+            "range": [
+                4633,
+                4739
+            ],
+            "filename": "player.js",
+            "lineno": 200,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the browser has loaded the current frame of the audio/video</p>",
+        "kind": "event",
+        "name": "loaddata",
+        "longname": "event:loaddata",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the current playback position has changed\n   * @event timeupdate\n   */",
+        "meta": {
+            "range": [
+                4741,
+                4831
+            ],
+            "filename": "player.js",
+            "lineno": 205,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the current playback position has changed</p>",
+        "kind": "event",
+        "name": "timeupdate",
+        "longname": "event:timeupdate",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the playing speed of the audio/video is changed\n   * @event ratechange\n   */",
+        "meta": {
+            "range": [
+                4833,
+                4929
+            ],
+            "filename": "player.js",
+            "lineno": 210,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the playing speed of the audio/video is changed</p>",
+        "kind": "event",
+        "name": "ratechange",
+        "longname": "event:ratechange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the volume has been changed\n   * @event volumechange\n   */",
+        "meta": {
+            "range": [
+                4931,
+                5009
+            ],
+            "filename": "player.js",
+            "lineno": 215,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the volume has been changed</p>",
+        "kind": "event",
+        "name": "volumechange",
+        "longname": "event:volumechange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n   * Fires when the text track has been changed\n   * @event texttrackchange\n   */",
+        "meta": {
+            "range": [
+                5011,
+                5096
+            ],
+            "filename": "player.js",
+            "lineno": 220,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fires when the text track has been changed</p>",
+        "kind": "event",
+        "name": "texttrackchange",
+        "longname": "event:texttrackchange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n           * player is using the native device controls\n           *\n           * @event usingnativecontrols\n           * @memberof Player\n           * @instance\n           * @private\n           */",
+        "meta": {
+            "range": [
+                14387,
+                14588
+            ],
+            "filename": "player.js",
+            "lineno": 532,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>player is using the native device controls</p>",
+        "kind": "event",
+        "name": "usingnativecontrols",
+        "memberof": "Player",
+        "scope": "instance",
+        "access": "private",
+        "longname": "Player#event:usingnativecontrols"
+    },
+    {
+        "comment": "/**\n           * player is using the custom HTML controls\n           *\n           * @event usingcustomcontrols\n           * @memberof Player\n           * @instance\n           * @private\n           */",
+        "meta": {
+            "range": [
+                14590,
+                14789
+            ],
+            "filename": "player.js",
+            "lineno": 541,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>player is using the custom HTML controls</p>",
+        "kind": "event",
+        "name": "usingcustomcontrols",
+        "memberof": "Player",
+        "scope": "instance",
+        "access": "private",
+        "longname": "Player#event:usingcustomcontrols"
+    },
+    {
+        "comment": "/**\n * Fired when the player has initial duration and dimension information\n * @event loadedmetadata\n */",
+        "meta": {
+            "range": [
+                20057,
+                20161
+            ],
+            "filename": "player.js",
+            "lineno": 683,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the player has initial duration and dimension information</p>",
+        "kind": "event",
+        "name": "loadedmetadata",
+        "longname": "event:loadedmetadata",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the player has downloaded data at the current playback position\n * @event loadeddata\n */",
+        "meta": {
+            "range": [
+                20163,
+                20269
+            ],
+            "filename": "player.js",
+            "lineno": 688,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the player has downloaded data at the current playback position</p>",
+        "kind": "event",
+        "name": "loadeddata",
+        "longname": "event:loadeddata",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the player has finished downloading the source data\n * @event loadedalldata\n */",
+        "meta": {
+            "range": [
+                20271,
+                20368
+            ],
+            "filename": "player.js",
+            "lineno": 693,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the player has finished downloading the source data</p>",
+        "kind": "event",
+        "name": "loadedalldata",
+        "longname": "event:loadedalldata",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the user is active, e.g. moves the mouse over the player\n * @event useractive\n */",
+        "meta": {
+            "range": [
+                20370,
+                20469
+            ],
+            "filename": "player.js",
+            "lineno": 698,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the user is active, e.g. moves the mouse over the player</p>",
+        "kind": "event",
+        "name": "useractive",
+        "longname": "event:useractive",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the user is inactive, e.g. a short delay after the last mouse move or control interaction\n * @event userinactive\n */",
+        "meta": {
+            "range": [
+                20471,
+                20605
+            ],
+            "filename": "player.js",
+            "lineno": 703,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the user is inactive, e.g. a short delay after the last mouse move or control interaction</p>",
+        "kind": "event",
+        "name": "userinactive",
+        "longname": "event:userinactive",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the current playback position has changed\n *\n * During playback this is fired every 15-250 milliseconds, depending on the\n * playback technology in use.\n * @event timeupdate\n */",
+        "meta": {
+            "range": [
+                20607,
+                20802
+            ],
+            "filename": "player.js",
+            "lineno": 708,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the current playback position has changed</p>\n<p>During playback this is fired every 15-250 milliseconds, depending on the\nplayback technology in use.</p>",
+        "kind": "event",
+        "name": "timeupdate",
+        "longname": "event:timeupdate",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when the volume changes\n * @event volumechange\n */",
+        "meta": {
+            "range": [
+                20804,
+                20867
+            ],
+            "filename": "player.js",
+            "lineno": 716,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when the volume changes</p>",
+        "kind": "event",
+        "name": "volumechange",
+        "longname": "event:volumechange",
+        "scope": "global"
+    },
+    {
+        "comment": "/**\n * Fired when an error occurs\n * @event error\n */",
+        "meta": {
+            "range": [
+                20869,
+                20922
+            ],
+            "filename": "player.js",
+            "lineno": 721,
+            "path": "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2",
+            "code": {}
+        },
+        "description": "<p>Fired when an error occurs</p>",
+        "kind": "event",
+        "name": "error",
+        "longname": "event:error",
+        "scope": "global"
+    },
+    {
+        "kind": "package",
+        "longname": "package:undefined",
+        "files": [
+            "/Users/mboles/git/BCL-LearningSamples/jsdoc-tests2/player.js"
+        ]
+    }
+]

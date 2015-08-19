@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Load Player Dynamically</title>
+  <!-- Page styles -->
+  <style>
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="placeHolder">
+    <button onclick="addPlayer()">Add Player</button>
+  </div>
+  <!-- custom script -->
+  <script type="text/JavaScript">
+    var myPlayer,
+      playerHTML,
+      playerData = {
+        'accountId': '3676484087001',
+        'playerId': '68c6e257-366f-482e-926d-5ac004b740a8'
+      };
+
+    function addPlayer() {
+      // dynamically build the player video element
+      playerHTML = '<video id=\"myPlayer\" data-account=\"' + playerData.accountId + '\" data-player=\"' + playerData.playerId + '\" data-embed=\"default\" class=\"video-js\" controls></video>';
+      // inject the player code into the DOM
+      document.getElementById('placeHolder').innerHTML = playerHTML;
+      // add and execute the player script tag
+      var s = document.createElement('script');
+      s.src = "//players.brightcove.net/" + playerData.accountId + "/" + playerData.playerId + "_default/index.min.js";
+      document.body.appendChild(s);
+      s.onload = callback;
+    }
+
+    function callback() {
+      myPlayer = videojs('myPlayer');
+      myPlayer.src({
+        "type": "video/mp4",
+        "src": "http://solutions.brightcove.com/bcls/assets/videos/Bird_Titmouse.mp4"
+      });
+      myPlayer.play();
+    }
+  </script>
+</body>
+
+</html>

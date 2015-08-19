@@ -1,0 +1,42 @@
+{
+  "account_id": "1507807800001",
+  "autoadvance": 0,
+  "embed_id": "default",
+  "player": {
+    "template": {
+      "name": "single-video-template",
+      "version": "1.14.12"
+    }
+  },
+  "player_id": "00c38fc7-3def-4d5a-aaf9-47d1ee672f56",
+  "player_name": "social-with-endscreen",
+  "plugins": [{
+    "name": "social",
+    "options": {
+      "deeplinking": false,
+      "description": "",
+      "displayAfterVideo": true,
+      "offset": "",
+      "services": {
+        "facebook": true,
+        "google": true,
+        "linkedin": true,
+        "pinterest": true,
+        "tumblr": true,
+        "twitter": true
+      },
+      "title": "",
+      "url": ""
+    }
+  }],
+  "scripts": [
+    "//players.brightcove.net/videojs-social/dist/videojs-social.min.js"
+  ],
+  "stylesheets": [
+    "//players.brightcove.net/videojs-social/dist/videojs-social.css"
+  ],
+  "video_cloud": {
+    "policy_key": "BCpkADawqM2oRCzdSdiuAJXo_PUey7K8gxzL-yXrQgbmMssqKzt23p81VWEP5IW4Qk6GjXwf6UIx6lZOUaOPRoQaCKM4RVNERy0HN0_DsLn10kHvx269GLRLZPaZbJdI0-AmpqWIV-Mj4eD-",
+    "video": null
+  }
+}

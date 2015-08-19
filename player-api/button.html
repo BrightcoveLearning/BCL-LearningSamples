@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+        <script src="//use.edgefonts.net/source-code-pro.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/doc-data.css">
+    </head>
+    <body>
+
+
+        <!-- <script src="button.js"></script>
+        <script src="component.js"></script> -->
+        <script src="js/doc_data.js"></script>
+        <script>
+            var BCLSVJS = ( function (window, document, docData) {
+                "use strict";
+                var title = document.getElementsByTagName('title')[0],
+                    // path as an array
+                    path = document.location.pathname.split("/"),
+                    // data structures
+                    /* the following should be the only line that changes
+                        current class first, parent class(es) after */
+                    classes = {thisClass: [], parentClass: []},
+                    doc_class,
+                    doc_parent_class,
+                    doc_data = {},
+                    // elements
+                    main,
+                    doc_body = document.getElementsByTagName("body")[0],
+                    // functions
+                    isDefined,
+                    copyObj,
+                    findObjectInArray,
+                    findObjectsInArray,
+                    getSubArray,
+                    sortArray,
+                    createEl,
+                    bclslog,
+                    findClassObjects,
+                    addHeaderContent,
+                    addIndex,
+                    addMembersContent,
+                    init;
+                /**
+                 * Logging function - safe for IE
+                 * @param  {string} context - description of the data
+                 * @param  {*} message - the data to be logged by the console
+                 * @return {}
+                 */
+                bclslog = function (context, message) {
+                    if (window["console"] && console["log"]) {
+                        console.log(context, message);
+                    }
+                    return;
+                };
+                /**
+                 * tests for all the ways a variable might be undefined or not have a value
+                 * @param {*} x the variable to test
+                 * @return {Boolean} true if variable is defined and has a value
+                 */
+                isDefined = function (x) {
+                    if ( x !== "" && x !== null && x !== undefined && x !== NaN){
+                        return true;
+                    } else {
+                        return false;
+                    }
+                };
+                /**
+                 * get a copy of (rather than reference to) an object
+                 * @param  {object} obj - the object you want a copy
+                 * @return {object}     the copy
+                 */
+                copyObj = function (obj) {
+                    return JSON.parse(JSON.stringify(obj));
+                };
+                /**
+                 * find index of an object in array of objects
+                 * based on some property value
+                 * generally useful for finding a unique object
+                 *
+                 * @param {array} targetArray - array to search
+                 * @param {string} objProperty - object property to search
+                 * @param {string|number} value - value of the property to search for
+                 * @return {integer} index of first instance if found, otherwise returns -1
+                 */
+                findObjectInArray = function (targetArray, objProperty, value) {
+                    var i, totalItems = targetArray.length, objFound = false;
+                    for (i = 0; i < totalItems; i++) {
+                        if (targetArray[i][objProperty] === value) {
+                            objFound = true;
+                            return i;
+                        }
+                    }
+                    if (objFound === false) {
+                        return -1;
+                    }
+                };
+                /**
+                 * find indexes of a set of object in array of objects
+                 * based on some property value
+                 * generally useful for finding several objects
+                 *
+                 * @param {array} targetArray - array to search
+                 * @param {string} objProperty - object property to search
+                 * @param {string|number} value - value of the property to search for
+                 * @return {array} array of indexes for matching objects
+                 */
+                findObjectsInArray = function (targetArray, objProperty, value) {
+                    var i, totalItems = targetArray.length, newArr = [];
+                    for (i = 0; i < totalItems; i++) {
+                        if (targetArray[i][objProperty] === value) {
+                            newArr.push(i);
+                        }
+                    }
+                    return newArr;
+                };
+                /**
+                 * get a subset of objects in array of objects
+                 * based on some property value
+                 *
+                 * @param {array} targetArray - array to search
+                 * @param {string} objProperty - object property to search
+                 * @param {string|number} value - value of the property to search for
+                 * @return {array} array of objects with matching property value
+                 */
+                getSubArray = function (targetArray, objProperty, value) {
+                    var i, totalItems = targetArray.length, objFound = false, idxArr = [];
+                    for (i = 0; i < totalItems; i++) {
+                        if (targetArray[i][objProperty] === value) {
+                            objFound = true;
+                            idxArr.push(targetArray[i]);
+                        }
+                    }
+                    return idxArr;
+                };
+                /**
+                 * sort an array of objects based on an object property
+                 * @param {array} targetArray - array to sort
+                 * @param {string} objProperty - property whose value to sort on
+                 * @return {array} the sorted array
+                 */
+                sortArray = function (targetArray, objProperty) {
+                    targetArray.sort(function (a, b) {
+                        var propA = a[objProperty].toLowerCase(), propB = b[objProperty].toLowerCase();
+                        // sort ascending; reverse propA and propB to sort descending
+                        if (propA < propB) {
+                             return -1;
+                        } else if (propA > propB) {
+                             return 1;
+                        } else {
+                             return 0;
+                        }
+                    });
+                    return targetArray;
+                };
+                /**
+                 * create an element
+                 * @param  {string} type - the element type
+                 * @param  {object} attributes - attributes to add to the element
+                 * @return {object} the HTML element
+                 */
+                createEl = function (type, attributes) {
+                    var el;
+                    if (isDefined(type)) {
+                        el = document.createElement(type);
+                        if (isDefined(attributes)) {
+                            var attr;
+                            for (attr in attributes) {
+                                el.setAttribute(attr, attributes[attr]);
+                            }
+                        }
+                        return el;
+                    }
+                };
+                /**
+                 * finds the objects in the doc data for a fileName
+                 * @param {array} arr - the array of objects to search
+                 * @param {string} filename - the filename to look for in the meta object
+                 * @return {array} - array of the objects found
+                 */
+                findClassObjects = function (arr, filename) {
+                    var i, totalItems = arr.length, newArr = [];
+                    for (i = 0; i < totalItems; i++) {
+                        if (isDefined(arr[i].meta)) {
+                            if (arr[i].meta.filename === filename) {
+                                newArr.push(arr[i]);
+                            }
+                        }
+
+                    }
+                    return newArr;
+
+                }
+                /**
+                 * add the class header content
+                 */
+                addHeaderContent = function () {
+                    var mainContent = createEl("div", {id:"main", class: "section"}),
+                        topSection = createEl("section", {id:"top", class: "section"}),
+                        topSectionEl,
+                        header = createEl("h1", {id:doc_data.thisClass.headerInfo.name}),
+                        headerEl;
+                    // add elements
+                    topSection.appendChild(header);
+                    mainContent.appendChild(topSection);
+                    doc_body.appendChild(mainContent);
+                    main = document.getElementById("main");
+                    topSectionEl = document.getElementById("top");
+                    headerEl = document.getElementById(doc_data.thisClass.headerInfo.name);
+                    // add content
+                    // page header
+                    headerEl.textContent = doc_data.thisClass.headerInfo.name;
+                    // other stuff
+                    if (isDefined(doc_data.parentClass.headerInfo)) {
+                        topSectionEl.innerHTML += "<p><strong>EXTENDS</strong>: <a href=\"" + doc_data.parentClass.headerInfo.meta.filename + "\">" + doc_data.parentClass.headerInfo.meta.filename + "</a></p>";
+                    }
+                    topSectionEl.innerHTML += "<p><strong>DEFINED IN</strong>: <a href=\"" + doc_data.thisClass.headerInfo.meta.filename + "\">src/" + doc_data.thisClass.headerInfo.meta.filename + " line number: " + doc_data.thisClass.headerInfo.meta.lineno + "</a></p>";
+                    topSectionEl.innerHTML += doc_data.thisClass.headerInfo.description;
+                };
+                /**
+                 * add the side nav
+                 */
+                addIndex = function () {
+                    var section = createEl("section", {id: "index", class: "section"}),
+                        sectionHeader = createEl("h2"),
+                        memberIndex = createEl("div", {id: "memberIndex"}),
+                        methodsHeader,
+                        eventsHeader,
+                        propertieHeader,
+                        methodsList,
+                        propertiesList,
+                        eventsList,
+                        item,
+                        listItem,
+                        listLink,
+                        em,
+                        text,
+                        i,
+                        iMax,
+                        makeList = function (classArr, parentArr, member, header, list) {
+                            if (classArr.length > 0 || isDefined(doc_data.parentClass) && parentArr.length > 0) {
+                                // add member list header
+                                header = createEl("h3", {id: header});
+                                text = document.createTextNode(member);
+                                header.appendChild(text);
+                                // add the list & items
+                                list = createEl("ul", {id: list});
+                                iMax = classArr.length;
+                                for (i = 0; i < iMax; i++) {
+                                    item = classArr[i].name;
+                                    listItem = createEl("li");
+                                    listLink = createEl("a", {href: "#" + item});
+                                    text = document.createTextNode(item);
+                                    listLink.appendChild(text);
+                                    listItem.appendChild(listLink);
+                                    list.appendChild(listItem);
+                                }
+                                if (isDefined(doc_data.parentClass) && parentArr.length > 0) {
+                                iMax = parentArr.length;
+                                    for (i = 0; i < iMax; i++) {
+                                        item = parentArr[i].name;
+                                        listItem = createEl("li");
+                                        listLink = createEl("a", {href: "#" + item});
+                                        listItem.appendChild(listLink);
+                                        text = document.createTextNode(item);
+                                        listLink.appendChild(text);
+                                        em = createEl("em");
+                                        text = document.createTextNode(" inherited");
+                                        em.appendChild(text);
+                                        listItem.appendChild(em);
+                                        list.appendChild(listItem);
+                                    }
+                                }
+                                memberIndex.appendChild(header);
+                                memberIndex.appendChild(list);
+                            }
+                        };
+                    text = document.createTextNode("Index");
+                    sectionHeader.appendChild(text);
+                    makeList(doc_data.thisClass.propertiesArray, doc_data.parentClass.propertiesArray, "Properties", "propertiesHeader", "propertiesList");
+                    makeList(doc_data.thisClass.methodsArray, doc_data.parentClass.methodsArray, "Methods", "methodsHeader", "methodsList");
+                    makeList(doc_data.thisClass.eventsArray, doc_data.parentClass.eventsArray, "Events", "eventsHeader", "eventsList");
+                    section.appendChild(sectionHeader);
+                    section.appendChild(memberIndex);
+                    main.appendChild(section);
+                };
+                /**
+                 * add the member content
+                 */
+                addMembersContent = function () {
+                    var members = [{name: "Properties", data: "propertiesArray"}, {name: "Methods", data: "methodsArray"}, {name: "Events", data: "eventsArray"}],
+                        member,
+                        section,
+                        header,
+                        item,
+                        itemWrapper,
+                        itemHeader,
+                        itemHeaderStr,
+                        itemParams = [],
+                        itemParamsHeader,
+                        itemParamsList,
+                        itemParamsItem,
+                        itemReturnsHeader,
+                        itemReturnsList,
+                        itemReturnsItem,
+                        itemReturnsStr,
+                        itemParamsStr,
+                        itemDescription,
+                        itemDescriptionEl,
+                        itemFooter,
+                        itemFooterContent,
+                        itemFooterContentEl,
+                        itemEl,
+                        text,
+                        i,
+                        iMax,
+                        j,
+                        jMax,
+                        k,
+                        kMax,
+                        createMemberItem = function (member) {
+                            section = createEl("section", {id:member.name.toLowerCase(), class: "section"});
+                            main.appendChild(section);
+                            header = createEl("h2");
+                            text = document.createTextNode(member.name);
+                            header.appendChild(text);
+                            section.appendChild(header);
+                            // create the class member items
+                            jMax = doc_data.thisClass[member.data].length;
+                            for (j = 0; j < jMax; j++) {
+                                item = doc_data.thisClass[member.data][j];
+                                itemWrapper = createEl("div", {id: item.name});
+                                section.appendChild(itemWrapper);
+                                itemHeader = createEl("h3", {id: item.name + "Header"});
+                                itemHeaderStr = item.name;
+                                itemWrapper.appendChild(itemHeader);
+                                itemDescription = createEl("div", {id: item.name + "Description"});
+                                itemWrapper.appendChild(itemDescription);
+                                itemFooter = createEl("p");
+                                itemFooterContent = createEl("em", {id: item.name + "Footer"});
+                                itemFooter.appendChild(itemFooterContent);
+                                // handle params if any
+                                if (isDefined(item.params)) {
+                                    itemParams = [];
+                                    itemParamsHeader = createEl("h4");
+                                    text = document.createTextNode("Parameters");
+                                    itemParamsHeader.appendChild(text);
+                                    itemParamsList = createEl("ul");
+                                    kMax = item.params.length;
+                                    for (k = 0; k < kMax; k++) {
+                                        itemParamsItem = createEl("li");
+                                        itemParamsList.appendChild(itemParamsItem);
+                                        itemParamsStr = item.params[k].name + " " + item.params[k].type.names.join("|");
+                                        if (item.params[k].optional) {
+                                            itemParamsStr += " (Optional) ";
+                                            itemParams.push("[" +item.params[k].name + "]");
+                                        } else {
+                                            itemParams.push(item.params[k].name);
+                                        }
+                                        itemParamsStr += item.params[k].description.replace("p>", "span>");
+                                        text = document.createTextNode(itemParamsStr);
+                                        itemParamsItem.appendChild(text);
+                                    }
+                                    itemHeaderStr += "( " + itemParams.join(", ") + " )";
+                                    itemWrapper.appendChild(itemParamsHeader);
+                                    itemWrapper.appendChild(itemParamsList);
+                                }
+                                itemWrapper.appendChild(itemFooter);
+                                text = document.createTextNode(itemHeaderStr);
+                                itemHeader.appendChild(text);
+                                itemDescriptionEl = document.getElementById(item.name + "Description");
+                                itemDescriptionEl.innerHTML = item.description;
+                                itemFooterContentEl = document.getElementById(item.name + "Footer");
+                                itemFooterContentEl.innerHTML = "Defined in <a href=\"https://github.com/videojs/video.js/blob/master/src/js/" + item.meta.filename + item.meta.lineno + "\">src/js/" + item.meta.filename + " line number: " + item.meta.lineno + "</a>";
+                            }
+                            // now the inherited member items
+                            if (isDefined(doc_data.parentClass)) {
+                                jMax = doc_data.parentClass[member.data].length;
+                                for (j = 0; j < jMax; j++) {
+                                    item = doc_data.parentClass[member.data][j];
+                                    itemWrapper = createEl("div", {id: item.name});
+                                    section.appendChild(itemWrapper);
+                                    itemHeader = createEl("h3", {id: item.name + "Header"});
+                                    itemHeaderStr = item.name;
+                                    itemWrapper.appendChild(itemHeader);
+                                    itemDescription = createEl("div", {id: item.name + "Description"});
+                                    itemWrapper.appendChild(itemDescription);
+                                    itemFooter = createEl("p");
+                                    itemFooterContent = createEl("em", {id: item.name + "Footer"});
+                                    itemFooter.appendChild(itemFooterContent);
+                                    // handle params if any
+                                    if (isDefined(item.params)) {
+                                        itemParams = [];
+                                        itemParamsHeader = createEl("h4");
+                                        text = document.createTextNode("Parameters");
+                                        itemParamsHeader.appendChild(text);
+                                        itemParamsList = createEl("ul");
+                                        kMax = item.params.length;
+                                        for (k = 0; k < kMax; k++) {
+                                            itemParamsItem = createEl("li");
+                                            itemParamsList.appendChild(itemParamsItem);
+                                            itemParamsStr = item.params[k].name + " " + item.params[k].type.names.join("|");
+                                            if (item.params[k].optional) {
+                                                itemParamsStr += " (Optional) ";
+                                                itemParams.push("[" +item.params[k].name + "]");
+                                            } else {
+                                                itemParams.push(item.params[k].name);
+                                            }
+                                            if (isDefined(item.params[k].description)) {
+                                                itemParamsStr += item.params[k].description.replace("p>", "span>");
+                                                text = document.createTextNode(itemParamsStr);
+                                                itemParamsItem.appendChild(text);
+                                            }
+
+                                        }
+                                        itemHeaderStr += "( " + itemParams.join(", ") + " )";
+                                        itemWrapper.appendChild(itemParamsHeader);
+                                        itemWrapper.appendChild(itemParamsList);
+                                    }
+                                    itemWrapper.appendChild(itemFooter);
+                                    text = document.createTextNode(itemHeaderStr);
+                                    itemHeader.appendChild(text);
+                                    itemDescriptionEl = document.getElementById(item.name + "Description");
+                                    itemDescriptionEl.innerHTML = item.description;
+                                    itemFooterContentEl = document.getElementById(item.name + "Footer");
+                                    itemFooterContentEl.innerHTML = "Inherited from <a href=\"https://github.com/videojs/video.js/blob/master/src/js/" + item.meta.filename + item.meta.lineno + "\">src/js/" + item.meta.filename + " line number: " + item.meta.lineno + "</a>";
+                                }
+                            }
+
+                        };
+                    iMax = members.length;
+                    for (i = 0; i < iMax; i++) {
+                        member = members[i];
+                        if (doc_data.thisClass[member.data].length > 0){
+                            createMemberItem(member);
+                        }
+                    }
+                };
+                /**
+                 * init gets things going
+                 */
+                init = function () {
+                    var className,
+                        fileName,
+                        breadcrumbs,
+                        breadcrumbsEl,
+                        srcFileName,
+                        parent_class,
+                        privateItems = [],
+                        overriddenItems = [],
+                        idx,
+                        j,
+                        jMax;
+                    // get the class name from the file name
+                    fileName = path[path.length - 1];
+                    doc_class = fileName.substring(0, fileName.indexOf("."));
+                    srcFileName = doc_class + ".js";
+                    // create breadcrumbs
+                    breadcrumbs = createEl("div", {id: "breadcrumbs", class: "breadcrumbs"})
+                    doc_body.appendChild(breadcrumbs);
+                    breadcrumbsEl = document.getElementById("breadcrumbs");
+                    breadcrumbsEl.innerHTML = "<a href=\"./index.html\">API Docs</a>/" + srcFileName;
+                    // get the data objects for this class
+                    classes.thisClass = findClassObjects(docData, srcFileName);
+                    // get the class overview object
+                    idx = findObjectInArray(classes.thisClass, "kind", "class");
+                    doc_data.thisClass = {};
+                    doc_data.thisClass.headerInfo = copyObj(classes.thisClass[idx]);
+                    // set the doc title
+                    title.innerHTML = doc_data.thisClass.headerInfo.name;
+                    // remove any private items
+                    privateItems = findObjectsInArray(classes.thisClass, "access", "private");
+                    j = privateItems.length;
+                    do {
+                        classes.thisClass.splice(privateItems[j--], 1);
+                    } while (j > 0);
+                    // now get the member arrays
+                    doc_data.thisClass.methodsArray = getSubArray(classes.thisClass, "kind", "function");
+                    doc_data.thisClass.eventsArray = getSubArray(classes.thisClass, "kind", "event");
+                    doc_data.thisClass.propertiesArray = getSubArray(classes.thisClass, "kind", "property");
+                    bclslog("thisClass", doc_data.thisClass);
+                    // get parent class, if any
+                    if (isDefined(doc_data.thisClass.headerInfo.augments)) {
+                        parent_class = doc_data.thisClass.headerInfo.augments[0].toLowerCase();
+                        // get data objects for the class
+                        classes.parentClass = findClassObjects(docData, parent_class + ".js");
+                        doc_data.parentClass = {};
+                        // get parent header info
+                        idx = findObjectInArray(classes.parentClass, "kind", "class");
+                        doc_data.parentClass.headerInfo = copyObj(classes.parentClass[idx]);
+                        // remove any private items
+                        privateItems = findObjectsInArray(classes.parentClass, "access", "private");
+                        bclslog("privateItems", privateItems);
+                        j = privateItems.length;
+                        do {
+                            classes.parentClass.splice(privateItems[j--], 1);
+                        } while (j > 0);
+                        // remove any overridden items
+                        jMax = classes.thisClass.length;
+                        for (j = 0; j < jMax; j++) {
+                            idx = findObjectInArray(classes.parentClass, "name", classes.thisClass[j].name);
+                            if (idx > 0) {
+                                overriddenItems.push(idx);
+                            }
+                        }
+                        j = overriddenItems.length;
+                        do {
+                            classes.parentClass.splice(overriddenItems[j--], 1);
+                        } while (j > 0)
+                        // now get the member arrays
+                        doc_data.parentClass.methodsArray = getSubArray(classes.parentClass, "kind", "function");
+                        doc_data.parentClass.eventsArray = getSubArray(classes.parentClass, "kind", "event");
+                        doc_data.parentClass.propertiesArray = getSubArray(classes.parentClass, "kind", "property");
+                        bclslog("parentClass", doc_data.parentClass);
+                        // now we're ready to roll
+                        addHeaderContent();
+                        addIndex();
+                        addMembersContent();
+                    }
+                };
+                // bclslog("class_data", class_data);
+                // bclslog("parent_class_data", parent_class_data);
+                init();
+                return {
+
+                };
+            })(window, document, docData);
+        </script>
+    </body>
+</html>

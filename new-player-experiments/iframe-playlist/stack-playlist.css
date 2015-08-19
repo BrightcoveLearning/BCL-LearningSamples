@@ -1,0 +1,31 @@
+    .video-js {
+        height: 450px;
+        width: 800px;
+        float: left;
+    }
+    .myplayer {
+      width: 800px;
+      height: 450px;
+      position: relative;
+    }
+
+  .vjs-playlist {
+      width: 766px;
+        max-height: 433px;
+      position: relative;
+      top: 15px;
+    }
+
+  .vjs-playlist .vjs-playlist-item  {
+    min-height: 100px;
+
+  }
+  .vjs-playlist-item.vjs-selected {
+    background: rgb(89, 44,54);
+  }
+
+  .vjs-mouse.vjs-playlist .vjs-playlist-description {
+      white-space: normal;
+      min-height: 99px;
+    }
+

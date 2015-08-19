@@ -1,0 +1,25 @@
+.playlist-wrapper{
+    width:800px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.vjs-playlist.vjs-playlist {
+    clear: both;
+    width: auto;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.vjs-playlist-item {
+    display: inline-block;
+    height: 75px;
+
+}
+cite.vjs-playlist-name {
+    display:none;
+}
+.vjs-playlist-description {
+    display: none;
+}

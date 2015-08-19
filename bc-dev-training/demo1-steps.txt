@@ -1,0 +1,65 @@
+1. Create player
+2. Examine settings
+3. Go to Media module and associate video with player
+4. Copy published In-Page Embed Code and paste into body of demo1.html HTML page
+5. Add an id to video tag with value of myPlayerID
+6. Add a script block below existing script tag 
+7. Use videojs' loadedmetadata to create block for startup code
+  videojs("myPlayerID").on('loadedmetadata',function(){
+    var myPlayer = this;
+    myPlayer.play();
+  });
+8. In the block, assign the player instance to a variable named myPlayer
+9. Use the play() method to start the video
+10. Browse page and see the video plays but in the default size of 300 x 150
+11. Add CSS to videojs class to set width to 480px and height to 270px
+  <style type="text/css">
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
+12. Browse again to see new dimensions  
+
+OPTIONAL - Only if ahead of schedule
+13. After using play() method add event listener for timeupate
+  myPlayer.on("timeupdate",showUpdate);
+14. Create event listener function
+    function showUpdate(evt){
+      console.log(evt);
+    }
+15. View Console to see timeupdate events being dispatched
+
+
+
+***Core Code***
+  <style type="text/css">
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="921483702001"
+    data-player="a5f0f07c-ce3b-48a4-af02-f5f6c38546ac"
+    data-embed="default"
+    data-video-id=""
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/921483702001/a5f0f07c-ce3b-48a4-af02-f5f6c38546ac_default/index.min.js"></script>
+ 
+  <script type="text/javascript">
+    videojs("myPlayerID").on('loadedmetadata',function(){
+      var myPlayer = this;
+      myPlayer.play();
+      myPlayer.on("timeupdate",showUpdate);
+    });
+    
+    function showUpdate(evt){
+      console.log(evt);
+    }
+  </script> 

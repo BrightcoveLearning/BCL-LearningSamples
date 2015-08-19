@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+<video id="myPlayerID2"
+  data-account="1752604059001"
+  data-player="8cfb6785-c4be-43b4-af68-7ca2fe3a6ebf"
+  data-embed="default"
+  data-video-id="3851380732001"
+  class="video-js" controls>
+
+  <track kind="metadata" src="sea-marvels-chapters.vtt" />
+<!--   <track kind="metadata" src="chapters.vtt" />-->
+</video>
+
+  <p id="insertionPoint2"></p>
+
+ <script src="//players.brightcove.net/1752604059001/8cfb6785-c4be-43b4-af68-7ca2fe3a6ebf_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID2").ready(function(){
+      var myPlayer = this;
+
+      myPlayer.one("loadedmetadata",function(){
+        var allTracks = myPlayer.textTracks(),
+          trackIndex = allTracks.length -1,
+          tt = allTracks[trackIndex],
+          trackLength = allTracks.length;
+console.log('all tracks', allTracks);
+        for (var i = 0; i < trackLength; i++) {
+          console.log('kind: ', allTracks[i].kind);
+        }
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint2").innerHTML += dynamicHTML + "<br/><br/>";
+            jsonData = JSON.parse(tt.activeCues[0].text);
+            document.getElementById("insertionPoint2").innerHTML += jsonData.title + ": " + jsonData.description + "<br/><br/>";
+          } else {
+            document.getElementById("insertionPoint2").innerHTML += "Cue point duration over" + "<br/><br/>";
+          }
+        } //end oncuechange
+        myPlayer.play();
+        myPlayer.muted(true);
+      }); //end loadedmetadata
+
+    }); //end ready
+  </script>
+
+</body>
+
+</html>
