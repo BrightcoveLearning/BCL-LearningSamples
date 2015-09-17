@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+<video id="myPlayer"
+  data-video-id="4443311217001"
+  data-account="1507807800001"
+  data-player="1183df6f-0ce0-4119-b512-2b85e0945c13"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/1507807800001/1183df6f-0ce0-4119-b512-2b85e0945c13_default/index.min.js"></script>
+
+<link href="http://cs1.brightcodes.net/marguin/bcplayer/plugins/BCPlayerDebugLogger.css" rel="stylesheet">
+<script src="http://cs1.brightcodes.net/marguin/bcplayer/plugins/BCPlayerDebugLogger.js" ></script>
+
+<script>
+var options = {"debugAds":true, "showProgress":false, "logClasses": true };
+videojs('myPlayer').BCPlayerDebugLogger(options);
+</script>
+
+
+</body>
+
+</html>

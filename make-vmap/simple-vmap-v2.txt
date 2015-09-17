@@ -1,0 +1,11 @@
+<vmap:VMAP xmlns:vmap="http://www.iab.net/videosuite/vmap" version="1.0">
+  <vmap:AdBreak timeOffset="start" breakType="linear" breakId="preroll">
+    <vmap:AdSource id="preroll-ad-1" allowMultipleAds="false" followRedirects="true">
+      <vmap:AdTagURI templateType="vast3">
+        <![CDATA[
+http://pubads.g.doubleclick.net/gampad/ads?slotname=/6390/Marks-Ads-Test-Unit-1&sz=640x360&ciu_szs=728x90&unviewed_position_start=1&output=xml_vast3&impl=s&env=vp&gdfp_req=1&ad_rule=0&vad_type=linear&vpos=preroll&pod=1&ppos=1&min_ad_duration=0&max_ad_duration=30000&cust_params=&url=%5Breferrer_url%5D&video_doc_id=1760859514001&cmsid=580
+]]>
+      </vmap:AdTagURI>
+    </vmap:AdSource>
+  </vmap:AdBreak>
+</vmap:VMAP>

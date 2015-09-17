@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="3.0">
+  <Ad id="1" sequence="99">
+    <InLine>
+      <AdSystem version="1.0">Test Ad Server</AdSystem>
+      <AdTitle><![CDATA[Common name of the ad]]></AdTitle>
+      <Description><![CDATA[]]></Description>
+      <Error><![CDATA[http://error.err]]></Error>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:08</Duration>
+            <TrackingEvents/>
+            <AdParameters><![CDATA[<xml></xml>]]></AdParameters>
+            <VideoClicks/>
+            <MediaFiles>
+              <MediaFile type="video/mp4" width="1280" height="720" delivery="progressive" id="4" bitrate="2115" minBitrate="320" maxBitrate="320" scalable="true" maintainAspectRatio="true"><![CDATA[http://solutions.brightcove.com/bcls/ads/bc-ads/bcls-ad-1-8seconds.mp4]]></MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+      <Extensions>
+        <Extension><xml>data</xml></Extension>
+      </Extensions>
+    </InLine>
+  </Ad>
+</VAST>

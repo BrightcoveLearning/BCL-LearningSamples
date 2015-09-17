@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="description" content="JS Bin for the Outlearn Brightcove Player Technologies Path">
+    <title>Outlearn JavaScript module</title>
+    <style id="jsbin-css">
+        body {
+            margin: 2em;
+            font-family: sans-serif;
+        }
+        .bcls-playlist {
+            width: 500px;
+            height: 74px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+        }
+        .bcls-playlist-item {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            width: 124px;
+        }
+        .bcls-thumbnail {
+            width: 124px;
+            height: 66px;
+            border: 4px solid #141B17;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Custom Playlist Player</h1>
+    <div>
+        <video style='width: 500px;height: 281px;' id="myPlayerID" data-playlist-id="4452341376001" data-account="1752604059001" data-player="027d9de0-cb4f-4598-a1d4-0d8480d5a154" data-embed="default" class="video-js" controls></video>
+        <script src="http://players.brightcove.net/1752604059001/027d9de0-cb4f-4598-a1d4-0d8480d5a154_default/index.min.js"></script>
+        <div id="playlistWrapper" class="bcls-playlist"></div>
+    </div>
+    <script id="jsbin-javascript">
+        var myPlayer,
+            videoEl = document.getElementById('myPlayerID'),
+            playlistId = videoEl.getAttribute('data-playlist-id'),
+            playlistWrapper = document.getElementById('playlistWrapper');
+        videojs("myPlayerID").one('loadedmetadata', function () {
+            var myPlayer = this,
+                i,
+                iMax,
+                playlistItem,
+                playlistItems,
+                thumbnailImg,
+                playlistData = myPlayer.playlist(),
+                videoItem;
+            console.log(myPlayer.playlist());
+            iMax = playlistData.length;
+            for (i = 0; i < iMax; i++) {
+                videoItem = playlistData[i];
+                // create the playlist item and set its class
+                playlistItem = document.createElement('div');
+                playlistItem.setAttribute('class', 'bcls-playlist-item');
+                // create the thumbnail img and set its class
+                thumbnailImg = document.createElement('img');
+                thumbnailImg.setAttribute('class', 'bcls-thumbnail');
+                // set the src for the thumbnail
+                thumbnailImg.setAttribute('src', videoItem.thumbnail);
+                // set the id for img to the video id - need this to load the video
+                thumbnailImg.setAttribute('id', i);
+                // for best practice, set the alt attribute to the video name
+                thumbnailImg.setAttribute('alt', videoItem.name);
+                // now append the img to the item, and the item to the playlist
+                playlistItem.appendChild(thumbnailImg);
+                playlistWrapper.appendChild(playlistItem);
+            }
+            playlistItems = document.getElementsByClassName('bcls-thumbnail');
+            iMax = playlistItems.length;
+            for (i = 0; i < iMax; i++) {
+                playlistItems[i].addEventListener('click', function () {
+                    console.log('this.id',this.id);
+                    myPlayer.playlist.currentItem(parseInt(this.id));
+                    console.log('myPlayer.playlist.currentItem()',myPlayer.playlist.currentItem());
+                })
+            }
+        });
+    </script>
+</body>
+
+</html>
