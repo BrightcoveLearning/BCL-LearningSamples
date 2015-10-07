@@ -90,7 +90,7 @@
     </vmap:AdSource>
   </vmap:AdBreak>
 
-  <vmap:AdBreak timeOffset="end" breakType="linear" breakId="postroll">
+  <vmap:AdBreak timeOffset="00:00:28" breakType="linear" breakId="postroll">
     <vmap:AdSource id="postroll-ad" allowMultipleAds="false" followRedirects="true">
       <vmap:VASTAdData>
         <VAST version="3.0">

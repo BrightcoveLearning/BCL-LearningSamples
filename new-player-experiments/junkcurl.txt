@@ -1,0 +1,36 @@
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+            "type":"video/mp4"
+          }]
+        },
+      },
+      "hls": false,
+      "debugger": false,
+      "errors": false
+    }
+
+
+    curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players

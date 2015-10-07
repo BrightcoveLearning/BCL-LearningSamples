@@ -15,20 +15,19 @@
 <body>
 
 
-  <video
-    data-account="1752604059001"
-    data-player="616d343c-33f6-45c3-8484-b889eb8095e1"
-    data-embed="default"
-    data-video-id="4172255216001"
-    data-setup='{"techOrder": ["html5", "hls", "flash"]}'
-    class="video-js" controls></video>
+<video id="myPlayerID"
+  data-video-id="4443311217001"
+  data-account="1507807800001"
+  data-player="baae5cef-544e-450c-907a-227265a7c13a"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/1507807800001/baae5cef-544e-450c-907a-227265a7c13a_default/index.min.js"></script>
 
-  <script src="//players.brightcove.net/1752604059001/616d343c-33f6-45c3-8484-b889eb8095e1_default/index.min.js"></script>
-   
+
   <script src="//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.js"></script>
 
   <script type="text/javascript">
-    var options = 
+    var options =
     {
       "Flash": {
         "networkId": 90750,
@@ -88,10 +87,84 @@
       "prerollTimeout": 1000,
       "timeout": 5000
     };
-    videojs('myPlayerID').ready(function(){
+    videojs('myPlayerID').on('loadedmetadata',function(){
+      console.log('in loadedmetadata');
       var myPlayer = this;
       myPlayer.FreeWheelPlugin(options);
-    });  
+      myPlayer.on('ads-request',function(){
+        console.log('1 ads-request');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-load',function(){
+        console.log('2 ads-load');
+        console.log(' myPlayer.ads.ad',myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-pod-started',function( evt ){
+        console.log('*** ads-pod-started evt passed to event handler***', evt);
+        console.log('3  ads-pod-started');
+        console.log('   myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log('   myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-pod-ended',function(){
+        console.log('4 ads-pod-ended');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-allpods-completed',function(){
+        console.log('5 ads-allpods-completed');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-ad-started',function( evt ){
+        console.log('ads-ad-started event passed to event handler', evt);
+        console.log('6 ads-ad-started');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-ad-ended',function( evt ){
+        console.log('***ads-ad-ended evt passed to event handler***', evt);
+        console.log('7 ads-ad-ended');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-first-quartile',function(){
+        console.log('8 ads-first-quartile');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-midpoint',function(){
+        console.log('9 ads-midpoint');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-third-quartile',function(){
+        console.log('10 ads-third-quartile');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-pause',function(){
+        console.log('11 ads-pause');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-play',function(){
+        console.log('12 ads-play');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-mute',function(){
+        console.log('13 ads-mute');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+      myPlayer.on('ads-click',function(){
+        console.log('14 ads-click');
+        console.log(' myPlayer.ads.ad', myPlayer.ads.ad);
+        console.log(' myPlayer.ads.pod', myPlayer.ads.pod);
+      });
+    });
   </script>
 
 </body>
