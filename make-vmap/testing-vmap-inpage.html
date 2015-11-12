@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+<link href="http://cs1.brightcodes.net/marguin/bcplayer/plugins/debugger/v4PlayerDebugLogger.css" rel="stylesheet">
+</head>
+
+<body>
+
+<video id="myPlayerID"
+  data-video-id="4443324622001"
+  data-account="1507807800001"
+  data-player="415efd2a-9c9e-45a5-a783-ce157814b74b"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/1507807800001/415efd2a-9c9e-45a5-a783-ce157814b74b_default/index.min.js"></script>
+
+<script type="text/javascript" src="http://players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+<script src="http://cs1.brightcodes.net/marguin/bcplayer/plugins/debugger/v4PlayerDebugLogger.js" ></script>
+<script type="text/javascript">
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this;
+    myPlayer.ima3({
+            serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.txt",
+            postrollTimeout: 2000,
+            debug: true
+    });
+  });
+</script>
+
+
+
+<script>
+var options = {"debugAds":true, "logClasses": true, "showPlayerClasses": true };
+videojs('myPlayerID').v4PlayerDebugLogger(options);
+</script>
+
+
+
+</body>
+
+</html>

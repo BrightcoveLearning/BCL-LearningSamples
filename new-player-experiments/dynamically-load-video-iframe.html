@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
- 
+
 <head>
     <meta charset="UTF-8">
     <title>Dynamically Change Video</title>
-    
+
     <!-- Page styles -->
     <style id="pageStyles">
         .player-block iframe {
@@ -13,25 +13,25 @@
         }
     </style>
 </head>
- 
+
 <body>
     <div class="player-block">
-  
-        <iframe src='//players.brightcove.net/1752604059001/2e0cea1a-e74e-4dd8-9e13-ed8550981660_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-    
+
+        <iframe src='//players.brightcove.net/1752604059001/40ee694d-2e68-4de2-b574-779a4183ffff_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
         <br/>
         <button onclick="changeVideo()">change video</button>
     </div>
-     
+
     <!-- custom script -->
     <script type="text/JavaScript">
         var iframeTag = document.getElementsByTagName("iframe")[0],
             newVideo = "?videoId=3851389913001";
-    
-        function changeVideo(){ 
+
+        function changeVideo(){
             iframeTag.src += newVideo;
         }
     </script>
-  
+
 </body>
 </html>

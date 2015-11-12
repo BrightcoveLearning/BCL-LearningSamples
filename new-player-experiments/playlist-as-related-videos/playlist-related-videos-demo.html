@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+
+    /* styling for the video thumbnails */
+    .video-thumbnail {
+      margin: 0;
+      padding: 0;
+      width: 180px;
+      height: 97px;
+      cursor: pointer;
+      border-style: solid;
+    }
+
+    /*override some of the default overlay styling*/
+    div.vjs-overlay.vjs-overlay-top {
+      width: 100%;
+      left: 0;
+      margin-left: -10px;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+    <video id="myPlayerID"
+      data-video-id="4607746980001"
+      data-account="1507807800001"
+      data-player="0826bd7b-b9de-44c2-af63-0dfe2a76af36"
+      data-embed="default"
+      class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1507807800001/0826bd7b-b9de-44c2-af63-0dfe2a76af36_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+
+  <script type="text/javascript">
+  var loadAndPlay,
+    myPlayer,
+    returnedPlaylist;
+    /**
+     * loads and plays a video
+     * this function called with thumbnails in
+     * the overlay are clicked
+     * @param {integer} idx the index of the video object in the videoData array
+     */
+    loadAndPlay = function(idx) {
+      console.log('idx', idx);
+      myPlayer.catalog.load(returnedPlaylist[idx]);
+      myPlayer.play();
+    }
+
+    /**
+     * create an element
+     *
+     * @param  {string} type - the element type
+     * @param  {object} attributes - attributes to add to the element
+     * @return {HTMLElement} the HTML element
+     */
+    function createEl(type, attributes) {
+      var el,
+        attr;
+      el = document.createElement(type);
+      if (attributes !== null) {
+        for (attr in attributes) {
+          el.setAttribute(attr, attributes[attr]);
+        }
+        return el;
+      }
+    }
+
+    /**
+     * create the html for the overlay
+     * @param {array} videoData array of video objects
+     * @return {HTMLElement} videoList the div element containing the overlay
+     */
+    function createVideoList(videoData) {
+      var i,
+        iMax = videoData.length,
+        videoList = createEl('div', {
+          id: 'videoList'
+        }),
+        videoHeader = createEl('h1', {
+          style: 'color:#666600;font-size: 2em;margin-bottom:.5em'
+        }),
+        videoWrapper = createEl('div'),
+        thumbnailLink,
+        thumbnailImage;
+      videoList.appendChild(videoWrapper);
+      for (i = 0; i < iMax; i++) {
+        thumbnailLink = createEl('a', {
+          href: 'javascript:loadAndPlay(' + i + ')'
+        })
+        thumbnailImage = createEl('img', {
+          class: 'video-thumbnail',
+          src: videoData[i].thumbnail
+        });
+        videoWrapper.appendChild(thumbnailLink);
+        thumbnailLink.appendChild(thumbnailImage);
+      }
+      return videoList;
+    }
+
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+      var playlistID = 1579619681001,
+      htmlElement = '',
+      overlayDiv = createEl('div', {
+        id: 'bclsOverlay'
+      });
+      myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
+        //deal with error
+        returnedPlaylist = playlist;
+        returnedPlaylist = returnedPlaylist.slice(0,9);
+        htmlElement = createVideoList(returnedPlaylist);
+        overlayDiv.appendChild(htmlElement);
+      });
+      myPlayer.overlay({
+        overlays: [{
+          align: 'top',
+          content: overlayDiv,
+          start: 'pause',
+          end: 'play'
+        }, {
+          align: 'top',
+          content: overlayDiv,
+          start: 'ended',
+          end: 'play'
+        }]
+      });
+    });
+  </script>
+
+</body>
+
+</html>

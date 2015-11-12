@@ -43,7 +43,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         }
@@ -162,7 +162,7 @@ curl \
         ],
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         }
@@ -184,7 +184,7 @@ curl \
         ],
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         }
@@ -204,7 +204,7 @@ curl \
         "languages": ["de","es"],
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         }
@@ -245,7 +245,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         },
@@ -284,7 +284,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         },
@@ -311,10 +311,10 @@ curl \
 --header "Content-Type: application/json" \
 --user $EMAIL \
 --request PATCH \
---data '{ 
+--data '{
     "plugins": [{
         "name": "social",
-        "options": { 
+        "options": {
             "title": "Tiger",
             "description": "Video of two tigers",
             "url": "http://solutions.brightcove.com/bcls/brightcove-player/social-plugin/test-social.html",
@@ -342,7 +342,7 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           }
         ],
@@ -431,7 +431,6 @@ curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
   --request GET \
-  --write-out "HTTP Status: %{http_code}" \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration/master
 
 curl \
@@ -466,11 +465,11 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           }]
         }
-      }  
+      }
     }' \
     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/master
 
@@ -480,7 +479,7 @@ curl \
   --user $EMAIL
   --request DELETE \
   --data '{}' \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID 
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
 
 curl \
   --header "Content-Type: application/json" \
@@ -497,7 +496,7 @@ curl \
         "sources": {
           "array_append": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           }
         ]
@@ -537,7 +536,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"          }]
         }
       }
@@ -598,21 +597,19 @@ curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
   --request PUT \
-  --data "[
-  {
-    "id": "51c33adee4b0ce670af6006b",
+  --data "{
+    "id": "35642fb8-3f95-4da3-92a7-b4f413ef5cca",
     "description": "This is my updated description",
     "name": "My video",
     "configuration": {
       "media": {
         "sources": [{
-          "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+          "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
           "type":"video/mp4"
         }]
       }
     }
-  }
-]" \
+  }" \
 https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration/
 
 
@@ -634,7 +631,7 @@ curl \
         }
       }
     }' \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/preview
 
 
 
@@ -651,11 +648,11 @@ curl \
       "media": {
         "sources": [
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.m3u8",
             "type":"application/x-mpegURL"
           },
           {
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }
         ],
@@ -749,7 +746,7 @@ curl \
       "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.js"
     ],
     "stylesheets": [
-      "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css", 
+      "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css",
       "https://players.brightcove.com/svt-videojs-thumbnails/svt.thumbnails.css"
     ],
     "plugins": [{
@@ -779,7 +776,7 @@ curl \
     "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.js"
   ],
   "stylesheets": [
-    "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css", 
+    "https://players.brightcove.com/videojs-thumbnails/videojs.thumbnails.css",
     "https://players.brightcove.com/svt-videojs-thumbnails/svt.thumbnails.css"
   ],
   "plugins": [{
@@ -851,7 +848,7 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         },
@@ -872,13 +869,13 @@ curl \
       "configuration": {
         "media": {
           "sources": [{
-            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", 
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
             "type":"video/mp4"
           }]
         },
         "hls": false,
         "debugger": false,
-        "analytics": false,        
+        "analytics": false,
       }
     }' \
     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
@@ -1455,7 +1452,7 @@ curl \
   --header "Content-Type: application/json" \
   --request DELETE \
   --data '{}' \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID 
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
 
 //Delete player
 curl \
