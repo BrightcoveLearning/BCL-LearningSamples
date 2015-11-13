@@ -24,9 +24,9 @@
     /*override some of the default overlay styling*/
     div.vjs-overlay.vjs-overlay-top {
       width: 100%;
+      height: 100%;
       left: 0;
       margin-left: -10px;
-      height: 100%;
     }
   </style>
 </head>
@@ -53,9 +53,15 @@
      * @param {integer} idx the index of the video object in the videoData array
      */
     loadAndPlay = function(idx) {
-      console.log('idx', idx);
-      myPlayer.catalog.load(returnedPlaylist[idx]);
-      myPlayer.play();
+      //console.log('idx', idx);
+      try {
+        myPlayer.catalog.load(returnedPlaylist[idx]);
+        myPlayer.play();
+      } catch (err) {
+        console.log('in catch - err: ',err);
+        myPlayer.catalog.load(returnedPlaylist[idx]);
+        myPlayer.play();
+      }
     }
 
     /**
@@ -116,6 +122,12 @@
       overlayDiv = createEl('div', {
         id: 'bclsOverlay'
       });
+      /**
+       * From the catalog call the getPlayList
+       *
+       *
+       *
+       */
       myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
         //deal with error
         returnedPlaylist = playlist;
