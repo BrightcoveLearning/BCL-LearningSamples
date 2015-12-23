@@ -1,0 +1,28 @@
+curl \
+  --header "Content-Type: application/json" \
+  --user mboles@brightcove.com \
+  --request PATCH \
+  --data '{
+      "player": {
+        "template": {
+          "version": "2.3.5"
+        }
+      }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user mboles@brightcove.com  \
+  --request POST \
+  --write-out "HTTP Status: %{http_code}" \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+
+
+
+
+
+  <script src="https://gist.github.com/bcls/faa74cd6fdc3ff5b5387.js"></script>
+

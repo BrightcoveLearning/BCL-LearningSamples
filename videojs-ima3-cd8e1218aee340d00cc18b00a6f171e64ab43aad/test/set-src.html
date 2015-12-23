@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head><title>Seekable Ranges Example</title></head>
+<style>
+.info {
+  background-color: #ddd;
+  border: thin solid #333;
+  border-radius: 5px;
+  padding: 10px;
+}
+</style>
+<body>
+<p class="info">
+  An example of seeking after changing the video source. Mobile devices in
+  particular are very fragile after the source URL has been changed.
+  Information on the seekable ranges available will be filled in below once you
+  hit play.
+</p>
+<video width=600 height=300 src="http://vjs.zencdn.net/v/oceans.mp4" controls></video>
+<h3>Seekable Ranges:</h3>
+<div id="log" />
+<script>
+var
+  video = document.querySelector('video'),
+  log = document.getElementById('log'),
+  startAd,
+  doAd,
+  restoreContent,
+  displaySeekable = function(message) {
+    var display = document.createElement('p');
+    display.textContent = message + 'timeline: (0, ' + video.duration + ')\n';
+    if (!video.seekable) {
+      display.textContent += 'null';
+    } else if (video.seekable.length === 0) {
+      display.textContent += '[]';
+    } else {
+      display.textContent += '[(' + video.seekable.start(0) + ', ' + video.seekable.end(0) + ')]';
+    }
+    log.appendChild(display);
+  };
+
+startAd = function() {
+  if (video.currentTime > 3) {
+    // swap to an "ad"
+    video.src = "http://ie.microsoft.com/testdrive/graphics/videoformatsupport/big_buck_bunny_trailer_480p_high.mp4";
+    video.play();
+    video.removeEventListener('timeupdate', startAd);
+    video.addEventListener('timeupdate', doAd, false);
+  }
+};
+doAd = function() {
+  if (video.currentTime > 3) {
+    video.removeEventListener('timeupdate', doAd);
+    video.src = "http://vjs.zencdn.net/v/oceans.mp4";
+    displaySeekable('immediately after changing the source: ');
+    video.addEventListener('loadedmetadata', restoreContent, false);
+  }
+};
+restoreContent = function() {
+  displaySeekable('after loadedmetadata: ');
+  video.play();
+  video.currentTime = 5;
+  setTimeout(function() {
+    displaySeekable('after 1000ms: ');
+    video.currentTime = 5;
+  }, 1000);
+};
+video.addEventListener('timeupdate', startAd, false);
+</script>
+</body>
+</html>

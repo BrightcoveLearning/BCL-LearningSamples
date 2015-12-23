@@ -1,0 +1,7 @@
+<Playlist>
+	<Preroll>
+		<Ad>
+			<![CDATA[@@BC_DFP_SERVER_URL@@;fileOverride=VAST2/overlay_VAST2_allEvents.xml;params=@@AD_REQUEST_INFO@@]]>
+		</Ad>
+    	</Preroll>
+</Playlist>

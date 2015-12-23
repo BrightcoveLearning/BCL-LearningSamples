@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Debug: VMAP/VAST Test</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+  <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+
+  <link href="http://cs1.brightcodes.net/marguin/bcplayer/plugins/BCPlayerDebugLogger.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- 2.x player -->
+  <!--
+  <video id="myPlayerID"
+    data-video-id="4607746980001"
+    data-account="1507807800001"
+    data-player="b542ad0a-7a39-4abc-85fc-1aef5381c3a2"
+    data-embed="default"class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/b542ad0a-7a39-4abc-85fc-1aef5381c3a2_default/index.min.js"></script>
+   -->
+
+  <!-- 1.x player -->
+
+  <video id="myPlayerID"
+    data-video-id="4443324622001"
+    data-account="1507807800001"
+    data-player="415efd2a-9c9e-45a5-a783-ce157814b74b"
+    data-embed="default"
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/415efd2a-9c9e-45a5-a783-ce157814b74b_default/index.min.js"></script>
+
+
+  <script type="text/javascript" src="http://players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+
+  <script src="http://cs1.brightcodes.net/marguin/bcplayer/plugins/BCPlayerDebugLogger.js" ></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.ima3({
+        serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.txt",
+        postrollTimeout: 2000
+      });
+    });
+  </script>
+
+  <script>
+  var options = {"debugAds":true, "showProgress":false, "logClasses": true };
+  videojs('myPlayerID').BCPlayerDebugLogger(options);
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sample - Related Videos from Playlist</title>
+    <!-include the Overlay plugin's CSS ->
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+  <link href="//gitlearning.local/new-player-experiments/playlist-as-related-videos/related-playlist.css" rel='stylesheet'>
+  <style>
+    /*size the player */
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+<video id="myPlayerID"
+  data-video-id="4607357817001"
+  data-account="1752604059001"
+  data-player="f7dac958-0743-4a48-afe1-bc3b30165a81"
+  data-embed="default"
+  class="video-js" controls></video>
+<script src="//players.brightcove.net/1752604059001/f7dac958-0743-4a48-afe1-bc3b30165a81_default/index.min.js"></script>
+
+<script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+<script src="//gitlearning.local/new-player-experiments/playlist-as-related-videos/related-playlist.js"></script>
+
+<script type="text/javascript">
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this;
+    myPlayer.relatedPlaylist();
+  });
+
+</script>
+
+
+
+</body>
+
+</html>

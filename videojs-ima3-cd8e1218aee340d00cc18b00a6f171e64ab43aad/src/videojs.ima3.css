@@ -1,0 +1,150 @@
+/**
+ * Custom stylesheet for the IMA3 ad plugin.
+ */
+
+/* The ad container should overlay the video display */
+.vjs-ima3-ad-container {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/*
+  Only allow pointer events to reach IMA SDK elements when one of the conditions
+  below is true:
+
+1) When the flash ad tech is active and an ad is playing
+2) When the user's browser does not support touch events, the HTML ad tech is
+   active and an ad is playing
+3) When the the user's browser supports touch event, the HTML ad tech is active,
+   player controls are visible and an ad is playing
+*/
+/* Default */
+.vjs-ima3-ad-container,
+.vjs-ima3-click-tracker {
+  pointer-events: none;
+  /* 2014-10-17: IMA3 swallows touch events on Android devices. Move it out of
+     the way so it can't do that */
+  left: -9999px;
+}
+
+.vjs-ima3-flash-ad-container {
+  left: 0;
+}
+
+.vjs-ima3-ad-background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.vjs-ad-playing .vjs-ima3-ad-background {
+  background-color: rgba(0,0,0,1);
+}
+.ima3-ad-loading.ima3-loading-spinner .vjs-loading-spinner {
+  display:block;
+}
+/* Condition when flash ad tech active and playing, hide vjs-tech */
+.vjs-ima3-flash.vjs-ad-playing .vjs-tech {
+  opacity: 0;
+}
+
+.vjs-ad-playing .vjs-ima3-ad-container,
+.vjs-ad-playing .vjs-ima3-click-tracker,
+.vjs-ima3-overlay .vjs-ima3-ad-container,
+.vjs-ima3-overlay .vjs-ima3-click-tracker {
+  left: 0;
+}
+
+/* Condition 1 */
+.vjs-ima3-flash.vjs-ad-playing .vjs-ima3-ad-container,
+.vjs-ima3-flash.vjs-ima3-overlay .vjs-ima3-ad-container {
+  cursor: pointer;
+  pointer-events: auto;
+}
+/* Condition 2 */
+.vjs-mouse.vjs-ima3-html5.vjs-ad-playing .vjs-ima3-ad-container,
+.vjs-mouse.vjs-ima3-html5.vjs-ad-playing .vjs-ima3-click-tracker,
+.vjs-mouse.vjs-ima3-html5.vjs-ima3-overlay .vjs-ima3-ad-container,
+.vjs-mouse.vjs-ima3-html5.vjs-ima3-overlay .vjs-ima3-click-tracker {
+  cursor: pointer;
+  pointer-events: auto;
+}
+/* Condition 3 */
+.vjs-user-active.vjs-ad-playing.vjs-ima3-html5 .vjs-ima3-ad-container,
+.vjs-user-active.vjs-ad-playing.vjs-ima3-html5 .vjs-ima3-click-tracker {
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* When using native controls, we need to remove the click tracker when paused to allow native
+   big play button to resume. */
+.vjs-ima3-html5.vjs-using-native-controls.vjs-ima3-paused.vjs-ima3-paused .vjs-ima3-ad-container,
+.vjs-ima3-html5.vjs-using-native-controls.vjs-ima3-paused.vjs-ima3-paused .vjs-ima3-click-tracker {
+  pointer-events: none;
+}
+
+/** resize the click tracker when an overlay is being displayed */
+.vjs-ima3-click-tracker {
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.vjs-ima3-overlay .vjs-ima3-click-tracker {
+  top: auto;
+  margin: 0 auto;
+}
+
+/* if custom ad controls are present, hide the regular controls during ad
+   playback */
+.vjs-control-bar.vjs-control-bar.vjs-ad-control-bar.vjs-ad-control-bar {
+  display: none;
+}
+.vjs-ad-controls.vjs-ad-playing .vjs-control-bar.vjs-control-bar {
+  display: none;
+}
+
+/* if native controls are enabled or the main controls are disabled, remove the ad controls too */
+.vjs-ad-controls.vjs-ad-playing.vjs-using-native-controls .vjs-ad-control-bar.vjs-ad-control-bar,
+.vjs-ad-controls.vjs-ad-playing.vjs-controls-disabled .vjs-ad-control-bar.vjs-ad-control-bar {
+  display: none;
+}
+
+/* Enable browser-prefixed flex-box styles for IE<11, FF~27, Safari~7, iOS~7,
+   Android<4.4 */
+.vjs-ad-controls.vjs-ad-playing .vjs-control-bar.vjs-ad-control-bar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+  /* standards-compliant rule */
+  display: flex;
+}
+
+.vjs-ad-controls.vjs-ad-playing.vjs-no-flex .vjs-control-bar.vjs-ad-control-bar {
+  display: table;
+}
+
+/*
+  Suppress :hover effects on the progress bar control.
+
+  https://bithub.brightcove.com/videocloud/single-video-template/issues/561
+ */
+.vjs-mouse .vjs-control-bar.vjs-ad-control-bar .vjs-progress-control:hover {
+  height: 0.5em;
+  top: -0.5em;
+}
+
+.vjs-mouse .vjs-control-bar.vjs-ad-control-bar .vjs-progress-control:hover .vjs-mouse-display,
+.vjs-mouse .vjs-control-bar.vjs-ad-control-bar .vjs-progress-control:hover .vjs-mouse-display:after,
+.vjs-mouse .vjs-progress-control:hover .vjs-play-progress:after {
+  display: none;
+}

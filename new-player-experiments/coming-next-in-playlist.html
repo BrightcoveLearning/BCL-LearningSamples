@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      float: left;
+      margin: 15px;
+      width: 400px;
+      height: 200px;
+    }
+    .vjs-playlist {
+      width: 250px;
+      float: left;
+      margin: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-playlist-id="1579619681001"
+    data-account="1507807800001"
+    data-player="02b6a391-9342-4bbb-bcff-5c3e042ebad5"
+    data-embed="default"
+    class="video-js" controls></video>
+
+  <ol class="vjs-playlist"></ol>
+
+  <script src="//players.brightcove.net/1507807800001/02b6a391-9342-4bbb-bcff-5c3e042ebad5_default/index.min.js"></script>
+
+<script type="text/javascript">
+  var myPlayer,
+      intervalID,
+      playlistInfo,
+      secondCounter = 0,
+      timeToDisplayOverlay = 5;
+
+  videojs('myPlayerID').one('loadedmetadata',function(){
+    myPlayer = this;
+    playlistInfo = myPlayer.playlist();
+    console.log('options',myPlayer.options_);
+    console.log('playlist',myPlayer.playlist());
+    intervalID = window.setInterval(checkTime, 1000);
+    myPlayer.on('loadedmetadata',videoChanged);
+  });
+  function checkTime(){
+    if (!myPlayer.paused()){
+      secondCounter ++;
+      var currentVideoIndex =  myPlayer.playlist.currentItem(),
+        currentVideoDuration = playlistInfo[currentVideoIndex].duration,
+        timeRemaining = currentVideoDuration - secondCounter;
+      console.log('in checkTime');
+      console.log('timeRemaining',timeRemaining);
+    } else {
+      console.log('video paused');
+    }
+  }
+  function videoChanged(){
+    console.log('in videoChanged');
+    secondCounter = 0;
+  }
+</script>
+
+</body>
+
+</html>

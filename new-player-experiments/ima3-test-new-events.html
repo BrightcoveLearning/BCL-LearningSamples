@@ -10,21 +10,19 @@
       width: 610px;
     }
   </style>
-  <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+  <link href="http://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <video id="myPlayerID"
-    data-video-id="4093372393001"
-    data-account="1507807800001"
-    data-player="d3dd2e4d-940e-438f-bb13-9e2b219878ce"
-    data-embed="default"
-    class="video-js" controls></video>
-  <script src="//players.brightcove.net/1507807800001/d3dd2e4d-940e-438f-bb13-9e2b219878ce_default/index.min.js"></script>
+<video id="myPlayerID"
+  data-video-id="4607746980001"
+  data-account="1507807800001"
+  data-player="70f00326-3518-409d-9525-eb036179dc9f"
+  data-embed="default"class="video-js" controls></video>
+<script src="//players.brightcove.net/1507807800001/70f00326-3518-409d-9525-eb036179dc9f_default/index.min.js"></script>
 
-<script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
-
+<script src="http://players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
 
 <script>
   var myPlayer;
@@ -33,14 +31,52 @@
         // get a reference to the player
         myPlayer = this;
         myPlayer.ima3({
-            serverUrl: "http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6390/Marks-Ads-Test-Unit-1&ciu_szs=728x90&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&ad_rule=1&cmsid=580&vid=1760859514001"
+            serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"
           });
         myPlayer.on('ads-ad-started',function( evt ){
           console.log('ads-ad-started event passed to event handler', evt);
         });
+        myPlayer.on('ads-click',function( evt ){
+          console.log('ads-click event passed to event handler', evt);
+        });
+        myPlayer.on('ads-ad-ended',function( evt ){
+          console.log('ads-ad-ended event passed to event handler', evt);
+        });
+        myPlayer.on('ads-first-quartile',function( evt ){
+          console.log('ads-first-quartile event passed to event handler', evt);
+        });
+        myPlayer.on('ads-midpoint',function( evt ){
+          console.log('ads-midpoint event passed to event handler', evt);
+        });
+        myPlayer.on('ads-third-quartile',function( evt ){
+          console.log('ads-third-quartile event passed to event handler', evt);
+        });
+        myPlayer.on('ads-volumechange',function( evt ){
+          console.log('ads-volumechange event passed to event handler', evt);
+        });
+        myPlayer.on('ads-pause',function( evt ){
+          console.log('ads-pause event passed to event handler', evt);
+        });
+        myPlayer.on('ads-play',function( evt ){
+          console.log('ads-play event passed to event handler', evt);
+        });
+        myPlayer.on('ads-allpods-completed',function( evt ){
+          console.log('ads-allpods-completed event passed to event handler', evt);
+        });
+        myPlayer.on('ads-request',function( evt ){
+          console.log('ads-request event passed to event handler', evt);
+        });
+        myPlayer.on('ads-pod-ended',function( evt ){
+          console.log('ads-pod-ended event passed to event handler', evt);
+        });
+        myPlayer.on('ads-pod-started',function( evt ){
+          console.log('ads-pod-started event passed to event handler', evt);
+        });
+        myPlayer.on('ads-load',function( evt ){
+          console.log('ads-load event passed to event handler', evt);
+        });
       });
 </script>
-
 </body>
 
 </html>

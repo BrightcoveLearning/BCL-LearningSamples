@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>VAST 2 Text</title>
+  <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+<!-- 5.x player
+   <video id="myPlayerID"
+    data-video-id="4607746980001"
+    data-account="1507807800001"
+    data-player="b15c24b8-e763-4daf-a3c2-6c909ce43228"
+    data-embed="default"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1507807800001/b15c24b8-e763-4daf-a3c2-6c909ce43228_default/index.min.js"></script>
+ -->
+
+  <video id="myPlayerID"
+    data-video-id="4607746980001"
+    data-account="1507807800001"
+    data-player="efdfea47-94f7-41bf-aca5-b6864091a716"
+    data-embed="default"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1507807800001/efdfea47-94f7-41bf-aca5-b6864091a716_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+        vastInfoURL = 'http://solutions.brightcove.com/bcls/tests/player/one-ad.txt';
+
+      myPlayer.ima3({
+        serverUrl:'http://solutions.brightcove.com/bcls/tests/player/one-ad.txt',
+        adTechOrder: ['flash','html'],
+        debug:true,
+        requestMode: 'ondemand',
+        loadingSpinner: false,
+        prerollTimeout: 10000,
+        postrollTimeout: 10000,
+        timeout: 10000
+      });
+
+      console.log("PLAYER AD SERVER URL SET = ", myPlayer.ima3.settings);
+      myPlayer.ima3.adrequest(vastInfoURL);
+
+      //myPlayer.play();
+    });
+  </script>
+
+
+</body>
+
+</html>

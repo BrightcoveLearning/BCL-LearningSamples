@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Playlist</title>
+  <style type="text/css">
+
+    .container {
+  width: 1100px;
+  height: 400px;
+}
+/* tabbed menu */
+
+#menu {
+  float: right;
+  padding: 0;
+  padding-right: 85px;
+  margin: 0;
+  color: #fff;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  list-style-type: none;
+}
+
+#menu li {
+  display: inline;
+}
+
+#menu li input {
+  min-width: 50px;
+  height: 30px;
+  padding: 0.2em 1em;
+  background: #0000cc;
+  color: #fff;
+  text-decoration: none;
+  float: left;
+  border: 1px solid #fff;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.button {
+  background: #0000cc;
+}
+
+#menu li input:hover {
+  background: #08c;
+  color: #fff;
+}
+/* player with playlist */
+
+.video-js {
+  width: 650px;
+  height: 360px;
+  float: left;
+}
+
+.myplayer {
+  clear: both;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.vjs-playlist {
+  width: 330px;
+  height: 343px;
+}
+
+  </style>
+</head>
+
+<body>
+   <div class="container">
+  <div>
+    <ul id="menu">
+      <li>
+        <input id="tab0" type="button" class="button" onclick="processTab(0);" value="Short Videos"></input>
+      </li>
+      <li>
+        <input id="tab1" type="button" class="button" onclick="processTab(1);" value="Assorted Bugs and Birds">
+      </li>
+      <li>
+        <input id="tab2" type="button" class="button" onclick="processTab(2);" value="Sea and Water">
+      </li>
+      <li><input id="tab3" type="button" class="button" onclick="processTab(3);" value="Sea Life"></li>
+    </ul>
+  </div>
+
+  <div class="myplayer">
+
+    <video id="video_1" data-account="1752604059001"
+           data-player="b547079e-00cc-4585-b354-04020a7ed70a" data-embed="default" class="video-js" controls></video>
+    <script src="//players.brightcove.net/1752604059001/b547079e-00cc-4585-b354-04020a7ed70a_default/index.min.js"></script>
+
+    <ol class="vjs-playlist"></ol>
+  </div>
+</div>
+
+    <script id="pageScript" type="text/javascript">
+        var myPlayer,
+  playlistIds = ["4450721964001", "2805100167001", "2764931905001","1754200320001"],
+  playlistIdsLength = playlistIds.length,
+  tabs = document.getElementsByClassName("button"),
+  currentTab,
+  currentTabName,
+  playlistNames = [];
+
+videojs("video_1").ready(function() {
+  myPlayer = this;
+  // console.log("ready");
+  processTab(0);
+});
+
+function processTab(index) {
+  // console.log("processTab");
+  resetTabs();
+  document.getElementById("tab" + index).setAttribute("style", "background:#08c;color: #00FFFF; border-bottom: 1px solid #00FFFF;");
+  loadPlaylist(playlistIds[index]);
+};
+
+function loadPlaylist(currentId) {
+  myPlayer.catalog.getPlaylist(currentId, function(error, playlist) {
+    myPlayer.catalog.load(playlist);
+  });
+};
+
+function resetTabs() {
+  var i,
+    iMax = tabs.length;
+  for (i = 0; i < iMax; i++) {
+    tabs[i].setAttribute("style", "background: #0000cc;color: #fff;")
+  }
+}
+
+    </script>
+
+</body>
+</html>

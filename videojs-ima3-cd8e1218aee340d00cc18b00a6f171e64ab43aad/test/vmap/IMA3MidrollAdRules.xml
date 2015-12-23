@@ -1,0 +1,12 @@
+<Playlist>
+	<Midroll timeOffset="00:00:03">
+		<Ad>
+			<![CDATA[@@BC_DFP_SERVER_URL@@;fileOverride=VAST2/videoAd_VAST2_allEvents.xml;params=@@AD_REQUEST_INFO@@]]>
+		</Ad>
+	</Midroll>
+	<Midroll timeOffset="00:00:08">
+		<Ad>
+			<![CDATA[@@BC_DFP_SERVER_URL@@;fileOverride=VAST2/videoAd_VAST2_allEvents.xml;params=@@AD_REQUEST_INFO@@]]>
+		</Ad>
+	</Midroll>
+</Playlist>

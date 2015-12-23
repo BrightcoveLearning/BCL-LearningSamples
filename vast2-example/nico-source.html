@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Eurosport Ad Testing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type=text/css>
+    .video-container {
+      display: block;
+      position: relative;
+    }
+    .video-container: after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+    }
+    .video-container .video-js {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .video-js.vjs-ima3-flash.ima3-loading-spinner .vjs-tech {
+      -webkit-transition: opacity 0s;
+      transition: opacity 0s;
+    }
+    .vjs-has-started.ima3-loading-spinner.vjs-ad-loading .vjs-loading-spinner,
+    .vjs-has-started.ima3-loading-spinner.vjs-ima3-loading .vjs-loading-spinner {
+      display: block;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/videojs.ima3.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="video-container">
+    <video id="player"
+      data-video-id="4148859934001"
+      data-account="1949054856001"
+      data-player="c511d9b8-d7a4-4322-8fba-a6d849d3b4ed"
+      data-embed="default"
+      preload="none"
+      class="video-js" controls></video>
+
+    <script src="//players.brightcove.net/1949054856001/c511d9b8-d7a4-4322-8fba-a6d849d3b4ed_default/index.min.js"></script>
+
+    <script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+
+    <script type=text/javascript>
+      var player = videojs("player");
+       // var URLpreroll = "http://adserver.adtech.de/?advideo/3.0/1695.1/5894913/0//cc=2;vidAS=mid_roll;cors=yes;vidRTV=2.0;vidRT=vast";
+       // var URLpostroll = "http://adserver.adtech.de/?advideo/3.0/1695.1/5894913/0//cc=2;vidAS=post_roll;cors=yes;vidRTV=2.0;vidRT=vast";
+      var URLpreroll = "http://adserver.adtech.de/?advideo/3.0/1695.1//0//cc=2;vidAS=pre_roll;vidLEN=156;cors=yes;vidRTV=3.0;vidRT=vast;alias=video.eurosport.fr_other_preroll_desktop;kvsite=video.eurosport.fr;kvposition=preroll;kvpage=;kvsport=22;kvrecurring_event=1301;kvvideo_channel=1;";
+      var URLpostroll = "http://openad.tf1.fr/RealMedia/ads/adstream_sx.ads/TF1/une-famille-formidable/videos/catchup/166023256@x01?EXCEPTION=&amp;MEDIA=web&amp;LEGAL=&amp;DURVID=161&amp;UVID=12905699&amp;IDURL=TF1_300102_1046243_23151878";
+      console.log(URLpreroll);
+      console.log(URLpostroll);
+      player.ima3({
+        adTechOrder: ['html5', 'flash'],
+        serverUrl: '',
+        debug: true,
+        requestMode: 'ondemand',
+        loadingSpinner: true,
+        prerollTimeout: 10000,
+        postrollTimeout: 10000,
+        timeout: 10000
+      });
+       // set preroll URL
+      player.on("ready", function () {
+        player.ima3.settings.serverUrl = URLpreroll;
+        console.log("PLAYER AD SERVER URL SET = " + player.ima3.settings.serverUrl);
+      });
+      player.on("canplay", function () {
+        console.log("#ADFW: tiggering preroll");
+        player.ima3.adrequest(URLpreroll);
+      });
+       //after first play, register fresh ad requests for subsequent contentupdate
+      player.on("contentupdate", function () {
+        player.ima3.settings.serverUrl = URLpostroll;
+        if (player.ima3.adsManager && player.ads.state === "ad-playback") {
+          player.ima3.adsManager.destroy();
+          player.ads.endLinearAdMode();
+        }
+      });
+      player.on("ima3-started", function () {
+        console.log("#######################\n");
+        console.log(player.ima3.settings.serverUrl);
+        console.log("#######################\n");
+      });
+      player.on("contentended", function () {
+        console.log("postrollPlayed");
+        player.ima3.adrequest(URLpostroll);
+        player.one('adended', function () {
+          player.ads.endLinearAdMode();
+        });
+      });
+    </script>
+</body>
+
+</html>

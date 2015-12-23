@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Multiple Session Playback</title>
+  <!-- styles for page -->
+  <style type="text/css">
+    .video-js {
+      height: 400px;
+      width: 960px
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Multiple Session Playback</h2>
+  <video id="myPlayerID"
+    data-video-id="4093372393001"
+    data-account="1507807800001"
+    data-player="ae99b6be-1c73-42dd-b8c4-5013a78ad2e8"
+    data-embed="default"
+    class="video-js" controls></video>
+
+
+  <script src="//players.brightcove.net/1507807800001/ae99b6be-1c73-42dd-b8c4-5013a78ad2e8_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+
+      myPlayer.on('timeupdate', function () {
+        console.log('ended method: ', myPlayer.ended());
+      });
+
+      myPlayer.on('ended', function () {
+        console.log('ended event handler');
+      })
+    });
+  </script>
+</body>
+
+</html>

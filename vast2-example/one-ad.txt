@@ -1,0 +1,38 @@
+<VAST version="2.0">
+  <Ad id="preroll">
+    <InLine>
+      <AdSystem version="1.0">Test Ad Server</AdSystem>
+      <AdTitle>
+        <![CDATA[Portals]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[Demo ad number 6]]>
+      </Description>
+      <Error>
+        <![CDATA[]]>
+      </Error>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:8</Duration>
+            <TrackingEvents/>
+            <AdParameters>
+              <![CDATA[<xml></xml>]]>
+            </AdParameters>
+            <VideoClicks/>
+            <MediaFiles>
+              <MediaFile type="video/mp4" width="1280" height="720" delivery="progressive" id="2" bitrate="4316" minBitrate="320" maxBitrate="320" scalable="true" maintainAspectRatio="true">
+                <![CDATA[http://solutions.brightcove.com/bcls/ads/bc-ads/bcls-ad-6-5seconds.mp4]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+      </Creatives>
+      <Extensions>
+        <Extension>
+          <xml>data</xml>
+        </Extension>
+      </Extensions>
+    </InLine>
+  </Ad>
+</VAST>

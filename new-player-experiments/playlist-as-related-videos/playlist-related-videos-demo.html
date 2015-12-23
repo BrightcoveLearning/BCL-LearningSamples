@@ -3,9 +3,11 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Sample - Related Videos from Playlist</title>
+    <!-- include the Overlay plugin's CSS -->
   <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
   <style>
+    /*size the player */
     .video-js {
       height: 344px;
       width: 610px;
@@ -32,20 +34,55 @@
 </head>
 
 <body>
-    <video id="myPlayerID"
-      data-video-id="4607746980001"
-      data-account="1507807800001"
-      data-player="0826bd7b-b9de-44c2-af63-0dfe2a76af36"
-      data-embed="default"
-      class="video-js" controls></video>
-
-  <script src="//players.brightcove.net/1507807800001/0826bd7b-b9de-44c2-af63-0dfe2a76af36_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-video-id="4511351172001"
+    data-account="1752604059001"
+    data-player="2fc88f47-3e0f-45bc-9a11-97d9d2f22392"
+    data-embed="default"
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1752604059001/2fc88f47-3e0f-45bc-9a11-97d9d2f22392_default/index.min.js"></script>
+  <!--include the Overlay plugin's JavaScript -->
   <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
 
   <script type="text/javascript">
   var loadAndPlay,
     myPlayer,
     returnedPlaylist;
+
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+      var playlistID = 4609649081001,
+      htmlElement = '',
+      // build a div that will be used as overlay content
+      overlayDiv = createEl('div', {
+        id: 'bclsOverlay'
+      });
+      // get the playlist using the catalog
+      myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
+        //deal with error
+        returnedPlaylist = playlist;
+        // be sure no more than 9 videos in playlist
+        returnedPlaylist = returnedPlaylist.slice(0,9);
+        // call function to use video objects to build div using thumbnails
+        htmlElement = createVideoList(returnedPlaylist);
+        // append div of thumbnails to overlay element
+        overlayDiv.appendChild(htmlElement);
+      });
+      // use overlay plugin to display related videos on pause and video end
+      myPlayer.overlay({
+        overlays: [{
+          align: 'top',
+          content: overlayDiv,
+          start: 'pause',
+          end: 'play'
+        }, {
+          align: 'top',
+          content: overlayDiv,
+          start: 'ended',
+          end: 'play'
+        }]
+      });
+    });
     /**
      * loads and plays a video
      * this function called with thumbnails in
@@ -53,15 +90,13 @@
      * @param {integer} idx the index of the video object in the videoData array
      */
     loadAndPlay = function(idx) {
-      //console.log('idx', idx);
+      //try-catch only needed to compensate for bug
       try {
         myPlayer.catalog.load(returnedPlaylist[idx]);
-        myPlayer.play();
       } catch (err) {
-        console.log('in catch - err: ',err);
         myPlayer.catalog.load(returnedPlaylist[idx]);
-        myPlayer.play();
       }
+        myPlayer.play();
     }
 
     /**
@@ -85,6 +120,7 @@
 
     /**
      * create the html for the overlay
+     *
      * @param {array} videoData array of video objects
      * @return {HTMLElement} videoList the div element containing the overlay
      */
@@ -115,40 +151,6 @@
       return videoList;
     }
 
-    videojs('myPlayerID').ready(function(){
-      myPlayer = this;
-      var playlistID = 1579619681001,
-      htmlElement = '',
-      overlayDiv = createEl('div', {
-        id: 'bclsOverlay'
-      });
-      /**
-       * From the catalog call the getPlayList
-       *
-       *
-       *
-       */
-      myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
-        //deal with error
-        returnedPlaylist = playlist;
-        returnedPlaylist = returnedPlaylist.slice(0,9);
-        htmlElement = createVideoList(returnedPlaylist);
-        overlayDiv.appendChild(htmlElement);
-      });
-      myPlayer.overlay({
-        overlays: [{
-          align: 'top',
-          content: overlayDiv,
-          start: 'pause',
-          end: 'play'
-        }, {
-          align: 'top',
-          content: overlayDiv,
-          start: 'ended',
-          end: 'play'
-        }]
-      });
-    });
   </script>
 
 </body>
