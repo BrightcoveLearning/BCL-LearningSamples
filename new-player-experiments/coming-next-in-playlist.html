@@ -55,12 +55,10 @@
   var myPlayer,
       intervalID,
       playlistInfo,
-      secondCounter = 0,
       timeToDisplayOverlay = 5,
       lengthOfPlaylist = 0;
 
   videojs('myPlayerID').ready(function(){
-  console.log('-----------in ready-------------');
     var myPlayer = this;
     myPlayer.overlay({
       overlays: [{
@@ -71,23 +69,18 @@
   });
 
   videojs('myPlayerID').one('loadedmetadata',function(){
-    console.log('-----------in loadedmetadata-------------');
     myPlayer = this;
     playlistInfo = myPlayer.playlist();
     lengthOfPlaylist = playlistInfo.length;
-    console.log('lengthOfPlaylist', lengthOfPlaylist);
-    console.log('options',myPlayer.options_);
-    console.log('playlist',myPlayer.playlist());
     intervalID = window.setInterval(checkTime, 1000);
     myPlayer.on('loadedmetadata',videoChanged);
-    //myPlayer.addClass("hide-overlay");
+    myPlayer.addClass("hide-overlay");
   });
+
   function checkTime(){
     if (!myPlayer.paused()){
-      secondCounter ++;
       var currentVideoIndex =  myPlayer.playlist.currentItem(),
         nextVideoIndex = currentVideoIndex + 1,
-
         currentVideoDuration = playlistInfo[currentVideoIndex].duration,
         timeRemaining = currentVideoDuration - myPlayer.currentTime();
       if (nextVideoIndex < lengthOfPlaylist) {
@@ -95,12 +88,8 @@
       } else {
         nextVideoName = 'Last video in playlist'
       };
-      console.log('in checkTime');
-      console.log('myPlayer.currentTime',myPlayer.currentTime());
       if (timeRemaining <= timeToDisplayOverlay) {
-        console.log('*****display overlay****');
         var theDiv = document.getElementsByClassName("div.vjs-overlay");
-        console.log('overlay', theDiv)
         document.getElementsByClassName("vjs-overlay")[0].innerHTML = nextVideoName;
         myPlayer.removeClass("hide-overlay");
         if (nextVideoIndex >= lengthOfPlaylist) {
@@ -111,10 +100,8 @@
       console.log('video paused');
     }
   }
+
   function videoChanged(){
-    console.log('in videoChanged');
-    secondCounter = 0;
-    console.log('myPlayer.playlist.currentItem()',myPlayer.playlist.currentItem());
     myPlayer.addClass("hide-overlay");
   }
 </script>
