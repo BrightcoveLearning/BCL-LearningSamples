@@ -89,14 +89,14 @@
         nextVideoIndex = currentVideoIndex + 1,
 
         currentVideoDuration = playlistInfo[currentVideoIndex].duration,
-        timeRemaining = currentVideoDuration - secondCounter;
+        timeRemaining = currentVideoDuration - myPlayer.currentTime();
       if (nextVideoIndex < lengthOfPlaylist) {
         nextVideoName = playlistInfo[nextVideoIndex].name
       } else {
         nextVideoName = 'Last video in playlist'
       };
       console.log('in checkTime');
-      console.log('timeRemaining',timeRemaining);
+      console.log('myPlayer.currentTime',myPlayer.currentTime());
       if (timeRemaining <= timeToDisplayOverlay) {
         console.log('*****display overlay****');
         var theDiv = document.getElementsByClassName("div.vjs-overlay");
