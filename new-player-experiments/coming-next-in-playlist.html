@@ -16,45 +16,97 @@
       float: left;
       margin: 15px;
     }
+    .hide-overlay .vjs-overlay {
+      display: none;
+    }
   </style>
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
 </head>
 
 <body>
 
+  <!-- 1.x Player -->
   <video id="myPlayerID"
+    data-playlist-id="4400450992001"
+    data-account="1507807800001"
+    data-player="4b3e374a-7e3b-4ef8-b288-c306beaf1700"
+    data-embed="default"
+    class="video-js" controls=""></video>
+
+  <!-- 5.x Player -->
+<!--   <video id="myPlayerID"
     data-playlist-id="1579619681001"
     data-account="1507807800001"
     data-player="02b6a391-9342-4bbb-bcff-5c3e042ebad5"
     data-embed="default"
     class="video-js" controls></video>
-
+ -->
   <ol class="vjs-playlist"></ol>
 
-  <script src="//players.brightcove.net/1507807800001/02b6a391-9342-4bbb-bcff-5c3e042ebad5_default/index.min.js"></script>
+  <!-- 1.x Player -->
+  <script src="//players.brightcove.net/1507807800001/4b3e374a-7e3b-4ef8-b288-c306beaf1700_default/index.min.js"></script>
+
+  <!-- 5.x Player -->
+<!--   <script src="//players.brightcove.net/1507807800001/02b6a391-9342-4bbb-bcff-5c3e042ebad5_default/index.min.js"></script> -->
+
+  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
 
 <script type="text/javascript">
   var myPlayer,
       intervalID,
       playlistInfo,
       secondCounter = 0,
-      timeToDisplayOverlay = 5;
+      timeToDisplayOverlay = 5,
+      lengthOfPlaylist = 0;
+
+  videojs('myPlayerID').ready(function(){
+  console.log('-----------in ready-------------');
+    var myPlayer = this;
+    myPlayer.overlay({
+      overlays: [{
+        content: '<h3>this is the overlay</h3>',
+        start: 'play'
+      }]
+    });
+  });
 
   videojs('myPlayerID').one('loadedmetadata',function(){
+    console.log('-----------in loadedmetadata-------------');
     myPlayer = this;
     playlistInfo = myPlayer.playlist();
+    lengthOfPlaylist = playlistInfo.length;
+    console.log('lengthOfPlaylist', lengthOfPlaylist);
     console.log('options',myPlayer.options_);
     console.log('playlist',myPlayer.playlist());
     intervalID = window.setInterval(checkTime, 1000);
     myPlayer.on('loadedmetadata',videoChanged);
+    //myPlayer.addClass("hide-overlay");
   });
   function checkTime(){
     if (!myPlayer.paused()){
       secondCounter ++;
       var currentVideoIndex =  myPlayer.playlist.currentItem(),
+        nextVideoIndex = currentVideoIndex + 1,
+
         currentVideoDuration = playlistInfo[currentVideoIndex].duration,
         timeRemaining = currentVideoDuration - secondCounter;
+      if (nextVideoIndex < lengthOfPlaylist) {
+        nextVideoName = playlistInfo[nextVideoIndex].name
+      } else {
+        nextVideoName = 'Last video in playlist'
+      };
       console.log('in checkTime');
       console.log('timeRemaining',timeRemaining);
+      if (timeRemaining <= timeToDisplayOverlay) {
+        console.log('*****display overlay****');
+        var theDiv = document.getElementsByClassName("div.vjs-overlay");
+        console.log('overlay', theDiv)
+        document.getElementsByClassName("vjs-overlay")[0].innerHTML = nextVideoName;
+        myPlayer.removeClass("hide-overlay");
+        if (nextVideoIndex >= lengthOfPlaylist) {
+          window.clearInterval(intervalID);
+        };
+      };
     } else {
       console.log('video paused');
     }
@@ -62,6 +114,8 @@
   function videoChanged(){
     console.log('in videoChanged');
     secondCounter = 0;
+    console.log('myPlayer.playlist.currentItem()',myPlayer.playlist.currentItem());
+    myPlayer.addClass("hide-overlay");
   }
 </script>
 
