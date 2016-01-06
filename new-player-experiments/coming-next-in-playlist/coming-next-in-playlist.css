@@ -1,0 +1,9 @@
+
+    .vjs-playlist {
+      width: 250px;
+      float: left;
+      margin: 15px;
+    }
+    .hide-overlay .vjs-overlay {
+      display: none;
+    }
