@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cue Point CTA Demo</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+    .hide-overlay .vjs-overlay {
+      display: none;
+    }
+    .vjs-overlay {
+      height: 200px;
+      width: 500px !important;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+</head>
+
+<body>
+<h4>Based on cue point info the first CTA will appear at 5 seconds and be displayed for 10 seconds, then a second CTA will appear at 20 seconds and be displayed for 5 seconds.</h4>
+  <video id="myPlayerID"
+    data-video-id="4690057979001"
+    data-account="1507807800001"
+    data-player="039bd005-885a-4006-86a7-360727f02da9"
+    data-embed="default"
+    class="video-js"></video>
+  <script src="//players.brightcove.net/1507807800001/039bd005-885a-4006-86a7-360727f02da9_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+
+  <script>
+    var myPlayer,
+      timeoutID,
+      removeCTATime;
+
+    videojs("myPlayerID").ready(function(){
+      var cuePointAra=[],
+        allCuePointData;
+      myPlayer = this;
+      myPlayer.overlay({
+        overlays: [{
+          content: '<h3>this is the overlay</h3>',
+          start: 'play'
+        }]
+      });
+      myPlayer.addClass("hide-overlay");
+      myPlayer.catalog.getVideo(myPlayer.options()['data-video-id'], function(error, video) {
+        //deal with error
+        myPlayer.catalog.load(video);
+        cuePointAra = myPlayer.mediainfo.cue_points;
+        var tt = myPlayer.textTracks()[0];
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            allCuePointData = getSubArray(cuePointAra,'time',tt.activeCues[0].startTime);
+            displayCTA(allCuePointData[0]);
+          }
+        }
+        myPlayer.play();
+      });
+
+      function displayCTA(cpData){
+        var dataAra = cpData.metadata.split(';'),
+          durationCTA =  dataAra[0],
+          textCTA = dataAra[1],
+          urlCTA = dataAra[2],
+          hrefCTA = '<a href="' + urlCTA + '">' + textCTA + '</a>',
+          timeoutValue;
+        timeoutValue = Number(durationCTA) * 1000;
+        timeoutID = window.setTimeout(checkTime, timeoutValue);
+        document.getElementsByClassName("vjs-overlay")[0].innerHTML = hrefCTA;
+        myPlayer.removeClass("hide-overlay");
+      }
+
+      function checkTime(){
+          window.clearTimeout(timeoutID);
+          myPlayer.addClass("hide-overlay");
+      }
+
+      function getSubArray(targetArray, objProperty, value) {
+        var i, totalItems = targetArray.length,
+          objFound = false,
+          idxArr = [];
+        for (i = 0; i < totalItems; i++) {
+          if (targetArray[i][objProperty] === value) {
+            objFound = true;
+            idxArr.push(targetArray[i]);
+          }
+        }
+        return idxArr;
+      };
+    });
+  </script>
+</body>
+
+</html>
