@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>mediainfo for 5.x</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="4093643993001"
+    data-account="1752604059001"
+    data-player="VJvZIueYx"
+    data-embed="default"
+    class="video-js" controls=""></video>
+
+  <div id="displayInfo"></div>
+
+
+  <script src="//players.brightcove.net/1752604059001/VJvZIueYx_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.on('loadstart',function(){
+        console.log('mediainfo', myPlayer.mediainfo);
+
+        //Use JavaScript to display the tags
+        var numTags = myPlayer.mediainfo.tags.length;
+        displayInfo.innerHTML += "<h1>Tags:</h1><ul>";
+        for (var i = 0; i < numTags; i++) {
+          displayInfo.innerHTML += "<li>" + myPlayer.mediainfo.tags[i] + "</li>";
+        };
+        displayInfo.innerHTML += "</ul><br />";
+
+        //Use JavaScript to display custom fields
+        displayInfo.innerHTML += "<h1>Custom Fields:</h1><ul>";
+        for (var key in myPlayer.mediainfo.custom_fields) {
+         displayInfo.innerHTML += "<li><strong>" + key + "</strong>: " + myPlayer.mediainfo.custom_fields[key] + "</li>";
+        }
+        displayInfo.innerHTML += "</ul>";
+      })
+    });
+  </script>
+
+</body>
+
+</html>

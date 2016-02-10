@@ -1,0 +1,17 @@
+/***************************
+ * Download Video          *
+ ***************************/
+/* Order elements in the control bar to place a download button after the fullscreen button. */
+.downloadStyle {
+    order: 9;
+    -webkit-box-ordinal-group: 9;
+    -moz-box-ordinal-group: 9;
+    -webkit-order: 9;
+    -ms-flex-order: 9;
+    padding-top: 7px;
+}
+#downloadButton {
+    width: 34px;
+    height: 33px;
+    text-align: center;
+}
