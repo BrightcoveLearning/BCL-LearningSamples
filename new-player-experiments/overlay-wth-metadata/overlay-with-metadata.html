@@ -40,10 +40,7 @@
   <script type="text/javascript">
     videojs("myPlayerID").ready(function() {
       var myPlayer = this;
-      myPlayer.catalog.getVideo(myPlayer.options()['data-video-id'], function(error, video) {
-        //deal with error
-        myPlayer.catalog.load(video);
-console.log('mediainfo',myPlayer.mediainfo);
+      myPlayer.on('loadstart',function() {
         myPlayer.overlay({
           overlays: [{
             content: myPlayer.mediainfo.custom_fields.customfield1,
