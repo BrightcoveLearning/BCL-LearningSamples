@@ -5,7 +5,7 @@ curl \
   --data '{
       "player": {
         "template": {
-          "version": "1.14.30"
+          "version": "5.1.8"
         }
       }
   }' \
@@ -27,9 +27,9 @@ curl \
     --user $EMAIL \
     --request POST \
     --data '{
-        "name": "5.x Player",
+        "name": "5.1.8 Player",
           "template": {
-            "version": "5.0.2"
+            "version": "5.1.8"
           }
       }' \
       https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players

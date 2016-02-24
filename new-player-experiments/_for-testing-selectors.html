@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Testing </title>
+  <!-- styles for page -->
+    <style>
+    .video-js {
+      height: 340px;
+      width: 600px;
+    }
+    #myPlayerID .vjs-control-bar {
+      transform: none;
+    }
+    .vjs-volume-menu-button {
+      color: red;
+    }
+    /*.video-js .vjs-play-progress.vjs-slider-bar {
+      background-color: yellow;
+    }*/
+    /*.video-js .vjs-progress-control.vjs-control {
+      background-color: green;
+    }*/
+    /*.vjs-progress-holder.vjs-slider.vjs-slider-horizontal {
+      color: red;
+      background-color: yellow;
+    }*/
+    /* .video-js .vjs-play-pregress.vjs-slider-bar ::after {
+      color: blue;
+      background-color: red;
+    }
+    .video-js .vjs-mouse-display ::after {
+      color: yellow;
+      background-color: green;
+    }*/
+    /*.video-js .vjs-control-bar{
+      background-color: red;
+    }*/
+    /*button.vjs-play-control.vjs-control.vjs-button.vjs-pause {
+      color: pink;
+      background-color: red;
+    }
+    button.vjs-play-control.vjs-control.vjs-button.vjs-playing {
+      color: red;
+      background-color: pink;
+    }
+    .video-js .vjs-chapters-button.vjs-menu-button {
+      color: red;
+      background-color: green;
+    }
+    .video-js .vjs-captions-button.vjs-menu-button {
+      color: red;
+      background-color: green;
+    }
+    .video-js .vjs-fullscreen-control.vjs-control {
+      color: red;
+      background-color: green;
+    }
+    .vjs-chapters-button.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button .vjs-menu .vjs-menu-content .vjs-menu-item {
+      color: black;
+      background-color: white;
+    }
+    .vjs-control-bar .vjs-chapters-button.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button .vjs-menu .vjs-menu-content .vjs-menu-title {
+      color: black;
+      background-color: white;
+    }*/
+  </style>
+
+</head>
+
+<body>
+
+  <video  id="myPlayerID" data-video-id="4093372393001"
+data-account="1507807800001"
+data-player="4k9UIYnYx"
+data-embed="default"
+class="video-js"
+controls>
+  <track src="http://learning-services-media.brightcove.com/chaptered-video/vtt/sea-marvels-chapters.vtt" kind="chapters" label="Chapters" srclang="en">
+  <track kind="captions" src="http://solutions.brightcove.com/bcls/test-matt/Adding_Captions_to_Videos.vtt" srclang="en" label="English">
+</video>
+<script src="//players.brightcove.net/1507807800001/4k9UIYnYx_default/index.min.js"></script>
+
+</body>
+
+</html>
