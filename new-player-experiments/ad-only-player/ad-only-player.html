@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="4690057979001"
+    data-account="1507807800001"
+    data-player="4Jlk2d58hg"
+    data-embed="default"
+    class="video-js"
+    data-setup="{'techOrder': 'IMA3Tech'}"
+    controls
+    ></video>
+
+    <script src="//players.brightcove.net/1507807800001/4Jlk2d58hg_default/index.min.js"></script>
+    <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js" type="text/javascript"></script>
+    <script src="//players.brightcove.net/videojs-adonly/1/videojs-adonly.js" type="text/javascript"></script>
+    <script src="//players.brightcove.net/videojs-ima3-tech/1/videojs-ima3-tech.min.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.ima3({"serverURL": "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"});
+      myPlayer.adonly();
+      myPlayer.play()
+    });
+  </script>
+
+</body>
+
+</html>

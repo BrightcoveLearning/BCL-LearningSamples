@@ -1,0 +1,78 @@
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "techOrder": ["IMA3Tech"]
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+Studio: add in this order
+1. //players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js
+2. //players.brightcove.net/videojs-ima3-tech/1/videojs-ima3-tech.min.js
+3. //players.brightcove.net/videojs-adonly/1/videojs-adonly.js
+
+
+RawParsed {
+  "account_id": "4702279503001",
+  "autoadvance": 0,
+  "autoplay": true,
+  "compatibility": true,
+  "dock": false,
+  "embed_id": "default",
+  "flashHlsDisabledByStudio": false,
+  "fullscreenControl": true,
+  "id": "VySNnAIhl",
+  "player": {
+    "inactive": false,
+    "template": {
+      "locked": false,
+      "name": "single-video-template",
+      "version": "5.1.7"
+    }
+  },
+  "player_id": "VySNnAIhl",
+  "player_name": "Ad Only Player Example",
+  "plugins": [{
+    "name": "ima3",
+    "options": {
+      "adTechOrder": [
+        "flash",
+        "html5"
+      ],
+      "hardTimeouts": true,
+      "postrollTimeout": 2000,
+      "prerollTimeout": 1000,
+      "requestMode": "ondemand",
+      "serverUrl": "//pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=%2F15018773%2Feverything2&ciu_szs=300x250%2C468x60%2C728x90&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1url=[referrer_url]&correlator=[timestamp]&cmsid=133&vid=10XWSh7W4so&ad_rule=1",
+      "timeout": 5000,
+      "vpaidMode": "ENABLED"
+    }
+  }, {
+    "name": "adonly",
+    "options": {
+      "name": "adonly"
+    }
+  }],
+  "scripts": [
+    "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js",
+    "http://players.brightcove.net/videojs-ima3-tech/1/videojs-ima3-tech.min.js",
+    "http://players.brightcove.net/videojs-adonly/1/videojs-adonly.js"
+  ],
+  "skin": null,
+  "studio_configuration": {
+    "player": {
+      "adjusted": true
+    }
+  },
+  "stylesheets": [
+    "//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css"
+  ],
+  "techOrder": [
+    "IMA3Tech"
+  ],
+  "video_cloud": {
+    "policy_key": "BCpkADawqM1cMJ--Qa04PXE-a2UF6CGFiLLQ_cNfHyu2Qm9-ZWhCqJUpitjNGp4YWTPTZg3DBCA1oCj2zhSv9WkE0iux3-vL9aF3aRgMjiICTZwXnEOlDmeG4qP84E0lDPIE4Kunm14TBR_F",
+    "video": null
+  }
+}
