@@ -1,0 +1,31 @@
+1. Create JavaScript variables for the iframe and newVideo query string
+    var iframeTag = document.getElementsByTagName("iframe")[0],
+      newVideo = "?videoId=922656010001";
+2. Add function to append query string to iframe's src
+    function changeVideo() {
+      iframeTag.src += newVideo;
+    }
+3. Browse and click button to see video change
+
+
+
+***Core Code***
+  <iframe src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.html?videoId=4036854518001"
+    allowfullscreen
+    webkitallowfullscreen
+    mozallowfullscreen></iframe>
+
+  <p><button onclick="changeVideo()">change video</button></p>
+
+  <!-- custom script -->
+  <script type="text/JavaScript">
+
+    function changeVideo() {
+      var iframeTag = document.getElementsByTagName("iframe")[0],
+        newVideo = "?videoId=3742256815001",
+        theSrc = iframeTag.src,
+        srcWithoutVideo = theSrc.substring( 0, theSrc.indexOf( "?" ) ),
+        newSrc = srcWithoutVideo + newVideo;
+      iframeTag.src = newSrc;
+    }
+  </script>
