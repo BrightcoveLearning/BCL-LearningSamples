@@ -1,68 +1,61 @@
-<!doctype html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <title>Untitled Document</title>
-</head>
-
-<body>
-
-<!-- Start of Brightcove Player -->
-
-<div style="display:none">
-
-</div>
-
-<!--
-By use of this code snippet, I agree to the Brightcove Publisher T and C 
-found at https://accounts.brightcove.com/en/terms-and-conditions/. 
--->
-
-<script language="JavaScript" type="text/javascript" src="http://admin.brightcove.com/js/BrightcoveExperiences.js"></script>
-
-<object id="myExperience1507781668001" class="BrightcoveExperience">
-  <param name="bgcolor" value="#FFFFFF" />
-  <param name="width" value="480" />
-  <param name="height" value="270" />
-  <param name="playerID" value="4101693604001" />
-  <param name="playerKey" value="AQ~~,AAABXxBZKsE~,AdU2xXeQoKDPSP3b7IQ2OpqsLchX2Q8v" />
-  <param name="isVid" value="true" />
-  <param name="isUI" value="true" />
-  <param name="dynamicStreaming" value="true" />
-  
-  <param name="@videoPlayer" value="1507781668001" />
-
-<!-- smart player api params -->
-   <param name="includeAPI" value="true" />
-   <param name="templateLoadHandler" value="onTemplateLoad" />
-   <param name="templateReadyHandler" value="onTemplateReady" />
-  
-</object>
-
-<!-- 
-This script tag will cause the Brightcove Players defined above it to be created as soon
-as the line is read by the browser. If you wish to have the player instantiated only after
-the rest of the HTML is processed and the page load is complete, remove the line.
--->
-<script type="text/javascript">brightcove.createExperiences();</script>
-
-<!-- End of Brightcove Player -->
-<script type="text/JavaScript">
-    var player,
-    APIModules,
-    videoPlayer;
-
-    function onTemplateLoad(experienceID){
-     player = brightcove.api.getExperience(experienceID);
-     APIModules = brightcove.api.modules.APIModules;
-    }
-
-    function onTemplateReady(evt){
-     videoPlayer = player.getModule(APIModules.VIDEO_PLAYER);
-     videoPlayer.play();
-    }
-  </script>    
-</body>
-
-</html>
+<h4 id="toc_0">25 Mar 2016</h4>
+<p>v3.0.9</p>
+<ul>
+  <li>Added Arabic language files</li>
+  <li>Fixed unclickable social sharing links</li>
+  <li>Fix to ensure that social and button are hidden on small devices</li>
+</ul>
+<h4 id="toc_1">7 Mar 2016</h4>
+<p>v3.0.8</p>
+<ul>
+  <li>Fixed an issue where it looked like the player was torn down when being restarted.</li>
+  <li>Fixed sizing dependent on the base font size (now assuming SVT&#39;s 14px).</li>
+  <li>Added <code>&quot;deploy&quot;</code> script to <code>package.json</code>.</li>
+</ul>
+<h4 id="toc_3">23 Nov 2015</h4>
+<p>v3.0.0</p>
+<ul>
+  <li>Refactor to use video.js <code>ModalDialog</code> and ES6.</li>
+  <li>Deprecate <code>show</code> and <code>hide</code> methods.</li>
+  <li>Remove <code>update</code> method.</li>
+  <li>Overhaul HTML/CSS to be cleaner and more consistent.</li>
+  <li>Fully update design for the new Brightcove Player.</li>
+</ul>
+<h4 id="toc_4">29 Sep 2015</h4>
+<p>v2.0.0</p>
+<ul>
+  <li>Refactor and update for basic compatibility with video.js 5.0.</li>
+</ul>
+<h4 id="toc_5">14 Jul 2015</h4>
+<p>v1.5.0</p>
+<ul>
+  <li>Refactor internals</li>
+  <li>Expose <code>getEmbedCode</code>.</li>
+  <li>Always have <code>socialOverlay</code> present.</li>
+</ul>
+<h4 id="toc_6">17 Feb 2015</h4>
+<p>v1.4.0</p>
+<ul>
+  <li>Add embed code override option</li>
+</ul>
+<h4 id="toc_7">22 Jan 2015</h4>
+<p>v1.3.0</p>
+<ul>
+  <li>Add option to use the social dialog as an endscreen</li>
+</ul>
+<h4 id="toc_8">31 Oct 2014</h4>
+<p>v1.2.0</p>
+<ul>
+  <li>Localization support</li>
+</ul>
+<h4 id="toc_9">25 Jul 2014</h4>
+<p>v1.1.0</p>
+<ul>
+  <li>Make background of social plugin in IE8 be black</li>
+  <li>IE8 fixes</li>
+</ul>
+<h4 id="toc_10">24 Jul 2014</h4>
+<p>v1.0.0</p>
+<ul>
+  <li>Initial release</li>
+</ul>

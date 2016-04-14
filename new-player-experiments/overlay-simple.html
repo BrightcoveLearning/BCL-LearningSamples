@@ -4,20 +4,36 @@
 <head>
   <meta charset="utf-8">
   <title>Video.js Overlay</title>
-  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+     div.vjs-overlay.vjs-overlay-bottom {
+      width: auto;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
 </head>
 
 <body>
   <video id="myPlayerID"
-    data-account="1752604059001"
-    data-player="a5bb5681-9bfb-4203-9dac-eb3b98c8b4b2"
+    data-video-id="4607746980001"
+    data-account="1507807800001"
+    data-player="Vk6DkNYpg"
     data-embed="default"
-    class="video-js" controls></video>
-  <script src="//players.brightcove.net/1752604059001/a5bb5681-9bfb-4203-9dac-eb3b98c8b4b2_default/index.min.js"></script>
-  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/Vk6DkNYpg_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
   <script id="pageScript" type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this;
+      myPlayer.on('ended', function(evt){
+        console.log('element',document.getElementsByClassName('vjs-overlay-bottom-right')[0]);
+        var theElement = document.getElementsByClassName('vjs-overlay-bottom-right')[0];
+        theElement.classList.remove('vjs-hidden');
+      });
       myPlayer.overlay({
         content: '<strong>Default overlay content</strong>',
         overlays: [{
@@ -25,13 +41,13 @@
           start: 'play',
           end: 'pause'
         }, {
-          content: 'This timed overlay message appears between 5 and 10 seconds',
-          start: 5,
-          end: 10,
-          align: 'bottom-right'
+          content: '<img src="long-image.png" />',
+          start: 3,
+          end: 8,
+          align: 'bottom'
         }, {
-          start: 12,
-          end: 17,
+          start: 10,
+          end: 14,
           align: 'bottom-left'
         }]
       });

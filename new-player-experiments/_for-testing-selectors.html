@@ -13,8 +13,12 @@
     #myPlayerID .vjs-control-bar {
       transform: none;
     }
-    .vjs-volume-menu-button {
+    .video-js .vjs-volume-menu-button {
       color: red;
+    }
+    .video-js .vjs-play-progress.vjs-slider-bar {
+      background-color: yellow;
+      color: yellow;
     }
     /*.video-js .vjs-play-progress.vjs-slider-bar {
       background-color: yellow;
@@ -70,17 +74,17 @@
 </head>
 
 <body>
-
-  <video  id="myPlayerID" data-video-id="4093372393001"
-data-account="1507807800001"
-data-player="4k9UIYnYx"
-data-embed="default"
-class="video-js"
-controls>
-  <track src="http://learning-services-media.brightcove.com/chaptered-video/vtt/sea-marvels-chapters.vtt" kind="chapters" label="Chapters" srclang="en">
-  <track kind="captions" src="http://solutions.brightcove.com/bcls/test-matt/Adding_Captions_to_Videos.vtt" srclang="en" label="English">
-</video>
-<script src="//players.brightcove.net/1507807800001/4k9UIYnYx_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-video-id="4093372393001"
+    data-account="1507807800001"
+    data-player="EJbg9bxpx"
+    data-embed="default"
+    class="video-js"
+    controls>
+    <track src="http://learning-services-media.brightcove.com/chaptered-video/vtt/sea-marvels-chapters.vtt" kind="chapters" label="Chapters" srclang="en">
+    <track kind="captions" src="http://solutions.brightcove.com/bcls/test-matt/Adding_Captions_to_Videos.vtt" srclang="en" label="English">
+  </video>
+  <script src="//players.brightcove.net/1507807800001/EJbg9bxpx_default/index.min.js"></script>
 
 </body>
 

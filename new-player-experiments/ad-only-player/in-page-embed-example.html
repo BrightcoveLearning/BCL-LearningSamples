@@ -3,33 +3,50 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Ad Only Demo</title>
   <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <video id="myPlayerID"
-    data-account="1507807800001"
-    data-player="4Jlk2d58hg"
+
+  <!-- <video data-account="1507807800001"
+ data-player="4JtMyij6g"
+ data-embed="default"
+ class="video-js"
+ controls></video>
+ <script src="//players.brightcove.net/1507807800001/4JtMyij6g_default/index.min.js"></script> -->
+
+
+  <video id="myPlayerID" data-account="1507807800001"
+    data-player="VkcSPss6l"
     data-embed="default"
     class="video-js"
     controls></video>
+  <script src="//players.brightcove.net/1507807800001/VkcSPss6l_default/index.min.js"></script>
 
-  <script src="//players.brightcove.net/1507807800001/4Jlk2d58hg_default/index.js"></script>
   <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
   <script src="//players.brightcove.net/videojs-ima3-tech/1/videojs-ima3-tech.min.js"></script>
-  <script src="//players.brightcove.net/videojs-adonly/1/videojs-adonly.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this;
       myPlayer.ima3({
-        "serverUrl": "//solutions.brightcove.com/bcls/brightcove-player/vmap/one-preroll-vmap.xml",
-        "requestMode": "ondemand"
+      "adTechOrder": [ "flash", "html5"],
+      "postrollTimeout": 2000,
+      "prerollTimeout": 1000,
+      "requestMode": "ondemand",
+      "serverUrl": "//solutions.brightcove.com/bcls/brightcove-player/vmap/one-preroll-vmap.xml",
+      "timeout": 5000
       });
-  });
-</script>
+    });
+  </script>
 
 </body>
 

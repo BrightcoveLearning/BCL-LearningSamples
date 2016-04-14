@@ -4,16 +4,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Testing</title>
+  <style type="text/css">
+    .video-js {
+      float: left;
+      margin: 15px;
+      width: 640px;
+      height: 365px;
+    }
+    .vjs-playlist {
+      width: 250px;
+      float: left;
+      margin: 15px;
+      height: 365px;
+    }
+  </style>
 </head>
 
 <body>
-  <video data-video-id="3495887198001"
+  <video data-playlist-id="1579619681001"
 data-account="1507807800001"
-data-player="V1VPi1lhx"
+data-player="B14psrr"
 data-embed="default"
-class="video-js vjs-audio"
+class="video-js"
 controls></video>
-<script src="//players.brightcove.net/1507807800001/V1VPi1lhx_default/index.min.js"></script>
+<script src="//players.brightcove.net/1507807800001/B14psrr_default/index.min.js"></script>
+
+<ol class="vjs-playlist"></ol>
+
+
 </body>
 
 </html>
