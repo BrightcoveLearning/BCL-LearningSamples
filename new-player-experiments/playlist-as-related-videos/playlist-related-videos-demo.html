@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Sample - Related Videos from Playlist</title>
     <!-- include the Overlay plugin's CSS -->
-  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
   <style>
     /*size the player */
     .video-js {
@@ -26,9 +26,9 @@
     /*override some of the default overlay styling*/
     div.vjs-overlay.vjs-overlay-top {
       width: 100%;
-      height: 100%;
+      height: 90%;
       left: 0;
-      margin-left: -10px;
+      margin-left: -1px;
     }
   </style>
 </head>
@@ -42,7 +42,7 @@
     class="video-js" controls></video>
   <script src="//players.brightcove.net/1752604059001/2fc88f47-3e0f-45bc-9a11-97d9d2f22392_default/index.min.js"></script>
   <!--include the Overlay plugin's JavaScript -->
-  <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
 
   <script type="text/javascript">
   var loadAndPlay,
@@ -69,16 +69,12 @@
         overlayDiv.appendChild(htmlElement);
       });
       // use overlay plugin to display related videos on pause and video end
+      // note that only starting on pause event as on ended event a pause event is also dispatched
       myPlayer.overlay({
         overlays: [{
           align: 'top',
           content: overlayDiv,
           start: 'pause',
-          end: 'play'
-        }, {
-          align: 'top',
-          content: overlayDiv,
-          start: 'ended',
           end: 'play'
         }]
       });
@@ -90,13 +86,8 @@
      * @param {integer} idx the index of the video object in the videoData array
      */
     loadAndPlay = function(idx) {
-      //try-catch only needed to compensate for bug
-      try {
-        myPlayer.catalog.load(returnedPlaylist[idx]);
-      } catch (err) {
-        myPlayer.catalog.load(returnedPlaylist[idx]);
-      }
-        myPlayer.play();
+      myPlayer.catalog.load(returnedPlaylist[idx]);
+      myPlayer.play();
     }
 
     /**

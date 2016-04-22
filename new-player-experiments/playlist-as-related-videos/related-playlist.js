@@ -25,11 +25,6 @@ videojs.plugin('relatedPlaylist', function() {
       content: overlayDiv,
       start: 'pause',
       end: 'play'
-    }, {
-      align: 'top',
-      content: overlayDiv,
-      start: 'ended',
-      end: 'play'
     }]
   });
 
@@ -43,13 +38,8 @@ videojs.plugin('relatedPlaylist', function() {
    * @param {integer} idx the index of the video object in the videoData array
    */
   loadAndPlay = function(idx) {
-    //try-catch only needed to compensate for bug
-    try {
-      myPlayer.catalog.load(returnedPlaylist[idx]);
-    } catch (err) {
-      myPlayer.catalog.load(returnedPlaylist[idx]);
-    }
-      myPlayer.play();
+    myPlayer.catalog.load(returnedPlaylist[idx]);
+    myPlayer.play();
   }
 
   /**

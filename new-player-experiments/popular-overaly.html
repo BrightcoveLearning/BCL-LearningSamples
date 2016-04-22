@@ -1,0 +1,311 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+  body {
+    margin: 1em 2em;
+    font-family: sans-serif;
+  }
+
+  h2 {
+    font-size: 1.1em;
+  }
+
+  button {
+    padding: .5em;
+  }
+
+  pre {
+    background-color: #F1EFEE;
+    border-left: .5em solid #636363;
+    box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
+    font-family: Hack, monospace;
+    font-size: .8em;
+    padding: 1em;
+  }
+  /* styling for the video thumbnails */
+
+  .video-thumbnail {
+    margin: 0;
+    padding: 0;
+    width: 190px;
+    height: 107px;
+    cursor: pointer;
+  }
+  /*override some of the default overlay styling*/
+
+  div.vjs-overlay.vjs-overlay-top {
+    width: 100%;
+    left: 0;
+    margin-left: -10px;
+  }
+  </style>
+
+</head>
+
+<body>
+
+  <h1>Popular Videos Overlay</h1>
+  <div style="display: block; position: relative; max-width: 600px;">
+    <div style="display: block; padding-top: 56.25%;">
+      <video id="popularVideosPlayer" data-video-id="4454620113001" data-account="1752604059001" data-player="ee7ec864-097d-4d90-a544-9ef4f5e3c7a2" data-embed="default" class="video-js" controls="" style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+      <script src="//players.brightcove.net/1752604059001/ee7ec864-097d-4d90-a544-9ef4f5e3c7a2_default/index.min.js"></script>
+      <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
+      <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+    </div>
+  </div>
+  <p>
+    <strong>Analytics API request:</strong>
+  </p>
+  <pre id="apiRequest"></pre>
+  <p>
+    <strong>Analytics Response data</strong>
+  </p>
+  <pre id="responseData"></pre>
+
+
+  <script>
+
+  /**
+          * we'll define this variable later as a function
+          * but it needs to be in the page scope so that
+          * DOM elements can access it
+          */
+         var loadAndPlay;
+
+         videojs("popularVideosPlayer").ready(function() {
+           'use strict';
+           var player = this,
+             reportURL = 'https://analytics.api.brightcove.com/v1/data',
+             proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
+             apiRequest = document.getElementById('apiRequest'),
+             responseData = document.getElementById('responseData'),
+             // this var needs to be in the function scope because
+             // multiple functions will access it
+             videoData = [];
+
+           /**
+            * loads and plays a video
+            * this function called with thumbnails in
+            * the overlay are clicked
+            * @param {integer} idx the index of the video object in the videoData array
+            */
+           loadAndPlay = function(idx) {
+             console.log('idx', idx);
+             player.catalog.load(videoData[idx]);
+             player.play();
+           }
+
+           /**
+            * create an element
+            *
+            * @param  {string} type - the element type
+            * @param  {object} attributes - attributes to add to the element
+            * @return {HTMLElement} the HTML element
+            */
+           function createEl(type, attributes) {
+             var el,
+               attr;
+             el = document.createElement(type);
+             if (attributes !== null) {
+               for (attr in attributes) {
+                 el.setAttribute(attr, attributes[attr]);
+               }
+               return el;
+             }
+           }
+
+           /**
+            * adds text content to an element
+            * @param {HTMLElement} el the element
+            * @param {string} str the text content
+            */
+           function addText(el, str) {
+             el.appendChild(document.createTextNode(str));
+           }
+
+           /**
+            * extract video ids from Analytics API response
+            * @param {array} aapiData the data from the Analytics API
+            * @return {array} videoIds array of video ids
+            */
+           function extractVideoIds(aapiData) {
+             var i,
+               iMax = aapiData.items.length,
+               videoIds = [];
+             for (i = 0; i < iMax; i++) {
+               if (aapiData.items[i].video !== null) {
+                 videoIds.push(aapiData.items[i].video);
+               }
+             }
+             return videoIds;
+           }
+
+           /**
+            * get video objects
+            * @param {array} videoIds array of video ids
+            * @return {array} videoData array of video objects
+            */
+           function getVideoData(videoIds, callback) {
+             var i = 0,
+               iMax = videoIds.length;
+
+             /**
+              * makes catalog calls for all video ids in the array
+              */
+             getVideo();
+
+             function getVideo() {
+               if (i < iMax) {
+                 player.catalog.getVideo(videoIds[i], pushData);
+               } else {
+                 callback(videoData);
+               }
+
+             }
+             /**
+              * callback for the catalog calls
+              * pushes the returned data object into an array
+              * @param {string} error error returned if the call fails
+              * @parap {object} video the video object
+              */
+             function pushData(error, video) {
+               videoData.push(video);
+               i++;
+               getVideo();
+             }
+           }
+
+           /**
+            * create the html for the overlay
+            * @param {array} videoData array of video objects
+            * @return {HTMLElement} videoList the div element containing the overlay
+            */
+           function createVideoList(videoData) {
+             // console.log(videoData);
+             var i,
+               iMax = videoData.length,
+               videoList = createEl('div', {
+                 id: 'videoList'
+               }),
+               videoHeader = createEl('h1', {
+                 style: 'color:#666600;font-size: 2em;margin-bottom:.5em'
+               }),
+               videoWrapper = createEl('div'),
+               thumbnailLink,
+               thumbnailImage;
+             addText(videoHeader, 'Popular Videos');
+             videoList.appendChild(videoHeader);
+             videoList.appendChild(videoWrapper);
+             for (i = 0; i < iMax; i++) {
+               thumbnailLink = createEl('a', {
+                 href: 'javascript:loadAndPlay(' + i + ')'
+               })
+               thumbnailImage = createEl('img', {
+                 class: 'video-thumbnail',
+                 src: videoData[i].thumbnail
+               });
+               videoWrapper.appendChild(thumbnailLink);
+               thumbnailLink.appendChild(thumbnailImage);
+             }
+             return videoList;
+           }
+
+           /**
+            * sets up the data for the API request
+            */
+           function setRequestData() {
+             var endPoint = '',
+               // get the epoch time in milliseconds 24 hours ago
+               // 12 hours in milliseconds = 1000 * 24 * 60 * 60 = 86,400,000
+               yesterday = new Date().valueOf() - 86400000,
+               requestData = {};
+             // note that we don't have to set the to date to now because that's the default
+             endPoint = '?accounts=1752604059001&dimensions=video&sort=-video_view&limit=6&from=' + yesterday;
+             requestData.url = reportURL + endPoint;
+             requestData.requestType = 'GET';
+             apiRequest.textContent = requestData.url;
+             return requestData;
+           }
+           /**
+            * send API request to the proxy
+            * @param  {object} requestData options for the request
+            * @param  {string} requestID the type of request = id of the button
+            * @return {object} parsedData the parsed API response
+            */
+           function getAnalyticsData(options, callback) {
+             var httpRequest = new XMLHttpRequest(),
+               responseRaw,
+               parsedData,
+               requestParams;
+             // set up request data
+             requestParams = 'url=' + encodeURIComponent(options.url) + '&requestType=' + options.requestType;
+             // set response handler
+             httpRequest.onreadystatechange = getResponse;
+             // open the request
+             httpRequest.open('POST', proxyURL);
+             // set headers
+             httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+             // open and send request
+             httpRequest.send(requestParams);
+             // response handler
+             function getResponse() {
+               try {
+                 if (httpRequest.readyState === 4) {
+                   if (httpRequest.status === 200) {
+                     responseRaw = httpRequest.responseText;
+                     responseData.textContent = responseRaw;
+                     parsedData = JSON.parse(responseRaw);
+                     responseData.textContent = JSON.stringify(parsedData, null, '  ');
+                     callback(parsedData);
+                   } else {
+                     alert('There was a problem with the request. Request returned ' + httpRequest.status);
+                   }
+                 }
+               } catch (e) {
+                 alert('Caught Exception: ' + e);
+               }
+             }
+           }
+
+           /**
+            * acts as a controller for the rest of the script
+            */
+           player.one('loadstart', function() {
+             var requestData = {},
+               videoIds = [],
+               videoList,
+               overlayDiv = createEl('div');
+             // add the overlay
+             // set up data for Analytics API request
+             requestData = setRequestData();
+             // make the Analytics API request
+             getAnalyticsData(requestData, function(analyticsData) {
+               // extract the video ids into an array
+               videoIds = extractVideoIds(analyticsData);
+               // use the catalog to get the video data
+               getVideoData(videoIds, function() {
+                 // generate the HTML for the overlay
+                 videoList = createVideoList(videoData);
+                 // add the overlay
+                 overlayDiv.appendChild(videoList);
+                 player.overlay({
+                   overlays: [{
+                     align: 'top',
+                     content: overlayDiv,
+                     start: 'pause',
+                     end: 'play'
+                   }]
+                 });
+               });
+             });
+           });
+         });
+
+  </script>
+</body>
+
+</html>
