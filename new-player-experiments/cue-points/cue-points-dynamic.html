@@ -8,29 +8,31 @@
 
 <body>
 
-  <video id="player"
+  <video id="myPlayerID" data-video-id="4607746980001"
     data-account="1507807800001"
-    data-player="334bf1f2-a051-46c7-80ad-e3993199c27e"
+    data-player="default"
     data-embed="default"
-    data-video-id="2114345472001"
-    class="video-js" controls></video>
+    class="video-js"
+    controls></video>
+    <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
-  <p id="insertionPoint"></p>  
+  <p id="insertionPoint"></p>
 
-  <script src="//players.brightcove.net/1507807800001/334bf1f2-a051-46c7-80ad-e3993199c27e_default/index.min.js"></script>
-    
+
   <script type="text/javascript">
     var myPlayer,
       textTrack;
 
-    videojs("player").ready(function(){
+    videojs("myPlayerID").ready(function(){
       var myPlayer = this;
-      myPlayer.play();
       textTrack = myPlayer.addTextTrack('metadata', 'Timed Cue Point');
       textTrack.addCue(new window.VTTCue(2,5,'cue point 1 text'));
       textTrack.addCue(new window.VTTCue(10,15,'cue point 2 text'));
+      console.log('myPlayer.textTracks()',myPlayer.textTracks());
+      console.log('myPlayer.textTracks()[0]',myPlayer.textTracks()[0]);
       var tt = myPlayer.textTracks()[0];
       tt.oncuechange = function() {
+        console.log('in cue change');
         if(tt.activeCues[0] !== undefined){
           var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
           dynamicHTML += "text: <strong>" + tt.activeCues[0].text + "</strong>, ";
@@ -41,10 +43,10 @@
           document.getElementById("insertionPoint").innerHTML += "Cue point duration over" + "<br/><br/>";
         }
       } //end oncuechange
-    }); //end ready 
+    }); //end ready
 
   </script>
-    
+
 </body>
 
 </html>

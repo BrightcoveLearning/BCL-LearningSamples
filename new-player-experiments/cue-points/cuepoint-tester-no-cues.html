@@ -14,27 +14,24 @@
 
 <body>
 
-  <video id="myPlayerID"
-    data-account="1507807800001"
-    data-player="6aac508a-741e-41a2-bc7a-5805644cf089"
-    data-embed="default"
-    data-video-id="1507781667001"
-    class="video-js" controls></video>
+  <video id="myPlayerID" data-video-id="4607746980001"
+  data-account="1507807800001"
+  data-player="default"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
   <p id="insertionPoint"></p>
 
-  <script src="//players.brightcove.net/1507807800001/6aac508a-741e-41a2-bc7a-5805644cf089_default/index.min.js"></script>
 
   <script>
   videojs("myPlayerID").ready(function(){
     var player = this;
     player.one("loadedmetadata",function(){
       var tt = player.textTracks()[0];
-      console.log('tt.cues',tt.cues);
-      console.log('tt.activeCues',tt.activeCues);
+      console.log('tt.cues[0].startTime',tt.cues)
       tt.oncuechange = function() {
-        console.log('tt.cues in cuechange',tt.cues);
-        console.log('tt.activeCuesin cuechange',tt.activeCues);
         if(tt.activeCues[0] !== undefined){
           var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
           dynamicHTML += "text: " + tt.activeCues[0].text + ", ";

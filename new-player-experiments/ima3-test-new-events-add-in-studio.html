@@ -10,32 +10,26 @@
       width: 610px;
     }
   </style>
-  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <video id="myPlayerID" data-video-id="4093372393001"
-  data-account="1507807800001"
-  data-player="B1x3qUeOx"
-  data-embed="default"
-  class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/B1x3qUeOx_default/index.min.js"></script>
-
-<script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+  <video id="myPlayerID" data-video-id="4784463159001"
+data-account="1507807800001"
+data-player="SkSyF9Cl"
+data-embed="default"
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/SkSyF9Cl_default/index.min.js"></script>
 <script>
   var myPlayer;
 
-  videojs("myPlayerID").one('loadedmetadata', function(){
+  videojs("myPlayerID").one('loadeddata', function(){
         // get a reference to the player
         myPlayer = this;
-        myPlayer.ima3({
-            'postrollTimeout': 2000,
-            'serverUrl': 'http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
-          });
         myPlayer.on('ads-first-quartile',function( evt ){
           console.log('ads-first-quartile event passed to event handler', evt);
+          myPlayer.ima3.adsManager.destroy();
         });
         myPlayer.on('ads-ad-started',function( evt ){
           console.log('ads-ad-started event passed to event handler', evt);
