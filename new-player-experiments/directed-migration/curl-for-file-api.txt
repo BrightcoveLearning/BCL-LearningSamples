@@ -1,0 +1,59 @@
+//Create the repo
+curl \
+  --user $EMAIL \
+  --request PUT \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/testRepo1
+//Response
+{
+  "name": "testRepo1",
+  "public_url": "http://players.brightcove.net/1507807800001/testRepo1",
+  "repo_url": "https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/testRepo1"
+}
+
+
+
+//Add a file to the repot
+curl \
+  --user $EMAIL \
+  --form contents=@test.txt \
+  --request PUT \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/testRepo1/files/newname.txt
+//Response
+{
+  "name": "newname.txt",
+  "public_url": "http://players.brightcove.net/1507807800001/testRepo1/newname.txt"
+}
+
+
+
+//Get listing of files in repo
+curl \
+  --user $EMAIL \
+  --request GET \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/testRepo1/files
+//Response
+{
+  "items": [{
+    "name": "newname.txt",
+    "public_url": "http://players.brightcove.net/1507807800001/testRepo1/newname.txt"
+  }, {
+    "name": "test.txt",
+    "public_url": "http://players.brightcove.net/1507807800001/testRepo1/test.txt"
+  }],
+  "item_count": 2
+}
+
+
+
+//Delete a file
+curl \
+  --user $EMAIL \
+  --request DELETE \
+  https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/testRepo1/files/newername.txt
+//Response
+{ message: "The call was successful." }
+
+
+
+//See contents of a file
+**Browse the public_url returned when the file was created: http://players.brightcove.net/1507807800001/testRepo1/newname.txt

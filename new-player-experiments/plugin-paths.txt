@@ -1,0 +1,21 @@
+Advertising with FreeWheel: https://bithub.brightcove.com/videocloud/videojs-freewheel
+
+Advertising with IMA3: https://bithub.brightcove.com/videocloud/videojs-ima3 (changelog file)
+
+Advertising with OnceUX: https://bithub.brightcove.com/videocloud/videojs-onceux
+
+Advertising with OnceUX: https://github.com/BrightcoveOS/videojs-omniture
+
+Custom Endscreens: https://bithub.brightcove.com/videocloud/videojs-custom-endscreen (changelog file)
+
+Display Thumbnail Previews: https://github.com/brightcove/videojs-thumbnails
+
+Errors: https://github.com/brightcove/videojs-errors (changelog file)
+
+HLS: https://github.com/videojs/videojs-contrib-hls (changelog file)
+
+Live DVRUX Plugin: https://bithub.brightcove.com/videocloud/videojs-live-dvrux
+
+Overlay: https://github.com/brightcove/videojs-overlay  (changelog file)
+
+Social Media: https://bithub.brightcove.com/videocloud/videojs-social (changelog file)
