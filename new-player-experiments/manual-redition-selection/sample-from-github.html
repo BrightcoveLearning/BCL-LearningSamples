@@ -22,6 +22,10 @@
       height: 344px;
       width: 610px;
     }
+    #selectID {
+      margin-top: 7px;
+      width: 65px;
+    }
   </style>
 </head>
 
@@ -34,13 +38,6 @@
     class="video-js"
     controls></video>
   <script src="//players.brightcove.net/2728142649001/ryI6b6eX_default/index.min.js"></script>
-
-  Choose Quality:
-  <select name="quality" onchange="changeQuality(this)">
-    <option selected></option>
-    <option value="low">Low</option>
-    <option value="high">High</option>
-  </select>
 
   <table id='reps'>
     <tr>
@@ -67,10 +64,11 @@
       createSelectInControlbar;
 
     videojs('myPlayerID').ready(function () {
-      var player = this;
+      player = this;
 
       player.on('loadedmetadata', function () {
-        var table = document.getElementById('reps');
+        var table = document.getElementById('reps'),
+          selectControl;
         player.dash.representations().forEach(function (rep) {
           var
           tr = document.createElement('tr'),
@@ -102,6 +100,8 @@
           table.appendChild(tr);
         });
         createSelectInControlbar();
+        selectControl = document.getElementById('selectID');
+        selectControl.addEventListener('change',changeQuality);
       });
 
       function createSelectInControlbar() {
@@ -126,16 +126,15 @@
         spacer = document.getElementsByClassName('vjs-spacer')[0];
         spacer.setAttribute("style", "justify-content: flex-end;");
         spacer.appendChild(newElement);
-        //selectControl.setAttribute("onchange",changeQuality(this));
       };
     });
 
-    function changeQuality(selection) {
-      console.log('selection', selection);
+    function changeQuality(evt) {
       var selectedQuality,
         setToTrueSet,
-        lengthOfReps = player.dash.representations().length;
-      selectedQuality = selection.value;
+        lengthOfReps = player.dash.representations().length,
+        theSelect = evt.target;
+      selectedQuality = theSelect.options[theSelect.selectedIndex].value;
       if (selectedQuality == 'low') {
         setToTrueSet = [0, 1];
       } else {
