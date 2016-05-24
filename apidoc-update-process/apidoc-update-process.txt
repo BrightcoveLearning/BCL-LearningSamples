@@ -1,0 +1,16 @@
+1. Connect to VPN
+2. Sync BCL-API-References (https://github.com/BrightcoveLearning/BCL-API-References)
+3. Sync BCL-developer-docs
+4. Open root of BCL-API-References in your editor
+5. Note for each API there are two folders, e.g  cms-api  and  cms-api-dev-docs, ALWAYS work in the short named, not dev-docs
+6. Edit .js file(s) in api-name/v1/src
+7. Save changes
+8. Open the root of BCL-API-References in Terminal
+9. In Terminal run: bash generate-docs.sh
+10. Sync and commit to BCL-API-References (https://github.com/BrightcoveLearning/BCL-API-References) - USE SAME SUMMARY FOR 10 and 11
+11. Sync and commit to BCL-developer-docs - USE SAME SUMMARY FOR 10 and 11
+
+
+Tips & Traps:
+* Do NOT use periods in descriptions of @apiParam entries
+* All curl examples and success responses MUST be indented at least 4 spaces

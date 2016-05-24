@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Test Player</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href=" //players.brightcove.net/videojs-dash/2/videojs-dash.css">
+  <style>
+    #reps {
+      border-collapse: collapse;
+      margin: 30px;
+    }
+    #reps th,
+    td {
+      padding: 5px;
+      text-align: left;
+      border: 1px solid rgb(200, 200, 200);
+    }
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-video-id="4907932754001"
+    data-account="2728142649001"
+    data-player="ryI6b6eX"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/2728142649001/ryI6b6eX_default/index.min.js"></script>
+
+  Choose Quality:
+  <select name="quality" onchange="changeQuality(this)">
+    <option selected></option>
+    <option value="low">Low</option>
+    <option value="high">High</option>
+  </select>
+
+  <table id='reps'>
+    <tr>
+      <th>Enabled</th>
+      <th>ID</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Bandwidth</th>
+    </tr>
+  </table>
+  <table id='repsChanged'>
+    <tr>
+      <th>Enabled</th>
+      <th>ID</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Bandwidth</th>
+    </tr>
+  </table>
+  <script src="//players.brightcove.net/videojs-dash/2/videojs-dash.min.js"></script>
+  <script type="text/javascript">
+    var player,
+      changeQuality,
+      createSelectInControlbar;
+
+    videojs('myPlayerID').ready(function () {
+      var player = this;
+
+      player.on('loadedmetadata', function () {
+        var table = document.getElementById('reps');
+        player.dash.representations().forEach(function (rep) {
+          var
+          tr = document.createElement('tr'),
+            checkbox = document.createElement('input'),
+            checkboxTd = document.createElement('td'),
+            idTd = document.createElement('td'),
+            widthTd = document.createElement('td'),
+            heightTd = document.createElement('td'),
+            bandwidthTd = document.createElement('td');
+          checkbox.checked = rep.enabled();
+          checkbox.type = 'checkbox';
+          checkbox.onclick = function () {
+            if (checkbox.checked) {
+              rep.enabled(true);
+            } else {
+              rep.enabled(false);
+            }
+          };
+          checkboxTd.appendChild(checkbox);
+          idTd.innerHTML = rep.id;
+          widthTd.innerHTML = rep.width;
+          heightTd.innerHTML = rep.height;
+          bandwidthTd.innerHTML = rep.bandwidth;
+          tr.appendChild(checkboxTd);
+          tr.appendChild(idTd);
+          tr.appendChild(widthTd);
+          tr.appendChild(heightTd);
+          tr.appendChild(bandwidthTd);
+          table.appendChild(tr);
+        });
+        createSelectInControlbar();
+      });
+
+      function createSelectInControlbar() {
+        var newElement = document.createElement('div'),
+          selectControl = document.createElement('select'),
+          option;
+        newElement.id = 'selectID';
+        newElement.name = 'quality';
+        newElement.className = 'selectStyle vjs-control';
+        option = document.createElement('option');
+        option.text = 'Quality';
+        selectControl.appendChild(option);
+        option = document.createElement('option');
+        option.value = 'low';
+        option.text = 'Low';
+        selectControl.appendChild(option);
+        option = document.createElement('option');
+        option.value = 'high';
+        option.text = 'High';
+        selectControl.appendChild(option);
+        newElement.appendChild(selectControl);
+        spacer = document.getElementsByClassName('vjs-spacer')[0];
+        spacer.setAttribute("style", "justify-content: flex-end;");
+        spacer.appendChild(newElement);
+        //selectControl.setAttribute("onchange",changeQuality(this));
+      };
+    });
+
+    function changeQuality(selection) {
+      console.log('selection', selection);
+      var selectedQuality,
+        setToTrueSet,
+        lengthOfReps = player.dash.representations().length;
+      selectedQuality = selection.value;
+      if (selectedQuality == 'low') {
+        setToTrueSet = [0, 1];
+      } else {
+        setToTrueSet = [lengthOfReps - 2, lengthOfReps - 1];
+      }
+      for (var i = 0; i < lengthOfReps; i++) {
+        if (setToTrueSet.indexOf(i) !== -1) {
+          player.dash.representations()[i].enabled(true);
+        } else {
+          player.dash.representations()[i].enabled(false);
+        }
+      };
+      var table = document.getElementById('repsChanged');
+      player.dash.representations().forEach(function (rep) {
+        var
+        tr = document.createElement('tr'),
+          checkbox = document.createElement('input'),
+          checkboxTd = document.createElement('td'),
+          idTd = document.createElement('td'),
+          widthTd = document.createElement('td'),
+          heightTd = document.createElement('td'),
+          bandwidthTd = document.createElement('td');
+        checkbox.checked = rep.enabled();
+        checkbox.type = 'checkbox';
+        checkbox.onclick = function () {
+          if (checkbox.checked) {
+            rep.enabled(true);
+          } else {
+            rep.enabled(false);
+          }
+        };
+        checkboxTd.appendChild(checkbox);
+        idTd.innerHTML = rep.id;
+        widthTd.innerHTML = rep.width;
+        heightTd.innerHTML = rep.height;
+        bandwidthTd.innerHTML = rep.bandwidth;
+        tr.appendChild(checkboxTd);
+        tr.appendChild(idTd);
+        tr.appendChild(widthTd);
+        tr.appendChild(heightTd);
+        tr.appendChild(bandwidthTd);
+        table.appendChild(tr);
+      });
+    };
+  </script>
+</body>
+
+</html>
