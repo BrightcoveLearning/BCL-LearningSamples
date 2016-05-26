@@ -4,20 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Test Player</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
+  // import DASH plugin CSS
   <link rel="stylesheet" href=" //players.brightcove.net/videojs-dash/2/videojs-dash.css">
   <style>
-    /*#reps {
-      border-collapse: collapse;
-      margin: 30px;
-    }
-    #reps th,
-    td {
-      padding: 5px;
-      text-align: left;
-      border: 1px solid rgb(200, 200, 200);
-    }*/
     .video-js {
       height: 325px;
       width: 610px;
@@ -30,6 +19,7 @@
 </head>
 
 <body>
+  // include in-page embed player implementation
   <video id="myPlayerID"
     data-video-id="4910007292001"
     data-account="2728142649001"
@@ -39,9 +29,12 @@
     controls></video>
   <script src="//players.brightcove.net/2728142649001/ryI6b6eX_default/index.min.js"></script>
 
+  // div for debugging tables
   <div id="tableArea"></div>
 
+  // import DASH plugin JavaScript
   <script src="//players.brightcove.net/videojs-dash/2/videojs-dash.min.js"></script>
+
   <script type="text/javascript">
     var player,
       changeQuality,
@@ -52,19 +45,27 @@
       player = this;
 
       player.on('loadedmetadata', function () {
-        var table = document.getElementById('reps'),
-          selectControl;
+        var selectControl;
+
+        // display reps array for debugging purposes
         displayReps(player.dash.representations());
+
+        // display quality select element in controlbar
         createSelectInControlbar();
+
+        // get select element and add change event listener
         selectControl = document.getElementById('selectID');
         selectControl.addEventListener('change',changeQuality);
       });
     });
 
+    // function that adds the HTML select element to the controlbar
     function createSelectInControlbar() {
       var newElement = document.createElement('div'),
+        // dynamically build the select element
         selectControl = document.createElement('select'),
         option;
+      // dynamically configure the select element and add options
       newElement.id = 'selectID';
       newElement.name = 'quality';
       newElement.className = 'selectStyle vjs-control';
@@ -80,6 +81,7 @@
       option.text = 'High';
       selectControl.appendChild(option);
       newElement.appendChild(selectControl);
+      // get spacer in controlbar and append select element
       spacer = document.getElementsByClassName('vjs-spacer')[0];
       spacer.setAttribute("style", "justify-content: flex-end;");
       spacer.appendChild(newElement);
