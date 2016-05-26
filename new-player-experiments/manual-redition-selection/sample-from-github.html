@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href=" //players.brightcove.net/videojs-dash/2/videojs-dash.css">
   <style>
-    #reps {
+    /*#reps {
       border-collapse: collapse;
       margin: 30px;
     }
@@ -17,7 +17,7 @@
       padding: 5px;
       text-align: left;
       border: 1px solid rgb(200, 200, 200);
-    }
+    }*/
     .video-js {
       height: 325px;
       width: 610px;
@@ -39,29 +39,14 @@
     controls></video>
   <script src="//players.brightcove.net/2728142649001/ryI6b6eX_default/index.min.js"></script>
 
-  <table id='reps'>
-    <tr>
-      <th>Enabled</th>
-      <th>ID</th>
-      <th>Width</th>
-      <th>Height</th>
-      <th>Bandwidth</th>
-    </tr>
-  </table>
-  <table id='repsChanged'>
-    <tr>
-      <th>Enabled</th>
-      <th>ID</th>
-      <th>Width</th>
-      <th>Height</th>
-      <th>Bandwidth</th>
-    </tr>
-  </table>
+  <div id="tableArea"></div>
+
   <script src="//players.brightcove.net/videojs-dash/2/videojs-dash.min.js"></script>
   <script type="text/javascript">
     var player,
       changeQuality,
-      createSelectInControlbar;
+      createSelectInControlbar,
+      displayReps;
 
     videojs('myPlayerID').ready(function () {
       player = this;
@@ -69,36 +54,7 @@
       player.on('loadedmetadata', function () {
         var table = document.getElementById('reps'),
           selectControl;
-        player.dash.representations().forEach(function (rep) {
-          var
-          tr = document.createElement('tr'),
-            checkbox = document.createElement('input'),
-            checkboxTd = document.createElement('td'),
-            idTd = document.createElement('td'),
-            widthTd = document.createElement('td'),
-            heightTd = document.createElement('td'),
-            bandwidthTd = document.createElement('td');
-          checkbox.checked = rep.enabled();
-          checkbox.type = 'checkbox';
-          checkbox.onclick = function () {
-            if (checkbox.checked) {
-              rep.enabled(true);
-            } else {
-              rep.enabled(false);
-            }
-          };
-          checkboxTd.appendChild(checkbox);
-          idTd.innerHTML = rep.id;
-          widthTd.innerHTML = rep.width;
-          heightTd.innerHTML = rep.height;
-          bandwidthTd.innerHTML = rep.bandwidth;
-          tr.appendChild(checkboxTd);
-          tr.appendChild(idTd);
-          tr.appendChild(widthTd);
-          tr.appendChild(heightTd);
-          tr.appendChild(bandwidthTd);
-          table.appendChild(tr);
-        });
+        displayReps(player.dash.representations());
         createSelectInControlbar();
         selectControl = document.getElementById('selectID');
         selectControl.addEventListener('change',changeQuality);
@@ -161,12 +117,32 @@
           enabledBandwidths = highBandwidths;
         }
         player.dash.representations().forEach(function (rep) {  
-          console.log('enabledBandwidths.indexOf(rep.bandwidth)', enabledBandwidths.indexOf(rep.bandwidth));    
           rep.enabled(enabledBandwidths.indexOf(rep.bandwidth) === -1 ? false : true);  
         });
       };
+      displayReps(player.dash.representations());
+    };
 
-      var table = document.getElementById('repsChanged');
+    function displayReps(repArray){
+      var tableArea = document.getElementById('tableArea'),
+        table = document.createElement('table'),
+        trHeaders = document.createElement('tr'),
+        enabledHdr = document.createElement('th'),
+        idHdr = document.createElement('th'),
+        widthHdr = document.createElement('th'),
+        heightHdr = document.createElement('th'),
+        bandwidthHdr = document.createElement('th');
+      enabledHdr.innerHTML = 'Enabled',
+      idHdr.innerHTML = 'ID',
+      widthHdr.innerHTML = 'Width',
+      heightHdr.innerHTML = 'Height',
+      bandwidthHdr.innerHTML = 'Bandwidth';
+      trHeaders.appendChild(enabledHdr);
+      trHeaders.appendChild(idHdr);
+      trHeaders.appendChild(widthHdr);
+      trHeaders.appendChild(heightHdr);
+      trHeaders.appendChild(bandwidthHdr);
+      table.appendChild(trHeaders);
       player.dash.representations().forEach(function (rep) {
         var
         tr = document.createElement('tr'),
@@ -176,6 +152,7 @@
           widthTd = document.createElement('td'),
           heightTd = document.createElement('td'),
           bandwidthTd = document.createElement('td');
+
         checkbox.checked = rep.enabled();
         checkbox.type = 'checkbox';
         checkbox.onclick = function () {
@@ -195,9 +172,12 @@
         tr.appendChild(widthTd);
         tr.appendChild(heightTd);
         tr.appendChild(bandwidthTd);
+        table.setAttribute('style', 'border:1px solid black');
+        tr.setAttribute('style', 'border:1px solid black');
         table.appendChild(tr);
       });
-    };
+      tableArea.appendChild(table);
+    }
   </script>
 </body>
 
