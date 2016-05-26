@@ -19,7 +19,7 @@
       border: 1px solid rgb(200, 200, 200);
     }
     .video-js {
-      height: 344px;
+      height: 325px;
       width: 610px;
     }
     #selectID {
@@ -31,7 +31,7 @@
 
 <body>
   <video id="myPlayerID"
-    data-video-id="4907932754001"
+    data-video-id="4910007292001"
     data-account="2728142649001"
     data-player="ryI6b6eX"
     data-embed="default"
@@ -103,50 +103,69 @@
         selectControl = document.getElementById('selectID');
         selectControl.addEventListener('change',changeQuality);
       });
-
-      function createSelectInControlbar() {
-        var newElement = document.createElement('div'),
-          selectControl = document.createElement('select'),
-          option;
-        newElement.id = 'selectID';
-        newElement.name = 'quality';
-        newElement.className = 'selectStyle vjs-control';
-        option = document.createElement('option');
-        option.text = 'Quality';
-        selectControl.appendChild(option);
-        option = document.createElement('option');
-        option.value = 'low';
-        option.text = 'Low';
-        selectControl.appendChild(option);
-        option = document.createElement('option');
-        option.value = 'high';
-        option.text = 'High';
-        selectControl.appendChild(option);
-        newElement.appendChild(selectControl);
-        spacer = document.getElementsByClassName('vjs-spacer')[0];
-        spacer.setAttribute("style", "justify-content: flex-end;");
-        spacer.appendChild(newElement);
-      };
     });
+
+    function createSelectInControlbar() {
+      var newElement = document.createElement('div'),
+        selectControl = document.createElement('select'),
+        option;
+      newElement.id = 'selectID';
+      newElement.name = 'quality';
+      newElement.className = 'selectStyle vjs-control';
+      option = document.createElement('option');
+      option.text = 'Quality';
+      selectControl.appendChild(option);
+      option = document.createElement('option');
+      option.value = 'low';
+      option.text = 'Low';
+      selectControl.appendChild(option);
+      option = document.createElement('option');
+      option.value = 'high';
+      option.text = 'High';
+      selectControl.appendChild(option);
+      newElement.appendChild(selectControl);
+      spacer = document.getElementsByClassName('vjs-spacer')[0];
+      spacer.setAttribute("style", "justify-content: flex-end;");
+      spacer.appendChild(newElement);
+    };
 
     function changeQuality(evt) {
       var selectedQuality,
         setToTrueSet,
         lengthOfReps = player.dash.representations().length,
-        theSelect = evt.target;
-      selectedQuality = theSelect.options[theSelect.selectedIndex].value;
-      if (selectedQuality == 'low') {
-        setToTrueSet = [0, 1];
-      } else {
-        setToTrueSet = [lengthOfReps - 2, lengthOfReps - 1];
-      }
-      for (var i = 0; i < lengthOfReps; i++) {
-        if (setToTrueSet.indexOf(i) !== -1) {
-          player.dash.representations()[i].enabled(true);
+        theSelect = evt.target,
+        sortedArray = player.dash.representations(),
+        highBandwidths,
+        lowBandwidths,
+        enableBandwidths;
+      sortedArray.sort(function(a,b){
+        if (a.bandwidth > b.bandwidth) {
+            return 1;
+          }
+          if (a.bandwidth < b.bandwidth) {
+            return -1;
+          }
+          // a must be equal to b
+          return 0;
+      });
+      if (lengthOfReps > 2){
+        lowBandwidths = [sortedArray[0].bandwidth, sortedArray[1].bandwidth];
+        console.log('lowBandwidths ',lowBandwidths);
+        highBandwidths = [sortedArray[lengthOfReps - 2].bandwidth, sortedArray[lengthOfReps - 1].bandwidth];
+        console.log('highBandwidths ',highBandwidths);
+        selectedQuality = theSelect.options[theSelect.selectedIndex].value;
+        console.log('selectedQuality ',selectedQuality);
+        if (selectedQuality === 'low') {
+          enabledBandwidths = lowBandwidths;
         } else {
-          player.dash.representations()[i].enabled(false);
+          enabledBandwidths = highBandwidths;
         }
+        player.dash.representations().forEach(function (rep) {  
+          console.log('enabledBandwidths.indexOf(rep.bandwidth)', enabledBandwidths.indexOf(rep.bandwidth));    
+          rep.enabled(enabledBandwidths.indexOf(rep.bandwidth) === -1 ? false : true);  
+        });
       };
+
       var table = document.getElementById('repsChanged');
       player.dash.representations().forEach(function (rep) {
         var
