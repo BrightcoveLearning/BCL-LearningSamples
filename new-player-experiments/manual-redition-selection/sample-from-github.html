@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Test Player</title>
-  // import DASH plugin CSS
+  <!-- import DASH plugin CSS -->
   <link rel="stylesheet" href=" //players.brightcove.net/videojs-dash/2/videojs-dash.css">
   <style>
     .video-js {
@@ -14,52 +14,60 @@
     #selectID {
       margin-top: 7px;
       width: 65px;
+      color: black;
     }
   </style>
 </head>
 
 <body>
-  // include in-page embed player implementation
-  <video id="myPlayerID"
-    data-video-id="4910007292001"
-    data-account="2728142649001"
-    data-player="ryI6b6eX"
+  <!-- include in-page embed player implementation -->
+  <!-- <video id="myPlayerID" data-video-id="4910026039001"
+  data-account="1485884786001"
+  data-player="B1mOB1Um"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1485884786001/B1mOB1Um_default/index.min.js"></script> -->
+
+
+
+  <video id="myPlayerID" data-video-id="4909989909001"
+  data-account="1485884786001"
+  data-player="ryXp3zJV"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1485884786001/ryXp3zJV_default/index.min.js"></script>
+
+  <!-- <video id="myPlayerID"
+    data-video-id="4909989909001"
+    data-account="1485884786001"
+    data-player="B1mOB1Um"
     data-embed="default"
-    class="video-js"
-    controls></video>
-  <script src="//players.brightcove.net/2728142649001/ryI6b6eX_default/index.min.js"></script>
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1485884786001/B1mOB1Um_default/index.min.js"></script> -->
 
-  // div for debugging tables
-  <div id="tableArea"></div>
-
-  // import DASH plugin JavaScript
+  <!-- import DASH plugin JavaScript -->
   <script src="//players.brightcove.net/videojs-dash/2/videojs-dash.min.js"></script>
-
   <script type="text/javascript">
     var player,
       changeQuality,
       createSelectInControlbar,
       displayReps;
-
-    videojs('myPlayerID').ready(function () {
+    videojs('myPlayerID').on('loadedmetadata', function () {
+      var selectControl;
       player = this;
-
-      player.on('loadedmetadata', function () {
-        var selectControl;
-
-        // display reps array for debugging purposes
-        displayReps(player.dash.representations());
-
-        // display quality select element in controlbar
-        createSelectInControlbar();
-
-        // get select element and add change event listener
-        selectControl = document.getElementById('selectID');
-        selectControl.addEventListener('change',changeQuality);
-      });
+      // display reps array for debugging purposes
+      console.log('player.dash.representations()',player.dash.representations());
+      displayReps(player.dash.representations());
+      // display quality select element in controlbar
+      createSelectInControlbar();
+      // get select element and add change event listener
+      selectControl = document.getElementById('selectID');
+      selectControl.addEventListener('change', changeQuality);
     });
 
-    // function that adds the HTML select element to the controlbar
+     // function that adds the HTML select element to the controlbar
     function createSelectInControlbar() {
       var newElement = document.createElement('div'),
         // dynamically build the select element
@@ -87,6 +95,7 @@
       spacer.appendChild(newElement);
     };
 
+     // function that changes rendition quality
     function changeQuality(evt) {
       var selectedQuality,
         setToTrueSet,
@@ -96,38 +105,52 @@
         highBandwidths,
         lowBandwidths,
         enableBandwidths;
-      sortedArray.sort(function(a,b){
+      // sort copy of reps array
+      sortedArray.sort(function (a, b) {
         if (a.bandwidth > b.bandwidth) {
-            return 1;
-          }
-          if (a.bandwidth < b.bandwidth) {
-            return -1;
-          }
-          // a must be equal to b
-          return 0;
+          return 1;
+        }
+        if (a.bandwidth < b.bandwidth) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
       });
-      if (lengthOfReps > 2){
+      // for high and low quality getting the top 2 and bottom 2 renditions by bandwidth
+      // put both the bottom 2 and top 2 bandwidths in separate arrays
+      if (lengthOfReps > 2) {
         lowBandwidths = [sortedArray[0].bandwidth, sortedArray[1].bandwidth];
-        console.log('lowBandwidths ',lowBandwidths);
         highBandwidths = [sortedArray[lengthOfReps - 2].bandwidth, sortedArray[lengthOfReps - 1].bandwidth];
-        console.log('highBandwidths ',highBandwidths);
+        // get selected quality from HTML select element
         selectedQuality = theSelect.options[theSelect.selectedIndex].value;
-        console.log('selectedQuality ',selectedQuality);
+        // set either the bottom or top bandwidth array to the desired quality
         if (selectedQuality === 'low') {
           enabledBandwidths = lowBandwidths;
         } else {
           enabledBandwidths = highBandwidths;
         }
-        player.dash.representations().forEach(function (rep) {  
-          rep.enabled(enabledBandwidths.indexOf(rep.bandwidth) === -1 ? false : true);  
+        // loop over each rep and check if it should be enabled
+        // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
+        // set enabled to true, otherwise set enabled to false
+        player.dash.representations().forEach(function (rep) {
+          if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
+            rep.enabled(true);
+          } else {
+            rep.enabled(false);
+          }
         });
       };
+      // debugging display of the reps array
       displayReps(player.dash.representations());
     };
 
-    function displayReps(repArray){
-      var tableArea = document.getElementById('tableArea'),
-        table = document.createElement('table'),
+     // this function is for debugging purposes only
+     // and should not be included in any production code
+    function displayReps(repArray) {
+      // dynamically build table and headers cells
+      // and populate the header cells
+      var table = document.createElement('table'),
+        paragraph = document.createElement('p')
         trHeaders = document.createElement('tr'),
         enabledHdr = document.createElement('th'),
         idHdr = document.createElement('th'),
@@ -139,12 +162,15 @@
       widthHdr.innerHTML = 'Width',
       heightHdr.innerHTML = 'Height',
       bandwidthHdr.innerHTML = 'Bandwidth';
+      // add header cells to header row
       trHeaders.appendChild(enabledHdr);
       trHeaders.appendChild(idHdr);
       trHeaders.appendChild(widthHdr);
       trHeaders.appendChild(heightHdr);
       trHeaders.appendChild(bandwidthHdr);
+      // add row to table
       table.appendChild(trHeaders);
+      // loop over each rep, populate each cell, then add row to table
       player.dash.representations().forEach(function (rep) {
         var
         tr = document.createElement('tr'),
@@ -154,7 +180,6 @@
           widthTd = document.createElement('td'),
           heightTd = document.createElement('td'),
           bandwidthTd = document.createElement('td');
-
         checkbox.checked = rep.enabled();
         checkbox.type = 'checkbox';
         checkbox.onclick = function () {
@@ -174,11 +199,13 @@
         tr.appendChild(widthTd);
         tr.appendChild(heightTd);
         tr.appendChild(bandwidthTd);
-        table.setAttribute('style', 'border:1px solid black');
+        table.setAttribute('style', 'border:1px solid black; border-collapse: collapse;');
         tr.setAttribute('style', 'border:1px solid black');
         table.appendChild(tr);
       });
-      tableArea.appendChild(table);
+      // add table to end of body
+      document.body.appendChild(table);
+      document.body.appendChild(paragraph);
     }
   </script>
 </body>
