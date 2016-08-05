@@ -20,7 +20,14 @@
 
 <body>
   <!-- include in-page embed player implementation -->
-
+  <video id="myPlayerID"
+    data-video-id="4945249257001"
+    data-account="1752604059001"
+    data-player="SklT2QulH"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/SklT2QulH_default/index.min.js"></script>
   <!-- import DASH plugin JavaScript -->
 
   <script type="text/javascript">
@@ -32,8 +39,7 @@
       var selectControl;
       player = this;
       // display reps array for debugging purposes
-      console.log('player.dash.representations()',player.dash.representations());
-      displayReps(player.dash.representations());
+      displayReps(player.hls.representations());
       // display quality select element in controlbar
       createSelectInControlbar();
       // get select element and add change event listener
@@ -73,9 +79,9 @@
     function changeQuality(evt) {
       var selectedQuality,
         setToTrueSet,
-        lengthOfReps = player.dash.representations().length,
+        lengthOfReps = player.hls.representations().length,
         theSelect = evt.target,
-        sortedArray = player.dash.representations(),
+        sortedArray = player.hls.representations(),
         highBandwidths,
         lowBandwidths,
         enableBandwidths;
@@ -106,7 +112,7 @@
         // loop over each rep and check if it should be enabled
         // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
         // set enabled to true, otherwise set enabled to false
-        player.dash.representations().forEach(function (rep) {
+        player.hls.representations().forEach(function (rep) {
           if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
             rep.enabled(true);
           } else {
@@ -115,7 +121,7 @@
         });
       };
       // debugging display of the reps array
-      displayReps(player.dash.representations());
+      displayReps(player.hls.representations());
     };
 
      // this function is for debugging purposes only
@@ -145,7 +151,7 @@
       // add row to table
       table.appendChild(trHeaders);
       // loop over each rep, populate each cell, then add row to table
-      player.dash.representations().forEach(function (rep) {
+      player.hls.representations().forEach(function (rep) {
         var
         tr = document.createElement('tr'),
           checkbox = document.createElement('input'),

@@ -1,4 +1,4 @@
-videojs.plugin('manualRenditionSelection', function() {
+videojs.plugin('manualRenditionSelectionHLS', function() {
   var player = this,
     changeQuality,
     createSelectInControlbar;
@@ -46,9 +46,9 @@ videojs.plugin('manualRenditionSelection', function() {
   function changeQuality(evt) {
     var selectedQuality,
       setToTrueSet,
-      lengthOfReps = player.dash.representations().length,
+      lengthOfReps = player.hls.representations().length,
       theSelect = evt.target,
-      sortedArray = player.dash.representations(),
+      sortedArray = player.hls.representations(),
       highBandwidths,
       lowBandwidths,
       enableBandwidths;
@@ -79,7 +79,7 @@ videojs.plugin('manualRenditionSelection', function() {
       // loop over each rep and check if it should be enabled
       // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
       // set enabled to true, otherwise set enabled to false
-      player.dash.representations().forEach(function (rep) {
+      player.hls.representations().forEach(function (rep) {
         if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
           rep.enabled(true);
         } else {

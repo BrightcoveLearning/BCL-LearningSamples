@@ -13,13 +13,13 @@
 </head>
 
 <body>
-  <video id="myPlayerID"
-    data-video-id="4607746980001"
-    data-account="1507807800001"
-    data-player="VJ1pbjTtl"
+  <video id="myPlayerID" data-video-id="4607357817001"
+    data-account="1752604059001"
+    data-player="VkIrj2aFx"
     data-embed="default"
     class="video-js"
-    controls>
+    controls
+    crossorigin="anonymous">
 
     <track kind="metadata" src="https://solutions.brightcove.com/bcls/tests/player/cuepoints.vtt" />
 
@@ -27,16 +27,18 @@
 
     <p id="insertionPoint2"></p>
 
-    <script src="//players.brightcove.net/1507807800001/VJ1pbjTtl_default/index.min.js"></script>
+    <script src="//players.brightcove.net/1752604059001/VkIrj2aFx_default/index.min.js"></script>
 
     <script type="text/javascript">
       videojs("myPlayerID").ready(function(){
-        var myPlayer = this;
+console.log('in ready');
         var myPlayer = this;
 
         myPlayer.one("loadedmetadata",function(){
+console.log('in loadedmetadata');
           var trackIndex = myPlayer.textTracks().length -1;
           var tt = myPlayer.textTracks()[trackIndex];
+console.log('tt',tt);
           tt.oncuechange = function() {
             if(tt.activeCues[0] !== undefined){
               var dynamicHTML = "id: <strong>" + tt.activeCues[0].id + "</strong>, ";

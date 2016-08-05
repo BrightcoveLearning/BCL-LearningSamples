@@ -20,6 +20,40 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+//playOnSelct for playlists
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+       "playlist": {"playOnSelect": true}
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+//hide about brightcove from context menu
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+       "debugger": {"brightcoveBranding": false}
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+//hide context menu
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "debugger": false
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \

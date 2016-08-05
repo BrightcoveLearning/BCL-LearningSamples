@@ -29,7 +29,7 @@
 
   <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
   <script>
-    var myPlayer,
+    var tt, myPlayer,
       timeoutID,
       removeCTATime;
     videojs("myPlayerID").ready(function () {
@@ -48,8 +48,22 @@ console.log('in JS');
       myPlayer.on('loadeddata', function (evt) {
         cuePointAra = myPlayer.mediainfo.cue_points;
         console.log('cuePointAra',cuePointAra);
-        var tt = myPlayer.textTracks()[0];
+        tt = myPlayer.textTracks().tracks_;
+        console.log('myPlayer.textTracks().tracks_',myPlayer.textTracks().tracks_);
         console.log('tt',tt);
+        // tt.oncuechange = function () {
+        //   console.log('in cue change');
+        //   if (tt.activeCues[0] !== undefined) {
+        //     allCuePointData = getSubArray(cuePointAra, 'time', tt.activeCues[0].startTime);
+        //     displayCTA(allCuePointData[0]);
+        //     console.log('allCuePointData[0]', allCuePointData[0]);
+        //   }
+        // }
+        //myPlayer.play();
+        myPlayer.muted(true);
+      });
+
+      myPlayer.on('play',function(){
         tt.oncuechange = function () {
           console.log('in cue change');
           if (tt.activeCues[0] !== undefined) {
@@ -58,8 +72,6 @@ console.log('in JS');
             console.log('allCuePointData[0]', allCuePointData[0]);
           }
         }
-        myPlayer.play();
-        myPlayer.muted(true);
       });
 
       function displayCTA(cpData) {
