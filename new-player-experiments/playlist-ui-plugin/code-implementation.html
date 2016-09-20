@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Using the Playlist UI Plugin - Code Implementation</title>
+
+  <link rel="stylesheet" type="text/css" href="//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.css">
+
+  <style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+      float: left;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 365px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-playlist-id="4400450992001"
+    data-account="1507807800001"
+    data-player="HkXKkOSO3"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+  <ol class="vjs-playlist"></ol>
+
+  <script src="//players.brightcove.net/1507807800001/HkXKkOSO3_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-bc-playlist-ui/2/videojs-bc-playlist-ui.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.bcPlaylistUi({
+        "playOnSelect": true
+      });
+    });
+  </script>
+
+</body>
+
+</html>

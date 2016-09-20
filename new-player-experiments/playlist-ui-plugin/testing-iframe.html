@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+
+</head>
+
+<body>
+  <div style="display: block; position: relative; max-width: 760px;">
+    <div style="padding-top: 56.25%;">
+      <iframe src="//players.brightcove.net/1507807800001/BkAAGGDn_default/index.html?playlistId=4400450992001"
+        allowfullscreen
+        webkitallowfullscreen
+        mozallowfullscreen
+        style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></iframe>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "playOnSelect": true
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration

@@ -9,23 +9,35 @@
       width: 640px;
       height: 400px;
     }
-    /*#myPlayerID .vjs-control-bar {
-       transform: none;
-     }
+    #myPlayerID .vjs-control-bar {
+     transform: none;
+    }
     .video-js .vjs-control:hover:before, .video-js .vjs-control:focus:before {
+      text-shadow: 0 0 1em #f00,0 0 1em #f00,0 0 1em #f00;
+    }
+    /*.video-js .vjs-control:hover:before, .video-js .vjs-control:focus:before {
       text-shadow: 0 0 1em #f00,0 0 1em #f00,0 0 1em #f00;
     }*/
   </style>
 </head>
 
 <body>
-  <video data-video-id="4784463159001"
-  data-account="1507807800001"
-  data-player="HJgxCoZZF"
-  data-embed="default"
-  class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/HJgxCoZZF_default/index.min.js"></script>
+  <video id="myPlayerID" data-video-id="3674727957001"
+data-account="1507807800001"
+data-player="SyoZr3Lv"
+data-embed="default"
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/SyoZr3Lv_default/index.min.js"></script>
+
+  <!-- <script type="text/javascript">
+    videojs('myPlayerID').on('loadedmetadata',function(){
+      var myPlayer = this;
+      console.log('myPlayer.duration()',myPlayer.duration(1000));
+    });
+  </script> -->
+
+
 
 </body>
 

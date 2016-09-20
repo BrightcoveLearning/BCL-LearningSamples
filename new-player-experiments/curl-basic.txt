@@ -88,6 +88,21 @@ curl \
 
 
 
+    curl \
+      --header "Content-Type: application/json" \
+      --user $EMAIL \
+      --request POST \
+      --data '{
+          "name": "Video Cloud CURL 10 March",
+          "configuration": {
+            "video_cloud": {
+              "video": "4690057979001"
+            }
+          }
+      }' \
+        https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
 
 
 curl \
