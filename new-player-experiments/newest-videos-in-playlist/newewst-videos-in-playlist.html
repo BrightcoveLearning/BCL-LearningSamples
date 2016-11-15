@@ -143,6 +143,7 @@
 
           function getVideo() {
               if (i < iMax) {
+                console.log('in call');
                   myPlayer.catalog.getVideo(videoIds[i].id, pushData);
               } else {
                   callback(videoObjectsForReturn);
@@ -155,6 +156,7 @@
            * @parap {object} video the video object
            */
           function pushData(error, video) {
+            console.log('video',video);
               videoObjectsForReturn.push(video);
               i++;
               getVideo();

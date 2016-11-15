@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      float: left;
+      margin: 15px;
+      height: 344px;
+      width: 610px;
+    }
+    .vjs-playlist {
+      width: 250px;
+      float: left;
+      margin: 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+   data-account="1752604059001"
+   data-player="HJ7bvB0uZl"
+   data-embed="default"
+   data-application-id
+   class="video-js"
+   controls></video>
+ <script src="//players.brightcove.net/1752604059001/HJ7bvB0uZl_default/index.min.js"></script>
+
+    <script type="text/javascript">
+      var myPlayer,
+        proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
+        cmsURL = 'https://cms.api.brightcove.com/v1/accounts/',
+        totalCalls,
+        callNumber = 0,
+        allVideoObjects = [],
+        currentlyPlayingIndex;
+
+      videojs("myPlayerID").ready(function() {
+        myPlayer = this;
+
+        myPlayer.on('ended',function(){
+          if (currentlyPlayingIndex <= allVideoObjects.length) {
+            currentlyPlayingIndex++
+            myPlayer.catalog.load(allVideoObjects[currentlyPlayingIndex]);
+            myPlayer.play();
+          } else {
+            myPlayer.catalog.load(allVideoObjects[0]);
+            myPlayer.play();
+            currentlyPlayingIndex = 0;
+          }
+        });
+
+        var videoIDs = [],
+          videoObjects = [],
+          videoCount,
+          videoIDRequest = {},
+          videoCountRequest = {};
+        // setup for video count CMS API request
+        videoCountRequest = setRequestData('getCount');
+        getCMSAPIData(videoCountRequest, function (parsedData) {
+          videoCount = parsedData.count;
+          console.log('videoCount', videoCount);
+          totalCalls = Math.ceil(videoCount / 25);
+          do {
+            videoIDRequest = setRequestData('getIDs');
+            getCMSAPIData(videoIDRequest, function (parsedData) {
+              videoIDs = extractVideoData(parsedData);
+              getVideoData(videoIDs, function (videoObjects) {
+                Array.prototype.push.apply(allVideoObjects, videoObjects);
+                console.table(allVideoObjects);
+                if (allVideoObjects.length === videoCount) {
+                  beginPlayingVideos();
+                }
+              })
+            });
+            callNumber++;
+           }
+          while (callNumber <= totalCalls - 1);
+        });
+      });
+      /**
+       * sets up the data for the API request
+       */
+      function setRequestData(task) {
+        var accountId = '1752604059001',
+          videoName,
+          requestURL,
+          endPoint,
+          requestData = {},
+          dataReturned = false;
+        switch (task) {
+        case 'getCount':
+          requestURL = cmsURL + accountId + '/counts/videos';
+          break;
+        case 'getIDs':
+          requestURL = cmsURL + accountId + '/videos?limit=25&offset='+ 25 * callNumber;
+          console.log('requestURL',requestURL);
+          break;
+        }
+        requestData.url = requestURL;
+        requestData.requestType = 'GET';
+        return requestData;
+      }
+
+      function getCMSAPIData(options, callback) {
+        var httpRequest = new XMLHttpRequest(),
+          responseRaw,
+          parsedData,
+          requestParams;
+        // set up request data
+        requestParams = 'url=' + encodeURIComponent(options.url) + '&requestType=' + options.requestType;
+        // set response handler
+        httpRequest.onreadystatechange = getResponse;
+        // open the request
+        httpRequest.open('POST', proxyURL);
+        // set headers
+        httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // open and send request
+        httpRequest.send(requestParams);
+        // response handler
+        function getResponse() {
+          dataReturned = false;
+          try {
+            if (httpRequest.readyState === 4) {
+              if (httpRequest.status === 200) {
+                responseRaw = httpRequest.responseText;
+                parsedData = JSON.parse(responseRaw);
+                dataReturned = true;
+                callback(parsedData);
+              } else {
+                alert('There was a problem with the request. Request returned ' + httpRequest.status);
+              }
+            }
+          } catch (e) {
+            alert('Caught Exception: ' + e);
+          }
+        }
+      }
+      /**
+       * extract video data from CMS API response
+       * @param {array} cmsData the data from the CMS API
+       * @return {array} videoData array of video info
+       */
+      function extractVideoData(cmsData) {
+        var i,
+          iMax = cmsData.length,
+          videoItem,
+          videoDataForReturn = [];
+        for (i = 0; i < iMax; i++) {
+          if (cmsData[i].id !== null) {
+            videoItem = {};
+            videoItem.id = cmsData[i].id;
+            videoDataForReturn.push(videoItem);
+          }
+        }
+        return videoDataForReturn;
+      }
+      /**
+       * get video objects
+       * @param {array} videoIds array of video ids
+       * @return {array} videoData array of video objects
+       */
+      function getVideoData(videoIds, callback) {
+        var i = 0,
+          iMax = videoIds.length,
+          videoObjectsForReturn = [];
+        /**
+         * makes catalog calls for all video ids in the array
+         */
+        getVideo();
+
+        function getVideo() {
+          if (i < iMax) {
+            myPlayer.catalog.getVideo(videoIds[i].id, pushData);
+          } else {
+            callback(videoObjectsForReturn);
+          }
+        }
+        /**
+         * callback for the catalog calls
+         * pushes the returned data object into an array
+         * @param {string} error error returned if the call fails
+         * @parap {object} video the video object
+         */
+        function pushData(error, video) {
+          videoObjectsForReturn.push(video);
+          i++;
+          getVideo();
+        }
+      }
+      function beginPlayingVideos(){
+        myPlayer.catalog.load(allVideoObjects[0]);
+        myPlayer.play();
+        currentlyPlayingIndex = 0;
+      }
+    </script>
+</body>
+
+</html>

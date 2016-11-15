@@ -15,31 +15,25 @@
 <body>
 
   <video id="myPlayerID"
-    data-video-id="4604611241001"
+    data-video-id="5165694790001"
     data-account="1752604059001"
-    data-player="7bf38d3b-968a-4dec-855c-3f98e08604df"
+    data-player="HJSEihoR"
     data-embed="default"
-    class="video-js" controls></video>
+    data-application-id
+    class="video-js"
+    controls></video>
+  <p id="linkHere" style='color:red; font-weight: bold; font-size: 20px'></p>
 
-  <p id="cta"></p>
-
-  <script src="//players.brightcove.net/1752604059001/7bf38d3b-968a-4dec-855c-3f98e08604df_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1752604059001/HJSEihoR_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
-      var myPlayer = this,
-      hrefString='',
-      linkText='',
-      linkURL='',
-      videoIdInPlayer=myPlayer.options()['data-video-id'];
-      console.log('options',myPlayer.options());
-      myPlayer.catalog.getVideo(videoIdInPlayer, function(error, video) {
-        myPlayer.catalog.load(video);
-        linkText = myPlayer.mediainfo.link.text;
-        linkURL = myPlayer.mediainfo.link.url;
-        hrefString = '<a href = "' + linkURL + '" target="_blank">' +  linkText + '</a>';
-        console.log(hrefString);
-        document.getElementById("cta").innerHTML = hrefString;
+      var myPlayer = this;
+      myPlayer.on('loadstart', function(evt) {
+        var linkText = myPlayer.mediainfo.link.text,
+          linkURL = myPlayer.mediainfo.link.url,
+          hrefString = '<a href = "' + linkURL + '" target="_blank">' +  linkText + '</a>';
+        document.getElementById('linkHere').innerHTML = hrefString;
       });
     });
   </script>

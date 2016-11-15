@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+  </style>
+
+  <style>
+  .video-js {
+    height: 440px;
+    width: 560px;
+  }
+    /* hide the overlay */
+    .hide-overlay .vjs-overlay {
+        display: none;
+    }
+    /* overlay position */
+    .video-js .vjs-overlay {
+      top:0;
+      left:0;
+      padding: 0;
+    }
+    /* overlay image dimensions */
+    .vjs-overlay img {
+      height: 440px;
+      width: 560px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="5185914208001"
+  data-account="1507807800001"
+  data-player="rkkip7Rke"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/rkkip7Rke_default/index.min.js"></script>
+
+<script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+      showOverlay = false;
+
+      myPlayer.overlay({
+          overlays: [{
+            "start": "loadstart",
+            "end": "ended",
+            "content": "<img src='http://solutions.brightcove.com/bcls/assets/images/please-stand-by.png'>"
+          }]
+        });
+
+      myPlayer.errors({
+        'errors': {
+          '4': {
+            'headline': 'The Live Event you are trying to watch is either unavailable or has not started',
+            'type': 'MEDIA_UNAVAILABLE',
+          }
+        }
+      });
+
+      myPlayer.on("error", function(err) {
+        var errNo = myPlayer.error().code;
+        var duration = myPlayer.duration();
+        if (((errNo == '2') && (duration =='0')) || (errNo == '4') && (duration == '0')) {
+          showOverlay = true;
+        }
+        if (showOverlay) {
+            // hide error dialog message
+          myPlayer.error(null);
+          // show overlay image
+          myPlayer.removeClass("hide-overlay");
+        } else {
+          // hide overlay image
+          myPlayer.addClass("hide-overlay");
+        }
+      })
+
+    });
+  </script>
+
+</body>
+
+</html>
