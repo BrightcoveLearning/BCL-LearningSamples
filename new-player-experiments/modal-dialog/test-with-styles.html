@@ -9,11 +9,17 @@
       height: 344px;
       width: 610px;
     }
+    /*.video-js .vjs-modal-dialog:nth-child(2), .vjs-modal-dialog .vjs-modal-dialog-content {
+      color: red;
+      margin-top: 40px;
+      margin-left: 40px;
+    }*/
     .vjs-my-custom-modal .vjs-modal-dialog-content {
       color: red;
       margin-top: 40px;
       margin-left: 40px;
     }
+
   </style>
 
 </head>
@@ -37,6 +43,7 @@
         options.content = 'In the  modal';
         options.label = 'the label';
 
+      //Use the new ModalDialog method
       const myModal = new videojs.ModalDialog(myPlayer, options);
       myModal.addClass('vjs-my-custom-modal');
       myPlayer.addChild(myModal);

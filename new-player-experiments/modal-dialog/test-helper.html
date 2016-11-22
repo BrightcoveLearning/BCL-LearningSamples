@@ -13,9 +13,7 @@
       color: red;
       margin-top: 40px;
       margin-left: 40px;
-    }
-  </style>
-
+    }  </style>
 </head>
 
 <body>
@@ -32,15 +30,9 @@
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
-      var myPlayer = this,
-        options = {};
-        options.content = 'In the  modal';
-        options.label = 'the label';
-
-      const myModal = new videojs.ModalDialog(myPlayer, options);
+      var myPlayer = this;
+      const myModal = myPlayer.createModal('In the modal');
       myModal.addClass('vjs-my-custom-modal');
-      myPlayer.addChild(myModal);
-      myModal.open();
     });
   </script>
 

@@ -71,7 +71,8 @@
         newElement.appendChild(newLink);
         // Get control bar and insert before elements
         // Remember that getElementsByClassName() returns an array
-        controlBar = document.getElementsByClassName('vjs-control-bar')[0];
+        controlBar = myPlayer.controlBar.el();
+        //controlBar = document.getElementsByClassName('vjs-control-bar')[0];
         // Insert the icon div in proper location
         controlBar.appendChild(newElement);
       });
