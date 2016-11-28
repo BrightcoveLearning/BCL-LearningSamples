@@ -1,7 +1,0 @@
-*~
-node_modules
-src/*.swf
-.DS_Store
-bin-debug/*
-html-template/*
-bin-release/*
