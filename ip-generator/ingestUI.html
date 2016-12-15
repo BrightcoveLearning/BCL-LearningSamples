@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            html {
+                font-family: Helvetica;
+            }
+            form {
+                padding: 10px;
+            }
+            input {
+                margin: 5px;
+                padding: 5px;
+                border-radius: 25px;
+            }
+            select {
+                margin: 5px;
+                padding: 5px;
+                height: 2.5em;
+                width: 10em;
+                border-radius: 25px;
+                background-color: white;
+            }
+            #renditionDiv1 {
+                display: inline;
+            }
+            #renditionDiv2 {
+                display: none;
+            }
+            #output {
+                border: 2px solid black;
+                min-height: 2em;
+
+            }
+            .description {
+                font-size: 10pt;
+            }
+            #descriptionAddtl {
+                font-size: 10pt;
+                display: none;
+            }
+            #question {
+                font-size: 10 pt;
+                text-decoration: underline;
+                color: blue;
+                display: inline;
+            }
+            h4 {
+                margin-bottom: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ingest Profile Generator Tool</h1>
+        <p>Additional information about creating and managing ingest profiles in Video Cloud can be found on <a href="https://support.brightcove.com/en/video-cloud/docs/managing-ingest-profiles">this page</a>.</p>
+        <form id="myForm">
+            <div id="headerFields">
+        Profile Name:
+            <input id="name" type="text" name="profile_name" required>
+        <br/>
+        Description:
+            <input id="description" type="text" name="description" required>
+        <br/>
+        Video Cloud Account ID:
+            <input id="account_id" type="text" name="account_id" value="4394098907001" required>
+            <br/>
+        Video Cloud Client ID:
+            <input id="client_id" type="text" name="client_id" required>
+            <br/>
+        Video Cloud Client Secret:
+            <input id="client_secret" type="text" name="client_secret" required>
+            <br/>
+        <!--Store Master?:
+            <select id="digital_master" type="text" name="master">
+                <option>Yes</option>
+                <option>No</option>
+            </select>-->
+            <input id="digital_master" type="hidden" value="&quot;rendition&quot;: &quot;passthrough&quot;,&quot;distribute&quot;: false}">
+        <br/>
+        <!--Number of Renditions:
+            <input id="renditions" type="text" required>
+        <br/>-->
+    </div>
+        <div id="renditionDiv1">
+    <h3>Rendition 1</h3>
+            <input id="media_type" value="video" style="display: none">
+            <input id="speed" value="3" style="display: none" required>
+        Reference ID:
+            <input id="reference_id" required>
+        <br/>
+        Format:
+            <select id="format" required>
+                <option>mp4</option>
+                <option>hls</option>
+            </select>
+            <br/>
+            <div class="description">The output container format to use.</div>
+        <br/>
+        Audio Codec:
+            <input id="audio_codec" value="aac" required>
+            <br/>
+            <div class="description">The audio codec to use. The default codec depends on the video codec and format selected.</div>
+        <br/>
+        Audio Bitrate
+            <input id="audio_bitrate" required>
+            <br/>
+            <div class="description">A target audio bitrate in kbps.</div>
+        <br/>
+        Video Codec:
+            <input id="video_codec" value="h264" required>
+            <br/>
+            <div class="description">The video codec to use.</div>
+        <br/>
+        Video Bitrate:
+            <input id="video_bitrate" required>
+            <br/>
+            <div class="description">A target video bitrate in kbps. Not necessary if you select a quality setting, unless you want to target a specific bitrate.
+</div>
+        <br/>
+        Decoder Bitrate Cap:
+            <input id="decoder_bitrate_cap" required>
+            <br/>
+            <div class="description">Max bitrate fed to decoder buffer. Typically used for video intended for streaming, or for targeting specific devices (e.g. Blu-Ray).</div>
+        <br/>
+        Decoder Buffer Size:
+            <input id="decoder_buffer_size" required>
+            <br/>
+            <div class="description">Size of the decoder buffer, used in conjunction with bitrate_cap.</div>
+        <br/>
+        Keyframe Rate:
+            <input id="keyframe_rate" required>
+            <br/>
+            <div class="description">The number of keyframes per second.<div id="question">?</div>
+                <div id="descriptionAddtl"><br/>Set the number of keyframes per second. So a value of 0.5 would result in one keyframe every two seconds. A value of 3 would result in three keyframes per second.<br/>A greater number of keyframes will increase the size of your output file, but will allow for more precise scrubbing in most players.</div>
+                </div>
+        <br/>
+        Max Frame Rate:
+            <input id="max_frame_rate" required>
+            <br/>
+            <div class="description">The maximum frame rate to use.<br/>Limits the output frame rate to a certain number. If the frame rate would otherwise exceed this number (e.g. the input frame rate is too high), this will reduce the frame rate to the max_frame_rate setting. <br/>Example: if you set max_frame_rate to 29.97, and the input has a frame rate of 59.94, the output file will have a frame rate of 29.97.</div>
+        <br/>
+        Width:
+            <input id="width" required>
+            <br/>
+            <div class="description">The maximum width of the output video (in pixels).</div>
+        <br/>
+        Height:
+            <input id="height" required>
+            <br/>
+            <div class="description">The maximum height of the output video (in pixels).</div>
+        <br/>
+        H.264 Profile:
+            <select id="h264_profile" required>
+                <option>baseline</option>
+                <option>main</option>
+                <option>high</option>
+            </select>
+            <br/>
+            <div class="description">H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For example, the iPhone 3gs only supports the Baseline profile, which we use by default. The Main and High profiles are a definite step up in compression, and work fine for web playback, though be careful with HD High profile video in Flash Player, which doesnâ€™t offer the best H.264 decoder. <br/>For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose Baseline.</div>
+        <br/>
+    </div>
+    <div id="imageDiv1">
+        <h3>Images</h3>
+        <h4>Poster</h4>
+        <input id="media_type" type="hidden" value="image" style="display: none">
+        <br/>
+        Format: <select id="format" required>
+            <option>png</option>
+            <option>jpg</option>
+        </select>
+        <br/>
+        <input id="label" type="hidden" value="poster" required>
+        <br/>
+        Width: <input id="width" type="text" required>
+        <br/>
+        Height <input id="height" type="text" required>
+    </div>
+    <div id="imageDiv2">
+        <h4>Thumbnail</h4>
+        <input id="media_type" type="hidden" value="image" style="display: none">
+        <br/>
+        Format: <select id="format" required>
+            <option>png</option>
+            <option>jpg</option>
+        </select>
+        <br/>
+        <input id="label" type="hidden" value="thumbnail" required>
+        <br/>
+        Width: <input id="width" type="text" required>
+        <br/>
+        Height <input id="height" type="text" required>
+    </div>
+    <div id="renditionDiv2">
+    <h3>Rendition 2</h3>
+        Reference ID:
+            <input id="2_refId">
+        <br/>
+        Format:
+            <input id="2_format">
+        <br/>
+        Audio Codec:
+            <input id="2_audioCodec">
+        <br/>
+        Audio Bitrate
+            <input id="2_audioBitrate">
+        <br/>
+        Video Codec:
+            <input id="2_videoCodec">
+        <br/>
+        Video Bitrate:
+            <input id="2_videoBitrate">
+        <br/>
+        Decoder Bitrate Cap:
+            <input id="2_decoderCap">
+        <br/>
+        Decoder Buffer Size:
+            <input id="2_decoderBuffer">
+        <br/>
+        Keyframe Rate:
+            <input id="2_keyframes">
+        <br/>
+        Max Frame Rate:
+            <input id="2_maxFrame">
+        <br/>
+        Width:
+            <input id="2_width">
+        <br/>
+        Height:
+            <input id="2_height">
+        <br/>
+        H.264 Profile:
+            <input id="2_profile">
+        <br/>
+    </div>
+    <button id="doit">Submit</button>
+        </form>
+        <h4>Output:</h4>
+        <div id="output"></div>
+        <div id="result">
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--<script type="text/javascript" src="/ingestUIjq.js"></script>-->
+        <script type="text/javascript" src="http://solutions.brightcove.com/smathison/ingestUI.js"></script>
+    </body>
+</html>

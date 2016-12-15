@@ -30,15 +30,10 @@ $data = array();
 
 if ($_POST["client_id"]) {
     $client_id = $_POST["client_id"];
-} else {
-    $client_id = 'YOUR_DEFAULT_CLIENT_ID_HERE';
 }
 if ($_POST["client_secret"]) {
     $client_secret = $_POST["client_secret"];
-} else {
-    $client_secret = 'YOUR_DEFAULT_CLIENT_SECRET_HERE';
 }
-
 $auth_string = "{$client_id}:{$client_secret}";
 $request     = "https://oauth.brightcove.com/v3/access_token?grant_type=client_credentials";
 $ch          = curl_init($request);

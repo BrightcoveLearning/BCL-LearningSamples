@@ -114,15 +114,28 @@
 
         //submit data to Ingest Profile API
         //TODO: get access token dynamically, work around CORS
-        var submitData = JSON.stringify(finalData);
-        var xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-
-        xhr.addEventListener("readystatechange", function() {
-            if (this.readyState === 4) {
-                console.log(this.responseText);
-            }
+        var options = {};
+        var account_id = document.getElementById('account_id').value;
+        var client_id = document.getElementById('client_id').value;
+        var client_secret = document.getElementById('client_secret').value;
+        options.url = 'https://ingestion.api.brightcove.com/v1/accounts/' + account_id + '/profiles';
+        options.client_id = client_id;
+        options.client_secret = client_secret;
+        options.requestType = 'POST';
+        options.requestData = JSON.stringify(finalData);
+        makeRequest(options, function(response) {
+            var responseDecoded = JSON.parse(response);
+            // do whatever you want to here with or after the response
         });
+
+        // var xhr = new XMLHttpRequest();
+        // xhr.withCredentials = true;
+        //
+        // xhr.addEventListener("readystatechange", function() {
+        //     if (this.readyState === 4) {
+        //         console.log(this.responseText);
+        //     }
+        // });
 
         /**
          * send API request to the proxy
@@ -139,7 +152,7 @@
                 response,
                 requestParams,
                 dataString,
-                proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/clips-proxy.php',
+                proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/ip-generator-proxy.php',
                 // response handler
                 getResponse = function() {
                     try {
