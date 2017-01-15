@@ -5,12 +5,18 @@ videojs.plugin('alltimeViews', function(options) {
         video_id,
         alltimeViewsEl,
         videoElement = document.getElementById('bcls_alltimePlaysPlayer'),
+        playlistEl = document.getElementsByClassName('vjs-playlist')[0],
         account_id = videoElement.getAttribute('data-account');
-
+        console.log(document.getElementsByClassName('vjs-playlist'));
     // create the element to hold the video views
     el = document.createElement('p');
     el.setAttribute('id', 'bcls_alltimeViews');
-    videoElement.insertAdjacentElement('afterend', el);
+    el.setAttribute('style', 'font-weight:bold;')
+    if (options.hasPlaylist) {
+        playlistEl.insertAdjacentElement('afterend', el);
+    } else {
+        videoElement.insertAdjacentElement('afterend', el);
+    }
     alltimeViewsEl = document.getElementById('bcls_alltimeViews');
 
     // listen for metadata loaded

@@ -8,15 +8,18 @@
               font-family: sans-serif;
               margin: 4em;
           }
-            .video-js {
+            /*.video-js {
               height: 350px;
               width: 640px;
               float: left;
             }
             .vjs-playlist {
-              width: 280px;
-              height: 365px;
+              width: 200px;
+              height: 338px;
             }
+            .vjs-playlist-item {
+                min-height: 120px;
+            }*/
         </style>
     </head>
     <body>
@@ -31,13 +34,13 @@
         width="600"
         height="337.5"></video>
         <script src="//players.brightcove.net/1752604059001/By0VIfFIg_default/index.min.js"></script><ol class="vjs-playlist"></ol>
-        <script src="alltimeViews.js"></script>
         <script>
-        var options = {
-            "proxyURL": "https://solutions.brightcove.com/bcls/bcls-proxy/alltime-views-proxy.php",
-            "hasPlaylist": true
-            };
-        </script>
-        <script>videojs('bcls_alltimePlaysPlayer').alltimeViews(options);</script>
+        // var options = {
+        //     "proxyURL": "https://solutions.brightcove.com/bcls/bcls-proxy/alltime-views-proxy.php",
+        //     "hasPlaylist": true
+        //     };
+        // </script>
+        // <script src="alltimeViews.js"></script>
+        // <script>videojs('bcls_alltimePlaysPlayer').alltimeViews(options);</script>
     </body>
 </html>
