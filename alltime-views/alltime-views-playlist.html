@@ -8,25 +8,34 @@
               font-family: sans-serif;
               margin: 4em;
           }
+            .video-js {
+              height: 350px;
+              width: 640px;
+              float: left;
+            }
+            .vjs-playlist {
+              width: 280px;
+              height: 365px;
+            }
         </style>
     </head>
     <body>
         <h1>Player Sample: Alltime Views</h1>
-        <video id="bcls_alltimePlaysPlayer" data-video-id="4825279519001"
+        <video id="bcls_alltimePlaysPlayer" data-playlist-id="5282200243001"
         data-account="1752604059001"
-        data-player="BJ1pCv88x"
+        data-player="By0VIfFIg"
         data-embed="default"
         data-application-id
         class="video-js"
         controls
         width="600"
-        height="338"></video>
-        <script src="//players.brightcove.net/1752604059001/BJ1pCv88x_default/index.min.js"></script>
+        height="337.5"></video>
+        <script src="//players.brightcove.net/1752604059001/By0VIfFIg_default/index.min.js"></script><ol class="vjs-playlist"></ol>
         <script src="alltimeViews.js"></script>
         <script>
         var options = {
             "proxyURL": "https://solutions.brightcove.com/bcls/bcls-proxy/alltime-views-proxy.php",
-            "hasPlaylist": false
+            "hasPlaylist": true
             };
         </script>
         <script>videojs('bcls_alltimePlaysPlayer').alltimeViews(options);</script>
