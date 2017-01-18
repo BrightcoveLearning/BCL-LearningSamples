@@ -23,12 +23,12 @@
   <video id="myPlayerID"
     data-video-id="5079788144001"
     data-account="1507807800001"
-    data-player="HJLWns1Zbx"
+    data-player="B1mMJs3Ge"
     data-embed="default"
     data-application-id
     class="video-js"
     controls></video>
-  <script src="//players.brightcove.net/1507807800001/HJLWns1Zbx_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1507807800001/B1mMJs3Ge_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
@@ -37,7 +37,8 @@
         options.content = 'In the  modal';
         options.label = 'the label';
 
-      const myModal = new videojs.ModalDialog(myPlayer, options);
+      var ModalDialog = videojs.getComponent('ModalDialog');
+      var myModal = new ModalDialog(myPlayer, options);
       myModal.addClass('vjs-my-custom-modal');
       myPlayer.addChild(myModal);
       myModal.open();

@@ -1,0 +1,45 @@
+{
+  "account_id": "1507807800001",
+  "autoadvance": 0,
+  "autoplay": false,
+  "compatibility": true,
+  "embed_id": "default",
+  "flashHlsDisabledByStudio": false,
+  "fullscreenControl": true,
+  "id": "HyJ7B0a7e",
+  "playOnSelect": true,
+  "player": {
+    "inactive": false,
+    "template": {
+      "locked": false,
+      "name": "single-video-template",
+      "version": "5.11.4"
+    }
+  },
+  "player_id": "HyJ7B0a7e",
+  "player_name": "playlist old ui",
+  "playlistPlugin": true,
+  "plugins": [{
+    "name": "bcPlaylistUi",
+    "options": {
+      "playOnSelect": true
+    }
+  }],
+  "scripts": [
+    "//players.brightcove.net/videojs-bc-playlist-ui/1/videojs-bc-playlist-ui.min.js"
+  ],
+  "studio_configuration": {
+    "player": {
+      "adjusted": true,
+      "height": 150,
+      "width": 300
+    }
+  },
+  "stylesheets": [
+    "//players.brightcove.net/videojs-bc-playlist-ui/1/videojs-bc-playlist-ui.css"
+  ],
+  "video_cloud": {
+    "policy_key": "BCpkADawqM0_pUE6xmh4Hbs0t5zN89HXxjC3jzJ2YaE3tbuuSj--_o4JxbSf0ofEHrBOZviyd4tWHNe9Gr6hjDn1BtDq_PnUNqzdKK4R9fUAkGWWNybDZC9xxN6cRm-r5tlfmETfvT4FQ5oD",
+    "video": null
+  }
+}

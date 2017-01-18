@@ -4,29 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
+ <style>
+  iframe {
+    width: 80%;
+    min-height: 360px;
+  }
+</style>
 
 </head>
 
 <body>
-  <div style="display: block; position: relative; max-width: 760px;">
-    <div style="padding-top: 56.25%;">
-      <iframe src="//players.brightcove.net/1507807800001/BkAAGGDn_default/index.html?playlistId=4400450992001"
+      <iframe src="//players.brightcove.net/1752604059001/H1EyAYN3_default/index.html?playlistId=5126480959001"
         allowfullscreen
         webkitallowfullscreen
-        mozallowfullscreen
-        style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></iframe>
-    </div>
-  </div>
+        mozallowfullscreen></iframe>
 </body>
 
 </html>
-
-
-curl \
-  --header "Content-Type: application/json" \
-  --user $EMAIL \
-  --request PATCH \
-  --data '{
-    "playOnSelect": true
-  }' \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
