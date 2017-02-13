@@ -291,7 +291,7 @@ curl \
   --user $EMAIL \
   --request POST \
   --data '{
-      "name": "MySamplePlayer",
+      "name": "junk348",
       "configuration": {
         "media": {
           "sources": [{
