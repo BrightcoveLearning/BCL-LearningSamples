@@ -31,6 +31,7 @@
     videojs("video_1").on('loadedmetadata',function() {
       myPlayer = this;
       myPlayer.ima3({
+        playsinline: true,
         serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"
       });
     });

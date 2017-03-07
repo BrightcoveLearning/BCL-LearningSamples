@@ -1,0 +1,20 @@
+npm run docs
+
+
+npm run docs:api
+
+
+git checkout v5.16.0
+
+
+look in package.json, "video.js": "5.16.0" OR whatever version
+
+See what the versions are for Video.js in Brightcove Player
+  npm v video.js dist-tags
+will get back something like
+  { latest: '5.16.0', next: '5.18.0', beta: '6.0.0-RC.3' }
+
+JSDoc configuration file .jsdoc.json
+
+Template: tui-jsdoc-template (npm)
+  Install: npm i -D tui-jsdoc-template

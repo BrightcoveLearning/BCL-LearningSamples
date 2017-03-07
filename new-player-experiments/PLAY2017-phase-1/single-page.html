@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PLAY Demo - Single Page</title>
+  <style media="screen">
+    .pluginDevTextClass {
+        background-color: #333333;
+        color: red;
+        position: absolute;
+        margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5350958927001"
+    data-account="1507807800001"
+    data-player="Sk7wb9nce"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="344px"
+    height="610px"></video>
+  <script src="//players.brightcove.net/1507807800001/Sk7wb9nce_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+        pluginDevText = document.createElement('p');
+      pluginDevText.className = 'pluginDevTextClass',
+      pluginDevText.innerHTML = 'Becoming a plugin developer';
+      myPlayer.el().appendChild(pluginDevText);
+    });
+  </script>
+
+
+</body>
+
+</html>

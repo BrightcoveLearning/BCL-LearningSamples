@@ -4,6 +4,12 @@
 
 <head>
     <title>Error Messages Plugin using embed code</title>
+    <style>
+      .video-js {
+        height: 344px;
+        width: 610px;
+      }
+    </style>
 </head>
 
 <body>
@@ -23,8 +29,17 @@
   var changeVideo;
   videojs('myPlayerID').ready(function(){
     var myPlayer = this;
+    myPlayer.errors({
+      "errors": {
+        "-3": {
+            "headline": "You must be at least 18 years of age.",
+            "type": "PLAYER_ERR_AGE_GATE",
+            "message": "Content may be considered inappropriate for some users."
+        }
+      }
+    });
     changeVideo = function(){
-      myPlayer.error({code:'2'});
+      myPlayer.error({code:'-3', dismiss: false});
     }
   });
 </script>

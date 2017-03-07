@@ -1,35 +1,47 @@
 videojs.plugin('viewsInControlbar', function() {
   var myPlayer = this,
+    viewsCount,
     options =[],
-    viewsCount;
-    options.requestType='GET',
+    viewsObject = [];
+    options.requestType = 'GET',
     options.proxyURL = 'http://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
     options.requestBody = '',
-    options.callback = '',
-    viewsObject = [];
-
+    options.callback = '';
+    // Wait for loadstart event so mediainfo is populated
+    // and the video ID and account ID can be retrieved
     myPlayer.on('loadstart',function(){
-      console.log('mediainfo', myPlayer.mediainfo);
-      videoID = mediainfo.id;
-      options.url = 'https://analytics.api.brightcove.com/v1/alltime/accounts/1752604059001/videos/' + videoID,
+      var videoID = myPlayer.mediainfo.id,
+        accountID = myPlayer.mediainfo.accountId;
+      // Build the Analytics API endpoint
+      options.url = 'https://analytics.api.brightcove.com/v1/alltime/accounts/' + accountID + '/videos/' + videoID;
+      // Make the request to the Analytics API
+      // Extract views from data returned by Analytics API
       makeRequest(options, function(viewsRaw){
-        console.log('viewRaw', viewsRaw);
+        // Remove console.log command for production code
+        console.log('viewsRaw', viewsRaw);
         viewsObject = JSON.parse(viewsRaw);
         console.log('viewsObject',viewsObject);
         viewsCount = viewsObject.alltime_video_views;
         console.log('views',viewsCount);
+        // Call function to place data in controlbar
         placeCountInControlbar();
       });
-    })
+    });
 
-
-
+  /**
+   * Dynamically built a div that is then
+   * placed in the controlbar's spacer element
+   */
   function placeCountInControlbar(){
     var spacer,
       newElement = document.createElement('div');
+    //Place data in div
     newElement.innerHTML = "Total Views: " + viewsCount;
+    //Get the spacer in the controlbar
     spacer = document.getElementsByClassName('vjs-spacer')[0];
+    //Right justify content in the spacer and add top margin
     spacer.setAttribute('style', 'justify-content: flex-end; margin-top: 10px');
+    //Add the dynacmially built div to the spacer in the controlbar
     spacer.appendChild(newElement);
   }
 
