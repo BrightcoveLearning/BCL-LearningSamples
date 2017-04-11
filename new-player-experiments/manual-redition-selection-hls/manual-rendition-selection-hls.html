@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Begin Drupal Taxonomy Data -->
+    <meta name="products" content="Video Cloud">
+    <meta name="role" content="Player Developer">
+    <meta name="task" content="">
+    <meta name="topic" content="Renditions,Playback">
+    <!-- End Drupal Taxonomy Data -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+    <!-- change title to match the h1 heading -->
+    <title>Manual Rendition Selection - HLS</title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.css" />
+    <script src="//use.edgefonts.net/source-code-pro.js"></script>
+    <link rel="stylesheet" href="//learning-services-media.brightcove.com/doc-assets/js/prism/prism.css">
+    <link rel="stylesheet" href="//docs.brightcove.com/en/styles/template-less/css/bcls-doc.css">
+    <link rel="stylesheet" href="/en/styles/foundation-fixes.css">
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-2728311-29', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+</head>
+
+<body>
+    <!-- header navbar -->
+    <div id="navWrapper" class="fixed"></div>
+    <!-- breadcrumbs -->
+    <nav id="breadCrumbWrapper" class="breadcrumbs show-for-medium-up"></nav>
+    <!-- search -->
+    <div id="searchModal" class="reveal-modal" data-reveal></div>
+    <!-- content -->
+    <div class="row">
+        <div class="sidebar large-2 columns show-for-large-up">
+            <div id="sidenav" class="side-nav"></div>
+        </div>
+        <div id="main" class="large-10 small-12 columns">
+          <h1>Manual Rendition Selection - HLS</h1>
+        <!-- begin drupal content -->
+          <style>
+            iframe {
+              height: 344px;
+              width: 610px;
+            }
+          </style>
+
+            <article class="bcls-article">
+                <header class="bcls-header" id="bcls_header">
+                    <p  class="bcls-aside bcls-aside--information">The techniques described in this document do not function in environments where native system HLS playback or Flash HLS is used. This includes Safari (native system), IE10 and IE11 (Flash HLS) browsers.</p>
+                    <p>In this topic you will learn how to use the <code class="language-javascript">representations()</code> method from the Manual Rendition API to provide an HTML <code class="language-html">&lt;select&gt;</code> element in Brightcove Player's controlbar, from which a viewer of the video can then select either low or high quality renditions to view, as shown in the following screenshot.</p>
+                    <figure class="bcls-figure">
+                        <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/manual-rendition-selection/show-select.png" alt="select in controlbar">
+                    </figure>
+                    <p> In this example, high and low quality are defined by the top two and bottom two quality renditions.</p>
+                    <div class="bcls-aside bcls-aside--information">
+                      <p>At this time the Manual Rendition API ONLY works with HLS and DRM-protected content via DASH videos. This document details the HLS implementation, whereas the <a href="../../brightcove-player/guides/manual-rendition-selection.html">Manual Rendition Selection - DASH</a> document details the DASH implementation.</p>
+                    </div>
+                </header>
+                <section id="Implementation_considerations" class="bcls-section">
+                    <h2>Implementation considerations</h2>
+                    <p>There are a number of considerations and technical concepts to understand before using the Manual Rendition API, some are listed here:</p>
+                    <ul>
+                      <li>In Video Cloud, different versions of a video are generally referred to as <em>renditions</em>. In manual rendition selection speak, the term for the different versions is <em>representations</em>.</li>
+                      <li>Each representation is an object made up of the four properties and one method:
+                          <ul>
+                            <li>id</li>
+                            <li>width</li>
+                            <li>height</li>
+                            <li>bandwidth</li>
+                            <li>enabled() method</li>
+                          </ul>
+                      </li>
+                      <li>The player examines an array for possible representations for playback. Only those with the <code>enabled</code> method set to <code>true</code> are eligible for playback.</li>
+                      <li>The <code class="language-javascript">representations()</code> method returns an array of representations.</li>
+                      <li>The value of <code>enabled</code> is set by calling the particular representation's <code class="language-javascript">enabled(boolean)</code> method.</li>
+                      <li>When lower quality representations are the only ones with <code>enabled</code> set to true, the player will play all downloaded higher quality segments before the poorer quality segments begin to play. No specific length of time can be stated, but in testing this can be up to one minute.</li>
+                    </ul>
+                </section>
+                <section id="Example" class="bcls-section">
+                    <h2>Example</h2>
+                    <p>In this example, once you start to play the video you will be able to make a rendition change. You most likely will want to make the video fullscreen, then change the quality. Remember, you may have to wait some time to see the quality change. In the following example, and in the code shown in this document, the two highest quality representations will be enabled when <strong>High</strong> is selected and the two lowest quality representations will be enabled when <strong>Low</strong> is selected.</p>
+                    <iframe src="//players.brightcove.net/1752604059001/ByCarabr_default/index.html?videoId=4945249257001"
+                      allowfullscreen
+                      webkitallowfullscreen
+                      mozallowfullscreen></iframe>
+                </section>
+                <section id="Code_overview" class="bcls-section">
+                    <h2>Code overview</h2>
+                    <p>The code in broken into these four main sections:</p>
+                    <ol>
+                      <li>A Brightcove Player using the in-page embed code</li>
+                      <li>An event handler listening for the <code class="language-javascript">loadedmetadata</code> event that performs the following:
+                          <ul>
+                            <li>Calls a function to dynamically create an HTML <code class="language-html">&lt;select&gt;</code> element</li>
+                            <li>Retrieves the created element and assigns a <code class="language-javascript">change</code> event listener to it</li>
+                          </ul>
+                      </li>
+                      <li>A function to dynamically create, and then place an HTML <code class="language-html">&lt;select&gt;</code> element in the controlbar</li>
+                      <li>A function to enable only the wanted representations, based on application logic</li>
+                    </ol>
+                </section>
+                <section id="Implement_using_code" class="bcls-section">
+                    <h2>Implement using code</h2>
+                    <p>The code is well commented, but the major sections and a few key points are worth pointing out.</p>
+                    <ul>
+                      <li>Lines 8-18: Style the player and the <code class="language-html">&lt;select&gt;</code> element in the controlbar.</li>
+                      <li>Lines 51-76: Dynamically create a <code>select</code> element, and associated <code class="language-html">&lt;option&gt;</code> elements, and place in the controlbar.</li>
+                      <li>Lines 89-98: Sort a copy of the array of representations on the <code>bandwidth</code> property. You cannot guarantee the array will be sorted in any specific order.</li>
+                      <li>Lines 102-103: Assign the two lowest bandwidths and the two highest bandwidths to respective arrays.</li>
+                      <li>Line 105: Retrieve into the <code class="language-javascript">selectedQuality</code> variable the user's selected preference from the HTML <code class="language-html">&lt;select&gt;</code> element.</li>
+                      <li>Lines 107-111: Retrieve into the <code class="language-javascript">enabledBandwidths</code> variable the desired array of bandwidths.</li>
+                      <li>Lines 115-121: Loop over each representation and check to see if its bandwidth is in the matching array of bandwidths (using JavaScript's <code class="language-javascript">indexOf()</code> method). If true, enable that representation.</li>
+                      <li>Lines 129-189: This is a debugging tool for displaying the array of representaions. DO NOT put this in your production code. There is a section later in this document discussing this function.</li>
+                    </ul>
+                    <pre class="line-numbers"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;Test Player&lt;/title&gt;
+
+  &lt;style&gt;
+    .video-js {
+      height: 325px;
+      width: 610px;
+    }
+    #selectID {
+      margin-top: 7px;
+      width: 65px;
+      color: black;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;!-- include in-page embed player implementation --&gt;
+  &lt;video id=&quot;myPlayerID&quot;
+    data-video-id=&quot;4945249257001&quot;
+    data-account=&quot;1752604059001&quot;
+    data-player=&quot;SklT2QulH&quot;
+    data-embed=&quot;default&quot;
+    class=&quot;video-js&quot;
+    controls&gt;&lt;/video&gt;
+  &lt;script src=&quot;//players.brightcove.net/1752604059001/SklT2QulH_default/index.min.js&quot;&gt;&lt;/script&gt;
+
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    var player,
+      changeQuality,
+      createSelectInControlbar,
+      displayReps;
+    videojs('myPlayerID').on('loadedmetadata', function () {
+      var selectControl;
+      player = this;
+      // display reps array for debugging purposes
+      displayReps(player.hls.representations());
+      // display quality select element in controlbar
+      createSelectInControlbar();
+      // get select element and add change event listener
+      selectControl = document.getElementById('selectID');
+      selectControl.addEventListener('change', changeQuality);
+    });
+
+     // function that adds the HTML select element to the controlbar
+    function createSelectInControlbar() {
+      var newElement = document.createElement('div'),
+        // dynamically build the select element
+        selectControl = document.createElement('select'),
+        option;
+      // dynamically configure the select element and add options
+      newElement.id = 'selectID';
+      newElement.name = 'quality';
+      newElement.className = 'selectStyle vjs-control';
+      option = document.createElement('option');
+      option.text = 'Quality';
+      selectControl.appendChild(option);
+      option = document.createElement('option');
+      option.value = 'low';
+      option.text = 'Low';
+      selectControl.appendChild(option);
+      option = document.createElement('option');
+      option.value = 'high';
+      option.text = 'High';
+      selectControl.appendChild(option);
+      newElement.appendChild(selectControl);
+      // get spacer in controlbar and append select element
+      spacer = document.getElementsByClassName('vjs-spacer')[0];
+      spacer.setAttribute(&quot;style&quot;, &quot;justify-content: flex-end;&quot;);
+      spacer.appendChild(newElement);
+    };
+
+     // function that changes rendition quality
+    function changeQuality(evt) {
+      var selectedQuality,
+        setToTrueSet,
+        lengthOfReps = player.hls.representations().length,
+        theSelect = evt.target,
+        sortedArray = player.hls.representations(),
+        highBandwidths,
+        lowBandwidths,
+        enableBandwidths;
+      // sort copy of reps array
+      sortedArray.sort(function (a, b) {
+        if (a.bandwidth &gt; b.bandwidth) {
+          return 1;
+        }
+        if (a.bandwidth &lt; b.bandwidth) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+      });
+      // for high and low quality getting the top 2 and bottom 2 renditions by bandwidth
+      // put both the bottom 2 and top 2 bandwidths in separate arrays
+      if (lengthOfReps &gt; 2) {
+        lowBandwidths = [sortedArray[0].bandwidth, sortedArray[1].bandwidth];
+        highBandwidths = [sortedArray[lengthOfReps - 2].bandwidth, sortedArray[lengthOfReps - 1].bandwidth];
+        // get selected quality from HTML select element
+        selectedQuality = theSelect.options[theSelect.selectedIndex].value;
+        // set either the bottom or top bandwidth array to the desired quality
+        if (selectedQuality === 'low') {
+          enabledBandwidths = lowBandwidths;
+        } else {
+          enabledBandwidths = highBandwidths;
+        }
+        // loop over each rep and check if it should be enabled
+        // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
+        // set enabled to true, otherwise set enabled to false
+        player.hls.representations().forEach(function (rep) {
+          if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
+            rep.enabled(true);
+          } else {
+            rep.enabled(false);
+          }
+        });
+      };
+      // debugging display of the reps array
+      displayReps(player.hls.representations());
+    };
+
+     // this function is for debugging purposes only
+     // and should not be included in any production code
+    function displayReps(repArray) {
+      // dynamically build table and headers cells
+      // and populate the header cells
+      var table = document.createElement('table'),
+        paragraph = document.createElement('p')
+        trHeaders = document.createElement('tr'),
+        enabledHdr = document.createElement('th'),
+        idHdr = document.createElement('th'),
+        widthHdr = document.createElement('th'),
+        heightHdr = document.createElement('th'),
+        bandwidthHdr = document.createElement('th');
+      enabledHdr.innerHTML = 'Enabled',
+      idHdr.innerHTML = 'ID',
+      widthHdr.innerHTML = 'Width',
+      heightHdr.innerHTML = 'Height',
+      bandwidthHdr.innerHTML = 'Bandwidth';
+      // add header cells to header row
+      trHeaders.appendChild(enabledHdr);
+      trHeaders.appendChild(idHdr);
+      trHeaders.appendChild(widthHdr);
+      trHeaders.appendChild(heightHdr);
+      trHeaders.appendChild(bandwidthHdr);
+      // add row to table
+      table.appendChild(trHeaders);
+      // loop over each rep, populate each cell, then add row to table
+      player.hls.representations().forEach(function (rep) {
+        var
+        tr = document.createElement('tr'),
+          checkbox = document.createElement('input'),
+          checkboxTd = document.createElement('td'),
+          idTd = document.createElement('td'),
+          widthTd = document.createElement('td'),
+          heightTd = document.createElement('td'),
+          bandwidthTd = document.createElement('td');
+        checkbox.checked = rep.enabled();
+        checkbox.type = 'checkbox';
+        checkbox.onclick = function () {
+          if (checkbox.checked) {
+            rep.enabled(true);
+          } else {
+            rep.enabled(false);
+          }
+        };
+        checkboxTd.appendChild(checkbox);
+        idTd.innerHTML = rep.id;
+        widthTd.innerHTML = rep.width;
+        heightTd.innerHTML = rep.height;
+        bandwidthTd.innerHTML = rep.bandwidth;
+        tr.appendChild(checkboxTd);
+        tr.appendChild(idTd);
+        tr.appendChild(widthTd);
+        tr.appendChild(heightTd);
+        tr.appendChild(bandwidthTd);
+        table.setAttribute('style', 'border:1px solid black; border-collapse: collapse;');
+        tr.setAttribute('style', 'border:1px solid black');
+        table.appendChild(tr);
+      });
+      // add table to end of body
+      document.body.appendChild(table);
+      document.body.appendChild(paragraph);
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+                </section>
+                <section id="Implement_in_Studio" class="bcls-section">
+                    <h2>Implement in Studio</h2>
+                    <p>To implement the manual rendition selector in Studio, you will need to slightly modify the JavaScript code shown above so it meets the requirements of a plugin. This is shown below. Follow these steps to use the API in a plugin:</p>
+                    <ol class="bcls-tasklist">
+                      <li>Alter the JavaScript code so it meets the requirements of a plugin, as shown here. Save the plugin in a Internet accessible location and add the URL to the <strong>PLUGINS</strong> section.
+                        <pre class="line-numbers" data-start="198"><code class="language-javascript">// JavaScript Plugin code
+videojs.plugin('manualRenditionSelectionHLS', function() {
+  var player = this,
+    changeQuality,
+    createSelectInControlbar;
+
+    player.on('loadedmetadata', function () {
+      var selectControl;
+
+      // display quality select element in controlbar
+      createSelectInControlbar();
+
+      // get select element and add change event listener
+      selectControl = document.getElementById('selectID');
+      selectControl.addEventListener('change',changeQuality);
+    });
+
+  // function that adds the HTML select element to the controlbar
+  function createSelectInControlbar() {
+    var newElement = document.createElement('div'),
+      // dynamically build the select element
+      selectControl = document.createElement('select'),
+      option;
+    // dynamically configure the select element and add options
+    newElement.id = 'selectID';
+    newElement.name = 'quality';
+    newElement.className = 'selectStyle vjs-control';
+    option = document.createElement('option');
+    option.text = 'Quality';
+    selectControl.appendChild(option);
+    option = document.createElement('option');
+    option.value = 'low';
+    option.text = 'Low';
+    selectControl.appendChild(option);
+    option = document.createElement('option');
+    option.value = 'high';
+    option.text = 'High';
+    selectControl.appendChild(option);
+    newElement.appendChild(selectControl);
+    // get spacer in controlbar and append select element
+    spacer = document.getElementsByClassName('vjs-spacer')[0];
+    spacer.setAttribute(&quot;style&quot;, &quot;justify-content: flex-end;&quot;);
+    spacer.appendChild(newElement);
+  };
+
+  // function that changes rendition quality
+  function changeQuality(evt) {
+    var selectedQuality,
+      setToTrueSet,
+      lengthOfReps = player.hls.representations().length,
+      theSelect = evt.target,
+      sortedArray = player.hls.representations(),
+      highBandwidths,
+      lowBandwidths,
+      enableBandwidths;
+    // sort copy of reps array
+    sortedArray.sort(function(a,b){
+      if (a.bandwidth &gt; b.bandwidth) {
+          return 1;
+        }
+        if (a.bandwidth &lt; b.bandwidth) {
+          return -1;
+        }
+        // a must be equal to b
+        return 0;
+    });
+    // for high and low quality getting the top 2 and bottom 2 renditions by bandwidth
+    // put both the bottom 2 and top 2 bandwidths in separate arrays
+    if (lengthOfReps &gt; 2){
+      lowBandwidths = [sortedArray[0].bandwidth, sortedArray[1].bandwidth];
+      highBandwidths = [sortedArray[lengthOfReps - 2].bandwidth, sortedArray[lengthOfReps - 1].bandwidth];
+      // get selected quality from HTML select element
+      selectedQuality = theSelect.options[theSelect.selectedIndex].value;
+      // set either the bottom or top bandwidth array to the desired quality
+      if (selectedQuality === 'low') {
+        enabledBandwidths = lowBandwidths;
+      } else {
+        enabledBandwidths = highBandwidths;
+      }
+      // loop over each rep and check if it should be enabled
+      // if a rep's bandwidth is in the enabled bandwidth array (indexOf is not -1)
+      // set enabled to true, otherwise set enabled to false
+      player.hls.representations().forEach(function (rep) {
+        if (enabledBandwidths.indexOf(rep.bandwidth) !== -1) {
+          rep.enabled(true);
+        } else {
+          rep.enabled(false);
+        }
+      });
+    };
+ };
+});</code></pre>
+                      </li>
+                      <li>Place the CSS for the <code class="language-html">&lt;select&gt;</code> element, as shown here, in a Internet accessible location and add the URL to the <strong>PLUGINS</strong> section.
+                        <pre class="line-numbers"><code class="language-javascript">#selectID {
+  margin-top: 7px;
+  width: 65px;
+  color: black;
+}</code></pre>
+                      </li>
+                      <li>In the <strong>Name, Options (JSON)</strong> section, simply enter the name of the plugin, <code>manualRenditionSelectionHLS</code>. No options are needed.</li>
+                      <li>You can now publish an HLS video using the newly configured player.</li>
+                    </ol>
+                </section>
+                <section id="Debugging_help" class="bcls-section">
+                    <h2>Debugging help</h2>
+                    <p>If you wish to change the application logic for which representations are enabled, it might be useful to be able to view the changed array. To display the array you can use a function to which you pass the array, as shown here:</p>
+                    <pre class="line-numbers"><code class="language-javascript">displayReps(player.hls.representations());</code></pre>
+                    <p>The actual function code is shown here:</p>
+                    <pre class="line-numbers"><code class="language-javascript"> function displayReps(repArray) {
+      // dynamically build table and headers cells
+      // and populate the header cells
+      var table = document.createElement('table'),
+        paragraph = document.createElement('p')
+        trHeaders = document.createElement('tr'),
+        enabledHdr = document.createElement('th'),
+        idHdr = document.createElement('th'),
+        widthHdr = document.createElement('th'),
+        heightHdr = document.createElement('th'),
+        bandwidthHdr = document.createElement('th');
+      enabledHdr.innerHTML = 'Enabled',
+      idHdr.innerHTML = 'ID',
+      widthHdr.innerHTML = 'Width',
+      heightHdr.innerHTML = 'Height',
+      bandwidthHdr.innerHTML = 'Bandwidth';
+      // add header cells to header row
+      trHeaders.appendChild(enabledHdr);
+      trHeaders.appendChild(idHdr);
+      trHeaders.appendChild(widthHdr);
+      trHeaders.appendChild(heightHdr);
+      trHeaders.appendChild(bandwidthHdr);
+      // add row to table
+      table.appendChild(trHeaders);
+      // loop over each rep, populate each cell, then add row to table
+      player.hls.representations().forEach(function (rep) {
+        var
+        tr = document.createElement('tr'),
+          checkbox = document.createElement('input'),
+          checkboxTd = document.createElement('td'),
+          idTd = document.createElement('td'),
+          widthTd = document.createElement('td'),
+          heightTd = document.createElement('td'),
+          bandwidthTd = document.createElement('td');
+        checkbox.checked = rep.enabled();
+        checkbox.type = 'checkbox';
+        checkbox.onclick = function () {
+          if (checkbox.checked) {
+            rep.enabled(true);
+          } else {
+            rep.enabled(false);
+          }
+        };
+        checkboxTd.appendChild(checkbox);
+        idTd.innerHTML = rep.id;
+        widthTd.innerHTML = rep.width;
+        heightTd.innerHTML = rep.height;
+        bandwidthTd.innerHTML = rep.bandwidth;
+        tr.appendChild(checkboxTd);
+        tr.appendChild(idTd);
+        tr.appendChild(widthTd);
+        tr.appendChild(heightTd);
+        tr.appendChild(bandwidthTd);
+        table.setAttribute('style', 'border:1px solid black; border-collapse: collapse;');
+        tr.setAttribute('style', 'border:1px solid black');
+        table.appendChild(tr);
+      });
+      // add table to end of body
+      document.body.appendChild(table);
+      document.body.appendChild(paragraph);
+    }</code></pre>
+                    <p>The display in the HTML page appears as follows:</p>
+                    <figure class="bcls-figure">
+                        <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/manual-rendition-selection/debugging-tables.png" alt="debugging tables">
+                    </figure>
+                    <p>Of course, you would NOT want to include this extra code in your production environment.</p>
+                </section>
+            </article>
+        <!-- end drupal content -->
+
+            <section class="bcls-section" id="Related_topics">
+                <h2>Related Topics</h2>
+                <ul>
+                    <li><a href="../../brightcove-player/guides/customize-appearance.html#iconmanipulation">Placing elements in the controlbar</a></li>
+                    <li><a href="../../brightcove-player/guides/plugin-dev-quick-start.html">Quick Start to Plugin Development</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <!-- bcl scripts -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script src="/en/scripts/docs-nav-data.min.js"></script>
+    <script src="/en/scripts/bcls-doc-site-v2.js"></script>
+    <script src="/en/scripts/expander-v2.js"></script>
+    <script src="//learning-services-media.brightcove.com/doc-assets/js/prism/prism.js"></script>
+    <script>
+        $(document).foundation();
+    </script>
+    <!-- CSAT form -->
+    <section class="bcls-section bcls-section--csat">
+        <div style="text-align:center">
+    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+</div>
+    </section>
+    <!-- CSAT script -->
+
+    <!-- doc footer -->
+    <footer class="bcls-footer"><a id="feedbackMail" href="mailto:docs@brightcove.com">Questions or comments?</a></footer>
+    <!-- footer script -->
+    <script>
+        var feedbackMail = document.getElementById("feedbackMail");
+        feedbackMail.setAttribute("href", "mailto:docs@brightcove.com?subject=question regarding " + encodeURI(document.location.href));
+    </script>
+</body>
+
+</html>
