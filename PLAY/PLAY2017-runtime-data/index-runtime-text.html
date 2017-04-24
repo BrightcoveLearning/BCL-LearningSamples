@@ -3,15 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>PLAY Demo - Single Page</title>
-  <style media="screen">
-    .pluginDevTextClass {
-        background-color: #333333;
-        color: red;
-        position: absolute;
-        margin-top: 100px;
-    }
-  </style>
+  <title>Untitled Document</title>
+  <link href="plugin-dev-text.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,17 +21,16 @@
     height="344px"></video>
   <script src="//players.brightcove.net/1507807800001/Sk7wb9nce_default/index.min.js"></script>
 
+  <script type="text/javascript" src="plugin-dev-text.js"></script>
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this,
-        pluginDevText = document.createElement('p');
-      pluginDevText.className = 'pluginDevTextClass',
-      pluginDevText.innerHTML = 'Becoming a plugin developer';
-      console.log('el()', myPlayer.el());
-      myPlayer.el().appendChild(pluginDevText);
+        options = {};
+      options.dynamicText = 'Supplied at runtime';
+      options.textColor = 'yellow';
+      myPlayer.pluginDevTextName(options);
     });
   </script>
-
 
 </body>
 

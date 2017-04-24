@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Using the Playlist UI Plugin</title>
+  <style>
+    #hs-player {
+      float: left;
+      margin: 15px;
+      width: 640px;
+      height: 360px;
+    }
+    .vjs-playlist {
+      width: 250px;
+      float: left;
+      margin: 15px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+ <video id="hs-player"
+   data-account="1507807800001"
+   data-player="HyLbVs9px"
+   data-embed="default"
+   data-application-id
+   class="video-js"
+   controls></video>
+
+ <ol class="vjs-playlist"></ol>
+
+ <script src="//players.brightcove.net/1507807800001/HyLbVs9px_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('hs-player').ready(function() {
+      var myPlayer = this,
+        thePlaylist = [{
+          "sources": [{
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Sea_SeaHorse.mp4",
+            "type": "video/mp4"
+          }],
+          "name": "Seahorse",
+          "description": "This is the elusive seahorse",
+          "thumbnail": "http://solutions.brightcove.com/bcls/assets/images/Sea_Seahorse_poster.png",
+          "poster": "http://solutions.brightcove.com/bcls/assets/images/Sea_Seahorse_poster.png"
+        }, {
+          "sources": [{
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Sea_Anemone.mp4",
+            "type": "video/mp4"
+          }],
+          "name": "Sea Anemone",
+          "description": "This is the elusive seahorse",
+          "thumbnail": "http://solutions.brightcove.com/bcls/assets/images/Sea_Anemone_poster.png",
+          "poster": "http://solutions.brightcove.com/bcls/assets/images/Sea_Anemone_poster.png"
+        }, {
+          "sources": [{
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+            "type": "video/mp4"
+          }],
+          "name": "Tiger",
+          "description": "This is the elusive seahorse",
+          "thumbnail": "http://solutions.brightcove.com/bcls/assets/images/Tiger_poster.png",
+          "poster": "http://solutions.brightcove.com/bcls/assets/images/Tiger_poster.png"
+        }, {
+          "sources": [{
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Sea_ClownFish.mp4",
+            "type": "video/mp4"
+          }],
+          "name": "Clownfish",
+          "description": "This is the clownfish",
+          "thumbnail": "http://solutions.brightcove.com/bcls/assets/images/Sea_ClownFish_poster.png",
+          "poster": "http://solutions.brightcove.com/bcls/assets/images/Sea_ClownFish_poster.png"
+        }, {
+          "sources": [{
+            "src": "http://solutions.brightcove.com/bcls/assets/videos/Sea_LionFish.mp4",
+            "type": "video/mp4"
+          }],
+          "name": "Lionfish",
+          "description": "This is the elusive lionfish",
+          "thumbnail": "http://solutions.brightcove.com/bcls/assets/images/Sea_LionFish_poster.png",
+          "poster": "http://solutions.brightcove.com/bcls/assets/images/Sea_LionFish_poster.png"
+        }];
+      console.log('thePlaylist',thePlaylist);
+      myPlayer.playlist(thePlaylist);
+    });
+  </script>
+
+</body>
+
+</html>

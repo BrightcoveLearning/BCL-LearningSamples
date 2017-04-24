@@ -1,3 +1,7 @@
+http://docs.brightcove.com/en/player/brightcove-player/guides/proxy-call-code-explanation.html
+
+
+
 1. Sync with Video.js
 2. Open terminal at root of video.js folder
 3. git checkout 5.x
