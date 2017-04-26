@@ -285,7 +285,6 @@
              // make the Analytics API request
              getAnalyticsData(requestData, function(analyticsData) {
                // extract the video ids into an array
-               console.log('analyticsData', analyticsData);
                videoIds = extractVideoIds(analyticsData);
                // use the catalog to get the video data
                getVideoData(videoIds, function() {

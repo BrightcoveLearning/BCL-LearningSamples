@@ -305,12 +305,17 @@
              var requestData = {},
                videoIds = [],
                videoList,
-               overlayDiv = createEl('div');
+               overlayDiv = createEl('div'),
+               parsedData = "";
              // add the overlay
              // set up data for Analytics API request
              requestData = setRequestData();
              // make the Analytics API request
              makeRequest(requestData, function(analyticsData) {
+               //Populate HTML page with response data
+               //responseData.textContent = JSON.stringify(parsedData, null, '  ');
+               parsedData = JSON.parse(analyticsData);
+               responseData.textContent = JSON.stringify(parsedData, null, '  ');
                // extract the video ids into an array
                videoIds = extractVideoIds(analyticsData);
                // use the catalog to get the video data
