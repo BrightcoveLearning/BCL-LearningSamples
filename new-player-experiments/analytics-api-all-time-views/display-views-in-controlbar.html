@@ -27,10 +27,10 @@
 
     videojs('myPlayerID').ready(function() {
       myPlayer = this,
-      options = [],
-      options.requestType = 'GET',
-      options.proxyURL = 'http://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
-      options.requestBody = '';
+        options = [],
+        options.requestType = 'GET',
+        options.proxyURL = 'http://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
+        options.requestBody = '';
       // Wait for loadstart event so mediainfo is populated
       // and the video ID and account ID can be retrieved
       myPlayer.on('loadstart', function() {
@@ -48,7 +48,7 @@
           viewsCount = viewsObject.alltime_video_views;
           console.log('views', viewsCount);
           // Call function to place data in controlbar
-          //placeCountInControlbar();
+          placeCountInControlbar();
         });
       });
     });
@@ -82,6 +82,7 @@
      * @param  {Function} [callback] callback function that will process the response
      */
     function makeRequest(options, callback) {
+console.log('options: ', options);
       var httpRequest = new XMLHttpRequest(),
         response,
         requestParams,
@@ -117,6 +118,8 @@
 
       // response handler
       function getResponse() {
+        console.log('httpRequest.readyState: ',httpRequest.readyState);
+        console.log('httpRequest.status: ',httpRequest.status);
         try {
           if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200 || httpRequest.status === 204) {

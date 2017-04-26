@@ -80,7 +80,6 @@
            'use strict';
            var player = this,
              reportURL = 'https://analytics.api.brightcove.com/v1/data',
-             proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
              apiRequest = document.getElementById('apiRequest'),
              responseData = document.getElementById('responseData'),
              // this var needs to be in the function scope because
@@ -94,7 +93,6 @@
             * @param {integer} idx the index of the video object in the videoData array
             */
            loadAndPlay = function(idx) {
-             console.log('idx', idx);
              player.catalog.load(videoData[idx]);
              player.play();
            }
@@ -132,10 +130,12 @@
             * @param {array} aapiData the data from the Analytics API
             * @return {array} videoIds array of video ids
             */
-           function extractVideoIds(aapiData) {
+           function extractVideoIds(aapiDataRaw) {
              var i,
-               iMax = aapiData.items.length,
+               aapiData = JSON.parse(aapiDataRaw),
+               iMax = "",
                videoIds = [];
+               iMax = aapiData.items.length;
              for (i = 0; i < iMax; i++) {
                if (aapiData.items[i].video !== null) {
                  videoIds.push(aapiData.items[i].video);
@@ -227,22 +227,46 @@
              endPoint = '?accounts=1752604059001&dimensions=video&sort=-video_view&limit=6&from=' + yesterday;
              requestData.url = reportURL + endPoint;
              requestData.requestType = 'GET';
+            requestData.proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php';
              apiRequest.textContent = requestData.url;
              return requestData;
            }
+
            /**
             * send API request to the proxy
-            * @param  {object} requestData options for the request
-            * @param  {string} requestID the type of request = id of the button
-            * @return {object} parsedData the parsed API response
+            * @param  {Object} options for the request
+            * @param  {String} options.url the full API request URL
+            * @param  {String="GET","POST","PATCH","PUT","DELETE"} requestData [options.requestType="GET"] HTTP type for the request
+            * @param  {String} options.proxyURL proxyURL to send the request to
+            * @param  {String} options.client_id client id for the account (default is in the proxy)
+            * @param  {String} options.client_secret client secret for the account (default is in the proxy)
+            * @param  {JSON} [options.requestBody] Data to be sent in the request body in the form of a JSON string
+            * @param  {Function} [callback] callback function that will process the response
             */
-           function getAnalyticsData(options, callback) {
+           function makeRequest(options, callback) {
              var httpRequest = new XMLHttpRequest(),
-               responseRaw,
-               parsedData,
-               requestParams;
-             // set up request data
-             requestParams = 'url=' + encodeURIComponent(options.url) + '&requestType=' + options.requestType;
+               response,
+               requestParams,
+               dataString,
+               proxyURL = options.proxyURL,
+               /**
+                * set up request data
+                * the proxy used here takes the following params:
+                * url - the full API request (required)
+                * requestType - the HTTP request type (default: GET)
+                * clientId - the client id (defaults here to a Brightcove sample account value - this should always be stored on the server side if possible)
+                * clientSecret - the client secret (defaults here to a Brightcove sample account value - this should always be stored on the server side if possible)
+                * requestData - request body for write requests (optional JSON string)
+                */
+               requestParams = "url=" + encodeURIComponent(options.url) + "&requestType=" + options.requestType;
+             // only add client id and secret if both were submitted
+             if (options.client_id && options.client_secret) {
+               requestParams += '&client_id=' + options.client_id + '&client_secret=' + options.client_secret;
+             }
+             // add request data if any
+             if (options.requestData) {
+               requestParams += '&requestBody=' + options.requestBody;
+             }
              // set response handler
              httpRequest.onreadystatechange = getResponse;
              // open the request
@@ -251,16 +275,19 @@
              httpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
              // open and send request
              httpRequest.send(requestParams);
+
              // response handler
              function getResponse() {
                try {
                  if (httpRequest.readyState === 4) {
-                   if (httpRequest.status === 200) {
-                     responseRaw = httpRequest.responseText;
-                     responseData.textContent = responseRaw;
-                     parsedData = JSON.parse(responseRaw);
-                     responseData.textContent = JSON.stringify(parsedData, null, '  ');
-                     callback(parsedData);
+                   if (httpRequest.status === 200 || httpRequest.status === 204) {
+                     response = httpRequest.responseText;
+                     // some API requests return '{null}' for empty responses - breaks JSON.parse
+                     if (response === '{null}') {
+                       response = null;
+                     }
+                     // return the response
+                     callback(response);
                    } else {
                      alert('There was a problem with the request. Request returned ' + httpRequest.status);
                    }
@@ -268,7 +295,7 @@
                } catch (e) {
                  alert('Caught Exception: ' + e);
                }
-             }
+             };
            }
 
            /**
@@ -283,7 +310,7 @@
              // set up data for Analytics API request
              requestData = setRequestData();
              // make the Analytics API request
-             getAnalyticsData(requestData, function(analyticsData) {
+             makeRequest(requestData, function(analyticsData) {
                // extract the video ids into an array
                videoIds = extractVideoIds(analyticsData);
                // use the catalog to get the video data
