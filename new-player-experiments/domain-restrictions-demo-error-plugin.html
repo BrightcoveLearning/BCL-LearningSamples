@@ -13,24 +13,57 @@
 
 <body>
 
-  <video id="myPlayerID"
+  <video id="myPlayerID" data-video-id="5350958927001"
+  data-account="1507807800001"
+  data-player="default"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <!-- <video id="myPlayerID"
     data-video-id="3495887198001"
     data-account="1507807800001"
     data-player="4c8eb732-ba76-485c-a906-407365721633"
     data-embed="default"
     class="video-js" controls></video>
 
-  <script src="//players.brightcove.net/1507807800001/4c8eb732-ba76-485c-a906-407365721633_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1507807800001/4c8eb732-ba76-485c-a906-407365721633_default/index.min.js"></script> -->
 
-  <script type="text/javascript">
+
+  <!-- <video id="myPlayerID"
+    data-account="1486906377"
+    data-player="77a8e8b7-e8d1-4a3c-8a1b-292ba8233006"
+    data-embed="default"
+    data-video-id="4040394419001"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1486906377/77a8e8b7-e8d1-4a3c-8a1b-292ba8233006_default/index.min.js"></script> -->
+
+
+
+  <!-- <video id="myPlayerID" data-video-id="4093372393001"
+  data-account="1507807800001"
+  data-player="default"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script> -->
+
+
+  <!-- <script type="text/javascript">
     videojs('myPlayerID').one('bc-catalog-error', function(){
       var myPlayer = this,
         specificError;
+console.log('myPlayer.catalog.error.data[0]',myPlayer.catalog.error.data[0]);
       myPlayer.errors({
         'errors': {
           '-3': {
             'headline': 'The video you are trying to watch cannot be viewed because of domain restrictions.',
-            'type': 'DOMAIN'
+            'type': 'DOMAIN',
+            'message': myPlayer.catalog.error.data[0].message
           }
         }
       });
@@ -45,7 +78,31 @@
     videojs("myPlayerID").ready(function(){
       var myPlayer = this;
     });
-  </script>
+  </script> -->
+  <script type="text/javascript">
+      videojs('myPlayerID').one('bc-catalog-error', function(){
+        var myPlayer = this,
+          specificError;
+  console.log('myPlayer.catalog.error.data[0]',myPlayer.catalog.error.data[0]);
+        myPlayer.errors({
+          'errors': {
+            '-10': {
+              'headline': 'The video you are trying to watch is inactive.',
+            }
+          }
+        });
+        if (typeof(myPlayer.catalog.error) !== 'undefined') {
+          specificError = myPlayer.catalog.error.data[0];
+          if (specificError !== 'undefined' & specificError.error_code == "VIDEO_NOT_PLAYABLE") {
+            myPlayer.error({code:'-10'});
+          };
+        };
+      });
+
+      videojs("myPlayerID").ready(function(){
+        var myPlayer = this;
+      });
+    </script>
 </body>
 
 </html>
