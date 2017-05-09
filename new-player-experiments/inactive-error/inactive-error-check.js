@@ -1,11 +1,11 @@
-videojs.plugin('inactiveErrorCheck', function() {
+videojs.plugin('inactiveErrorCheck', function(options) {
   var myPlayer = this;
   myPlayer.one('bc-catalog-error', function(){
     var specificError;
     myPlayer.errors({
       'errors': {
         '-10': {
-          'headline': 'The video you are trying to watch is inactive.',
+          'headline': options.inactiveMessage,
           'dismiss': false
         }
       }

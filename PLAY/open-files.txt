@@ -1,0 +1,5 @@
+http://docs.brightcove.com/BCL-LearningSamples/PLAY/PLAY2017-views-in-controlbar.html/display-views-in-controlbar.html
+https://brightcovelearning.github.io/Brightcove-API-References/analytics-api/v1/doc/index.html
+http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#metrics
+http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/quick-start.html#codepen
+http://docs.brightcove.com/en/player/brightcove-player/guides/learning-guide-using-rest-apis.html
