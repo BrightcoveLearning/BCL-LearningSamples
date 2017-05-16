@@ -31,7 +31,7 @@
     var myPlayer = this;
     myPlayer.errors({
       "errors": {
-        "-3": {
+        "age-gate-error": {
             "headline": "You must be at least 18 years of age.",
             "type": "PLAYER_ERR_AGE_GATE",
             "message": "Content may be considered inappropriate for some users."
@@ -39,7 +39,7 @@
       }
     });
     changeVideo = function(){
-      myPlayer.error({code:'-3', dismiss: false});
+      myPlayer.error({code:'age-gate-error', dismiss: false});
     }
   });
 </script>

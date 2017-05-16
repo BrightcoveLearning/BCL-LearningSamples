@@ -82,12 +82,13 @@ console.log('myPlayer.catalog.error.data[0]',myPlayer.catalog.error.data[0]);
   <script type="text/javascript">
       videojs('myPlayerID').one('bc-catalog-error', function(){
         var myPlayer = this,
+          options = [],
           specificError;
-  console.log('myPlayer.catalog.error.data[0]',myPlayer.catalog.error.data[0]);
+          options.inactiveMessage = "This is the message to display for inactive videos.";
         myPlayer.errors({
           'errors': {
             '-10': {
-              'headline': 'The video you are trying to watch is inactive.',
+              'headline': options.inactiveMessage
             }
           }
         });

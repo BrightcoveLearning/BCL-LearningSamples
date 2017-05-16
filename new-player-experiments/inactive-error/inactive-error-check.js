@@ -4,7 +4,7 @@ videojs.plugin('inactiveErrorCheck', function(options) {
     var specificError;
     myPlayer.errors({
       'errors': {
-        '-10': {
+        'inactive-error': {
           'headline': options.inactiveMessage,
           'dismiss': false
         }
@@ -13,7 +13,7 @@ videojs.plugin('inactiveErrorCheck', function(options) {
     if (typeof(myPlayer.catalog.error) !== 'undefined') {
       specificError = myPlayer.catalog.error.data[0];
       if (specificError !== 'undefined' & specificError.error_code == "VIDEO_NOT_PLAYABLE") {
-        myPlayer.error({code:'-10'});
+        myPlayer.error({code:'inactive-error'});
       };
     };
   });
