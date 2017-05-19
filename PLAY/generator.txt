@@ -1,0 +1,32 @@
+1. npm runt start
+2. browse
+    http://localhost:9999/
+
+3. Player video
+
+4.under
+const onPlayerReady = (player, options) => {
+  player.addClass('vjs-playdemo');
+==========================================
+var textDisplay = document.createElement('p');
+textDisplay.className = 'vjs-text';
+textDisplay.innerHTML = "Becoming a plugin developer";
+player.el().appendChild(textDisplay);
+
+
+5. under
+&.vjs-playdemo {
+  display: block;
+}
+=================================
+.vjs-text {
+  background-color: #333333;
+  color: white;
+  position: absolute;
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+  margin-top: 10%;
+}
+
+6. npm run build
