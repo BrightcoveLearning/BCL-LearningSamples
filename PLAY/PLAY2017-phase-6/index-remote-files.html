@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
-  <link href="plugin-dev-text.css" rel="stylesheet">
+  <link href="//solutions.brightcove.com/bcls/PLAY2017/plugin-dev-text.css" rel="stylesheet">
 </head>
 
 <body>
@@ -12,7 +12,7 @@
   <video id="myPlayerID"
     data-video-id="5350958927001"
     data-account="1507807800001"
-    data-player="HJZysY2lb"
+    data-player="Sk7wb9nce"
     data-embed="default"
     data-application-id
     class="video-js"
@@ -21,14 +21,11 @@
     height="344px"></video>
   <script src="//players.brightcove.net/1507807800001/Sk7wb9nce_default/index.min.js"></script>
 
-  <script type="text/javascript" src="plugin-dev-text.js"></script>
+  <script type="text/javascript" src="//solutions.brightcove.com/bcls/PLAY2017/plugin-dev-text.js"></script>
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
-      var myPlayer = this,
-        options = {};
-      options.dynamicText = 'Supplied at runtime';
-      options.textColor = 'yellow';
-      myPlayer.pluginDevTextName(options);
+      var myPlayer = this;
+      myPlayer.pluginDevTextName();
     });
   </script>
 
