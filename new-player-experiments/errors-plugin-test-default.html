@@ -20,10 +20,10 @@
 <video id="myPlayerID"
   data-video-id="4443311217001"
   data-account="1507807800001"
-  data-player="HJJshQoW-"
+  data-player="default"
   data-embed="default"
   class="video-js" controls></video>
-<script src="//players.brightcove.net/1507807800001/HJJshQoW-_default/index.min.js"></script>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
 <p><button onclick="changeVideo()">change video</button></p>
 
@@ -40,8 +40,8 @@
         }
       }
     });
-    console.log('myPlayer.errors.getAll()',myPlayer.errors.getAll());
-   });
+  });
+  console.log('myPlayer.errors.getAll()',myPlayer.errors.getAll());
   function changeVideo(){
     myPlayer.error({code:'age-gate-error', dismiss: false});
   }

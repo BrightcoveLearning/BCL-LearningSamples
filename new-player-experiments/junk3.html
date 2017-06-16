@@ -1,0 +1,592 @@
+<article class="bcls-article">
+<section id="Overview" class="bcls-section">
+<h2>Overview</h2>
+
+<p>The error messages plugin allows the player to display user-friendly messages when it encounters an error. The default style sheet displays messages as a semi-transparent overlay on top of the video element itself. You can change existing message text and add your own styles. You can even create custom messages that are triggered when you want.</p>
+
+<figure class="bcls-figure"><img class="bcls-image" alt="error message plugin" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/error-message-plugin.png" /></figure>
+
+<p>The error message shown in the image above was created by updating the player with an invalid <code>src</code> value in the <code>sources</code> property.</p>
+
+<p>The error messages plugin is a default plugin and is automatically loaded with the Brightcove player. However, you can choose not to load it. Without this plugin, you will see a limited set of error messages and some errors will only appear in the browser console. For details on how to not load a default plugin when you create a player, see the <a href="/node/18128#defaultplugins">Player Plugin Overview</a> document.</p>
+
+<aside class="bcls-aside bcls-aside--warning">
+<p>It is possible that you can get duplicate error events for the same session, creating an exaggerated error rate. Brightcove Player sends errors to analytics at the exact time, and in the same quantity, as they are reported to the player. For instance, if there is no media in a player, and code somehow calls <code>play()</code> one thousand times in a row, one thousand <strong>PLAYER_ERR_NO_SRC</strong> errors will be reported to analytics.</p>
+
+<p>If there are a few sessions with tons of errors skewing the analytics, you should consider using the following logic to get a better sense of the actual issues:</p>
+
+<pre class="line-numbers">
+<code class="language-javascript">number_of_sessions_with_errors / total_number_of_sessions</code></pre>
+rather than
+
+<pre class="line-numbers">
+<code class="language-javascript">count of errors/number of views</code></pre>
+</aside>
+</section>
+
+<section id="getstarted" class="bcls-section">
+<h2>Get started</h2>
+
+<p>It is best practice to update your player using the Brightcove Players module from Studio. This approach is used in the following sections to update the error messages plugin for your player. This will update all instances of your player. If you choose to update this plugin from a page of code, it will only affect that instance of your player</p>
+
+<p>To update the plugin from your page code, first get a reference to the Brightcove player. In this example, in the JavaScript we are creating a variable named <code>myPlayer</code> and assigning it a reference to the player.</p>
+
+<aside class="bcls-aside bcls-aside--information">Note: you do not need to do this if you are updating your Brightcove player using the Players module.</aside>
+
+<pre class="line-numbers">
+<code class="language-html">	&lt;video <span class="bcls-highlight">id="myPlayerID"</span>
+      data-video-id="4443311217001"
+      data-account="1507807800001"
+      data-player="default"
+      data-embed="default"
+      class="video-js" controls&gt;&lt;/video&gt;
+
+    &lt;script src="//players.brightcove.net/1507807800001/default_default/index.min.js"&gt;&lt;/script&gt;
+
+    &lt;script type="text/javascript"&gt;
+      <span class="bcls-highlight">videojs('myPlayerID')</span>.ready(function(){
+        var myPlayer = this;</code></pre>
+</section>
+
+<section id="standarderrors" class="bcls-section">
+<h2>Standard errors</h2>
+
+<p>This plugin has a set of default error messages for the standard HTML5 video errors based on the runtime error code value:</p>
+
+<ul>
+	<li>Error code: 1
+	<ul>
+		<li><strong>Type</strong>: MEDIA_ERR_ABORTED</li>
+		<li><strong>Headline</strong>: The video download was cancelled</li>
+		<li><strong>Message</strong>: You aborted the media playback</li>
+	</ul>
+	</li>
+	<li>Error code: 2
+	<ul>
+		<li><strong>Type</strong>: MEDIA_ERR_NETWORK</li>
+		<li><strong>Headline</strong>: The video connection was lost, please confirm you're connected to the internet</li>
+		<li><strong>Message</strong>: A network error caused the media download to fail part-way.</li>
+	</ul>
+	</li>
+	<li>Error code: 3
+	<ul>
+		<li><strong>Type</strong>: MEDIA_ERR_DECODE</li>
+		<li><strong>Headline</strong>: The video is bad or in a format that can't be played on your browser</li>
+		<li><strong>Message</strong>: The media playback was aborted due to a corruption problem or because the media used features your browser did not support.</li>
+	</ul>
+	</li>
+	<li>Error code: 4
+	<ul>
+		<li><strong>Type</strong>: MEDIA_ERR_SRC_NOT_SUPPORTED</li>
+		<li><strong>Headline</strong>: This video is either unavailable or not supported in this browser</li>
+		<li><strong>Message</strong>: The media could not be loaded, either because the server or network failed or because the format is not supported.</li>
+	</ul>
+	</li>
+	<li>Error code: 5
+	<ul>
+		<li><strong>Type</strong>: MEDIA_ERR_ENCRYPTED</li>
+		<li><strong>Headline</strong>: The video you're trying to watch is encrypted and we don't know how to decrypt it</li>
+		<li><strong>Message</strong>: The media is encrypted and we do not have the keys to decrypt it.</li>
+	</ul>
+	</li>
+</ul>
+
+<p>If an error does not have an associated error code, a generic message is displayed:</p>
+
+<ul>
+	<li>Error code: unknown
+	<ul>
+		<li>Message: MEDIA_ERR_UNKNOWN</li>
+		<li>Description: An unanticipated problem was encountered, check back soon and try again</li>
+	</ul>
+	</li>
+</ul>
+</section>
+
+<section class="bcls-section">
+<h2 id="overridetext">Override text</h2>
+
+<p>There are three parts of the error message that you can change:</p>
+
+<ul>
+	<li><code>headline</code> : This is the message text at the top.</li>
+	<li><code>type</code> : This is the <strong>Error Code:</strong> text.</li>
+	<li><code>message</code> : This is the <strong>Technical details:</strong> text.</li>
+</ul>
+
+<figure class="bcls-figure"><img class="bcls-image" alt="error message plugin" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/error-message-plugin2.png" /></figure>
+
+<p>Once your player is created, in Studio edit the <strong>Plugins</strong> section of the <strong>Players</strong> module with a JSON object to set property values.</p>
+
+<p>The example below shows how to override the message text for the standard error with an error code value of <code>4</code>. The properties are defined as follows:</p>
+
+<ul>
+	<li><code>plugins</code>: This property contains an array of properties and values. For this plugin, you only need to supply the <code>name</code> property with the value of <code>errors</code>.</li>
+	<li><code>options</code>: This property is used to pass data to the plugin.</li>
+	<li><code>errors</code>: This property defines the error code that you want to update. Here we are overriding the message text for the <code>headline</code>, <code>type</code>, and <code>message</code>.
+	<aside class="bcls-aside bcls-aside--information">Note: the error code can be any string value, such as overriding the text for the <code>unknown</code> message.</aside>
+	</li>
+</ul>
+&nbsp;
+
+<pre class="line-numbers">
+<code class="language-json">{
+    "errors": {
+        "4": {
+            "headline": "This is a custom error message",
+            "type": "MEDIA_ERR_SRC_CUSTOM",
+            "message": "These are the details for the custom message"
+        }
+     }
+}</code></pre>
+
+<p>If you include the errors script in your code, you can override message text as follows:</p>
+
+<pre class="line-numbers">
+<code class="language-javascript">myPlayer.errors({
+  "errors": {
+    "4": {
+        "headline": "This is a custom error message",
+        "type": "custom type",
+        "message": "these are details"
+    }
+  }
+});</code></pre>
+</section>
+
+<section class="bcls-section">
+  <h2 id="customerrors">Custom errors</h2>
+  <p>You can also define your own custom error messages:</p>
+      <ul>
+          <li>Brightcove recommends custom error code values be a string. You will see two of the provided errors use negative numbers for historical reasons, but alpha-numeric/descriptive strings are less likely to cause collision issues.</li>
+          <li>Custom error messages can be named anything you want. Brightcove recommends that the type begin with <code>PLAYER_ERR</code> versus the standardized <code>MEDIA_ERR</code> to avoid confusion.</li>
+          <li>As detailed <a href="#dismissible">later in this section</a>, you can make custom errors dismissible or not.</li>
+      </ul>
+  <p>Five custom error messages have been added as a reference:</p>
+      <ul>
+        <li>Error code: -1
+          <ul>
+              <li>Message: PLAYER_ERR_NO_SRC</li>
+              <li>Description: No video has been loaded</li>
+          </ul>
+        </li>
+          <li>Error code: -2
+          <ul>
+              <li>Message: PLAYER_ERR_TIMEOUT</li>
+              <li>Description: Could not download the video <br />
+                <aside class="bcls-aside bcls-aside--information">Note: In general, PLAYER_ERR_TIMEOUT happens when the player expects to be playing video but <strong>can't make any progress for 45 seconds</strong>. This can be the final result of many things that happen earlier, including the suspension of the browser when a tab is put in the background, for instance. But it can be a sort of catch-all condition for network or platform conditions that prevent playback from continuing.</aside>
+              </li>
+          </ul>
+        </li>
+        <li>Error code: <em>Not set</em>
+          <ul>
+              <li>Message: PLAYER_ERR_DOMAIN_RESTRICTED</li>
+              <li>Description: This video is restricted from playing on your current domain</li>
+          </ul>
+        </li>
+        <li>Error code: <em>Not set</em>
+          <ul>
+              <li>Message: PLAYER_ERR_IP_RESTRICTED</li>
+              <li>Description: This video is restricted at your current IP address</li>
+          </ul>
+        </li>
+        <li>Error code: <em>Not set</em>
+          <ul>
+              <li>Message: PLAYER_ERR_GEO_RESTRICTED</li>
+              <li>Description: This video is restricted from playing in your current geographic region</li>
+          </ul>
+        </li>
+      </ul>
+      <aside class="bcls-aside bcls-aside--information">For those errors without a code, the message will be used for the code. For example, a domain restriction error is shown here:
+        <figure class="bcls-figure">
+          <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/domain-restriction-error.png" alt="domain restriction error message">
+        </figure>
+      </aside>
+
+  <h3>Adding custom errors</h3>
+    <p>Refer to the <a href="#overridetext">Override text</a> section for details about the message parts. When adding a custom error message, use the <strong>Plugins</strong> section of the <strong>Players</strong> module with a JSON object to set property values.</p>
+    <p>This example creates a new custom message with an error code value of <code>age-gate-error</code> and includes text based on an age gate test.</p>
+<pre class="line-numbers"><code class="language-json">{
+"errors": {
+  "age-gate-error": {
+      "headline": "You must be at least 18 years of age.",
+      "type": "PLAYER_ERR_AGE_GATE",
+      "message": "Content may be considered inappropriate for some users."
+  }
+}
+}</code></pre>
+    <p>If you include the errors script in your code, you can add custom messages as follows:</p>
+<pre class="line-numbers"><code class="language-javascript">videojs('myPlayerID').ready(function(){
+var myPlayer = this;
+//custom error
+myPlayer.errors({
+"errors": {
+"age-gate-error": {
+    "headline": "You must be at least 18 years of age.",
+    "type": "PLAYER_ERR_AGE_GATE",
+    "message": "Content may be considered inappropriate for some users."
+}
+}
+});</code></pre>
+    <h3>Displaying custom errors</h3>
+    <p>When you define custom errors, you need to let video.js know when you want to display it. To do this, create your own code to determine when the message should be displayed. Then use the <code>error()</code> function to display the message as follows:</p>
+<pre class="line-numbers"><code class="language-javascript">//display custom message
+var age_appropriate = false;
+
+myPlayer.on("loadstart", function () {
+if(!age_appropriate) {
+myPlayer.error({code:'age-gate-error'});
+}
+});</code></pre>
+    <p>Here we set the <code>age_appropriate</code> variable to <code>false</code>, but you would add your own code to determine when to display your custom error messages.</p>
+    <aside class="bcls-aside bcls-aside--tip">Note: any code to throw custom errors must wait for the video to load. Use the <code>loadstart</code> event to determine this. If you try to display your message without waiting, then your message will disappear after the video loads.</aside>
+
+<h3 id="dismissible">Make custom errors non-dismissible</h3>
+<p>By default a custom error message is dismissible by the video viewer. As the following screenshot shows, there is an <strong>OK</strong> button to click to dismiss the window, as well as an <strong>X</strong> in the top right corner.</p>
+<figure class="bcls-figure">
+  <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/dismissible.png" alt="dismissible error message">
+</figure>
+<p>If you wish to NOT permit the video viewer to dismiss the error message, you can do that. When you call the <code>error()</code> method, you can set the <code>dismiss</code> property to <code>false</code>.</p>
+<pre class="line-numbers"><code class="language-javascript">myPlayer.error({code:'age-gate-error', <span class="bcls-highlight">dismiss: false</span>});</code></pre>
+<p>When you do this the error message will appear as follows, with no way to dismiss the error.</p>
+<figure class="bcls-figure">
+  <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/not-dismissible.png" alt="not dismissible error message">
+</figure>
+</section>
+
+<section class="bcls-section">
+  <h2 id="getAll_method">getAll() method</h2>
+  <p>You can use the <code>getAll()</code> method to see all the errors registered for a specific player. You can call the <code>getAll()</code> method anytime after the <strong>errors</strong> plugin has been initialized, for instance after <code>player.errors()</code> has been called. An example of calling the method is:</p>
+  <pre class="line-numbers"><code class="language-javascript">console.log('myPlayer.errors.getAll()',myPlayer.errors.getAll());</code></pre>
+  <p>An example of the console display, with some errors expanded for details is:</p>
+  <figure class="bcls-figure">
+    <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/playback/troubleshooting/errors-plugin/getAll-method.png" alt="getAll console display">
+  </figure>
+</section>
+
+<section id="dispatcherror" class="bcls-section">
+<h2>Dispatch errors</h2>
+
+<p>In development you may wish to dispatch errors to test if your configuration changes are successful. You can do this using code similar to that shown in the following code snippet. In this case, a button is added to the code so you can dispatch the error at a chosen time.</p>
+
+<pre class="line-numbers">
+<code class="language-html">&lt;video id="myPlayerID"
+  data-video-id="4443311217001"
+  data-account="1507807800001"
+  data-player="default"
+  data-embed="default"
+  class="video-js" controls&gt;&lt;/video&gt;
+&lt;script src="//players.brightcove.net/1507807800001/default_default/index.min.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;button onclick="changeVideo()"&gt;change video&lt;/button&gt;&lt;/p&gt;
+
+&lt;script type="text/javascript"&gt;
+  var changeVideo;
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this;
+    changeVideo = function(){
+      myPlayer.error({code:'2'});
+    }
+  });
+&lt;/script&gt;</code></pre>
+</section>
+
+<section id="Localize_errors" class="bcls-section">
+<h2>Localize errors</h2>
+
+<p>The errors plugin supports multiple languages. To add language support, after the plugin has loaded load the particular language file you wish to use:</p>
+
+<pre class="line-numbers">
+<code class="language-html">&lt;script src="lang/es.js"&gt;&lt;/script&gt;</code></pre>
+
+<p>You can then use the techniques shown in the the <a href="/node/18084">Localizing Brightcove Player</a> document to localize error messages.</p>
+</section>
+
+<section id="section-name" class="bcls-section">
+<h2>bc-catalog-error</h2>
+
+<p>It is possible that handling errors in the normal <code>ready()</code> section in the script block can cause issues. For instance, it can happen that the bc-catalog-error event could be dispatched before the player is ready, and if you listen for the error in the <code>ready()</code> section, you will not be able to handle the error. This issue can occur when using geo-filtering, a video is inactive, a video is out of scheduling range, or in a different account. You may find that there is not a problem in your code, but the issue can browser dependent, so use caution.</p>
+
+<p>For example, here is plugin code that displays a message when a video is inactive:</p>
+
+<pre class="line-numbers">
+<code class="language-javascript">videojs.plugin('inactiveErrorCheck', function() {
+  var myPlayer = this;
+  myPlayer.one('bc-catalog-error', function(){
+    var specificError;
+    myPlayer.errors({
+      'errors': {
+        'inactive-video-error': {
+          'headline': 'The video you are trying to watch is inactive.',
+          'dismiss': false
+        }
+      }
+    });
+    if (typeof(myPlayer.catalog.error) !== 'undefined') {
+      specificError = myPlayer.catalog.error.data[0];
+      if (specificError !== 'undefined' &amp; specificError.error_code == "VIDEO_NOT_PLAYABLE") {
+        myPlayer.error({code:'inactive-video-error'});
+      };
+    };
+  });
+});</code></pre>
+
+<aside class="bcls-aside bcls-aside--tip">For full details on handling catalog errors see the <a href="/node/18108#catalog-error">Handle bc-catalog-error</a> section of the <strong>Player Catalog</strong> document.</aside>
+</section>
+
+<section class="bcls-section">
+<h2 id="Known_issues">Known issues</h2>
+
+<ul>
+	<li>
+	<p>On Android devices and iPhones, the tap events for error messages do not bubble up to the parent video element. This means that you can not close an error message once it appears. This behavior may be a problem if the user is in fullscreen mode, because they will have no way to leave this state.</p>
+
+	<p>This issue is currently being worked on and should be fixed in a future player release. For now, you can try a work-around like this:</p>
+
+	<pre class="line-numbers">
+<code class="language-javascript">player.on("touchstart", function(e) {
+  if (player.error_) {
+      player.error(null);
+      e.preventDefault();
+  }
+}) </code></pre>
+	</li>
+</ul>
+</section>
+
+<section id="Changelog" class="bcls-section">
+<h2>Changelog</h2>
+
+<h4>22 May 2017</h4>
+
+<p>v3.0.1</p>
+
+<ul>
+	<li>Added translations for some new strings</li>
+</ul>
+
+<h4>19 May 2017</h4>
+
+<p>v3.0.0</p>
+
+<ul>
+	<li>Updated tooling using generator v5 prerelease</li>
+	<li>Removed Bower support</li>
+</ul>
+
+<h4>15 May 2017</h4>
+
+<p>v2.0.2</p>
+
+<ul>
+	<li>Fixed some tooling issues, including missing distribution and language files</li>
+</ul>
+
+<h4>15 May 2017</h4>
+
+<p>v2.0.1</p>
+
+<ul>
+	<li>Fixed mis-configured package.json fields</li>
+</ul>
+
+<h4>15 May 2017</h4>
+
+<p>v2.0.0</p>
+
+<ul>
+	<li>Moved off of Spellbook for now and add pkg.module</li>
+	<li>Changed codes of recently-added errors, allow type and code to be shared, and add <code>getAll()</code> method</li>
+</ul>
+
+<h4>24 Apr 2017</h4>
+
+<p>v1.3.2</p>
+
+<ul>
+	<li>Added option to disable watching progress events</li>
+</ul>
+
+<h4>19 Apr 2017</h4>
+
+<p>v1.3.1</p>
+
+<ul>
+	<li>Fixed size detection to account for players that have no configured dimensions</li>
+</ul>
+
+<h4>18 Apr 2017</h4>
+
+<p>v1.3.0</p>
+
+<ul>
+	<li>Added new custom errors and an extend method to customize errors at runtime</li>
+</ul>
+
+<h4>21 Feb 2017</h4>
+
+<p>v1.2.0</p>
+
+<ul>
+	<li>Added support for Portuguese</li>
+	<li>Allow errors to be non-dismissible</li>
+</ul>
+
+<h4>9 Feb 2017</h4>
+
+<p>v1.1.4</p>
+
+<ul>
+	<li>Removed deprecation warning about using videojs.plugin</li>
+	<li>Updated to build with <strong>Video.js</strong> 5 and 6</li>
+</ul>
+
+<h4>27 Feb 2017</h4>
+
+<p>v1.1.3</p>
+
+<ul>
+	<li>Updated for Video.js 6.0 compatibility</li>
+</ul>
+
+<h4>7 Dec 2016</h4>
+
+<p>v1.1.2</p>
+
+<ul>
+	<li>Displays error if Flash tech is unusable</li>
+</ul>
+
+<h4>11 Nov 2016</h4>
+
+<p>v1.1.1</p>
+
+<ul>
+	<li>Cleanup event bindings when reinitialized</li>
+</ul>
+
+<h4>8 Sep 2016</h4>
+
+<p>v1.1.0</p>
+
+<ul>
+	<li>Added in a user-friendly message for disabled Flash in IE</li>
+</ul>
+
+<h4>10 August 2016</h4>
+
+<p>v1.0.5</p>
+
+<ul>
+	<li>Fixed close-button errors accessible message</li>
+	<li>Fixed typo in French translation</li>
+</ul>
+
+<h4>13 Apr 2016</h4>
+
+<p>v1.0.4</p>
+
+<ul>
+	<li>Added listening for <code>adtimeupdate</code></li>
+	<li>Added Arabic and Turkish</li>
+</ul>
+
+<h4>1 Mar 2016</h4>
+
+<p>v1.0.3</p>
+
+<ul>
+	<li>Add Italian, Russian and Chinese (traditional and simplified)</li>
+	<li>Add English translations as a canonical template</li>
+</ul>
+
+<h4>11 Jan 2016</h4>
+
+<p>v1.0.2</p>
+
+<ul>
+	<li>Bower</li>
+</ul>
+
+<h4>11 Jan 2016</h4>
+
+<p>v1.0.1</p>
+
+<ul>
+	<li>Updated to use <strong>generator-videojs-plugin</strong> conventions</li>
+</ul>
+
+<h4>22 Nov 2015</h4>
+
+<p>v1.0.0</p>
+
+<ul>
+	<li>Update to video.js 5.0</li>
+</ul>
+
+<h4>5 May 2015</h4>
+
+<p>v0.1.8</p>
+
+<ul>
+	<li>Do not display errors when the player is paused or ended for timeouts</li>
+	<li>Fix a vdata exception when dispose is called</li>
+</ul>
+
+<h4>10 Sep 2014</h4>
+
+<p>v0.1.6</p>
+
+<ul>
+	<li>Remove <code>dist/</code> from <code>.npmignore</code></li>
+</ul>
+
+<h4>3 Sep 2014</h4>
+
+<p>v0.1.5</p>
+
+<ul>
+	<li>More localization improvements</li>
+</ul>
+
+<h4>27 Aug 2014</h4>
+
+<p>v0.1.4</p>
+
+<ul>
+	<li>Fix <code>/dist</code></li>
+</ul>
+
+<h4>27 Aug 2014</h4>
+
+<p>v0.1.3</p>
+
+<ul>
+	<li>Localization improvements</li>
+</ul>
+
+<h4>19 Aug 2014</h4>
+
+<p>v1.1.2</p>
+
+<ul>
+	<li>Localization</li>
+</ul>
+
+<h4>13 Jun 2014</h4>
+
+<p>v0.1.1</p>
+
+<ul>
+	<li>Ended videos should not cause player timeouts on IE11/Win8rt</li>
+</ul>
+
+<h4>5 Jun 2014</h4>
+
+<p>v0.1.0</p>
+
+<ul>
+	<li>Initial release</li>
+</ul>
+</section>
+</article>

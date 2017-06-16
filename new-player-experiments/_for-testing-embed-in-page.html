@@ -3,38 +3,34 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Using the Playlist UI Plugin</title>
-  <style>
-  .video-js {
-    height: 344px;
-    width: 610px;
-  }
-  .video-js .vjs-dock-text {
-    color: yellow;
-    font-size: .7em;
-  }
-  .video-js .vjs-dock-title {
-    color: red;
-    font-size: 1.5em;
-  }
-  .video-js .vjs-dock-description {
-    color: yellow;
-    font-size: 1.0em;
-  }
-</style>
-
+  <title>Testing a plugin</title>
+  <link href="//url_to_my_css/my.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <video data-video-id="4607357817001"
-  data-account="1752604059001"
-  data-player="ByJWOLF2x"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1752604059001/ByJWOLF2x_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-video-id="5350958927001"
+    data-account="1507807800001"
+    data-player="rJeuIHdbmW"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/rJeuIHdbmW_default/index.min.js"></script>
+
+  <script src="//url_to_my_js/my.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+      options = {};
+      options.prop1 = "value1";
+      options.prop2 = "value2";
+
+      myPlayer.pluginName(options);
+    });
+  </script>
 
 </body>
 
