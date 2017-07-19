@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+  .video-js {
+    height: 344px;
+    width: 610px;
+  }
+</style>
+
+<link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<video id="player"
+  data-video-id="3495887198001"
+  data-account="1507807800001"
+  data-player="ae99b6be-1c73-42dd-b8c4-5013a78ad2e8"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+<script src="//players.brightcove.net/1507807800001/ae99b6be-1c73-42dd-b8c4-5013a78ad2e8_default/index.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+<script>
+
+  var player = bc('player');
+  player.ima3({
+    serverUrl: 'http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
+  });
+  var isAdPlaying = false;
+
+  player.ready(function () {
+
+    player.on(['ads-ad-started', 'ads-ad-ended'], function (e) {
+      if (e.type == 'ads-ad-started') {
+        console.log('*** isAdPlaying TRUE ***',e);
+        isAdPlaying = true;
+      } else {
+        console.log('*** isAdPlaying FALSE ***');
+        isAdPlaying = false;
+      }
+    });
+  });
+</script>
+
+
+
+</body>
+
+</html>
