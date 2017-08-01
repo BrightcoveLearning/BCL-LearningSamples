@@ -1,0 +1,34 @@
+Major accomplishments:
+1. Got the Brightcove Player Developer Landing Page documents entered, and checked against faceted search to be sure all docs in
+2. Pressed IT to get us a server, got cron job schedule for snapshots. Also installed tools for SSH with platform.sh CLI.
+3. Closed 10 JIRAs, mostly minor issues
+
+Near Term Goals
+1. Get something meaningful loaded to the dev platform.sh site. For instance, updates to styles or automatic snapshots.
+2. Get this backup process running on new site: https://bitbucket.org/snippets/kaypro4/gnB4E.
+3. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
+
+
+Open JIRAs
+https://jira.brightcove.com/browse/BC-38840
+https://jira.brightcove.com/browse/ITHELP-36051
+
+
+**21 July**
+1. Updated Playlist API with new methods and events
+2. Got automated snapshots working using a cron job from my machine (still waiting for IT solution for cron job)
+3. Rewrote code and doc for scroll into view with ads
+4. Updated the Customizing Player Appearance doc, changes in volume selectors and removed use of IDs
+5. Closed 9 JIRAs
+
+
+**14 July**
+1. Got SourceTree to push changes to the dev platform.sh site (now just need to be able to push meaningful thing there).
+2. Had a number of JIRAs wanting me to update the Errors Plugin with new errors, but not all the new errors came from that plugin (for instance, some from Catalog). So I created a new "Brightcove Player Errors Reference" doc: https://support.brightcove.com/brightcove-player-error-reference. This gave me a place to put all the errors and then customers can see details on separate docs.
+3. Updated the Errors Plugin doc with recommendations from Pat O about new best practices for customer custom errors.
+4. Updated Catalog doc with new errors.
+5. When teaching DwBP had a couple of questions that led to good code samples. I have written the code (so I could send to customer) and then created JIRAs to write up the sample using the code (placed in the JIRA comments).
+6. Overall closed 18 JIRAs (yea, caught up a bit)
+
+
+

@@ -1,0 +1,79 @@
+**Code Sample Groupings**
+
+RESTRICT VIEWING
+<li><a href="/node/18149">Age Gate</a></li>
+<li><a href="/node/18193">Age Gate with ModalDialog</a></li>
+<li><a href="/node/18157">Register to Play</a></li>
+<li><a href="/node/18158">Register to Play after Preview</a></li>
+
+MOBILE
+<li><a href="/node/18160">Accelerated Mobile Pages</a></li>
+
+ANALYTICS API
+<li><a href="/node/18154">All Time Video Views</a></li>
+
+ENHANCE PLAYER UI
+<li><a href="/node/18273">Download Video Plugin</a></li>
+<li><a href="/node/18064">Manual Rendition Selection - HLS</a></li>
+<li><a href="/node/18077">Manual Rendition Selection - DASH</a></li>
+
+ENHANCE PLAYER DISPLAY BEHAVIOR
+<li><a href="/node/18167">Logo Overlay Plugin</a></li>
+<li><a href="/node/18170">Display Views in Controlbar</a></li>
+<li><a href="/node/18168">Navigate on Video End</a></li>
+<li><a href="/node/18164">Background Video</a></li>
+<li><a href="/node/18148">Display Thumbnails on Hover</a></li>
+<li><a href="/node/18163">Simple Lightbox</a></li>
+<li><a href="/node/18172">Displaying Random Bumpers</a></li>
+<li><a href="/node/18176">Creating a Video Loop</a></li>
+<li><a href="/node/18179">Stopping Other Players on the Page when a Video Starts</a></li>
+<li><a href="/node/18148">Display Thumbnails on Hover</a></li>
+<li><a href="/node/18187">Toggling an Overlay</a></li>
+
+PLAYLISTS / VIDEO GROUPS
+<li><a href="/node/18097">Multi-Playlist Selector</a></li>
+<li><a href="/node/18147">Related Videos via Tags (Metadata)</a></li>
+<li><a href="/node/18152">Lightbox with Scroller</a></li>
+<li><a href="/node/18153">Loading Multiple Videos</a></li>
+<li><a href="/node/18159">Tabbed Playlist</a></li>
+<li><a href="/node/18171">Playback API Paging</a></li>
+<li><a href="/node/18174">Custom Playlist</a></li>
+<li><a href="/node/18175">Most Watched Videos in Playlist</a></li>
+<li><a href="/node/18178">Display Next Video Name from Playlist</a></li>
+
+ADVERTISING
+<li><a href="/node/18133">Ad Indicators in Playback Bar</a></li>
+<li><a href="/node/18188">Ad Countdown Timer</a></li>
+
+PLAYER STYLING
+<li><a href="/node/18142">Player Styling Playground</a></li>
+<li><a href="/node/18166">Disabling the Progress Scrubber</a></li>
+
+POSITION PLAYER
+<li><a href="/node/18165">Enlarge Player on Mouseover</a></li>
+<li><a href="/node/18182">Float and Park Player</a></li>
+
+CALL TO ACTION
+<li><a href="/node/18151">Dynamic Call to Action</a></li>
+<li><a href="/node/18177">Cue Points Display CTA</a></li>
+
+CONTROL VIDEO CURRENTLY PLAYING
+<li><a href="/node/18155">Dynamically Change Source Videos</a></li>
+<li><a href="/node/18162">Loading Video by Thumbnail</a></li>
+<li><a href="/node/18185">Selecting Rendition for Playback</a></li>
+<li><a href="/node/18186">Kiosk App</a></li>
+
+AUDIO
+<li><a href="/node/18156">Horizontal Volume Control (1.x Player Only)</a></li>
+
+CONTROL PLAYER LOADING
+<li><a href="/node/18169">Loading the Player Dynamically</a></li>
+
+CMS API
+<li><a href="/node/18175">Most Watched Videos in Playlist</a></li>
+<li><a href="/node/18186">Kiosk App</a></li>
+
+PLAYBACK API
+<li><a href="/node/18171">Playback API Paging</a></li>
+
+

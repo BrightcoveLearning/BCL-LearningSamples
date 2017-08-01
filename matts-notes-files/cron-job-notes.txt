@@ -1,0 +1,32 @@
+*List all cron jobs
+  crontab -l
+
+*Edit cron jobs
+  export VISUAL=nano //This sets nano as the editor, otherwise you get vi
+  crontab -e
+
+*Current cron job
+  MAILTO="mboles@brightcove.com"
+  * 5,21 * * * /home/VIDMARK.LOCAL/mboles/cron-job-script/take-snapshot.sh
+
+*Current shell script location/name: /home/VIDMARK.LOCAL/mboles/cron-job-script/take-snapshot.sh
+#!/bin/bash
+PATH=/home/VIDMARK.LOCAL/mboles/.platformsh/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/g$
+platform snapshot:create --project=6sglloa4yrkti --environment=dev --yes
+
+
+
+
+WORKING INFO
+
+/home/VIDMARK.LOCAL/mboles/cron-job-script
+
+MAILTO="mboles@brightcove.com"
+* 5,21 * * * /home/VIDMARK.LOCAL/mboles/cron-job-script/take-snapshot.sh
+
+HOME=/home/VIDMARK.LOCAL/mboles
+LOGNAME=mboles
+PATH=/usr/bin:/bin
+LANG=en_US.UTF-8
+SHELL=/bin/sh
+PWD=/home/VIDMARK.LOCAL/mboles

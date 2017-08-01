@@ -1,0 +1,132 @@
+sudo EDITOR=/usr/bin/nano crontab -u mboles -e
+10,20,30 * * * * platform snapshot:create --project=6sglloa4yrkti --environment=dev --yes
+
+
+MAILTO="mboles@brightcove.com"
+* 8,18 * * * platform snapshot:create --project=6sglloa4yrkti --environment=dev --yes
+
+
+/Users/mboles/platformsh/platform snapshot:create --project=6sglloa4yrkti --environment=dev
+
+
+
+
+ssh 6sglloa4yrkti-stage-y77w3ti@ssh.us.platform.sh echo "hello world"
+
+
+
+
+https://bitbucket.org/snippets/kaypro4/gnB4E
+
+
+
+
+
+
+
+
+#!/bin/bash
+#
+#title           : snapshot
+#description     : This script will create a new platform snapshot for all
+#                : of our sites on platform.sh
+#author          : Daniel Lineberger, Winn Jewett, Nate Flint
+#date            : 20150401
+#version         : 0.4
+#usage           : snapshot (Backup just the master environment)
+#                : snapshot -e all (Backup all environments)
+#==========================================================================
+
+# Define Log File
+log=$HOME/platform_backup_log.txt
+
+# Output log header
+echo "" >> $log
+echo "" >> $log
+date >> $log
+
+# Set platform command directory
+platform="/home/my-user/.platformsh/bin/platform"
+
+
+#handle -e flag
+while getopts ":e:" opt; do
+  case $opt in
+    e)
+      case $OPTARG in
+
+        all | a)
+
+          environment="all"
+
+
+          ;;
+
+        *)
+
+
+            environment=$OPTARG
+            #echo ${env};
+
+          ;;
+
+      esac
+
+
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+
+done
+
+
+echo $platform >> $log
+$platform --version >> $log
+
+# Gather Project Ids, then convert to comma-separated list
+projectIds=( $($platform projects --pipe | xargs | sed -e 's/ /,/g') )
+projectIdsObj=( $($platform projects --pipe | grep '[a-z0-9]\{13\}') )
+
+echo $projectIds >> $log
+
+#If environement name given is "all" or "a"
+if [ "${environment}" == "all" ]; then
+
+  #ALL ENV, ALL PROJECTS
+  echo "Capturing snapshot for all environments on all projects"
+
+  # Initiate backups of all projects, all environments, and save the output to the log
+  for i in "${projectIdsObj[@]}"
+  do
+    echo $i >> $log
+
+    environments=( $($platform environments --project="$i" -I --pipe ) )
+    for ii in "${environments[@]}"
+    do
+    $platform environment:backup --project="$i" ${ii} --no-wait >> $log
+    done
+  done
+
+#If environemnt name given isn't 'All'
+else
+
+  #If no environment name given
+  if [ -z ${environment} ]; then
+    echo 'Capturing snapshot for the master environment on all projects'
+    $platform multi --continue --sort title --projects $projectIds -vv "environment:backup master --no-wait" >> $log
+
+  #if environment name given
+  else
+
+  echo "Capturing snapshot for \"${env}\" environments on all projects"
+  # Initiate backups of all projects for the specified environment, and save the output to the log
+  $platform multi --continue --sort title --projects $projectIds -vv "environment:backup ${environment} --no-wait" >> $log
+  fi
+fi

@@ -1,0 +1,183 @@
+
+****************************
+CLEAN UBUNTU SERVER FROM IT CONFIG
+0. VPN in
+1. Login: ssh mboles@snapdocs.vidmark.local
+2. Install curl PHP extension
+  sudo apt-get install curl
+  sudo apt-get install php5-curl
+3. Install platform.sh CLI
+  curl -sS https://platform.sh/cli/installer | php
+4. Read config files so path for platform.sh CLI included
+  source ~/.profile
+5. Login to the server
+  platform auth:login (you will be prompted to login, use platform.sh credentials, NOT SSH passphrase)
+****************************
+
+
+
+****************************
+LOGIN FOR GROUP USER
+1. ssh bclsuser@snapdocs.vidmark.local
+****************************
+
+
+
+
+
+Become root: sudo su -
+
+
+
+
+platform db:size --project 6sglloa4yrkti --environment master
+
+
+
+https://github.com/platformsh/platformsh-cli
+
+Rebuild caches via drush
+ssh 6sglloa4yrkti-master-7rqtwti--app@ssh.us.platform.sh; cd web; drush crOK,
+
+
+
+
+ ID            | Title         | URL                                    |
++---------------+---------------+----------------------------------------+
+| 6sglloa4yrkti | Brightcove    | https://us.platform.sh/#/projects/6sgl |
+|               | Documentation | loa4yrkti                              |
+
+
+Command: snapshot:create
+Description: Make a snapshot of an environment
+
+Usage:
+ platform snapshot:create [-p|--project PROJECT] [--host HOST] [-e|--environment ENVIRONMENT] [--no-wait] [--] [<environment>]
+
+Arguments:
+  environment                    The environment
+
+Options:
+  -p, --project=PROJECT          The project ID
+      --host=HOST                The project's API hostname
+  -e, --environment=ENVIRONMENT  The environment ID
+      --no-wait                  Do not wait for the snapshot to complete
+  -h, --help                     Display this help message
+  -q, --quiet                    Do not output any message
+  -V, --version                  Display this application version
+  -y, --yes                      Answer "yes" to all prompts; disable interaction
+  -n, --no                       Answer "no" to all prompts
+  -v|vv|vvv, --verbose           Increase the verbosity of messages
+
+Examples:
+ Make a snapshot of the current environment:
+   platform snapshot:create
+
+platform snapshot:create --project=6sglloa4yrkti --environment=dev
+
+
+
+
+Global options:
+  --help           -h Display this help message
+  --quiet          -q Do not output any message
+  --verbose        -v|vv|vvv Increase the verbosity of messages
+  --version        -V Display this application version
+  --yes            -y Answer "yes" to all prompts; disable interaction
+  --no             -n Answer "no" to all prompts
+
+Available commands:
+  clear-cache (clearcache, cc)       Clear the CLI cache
+  docs                               Open the online documentation
+  help                               Displays help for a command
+  list                               Lists commands
+  multi                              Execute a command on multiple projects
+  web                                Open the Web UI
+activity
+  activity:list (activities)         Get a list of activities for an environment or project
+  activity:log                       Display the log for an activity
+app
+  app:config-get                     View the configuration of an app
+  app:list (apps)                    Get a list of all apps in the local repository
+auth
+  auth:info                          Display your account information
+  auth:login (login)                 Log in to Platform.sh
+  auth:logout (logout)               Log out of Platform.sh
+certificate
+  certificate:add                    Add an SSL certificate to the project
+  certificate:delete                 Delete a certificate from the project
+  certificate:get                    View a certificate
+  certificate:list (certificates)    List project certificates
+db
+  db:dump                            Create a local dump of the remote database
+  db:size                            Estimate the disk usage of a database
+  db:sql (sql)                       Run SQL on the remote database
+domain
+  domain:add                         Add a new domain to the project
+  domain:delete                      Delete a domain from the project
+  domain:get                         Show detailed information for a domain
+  domain:list (domains)              Get a list of all domains
+  domain:update                      Update a domain
+environment
+  environment:activate               Activate an environment
+  environment:branch (branch)        Branch an environment
+  environment:checkout (checkout)    Check out an environment
+  environment:delete                 Delete an environment
+  environment:drush (drush)          Run a drush command on the remote environment
+  environment:http-access (httpaccess) Update HTTP access settings for an environment
+  environment:info                   Read or set properties for an environment
+  environment:list (environments)    Get a list of environments
+  environment:logs (log)             Read an environment's logs
+  environment:merge (merge)          Merge an environment
+  environment:push (push)            Push code to an environment
+  environment:relationships (relationships) Show an environment's relationships
+  environment:ssh (ssh)              SSH to the current environment
+  environment:synchronize (sync)     Synchronize an environment's code and/or data from its parent
+  environment:url (url)              Get the public URLs of an environment
+integration
+  integration:add                    Add an integration to the project
+  integration:delete                 Delete an integration from a project
+  integration:get                    View details of an integration
+  integration:list (integrations)    View a list of project integration(s)
+  integration:update                 Update an integration
+local
+  local:build (build)                Build the current project locally
+  local:dir (dir)                    Find the local project root
+  local:drush-aliases (drush-aliases) Find the project's Drush aliases
+project
+  project:delete                     Delete a project
+  project:get (get)                  Clone a project locally
+  project:info                       Read or set properties for a project
+  project:list (projects)            Get a list of all active projects
+  project:set-remote                 Set the remote project for the current Git repository
+  project:variable:delete            Delete a variable from a project
+  project:variable:get (project-variables, pvget) View variable(s) for a project
+  project:variable:set (pvset)       Set a variable for a project
+route
+  route:get                          View a resolved route
+  route:list (routes)                List all routes for an environment
+self
+  self:install                       Install or update CLI configuration files
+  self:update (self-update)          Update the CLI to the latest version
+snapshot
+  snapshot:create                    Make a snapshot of an environment
+  snapshot:list (snapshots)          List available snapshots of an environment
+  snapshot:restore                   Restore an environment snapshot
+ssh-key
+  ssh-key:add                        Add a new SSH key
+  ssh-key:delete                     Delete an SSH key
+  ssh-key:list (ssh-keys)            Get a list of SSH keys in your account
+tunnel
+  tunnel:close                       Close SSH tunnels
+  tunnel:info                        View relationship info for SSH tunnels
+  tunnel:list (tunnels)              List SSH tunnels
+  tunnel:open                        Open SSH tunnels to an app's relationships
+user
+  user:add                           Add a user to the project
+  user:delete                        Delete a user
+  user:list (users)                  List project users
+  user:role                          View or change a user's role
+variable
+  variable:delete                    Delete a variable from an environment
+  variable:get (variables, vget)     View variable(s) for an environment
+  variable:set (vset)                Set a variable for an environment
