@@ -1,0 +1,7 @@
+.video-js {
+  height: 344px;
+  width: 610px;
+}
+.hide-overlay .vjs-overlay {
+  display: none;
+}

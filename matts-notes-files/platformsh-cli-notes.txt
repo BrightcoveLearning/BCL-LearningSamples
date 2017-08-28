@@ -22,21 +22,19 @@ LOGIN FOR GROUP USER
 ****************************
 
 
-
-
-
 Become root: sudo su -
 
 
 
 
 platform db:size --project 6sglloa4yrkti --environment master
+platform db:dump --project 6sglloa4yrkti --environment dev
 
 
 
 https://github.com/platformsh/platformsh-cli
 
-Rebuild caches via drush
+Rebuild caches via drush (recover from crash)
 ssh 6sglloa4yrkti-master-7rqtwti--app@ssh.us.platform.sh; cd web; drush crOK,
 
 

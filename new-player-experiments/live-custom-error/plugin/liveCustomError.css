@@ -1,0 +1,21 @@
+.video-js {
+  height: 440px;
+  width: 560px;
+}
+/* hide the overlay
+ * this class will be added and removed as needed
+ */
+.hide-overlay .vjs-overlay {
+  display: none;
+}
+/* overlay position */
+.video-js .vjs-overlay {
+  top: 0;
+  left: 0;
+  padding: 0;
+}
+/* overlay image dimensions */
+.vjs-overlay img {
+  height: 440px;
+  width: 560px;
+}

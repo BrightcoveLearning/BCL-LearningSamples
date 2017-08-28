@@ -1,0 +1,22 @@
+/* Size the video */
+.video-js {
+  width: 640px;
+  height: 360px;
+}
+/* Hide the overlay */
+.hide-overlay .vjs-overlay {
+  display: none;
+}
+/* Style the overlay */
+.vjs-overlay, .vjs-overlay.vjs-overlay-top {
+  position: absolute;
+  width: 80px;
+  background-color: #000000;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  border-radius: 0px;
+  top: 0px;
+  left: 0px;
+  text-align: left;
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video  id="myPlayerID" data-video-id="5550679964001"
+  data-account="1752604059001"
+  data-player="default"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this;
+    // This method called when postMessage sends data into the iframe
+    function controlVideo(evt){
+      if(evt.data === "playVideo") {
+        myPlayer.play();
+      } else if (evt.data === 'pauseVideo') {
+        myPlayer.pause();
+      }
+    };
+    // Listen for the message, then call controlVideo() method when received
+    window.addEventListener("message",controlVideo);
+  });
+</script>
+
+</body>
+
+</html>

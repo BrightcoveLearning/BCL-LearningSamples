@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .vjs-marker {
+      position: absolute;
+      opacity: 1;
+      height: 100%;
+      background-color: blue;
+      width: 4px;
+    }
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5366012438001"
+    data-account="1752604059001"
+    data-player="BJWo1X3EOZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/BJWo1X3EOZ_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+
+      myPlayer.on('loadstart', function() {
+        var cuePointsAra = [],
+          adCuePointsAra = [],
+          videoDuration;
+
+        // +++ Get ad cue points from all cue points +++
+        // Extract cue points array from mediainfo
+        cuePointsAra = myPlayer.mediainfo.cuePoints;
+
+        // Extract ad cue points from all cue points
+        adCuePointsAra = cuePointsAra.filter(isAdCuePoint);
+
+        // Get the video duration
+        videoDuration = myPlayer.mediainfo.duration;
+
+        // Add cuePoint markers for ad cue points
+        addAdMarkers(adCuePointsAra, videoDuration);
+      })
+    });
+
+    // +++ Filter array on ad cue points +++
+    function isAdCuePoint(cuePoint) {
+      return cuePoint.type == 'AD';
+    }
+
+    // +++ Add AD cue point markers +++
+    function addAdMarkers(adCuePointsAra, videoDuration) {
+      var iMax = adCuePointsAra.length,
+        i,
+        playheadWell = document.getElementsByClassName('vjs-progress-control vjs-control')[0];
+      // Loop over each cue point, dynamically create a div for each
+      // then place in div progress bar
+      for (i = 0; i < iMax; i++) {
+        var elem = document.createElement('div');
+        elem.className = 'vjs-marker';
+        elem.id = 'ad' + i;
+        elem.style.left = (adCuePointsAra[i].time / videoDuration) * 100 + '%';
+        playheadWell.appendChild(elem);
+      }
+    }
+  </script>
+
+</body>
+
+</html>

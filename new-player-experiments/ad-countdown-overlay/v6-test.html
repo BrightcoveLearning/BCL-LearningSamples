@@ -4,23 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
-  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
-  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
   <style>
-    /* hide the overlay */
-
-    .hide-overlay .vjs-overlay {
-      display: none;
-    }
-
+    /* Size the video */
     .video-js {
       width: 640px;
       height: 360px;
     }
-    /* style the overlay */
-
-    .vjs-overlay,
-    .vjs-overlay.vjs-overlay-top {
+    /* Hide the overlay */
+    .hide-overlay .vjs-overlay {
+      display: none;
+    }
+    /* Style the overlay */
+    .vjs-overlay, .vjs-overlay.vjs-overlay-top {
       position: absolute;
       width: 80px;
       background-color: #000000;
@@ -37,22 +32,19 @@
 
 <body>
   <video id="myPlayerID"
-    data-account="1507807800001"
-    data-video-id="4607746980001"
-    data-player="SJPBnoY4Ob"
+    data-video-id="5393799460001"
+    data-account="1752604059001"
+    data-player="ryxfFuudub"
     data-embed="default"
     data-application-id
     class="video-js"
     controls></video>
-  <script src="//players.brightcove.net/1507807800001/SJPBnoY4Ob_default/index.min.js"></script>
-  <!-- Load the IMA3 plugin -->
-  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
-  <!-- Load the Overlay plugin -->
-  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script src="//players.brightcove.net/1752604059001/ryxfFuudub_default/index.min.js"></script>
 
   <script type="text/javascript">
+    // +++ Helpful method to convert seconds +++
     /**
-     * utility to extract h/m/s from seconds
+     * Utility to extract h/m/s from seconds
      * @param {number} secs - seconds to convert to hh:mm:ss
      */
     function secondsToTime(secs) {
@@ -79,46 +71,34 @@
       };
       return obj;
     }
-    //On player ready load the IMA3 plugin with a serverUrl with VAST ad definition
     videojs('myPlayerID').ready(function() {
       var myPlayer = this;
-      myPlayer.ima3({
-        serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"
-      });
-      //Place overlay at top of video on loadedmetadata
-      myPlayer.overlay({
-        overlays: [{
-          "content": "<p>Ad: <span id='timeTarget'></span></p>",
-          "align": "top",
-          "start": "loadedmetadata"
-        }]
-      });
-      //Initially  hide the overlay
+      // Initially  hide the overlay
       myPlayer.addClass("hide-overlay");
-      //Listen for ad events
+      // +++ Set up listening for ad events +++
       myPlayer.on('loadedmetadata', function() {
         var theInterval,
           timeLeftInAd;
-        //Function to be called every second during ad playback
-        //Calculates time remaining and injects into overlay
+        // Function to be called every second during ad playback
+        // Calculates time remaining and injects into overlay
         function everySecond() {
           var timeObject = secondsToTime(Math.floor(myPlayer.ima3.adPlayer.duration() - myPlayer.ima3.adPlayer.currentTime()));
           document.getElementById('timeTarget').innerHTML = timeObject.m + ':' + timeObject.s;
         }
-        //On start of ads in pod
-        myPlayer.on('ads-pod-started', function() {
-          //Remove the hide class so overlay displays
+        // +++ On start of ad +++
+        myPlayer.on('ima3-started', function() {
+          // Remove the hide class so overlay displays
           myPlayer.removeClass("hide-overlay");
-          //Start the counter that calls function every second
+          // Start the counter that calls function every second
           theInterval = setInterval(everySecond, 1000);
         });
-        //On end of ads in pod
-        myPlayer.on('ads-pod-ended', function() {
-          //Stop the counter
+        // +++ On end of ad +++
+        myPlayer.on('ima3-complete', function() {
+          // Stop the counter
           clearInterval(theInterval);
-          //Hide the overlay
+          // Hide the overlay
           myPlayer.addClass("hide-overlay");
-          //Clear any numbers so on display of overlay no small numbers left
+          // Clear any numbers so on display of overlay no small numbers left
           document.getElementById('timeTarget').innerHTML = '';
         });
       });

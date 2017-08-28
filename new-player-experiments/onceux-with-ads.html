@@ -2,33 +2,36 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Once UX Plugin</title>
-    <link href="//players.brightcove.net/videojs-onceux/1/videojs-onceux.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Once UX Plugin</title>
+  <link href="//players.brightcove.net/videojs-onceux/2/videojs-onceux.min.css" rel="stylesheet">
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <video id="myPlayerID" data-video-id="4784463159001"
-  data-account="1507807800001"
-  data-player="ryHtD4nBx"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/ryHtD4nBx_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-account="1507807800001"
+    data-player="B1eKLckKDZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/B1eKLckKDZ_default/index.min.js"></script>
 
-    <script src="//players.brightcove.net/videojs-onceux/1/videojs-onceux.min.js"></script>
+  <script src="//players.brightcove.net/videojs-onceux/2/videojs-onceux.min.js"></script>
 
-    <!-- custom script -->
-    <script type="text/JavaScript">
-        videojs("myPlayerID").ready(function() {
-            var myPlayer = this,
-            options = { "metadataUri": "http://onceux.unicornmedia.com/now/ads/vmap/od/auto/1057feac-cd39-4b88-bfd1-2422905107c1/bdc0f1b0-0a32-4199-bdb0-2aa1a243824b/86f1fb0c-d99e-4d92-848f-4938bed50140/content.once"
-        };
-        myPlayer.onceux(options);
+  <script type="text/JavaScript">
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this, options = { "metadataUri": "//onceux.unicornmedia.com/now/ads/vmap/od/auto/1057feac-cd39-4b88-bfd1-2422905107c1/bdc0f1b0-0a32-4199-bdb0-2aa1a243824b/86f1fb0c-d99e-4d92-848f-4938bed50140/content.once"};
+      myPlayer.onceux(options);
     });
-    </script>
+  </script>
 </body>
 
 </html>

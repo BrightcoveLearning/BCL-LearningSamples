@@ -1,18 +1,39 @@
 Major accomplishments:
-1. Got the Brightcove Player Developer Landing Page documents entered, and checked against faceted search to be sure all docs in
-2. Pressed IT to get us a server, got cron job schedule for snapshots. Also installed tools for SSH with platform.sh CLI.
-3. Closed 10 JIRAs, mostly minor issues
+**25 Aug**
+1. Finished draft of Plugin Registry doc, Tom R reviewed and I will roll in changes next week (Tom doesn't want it published until he gives the OK)
+2. Four code samples converted. Bit of a slower go than I had hoped.
+3. Closed 10 JIRAs
 
 Near Term Goals
+1. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
+
 1. Get something meaningful loaded to the dev platform.sh site. For instance, updates to styles or automatic snapshots.
-2. Get this backup process running on new site: https://bitbucket.org/snippets/kaypro4/gnB4E.
-3. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
-
-
 Open JIRAs
 https://jira.brightcove.com/browse/BC-38840
 https://jira.brightcove.com/browse/ITHELP-36051
 
+
+**18 Aug**
+1. Revised (and revised, and revised, ...) the code sample template. I think everyone is happy, at least for now. Have template HTML and template GitHub repo created. Instructions in Quiver: Creating a Code Sample
+2. New code sample created (when creating the template): https://support.brightcove.com/brightcove-player-sample-play-video-end-playlist
+3. Closed 12 JIRAs and got open count below 70!
+4. Little or no work  on Drupal admin tasks as code sample template a time sink this week.
+
+**11 Aug**
+1. Created a new template for code samples
+2. Started work on implementing using CLI commands from our Ubuntu server
+3. Closed 10 JIRAs
+
+**4 Aug**
+1. Got platform.sh snapshots cron job working from our Ubuntu server (last week's configuration didn't work)
+2. Got landing pages built for Brightcove Player Developer Docs and Brightcove Player Code Samples
+3. Closed 8 JIRAs
+4. Great IM discussion with Andrew about off site backups of Drupal content
+
+**28 Aug**
+1. Got the Brightcove Player Developer Landing Page documents entered, and checked against faceted search to be sure all docs in
+2. Pressed IT to get us a server, got cron job schedule for snapshots. Also installed tools for SSH with platform.sh CLI.
+3. Closed 10 JIRAs, mostly minor issues
 
 **21 July**
 1. Updated Playlist API with new methods and events

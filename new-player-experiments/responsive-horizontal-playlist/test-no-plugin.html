@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style media="screen">
+  /*style for the div that wraps the playlist*/
+  .bcls-playlist-wrapper {
+      position:relative;
+      background-color: #141B17;
+      /*max-width: 100%;*/
+      width: 100%!important;
+      /*max-height: 95px;
+      min-height: 82px;*/
+      line-height: 76px;
+      text-align: center;
+      overflow-x: hidden;
+      overflow-y: hidden;
+      position: absolute;
+      white-space: nowrap;
+      margin: 0;
+      padding: 0;
+  }
+  /*style for the divs that make up the playlist items*/
+  .bcls-playlist-item {
+      display: inline-block;
+      border: 2px solid #141B17;
+      padding: 0;
+      margin: 0;
+      height: 74px;
+      width: 124px;
+      cursor: pointer;
+      vertical-align: middle;
+      position: relative;
+  }
+  /*style for the divs that make up the playlist item inner div */
+  .bcls-item-inner-div {
+      background-size: cover;
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      vertical-align: middle;
+  }
+  /* mouse over style for items */
+  .bcls-playlist-item:hover {
+      border-color: #FF0000;
+  }
+  /*style for the thumbnail images*/
+  .bcls-title {
+      color: #fff;
+      font-size: .7em;
+      font-family: sans-serif;
+      font-weight: bold;
+      max-width: 124px;
+      width: 124px;
+      height: 66px;
+      margin-top: 30%;
+      text-align: center;
+      cursor: pointer;
+  }
+
+  #left-arrow{
+    color: aliceblue;
+    font-size: 40px;
+    position: absolute;
+    margin: auto;
+    background: rgba(245, 41, 5, 1);
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  #right-arrow{
+    color: aliceblue;
+    font-size: 40px;
+    position: absolute;
+    margin: auto;
+    background: rgba(245, 41, 5, 1);
+    right: 0;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  </style>
+</head>
+
+<body>
+
+  <div style="display: block; position: relative; max-width: 100%;">
+    <div style="padding-top: 56.25%;">
+      <video id="myPlayerID"
+        data-playlist-id="2764931906001"
+        data-account="1752604059001"
+        data-player="H1TMG31PW"
+        data-embed="default"
+        data-application-id
+        class="video-js"
+        controls
+        style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+    </div>
+  </div>
+
+  <script src="//players.brightcove.net/1752604059001/H1TMG31PW_default/index.min.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function () {
+      var myPlayer = this,
+        playlistData,
+        playlistItems,
+        videoItem,
+        itemTitle,
+        itemInnerDiv,
+        playlistWrapper;
+      myPlayer.one('loadstart', function () {
+        playlistWrapper = document.createElement('div');
+        playlistWrapper.className = "bcls-playlist-wrapper";
+      });
+      myPlayer.one('loadedmetadata', function () {
+        playlistData = myPlayer.playlist();
+        myPlayer.el().parentNode.appendChild(playlistWrapper);
+        /**
+         * highlights the current playlist item
+         */
+        function clearHighlight() {
+          var i,
+            iMax = playlistItems.length;
+          for (i = 0; i < iMax; i++) {
+            playlistItems[i].setAttribute('style', '2px solid #141B17');
+          }
+        }
+
+        function setHighlight() {
+          var index = myPlayer.playlist.currentItem();
+          // override the background color
+          playlistItems[index].setAttribute('style', 'border:2px solid #80CBC4;');
+        }
+        /**
+         * loads a playlist item that was clicked on
+         */
+        function loadPlaylistItem() {
+          // item index in playlist array
+          var index = parseInt(this.getAttribute('data-playlist-index'), 10);
+          myPlayer.playlist.currentItem(index);
+          myPlayer.play();
+        }
+        playlistWrapper.style.width = myPlayer.width() + "px";
+        for (i = 0; i < playlistData.length; i++) {
+          videoItem = playlistData[i];
+          // create the playlist item and set its class and style
+          playlistItem = document.createElement('div');
+          playlistItem.setAttribute('data-playlist-index', i);
+          playlistItem.setAttribute('class', 'bcls-playlist-item');
+          // create the inner div and set class and style
+          itemInnerDiv = document.createElement('div');
+          itemInnerDiv.setAttribute('class', 'bcls-item-inner-div');
+          itemInnerDiv.setAttribute('style', 'background-image:url(' + videoItem.thumbnail + ');');
+          // create the title and set its class
+          itemTitle = document.createElement('span');
+          itemTitle.setAttribute('class', 'bcls-title');
+          // add the video name to the title element
+          itemTitle.appendChild(document.createTextNode(videoItem.name));
+          // now append the title to the innerdiv,
+          // the innerdiv to the item,
+          // and the item to the playlist
+          itemInnerDiv.appendChild(itemTitle);
+          playlistItem.appendChild(itemInnerDiv);
+          playlistWrapper.appendChild(playlistItem);
+        }
+        var left = document.createElement("div");
+        var right = document.createElement("div")
+        left.setAttribute('id', 'left-arrow');
+        right.setAttribute('id', 'right-arrow');
+        var parentElement = document.getElementsByClassName("bcls-playlist-wrapper");
+        parentElement[0].prepend(left);
+        parentElement[0].prepend(right);
+        //$( "#left-arrow" ).insertBefore( $(".bcls-playlist-wrapper" ));
+        //$( "#right-arrow" ).append( $(".bcls-playlist-wrapper" ));
+        document.getElementById('left-arrow').innerHTML = '<';
+        document.getElementById('right-arrow').innerHTML = '>';
+        $(".bcls-playlist-item").wrapAll("<div class='list-container'></div>");
+        $(".bcls-playlist-item").wrapAll("<div class='list'></div>");
+        var $item = $('div.bcls-playlist-item'), //Cache your DOM selector
+          visible = 1, //Set the number of items that will be visible
+          index = 0, //Starting index
+          endIndex = ($item.length / visible) - 1; //End index
+        console.log($item.length);
+        console.log(endIndex);
+        $('div#right-arrow').on('click', (function () {
+          if (index < endIndex) {
+            index++;
+            $item.animate({
+              'right': '+=124px'
+            });
+            console.log(index);
+          }
+        }));
+        $('div#left-arrow').click(function () {
+          if (index > 0) {
+            index--;
+            $item.animate({
+              'right': '-=124px'
+            });
+            console.log(index);
+          }
+        });
+        myPlayer.on('play', function () {
+          clearHighlight();
+          setHighlight();
+        });
+        // set click listeners on playlist items
+        playlistItems = document.getElementsByClassName('bcls-playlist-item');
+        iMax = playlistItems.length;
+        for (i = 0; i < iMax; i++) {
+          playlistItems[i].addEventListener('click', loadPlaylistItem);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

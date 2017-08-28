@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="dynamic-cta.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5165694790001"
+    data-account="1752604059001"
+    data-player="ByezEPhOZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/ByezEPhOZ_default/index.min.js"></script>
+
+  <!-- +++ Insert dynamic in page CTA here +++ -->
+  <p id="cta" style='color:red; font-weight: bold; font-size: 20px'></p>
+
+  <script src="dynamic-cta.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.dynamicCTA();
+    });
+  </script>
+
+</body>
+
+</html>

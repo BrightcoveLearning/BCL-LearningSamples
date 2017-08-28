@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="ad-marks-on-progress.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5366012438001"
+    data-account="1752604059001"
+    data-player="BJWo1X3EOZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/BJWo1X3EOZ_default/index.min.js"></script>
+
+  <script src="ad-marks-on-progress.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.adMarksOnProgress();
+    });
+  </script>
+
+</body>
+
+</html>

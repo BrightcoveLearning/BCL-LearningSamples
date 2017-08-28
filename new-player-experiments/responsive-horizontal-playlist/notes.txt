@@ -1,0 +1,1 @@
+link to example player config: https://players.brightcove.net/5400155245001/default_default/config.json
