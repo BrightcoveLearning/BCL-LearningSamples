@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    /*figure elements for thumbnails*/
+    figure.bcls-thumbnail {
+        /*display as horizontal list*/
+        display: inline-block;
+        /*change the cursor to show they're clickable*/
+        cursor: pointer;
+        margin-left: 0;
+        margin-right: 1em;
+    }
+    figure.bcls-thumbnail figcaption {
+        font-size: .7em;
+        text-align: center;
+    }
+    figure.bcls-thumbnail img {
+        border: #333 1px solid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="HJHx0gc7"
+    data-embed="default"
+    class="video-js"
+    controls
+    style="width: 640px; height: 360px;"></video>
+  <script src="//players.brightcove.net/1752604059001/HJHx0gc7_default/index.min.js"></script>
+
+  <div id="videoList"></div>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function () {
+      // videoIds are the ids for the videos to display
+      // videoList is a reference to the div element added to hold the thumbnails
+      var // note that you need to substitute your own video ids for the ones below
+      videoIds = ['4825296720001', '4825279519001', '4825279542001'],
+        videos = [],
+        myPlayer = this,
+        videoList = document.getElementById('videoList');
+
+      // +++ Add a retrieved video to an array so that it can loaded later +++
+      function addVideoToList(video) {
+        // save the returned video object in the videos array
+        videos.push(video);
+        if (videos.length == videoIds.length) {
+          configureVideoList();
+        }
+      }
+
+      // +++ Build thumbnail list +++
+      /**
+       * Called when videos array is populated
+       * Creates a figure/img/caption element block that to be injected into the DOM
+       */
+      function configureVideoList() {
+        // Fragment is document fragment in which we'll store the elements for the thumbnail display
+        // Until we're ready to add them to the DOM
+        var fragment = document.createDocumentFragment();
+        for (var i = 0; i < videos.length; i++) {
+          // add elements for the thumbnail display
+          var figure = document.createElement('figure'),
+            caption = document.createElement('figcaption'),
+            thumbnail = document.createElement('img'),
+            videoName;
+          // Attach the index of this video object to the figure element
+          figure.setAttribute('data-video-index', i);
+          figure.setAttribute('class', 'bcls-thumbnail');
+          // set properties for the thumbnail and caption elements and put the figure together
+          thumbnail.setAttribute('src', videos[i].thumbnail);
+          videoName = document.createTextNode(videos[i].name);
+          caption.appendChild(videoName);
+          figure.appendChild(thumbnail);
+          figure.appendChild(caption);
+          figure.addEventListener('click', playVideo);
+          // Add the figure to the document fragment
+          fragment.appendChild(figure);
+          // Now that the thumbnail display is complete, add it to the DOM
+          videoList.appendChild(fragment);
+        }
+
+        // +++ Put first video in video array list in player +++
+        myPlayer.catalog.load(videos[0]);
+        myPlayer.play();
+        myPlayer.muted(true);
+      }
+
+      // +++ Load and play clicked video +++
+      function playVideo() {
+        var videoIndex = parseInt(this.getAttribute('data-video-index'));
+        myPlayer.catalog.load(videos[videoIndex]);
+        myPlayer.play();
+      }
+
+      // +++ Retrieve video objects +++
+      for (var i = 0; i < videoIds.length; i++) {
+        myPlayer.catalog.getVideo(videoIds[i], function (error, video) {
+          // handle error here
+          addVideoToList(video);
+        });
+      }
+
+    });
+  </script>
+
+</body>
+
+</html>

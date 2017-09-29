@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <title>Untitled Document</title>
   <style media="screen">
-  /*style for the div that wraps the playlist*/
-  .bcls-playlist-wrapper {
-      position:relative;
+    /*style for the div that wraps the playlist*/
+
+    .bcls-playlist-wrapper {
+      position: relative;
       background-color: #141B17;
       /*max-width: 100%;*/
       width: 100%!important;
@@ -21,9 +22,10 @@
       white-space: nowrap;
       margin: 0;
       padding: 0;
-  }
-  /*style for the divs that make up the playlist items*/
-  .bcls-playlist-item {
+    }
+    /*style for the divs that make up the playlist items*/
+
+    .bcls-playlist-item {
       display: inline-block;
       border: 2px solid #141B17;
       padding: 0;
@@ -33,9 +35,10 @@
       cursor: pointer;
       vertical-align: middle;
       position: relative;
-  }
-  /*style for the divs that make up the playlist item inner div */
-  .bcls-item-inner-div {
+    }
+    /*style for the divs that make up the playlist item inner div */
+
+    .bcls-item-inner-div {
       background-size: cover;
       padding: 0;
       margin: 0;
@@ -43,13 +46,15 @@
       width: 100%;
       cursor: pointer;
       vertical-align: middle;
-  }
-  /* mouse over style for items */
-  .bcls-playlist-item:hover {
+    }
+    /* mouse over style for items */
+
+    .bcls-playlist-item:hover {
       border-color: #FF0000;
-  }
-  /*style for the thumbnail images*/
-  .bcls-title {
+    }
+    /*style for the thumbnail images*/
+
+    .bcls-title {
       color: #fff;
       font-size: .7em;
       font-family: sans-serif;
@@ -60,30 +65,29 @@
       margin-top: 30%;
       text-align: center;
       cursor: pointer;
-  }
+    }
 
-  #left-arrow{
-    color: aliceblue;
-    font-size: 40px;
-    position: absolute;
-    margin: auto;
-    background: rgba(245, 41, 5, 1);
-    left: 0;
-    z-index: 1;
-    cursor: pointer;
-  }
+    #left-arrow {
+      color: aliceblue;
+      font-size: 40px;
+      position: absolute;
+      margin: auto;
+      background: rgba(245, 41, 5, 1);
+      left: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
 
-  #right-arrow{
-    color: aliceblue;
-    font-size: 40px;
-    position: absolute;
-    margin: auto;
-    background: rgba(245, 41, 5, 1);
-    right: 0;
-    z-index: 1;
-    cursor: pointer;
-  }
-
+    #right-arrow {
+      color: aliceblue;
+      font-size: 40px;
+      position: absolute;
+      margin: auto;
+      background: rgba(245, 41, 5, 1);
+      right: 0;
+      z-index: 1;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -98,19 +102,18 @@
         data-embed="default"
         data-application-id
         class="video-js"
-        controls
-        style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+        controls style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
     </div>
   </div>
 
   <script src="//players.brightcove.net/1752604059001/H1TMG31PW_default/index.min.js"></script>
-  <script
-    src="https://code.jquery.com/jquery-3.2.1.min.js"
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
 
   <script type="text/javascript">
-    videojs('myPlayerID').ready(function () {
+    videojs('myPlayerID').ready(function() {
       var myPlayer = this,
         playlistData,
         playlistItems,
@@ -118,16 +121,19 @@
         itemTitle,
         itemInnerDiv,
         playlistWrapper;
-      myPlayer.one('loadstart', function () {
+
+      myPlayer.one('loadstart', function() {
         playlistWrapper = document.createElement('div');
         playlistWrapper.className = "bcls-playlist-wrapper";
       });
-      myPlayer.one('loadedmetadata', function () {
+
+      myPlayer.one('loadedmetadata', function() {
+        // Assign current playlist data to variable
         playlistData = myPlayer.playlist();
+
+        // Place plalist wrapper in DOM just below player
         myPlayer.el().parentNode.appendChild(playlistWrapper);
-        /**
-         * highlights the current playlist item
-         */
+        //Highlights the current playlist item
         function clearHighlight() {
           var i,
             iMax = playlistItems.length;
@@ -136,21 +142,23 @@
           }
         }
 
+        // Sets highlight for selected/playing video
         function setHighlight() {
           var index = myPlayer.playlist.currentItem();
-          // override the background color
+          // Override the background color
           playlistItems[index].setAttribute('style', 'border:2px solid #80CBC4;');
         }
-        /**
-         * loads a playlist item that was clicked on
-         */
+        //Loads a playlist item that was clicked on
         function loadPlaylistItem() {
-          // item index in playlist array
+          // Item index in playlist array
           var index = parseInt(this.getAttribute('data-playlist-index'), 10);
           myPlayer.playlist.currentItem(index);
           myPlayer.play();
         }
+
         playlistWrapper.style.width = myPlayer.width() + "px";
+
+        //Create the playlist
         for (i = 0; i < playlistData.length; i++) {
           videoItem = playlistData[i];
           // create the playlist item and set its class and style
@@ -173,6 +181,8 @@
           playlistItem.appendChild(itemInnerDiv);
           playlistWrapper.appendChild(playlistItem);
         }
+
+        // Create the left and right arrows
         var left = document.createElement("div");
         var right = document.createElement("div")
         left.setAttribute('id', 'left-arrow');
@@ -190,9 +200,9 @@
           visible = 1, //Set the number of items that will be visible
           index = 0, //Starting index
           endIndex = ($item.length / visible) - 1; //End index
-        console.log($item.length);
-        console.log(endIndex);
-        $('div#right-arrow').on('click', (function () {
+
+        // Add click events to arrows
+        $('div#right-arrow').on('click', (function() {
           if (index < endIndex) {
             index++;
             $item.animate({
@@ -201,7 +211,7 @@
             console.log(index);
           }
         }));
-        $('div#left-arrow').click(function () {
+        $('div#left-arrow').click(function() {
           if (index > 0) {
             index--;
             $item.animate({
@@ -210,7 +220,9 @@
             console.log(index);
           }
         });
-        myPlayer.on('play', function () {
+
+        // 
+        myPlayer.on('play', function() {
           clearHighlight();
           setHighlight();
         });

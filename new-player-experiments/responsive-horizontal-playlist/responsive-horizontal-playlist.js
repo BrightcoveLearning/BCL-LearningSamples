@@ -7,7 +7,7 @@
   * player
   *
   */
-  videojs.plugin('customPlaylist',function() {
+  videojs.registerPlugin('customPlaylist',function() {
      var myPlayer = this,
          playlistData,
          playlistItems,
@@ -16,6 +16,7 @@
          itemInnerDiv,
          playlistWrapper;
 
+         
      myPlayer.one('loadstart', function() {
          playlistWrapper = document.createElement('div');
          playlistWrapper.className = "bcls-playlist-wrapper";

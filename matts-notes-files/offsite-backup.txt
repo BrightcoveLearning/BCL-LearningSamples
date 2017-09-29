@@ -1,0 +1,62 @@
+https://aws.amazon.com/getting-started/tutorials/backup-to-s3-cli/
+
+https://aws.amazon.com/getting-started/tutorials/backup-files-to-amazon-s3/
+
+delete older files: http://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions
+
+
+find /home/VIDMARK.LOCAL/bclsserverworker/*.sql.gz -mtime +5 -type f -delete
+
+
+MAILTO="mboles@brightcove.com"
+PATH=/home/VIDMARK.LOCAL/mboles/.platformsh/bin:/usr/local/sbin:/usr/local/bin:$
+
+MAILTO="mboles@brightcove.com"
+PATH=/home/VIDMARK.LOCAL/bclsserverworker/.platformsh/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+*/5 * * * * /home/VIDMARK.LOCAL/bclsserverworker/brightcove-documentation/backup-database.sh
+
+
+// testing version
+#!/usr/bin/env bash
+# Stop if any commands fail; do not blindly continue
+set -e
+
+project="6sglloa4yrkti"
+environment="dev" # depending on the environment you're backing up
+filename="sqldump-$environment-$( date --utc +"%Y-%m-%dT%H-%M-%S" ).sql.gz"
+
+# Download DB dump
+platform db:dump --project "$project" --environment "$environment" "--file=$filename" --gzip
+
+
+
+
+//full version with copy to S3 and remove from Ubuntu
+#!/usr/bin/env bash
+# Stop if any commands fail; do not blindly continue
+set -e
+
+project="6sglloa4yrkti"
+environment="dev" # depending on the environment you're backing up
+filename="sqldump-$environment-$( date --utc +"%Y-%m-%dT%H-%M-%S" ).sql.gz"
+
+# Download DB dump
+platform db:dump --project "$project" --environment "$environment" "--file=$filename" --gzip
+
+# Upload DB dump to S3
+aws s3 cp "$filename" S3BUCKETLOCATIONGOESHERE
+
+# Delete DB dump from Ubuntu server
+rm "$filename"
+
+
+
+// delete files older than X days
+https://stackoverflow.com/questions/13489398/delete-files-older-than-10-days-using-shell-script-in-unix
+
+
+//find files and delete
+ find /home/VIDMARK.LOCAL/bclsserverworker/brightcove-documentation -mtime +10 -maxdepth 1 -name  "sqldump*" -delete
+
+bclsserverworker@snapdocs:~/brightcove-documentation$ find /home/VIDMARK.LOCAL/bclsserverworker/brightcove-documentation -maxdepth 1 -name "sqldump*"
+/home/VIDMARK.LOCAL/bclsserverworker/brightcove-documentation/sqldump-dev-2017-09-06T14-26-13.sql.gz

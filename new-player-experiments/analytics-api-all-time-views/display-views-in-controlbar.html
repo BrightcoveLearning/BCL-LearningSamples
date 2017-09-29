@@ -16,13 +16,11 @@
     data-application-id
     class="video-js"
     controls
-    width="640"
-    height="360"></video>
+    width="640" height="360"></video>
   <script src="//players.brightcove.net/1752604059001/HkAzSmB0l_default/index.min.js"></script>
 
   <script type="text/javascript">
     var myPlayer,
-      viewsCount,
       viewsObject = [];
 
     videojs('myPlayerID').ready(function() {
@@ -34,13 +32,17 @@
       // Wait for loadstart event so mediainfo is populated
       // and the video ID and account ID can be retrieved
       myPlayer.on('loadstart', function() {
+
+        // +++ Setup for video views Analytics API request +++
         var videoID = myPlayer.mediainfo.id,
           accountID = myPlayer.mediainfo.accountId;
         // Build the Analytics API endpoint
         options.url = 'https://analytics.api.brightcove.com/v1/alltime/accounts/' + accountID + '/videos/' + videoID;
-        // Make the request to the Analytics API
+
+        // +++ Make the request to the Analytics API +++
         // Extract views from data returned by Analytics API
         makeRequest(options, function(viewsRaw) {
+          var viewsCount;
           // Remove console.log command for production code
           console.log('viewsRaw', viewsRaw);
           viewsObject = JSON.parse(viewsRaw);
@@ -48,16 +50,17 @@
           viewsCount = viewsObject.alltime_video_views;
           console.log('views', viewsCount);
           // Call function to place data in controlbar
-          placeCountInControlbar();
+          placeCountInControlbar( viewsCount );
         });
       });
     });
 
+    // +++ Build and place count in controlbar +++
     /**
-     * Dynamically built a div that is then
+     * Dynamically build a div that is then
      * placed in the controlbar's spacer element
      */
-    function placeCountInControlbar() {
+    function placeCountInControlbar( viewsCount ) {
       var spacer,
         newElement = document.createElement('div');
       //Place data in div
@@ -81,8 +84,8 @@
      * @param  {JSON} [options.requestBody] Data to be sent in the request body in the form of a JSON string
      * @param  {Function} [callback] callback function that will process the response
      */
+    // +++ Standard functionality for Analytics API call +++
     function makeRequest(options, callback) {
-console.log('options: ', options);
       var httpRequest = new XMLHttpRequest(),
         response,
         requestParams,
@@ -117,9 +120,8 @@ console.log('options: ', options);
       httpRequest.send(requestParams);
 
       // response handler
+      // +++ Return video view count +++
       function getResponse() {
-        console.log('httpRequest.readyState: ',httpRequest.readyState);
-        console.log('httpRequest.status: ',httpRequest.status);
         try {
           if (httpRequest.readyState === 4) {
             if (httpRequest.status === 200 || httpRequest.status === 204) {

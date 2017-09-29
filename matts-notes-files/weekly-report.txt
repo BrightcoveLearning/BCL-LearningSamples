@@ -1,17 +1,48 @@
 Major accomplishments:
-**25 Aug**
-1. Finished draft of Plugin Registry doc, Tom R reviewed and I will roll in changes next week (Tom doesn't want it published until he gives the OK)
-2. Four code samples converted. Bit of a slower go than I had hoped.
-3. Closed 10 JIRAs
+**22 Sep**
+1. Got Bob setup for local Drupal development. Will walk other team members though the process when they want to see it.
+2. One new code sample created on using buttons to load different plalylists. This was some code I wrote for an attendee of DwBP.
+3. Update one code sample to new template.
+4. Closed 13 JIRAs
 
 Near Term Goals
-1. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
+1. Get new Player Management docs ready to publish, most notably the docs on new plugin registry. I have a draft of those done, but the release of the functionality was delayed, so waiting for the go ahead to update and publish.
+2. Get the process of pushing our changes to local Drupal to platform.sh dev.
+3. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
+
 
 1. Get something meaningful loaded to the dev platform.sh site. For instance, updates to styles or automatic snapshots.
 Open JIRAs
 https://jira.brightcove.com/browse/BC-38840
 https://jira.brightcove.com/browse/ITHELP-36051
 
+
+**15 Sep**
+1. Added line to bash script to delete db backups older than 5 days.
+2. Updated one code sample to new template.
+3. Closed 9 JIRAs
+
+
+**8 Sep**
+1. Got the automated backup of the Drupal database working. The only open issues is to add to the script to remove backups over 5 days old, but need some older backups to do that. Will do next week.
+2. Updated 2 videos from the Smart Player to Brightcove Player migration webinar. Not too much time involved as the intros still were good, so changed the content of the videos.
+3. Closed 8 JIRAs
+
+
+**1 Sep**
+1. Converted five code samples to new template (trying to do at least one a day)
+2. Closed 14 JIRAs
+
+Near Term Goals
+1. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
+2. Get us so we have a working copy locally of the Drupal site on which to test.
+3. Work on off site backups from out Drupal site. Was hoping Pronovix would give a bit more guidance, but the track I started down with some help from Andrew seems correct.
+
+
+**25 Aug**
+1. Finished draft of Plugin Registry doc, Tom R reviewed and I will roll in changes next week (Tom doesn't want it published until he gives the OK)
+2. Four code samples converted. Bit of a slower go than I had hoped.
+3. Closed 10 JIRAs
 
 **18 Aug**
 1. Revised (and revised, and revised, ...) the code sample template. I think everyone is happy, at least for now. Have template HTML and template GitHub repo created. Instructions in Quiver: Creating a Code Sample

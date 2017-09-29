@@ -29,6 +29,7 @@ Become root: sudo su -
 
 platform db:size --project 6sglloa4yrkti --environment master
 platform db:dump --project 6sglloa4yrkti --environment dev
+platform db:dump --project 6sglloa4yrkti --environment master
 
 
 

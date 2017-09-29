@@ -1,0 +1,51 @@
+1. Add a break and div just under video
+  <br />
+
+  <div id="textTarget"></div>
+2. In ready() function move/add variables
+      var myPlayer = this,
+        dynamicHTML;
+3. In ready() function add event listener for loadstart
+      myPlayer.on('loadstart',function() {
+
+      })
+4. After load() console.log mediainfo
+        console.log("mediainfo after load: ", myPlayer.mediainfo);
+5. Browse and observe mediainfo object
+6. Add code to build HTML and inject into div from step 1
+        dynamicHTML = "<p>Video Title: <strong>" + myPlayer.mediainfo.name + "</strong></p>";
+        dynamicHTML += "<p>Description: <strong>" + myPlayer.mediainfo.description + "</strong></p>";
+        document.getElementById("textTarget").innerHTML = dynamicHTML;
+7. Browse and see name and description
+
+
+
+***Core Code***
+  <video id="myPlayerID"
+    data-video-id="4036854518001"
+    data-account="921483702001"
+    data-player="NJB3JCBqe"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+
+  <br />
+
+  <div id="textTarget"></div>
+
+  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function () {
+      var myPlayer = this,
+        dynamicHTML;
+      myPlayer.on('loadstart',function() {
+        console.log("mediainfo: ", myPlayer.mediainfo);
+        dynamicHTML = "<p>Video Title: <strong>" + myPlayer.mediainfo.name + "</strong></p>";
+        dynamicHTML += "<p>Description: <strong>" + myPlayer.mediainfo.description + "</strong></p>";
+        document.getElementById("textTarget").innerHTML = dynamicHTML;
+        myPlayer.play();
+      })
+    });
+
+  </script>

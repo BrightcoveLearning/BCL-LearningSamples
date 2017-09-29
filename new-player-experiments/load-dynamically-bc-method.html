@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <button onclick="addPlayer()">Add Player</button>
+  <div id="placeHolder"></div>
+
+  <script src="//players.brightcove.net/1752604059001/rJtrO8EKW_default/index.min.js"></script>
+  <script type="text/javascript">
+    var myPlayer,
+      playerHTML,
+      playerData = {
+        'accountId' : '1752604059001',
+        'playerId' : 'rJtrO8EKW',
+        'videoId' : '5550679964001'
+      };
+
+    function addPlayer() {
+      // dynamically build the player video element
+      playerHTML = '<video id=\"myPlayerID\" data-video-id=\"' + playerData.videoId + '\"  data-account=\"' + playerData.accountId + '\" data-player=\"' + playerData.playerId + '\" data-embed=\"default\" class=\"video-js\" controls></video>';
+      // inject the player code into the DOM
+      document.getElementById('placeHolder').innerHTML = playerHTML;
+      // instantiate player
+      bc(document.getElementById('myPlayerID'));
+      // When player ready, get and reference and play video
+      videojs('myPlayerID').ready(function(){
+        myPlayer = this;
+        myPlayer.play();
+      });
+    }
+  </script>
+
+</body>
+
+</html>

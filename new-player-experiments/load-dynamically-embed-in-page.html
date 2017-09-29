@@ -13,38 +13,38 @@
   </style>
 </head>
 
-
-
 <body>
-  <div id="placeHolder">
-    <button onclick="addPlayer()">Add Player</button>
-  </div>
+  <button onclick="addPlayer()">Add Player</button>
+  <div id="placeHolder"></div>
   <!-- custom script -->
   <script type="text/JavaScript">
-    var myPlayer,
-      playerHTML,
-      playerData = {
-        'accountId': '1507807800001',
-        'playerId': 'd9931c29-b755-4b23-8c83-2468c2d7673a',
-        'videoId': '4607746980001'
-      };
+var myPlayer,
+  playerHTML,
+  // +++ Set the data for the player +++
+  playerData = {
+    'accountId': '1752604059001',
+    'playerId': 'rJtrO8EKW',
+    'videoId': '5550679964001'
+  };
 
-    function addPlayer() {
-      // dynamically build the player video element
-      playerHTML = '<video id=\"myPlayer\" data-video-id=\"' + playerData.videoId + '\"  data-account=\"' + playerData.accountId + '\" data-player=\"' + playerData.playerId + '\" data-embed=\"default\" class=\"video-js\" controls></video>';
-      // inject the player code into the DOM
-      document.getElementById('placeHolder').innerHTML = playerHTML;
-      // add and execute the player script tag
-      var s = document.createElement('script');
-      s.src = "//players.brightcove.net/" + playerData.accountId + "/" + playerData.playerId + "_default/index.min.js";
-      document.body.appendChild(s);
-      s.onload = callback;
-    }
+// +++ Build the player and place in HTML DOM +++
+function addPlayer() {
+  // Dynamically build the player video element
+  playerHTML = '<video id=\"myPlayerID\" data-video-id=\"' + playerData.videoId + '\"  data-account=\"' + playerData.accountId + '\" data-player=\"' + playerData.playerId + '\" data-embed=\"default\" class=\"video-js\" controls></video>';
+  // Inject the player code into the DOM
+  document.getElementById('placeHolder').innerHTML = playerHTML;
+  // Add and execute the player script tag
+  var s = document.createElement('script');
+  s.src = "//players.brightcove.net/" + playerData.accountId + "/" + playerData.playerId + "_default/index.min.js";
+  document.body.appendChild(s);
+  s.onload = callback;
+}
 
-    function callback() {
-      myPlayer = videojs('myPlayer');
-      myPlayer.play();
-    }
+// +++ Initialize the player and start the video +++
+function callback() {
+  myPlayer = videojs('myPlayerID');
+  myPlayer.play();
+}
   </script>
 </body>
 

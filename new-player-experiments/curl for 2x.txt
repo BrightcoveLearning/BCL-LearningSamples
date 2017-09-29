@@ -58,3 +58,11 @@ curl \
         }
       }' \
     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v2/plugins

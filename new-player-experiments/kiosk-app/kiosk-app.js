@@ -1,4 +1,4 @@
-videojs.plugin('kioskApp', function() {
+videojs.registerPlugin('kioskApp', function() {
   var myPlayer,
     proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
     cmsURL = 'https://cms.api.brightcove.com/v1/accounts/',
@@ -7,21 +7,21 @@ videojs.plugin('kioskApp', function() {
     allVideoObjects = [],
     currentlyPlayingIndex;
 
+  videojs("myPlayerID").ready(function() {
     myPlayer = this;
-
     // Define key variables
     var videoIDs = [],
       videoObjects = [],
       videoCount,
       videoIDRequest = {},
       videoCountRequest = {};
-    // Setup for video count CMS API request
+
+    // +++ Setup for video count CMS API request +++
     videoCountRequest = setRequestData('getCount');
     // Use CMSAPI to get video count
     getCMSAPIData(videoCountRequest, function(parsedData) {
       // Extract count from returned data
       videoCount = parsedData.count;
-      console.log('videoCount', videoCount);
       // Calculate number of calls that must be made
       // ask for 25 at a time (recommended best practice)
       totalCalls = Math.ceil(videoCount / 25);
@@ -34,7 +34,7 @@ videojs.plugin('kioskApp', function() {
           // Call function to extract IDs from video info
           videoIDs = extractVideoData(parsedData);
           // Call function to get video objects per IDs
-          getVideoData(videoIDs, function (videoObjects) {
+          getVideoData(videoIDs, function(videoObjects) {
             //Push returned array into master array
             Array.prototype.push.apply(allVideoObjects, videoObjects);
             console.table(allVideoObjects);
@@ -47,15 +47,16 @@ videojs.plugin('kioskApp', function() {
         });
         // Increment call number so calls eventually stop
         callNumber++;
-       }
+      }
       while (callNumber <= totalCalls - 1);
     });
 
+    // +++ Get next video +++
     /**
      * On end of each video progress to next video
      * or if the last video start again
      */
-    myPlayer.on('ended',function(){
+    myPlayer.on('ended', function() {
       if (currentlyPlayingIndex <= allVideoObjects.length) {
         currentlyPlayingIndex++;
         myPlayer.catalog.load(allVideoObjects[currentlyPlayingIndex]);
@@ -66,6 +67,8 @@ videojs.plugin('kioskApp', function() {
         currentlyPlayingIndex = 0;
       }
     }); // End of add event listener
+
+  });
 
   /**
    * sets up the data for the API request
@@ -79,13 +82,12 @@ videojs.plugin('kioskApp', function() {
       dataReturned = false;
     // Determine if setting up to get video count or video IDs
     switch (task) {
-    case 'getCount':
-      requestURL = cmsURL + accountId + '/counts/videos';
-      break;
-    case 'getIDs':
-      requestURL = cmsURL + accountId + '/videos?limit=25&offset='+ 25 * callNumber;
-      console.log('requestURL',requestURL);
-      break;
+      case 'getCount':
+        requestURL = cmsURL + accountId + '/counts/videos';
+        break;
+      case 'getIDs':
+        requestURL = cmsURL + accountId + '/videos?limit=25&offset=' + 25 * callNumber;
+        break;
     }
     requestData.url = requestURL;
     requestData.requestType = 'GET';
@@ -93,6 +95,7 @@ videojs.plugin('kioskApp', function() {
     return requestData;
   }
 
+  // +++ Standard functionality for CSM API call +++
   /**
    * This function is used for all calls to CMS API and
    *  returns the JSON parsed data, whatever that may be
@@ -132,6 +135,7 @@ videojs.plugin('kioskApp', function() {
     }
   }
 
+  // +++ Extract video IDs  +++
   /**
    * extract video data from CMS API response
    * @param {array} cmsData the data from the CMS API
@@ -188,12 +192,12 @@ videojs.plugin('kioskApp', function() {
     }
   }
 
+  // +++ Plays first video +++
   /**
    * Starts initial playback of videos
    */
-  function beginPlayingVideos(){
+  function beginPlayingVideos() {
     myPlayer.catalog.load(allVideoObjects[0]);
     myPlayer.play();
     currentlyPlayingIndex = 0;
-  }
-});
+}});

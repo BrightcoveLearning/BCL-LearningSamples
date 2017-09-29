@@ -14,14 +14,13 @@
 
 <body>
 
-  <video id="myPlayerID"
-   data-account="1752604059001"
-   data-player="HJ7bvB0uZl"
-   data-embed="default"
-   data-application-id
-   class="video-js"
-   controls></video>
- <script src="//players.brightcove.net/1752604059001/HJ7bvB0uZl_default/index.min.js"></script>
+  <video id="myPlayerID" data-account="1752604059001"
+  data-player="rJkU7xvKZ"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1752604059001/rJkU7xvKZ_default/index.min.js"></script>
 
     <script type="text/javascript">
       var myPlayer,
@@ -34,7 +33,7 @@
 
       videojs("myPlayerID").ready(function() {
         myPlayer = this;
-
+console.log('hello');
         // Define key variables
         var videoIDs = [],
           videoObjects = [],
@@ -43,11 +42,13 @@
           videoCountRequest = {};
         // Setup for video count CMS API request
         videoCountRequest = setRequestData('getCount');
+console.log('videoCountRequest',videoCountRequest);
         // Use CMSAPI to get video count
         getCMSAPIData(videoCountRequest, function(parsedData) {
           // Extract count from returned data
+console.log('parsedData',parsedData);
           videoCount = parsedData.count;
-          console.log('videoCount', videoCount);
+console.log('videoCount', videoCount);
           // Calculate number of calls that must be made
           // ask for 25 at a time (recommended best practice)
           totalCalls = Math.ceil(videoCount / 25);
@@ -63,7 +64,7 @@
               getVideoData(videoIDs, function (videoObjects) {
                 //Push returned array into master array
                 Array.prototype.push.apply(allVideoObjects, videoObjects);
-                console.table(allVideoObjects);
+console.table(allVideoObjects);
                 // Check if all video objects have been returned
                 if (allVideoObjects.length === videoCount) {
                   // If all video objects returned, call function to start playing first video
@@ -112,7 +113,7 @@
           break;
         case 'getIDs':
           requestURL = cmsURL + accountId + '/videos?limit=25&offset='+ 25 * callNumber;
-          console.log('requestURL',requestURL);
+console.log('requestURL',requestURL);
           break;
         }
         requestData.url = requestURL;
@@ -147,7 +148,9 @@
             if (httpRequest.readyState === 4) {
               if (httpRequest.status === 200) {
                 responseRaw = httpRequest.responseText;
+                console.log('responseRaw',responseRaw);
                 parsedData = JSON.parse(responseRaw);
+                console.log('parsedData',parsedData);
                 dataReturned = true;
                 callback(parsedData);
               } else {

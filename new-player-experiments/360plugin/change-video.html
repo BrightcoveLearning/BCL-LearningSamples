@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 4</title>
+  <!-- Page styles -->
+  <style>
+    iframe {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="4886999280001"
+  data-account="1752604059001"
+  data-player="Sy6GVYJz"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1752604059001/Sy6GVYJz_default/index.min.js"></script>
+
+  <!-- <iframe src="//players.brightcove.net/1752604059001/Sy6GVYJz_default/index.html?videoId=4886999280001"
+    allowfullscreen
+    webkitallowfullscreen
+    mozallowfullscreen></iframe> -->
+
+  <p><button onclick="changeVideo()">change video</button></p>
+
+  <!-- custom script -->
+
+
+  <script type="text/JavaScript">
+  var myPlayer;
+
+  videojs("myPlayerID").ready(function() {
+    myPlayer = this;
+    myPlayer.on('loadstart',function(){
+      console.log('in loadstart');
+    });
+    myPlayer.play();
+
+  });
+
+  // +++ Get, load and play video +++
+  function changeVideo() {
+    // Get the video object via the catalot
+    myPlayer.catalog.getVideo("4944451046001", function(error, video) {
+      // Load the video object into the player
+      myPlayer.catalog.load(video);
+      myPlayer.play();
+    });
+  }
+
+  </script>
+
+</body>
+
+</html>

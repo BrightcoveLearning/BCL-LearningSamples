@@ -1,3 +1,35 @@
+curl \
+--header "Content-Type: application/json" \
+--user $EMAIL \
+--request POST \
+--data '{
+"media": {
+"sources": [
+  {
+    "src":"http://solutions.brightcove.com/bcls/assets/videos/BirdsOfAFeather.mp4",
+    "type":"video/mp4"
+  }
+],
+"poster": {
+  "highres":"http://solutions.brightcove.com/bcls/assets/images/BirdsOfAFeather.jpg"
+}
+}
+  }' \
+https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+
+
+
+
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
 
@@ -19,6 +51,20 @@ export PLAYER_ID=
 export EMBED_ID=
 
 Video Cloud video: 3674727957001
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "plugins": [{
+          "registry_id": "@brightcove/videojs-custom-endscreen",
+          "version": "auto"
+        }]
+     }' \
+  https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 
 //playOnSelct for playlists
 curl \

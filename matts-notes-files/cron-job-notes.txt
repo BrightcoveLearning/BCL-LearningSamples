@@ -14,8 +14,18 @@
 PATH=/home/VIDMARK.LOCAL/mboles/.platformsh/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/g$
 platform snapshot:create --project=6sglloa4yrkti --environment=dev --yes
 
+MAILTO="mboles@brightcove.com"
+PATH=/home/VIDMARK.LOCAL/mboles/.platformsh/bin:/usr/local/sbin:/usr/local/bin:$
+0 5,21 * * * platform snapshot:create --project=6sglloa4yrkti --environment=mas$
 
 
+
+LOGIN
+ssh mboles@snapdocs.vidmark.local (BC password)
+
+ssh bclsserverworker@snapdocs.vidmark.local (BCServLearn)
+
+ssh-keygen -t rsa -C "mboles@brightcove.com"
 
 WORKING INFO
 
