@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
+  <link href="still-watching.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="2026627037001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+  <p>Show "Are you still there?" message after <input id="timeCheckOption" value="5" size="5" style="width:20px;text-align:center;" /> seconds.</p>
+  <p>If the message is not clicked, pause the video after <input id="timeOutOption" value="5" size="5" style="width:20px;text-align:center;" /> seconds.</p>
+
+  <fieldset>
+    <legend>Message Box</legend>
+    <p>Time elapsed since last check: <span id="timeSinceLastCheck"></span> seconds</p>
+    <p>Current position: <span id="currentPosition"></span> seconds</p>
+  </fieldset>
+
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script src="still-watching.js"></script>
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.stillWatching();
+    });
+  </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+/* hide the overlay */
+.hide-overlay .vjs-overlay {
+  display: none;
+}
+
+/* format the overlay */
+.video-js div.vjs-overlay.vjs-overlay-bottom-left.vjs-overlay-background {
+  width: 70%;
+  color: #FFF;
+  background-color: rgba(255, 0, 0, 0.6);
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* set player size */
+.video-js {
+  width: 640px;
+  height: 360px;
+}

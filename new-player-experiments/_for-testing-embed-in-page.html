@@ -8,29 +8,24 @@
 
 <body>
 
-  <video id="myPlayerID"
-    data-video-id="5350958927001"
-    data-account="1507807800001"
-    data-player="rJeuIHdbmW"
-    data-embed="default"
-    data-application-id
-    class="video-js"
-    controls></video>
-  <script src="//players.brightcove.net/1507807800001/rJeuIHdbmW_default/index.min.js"></script>
 
   <script type="text/javascript">
-  videojs('myPlayerID').one('bc-catalog-error', function(){
-      var myPlayer = this,
-        specificError;
-      console.log('myPlayer.catalog.error.data',myPlayer.catalog.error.data);
-      if (myPlayer.catalog.error !== undefined) {
-        specificError = myPlayer.catalog.error.data[0];
-        console.log('bc-catalog-error:', specificError);
-      };
+    var theJSON = {},
+      pluginAra = [],
+      ifFound = [],
+      theJSONString =
+      '{"account_id":"1507807800001","autoadvance":0,"autoplay":false,"compatibility":true,"embed_id":"default","fullscreenControl":true,"id":"r1fbqySRZ","player":{"inactive":false,"template":{"locked":false,"name":"single-video-template","version":"6.8.3","version_alias":null}},"player_id":"r1fbqySRZ","player_name":"playlist v2 junk","playlist":true,"plugins":[{"injected_version":"2.1.2","name":"bcPlaylistUi","options":{"playOnSelect":true},"registry_id":"@brightcove/videojs-bc-playlist-ui","version":"2.x"}],"preload":"metadata","scripts":["//players.brightcove.net/videojs-bc-playlist-ui/2.1.2/videojs-bc-playlist-ui.min.js"],"studio_configuration":{"player":{"adjusted":true,"height":150,"width":300}},"stylesheets":["//players.brightcove.net/videojs-bc-playlist-ui/2.1.2/videojs-bc-playlist-ui.css"],"updated_at":"2017-10-30T18:06:07.800Z","video_cloud":{"policy_key":"BCpkADawqM2_X3Xxh3xln23EqlR3BETHrfycIPT-a7kqhBi6q8g3XOmTr3tEJiFoi_YmI7vfbJzS4mY0Un5RACc3jC8cLVqyvmfWFLI-tG5oJYGXNUrvOwRJYQEt2eVpMZnBd0FH22i7Mtk3","video":null}}';
+
+    theJSON = JSON.parse(theJSONString);
+    pluginAra = theJSON.plugins;
+    ifFound = pluginAra.filter(function(pluginAra) {
+      return pluginAra.name === "bcPlaylistUi"
     });
-    videojs('myPlayerID').ready(function(){
-      var myPlayer = this;
-    });
+    if (ifFound.length === 1) {
+      console.log('Contains playlist plugin');
+    } else {
+      console.log('No playlist');
+    }
   </script>
 
 </body>

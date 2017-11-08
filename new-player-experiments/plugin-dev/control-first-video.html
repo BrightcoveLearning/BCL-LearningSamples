@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <iframe src="//players.brightcove.net/1752604059001/H1HpIEcCb_default/index.html?playlistId=5541484620001"
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen
+  width="600"
+  height="300"></iframe>
+
+  <script type="text/javascript">
+    var theParamValue,
+      theProtocol = location.protocol,
+      theURL = theProtocol + "//players.brightcove.net",
+      // Get a reference to the iframe element
+      iframeTag = document.querySelector("iframe"),
+      // Retrieve window object needed for postMessage
+      win = iframeTag.contentWindow;
+
+    theParamValue = getURLparam('playlistVideoId');
+    console.log('url param value', theParamValue);
+
+    win.postMessage(theParamValue, theURL);
+
+    function getURLparam(name) {
+      var regex,
+        results;
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+      results = regex.exec(location.search);
+      return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+
+  </script>
+
+</body>
+
+</html>

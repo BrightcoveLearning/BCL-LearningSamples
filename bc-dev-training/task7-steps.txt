@@ -1,0 +1,38 @@
+1. Create a player
+2. In Settings enable player to use playlists - publish
+3. From Media module associate a playlist with newly created player
+4. Copy in-page code and paste in empty HTML page
+5. Move <ol> with vjs-playlist class
+6. Style
+
+
+***Core Code***
+
+<style type="text/css">
+  .video-js {
+    float: left;
+    margin: 15px;
+    width: 640px;
+    height: 365px;
+  }
+  .vjs-playlist {
+    float: left;
+    width: 250px;
+    height: 348px;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <video data-playlist-id="1323984733001"
+    data-account="921483702001"
+    data-player="41WVjAH9g"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+
+  <ol class="vjs-playlist"></ol>
+
+  <script src="//players.brightcove.net/921483702001/41WVjAH9g_default/index.min.js"></script>

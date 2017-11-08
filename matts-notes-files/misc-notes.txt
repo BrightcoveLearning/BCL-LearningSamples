@@ -1,3 +1,5 @@
+ssh-add -A 2>/dev/null;
+
 
 <iframe style="width: 640px;height: 360px;" src="//players.brightcove.net/5152706236001/r1NkM3qBe_default/index.html" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen=""></iframe>
 

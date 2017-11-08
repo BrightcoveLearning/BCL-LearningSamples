@@ -4,23 +4,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Responsive and sized for iframe</title>
-    <style>
-     iframe {
-         height: 320px;
-         width: 560px;
-     }
+  <style type="text/css">
+    .video-js {
+      height: 240px;
+      width: 448px;
+      float: left;
+    }
+
+    .vjs-playlist {
+      width: 280px;
+      height: 240px;
+    }
+
+    .actual-player {
+      width: 80%;
+      min-height: 360px;
+    }
     </style>
 </head>
 
 <body>
 
-  <iframe src="//players.brightcove.net/1752604059001/ByXXzhT3_default/index.html?videoId=5324427231001"
+<iframe src="//players.brightcove.net/1752604059001/Skx0PmcCb_default/index.html?playlistId=5531423971001&&playlistVideoId=5510487311001" "
   allowfullscreen
   webkitallowfullscreen
   mozallowfullscreen
-  width="640"
-  height="360"></iframe>
-
+  width="600"
+  height="300"></iframe>
 </body>
 
 </html>
