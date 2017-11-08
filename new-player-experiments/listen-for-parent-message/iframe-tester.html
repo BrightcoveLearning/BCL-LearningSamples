@@ -9,27 +9,27 @@
 <body>
 
   <p>
-  <button class="bcls-button" onclick="playVideo()">Play Video</button>
+    <button class="bcls-button" onclick="playVideo()">Play Video</button>
 
-  <button class="bcls-button" onclick="pauseVideo()">Pause Video</button>
+    <button class="bcls-button" onclick="pauseVideo()">Pause Video</button>
   </p>
 
   <iframe src="iframe-include.html" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" style="width: 640px; height: 360px;"></iframe>
 
-<script type="text/javascript">
-var theProtocol = location.protocol,
-  theURL = theProtocol + "//players.brightcove.net",
-  iframeTag = document.querySelector("iframe"),
-  win = iframeTag.contentWindow;
+  <script type="text/javascript">
+    var theProtocol = location.protocol,
+      theURL = theProtocol + "//players.brightcove.net",
+      iframeTag = document.querySelector("iframe"),
+      win = iframeTag.contentWindow;
 
-function playVideo() {
-  win.postMessage("playVideo", '*');
-}
+    function playVideo() {
+      win.postMessage("playVideo", '*');
+    }
 
-function pauseVideo() {
-  win.postMessage("pauseVideo", '*');
-}
-</script>
+    function pauseVideo() {
+      win.postMessage("pauseVideo", '*');
+    }
+  </script>
 
 </body>
 
