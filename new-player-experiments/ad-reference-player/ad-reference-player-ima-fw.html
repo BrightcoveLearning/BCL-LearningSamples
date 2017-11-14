@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+  .video-js {
+    height: 344px;
+    width: 610px;
+  }
+</style>
+
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="5622718636001"
+  data-account="1507807800001"
+  data-player="BJUw42d1G"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <form>
+    <p>Please select your preferred contact method:</p>
+    <div>
+      <input type="radio" id="contactChoice1" name="adSelection" value="imaPreOnly">
+      <label for="contactChoice1">IMA Pre-Roll Only</label>
+      <p>
+      <input type="radio" id="contactChoice2" name="adSelection" value="imaPreMidPost">
+      <label for="contactChoice2">IMA with Pre-, Mid- and Post-Roll</label>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <script src="//players.brightcove.net/1507807800001/BJUw42d1G_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+  <script type="text/javascript">
+      // Initialize player
+      var myPlayer = bc('myPlayerID'),
+        adSelection;
+
+      var form = document.querySelector("form");
+
+      form.addEventListener("submit", function(event) {
+        var data = new FormData(form);
+        for (const entry of data) {
+          switch (entry[1]) {
+            case 'imaPreOnly':
+              console.log('imaPreOnly form');
+              myPlayer.ima3({
+                serverUrl: "",
+                requestMode: 'onplay',
+                debug: true
+              });
+              adSelection = 'imaPreOnly'
+              break;
+            case 'imaPreMidPost':
+              console.log('imaPreMidPost');
+              myPlayer.ima3.settings.serverUrl = "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml";
+              break;
+          }
+        };
+        event.preventDefault();
+      }, false);
+
+      myPlayer.ready(function() {
+        myPlayer = this;
+        switch (adSelection) {
+          case 'imaPreOnly':
+            console.log('imaPreOnly player ready');
+            myPlayer.ima3.settings.serverUrl = "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml";
+            myPlayer.play();
+            break;
+          case 'imaPreMidPost':
+            console.log('imaPreMidPost');
+            myPlayer.ima3.settings.serverUrl = "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml";
+            myPlayer.play();
+            break;
+        }
+      });
+  </script>
+
+</body>
+
+</html>
