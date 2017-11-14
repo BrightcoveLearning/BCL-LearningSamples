@@ -1,11 +1,9 @@
 .video-js {
+  height: 350px;
+  width: 640px;
   float: left;
-  margin: 15px;
-  height: 344px;
-  width: 610px;
 }
 .vjs-playlist {
-  width: 250px;
-  float: left;
-  margin: 15px;
+  width: 280px;
+  height: 350px;
 }
