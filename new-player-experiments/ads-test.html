@@ -1,44 +1,37 @@
+<!doctype html>
 <html>
 
 <head>
   <meta charset="UTF-8">
   <title>Ads Test</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <video id="myVideo"
-    data-account="1507807800001"
-    data-player="d50c5882-05bc-45cd-a64c-823793dad708"
-    data-embed="default"
-    data-id=""
-    class="video-js" controls></video>
+  <video id="myPlayerID" data-video-id="5622718636001" data-account="1507807800001" data-player="default" data-embed="default" data-application-id class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
 
-    What is your age? <input id="userAge" type="text"><br />
-    <button onclick="adSelection()">Proceed</button>
-
-  <script src="//players.brightcove.net/1507807800001/d50c5882-05bc-45cd-a64c-823793dad708_default/bundle.js"></script>
-
-  <script src="//players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
- 
   <script type="text/javascript">
-    function adSelection(){
-      var player = videojs('myVideo');
+    var myPlayer = bc('myPlayerID');
+    myPlayer.ima3({
+      "serverUrl": "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml",
+      "debug": true,
+      "sdkurl": "http://imasdk.googleapis.com/js/sdkloader/ima3_debug.js"
+    });
 
-      //some logic to assign appropriate ad tag to variable
-      if (parseInt(userAge.value) >= 21){
-        var adTag = "http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]";
-      }
-      else
-      {
-        var adTag ="http://pubads.g.doubleclick.net/gampad/ads?sz=640x360&iu=/6062/iab_vast_samples/skippable&ciu_szs=300x250,728x90&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]";
-      }
-
-      player.ima3({
-        "serverUrl": adTag
-      });
-    }
+    myPlayer.ready(function() {
+      myPlayer = this;
+    });
   </script>
- </body>
+
+</body>
 
 </html>
