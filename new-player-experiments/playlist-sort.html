@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-playlist-id="5455901760001"
+  data-account="1507807800001"
+  data-player="H1xXqWMDWM"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls
+  width="300"
+  height="150"></video>
+  <script src="//players.brightcove.net/1507807800001/H1xXqWMDWM_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.on('loadedmetadata', function(){
+        console.log('myPlayer.playlist()',myPlayer.playlist());
+        myPlayer.playlist.sort(function(a, b) {
+          return a.duration - b.duration;
+        });
+        console.log('myPlayer.playlist()',myPlayer.playlist());
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

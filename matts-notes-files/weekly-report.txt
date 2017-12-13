@@ -1,20 +1,28 @@
 Major accomplishments:
+**8 Dec**
+1. Still working on Andrew's quick pre-roll doc. Still challenging and as of now Mike A and I are both surprised my code not working. Will consult with Pat O again next week.
+2. Although JIRA not closed because functionality not yet released, completed a major upgrade to the Playlist API doc. Will publish when functionality in released player.
+3. Closed 6 JIRAs.
+
+
+https://jira.brightcove.com/browse/BC-38840
+https://jira.brightcove.com/browse/ITHELP-36051
+
+**1 Dec**
+1. Good start on Andrew's quick pre-roll doc. Actually turning out to be rather challenging, but getting good help from Pat O and Mike A.
+2. Closed 14 JIRAs
+
+**17 Nov**
+1. Got the Drupal near term goals I had been working on for weeks finished. Found how to push local changes to platform.sh.
+2. New Player Management docs published (I had them ready to go and Jeff published when I was on vacation as the new version rolled out).
+3. Closed 19 JIRAs (total open down to 47, which is great since the last time I did this report I was over 80).
+
+
 **22 Sep**
 1. Got Bob setup for local Drupal development. Will walk other team members though the process when they want to see it.
 2. One new code sample created on using buttons to load different plalylists. This was some code I wrote for an attendee of DwBP.
 3. Update one code sample to new template.
 4. Closed 13 JIRAs
-
-Near Term Goals
-1. Get new Player Management docs ready to publish, most notably the docs on new plugin registry. I have a draft of those done, but the release of the functionality was delayed, so waiting for the go ahead to update and publish.
-2. Get the process of pushing our changes to local Drupal to platform.sh dev.
-3. Keep open JIRAs under 80 either by closing them, or worse comes to worse reassigning.
-
-
-1. Get something meaningful loaded to the dev platform.sh site. For instance, updates to styles or automatic snapshots.
-Open JIRAs
-https://jira.brightcove.com/browse/BC-38840
-https://jira.brightcove.com/browse/ITHELP-36051
 
 
 **15 Sep**
