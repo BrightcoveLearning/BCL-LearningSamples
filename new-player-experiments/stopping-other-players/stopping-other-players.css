@@ -1,0 +1,10 @@
+.playerbox {
+  float: left;
+  margin-right: 1em;
+}
+
+.wrap:after {
+  content: "";
+  display: block;
+  clear: both;
+}

@@ -1,33 +1,19 @@
 curl \
---header "Content-Type: application/json" \
---user $EMAIL \
---request POST \
---data '{
-"media": {
-"sources": [
-  {
-    "src":"http://solutions.brightcove.com/bcls/assets/videos/BirdsOfAFeather.mp4",
-    "type":"video/mp4"
-  }
-],
-"poster": {
-  "highres":"http://solutions.brightcove.com/bcls/assets/images/BirdsOfAFeather.jpg"
-}
-}
-  }' \
-https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
-
-
-
-curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \
-  --request GET \
-  https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
-
-
-
-
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"//learning-services-media.brightcove.com/videos/hls/wildlife_tiger/wildlife_tiger.m3u8",
+            "type":"application/mpegURL"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players
 
 
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141

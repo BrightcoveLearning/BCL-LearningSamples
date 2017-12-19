@@ -1,12 +1,16 @@
 Major accomplishments:
-**8 Dec**
-1. Still working on Andrew's quick pre-roll doc. Still challenging and as of now Mike A and I are both surprised my code not working. Will consult with Pat O again next week.
-2. Although JIRA not closed because functionality not yet released, completed a major upgrade to the Playlist API doc. Will publish when functionality in released player.
-3. Closed 6 JIRAs.
+**15 Dec**
+1. Still working on Andrew's quick pre-roll doc. Thought Kevin Reynolds had a solution, but didn't work out. Will consult Pat O next week, and if no ideas abandon better solution and use Andrew's copy and paste suggestion.
+2. Closed 16 JIRAs, including 6 sample updates. Will take stock of number of samples left to update and if within reason try to finish those next week (will recruit Jeff to help if he has open cycles.)
 
 
 https://jira.brightcove.com/browse/BC-38840
 https://jira.brightcove.com/browse/ITHELP-36051
+
+**8 Dec**
+1. Still working on Andrew's quick pre-roll doc. Still challenging and as of now Mike A and I are both surprised my code not working. Will consult with Pat O again next week.
+2. Although JIRA not closed because functionality not yet released, completed a major upgrade to the Playlist API doc. Will publish when functionality in released player.
+3. Closed 6 JIRAs.
 
 **1 Dec**
 1. Good start on Andrew's quick pre-roll doc. Actually turning out to be rather challenging, but getting good help from Pat O and Mike A.

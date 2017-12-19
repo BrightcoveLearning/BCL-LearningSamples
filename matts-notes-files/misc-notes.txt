@@ -1,3 +1,9 @@
+CMS API Credentials
+c93c6de1-f8b4-4155-998e-958baf3d5bcd
+MSyFkaoae6XnyHo_p8AS-s5pwgmH7hroZtzKVDrLShW0e0TVgwLvyv2Lv1r09_ly78BN9D3iSIHM1NzR0zNO4A
+
+
+
 ssh-add -A 2>/dev/null;
 
 
