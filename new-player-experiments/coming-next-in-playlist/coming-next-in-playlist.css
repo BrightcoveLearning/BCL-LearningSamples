@@ -1,9 +1,12 @@
-
-    .vjs-playlist {
-      width: 250px;
-      float: left;
-      margin: 15px;
-    }
-    .hide-overlay .vjs-overlay {
-      display: none;
-    }
+.video-js {
+  height: 350px;
+  width: 640px;
+  float: left;
+}
+.vjs-playlist {
+  width: 280px;
+  height: 350px;
+}
+.hide-overlay .vjs-overlay {
+  display: none;
+}

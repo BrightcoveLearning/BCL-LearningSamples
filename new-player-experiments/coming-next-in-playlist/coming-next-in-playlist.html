@@ -72,7 +72,8 @@
 
       // +++ Set interval to call function every one second +++
       intervalID = window.setInterval(checkTime, 1000);
-      // Listen for every loadedmetatdata, which means a new video has been loaded in the player
+
+      // +++ Listen for every loadedmetatdata, which means a new video has been loaded in the player +++
       myPlayer.on('loadedmetadata', videoChanged);
       // Hide overlay on initial load of player
       myPlayer.addClass("hide-overlay");
@@ -98,6 +99,7 @@
           nextVideoName = 'Last video in playlist'
         };
 
+        // +++ Display overlay if less than 5 seconds left in video +++
         // Display overlay with name or note if near end of video
         // Default time to display note is 5 seconds to end
         if (timeRemaining <= timeToDisplayOverlay) {
