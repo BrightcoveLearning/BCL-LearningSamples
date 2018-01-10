@@ -1,11 +1,21 @@
 Major accomplishments:
-**15 Dec**
-1. Still working on Andrew's quick pre-roll doc. Thought Kevin Reynolds had a solution, but didn't work out. Will consult Pat O next week, and if no ideas abandon better solution and use Andrew's copy and paste suggestion.
-2. Closed 16 JIRAs, including 6 sample updates. Will take stock of number of samples left to update and if within reason try to finish those next week (will recruit Jeff to help if he has open cycles.)
+**5 Jan**
+1. Closed 5 JIRAs, including 1 sample update
+2. Not reflected in JIRAs:
+  a. Nearly finished another sample (floating player)
+  b. Working with Matt Neil on HLS debugging features in pre-release
+  c. Great discussion with Ilya on how to proceed on next level of advertising doc (recorded). This will be a major time investment writing it up. Most likely starting next week on this.
 
 
 https://jira.brightcove.com/browse/BC-38840
 https://jira.brightcove.com/browse/ITHELP-36051
+
+
+**21 Dec**
+1. Closed 10 JIRAs, including 4 sample updates. Counted up and still 9 to go.
+**15 Dec**
+1. Still working on Andrew's quick pre-roll doc. Thought Kevin Reynolds had a solution, but didn't work out. Will consult Pat O next week, and if no ideas abandon better solution and use Andrew's copy and paste suggestion.
+2. Closed 16 JIRAs, including 6 sample updates. Will take stock of number of samples left to update and if within reason try to finish those next week (will recruit Jeff to help if he has open cycles.)
 
 **8 Dec**
 1. Still working on Andrew's quick pre-roll doc. Still challenging and as of now Mike A and I are both surprised my code not working. Will consult with Pat O again next week.
