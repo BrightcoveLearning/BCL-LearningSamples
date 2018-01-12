@@ -8,7 +8,7 @@
 
 <body>
 
-  <video id="myPlayerID" data-video-id="5622718636001"
+<video id="myPlayerID" data-video-id="5622718636001"
   data-account="1507807800001"
   data-player="SkxERgnQM"
   data-embed="default"
@@ -17,10 +17,9 @@
   controls
   width="640"
   height="360"></video>
-  <script src="//players.brightcove.net/1507807800001/SkxERgnQM_default/index.min.js"></script>
+<script src="//players.brightcove.net/1507807800001/SkxERgnQM_default/index.min.js"></script>
 
-
-  <script type="text/javascript">
+<script type="text/javascript">
   videojs('myPlayerID').ready(function(){
     var myPlayer = this;
 
@@ -28,7 +27,7 @@
 
     myPlayer.on('ended', function(){
       console.log('videojs.log.history(): ', videojs.log.history());
-      console.log('videojs.log: ', videojs.log.level());
+      console.log('videojs.log.level(): ', videojs.log.level());
       console.log('videojs.hls.stats: ', myPlayer.tech_.hls.stats);
     });
   });

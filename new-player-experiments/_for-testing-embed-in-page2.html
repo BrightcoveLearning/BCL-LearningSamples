@@ -15,22 +15,23 @@
 
 <body>
 
-  <video data-video-id="5622718636001"
+<video id="myPlayerID"
+  data-video-id="5622718636001"
   data-account="1507807800001"
-  data-player="default"
+  data-player="ryw1oAQ4M"
   data-embed="default"
-  data-application-id
+  data-application-id = "id_for_testing_bcinfo"
   class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+      controls></video>
+    <script src="//players.brightcove.net/1507807800001/ryw1oAQ4M_default/index.min.js"></script>
 
   <script type="text/javascript">
-  videojs('myPlayerID').ready(function(){
-    var myPlayer = this;
-    console.log('',);
-  });
-</script>
-
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+      console.log(myPlayer.bcinfo);
+      console.table(myPlayer.bcinfo);
+    });
+  </script>
 
 </body>
 

@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+
+    body {
+      margin: 0;
+      background-color: black;
+    }
+    /* Hide the player control bar */
+    .video-js .vjs-control-bar {
+      display: none;
+    }
+    /* Remove click events on the player */
+    .video-js {
+      pointer-events: none;
+    }
+    /* Style the article container and text */
+    #article {
+      font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+      background: rgba(0,0,0,0.3);
+      color: white;
+      padding: 2rem;
+      width: 33%;
+      margin:2rem;
+      float: right;
+      font-size: 1.2rem;
+      position: absolute;
+      top: .25em;
+      right: .25em;
+    }
+    h1 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-top: 0;
+      letter-spacing: .3rem;
+    }
+    /* Style the article's Play/Pause button */
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      background:rgba(0,0,0,0.5);
+      padding: .5rem;
+      transition: .6s background;
+    }
+    a:hover{
+      background:rgba(0,0,0,0.9);
+    }
+    #article button {
+      display: block;
+      width: 80%;
+      padding: .4rem;
+      border: none;
+      margin: 1rem auto;
+      font-size: 1.3rem;
+      background: rgba(255,255,255,0.23);
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: .3s background;
+    }
+    #article button:hover {
+      background: rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+
+<body>
+  <div style="position: relative; display: block; max-width: 100%;">
+    <div style="padding-top: 56.25%;">
+      <video id="myPlayerID"
+        data-playlist-id="4450721964001"
+        data-account="1752604059001"
+        data-player="Hyau9PI4z"
+        data-embed="default"
+        data-application-id class="video-js"
+        controls autoplay></video>
+      <script src="//players.brightcove.net/1752604059001/Hyau9PI4z_default/index.min.js"></script>
+    </div>
+  </div>
+
+  <div id="article">
+              <h1>Flamingos</h1>
+                  <p>filmed in 2011</p>
+                  <p><a href="//brightcove.com">original article</a>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur porta dictum turpis, eu mollis justo gravida ac.</p>
+                  <button>Pause</button>
+          </div>
+
+  <!-- <div class="vjs-playlist"></div> -->
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.playlist.repeat(true);
+    });
+  </script>
+
+
+</body>
+
+</html>
