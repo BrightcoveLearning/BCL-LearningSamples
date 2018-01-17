@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <!-- This article text block will be displayed over the video background -->
+  // +++ This article text block will be displayed over the video background +++
   <div id="article">
     <h1 id="videoTitle"></h1>
     <p id=videoDescription></p>
@@ -69,11 +69,17 @@
     videojs("myPlayerID").ready(function() {
       // Get a reference to the player
       var myPlayer = this;
+
+      // +++ Shuffle (randomize) the videos +++
+      myPlayer.playlist.shuffle();
+
+      // +++ Set the playlist to repeat +++
       myPlayer.playlist.repeat(true);
-      myPlayer.on('loadeddata',function(){
-        console.log(myPlayer.mediainfo);
-        videoTitle.innerHTML = myPlayer.mediainfo.name;
-        videoDescription.innerHTML = myPlayer.mediainfo.description;
+
+      // +++ Display the title and description +++
+      myPlayer.on('loadstart',function(){
+        videoTitle.textContent = myPlayer.mediainfo.name;
+        videoDescription.textContent = myPlayer.mediainfo.description;
       })
     });
   </script>
