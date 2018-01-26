@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+      float: left;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 350px;
+    }
+    /* .vjs-playlist {
+      width: 640px;
+    } */
+  </style>
+</head>
+
+<body>
+
+
+  <video  id="myPlayerID" data-playlist-id="5455901760001" data-account="1507807800001"
+  data-player="SJgqlbbtSf"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+    <script src="//players.brightcove.net/1507807800001/SJgqlbbtSf_default/index.min.js"></script>
+
+  <div class="vjs-playlist"></div>
+
+
+  <script type="text/javascript">
+
+    videojs("myPlayerID").ready(function() {
+      // Get a reference to the player
+      var myPlayer = this,
+        options = {};
+      options.horizontal = true;
+      myPlayer.bcPlaylistUi(options);
+
+      // +++ Wait for the playlist to be shuffled, then load the first video in the playlist into the player +++
+      // myPlayer.on('playlistsorted',function(){
+      //   myPlayer.playlist.first();
+      // })
+
+      // +++ Shuffle (randomize) the videos +++
+      myPlayer.on('duringplaylistchange', function(){
+        console.log('in duringplaylistchange event handler');
+        myPlayer.playlist.shuffle();
+      });
+
+      // +++ Set the playlist to repeat +++
+      //myPlayer.playlist.repeat(true);
+    });
+  </script>
+
+</body>
+
+</html>

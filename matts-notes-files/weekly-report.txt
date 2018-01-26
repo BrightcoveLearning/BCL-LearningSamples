@@ -1,14 +1,23 @@
 Major accomplishments:
+**26 Jan**
+1. Closed 8 JIRAs, administrivia tasks and small updates
+2. Bulk of week spent on new playlist functionality. Found one bug in the shuffle() method. LOTS of testing and will updated 3 docs next week and create one new one all around playlist UI plugin update.
+
+
+
+**12 Jan**
+1. Closed 9 JIRAs, including 1 sample update, key JIRAs closed
+  -Updated Playlist API with new methods & events
+  -Updated HLS doc with new debugging facilities
+  -New doc on new bcinfo property that holds player metatdata
+
+
 **5 Jan**
 1. Closed 5 JIRAs, including 1 sample update
 2. Not reflected in JIRAs:
   a. Nearly finished another sample (floating player)
   b. Working with Matt Neil on HLS debugging features in pre-release
   c. Great discussion with Ilya on how to proceed on next level of advertising doc (recorded). This will be a major time investment writing it up. Most likely starting next week on this.
-
-
-https://jira.brightcove.com/browse/BC-38840
-https://jira.brightcove.com/browse/ITHELP-36051
 
 
 **21 Dec**
