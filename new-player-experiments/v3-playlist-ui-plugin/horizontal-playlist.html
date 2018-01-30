@@ -7,11 +7,10 @@
   <style type="text/css">
     .video-js {
       height: 350px;
-      width: 640px;
-      float: left;
+      width: 625px;
     }
     .vjs-playlist {
-      width: 640px;
+      width: 625px;
     }
   </style>
   <link href="//players.brightcove.net/videojs-bc-playlist-ui/3/videojs-bc-playlist-ui.css" rel="stylesheet">
@@ -19,15 +18,18 @@
 
 <body>
 
-  <video id="myPlayerID" data-playlist-id="4450721964001"
-  data-account="1752604059001"
-  data-player="default"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls autoplay></video>
+  <video id="myPlayerID"
+    data-playlist-id="4450721964001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    autoplay></video>
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
+  <!-- Location of the playlist -->
   <div class="vjs-playlist"></div>
 
   <script src="https://players.brightcove.net/videojs-bc-playlist-ui/3/videojs-bc-playlist-ui.min.js"></script>
@@ -36,10 +38,13 @@
     videojs("myPlayerID").ready(function() {
       // Get a reference to the player
       var myPlayer = this,
+        // Create an object in which you will place options
         options = {};
+      // Set options
       options.horizontal = true;
+      options.autoadvance = 3;
+      // Call plugins method passing in options object
       myPlayer.bcPlaylistUi(options);
-      myPlayer.playlist.autoadvance(3);
     });
   </script>
 
