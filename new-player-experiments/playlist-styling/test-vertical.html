@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Styling</title>
+  <style type="text/css">
+  .video-js {
+     height: 350px;
+     width: 640px;
+     float: left;
+   }
+   .vjs-playlist {
+     width: 280px;
+     height: 350px;
+   }
+.vjs-mouse.vjs-playlist {
+  color: #E9D2B3;
+  background-color: #161D6E;
+}
+
+.vjs-playlist .vjs-playlist-duration {
+  color: #9BB4DA;
+  background-color: #1160AA;
+}
+
+.vjs-playlist-vertical .vjs-playlist-item {
+  margin-top: 20px;
+}
+.vjs-playlist-vertical .vjs-playlist-item:first-child {
+  margin-top: 0px;
+}
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-playlist-id="5455901760001"
+    data-account="1507807800001"
+    data-player="BJeXxZTSM"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls ></video>
+  <script src="//players.brightcove.net/1507807800001/BJeXxZTSM_default/index.min.js"></script>
+
+  <div class="vjs-playlist"></div>
+
+</body>
+
+</html>
