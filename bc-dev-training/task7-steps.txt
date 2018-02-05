@@ -10,15 +10,14 @@
 
 <style type="text/css">
   .video-js {
-    float: left;
-    margin: 15px;
+    height: 350px;
     width: 640px;
-    height: 365px;
-  }
-  .vjs-playlist {
     float: left;
-    width: 250px;
-    height: 348px;
+  }
+
+  .vjs-playlist {
+    width: 280px;
+    height: 350px;
   }
 </style>
 
@@ -26,13 +25,15 @@
 
 <body>
 
-  <video data-playlist-id="1323984733001"
-    data-account="921483702001"
-    data-player="41WVjAH9g"
-    data-embed="default"
-    class="video-js"
-    controls></video>
+<video data-playlist-id="5724723652001"
+  data-account="921483702001"
+  data-player="SJZX2mZG8f"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+<script src="//players.brightcove.net/921483702001/SJZX2mZG8f_default/index.min.js"></script>
 
-  <ol class="vjs-playlist"></ol>
+<div class="vjs-playlist"></div>
 
-  <script src="//players.brightcove.net/921483702001/41WVjAH9g_default/index.min.js"></script>
+<script src="//players.brightcove.net/921483702001/41WVjAH9g_default/index.min.js"></script>

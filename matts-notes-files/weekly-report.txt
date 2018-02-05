@@ -1,7 +1,7 @@
 Major accomplishments:
-**26 Jan**
-1. Closed 8 JIRAs, administrivia tasks and small updates
-2. Bulk of week spent on new playlist functionality. Found one bug in the shuffle() method. LOTS of testing and will updated 3 docs next week and create one new one all around playlist UI plugin update.
+**2 Feb**
+1. Closed 14 JIRAs
+2. Big project finished for the new playlist behavior. Had to update the Playlist API doc, Playlist Plugin doc, changed the name of 'Implementing Playlists Programmatically' to just 'Implementing Playlists' and total rewrite and finally created a Styling Playlists doc. I had forgotten how much has changed since playlists came out and all the docs were basically total rewrites. Glad it is done as it was quite time consuming.
 
 
 
@@ -11,13 +11,16 @@ Major accomplishments:
   -Updated HLS doc with new debugging facilities
   -New doc on new bcinfo property that holds player metatdata
 
-
 **5 Jan**
 1. Closed 5 JIRAs, including 1 sample update
 2. Not reflected in JIRAs:
   a. Nearly finished another sample (floating player)
   b. Working with Matt Neil on HLS debugging features in pre-release
   c. Great discussion with Ilya on how to proceed on next level of advertising doc (recorded). This will be a major time investment writing it up. Most likely starting next week on this.
+
+**26 Jan**
+1. Closed 8 JIRAs, administrivia tasks and small updates
+2. Bulk of week spent on new playlist functionality. Found one bug in the shuffle() method. LOTS of testing and will updated 3 docs next week and create one new one all around playlist UI plugin update.
 
 
 **21 Dec**
