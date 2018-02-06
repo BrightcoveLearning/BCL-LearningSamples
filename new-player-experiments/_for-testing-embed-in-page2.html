@@ -9,21 +9,29 @@
       height: 344px;
       width: 610px;
     }
+    .video-js .vjs-progress-control.vjs-control{
+      background-color: red;
+    }
+    .video-js .vjs-load-progress {
+      background-color: green;
+    }
+    .video-js .vjs-play-progress.vjs-slider-bar{
+      background-color: yellow;
+    }
   </style>
 
 </head>
 
 <body>
 
-<video id="myPlayerID"
-  data-video-id="5622718636001"
+  <video id="myPlayerID" data-video-id="5622718636001"
   data-account="1507807800001"
-  data-player="ryw1oAQ4M"
+  data-player="default"
   data-embed="default"
-  data-application-id = "id_for_testing_bcinfo"
+  data-application-id
   class="video-js"
-      controls></video>
-    <script src="//players.brightcove.net/1507807800001/ryw1oAQ4M_default/index.min.js"></script>
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function() {
