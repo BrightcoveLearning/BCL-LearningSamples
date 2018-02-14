@@ -4,42 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
-  <style>
-    .video-js {
-      height: 344px;
-      width: 610px;
-    }
-    .video-js .vjs-progress-control.vjs-control{
-      background-color: red;
-    }
-    .video-js .vjs-load-progress {
-      background-color: green;
-    }
-    .video-js .vjs-play-progress.vjs-slider-bar{
-      background-color: yellow;
-    }
-  </style>
-
 </head>
 
 <body>
 
-  <video id="myPlayerID" data-video-id="5622718636001"
+
+  <video data-video-id="5622718636001"
   data-account="1507807800001"
-  data-player="default"
+  data-player="r1BElr9LM"
   data-embed="default"
   data-application-id
   class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  controls
+  width="300"
+  height="150"></video>
+  <script src="//players.brightcove.net/1507807800001/r1BElr9LM_default/index.min.js"></script>
 
-  <script type="text/javascript">
-    videojs('myPlayerID').ready(function() {
-      var myPlayer = this;
-      console.log(myPlayer.bcinfo);
-      console.table(myPlayer.bcinfo);
-    });
-  </script>
+
+  <video data-video-id="5622718636001"
+data-account="1507807800001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
 
 </body>
 

@@ -15,7 +15,7 @@
 
 <body>
 
-  <video data-video-id="5622718636001"
+  <video id="myPlayerID" data-video-id="5622718636001"
   data-account="1507807800001"
   data-player="SJJ1ziPLM"
   data-embed="default"
@@ -23,6 +23,16 @@
   class="video-js"
   controls></video>
   <script src="//players.brightcove.net/1507807800001/SJJ1ziPLM_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+
+    myPlayer.controlBar.setAttribute('style','display:none');
+
+    });
+  </script>
+
 
 
 </body>
