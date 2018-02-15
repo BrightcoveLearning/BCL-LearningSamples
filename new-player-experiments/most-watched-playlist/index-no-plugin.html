@@ -6,16 +6,13 @@
   <title>Untitled Document</title>
   <style media="screen">
     .video-js {
+      height: 345px;
+      width: 640px;
       float: left;
-      margin: 15px;
-      height: 344px;
-      width: 610px;
     }
-
     .vjs-playlist {
-      width: 250px;
-      float: left;
-      margin: 15px;
+      width: 280px;
+      height: 345px;
     }
   </style>
 </head>
@@ -37,7 +34,7 @@
   <script type="text/javascript">
     videojs("myPlayerID").ready(function() {
 
-      // +++ Intialize variables and option object for CMS API call +++
+      // +++ Initialize variables and option object for CMS API call +++
       // Data structures for manipulated video data
       var myPlayer = this,
         mostWatchedVideos = [],
@@ -52,7 +49,6 @@
       options.url = baseURL + accountId + '/videos' + endPoint;
       options.proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/brightcove-learning-proxy-v2.php';
       options.requestType = 'GET';
-
 
       // +++ Helper Function: Retrieve video objects from video IDs +++
       /**
@@ -76,7 +72,6 @@
             callback(videoObjectsForReturn);
           }
         }
-
 
         // +++ Helper Function: Callback function that places video objects into array +++
         /**
