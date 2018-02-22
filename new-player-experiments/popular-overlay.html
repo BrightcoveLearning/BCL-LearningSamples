@@ -5,43 +5,45 @@
   <meta charset="UTF-8">
   <title>Untitled Document</title>
   <style>
-  body {
-    margin: 1em 2em;
-    font-family: sans-serif;
-  }
+    body {
+      margin: 1em 2em;
+      font-family: sans-serif;
+    }
 
-  h2 {
-    font-size: 1.1em;
-  }
+    h2 {
+      font-size: 1.1em;
+    }
 
-  button {
-    padding: .5em;
-  }
+    button {
+      padding: .5em;
+    }
 
-  pre {
-    background-color: #F1EFEE;
-    border-left: .5em solid #636363;
-    box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
-    font-family: Hack, monospace;
-    font-size: .8em;
-    padding: 1em;
-  }
-  /* styling for the video thumbnails */
+    pre {
+      background-color: #F1EFEE;
+      border-left: .5em solid #636363;
+      box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
+      font-family: Hack, monospace;
+      font-size: .8em;
+      padding: 1em;
+    }
 
-  .video-thumbnail {
-    margin: 0;
-    padding: 0;
-    width: 190px;
-    height: 107px;
-    cursor: pointer;
-  }
-  /*override some of the default overlay styling*/
+    /* styling for the video thumbnails */
 
-  div.vjs-overlay.vjs-overlay-top {
-    width: 100%;
-    left: 0;
-    margin-left: -10px;
-  }
+    .video-thumbnail {
+      margin: 0;
+      padding: 0;
+      width: 190px;
+      height: 107px;
+      cursor: pointer;
+    }
+
+    /*override some of the default overlay styling*/
+
+    div.vjs-overlay.vjs-overlay-top {
+      width: 100%;
+      left: 0;
+      margin-left: -10px;
+    }
   </style>
 
 </head>
@@ -68,14 +70,13 @@
 
 
   <script>
-
-  /**
-    * we'll define this variable later as a function
-    * but it needs to be in the page scope so that
-    * DOM elements can access it
-    */
+    /**
+     * we'll define this variable later as a function
+     * but it needs to be in the page scope so that
+     * DOM elements can access it
+     */
     var loadAndPlay;
-    videojs("popularVideosPlayer").ready(function () {
+    videojs("popularVideosPlayer").ready(function() {
       'use strict';
       var player = this,
         reportURL = 'https://analytics.api.brightcove.com/v1/data',
@@ -90,7 +91,7 @@
        * the overlay are clicked
        * @param {integer} idx the index of the video object in the videoData array
        */
-      loadAndPlay = function (idx) {
+      loadAndPlay = function(idx) {
         player.catalog.load(videoData[idx]);
         player.play();
       }
@@ -288,7 +289,7 @@
       /**
        * acts as a controller for the rest of the script
        */
-      player.one('loadstart', function () {
+      player.one('loadstart', function() {
         var requestData = {},
           videoIds = [],
           videoList,
@@ -298,14 +299,14 @@
         // set up data for Analytics API request
         requestData = setRequestData();
         // make the Analytics API request
-        makeRequest(requestData, function (analyticsData) {
+        makeRequest(requestData, function(analyticsData) {
           //Convert raw JSON then populate HTML page with response data
           parsedData = JSON.parse(analyticsData);
           responseData.textContent = JSON.stringify(parsedData, null, '  ');
           // extract the video ids into an array
           videoIds = extractVideoIds(analyticsData);
           // use the catalog to get the video data
-          getVideoData(videoIds, function () {
+          getVideoData(videoIds, function() {
             // generate the HTML for the overlay
             videoList = createVideoList(videoData);
             // add the overlay

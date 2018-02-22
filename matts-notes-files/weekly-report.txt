@@ -1,10 +1,19 @@
 Major accomplishments:
+**16 Feb**
+1. Closed total of 7 JIRAs, major work detailed
+2. Updated "Learning Guide: Using the REST APIs" doc to reflect new proxy. Because of simplification of code, doc got substantially smaller, even though I expanded some of the explanations.
+3. Glad to get the setup working for local versions of the Drupal support site. I will continue to push to get us to issue pull requests.
+4. Not reflected in the JIRAs are that I updated code for 4 of the samples to be sure I understood using the new proxy. Need to roll changes into the sample docs.
+5. Got Golf Channel's player configuration down to autostart works on all but iOS and Safari, and those autostart and viewer has to click audio unmute button. Neil Fiedler and customer seem happy. Will turn that into a sample. Surprised no one has wanted that before.
+
+
+
+**9 Feb**
+1. Closed 16 JIRAs - Outside of administrivia JIRAs, mostly intermediate time/difficulty issues.
+
 **2 Feb**
 1. Closed 14 JIRAs
 2. Big project finished for the new playlist behavior. Had to update the Playlist API doc, Playlist Plugin doc, changed the name of 'Implementing Playlists Programmatically' to just 'Implementing Playlists' and total rewrite and finally created a Styling Playlists doc. I had forgotten how much has changed since playlists came out and all the docs were basically total rewrites. Glad it is done as it was quite time consuming.
-
-
-
 **12 Jan**
 1. Closed 9 JIRAs, including 1 sample update, key JIRAs closed
   -Updated Playlist API with new methods & events
