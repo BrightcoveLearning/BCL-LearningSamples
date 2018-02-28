@@ -4,7 +4,6 @@ videojs.registerPlugin('lift', function() {
   encodedVideoQueryParam,
   decodedVideoQueryParam;
   encodedVideoQueryParam = getQuerystring('videoUrl');
-  console.log('413');
   console.log('encodedVideoQueryParam: ', encodedVideoQueryParam);
   decodedVideoQueryParam = decodeURIComponent(encodedVideoQueryParam);
   console.log('decodedVideoQueryParam', decodedVideoQueryParam);
