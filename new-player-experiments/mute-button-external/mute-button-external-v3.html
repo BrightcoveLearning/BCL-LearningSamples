@@ -11,11 +11,6 @@
       width: 100%;
     }
 
-    /* Hide the controlbar */
-    .video-js .vjs-control-bar {
-      display: none;
-    }
-
     /* Build outer div size of player */
     .outer {
       width: 610px;
@@ -38,50 +33,51 @@
 
   <div id="playerContainer" class="outer">
     <video  id="myPlayerID"
-      data-video-id="5622718636001"
-      data-account="1507807800001"
-      data-player="S1sar1fwf"
+      data-video-id="5755775186001"
+      data-account="1752604059001"
+      data-player="default"
       data-embed="default"
       data-application-id
       class="video-js"
-      controls></video>
+      controls
+      playsinline
+      autoplay
+      muted></video>
   </div>
-  <script src="//players.brightcove.net/1507807800001/S1sar1fwf_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function() {
       var myPlayer = this,
-        volumeLevel = .5,
-        is_iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false),
-        is_safari = (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1);
+        volumeLevel = .5;
 
-      // Check if in Safari or on iOS
-      if (is_iOS || is_safari) {
+      // +++ Check if in Safari or on iOS +++
+      if (videojs.browser.IS_IOS || videojs.browser.IS_SAFARI) {
         // If true, go with the unmute button
         var button = document.createElement("button");
-        // Add button's event listener
+
+        // +++ Add button's event listener +++
         button.addEventListener("click", function() {
           myPlayer.muted(false);
           myPlayer.volume(volumeLevel);
           playerContainer.removeChild(button);
         });
 
-        // Configure the button
+        // +++ Configure the button +++
         button.textContent = "Unmute";
         button.classList.add('inner');
         button.setAttribute("style", "color:black; background-color:red; width:100px; height:50px; opacity: .4;");
 
-        // Add the button to the container
+        // +++ Add the button to the container +++
         playerContainer.appendChild(button);
       } else {
-        // If not iOS or Safari start the audio
+        // +++ If not iOS or Safari start the audio +++
         myPlayer.on('loadstart', function(){
           myPlayer.muted(false);
           myPlayer.volume(volumeLevel);
         });
       }
-  });
-
+    });
   </script>
 
 </body>

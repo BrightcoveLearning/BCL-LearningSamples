@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Disable forward scrubbing</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5701202551001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    // +++ Define the middleware function+++
+    var disableForwardScrubbing = function(player) {
+      return {
+        // +++ Set the source to use any tech +++
+        setSource: function setSource(srcObj, next) {
+          next(null, srcObj);
+        },
+        // +++ Alter the setCurrentTime method +++
+        setCurrentTime: function setCurrentTime(ct) {
+          var percentAllowForward = 50,
+           // Determine %tage of video played
+           percentPlayed = player.currentTime() / player.duration() * 100;
+           // Check if the time scrubbed to is less than the current time
+           // or if passed scrub forward percentage
+          if ( ct < player.currentTime() || percentPlayed > percentAllowForward ) {
+            // If true, move playhead to desired time
+            return ct;
+          }
+          // If time scrubbed to is past current time and not passed %age
+          // leave playhead at current time
+          return player.currentTime();
+        }
+      }
+    };
+
+    // Register the middleware with the player
+    videojs.use('*', disableForwardScrubbing);
+
+  </script>
+
+</body>
+
+</html>

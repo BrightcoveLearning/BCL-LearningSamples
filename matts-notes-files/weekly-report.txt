@@ -1,8 +1,22 @@
 Major accomplishments:
+** 9 March **
+1. Sent out documents to PLAY presenters
+2.
+
+
+** 2 March **
+1. 4 Administrivia JIRAs
+2. 2 JIRAs on AMP, one for Video Cloud and one for non-Video Cloud. Still need to write up the Perform/AMP/OnceUX doc.
+3. Delivered the presentation on Do's and Don'ts for PLAY Presentations two times
+4. Finished checklist for PLAY presenters
+5. Approximately 5 hours working on getting us ready to make changes to our Drupal site, great 1 1/2 hour meeting with Andrew Bradley
+6. Approximately 5 hours working on GTranslate
+
+
+** 23 Feb **
 1. Closed 6 JIRAs, all administrivia
 2. Updated PPT for PLAY presenters on how to create engaging presentations and associated checklist (this was quite time consuming, but happy with it)
 3. Started writing code for AMP/Perform and AMP/Perform/OnceUX
-
 
 
 **16 Feb**

@@ -2,14 +2,20 @@ videojs.registerPlugin('ampPassVideo', function() {
   var myPlayer = this,
     encodedVideoQueryParam,
     decodedVideoQueryParam;
-  encodedVideoQueryParam = getQuerystring('videoUrl');
-  console.log('encodedVideoQueryParam: ', encodedVideoQueryParam);
-  decodedVideoQueryParam = decodeURIComponent(encodedVideoQueryParam);
-  console.log('decodedVideoQueryParam', decodedVideoQueryParam);
 
+  // Get the query string and un-URL encode it
+  encodedVideoQueryParam = getQuerystring('videoUrl');
+  decodedVideoQueryParam = decodeURIComponent(encodedVideoQueryParam);
+
+  // Load the video into the player
   myPlayer.src({
     'type': 'video/mp4',
     'src': decodedVideoQueryParam
+  });
+
+  // On loadedmetadata event, play the video
+  myPlayer.on('loadedmetadata', function(){
+    myPlayer.play();
   });
 
   /*

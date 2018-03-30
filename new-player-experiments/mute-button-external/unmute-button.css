@@ -1,0 +1,21 @@
+/* Make player fill outer div */
+.video-js {
+  height: 100%;
+  width: 100%;
+}
+
+/* Build outer div size of player */
+.outer {
+  width: 610px;
+  height: 344px;
+  border: 1px solid blue;
+  position: relative;
+}
+
+/* Style inner div to center button */
+.inner {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}

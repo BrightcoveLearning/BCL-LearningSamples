@@ -58,7 +58,9 @@ curl \
   --user $EMAIL \
   --request PATCH \
   --data '{
-       "playlist": {"playOnSelect": true}
+       "muted": true,
+       "playsinline": true,
+       "autoplay": true
   }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
