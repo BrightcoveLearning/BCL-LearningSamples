@@ -1,4 +1,24 @@
 Major accomplishments:
+** 6 April **
+1. More PLAY presentation group reviews
+2. Met with 4 PLAY presenters to discuss their presentations
+3. The "Disable Forward Scrubbing" published on Monday
+4. Closed 8 JIRAs, 2 of which were administrivia
+5. Discovered solution for download video functionality; will update doc next week
+
+
+
+
+** 30 March **
+1. Communication with PLAY presenters
+2. Reviewed PLAY presentations
+3. LOTS of work on the "Disable Forward Scrubbing" doc. Thought I was done then Pat had some great ideas for improvement, so go out on MOnday.
+4. Closed 6 JIRAs, 5 of which were administrivia
+
+
+
+
+
 ** 9 March **
 1. Sent out documents to PLAY presenters
 2.

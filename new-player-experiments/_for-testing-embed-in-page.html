@@ -15,25 +15,26 @@
 
 <body>
 
-  <video id="myPlayerID" data-video-id="5622718636001"
+<video id="myPlayerID"
+  data-video-id="5763202097001"
   data-account="1507807800001"
-  data-player="SJJ1ziPLM"
+  data-player="default"
   data-embed="default"
   data-application-id
   class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/SJJ1ziPLM_default/index.min.js"></script>
+  controls
+  playsinline></video>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
-  <script type="text/javascript">
-    videojs('myPlayerID').ready(function(){
-      var myPlayer = this;
-
-    myPlayer.controlBar.setAttribute('style','display:none');
-
-    });
-  </script>
-
-
+<script type="text/javascript">
+  videojs('myPlayerID').ready(function(){
+    var myPlayer = this,
+      fullScreenElement = document.getElementsByClassName("vjs-fullscreen-control")[0];
+    if (videojs.browser.IS_IOS ) {
+      fullScreenElement.parentNode.removeChild(fullScreenElement);
+    }
+  });
+</script>
 
 </body>
 
