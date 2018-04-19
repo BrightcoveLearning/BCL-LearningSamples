@@ -48,8 +48,15 @@ JGreer - What can the attendee do now that they couldn't do before, is a tool av
 -Summary and QA slides
 
 
-
-
+***Robert & Phil
+-What is the elevator pitch for the session
+-Can the title more reflect the content
+-Slide 6, What is dynamic delivery
+-Maybe a slide to define CAE and SSAI, how do they relate to DD
+-Slice 9, why hard bits, is this an intro slide for the next section, why just Smooth Streaming
+-11, who should do the testing, actual best practices for customers to use
+-13 "Strive for ..."
+-14 who is making sacrifices, limitations???
 
 
 

@@ -6,7 +6,7 @@
   <title>Untitled Document</title>
   <style type="text/css">
       .video-js {
-        height: 350px;
+        height: 360px;
         width: 640px;
         float: left;
       }
@@ -25,9 +25,7 @@
     data-embed="default"
     data-application-id
     class="video-js"
-    controls
-    width="400"
-    height="225"></video>
+    controls></video>
 
   <div class="vjs-playlist"></div>
 
@@ -36,10 +34,11 @@
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this,
-      queryObject = {};
-      queryObject.accountId = '1752604059001';
+        queryObject = {};
       queryObject.policyKey = 'BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX';
-      queryObject.q = 'name:desert';
+      //queryObject.q = 'name:desert';
+      queryObject.q = 'description:Desert';
+      //queryObject.q = 'tags:bird'
       console.log('queryObject',queryObject);
       myPlayer.catalog.getSearch(queryObject,function(errorObj,videosReturned){
         console.log('videosReturned',videosReturned);

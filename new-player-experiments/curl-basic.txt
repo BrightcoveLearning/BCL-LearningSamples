@@ -52,7 +52,17 @@ curl \
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
 
 
-//playOnSelct for playlists
+// Configure ad failover
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+       "ad_failover": true
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+//playOnSelect for playlists
 curl \
   --header "Content-Type: application/json" \
   --user $EMAIL \

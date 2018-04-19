@@ -1,12 +1,22 @@
 Major accomplishments:
+** 13 April **
+1. More PLAY presentation group reviews
+2. Met with 3 PLAY presenters to discuss their presentations
+3. Published updated version of download plugin using download.js
+4. Updated Chromecast doc and published
+4. Closed 7 JIRAs, 2 of which were administrivia
+5. LOTS of time understanding and writing examples for the new catalog methods; doc about 80% updated and will publish next week (if pre-release with functionality is released)
+
+
+
+
+
 ** 6 April **
 1. More PLAY presentation group reviews
 2. Met with 4 PLAY presenters to discuss their presentations
 3. The "Disable Forward Scrubbing" published on Monday
 4. Closed 8 JIRAs, 2 of which were administrivia
 5. Discovered solution for download video functionality; will update doc next week
-
-
 
 
 ** 30 March **
