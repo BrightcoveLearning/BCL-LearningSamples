@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 20 April **
+1. 1 PLAY presentation group review
+2. Met with 2 PLAY presenters to discuss their presentations
+3. One PLAY practice session, Nathan, and he was great
+4. Final updates and published doc on new catalog methods
+5. Final updates and published ad failover doc
+6. Started update of player config options
+7. Closed 11 JIRAs, 6 of which were administrivia
+
+
+
 ** 13 April **
 1. More PLAY presentation group reviews
 2. Met with 3 PLAY presenters to discuss their presentations
@@ -6,9 +17,6 @@ Major accomplishments:
 4. Updated Chromecast doc and published
 4. Closed 7 JIRAs, 2 of which were administrivia
 5. LOTS of time understanding and writing examples for the new catalog methods; doc about 80% updated and will publish next week (if pre-release with functionality is released)
-
-
-
 
 
 ** 6 April **
