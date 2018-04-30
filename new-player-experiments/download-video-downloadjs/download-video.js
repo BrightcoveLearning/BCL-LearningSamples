@@ -1,7 +1,5 @@
 videojs.registerPlugin('downloadVideo', function() {
   // Create variables and new div, anchor and image for download icon
-  videojs("myPlayerID").ready(function() {
-    // Create variables and new div, anchor and image for download icon
     var myPlayer = this,
       videoName,
       totalRenditions,
@@ -46,7 +44,7 @@ videojs.registerPlugin('downloadVideo', function() {
       newImage.onclick = function(){
         // This function forces download by the browsers
         // NOT opening the video in a new window/tab
-        download(highestQuality,videoName);
+        download(highestQuality);
       }
       newElement.appendChild(newImage);
 

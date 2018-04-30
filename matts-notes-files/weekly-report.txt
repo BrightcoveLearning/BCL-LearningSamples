@@ -1,4 +1,16 @@
 Major accomplishments:
+** Week Ending 27 April **
+1. Met with 1 PLAY presenters to discuss their presentations
+2. Three PLAY practice sessions
+3. Found error in download sample, corrected and put download.js in plugin to simplify usage
+4. Finished update to player config options
+5. From list in 4, updated attributes for in-page embeds and query params for iframes
+7. Checked all non-sample player docs and updated players that were not v6 (about 10)
+8. Double checked all sample player docs, only one left on v5, and I will update that next week
+9. Closed 10 JIRAs, 5 of which were administrivia
+
+
+
 ** Week Ending 20 April **
 1. 1 PLAY presentation group review
 2. Met with 2 PLAY presenters to discuss their presentations

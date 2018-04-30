@@ -29,7 +29,7 @@
     width="640" height="360"></video>
   <script src="//players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script>
 
-  <script src="//learning-services-media.brightcove.com/bc-player/plugins/download-video-sample/download.js"></script>
+  <script src="download.min.js"></script>
 
   <script type="text/javascript">
     videojs("myPlayerID").ready(function() {
@@ -39,6 +39,7 @@
         totalRenditions,
         mp4Ara = [],
         highestQuality,
+        downloadName,
         spacer,
         newElement = document.createElement('div'),
         newImage = document.createElement('img');
@@ -78,7 +79,12 @@
         newImage.onclick = function(){
           // This function forces download by the browsers
           // NOT opening the video in a new window/tab
-          download(highestQuality,videoName);
+          console.log('highestQuality', highestQuality);
+          console.log('videoName',videoName);
+          downloadName = videoName + '.mp4';
+          console.log('downloadName', downloadName);
+
+          download(highestQuality);
         }
         newElement.appendChild(newImage);
 
