@@ -69,27 +69,24 @@
 
 <body>
 
-  <video  id="myPlayerID"
-    data-video-id="5622718636001"
-    data-account="1507807800001"
-    data-player="default"
-    data-embed="default"
-    data-application-id
-    class="video-js"
-    controls></video>
 
-    <p>this is the page</p>
+<video id="myPlayerID" data-account="1507807800001"
+data-video-id="5622718636001"
+data-player="Sk0j39P6M"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/Sk0j39P6M_default/index.min.js"></script>
 
-    <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
-    <script src="//players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function() {
       var player = this,
-      // +++ Define passed in options (this makes more sense when plugin used) +++
         inputOptions = {
           'align': 'bottom-left',
-          'imageURL' : '//solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
+          'imageURL' : '/solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
           'clickThruURL': '//support.brightcove.com/',
           'start': 'loadstart',
           'end': 5
@@ -104,7 +101,6 @@
             'end': 'ended'
           };
 
-        // +++ Remove overlay  +++
         function endOverlay() {
           if (isDefined(parseInt(overlayOptions.end)) && player.currentTime() >= overlayOptions.end) {
             player.off('timeupdate', endOverlay);
@@ -112,8 +108,8 @@
           }
         }
 
-       // +++ Add overlay function +++
         function showOverlay() {
+          // add the overlay
           player.overlay({
             content: overlayContent,
             overlays: [{
@@ -137,7 +133,6 @@
           return true;
         }
 
-  // +++ Function to merge passed in configuration with defaults +++
         /**
          * merges inputs or default values into a new settings object
          * @param {Object} inputOptions the input values
@@ -154,8 +149,7 @@
           }
           return settings;
         }
-
-        // +++ Call function to merge default options with passed in options +++
+        // merge default settings with options
         overlayOptions = setOptions(inputOptions, defaultOptions);
         // set the content
         imgTag = new Image();
@@ -173,10 +167,11 @@
         } else {
           overlayContent = imgTag.outerHTML;
         }
-        // +++ Show overlay +++
+        // show the overlay
         showOverlay();
     });
   </script>
+
 
 </body>
 

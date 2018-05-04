@@ -2,14 +2,16 @@ videojs.registerPlugin('logoOverlay', function(options) {
   var player = this,
     overlayOptions,
     overlayContent,
+    // +++ Default options for configuration not passed in +++
     defaultOptions = {
-      align: 'bottom-right',
-      imageURL: '//solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
-      clickThruURL: '',
-      start: 'loadstart',
-      end: 'ended'
+      'align': 'bottom-right',
+      'imageURL': '//solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
+      'clickThruURL': '',
+      'start': 'loadstart',
+      'end': 'ended'
     };
 
+  // +++ Remove overlay  +++
   function endOverlay() {
     if (isDefined(parseInt(overlayOptions.end)) && player.currentTime() >= overlayOptions.end) {
       player.off('timeupdate', endOverlay);
@@ -17,8 +19,8 @@ videojs.registerPlugin('logoOverlay', function(options) {
     }
   }
 
+  // +++ Add overlay function +++
   function showOverlay() {
-    // add the overlay
     player.overlay({
       content: overlayContent,
       overlays: [{
@@ -42,6 +44,7 @@ videojs.registerPlugin('logoOverlay', function(options) {
     return true;
   }
 
+  // +++ Function to merge passed in configuration with defaults +++
   /**
    * merges inputs or default values into a new settings object
    * @param {Object} inputOptions the input values
@@ -58,7 +61,8 @@ videojs.registerPlugin('logoOverlay', function(options) {
     }
     return settings;
   }
-  // merge default settings with options
+
+  // +++ Call function to merge default options with passed in options +++
   overlayOptions = setOptions(options, defaultOptions);
   // set the content
   imgTag = new Image();
@@ -76,7 +80,8 @@ videojs.registerPlugin('logoOverlay', function(options) {
   } else {
     overlayContent = imgTag.outerHTML;
   }
-  // show the overlay
+
+  // +++ Show overlay +++
   showOverlay();
 
 });
