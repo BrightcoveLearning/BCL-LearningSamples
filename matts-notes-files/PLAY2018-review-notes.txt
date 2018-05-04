@@ -109,8 +109,67 @@ Lamia
 
 
 
-Dave Kelly
-10:34
+Gary K
+-2:36-2:46
+-no intro firstAt a very high level, the use cases where middleware is of most value is when you want to intercept and alter core behaviors of the player, such as setting the source or current time.
+-Great analogies engine
+-General class of use cases that middleware is good for
+-Great diagram with player middleware tech
+-use() method, that is in the actual HTML page, right?
+
+
+Matt N
+-1:31 - 1:42
+-Great hook
+-Great to relate back to hook video
+-few "um"s
+-cut down shown video
+
+
+JD and Andrew
+JD
+-3:09
+-Glad to see how you use it
+-Nice cadence and no filler words
+Andrew
+-SSAI targeting, one period on, one not
+-maybe show an example of an ad macro in a configuration
+-
+
+Justin
+-10:32 - 10:45
+-Still like the hook
+-Thanks for adding a definition of regression suite
+-Good to refer back to your hook
+-Liked the transition to DCT definition, then back
+
+
+Pat
+-3:34 - 3:43
+-10 & 11, show tools in action
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

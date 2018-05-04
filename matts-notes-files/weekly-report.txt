@@ -1,4 +1,12 @@
 Major accomplishments:
+** Week Ending 4 May **
+1. Seven PLAY practice sessions, three of those hour long
+2. Updated spreadsheet tracking where all PLAY presenters are in the process of session development and practice demonstrations (FYI, two folks have not turned anything in, that is Britta's headache)
+3. Updated the LAST sample that was on v5 and old format to use v6 and new format
+4. Wrote new doc on upgrading to IMA3 Plugin v3
+5. Closed 10 JIRAs, 4 of which were administrivia
+
+
 ** Week Ending 27 April **
 1. Met with 1 PLAY presenters to discuss their presentations
 2. Three PLAY practice sessions
