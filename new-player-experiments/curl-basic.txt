@@ -105,7 +105,7 @@ curl \
   --data '{
       "player": {
         "template": {
-          "version": "6.12.1"
+          "version": "6.19.0"
         }
       }
   }' \
