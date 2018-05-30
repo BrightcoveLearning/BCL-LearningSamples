@@ -1,10 +1,40 @@
 Major accomplishments:
+** Week Ending 1 June **
+1.
+2.
+3.
+
+
+
+** Week Ending 25 May **
+PLAY
+
+
+** Week Ending 18 May **
+1. Three PLAY practice sessions, all three of those hour long
+2. One and one-half hours of PLAY informational meetings
+3. Delivered DwBP to 2 students, did not finish all the material and both students came back to finish for an extra hour on Friday AM
+4. Using feedback from Greg Smith doing a MAJOR overhaul to the IMA3 doc finished!
+5. Continued work on Andrew's quick demos (no JIRA closings on this)
+6. First meeting with the "VX teams - internal communication discussion" (As a result of the reorganization of David’s Video Experiences teams there has been discussion about creating a mechanism to allow each group (Applications, Platform, Players) to share their progress, challenges and wins more widely. This small team of interested volunteers will help define this process.)
+I volunteered for this, and it may actually reap some benefits for getting us more in the loop for all engineering teams.
+7. Closed 8 JIRAs, 3 of which were administrivia
+
+
+** Week Ending 11 May **
+1. Three PLAY practice sessions, three of those hour long
+2. Using feedback from Greg Smith doing a MAJOR overhaul to the IMA3 doc (no JIRA closings on this)
+3. Started back up working on Andrew's quick demos (no JIRA closings on this)
+5. Closed 6 JIRAs, 3 of which were administrivia
+
+
 ** Week Ending 4 May **
 1. Seven PLAY practice sessions, three of those hour long
 2. Updated spreadsheet tracking where all PLAY presenters are in the process of session development and practice demonstrations (FYI, two folks have not turned anything in, that is Britta's headache)
 3. Updated the LAST sample that was on v5 and old format to use v6 and new format
 4. Wrote new doc on upgrading to IMA3 Plugin v3
 5. Closed 10 JIRAs, 4 of which were administrivia
+
 
 
 ** Week Ending 27 April **

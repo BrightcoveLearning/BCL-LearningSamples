@@ -1,0 +1,46 @@
+1. Create myPlayer variable just under script tag using var
+2. Add button just under video
+  <p><button onclick="changeVideo()">change video</button></p>
+3. Create changeVideo() function and use catalog to get video
+    function changeVideo() {
+      myPlayer.catalog.getVideo('922656010001', function (error, video) {
+
+      })
+    }
+4. Log error, load video and play video in function
+        console.log("error", error)
+        myPlayer.catalog.load(video);
+        myPlayer.play();
+
+
+
+
+***Core Code***
+  <video id="myPlayerID"
+    data-video-id="4036854518001"
+    data-account="921483702001"
+    data-player="NJB3JCBqe"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+
+  <p><button onclick="changeVideo()">change video</button></p>
+
+  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer;
+
+    videojs("myPlayerID").on('loadedmetadata',function(){
+      myPlayer = this;
+      myPlayer.play();
+    });
+
+    function changeVideo() {
+      myPlayer.catalog.getVideo('922656010001', function (error, video) {
+        console.log("error", error)
+        myPlayer.catalog.load(video);
+        myPlayer.play();
+      })
+    }
+  </script>

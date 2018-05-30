@@ -38,6 +38,19 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+//set start time
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "start time with underscore",
+      "configuration": {
+        "start_time": "10"
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
 
 curl \
   --header "Content-Type: application/json" \
