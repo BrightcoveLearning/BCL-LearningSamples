@@ -13,27 +13,33 @@
 <body>
 	<h1>Player v5. Graphite skin. Controlbar hidden</h1>
 
-	<video
-	id="myPlayerID"
-	data-video-id="5133227061001"
-	data-account="1852113022001"
+<video id="myPlayerID"
+	data-video-id="5781068653001"
+	data-account="1507807800001"
 	data-player="default"
 	data-embed="default"
 	data-application-id
 	class="video-js"
 	controls></video>
-	<script src="//players.brightcove.net/1852113022001/default_default/index.min.js"></script>
-	<script>
-		videojs("myPlayerID").ready(function(){
-			var myPlayer = this;
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
-			myPlayer.controlBar.el().style.display = 'none';
-      myPlayer.controlBar.el().style.display = 'block';
-			// myPlayer.on("play",function(event){
-			// 	myPlayer.controlBar.el().style.display = 'block';
-			// });
+<p><button onclick="hideBtn()">hide controls</button></p>
+<p><button onclick="showBtn()">show controls</button></p>
 
-		});
-	</script>
+<script>
+var myPlayer;
+	videojs("myPlayerID").ready(function(){
+		myPlayer = this;
+	});
+
+	function hideBtn() {
+		myPlayer.controlBar.hide()
+	}
+
+	function showBtn() {
+		myPlayer.controlBar.show()
+	}
+</script>
+
 </body>
 </html>
