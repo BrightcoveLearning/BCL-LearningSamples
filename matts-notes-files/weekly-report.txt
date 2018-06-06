@@ -1,8 +1,7 @@
 Major accomplishments:
 ** Week Ending 1 June **
-1.
-2.
-3.
+1. Major work done on Andrew's Developer Jump Starts (or whatever he wants to call them). All I need to finish the first one is some advice from you about how to display the dynamically generated code.
+2. Closed 14 JIRAs, 4 of which were administrivia
 
 
 

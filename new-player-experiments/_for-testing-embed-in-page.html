@@ -1,45 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Player v5. Graphite skin. Controlbar hidden</title>
-	<style>
-	.video-js {
-		width: 480px;
-		height: 270px;
-	}
+<style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 350px;
+    }
 </style>
 </head>
+
 <body>
-	<h1>Player v5. Graphite skin. Controlbar hidden</h1>
 
-<video id="myPlayerID"
-	data-video-id="5781068653001"
+<video data-playlist-id="5455901760001"
 	data-account="1507807800001"
-	data-player="default"
-	data-embed="default"
-	data-application-id
-	class="video-js"
-	controls></video>
-<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+	data-player="SJLNAJye7"
+	data-embed="default"...></video>
+<script src="//players.brightcove.net/1507807800001/SJLNAJye7_default/index.min.js"></script>
 
-<p><button onclick="hideBtn()">hide controls</button></p>
-<p><button onclick="showBtn()">show controls</button></p>
+<div class="vjs-playlist"></div>
 
-<script>
-var myPlayer;
-	videojs("myPlayerID").ready(function(){
-		myPlayer = this;
-	});
-
-	function hideBtn() {
-		myPlayer.controlBar.hide()
-	}
-
-	function showBtn() {
-		myPlayer.controlBar.show()
-	}
-</script>
+<div class="vjs-playlist" data-player="SJLNAJye7" data-embed="default"></div>
 
 </body>
+
 </html>

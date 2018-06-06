@@ -16,7 +16,7 @@
 <body>
 
   <video id="myPlayerID"
-    data-video-id="5785633544001"
+    data-video-id="4036854518001"
     data-account="921483702001"
     data-player="NJB3JCBqe"
     data-embed="default"
@@ -26,9 +26,8 @@
   <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
 
   <script type="text/javascript">
-    var myPlayer = videojs.getPlayer("myPlayerID");
-    myPlayer.on('loadedmetadata', function(){
-      //myPlayer.muted(true);
+    videojs("myPlayerID").on('loadedmetadata',function(){
+      var myPlayer = this;
       myPlayer.play();
       myPlayer.on("timeupdate",showUpdate);
     });
