@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Play video after playlist</title>
+  <style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+      float: left;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 350px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="SJ5OoOgOb"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script>
+
+  <!-- Playlist location -->
+  <div class="vjs-playlist"></div>
+
+  <script type="text/javascript">
+    var myPlayer = videojs.getPlayer('myPlayerID');
+    myPlayer.ready(function () {
+      // +++ Define playlist and video to be played before playlist +++
+      var beforePlaylistVideo = '4607357817001',
+        playlistID = '5769553004001';
+
+      // +++ Retrieve playlist +++
+      myPlayer.catalog.getPlaylist(playlistID, function (error, myPlaylist) {
+        // deal with error
+        // +++ Place playlist in player, but -1 parameter does not load playlist video in player +++
+        myPlayer.playlist(myPlaylist, -1);
+      });
+
+      // +++ Retrieve video to play before playlist and load it +++
+      myPlayer.catalog.getVideo(beforePlaylistVideo, function (error, video) {
+        //deal with error
+        myPlayer.catalog.load(video);
+
+        // +++ Set event  handler so after first video plays playlist plays +++
+        myPlayer.one('ended', function () {
+          myPlayer.playlist.currentItem(0)
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

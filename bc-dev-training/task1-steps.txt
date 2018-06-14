@@ -1,6 +1,6 @@
 1. Create player
 2. Examine settings
-3. Go to Media module and associate video with player
+3. Go to Media module and associate video WITH AUDIO with player
 4. Copy published In-Page Embed Code and paste into body of task1.html HTML page
 5. Add an id to video tag with value of myPlayerID
 6. Add a script block below existing script tag
@@ -19,7 +19,7 @@
       height: 270px;
     }
   </style>
-12. Browse again to see new dimensions
+12. Browse again to see new dimensions, BUT WILL NOT PLAY because of Chrome autoplay restrictions. Show it will play in Firefox. Change the video so it does NOT have an audio track, and show it works.
 
 OPTIONAL - Only if ahead of schedule
 13. After using play() method add event listener for timeupate
@@ -44,7 +44,7 @@ OPTIONAL - Only if ahead of schedule
 <body>
 
   <video id="myPlayerID"
-    data-video-id="4036854518001"
+    data-video-id="5793330982001"
     data-account="921483702001"
     data-player="NJB3JCBqe"
     data-embed="default"

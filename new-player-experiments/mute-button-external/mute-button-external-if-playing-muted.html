@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    /* Make player fill outer div */
+    .video-js {
+      height: 100%;
+      width: 100%;
+    }
+
+    /* Build outer div size of player */
+    .outer {
+      width: 610px;
+      height: 344px;
+      border: 1px solid blue;
+      position: relative;
+    }
+
+    /* Style inner div to center button */
+    .inner {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="playerContainer" class="outer">
+     <video  id="myPlayerID"
+       data-video-id="5755775186001"
+       data-account="1752604059001"
+       data-player="default"
+       data-embed="default"
+       data-application-id
+       class="video-js"
+       controls
+       playsinline></video>
+   </div>
+   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer = videojs.getPlayer('myPlayerID'),
+      volumeLevel = .7;
+
+      myPlayer.on('loadedmetadata',function() {
+        var promise = myPlayer.play();
+        console.log('promise',promise);
+
+        if (promise !== undefined) {
+          promise.then(function() {
+            // Autoplay started!
+            console.log('autoplay worked');
+            myPlayer.muted(false);
+            myPlayer.volume(volumeLevel);
+          }).catch(function(error) {
+            // Autoplay was prevented.
+            console.log('autoplay failed');
+            myPlayer.muted(true);
+            myPlayer.play();
+
+            // If true, go with the unmute button
+            var button = document.createElement("button");
+
+            // +++ Add button's event listener +++
+            button.addEventListener("click", function() {
+              myPlayer.muted(false);
+              myPlayer.volume(volumeLevel);
+              playerContainer.removeChild(button);
+            });
+
+            // +++ Configure the button +++
+            button.textContent = "Unmute";
+            button.classList.add('inner');
+            button.setAttribute("style", "color:black; background-color:red; width:100px; height:50px; opacity: .4;");
+
+            // +++ Add the button to the container +++
+            playerContainer.appendChild(button);
+
+          });
+        }
+      });
+  </script>
+
+</body>
+
+</html>

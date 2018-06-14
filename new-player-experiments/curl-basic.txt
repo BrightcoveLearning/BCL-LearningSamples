@@ -82,7 +82,6 @@ curl \
   --request PATCH \
   --data '{
        "muted": true,
-       "playsinline": true,
        "autoplay": true
   }' \
   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
@@ -118,7 +117,7 @@ curl \
   --data '{
       "player": {
         "template": {
-          "version": "6.19.0"
+          "version": "6.19.1"
         }
       }
   }' \

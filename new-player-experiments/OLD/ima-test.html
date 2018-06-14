@@ -10,32 +10,35 @@
       width: 610px;
     }
   </style>
-  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+  <link href="//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css" rel="stylesheet">
 </head>
 <body>
 
-  <video  id="video_1"
-    data-video-id="3851380732001"
-    data-account="1752604059001"
-    data-player="Hy3gDJHu"
-    data-embed="default"
-    class="video-js"
-    controls></video>
-  <script src="//players.brightcove.net/1752604059001/Hy3gDJHu_default/index.min.js"></script>
+<video id="myPlayerID" data-video-id="5755775186001"
+data-account="1752604059001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
-  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+  <script src="//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
 
-  <script>
-    var myPlayer;
-
-    videojs("video_1").on('loadedmetadata',function() {
-      myPlayer = this;
+  <script type="text/javascript">
+  var myPlayer = videojs.getPlayer('myPlayerID');
+  myPlayer.ready(function() {
       myPlayer.ima3({
-        playsinline: true,
-        serverUrl: "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml"
+        playsinline: true
       });
-    });
-  </script>
+  });
+</script>
+
 </body>
 
 </html>
+
+
+
+
+//pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fiab_vast_samples&ciu_szs=300x250%2C728x90&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&cust_params=iab_vast_samples%3Dlinear

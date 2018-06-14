@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 1</title>
+
+  <style type="text/css">
+    .video-js {
+      width: 480px;
+      height: 270px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!--  No audio track video: 5796745147001 -->
+<!-- Audio track video: 5622718636001 -->
+
+  <video id="myPlayerID"
+    data-video-id="5796745147001"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer = videojs.getPlayer('myPlayerID');
+    myPlayer.on('loadedmetadata',function() {
+      var promise = myPlayer.play();
+      console.log('promise',promise);
+
+      if (promise !== undefined) {
+        promise.then(function() {
+          // Autoplay started!
+          console.log('autoplay worked');
+        }).catch(function(error) {
+          // Autoplay was prevented.
+          console.log('autoplay failed');
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
