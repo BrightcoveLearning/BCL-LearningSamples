@@ -31,7 +31,6 @@
 
 <body>
 
-
   <div id="playerContainer" class="outer">
      <video  id="myPlayerID"
        data-video-id="5755775186001"
@@ -49,23 +48,25 @@
     var myPlayer = videojs.getPlayer('myPlayerID'),
       volumeLevel = .7;
 
+      // +++ Wait for loadedmetadata then try to play video +++
       myPlayer.on('loadedmetadata',function() {
+        // Play video which returns a promise
         var promise = myPlayer.play();
         console.log('promise',promise);
 
+        // +++ Use promise to see if video is playing or not +++
         if (promise !== undefined) {
           promise.then(function() {
             // Autoplay started!
-            console.log('autoplay worked');
+            // If video playing unmute and set the volume
             myPlayer.muted(false);
             myPlayer.volume(volumeLevel);
           }).catch(function(error) {
             // Autoplay was prevented.
-            console.log('autoplay failed');
+            // // +++ If autoplay prevented mute the video, play video and display unmute button +++
             myPlayer.muted(true);
             myPlayer.play();
 
-            // If true, go with the unmute button
             var button = document.createElement("button");
 
             // +++ Add button's event listener +++
