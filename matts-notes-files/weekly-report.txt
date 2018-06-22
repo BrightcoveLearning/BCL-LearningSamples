@@ -1,9 +1,16 @@
 Major accomplishments:
-** Week Ending 17 June **
+** Week Ending 22 June **
+1. Majority of this week working on Andrew's Jump Starts. Great progess with Drupal pages built. I met with Andrew and he a few comments, all of which I have rolled in except the code formatting (as you know).
+2. Finished implementing using play() promise in "Show unmute button when no autoplay" doc.
+4. Closed 6 JIRAs, 3 of which were administrivia
+
+
+** Week Ending 15 June **
 1. Couple of new docs done, one on Autoplay and a sample on play video not in playlist before normal playlist
 2. Trying to get feedback from Andrew on the Jump Start samples, will hound him next week as I have promised to have 3 done by end of month
 3. Mostly done with update to "Show unmute button when no autoplay" to use the play() methods promise. I used to use logic to check browser, but now Chrome sometimes will autoplay and sometimes not based on past user behavior
 4. Closed 11 JIRAs, 5 of which were administrivia
+
 
 
 ** Week Ending 8 June **
