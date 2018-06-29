@@ -1,4 +1,11 @@
 Major accomplishments:
+** Week Ending 29 June **
+1. Jump Start v1 finished: https://support.brightcove.com/jumpstart. Still need to go back and use js_beautify to clean up code on pre-roll and outstream examples. Plus I know Andrew is disappointed with the look, so not sure what will happen with that. This was a HUGE time sink this week.
+2. Closed 7 JIRAs, 4 of which were administrivia
+3.
+
+
+
 ** Week Ending 22 June **
 1. Majority of this week working on Andrew's Jump Starts. Great progess with Drupal pages built. I met with Andrew and he a few comments, all of which I have rolled in except the code formatting (as you know).
 2. Finished implementing using play() promise in "Show unmute button when no autoplay" doc.
