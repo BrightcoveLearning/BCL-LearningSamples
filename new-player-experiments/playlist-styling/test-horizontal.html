@@ -15,13 +15,13 @@
       width: 640px;
       height: 90px;
     }
-BCLearning7*
-    .vjs-mouse.vjs-playlist {
+
+    /* .vjs-mouse.vjs-playlist {
       color: #E9D2B3;
       background-color: #161D6E;
     }
 
-    /* .vjs-playlist .vjs-playlist-duration {
+     .vjs-playlist .vjs-playlist-duration {
       color: #9BB4DA;
       background-color: #1160AA;
     }
@@ -36,7 +36,7 @@ BCLearning7*
 
     div.vjs-playlist.vjs-playlist-horizontal {
       overflow-y: hidden;
-    } */
+    }  */
   </style>
 </head>
 
@@ -58,9 +58,7 @@ BCLearning7*
     videojs('myPlayerID').ready(function() {
       var myPlayer = this,
         options = {};
-      options.autoadvance = 0;
       options.horizontal = true;
-      options.nextOverlay = true;
       myPlayer.bcPlaylistUi(options);
     });
   </script>

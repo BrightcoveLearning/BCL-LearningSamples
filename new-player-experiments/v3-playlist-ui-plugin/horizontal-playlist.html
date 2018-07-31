@@ -13,7 +13,6 @@
       width: 625px;
     }
   </style>
-  <link href="//players.brightcove.net/videojs-bc-playlist-ui/3/videojs-bc-playlist-ui.css" rel="stylesheet">
 </head>
 
 <body>
@@ -25,14 +24,11 @@
     data-embed="default"
     data-application-id
     class="video-js"
-    controls
-    autoplay></video>
+    controls></video>
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <!-- Location of the playlist -->
   <div class="vjs-playlist"></div>
-
-  <script src="https://players.brightcove.net/videojs-bc-playlist-ui/3/videojs-bc-playlist-ui.min.js"></script>
 
   <script type="text/javascript">
     videojs("myPlayerID").ready(function() {
@@ -42,7 +38,7 @@
         options = {};
       // Set options
       options.horizontal = true;
-      options.autoadvance = 3;
+      //options.autoadvance = 3;
       // Call plugins method passing in options object
       myPlayer.bcPlaylistUi(options);
     });
