@@ -1,11 +1,23 @@
 Major accomplishments:
+** Week Ending 10 Aug **
+1. Closed 6 JIRAs, 4 of which were administrivia
+2. Working with a freelancer from Upwork on search and replace for Drupal 8; progressing well
+3. More time working on Pantheon to migrate the site. Finally got to a point where they could no longer help.
+4. Gained experience with Pantheon and used a generic Drupal 8 site I created for search and replace tool testing
+
+
+
+** Week Ending 3 Aug **
+1. Closed 13 JIRAs, 4 of which were administrivia, 9 updating German translations
+2. Got a freelancer from Upwork to start on a search and replace for Drupal 8; checked in today and he says he is progressing and has 3-4 days of work left
+3. Spent LOTS of time working on Pantheon to migrate the site. Their support has been outstanding and I have uploaded files and DB and they are trying to find out why it is not working. They were supporting me exclusively via chat, but have now created a formal support ticket and will contact me via email. I think this is a worthwhile exercise as I am learning a bunch about Pantheon.
+
+
 ** Week Ending 20 July **
 1. Closed 8 JIRAs, 5 of which were administrivia, others moderate/easy solutions.
 2. Updated Andrew's "Jump Starts" landing page
 3. Got caught up from vacation
 
-
-Vacation week ending 13 July
 
 ** Week Ending 6 July **
 1. Closed 11 JIRAs, 4 of which were administrivia, others moderate/easy solutions. No long, tough tasks completed this week.

@@ -21,6 +21,14 @@ LOGIN FOR GROUP USER
 1. ssh bclsuser@snapdocs.vidmark.local
 ****************************
 
+****************************
+DELETE A USER
+platform user:delete --project 6sglloa4yrkti peter.jenei@pronovix.com
+****************************
+
+
+
+
 
 Become root: sudo su -
 
