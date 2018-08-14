@@ -1,0 +1,34 @@
+<!doctype html>
+  <html>
+
+  <head>
+  <meta charset = "UTF-8">
+  <title > Untitled Document </title>
+  </head>
+
+  <body>
+
+  <script >
+let promiseToFinishTask = new Promise(function(resolve, reject) {
+
+  //Business logic to set taskComplete boolean
+  let taskComplete = true;
+
+  if (taskComplete) {
+    resolve('Yea, I am done');
+  } else {
+    reject('Not quite done');
+  }
+});
+
+promiseToFinishTask.then(function(fromResolve) {
+  console.log(fromResolve);
+}).catch(function(fromReject) {
+  console.log(fromReject);
+});
+
+  </script>
+
+</body>
+
+</html>

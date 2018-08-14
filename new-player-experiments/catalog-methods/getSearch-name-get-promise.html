@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+      .video-js {
+        height: 360px;
+        width: 640px;
+        float: left;
+      }
+      .vjs-playlist {
+        width: 280px;
+        height: 350px;
+      }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="Sk5m8XYoG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+  <div class="vjs-playlist"></div>
+
+  <script src="//players.brightcove.net/1752604059001/Sk5m8XYoG_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+        catalogParams = {};
+      catalogParams.type = 'search';
+      catalogParams.accountId = '1752604059001';
+      catalogParams.policyKey = 'BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX';
+      catalogParams.q = 'name:Desert';
+      console.log('catalogParams',catalogParams);
+myPlayer.catalog.get(catalogParams).then(function(videosReturned){
+  console.log('videosReturned',videosReturned);
+  myPlayer.playlist(videosReturned);
+}).catch(function(errorObj){
+  console.log('errorObj',errorObj);
+})
+    });
+  </script>
+
+</body>
+
+</html>
