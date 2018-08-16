@@ -20,8 +20,8 @@
 <body>
 
   <video-js id="myPlayerID"
-    data-account="1752604059001"
-    data-player="Sk5m8XYoG"
+    data-account="1507807800001"
+    data-player="X8ng9cPIj"
     data-embed="default"
     data-application-id
     class="video-js"
@@ -29,15 +29,14 @@
 
   <div class="vjs-playlist"></div>
 
-  <script src="//players.brightcove.net/1752604059001/Sk5m8XYoG_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1507807800001/X8ng9cPIj_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
       var myPlayer = this,
         catalogParams = {};
       catalogParams.type = 'search';
-      catalogParams.policyKey = 'BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX';
-      catalogParams.q = 'name:Desert';
+      catalogParams.q = 'name:yachats';
       console.log('catalogParams',catalogParams);
       myPlayer.catalog.get(catalogParams,function(errorObj,videosReturned){
         console.log('videosReturned',videosReturned);

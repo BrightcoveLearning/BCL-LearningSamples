@@ -15,6 +15,17 @@ curl \
     }' \
     https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players
 
+----------------------------
+**mboles experiments account**
+*client id
+afca29f7-2c5e-4a83-9d66-d1084743c817
+
+*client secret
+mdjKBE25nfrrfzMONIPc8lNhUFXc2yR0l35QXcXsjJXnpnbB7ZQqa5oG0z6KNhnTbK6-EKpO1I8yKis56le4jA
+
+*search enabled policyKey
+BCpkADawqM1ywQHVxA4YUxj6wEyTF2TtVzF79D_heysLu9FkcMjuaQzFOf2uQV6c8mav-IedvwXORUq1qznmcaPyuLFL-SdcBptxoia378bPoOg2nxNDaV88E7fA_lzIWTEqHY6SqWpXFSz3
+----------------------------------
 
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
@@ -37,6 +48,20 @@ export PLAYER_ID=
 export EMBED_ID=
 
 Video Cloud video: 3674727957001
+
+
+//change policy key on player
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "video_cloud": {
+          "policy_key": "BCpkADawqM1ywQHVxA4YUxj6wEyTF2TtVzF79D_heysLu9FkcMjuaQzFOf2uQV6c8mav-IedvwXORUq1qznmcaPyuLFL-SdcBptxoia378bPoOg2nxNDaV88E7fA_lzIWTEqHY6SqWpXFSz3"
+        }
+     }' \
+  https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 
 //set start time
 curl \
@@ -117,7 +142,7 @@ curl \
   --data '{
       "player": {
         "template": {
-          "version": "6.22.3"
+          "version": "6.22.6"
         }
       }
   }' \
@@ -144,19 +169,19 @@ curl \
 
 
 
-    curl \
-      --header "Content-Type: application/json" \
-      --user $EMAIL \
-      --request POST \
-      --data '{
-          "name": "Video Cloud CURL 10 March",
-          "configuration": {
-            "video_cloud": {
-              "video": "4690057979001"
-            }
-          }
-      }' \
-        https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "Video Cloud CURL 10 March",
+      "configuration": {
+        "video_cloud": {
+          "video": "4690057979001"
+        }
+      }
+  }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
 
 
 
