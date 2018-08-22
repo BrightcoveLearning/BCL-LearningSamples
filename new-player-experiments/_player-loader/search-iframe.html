@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <title>Untitled Document</title>
   <style>
-    .video-js {
+    iframe {
       height: 344px;
       width: 610px;
     }
@@ -22,16 +22,10 @@
   <script>
     brightcovePlayerLoader({
       refNode: theDiv,
+      embedType: 'iframe',
       accountId: '1752604059001',
       playerId: 'wHBRh9M3o',
-      catalogSearch: {
-        q: 'name:Desert',
-        policyKey: 'BCpkADawqM1eifBpAkEr4aJrH9i950qErQCg8FvHXBCigF0JjC-zZyhN4T1XGGGBbB0hojevaABtp54BTvT9Er0KplSpC6tqm8YgyCtIzGl5sc77i23GLWYdpLdtF7Aei45EuLqlUznlkiXU',
-        type: 'search'
-      },
-      embedOptions: {
-        playlist: true
-      }
+      catalogSearch: 'name:Desert'
     })
     .then(function(success) {
       var myPlayer = success.ref;

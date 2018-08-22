@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+      float: left;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 350px;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="brightcove-player-loader.min.js"></script>
+
+  <div id="theDiv">
+  </div>
+
+  <script>
+    brightcovePlayerLoader({
+      refNode: theDiv,
+      accountId: '1752604059001',
+      playerId: 'wHBRh9M3o',
+      embedOptions: {
+        playlist: true
+      },
+      catalogSearch: {
+        q: 'name:Desert',
+        type: 'search'
+      }
+    })
+    .then(function(success) {
+      var myPlayer = success.ref;
+      console.log('success', success);
+      myPlayer.on('loadedmetadata',function(){
+        myPlayer.muted(true);
+        myPlayer.play();
+      });
+    })
+    .catch(function(error) {
+      console.log('error', error);
+    })
+  </script>
+
+</body>
+
+</html>
