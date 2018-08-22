@@ -24,7 +24,14 @@
       refNode: theDiv,
       accountId: '1752604059001',
       playerId: 'wHBRh9M3o',
-      videoId: '4607357817001'
+      catalogSearch: {
+        q: 'name:Desert',
+        policyKey: 'BCpkADawqM1eifBpAkEr4aJrH9i950qErQCg8FvHXBCigF0JjC-zZyhN4T1XGGGBbB0hojevaABtp54BTvT9Er0KplSpC6tqm8YgyCtIzGl5sc77i23GLWYdpLdtF7Aei45EuLqlUznlkiXU',
+        type: 'search'
+      },
+      embedOptions: {
+        playlist: true
+      }
     })
     .then(function(success) {
       var myPlayer = success.ref;

@@ -26,8 +26,8 @@
       playerId: 'wHBRh9M3o',
       videoId: '4607357817001',
       onSuccess: function(success) {
-        console.log('success', success);
         var myPlayer = success.ref;
+        console.log('success', success);
         myPlayer.on('loadedmetadata',function(){
           myPlayer.muted(true);
           myPlayer.play();

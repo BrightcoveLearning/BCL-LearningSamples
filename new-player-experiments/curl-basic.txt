@@ -57,7 +57,7 @@ curl \
   --request PATCH \
   --data '{
       "video_cloud": {
-          "policy_key": "BCpkADawqM1ywQHVxA4YUxj6wEyTF2TtVzF79D_heysLu9FkcMjuaQzFOf2uQV6c8mav-IedvwXORUq1qznmcaPyuLFL-SdcBptxoia378bPoOg2nxNDaV88E7fA_lzIWTEqHY6SqWpXFSz3"
+          "policy_key": "BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX"
         }
      }' \
   https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
