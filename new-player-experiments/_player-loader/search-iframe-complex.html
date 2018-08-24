@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    iframe {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <script src="brightcove-player-loader.min.js"></script>
+
+  <div id="theDiv">
+  </div>
+
+  <script>
+    brightcovePlayerLoader({
+      refNode: theDiv,
+      embedType: 'iframe',
+      accountId: '1752604059001',
+      playerId: 'wHBRh9M3o',
+      catalogSearch: 'tags:birds'
+    })
+    .then(function(success) {
+      //In this case success.ref is the iframe DOM element
+      console.log('success', success);
+    })
+    .catch(function(error) {
+      console.log('error', error);
+    })
+  </script>
+
+</body>
+
+</html>

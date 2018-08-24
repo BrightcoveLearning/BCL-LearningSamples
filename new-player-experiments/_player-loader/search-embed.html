@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <script src="brightcove-player-loader.min.js"></script>
+  <script src="brightcove-player-loader.js"></script>
 
   <div id="theDiv">
   </div>
@@ -33,7 +33,7 @@
       },
       catalogSearch: {
         q: 'name:Desert',
-        type: 'search'
+        limit: 'search'
       }
     })
     .then(function(success) {
