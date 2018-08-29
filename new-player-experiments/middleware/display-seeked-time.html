@@ -23,6 +23,9 @@
     data-application-id
     class="video-js"
     controls></video-js>
+
+  <div id="displayTimesHere"></div>
+
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
@@ -31,7 +34,7 @@
     // +++ Define the middleware function+++
     var getSeekedTime = function(player) {
       return {
-      // +++ Alter the setCurrentTime method +++
+      // +++ Set seek time in setCurrentTime method +++
         setCurrentTime: function setCurrentTime(ct) {
           seekBarClickedTime = ct;
           return ct;
@@ -42,13 +45,13 @@
     // Register the middleware with the player
     videojs.use('*', getSeekedTime);
 
+    // Initialize mouseup event on seekbar
     videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
       myPlayer.controlBar.progressControl.seekBar.on('mouseup', function(event) {
-        console.log('seekBarClickedTime',seekBarClickedTime);
+        displayTimesHere.innerHTML += seekBarClickedTime + '<br>';
       });
     });
-
   </script>
 
 </body>
