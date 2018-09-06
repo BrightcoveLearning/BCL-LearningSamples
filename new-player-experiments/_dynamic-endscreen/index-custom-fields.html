@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+    <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="4607357817001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.min.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').on('loadstart',function() {
+      var myPlayer = this,
+
+        // +++ Retrieve info from custom fields object +++
+        linkText = myPlayer.mediainfo.customFields.customfield1,
+        linkURL = myPlayer.mediainfo.customFields.customfield2;
+
+        // +++ Build link string for the endscreen content +++
+        hrefString = '<a href = "' + linkURL + '" target="_blank" rel="noopener noreferrer">' + linkText + '</a>'
+
+      // +++ Call endscreen method +++
+      myPlayer.customEndscreen({
+        "content": hrefString
+      });
+    });
+  </script>
+
+</body>
+
+</html>

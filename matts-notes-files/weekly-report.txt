@@ -1,10 +1,32 @@
 Major accomplishments:
+** Week Ending 31 Aug **
+1. Closed 35 (yes, 35!) JIRAs, 4 of which were administrivia, 4 of which were just deciding not to do the request and 4 consolidation of changes to player developer docs into a single ticket. Still a very good week on the JIRA front. With no Drupal/platform.sh/Pantheon work to do gave my JIRA list a good scrub and got the work done for the "low hanging fruit" mostly.
+2. New sample: Get Seeked Time (uses middleware)
+3. New doc: Pre-release Player (keeps player always on latest pre-release)
+5. Three LONG docs updated to new Developer Doc standards. These updates are taking as long as I thought they would, which is a bad thing.
+
+
+** Week Ending 24 Aug **
+1. Closed 11 JIRAs, 3 of which were administrivia.
+2. Updated DwBP course to use muted(true) so I don't have to battle the no autoplay issue with browsers.
+3. Not reflected in JIRA: LOTS of time coding demos for a writing doc on Brightcove Player Loader library. I think I found and bug and Pat O is looking into it.
+4. Not reflected in JIRA: Most of one day working on new instructions from Pronovix to create a local instance of the composer based Drupal support site. Did not work as found out some things not all fixed on Pronovix side.
+5. Seven docs updated.
+
+
+** Week Ending 17 Aug **
+1. Closed 11 JIRAs, 4 of which were administrivia.
+2. Big time sink this week updating the catalog doc. All the methods changed in parameters, functionality, etc. Had to redo examples and screenshots for output.
+3. Started updating of docs based on list in Quiver. This is going to be big task. Any chance we could get some contractor money to help with this? Maybe Emily up for some fairly mindless text manipulation.
+4. Create a doc on JS Promises I could reference from a few other docs. That seems to be the way the Player engineering team is heading for some methods now.
+5. Restructured DRM doc as I have had a couple of requests to make it more match our other plugin docs.
+
+
 ** Week Ending 10 Aug **
 1. Closed 6 JIRAs, 4 of which were administrivia
 2. Working with a freelancer from Upwork on search and replace for Drupal 8; progressing well
 3. More time working on Pantheon to migrate the site. Finally got to a point where they could no longer help.
 4. Gained experience with Pantheon and used a generic Drupal 8 site I created for search and replace tool testing
-
 
 
 ** Week Ending 3 Aug **
