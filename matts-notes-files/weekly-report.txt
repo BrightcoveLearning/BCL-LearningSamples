@@ -1,4 +1,11 @@
 Major accomplishments:
+** Week Ending 7 Sep **
+1. Closed 11 JIRAs, 3 of which were administrivia.
+2. Only two Brightcove Player docs updated to new standards this week.
+3. Not reflected in JIRAs is the Dynamic Endscreens sample 90% done.
+4. Not the productive week with Monday off, too many meetings and interruptions.
+
+
 ** Week Ending 31 Aug **
 1. Closed 35 (yes, 35!) JIRAs, 4 of which were administrivia, 4 of which were just deciding not to do the request and 4 consolidation of changes to player developer docs into a single ticket. Still a very good week on the JIRA front. With no Drupal/platform.sh/Pantheon work to do gave my JIRA list a good scrub and got the work done for the "low hanging fruit" mostly.
 2. New sample: Get Seeked Time (uses middleware)
