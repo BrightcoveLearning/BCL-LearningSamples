@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+    .vjs-marker {
+      position: absolute;
+      opacity: 1;
+      height: 100%;
+      background-color: blue;
+      width: 4px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="2026618970001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').on('loadedmetadata',function() {
+      var myPlayer = this,
+        videoDuration,
+        cuesAra = [],
+        chapterStartTimesAra = [],
+
+        // +++  Use the array filter function to retrieve data structure that contains chapter cue points +++
+        chapterTT = [].filter.call(videojs.players.myPlayerID.textTracks(), function(tt) { return tt.kind === 'chapters'; });
+      //  Retrieve actual array of chapter cue points
+      cuesAra = chapterTT[0].cues;
+
+      // +++ Loop over chapter cue points and get start time of each  +++
+      for (var i = 0; i < cuesAra.length; i++) {
+        chapterStartTimesAra[i] = cuesAra[i].startTime;
+      }
+
+      // +++ Call function to create marks in progress bar  +++
+      // Get the video duration
+      videoDuration = myPlayer.mediainfo.duration;
+      // Call the function to add the marks in the progress control
+      addMarkers(chapterStartTimesAra,videoDuration);
+    });
+
+    // +++ Add chapter markers +++
+    function addMarkers(cuePointsAra, videoDuration) {
+      var iMax = cuePointsAra.length,
+        i,
+        playheadWell = document.getElementsByClassName('vjs-progress-control vjs-control')[0];
+      // Loop over each cue point, dynamically create a div for each
+      // then place in div progress bar
+      for (i = 0; i < iMax; i++) {
+        var elem = document.createElement('div');
+        elem.className = 'vjs-marker';
+        elem.id = 'cp' + i;
+        elem.style.left = (cuePointsAra[i] / videoDuration) * 100 + '%';
+        console.log('elem.style.left',elem.style.left);
+        playheadWell.appendChild(elem);
+      }
+    }
+  </script>
+
+</body>
+
+</html>
