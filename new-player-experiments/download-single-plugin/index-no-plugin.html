@@ -23,7 +23,7 @@
 
 <body>
 
-  <video id="myPlayerID"
+  <!-- <video id="myPlayerID"
     data-video-id="5701190170001"
     data-account="1752604059001"
     data-player="S10RYv9QG"
@@ -32,7 +32,17 @@
     class="video-js"
     controls></video>
 
-  <script src="//players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script> -->
+
+
+<video  id="myPlayerID" data-video-id="5842800655001"
+data-account="1752604059001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').ready(function(){
@@ -53,13 +63,13 @@
 
         // +++ Get video name and the MP4 renditions +++
         videoName = myPlayer.mediainfo['name'];
-        rendtionsAra = myPlayer.mediainfo.sources;
-        totalRenditions = rendtionsAra.length;
-
+        renditionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = renditionsAra.length;
+console.log('renditionsAra:', renditionsAra);
         // +++ Loop over videos and extract only MP4 versions +++
         for (var i = 0; i < totalRenditions; i++) {
-          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
-            mp4Ara.push(rendtionsAra[i]);
+          if (renditionsAra[i].container === "MP4" && renditionsAra[i].hasOwnProperty('src')) {
+            mp4Ara.push(renditionsAra[i]);
           };
         };
 

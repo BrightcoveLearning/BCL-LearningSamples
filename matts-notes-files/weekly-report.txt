@@ -1,4 +1,9 @@
 Major accomplishments:
+** Week Ending 14 Sep **
+1. Closed 5 JIRAs, 3 of which were administrivia.
+2. Chapter markers sample done.
+
+
 ** Week Ending 7 Sep **
 1. Closed 11 JIRAs, 3 of which were administrivia.
 2. Only two Brightcove Player docs updated to new standards this week.

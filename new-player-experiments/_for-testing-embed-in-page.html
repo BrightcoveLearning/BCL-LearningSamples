@@ -15,24 +15,22 @@
 
 <body>
 
-	<video-js id="myPlayerID"
-		data-video-id="5831706803001"
-		data-account="1752604059001"
-		data-player="default"
-		data-embed="default"
-		data-application-id
-		class="video-js"
-		controls></video-js>
-	<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+<video  id="myPlayerID" data-video-id="5781062166001"
+data-account="1507807800001"
+data-player="50sQB95Go"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/50sQB95Go_default/index.min.js"></script>
 
-	<script src="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
+<script>
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+		techOrder: ["flash", "html5"]
+  });
+</script>
 
-  <script>
-    var player = bc('myPlayerID');
-    player.ima3({
-      serverUrl: 'https://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml'
-    });
-  </script>
 
 </body>
 

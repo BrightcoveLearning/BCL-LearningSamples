@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Tester Perform</title>
+<style type="text/css">
+    .video-js {
+      height: 350px;
+      width: 640px;
+      float: left;
+    }
+    .vjs-playlist {
+      width: 280px;
+      height: 350px;
+    }
+</style>
+</head>
+
+<body>
+
+<video  id="myPlayerID"
+data-account="1507807800001"
+data-player="BJ3CdomN7"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1507807800001/BJ3CdomN7_default/index.min.js"></script>
+
+<div class="vjs-playlist"></div>
+
+<script type="text/javascript">
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+    myPlayer.catalog.getPlaylist('5455901760001', function(error, playlist){
+      console.log('playlist',playlist);
+      //deal with error
+      myPlayer.catalog.load(playlist);
+    })
+  });
+</script>
+
+</body>
+
+</html>
