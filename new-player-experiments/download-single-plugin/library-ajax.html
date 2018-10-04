@@ -36,7 +36,7 @@
 
 
 <video  id="myPlayerID"
-data-video-id="5831706803001"
+data-video-id="5842800655001"
 data-account="1752604059001"
 data-player="default"
 data-embed="default"
@@ -81,7 +81,6 @@ console.log('mp4Ara:', mp4Ara);
 
         // +++ Extract the highest rendition +++
         highestQuality = mp4Ara[0].src;
-console.log('highestQuality',highestQuality);
         // +++ Build the download image element +++
         newElement.id = 'downloadImage';
         newElement.className = 'vjs-control downloadStyle';
@@ -92,7 +91,11 @@ console.log('highestQuality',highestQuality);
         newImage.onclick = function() {
           // This function forces download by the browsers
           // NOT opening the video in a new window/tab
-          download(highestQuality,'video-file.mp4');
+        var x=new XMLHttpRequest();
+        	x.open("GET", highestQuality, true);
+        	x.responseType = 'blob';
+        	x.onload=function(e){download(x.response, "video-file.mp4", "video/mp4"); }
+        	x.send();          //
         }
         newElement.appendChild(newImage);
 
