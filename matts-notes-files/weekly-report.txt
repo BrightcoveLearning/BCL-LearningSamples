@@ -1,4 +1,27 @@
 Major accomplishments:
+** Week Ending 19 Oct **
+1. Closed 17 JIRAs, 3 of which were administrivia.
+JIRA Work Includes:
+2. Updated developer docs according to list in Quiver (too long to list here). Made some real progress finally, about 60% done with dev docs. Still all the samples to do, but at least some progress. Made more progress partially because not dealing with <code> and notranslate, as assuming this will be taken care of in GTranslate now.
+3. Updated IMA3 doc to use two ways to implement in Studio, one using Advertising section, and limited to option in UI. Also using plugins, where you can pass options in using JSON.
+
+
+** Week Ending 12 Oct **
+1. Closed 12 JIRAs, 2 of which were administrivia.
+2. Taught DwBP, good session.
+JIRA Work Includes:
+3. Updated docs for new Players UI, focused this week on plugin docs
+4. Updated DwBP materials to use player.muted(true) to avoid autoplay issues
+
+
+** Week Ending 5 Oct ** IN YACHATS
+1. Closed 20 JIRAs, 5 of which were administrivia. (Great 4 days, must be the fresh Oregon coast air.)
+JIRA Work Includes:
+2. Update to the Download Plugin, now works with DD videos and name of download is name of video (spaces removed)
+3. Completed doc on customized endscreens. I had code written, but needed to finish the doc around the code.
+4. Came up with sample code for Pat O to show how the Studio code generated for responsive, horizontal playlists in an iframe did not really work well. One issue discovered already fixed, he is thinking about how to solve the other issue.
+
+
 ** Week Ending 14 Sep **
 1. Closed 5 JIRAs, 3 of which were administrivia.
 2. Chapter markers sample done.

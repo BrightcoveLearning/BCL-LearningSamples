@@ -8,31 +8,38 @@
 
 <body>
 
-<video id="myPlayerID"
+<video-js id="myPlayerID"
   data-embed="default"
-  class="video-js" controls></video>
-<script src="//players.brightcove.net/1507807800001/3912a5e8-d998-4f2c-88cb-cb86dbdacf4b_default/index.min.js"></script>
- 
-  <script type="text/javascript">
-    var vTag = document.getElementsByTagName('video')[0];
-    vTag.setAttribute('data-account', 1507807800001);
-    vTag.setAttribute('data-player', '3912a5e8-d998-4f2c-88cb-cb86dbdacf4b');
-    vTag.setAttribute('data-video-id', 2114345470001);
-    bc(vTag);
-    myPlayer = videojs(document.querySelector('.video-js'));
+  class="video-js" controls></video-js>
+<script src="//players.brightcove.net/1507807800001/BdGVdOd36_default/index.min.js"></script>
 
-    myPlayerID.setAttribute('data-account', 1507807800001);
-    myPlayerID.setAttribute('data-player', '3912a5e8-d998-4f2c-88cb-cb86dbdacf4b');
-    myPlayerID.setAttribute('data-video-id', 2114345470001);
-    bc(document.getElementById("myPlayerID"));
-    myPlayer = videojs("myPlayerID");
+  <script type="text/javascript">
+    // var vTag = document.getElementsByTagName('video-js')[0];
+    // vTag.setAttribute('data-account', 1507807800001);
+    // vTag.setAttribute('data-player', 'BdGVdOd36');
+    // vTag.setAttribute('data-video-id', 2114345470001);
+    // myPlayer = bc(vTag);
+    //myPlayer = videojs(document.querySelector('.video-js'));
+
+
+    var vTag = document.getElementById('myPlayerID');
+    vTag.setAttribute('data-account', 1507807800001);
+    vTag.setAttribute('data-player', 'BdGVdOd36');
+    vTag.setAttribute('data-video-id', 2114345470001);
+    myPlayer = bc(vTag);
+
+     // myPlayerID.setAttribute('data-account', 1507807800001);
+     // myPlayerID.setAttribute('data-player', 'BdGVdOd36');
+     // myPlayerID.setAttribute('data-video-id', 2114345470001);
+     // myPlayer = bc("myPlayerID");
 
     myPlayer.on('loadedmetadata',function(){
+      myPlayer.muted(true);
       myPlayer.play();
     });
-  </script> 
-    
-    
+  </script>
+
+
 </body>
 
 </html>

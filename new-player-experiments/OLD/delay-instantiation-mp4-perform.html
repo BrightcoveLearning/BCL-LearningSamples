@@ -15,12 +15,12 @@
   <script src="//players.brightcove.net/3676484087001/bddd471c-0e81-4841-b967-a2df937f3b38_default/index.min.js"></script>
 
   <script type="text/javascript">
-    bc(document.getElementById("myPlayerID"));
-    myPlayer = videojs("myPlayerID");
+    bc(document.getElementById('myPlayerID'));
+    myPlayer = videojs.getPlayer('myPlayerID');
     myPlayer.src({ src: "//solutions.brightcove.com/bcls/assets/videos/Tiger.mp4", type: "video/mp4"});
     myPlayer.play();
-  </script> 
-    
+  </script>
+
 </body>
 
 </html>
