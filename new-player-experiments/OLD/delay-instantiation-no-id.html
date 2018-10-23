@@ -30,7 +30,7 @@
   vTag.setAttribute('data-video-id', 2114345470001);
 
   // Use the bc() method to initialize the the Brightcove Player
-  myPlayer = bc("vTag");
+  myPlayer = bc(vTag);
 
   // Mute (in case there is an audio track, in which case play won't work) and play the video
   myPlayer.on('loadedmetadata',function(){
