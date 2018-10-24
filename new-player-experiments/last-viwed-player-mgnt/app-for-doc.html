@@ -115,35 +115,10 @@
         button.removeAttribute('style');
       }
 
-      function removeChildren(el) {
-        while (el.firstChild) {
-          el.removeChild(el.firstChild);
-        }
-      }
-
-      /**
-       * determines whether specified item is in an array
-       *
-       * @param {array} array to check
-       * @param {string} item to check for
-       * @return {boolean} true if item is in the array, else false
-       */
-
-      function arrayContains(arr, item) {
-        var i,
-          iMax = arr.length;
-        for (i = 0; i < iMax; i++) {
-          if (arr[i] === item) {
-            return true;
-          }
-        }
-        return false;
-      }
-
-  function reset() {
-    disableButtons();
-    enableButton(get_last_viewed);
-  }
+    function reset() {
+      disableButtons();
+      enableButton(get_last_viewed);
+    }
 
       /**
        * sets up the data for the API request
@@ -230,11 +205,32 @@
         httpRequest.send(JSON.stringify(options));
       }
 
+      /**
+       * sort an array of objects based on an object property
+       * @param {array} targetArray - array to be sorted
+       * @param {string|number} objProperty - object property to sort on
+       * @return sorted array
+       */
+    function sortArray(targetArray, objProperty) {
+      targetArray.sort(function (a, b) {
+        var propA = a.length,
+          propB = b.length;
+        // sort ascending; reverse propA and propB to sort descending
+        if (propA < propB) {
+          return -1;
+        } else {
+          return 1;
+        } 
+      });
+      return targetArray;
+    }
+
     function buildTable(rawPlayerData){
       console.log('rawPlayerData',rawPlayerData);
       playerTable.innerHTML = '<table id="myTable"><tr><th>Name</th><th>Player ID</th><th>last_viewed Info</th></tr></table>';
 
       var arrayOfPlayers = rawPlayerData.items;
+      sortArray(arrayOfPlayers,'last_viewed');
       numPlayers = arrayOfPlayers.length;
       console.log('numPlayers',numPlayers);
       var table = document.getElementById("myTable");
