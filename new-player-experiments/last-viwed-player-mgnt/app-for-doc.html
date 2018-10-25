@@ -13,7 +13,7 @@
     }
     .bcls-code {
       color: #111;
-      font-family: 'Source Code Pro',monospace;
+      font-family: "Source Code Pro", monospace;
       padding: 1em;
       width: 90%;
       min-height: 5em;
@@ -21,23 +21,34 @@
       font-size: 1rem;
     }
     .bcls-button {
-      padding: .5em;
+      padding: 0.5em;
       background-color: #333;
       border: 1px yellow solid;
-      border-radius: .5em;
+      border-radius: 0.5em;
       color: yellow;
       cursor: pointer;
     }
     fieldset {
-      color: #64AAB2;
-      border: 1px #64AAB2 solid;
-      border-radius: .5em;
+      color: #64aab2;
+      border: 1px #64aab2 solid;
+      border-radius: 0.5em;
     }
     .buttonBlock {
       display: inline-block;
       padding: 1em;
       border-right: 1px white solid;
       vertical-align: top;
+    }
+
+    .bcls-Data-Table {
+      border: 1px RGB(54, 72, 133) solid;
+      border-collapse: collapse;
+    }
+
+    .bcls-Data-Table td, .bcls-Data-Table th {
+      padding: .5em;
+      border: 1px RGB(54, 72, 133) solid;
+      border-collapse: collapse;
     }
   </style>
 </head>
@@ -60,12 +71,13 @@
   <textarea id="apiRequest" class="bcls-code" style="height:.7rem;min-height:.7rem;"></textarea>
   <p><strong>Request method:</strong></p>
   <textarea id="apiMethod" class="bcls-code" style="height:.7rem;min-height:.7rem;"></textarea>
-  <p><strong>Raw player response data</strong></p>
-  <textarea id="apiResponse" class="bcls-code"></textarea>
   <p><strong>Table of last_viewed player data:</strong></p>
   <div id="playerTable" class="bcls-code"></div>
+  <p><strong>Raw player response data</strong></p>
+  <textarea id="apiResponse" class="bcls-code"></textarea>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
   <script type="text/javascript">
     var BCLS = (function(window, document) {
       var playerMngmtURL = 'https://players.api.brightcove.com/v2/accounts/',
@@ -153,6 +165,7 @@
           apiResponse.textContent = JSON.stringify(parsedData, null, '  ');
           // enable the create experience button
           disableButtons();
+          // Using returned data, call function that builds the table
           buildTable(parsedData);
         });
       }
@@ -226,21 +239,36 @@
       return targetArray;
     }
 
+
+      /**
+       *builds a table from the players' last_viewed array
+       * @param JSON rawPlayerData - all data returned from the Player Mgmt API call /players
+       */
+
     function buildTable(rawPlayerData){
+      // Build skeleton of table
       playerTable.innerHTML = '<table id="myTable"><tr><th>Name</th><th>Player ID</th><th>last_viewed Info</th></tr></table>';
 
+      // Extract items array from raw JSON
       var arrayOfPlayers = rawPlayerData.items;
+      // Sort so players with views at the top of table
       sortArray(arrayOfPlayers,'last_viewed');
+      // Get number of players
       numPlayers = arrayOfPlayers.length;
+      // Get table element for later use
       var table = document.getElementById("myTable");
+      // Style table
+      table.setAttribute('class', 'bcls-Data-Table');
 
+      //Loop over all players
       for (var i = 0; i < numPlayers; i++) {
         var lastViewedAra = arrayOfPlayers[i].last_viewed;
         var lastViewedLength = lastViewedAra.length;
 
+        // Insert a row
         var row = table.insertRow(i+1);
 
-        // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+        // Insert new cells (<td> elements):
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
         var cell3 = row.insertCell(2);
@@ -248,9 +276,12 @@
         // Add some text to the new cells:
         cell1.innerHTML = rawPlayerData.items[i].name;
         cell2.innerHTML = rawPlayerData.items[i].id;
+        // If last_viewed array has entries, display them, otherwise display Not viewed
         if (lastViewedLength > 0) {
+          //Dynamically build one or more <ul> elements
           var myUL = '<ul>',
             formattedDate;
+          // Loop over all elements in single player's last_viewed array
           for (var j = 0; j < lastViewedLength; j++) {
             formattedDate = moment(formattedDate).format('DD MMM YY');
             var myLI = '<li> Count: ' + lastViewedAra[j].count + ' Date: ' + formattedDate + '</li>';
