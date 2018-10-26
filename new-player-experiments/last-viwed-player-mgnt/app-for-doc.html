@@ -247,16 +247,16 @@
 
     function buildTable(rawPlayerData){
       // Build skeleton of table
-      playerTable.innerHTML = '<table id="myTable"><tr><th>Name</th><th>Player ID</th><th>last_viewed Info</th></tr></table>';
+      playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 40%">Name</th><th style="width: 20%">Player ID</th><th style="width: 40%">last_viewed Info</th></tr></table>';
 
       // Extract items array from raw JSON
-      var arrayOfPlayers = rawPlayerData.items;
+      var arrayOfPlayers = rawPlayerData.items,
+        // Get number of players
+        numPlayers = arrayOfPlayers.length,
+        // Get table element for later use
+        table = document.getElementById("myTable");
       // Sort so players with views at the top of table
       sortArray(arrayOfPlayers,'last_viewed');
-      // Get number of players
-      numPlayers = arrayOfPlayers.length;
-      // Get table element for later use
-      var table = document.getElementById("myTable");
       // Style table
       table.setAttribute('class', 'bcls-Data-Table');
 
@@ -283,6 +283,7 @@
             formattedDate;
           // Loop over all elements in single player's last_viewed array
           for (var j = 0; j < lastViewedLength; j++) {
+            formattedDate = lastViewedAra[j].date;
             formattedDate = moment(formattedDate).format('DD MMM YY');
             var myLI = '<li> Count: ' + lastViewedAra[j].count + ' Date: ' + formattedDate + '</li>';
             myUL += myLI;
