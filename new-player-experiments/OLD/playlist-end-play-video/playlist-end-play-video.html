@@ -19,6 +19,19 @@
 
 <body>
 
+<video-js id="myPlayerID"
+  data-playlist-id="5541484620001"
+  data-account="1752604059001"
+  data-player="SJ5OoOgOb"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls
+  width="400"
+  height="225"></video-js>
+<script src="https://players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script>
+<!--
+
   <video id="myPlayerID"
     data-playlist-id="5541484620001"
     data-account="1752604059001"
@@ -29,13 +42,13 @@
     controls
     width="400"
     height="225"></video>
-  <script src="//players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script>
+  <script src="//players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script> -->
 
   <ol class="vjs-playlist"></ol>
 
   <script type="text/javascript">
     // +++ Check for loadedmetadat before acting on the playlist +++
-    videojs('myPlayerID').one('loadedmetadata', function(){
+    videojs.getPlayer('myPlayerID').one('loadedmetadata', function(){
       var myPlayer = this,
       // Assign video to be played at end of playlist
       afterPlaylistVideo = 4607357817001,
@@ -44,6 +57,7 @@
       // Create variable for use in check if playlist over
       currentVideoInPlaylist;
       // Start playing first video in playlist
+      myPlayer.muted(true);
       myPlayer.play();
 
       // +++ Define on event handler +++
