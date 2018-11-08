@@ -49,6 +49,17 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+// set autoplay and muted
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "muted": true,
+      "autoplay": true
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
 
 //change policy key on player
 curl \

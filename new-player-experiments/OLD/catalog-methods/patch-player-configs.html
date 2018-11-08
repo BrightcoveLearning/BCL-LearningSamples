@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+      .video-js {
+        height: 360px;
+        width: 640px;
+        float: left;
+      }
+      .vjs-playlist {
+        width: 280px;
+        height: 350px;
+      }
+  </style>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="Sk5m8XYoG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+
+  <div class="vjs-playlist"></div>
+
+  <script src="https://players.brightcove.net/1752604059001/Sk5m8XYoG_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    var videoIds = [],
+        videosAraLength;
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this,
+          catalogParams = {};
+      catalogParams.type = 'search';
+      catalogParams.policyKey = 'BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX';
+      catalogParams.q = 'name:Desert';
+      myPlayer.catalog.get(catalogParams, function (errorObj, videosReturned) {
+        videosAraLength = videosReturned.length;
+        for (var i = 0; i < videosAraLength; i++) {
+          videoIds.push(videosReturned[i].id);
+        }
+        setRequest();
+      });
+    });
+
+    // function to set up request
+    function setRequest() {
+      var callNumber = 0,
+          accountId = '1507807800001',
+          responseParsed,
+          options = {},
+          requestBody = {
+            "muted": true,
+            "autoplay": true
+          },
+          baseURL = 'https://players.api.brightcove.com/v1/accounts/',
+          endPoint = accountId + '/players/';
+      options.proxyURL = "https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy-v2.php";
+      options.url = baseURL + endPoint;
+      options.requestType = "PATCH";
+      var currentId = videoIds[callNumber];
+      //if (isDefined(currentVideo)) {
+      options.url += currentId + '/configuration';
+      console.log('options.url', options.url);
+    }
+        // requestBody = currentVideo;
+        // delete requestBody.id;
+        // options.requestBody = JSON.stringify(requestBody);
+        // options.requestType = "PATCH";
+        // apiRequest_field.textContent = options.url;
+        // apiRequestBody.textContent = JSON.stringify(requestBody, null, "  ");
+        // makeRequest(options, function (response) {
+        //   responseParsed = JSON.parse(response);
+        //   response_display.textContent = JSON.stringify(
+        //     responseParsed,
+        //     null,
+        //     "  "
+        //   );
+        //   callNumber++;
+        //   if (callNumber < totalVideos) {
+        //     setRequest("updateVideo");
+        //   }
+        //};
+
+  </script>
+
+</body>
+
+</html>
