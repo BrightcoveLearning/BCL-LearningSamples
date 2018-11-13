@@ -19,66 +19,52 @@
 
 <body>
 
-  <video-js id="myPlayerID"
-    data-account="1752604059001"
-    data-player="Sk5m8XYoG"
-    data-embed="default"
-    data-application-id
-    class="video-js"
-    controls></video-js>
-
-  <div class="vjs-playlist"></div>
-
-  <script src="https://players.brightcove.net/1752604059001/Sk5m8XYoG_default/index.min.js"></script>
-
   <script type="text/javascript">
-    var videoIds = [],
-        videosAraLength;
-    videojs.getPlayer('myPlayerID').ready(function () {
-      var myPlayer = this,
-          catalogParams = {};
-      catalogParams.type = 'search';
-      catalogParams.policyKey = 'BCpkADawqM3dv_RjQyLQPx8i9GgLSGU2K_L_uIFTCZAvfvUd25ExGIbIMkFttfuqWQijLVMC6eGG42530ej9nTtHUHo2l5xOL48_pQFqkUFozgp2Azfvdf3s-rSSaDpwCVfj0vsWCv8-nlTX';
-      catalogParams.q = 'name:Desert';
-      myPlayer.catalog.get(catalogParams, function (errorObj, videosReturned) {
-        videosAraLength = videosReturned.length;
-        for (var i = 0; i < videosAraLength; i++) {
-          videoIds.push(videosReturned[i].id);
-        }
-        setRequest();
-      });
-    });
+    var baseURL = 'https://players.api.brightcove.com/v2/accounts/',
+      accountId = '1752604059001',
+      returnedPlayers = [];
+      setRequestGetPlayers();
 
     // function to set up request
-    function setRequest() {
+    function setRequestGetPlayers() {
+      var responseParsed,
+        options = {},
+        endPoint = accountId + '/players';
+      options.proxyURL = "https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy-v2.php";
+      options.url = baseURL + endPoint;
+      options.requestType = "GET";
+      makeRequest(options, function (response) {
+        responseParsed = JSON.parse(response);
+        returnedPlayers = responseParsed.items;
+        var filtered_players = returnedPlayers.filter(filter_players);
+        console.log('filtered_players',filtered_players);
+      });
+      function filter_players(event) {
+        return event.description == 'For patch players Player Mgmt Sample';
+      }
+    }
+
+    // function to set up request
+    function setRequestMakeUpdate() {
       var callNumber = 0,
-          accountId = '1507807800001',
           responseParsed,
           options = {},
           requestBody = {
             "muted": true,
             "autoplay": true
           },
-          baseURL = 'https://players.api.brightcove.com/v1/accounts/',
+          baseURL = 'https://players.api.brightcove.com/v2/accounts/',
           endPoint = accountId + '/players/';
       options.proxyURL = "https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy-v2.php";
       options.url = baseURL + endPoint;
       var currentId = videoIds[callNumber];
-      //if (isDefined(currentVideo)) {
       options.url += currentId + '/configuration';
       console.log('options.url', options.url);
         requestBody = '{"muted": true,"autoplay": true}';
         options.requestBody = JSON.stringify(requestBody);
         options.requestType = "PATCH";
-        apiRequest_field.textContent = options.url;
-        apiRequestBody.textContent = JSON.stringify(requestBody, null, "  ");
         makeRequest(options, function (response) {
           responseParsed = JSON.parse(response);
-          response_display.textContent = JSON.stringify(
-            responseParsed,
-            null,
-            "  "
-          );
           callNumber++;
           if (callNumber < videosAraLength - 1) {
             setRequest("updateVideo");
@@ -87,6 +73,7 @@
       }
 
       function makeRequest(options, callback) {
+        console.log('options in makeRequest',options);
         var httpRequest = new XMLHttpRequest(),
           response,
           requestParams,
