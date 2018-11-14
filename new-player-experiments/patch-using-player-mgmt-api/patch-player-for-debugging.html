@@ -10,7 +10,7 @@
 
   <script type="text/javascript">
     var baseURL = 'https://players.api.brightcove.com/v2/accounts/',
-      accountId = '1507807800001',
+      accountId = '1752604059001',
       returnedPlayers = [],
       callNumber = 0,
       callNumberPublish = 0,
@@ -27,7 +27,6 @@
       options.requestType = "GET";
       // Call function that  calls the proxy which makes the actual call to the API
       makeRequest(options, function (response) {
-        console.log('response: ',response);
         responseParsed = JSON.parse(response);
         returnedPlayers = responseParsed.items;
         // Use the filter_players function in conjunction JavaScript filter function extract wanted players
@@ -64,6 +63,7 @@
       options.url += currentId + '/configuration';
       options.requestBody = JSON.stringify(requestBody);
       options.requestType = "PATCH";
+      console.log('options: ',options);
       // Call function that calls the proxy which makes the actual call to the API
       makeRequest(options, function (response) {
         responseParsed = JSON.parse(response);
