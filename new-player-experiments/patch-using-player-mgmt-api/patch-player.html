@@ -8,7 +8,10 @@
 
 <body>
 
+<p>Updating desired players.</p>
+
   <script type="text/javascript">
+  var BCLS = (function(window, document) {
     var baseURL = 'https://players.api.brightcove.com/v2/accounts/',
       accountId = '1752604059001',
       returnedPlayers = [],
@@ -140,7 +143,7 @@
       // open and send request
       httpRequest.send(JSON.stringify(options));
     }
-
+  })(window, document);
   </script>
 
 </body>
