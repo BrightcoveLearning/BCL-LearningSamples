@@ -1,4 +1,26 @@
 Major accomplishments:
+** Week Ending 16 Nov **
+1. Closed 9 JIRAs, 4 of which were administrivia.
+JIRA Work Includes:
+2. Added section on simple debugging in the REST API Learning Guide.
+3. Create sample for Player Management API to update multiple players.
+4. Added some CSS selectors Jeff discovered when working with the overlay background to the overlay plugin document.
+5. I am about 75% done with my script for the Player Management API video. Plan on recording next week.
+
+
+** Week Ending 9 Nov **
+1. Closed 9 JIRAs, 3 of which were administrivia.
+JIRA Work Includes:
+2. The great percentage of developer docs and CodePens are now updated! YEA!! Still some of the anonymous URL for //players.brightcove.net exist, and some of the CodePens aren't all on the new standards, but what is left is trivial to what I have done. Jeff was great  and jumped in and did 1/3 of the player samples, which I greatly appreciated.
+3. Not reflected in JIRA tickets is the work done on the Player Management video intro script and associated sample.
+
+
+** Week Ending 2 Nov **
+1. Closed 13 JIRAs, 4 of which were administrivia.
+JIRA Work Includes:
+2. Biggest time investment was updated developer docs according to list in Quiver (too long to list here). I got all the normal docs done, and moved onto the samples. Jeff offered to help with the samples (very happy about that), and we should have those all done by Tuesday.
+
+
 ** Week Ending 26 Oct **
 1. Closed 9 JIRAs, 4 of which were administrivia.
 JIRA Work Includes:
