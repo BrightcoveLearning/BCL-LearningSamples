@@ -63,9 +63,10 @@
       options.url += currentId + '/configuration';
       options.requestBody = JSON.stringify(requestBody);
       options.requestType = "PATCH";
-      console.log('options: ',options);
+      console.log('DATA IN options object: ',options);
       // Call function that calls the proxy which makes the actual call to the API
       makeRequest(options, function (response) {
+        console.log('DATA OUT response object: ',response);
         responseParsed = JSON.parse(response);
         callNumber++;
         // If call not made for all players, recursively call this function
