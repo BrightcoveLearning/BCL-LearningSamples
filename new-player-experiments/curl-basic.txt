@@ -49,6 +49,17 @@ export EMBED_ID=
 
 Video Cloud video: 3674727957001
 
+// turn off debugger on right-click
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "debugger": false
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
 // set autoplay and muted
 curl \
   --header "Content-Type: application/json" \

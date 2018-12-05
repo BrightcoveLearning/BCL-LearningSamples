@@ -8,14 +8,22 @@
 
 <body>
 
+  <div id="progress"></div>
+
   <script type="text/javascript">
-    var baseURL = 'https://players.api.brightcove.com/v2/accounts/',
+
+    var progressArea = document.getElementById('progress'),
+    baseURL = 'https://players.api.brightcove.com/v2/accounts/',
       accountId = '1752604059001',
       returnedPlayers = [],
       callNumber = 0,
       callNumberPublish = 0,
       playerIDsAra = [];
     setRequestGetPlayers();
+    progressArea.setAttribute('style', 'white-space: pre;');
+progressArea.textContent = "UPDATING PLAYERS  \r\n";
+
+
 
      // +++ Configure the request to get players and extract their IDs +++
     function setRequestGetPlayers() {
@@ -63,9 +71,11 @@
       options.url += currentId + '/configuration';
       options.requestBody = JSON.stringify(requestBody);
       options.requestType = "PATCH";
+      progressArea.textContent += '**Data In:**' + JSON.stringify(options) + '\r\n';
       console.log('DATA IN options object: ',options);
       // Call function that calls the proxy which makes the actual call to the API
       makeRequest(options, function (response) {
+      progressArea.textContent += '**Data Out:**' + JSON.stringify(response) + '\r\n';
         console.log('DATA OUT response object: ',response);
         responseParsed = JSON.parse(response);
         callNumber++;

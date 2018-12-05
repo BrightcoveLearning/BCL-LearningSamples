@@ -3,26 +3,40 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Player v5. Graphite skin. Controlbar hidden</title>
+	<title>the title</title>
 <style type="text/css">
     .video-js {
       height: 350px;
       width: 640px;
     }
+		/* .video-js .vjs-big-play-button .vjs-control-text {
+			display: none;
+		}
+		.video-js .vjs-big-play-button {
+		  background-color: #B37D5B;
+		  opacity: .6;
+		} */
 </style>
 
 </head>
 
 <body>
 
-<video data-video-id="5459237204001"
-data-account="57838016001"
-data-player="rnNuwzd5I7"
+<video-js id="myPlayerID" data-video-id="5796745147001"
+data-account="1507807800001"
+data-player="default"
 data-embed="default"
 data-application-id
 class="video-js"
-controls></video>
-<script src="//players.brightcove.net/57838016001/rnNuwzd5I7_default/index.min.js"></script>
+controls></video-js>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+<script>
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+		myPlayer.getChild('bigPlayButton').controlText('Play Audio')
+  });
+</script>
 
 </body>
 
