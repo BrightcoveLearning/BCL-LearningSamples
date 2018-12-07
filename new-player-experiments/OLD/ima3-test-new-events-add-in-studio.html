@@ -14,13 +14,16 @@
 
 <body>
 
-  <video id="myPlayerID" data-video-id="4784463159001"
+<video-js id="myPlayerID"
+data-video-id="5796745147001"
 data-account="1507807800001"
-data-player="SkSyF9Cl"
+data-player="Jm7Fj158b"
 data-embed="default"
+data-application-id
 class="video-js"
-controls></video>
-<script src="//players.brightcove.net/1507807800001/SkSyF9Cl_default/index.min.js"></script>
+controls></video-js>
+<script src="//players.brightcove.net/1507807800001/Jm7Fj158b_default/index.min.js"></script>
+
 <script>
   var myPlayer;
 
@@ -29,7 +32,6 @@ controls></video>
         myPlayer = this;
         myPlayer.on('ads-first-quartile',function( evt ){
           console.log('ads-first-quartile event passed to event handler', evt);
-          myPlayer.ima3.adsManager.destroy();
         });
         myPlayer.on('ads-ad-started',function( evt ){
           console.log('ads-ad-started event passed to event handler', evt);
