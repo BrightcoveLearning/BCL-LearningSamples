@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 7 Dec **
+1. Closed 18 JIRAs, 5 of which were administrivia.
+JIRA Work Includes:
+2. Had spent lots of time on intro API videos, and fell a bit behind on JIRAs so spent time closing mostly low-hanging fruit.
+Work NOT Reflected in JIRAs:
+3. Finished all recording for Analytics API video intro except face shot
+4. Started script for CMS API video intro
+
+
+
 ** Week Ending 30 Nov **
 1. Closed 5 JIRAs, 4 of which were administrivia.
 JIRA Work Includes:
@@ -6,7 +16,6 @@ JIRA Work Includes:
 Work NOT Reflected in JIRAs:
 3. Finished all recording for Player Management API video intro except face shot
 4. Script finished for Analytics API video intro
-
 
 
 ** Week Ending 16 Nov **

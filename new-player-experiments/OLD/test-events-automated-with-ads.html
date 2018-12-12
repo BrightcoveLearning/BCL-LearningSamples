@@ -24,13 +24,14 @@ class="video-js"
 controls></video-js>
 <script src="//players.brightcove.net/1507807800001/Jm7Fj158b_default/index.min.js"></script>
 
+
 <script>
   var myPlayer,
-    eventsAra=['ads-load','ads-pod-started','ads-ad'],
+    eventsAra=['ended','loadeddata','loadedmetadata','loadstart','play','playing','canplay','progress','ads-first-quartile','ads-ad-ended','ads-ad-started','ads-ad-ended','ads-midpoint','ads-thrid-quartile','ads-play','ads-allpods-completed','ads-request','ads-pod-ended','ads-load','ads-pod-started','ads-ad'],
     eventsAraLength,
     eventName;
 
-  videojs.getPlayer('myPlayerID').one('loadeddata', function(){
+  videojs.getPlayer('myPlayerID').ready(function() {
     // get a reference to the player
     myPlayer = this,
     eventsAraLength = eventsAra.length;
@@ -39,7 +40,7 @@ controls></video-js>
       console.log(eventsAra[i]);
       eventName = eventsAra[i];
       myPlayer.on(eventsAra[i],function( evt ){
-        console.log('Dispatched: ',eventName);
+        console.log('Dispatched: ',evt.type);
       });
     }
   });
