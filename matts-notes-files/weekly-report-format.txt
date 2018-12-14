@@ -1,8 +1,11 @@
+Thanks, and new format below.
+-M
+
+
 Title:
 Description:
 Link:
 Category:
 Type: New Doc / Major Update / Minor Update
-
 
 

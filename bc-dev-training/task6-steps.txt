@@ -1,0 +1,66 @@
+1. Show the Overlay Plugin as part of a player:
+  Developer Training
+  BC Player Dev Training with Overlay - DO NOT DELETE Copy
+2. Copy Overlay Plugin's CSS and JavaScript into HTML page
+   <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+   <script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+3. Call overlay and pass in options
+      myPlayer.overlay({
+        "content": "<strong>Default overlay content</strong>",
+        "overlays": [{
+          "content": "This event-triggered overlay message appears when the video is playing",
+          "start": "play",
+          "end": "pause",
+          "align": "top-right"
+        }, {
+          "content": "This timed overlay message appears between 2 and 5 seconds",
+          "start": 2,
+          "end": 5,
+          "align": "bottom-right"
+        }, {
+          "start": 4,
+          "end": 8,
+          "align": "bottom-left"
+        }]
+      });
+4. Browse to see overlay in action
+
+
+
+
+***Core Code***
+<video-js id="myPlayerID"
+  data-video-id="4036854518001"
+  data-account="921483702001"
+  data-player="NJB3JCBqe"
+  data-embed="default"
+  class="video-js"
+  controls></video-js>
+
+<script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+
+<script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+
+<script type="text/javascript">
+  videojs.getPlayer('myPlayerID').on('loadedmetadata',function(){
+    var myPlayer = this;
+    myPlayer.overlay({
+      "content": "<strong>Default overlay content</strong>",
+      "overlays": [{
+        "content": "This event-triggered overlay message appears when the video is playing",
+        "start": "play",
+        "end": "pause",
+        "align": "top-right"
+      }, {
+        "content": "This timed overlay message appears between 2 and 5 seconds",
+        "start": 2,
+        "end": 5,
+        "align": "bottom-right"
+      }, {
+        "start": 4,
+        "end": 8,
+        "align": "bottom-left"
+      }]
+    });
+  });
+</script>
