@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+    .theForm {
+      background-color: rgb(248,181,1);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5976894149001"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <p><button onclick="closeModal()">Close Modal</button></p>
+
+  <script>
+    var myPlayer,
+      passwordToMatch = '',
+      options = {},
+      myModal,
+      ModalDialog = videojs.getComponent('ModalDialog');
+
+    videojs.getPlayer('myPlayerID').ready(function() {
+      myPlayer = this;
+
+      myPlayer.one('loadstart', function() {
+        passwordToMatch = myPlayer.mediainfo.customFields['password'];
+      })
+
+      //Create a div in which to place HTML content
+      var newElement = document.createElement('div');
+      newElement.setAttribute("style","display:flex;justify-content:center;align-items:center;");
+      newElement.innerHTML = '<div><img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/samples/password/lock-icon.png"><br><label for="pass">Password (8 characters minimum):</label><br><input class="theForm" type="password" id="pass" name="password" minlength="8" required><br><input class="theForm" type="submit" value="Sign in" onclick="closeModal()"></div>';
+
+      options.uncloseable = true;
+      options.content = newElement;
+
+      myModal = new ModalDialog(myPlayer, options);
+      myPlayer.addChild(myModal);
+      myModal.open();
+
+    });
+
+    function closeModal() {
+      myModal.close();
+    }
+  </script>
+
+
+</body>
+
+</html>
