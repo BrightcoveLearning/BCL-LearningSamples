@@ -8,9 +8,11 @@
     .video-js {
       height: 344px;
       width: 610px;
+      margin: 0 auto;
     }
     .theForm {
-      background-color: rgb(248,181,1);
+      background-color: rgb(248, 181, 1);
+      color: #000099;
     }
   </style>
 
@@ -22,7 +24,7 @@
       Video without password 5796745147001-->
 
   <video-js id="myPlayerID"
-    data-video-id="5796745147001"
+    data-video-id="5976894149001"
     data-account="1507807800001"
     data-player="default"
     data-embed="default"
@@ -42,34 +44,35 @@
 
     videojs.getPlayer('myPlayerID').ready(function() {
       myPlayer = this;
+      myPlayer.muted(true);
 
       myPlayer.one('loadstart', function() {
         passwordToMatch = myPlayer.mediainfo.customFields['password'];
-        console.log('passwordToMatch',passwordToMatch);
+
+        if (passwordToMatch === undefined ) {
+          myPlayer.play();
+        } else {
+          //Create a div in which to place HTML content
+          newElement.setAttribute("style","display:flex;justify-content:center;align-items:center;");
+          newElement.innerHTML = '<div><img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/samples/password/lock-icon.png"><br><input class="theForm" type="password" id="inputPassword"  minlength="8" required><br><input class="theForm" type="submit" value="Sign in" onclick="closeModal()"></div>';
+
+          options.uncloseable = true;
+          options.content = newElement;
+
+          myModal = new ModalDialog(myPlayer, options);
+          myPlayer.addChild(myModal);
+          myModal.open();
+        }
       })
-
-      if (typeof passwordToMatch !== "undefined" ) {
-        //Create a div in which to place HTML content
-        newElement.setAttribute("style","display:flex;justify-content:center;align-items:center;");
-        newElement.innerHTML = '<div><img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/samples/password/lock-icon.png"><br><br><input class="theForm" type="password" id="inputPassword"  minlength="8" required><br><input class="theForm" type="submit" value="Sign in" onclick="closeModal()"></div>';
-
-        options.uncloseable = true;
-        options.content = newElement;
-
-        myModal = new ModalDialog(myPlayer, options);
-        myPlayer.addChild(myModal);
-        myModal.open();
-      }
     });
 
     function closeModal() {
       userInputPassword = document.getElementById('inputPassword').value;
-      console.log('userInputPassword',userInputPassword);
       if (userInputPassword == passwordToMatch) {
         myModal.close();
         myPlayer.play();
       } else {
-        window.alert('Sorry, password does not match, try again')
+        window.alert('Sorry, password is incorrect. Try again.')
       }
     }
   </script>
