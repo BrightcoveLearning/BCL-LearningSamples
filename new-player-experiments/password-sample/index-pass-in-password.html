@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="password-to-view-pass-in-password.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5831706803001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script src="password-to-view-pass-in-password.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.passwordToView({'password': 'newpass'});
+    });
+  </script>
+
+</body>
+
+</html>

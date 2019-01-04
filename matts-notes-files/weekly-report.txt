@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 4 Jan **
+1. Closed 3 JIRAs, 2 of which were administrivia.
+JIRA Work Includes:
+2. Updated some changes to the player CSS. Thanks to Paul Dias for letting me know.
+Work NOT Reflected in JIRAs:
+3. Great majority of time spent on the password to view sample. Wrote one implementation, realized some weaknesses, so wrote another and customers can choose the best match. Should finish today and will send out to a couple of folks for review.
+
+
+** Week Ending 21 Dec **
+1. Closed 8 JIRAs, 5 of which were administrivia.
+JIRA Work Includes:
+2. Updated Implementing Playlists doc to match new UI (yes, you have to go to 3 different sections in Players Module to configure a single playlist).
+Work NOT Reflected in JIRAs:
+3. Wrote script and recorded CMS API intro video
+
+
 ** Week Ending 14 Dec **
 1. Closed 8 JIRAs, 5 of which were administrivia.
 JIRA Work Includes:

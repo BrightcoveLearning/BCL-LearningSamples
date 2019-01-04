@@ -14,16 +14,14 @@
 
 <body>
 
-  <video id="myPlayerID"
-    data-account="1486906377"
-    data-player="77a8e8b7-e8d1-4a3c-8a1b-292ba8233006"
-    data-embed="default"
-    data-video-id="4040394419001"
-    class="video-js" controls></video>
- 
-  <p id="textTarget"></p>
-    
-  <script src="//players.brightcove.net/1486906377/77a8e8b7-e8d1-4a3c-8a1b-292ba8233006_default/index.min.js"></script>
+<video id="myPlayerID" data-video-id="5985323381001"
+data-account="1486906377"
+data-player="XJhO7JGxY"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1486906377/XJhO7JGxY_default/index.min.js"></script>
 
   <script type="text/javascript">
     videojs('myPlayerID').one('bc-catalog-error', function(){
@@ -39,10 +37,10 @@
 
     videojs("myPlayerID").ready(function(){
       var myPlayer = this;
-      console.log('in ready');      
+      console.log('in ready');
     });
   </script>
-    
+
 </body>
 
 </html>
