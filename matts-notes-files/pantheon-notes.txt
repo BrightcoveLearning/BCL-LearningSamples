@@ -1,0 +1,43 @@
+machine token rVRhAoUZxFA6Okwf9pLzZ8zHFlMFHymIzY_vD8Wd1zFAX
+
+terminus auth:login --email=mboles@brightcove.com
+
+
+terminus backup:create composertest.live
+
+terminus backup:get composertest.live
+
+
+//Install AWS CLI for Mac
+https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#awscli-install-osx-path
+
+
+
+
+backup:get [
+             --file [FILE]
+           ]
+           [
+             --element [ELEMENT]
+           ]
+           [
+             --to [TO]
+           ] [--] <site>.<env>
+
+
+ ~/.bash_profile or ~/.bash_login
+
+
+
+Installation on BCLS Linux
+**Install Terminus
+1. Upgrade PHP
+2. Install php-xml extenstion (https://secure.php.net/manual/en/dom.installation.php)
+3. Check php-cli (just test php --version)
+4. Check php-curl (apt-get install php7.0-curl)
+5. Install composer (https://getcomposer.org/download/) php composer.phar --version
+6. Install Terminus (https://pantheon.io/docs/terminus/install/)
+7. Put terminus in PATH PATH="/home/VIDMARK.LOCAL/bclsserverworker/vendor/bin:$PATH"
+8. Add machine token (https://pantheon.io/docs/terminus/install/)
+9. Add SSH keys (https://pantheon.io/docs/ssh-keys/)
+10.
