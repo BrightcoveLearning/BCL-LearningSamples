@@ -1,0 +1,16 @@
+1. Connect to VNP
+2. Open Terminal
+3. Connect to our Ubuntu server: ssh bclsserverworker@snapdocs.vidmark.local
+4. Password is BCServLearn
+5. Login to Pantheon: terminus auth:login --email=mboles@brightcove.com
+6. Move into backup folder: cd pantheon-backup/
+7. Create new backup: terminus backup:create composertest.live
+  (Check the dashboard for progress; eventually get the command prompt back)
+8. Get URL for latest backup: terminus backup:get --element=all composertest.live
+  (long URL returned, copy the URL)
+9. Download backup file: wget "COPIED URL HERE"
+10. Check file is there: ls
+  (look for dates of files and make sure you have a recent one)
+
+
+**TO LOGOUT TYPE exit

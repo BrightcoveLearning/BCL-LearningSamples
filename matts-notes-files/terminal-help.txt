@@ -1,0 +1,3 @@
+Find files matching pattern: find . -name '*.orig'
+Delete files matching pattern: find . -name '*.orig' -delete
+

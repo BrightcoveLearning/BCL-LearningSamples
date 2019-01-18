@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 18 Jan **
+1. Closed 10 JIRAs, 4 of which were administrivia.
+JIRA Work Includes:
+2. Forgotten about the best practice on getPlayer() vs videojs(), got too deep in open JIRA queue, but done now
+Work NOT Reflected in JIRAs:
+3. Probably 8 hours work on Pantheon admin. Have our Linux box now able to create and download backups. Need to automate this process though.
+
+
+Major accomplishments:
 ** Week Ending 10 Jan **
 1. Closed 10 JIRAs, 3 of which were administrivia.
 JIRA Work Includes:
