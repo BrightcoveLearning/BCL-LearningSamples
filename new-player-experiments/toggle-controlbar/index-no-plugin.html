@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style media="screen">
+    .myClass.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+    .myClass.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+    .myClass.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+    .myClass.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+    .myClass.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar,
+    .myClass.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible) {
+      transform: none;
+    }
+
+    .myClass.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-progress-control,
+    .myClass.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-progress-control,
+    .myClass.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-progress-control,
+    .myClass.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control,
+    .myClass.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-progress-control,
+    .myClass.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-progress-control {
+        height: .5em;
+        top: -.5em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5992439742001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640" height="360"></video-js>
+
+  <p><button onclick="toggleControlbar()">Toggle Controlbar</button></p>
+
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script>
+    var myPlayer;
+
+    // Get the PLAYER and be sure the PLAYER is ready to interact with
+    videojs.getPlayer('myPlayerID').ready(function() {
+      //  Get a reference to the PLAYER
+      myPlayer = this;
+      // Add the class to the player
+      myPlayer.addClass('myClass');
+    });
+
+    // Function called by button that toggles class
+    function toggleControlbar(){
+      myPlayer.toggleClass('myClass');
+    }
+  </script>
+
+</body>
+
+</html>
