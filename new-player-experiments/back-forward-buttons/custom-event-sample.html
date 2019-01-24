@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style media="screen">
+    /* set size and position of rewind button */
+#backButton img{
+  margin-top: -11px;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
+  </style>
+</head>
+
+<body>
+
+<video-js id="myPlayerID"
+      data-video-id="4454629913001"
+        data-account="1752604059001"
+        data-player="default"
+        data-embed="default"
+        data-application-id
+        class="video-js"
+        controls width="640" height="360"></video-js>
+    <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+<script type="text/javascript">
+ videojs.getPlayer('myPlayerID').ready(function() {
+  // +++ Add elements to the DOM +++
+	// Create variables and new div and image for rewind icon
+  var myPlayer = this,
+      videoName,
+		  rewindAmount = 5,
+      controlBar,
+		  newElement = document.createElement('div'),
+		  newImage = document.createElement('img');
+
+	// Assign id and classes to div for icon
+  newElement.id = 'backButton';
+
+	// Assign properties to elements and assign to parents
+newImage.setAttribute('src','http://solutions.brightcove.com/bcls/brightcove-player/custom-event/back-button.png');
+	newElement.appendChild(newImage);
+
+  // +++ Add rewind button to the control bar +++
+	// Get the spacer element
+  spacer = document.getElementsByClassName('vjs-spacer')[0];
+  // Place the new element in the spacer
+  spacer.appendChild(newElement);
+
+	backButton = document.getElementById("backButton");
+
+  // +++ Listen for the rewind buton +++
+	backButton.onclick = function() {
+	  // trigger a custom event with data
+		myPlayer.trigger('rewind', {'amount': rewindAmount});
+	}
+
+  // +++ Listen for rewind event +++
+	// listen for a custom event with data
+	myPlayer.on('rewind',function(evt,data){
+    var newTime,
+			  rewindAmt = data.amount,
+			  videoTime = myPlayer.currentTime();
+
+		if (videoTime >= rewindAmt) {
+		  newTime = videoTime - rewindAmt;
+		} else {
+			newTime = 0;
+		}
+
+		myPlayer.currentTime(newTime);
+	});
+
+});
+</script>
+
+</body>
+
+</html>

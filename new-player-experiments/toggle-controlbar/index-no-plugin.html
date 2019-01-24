@@ -23,6 +23,17 @@
         height: .5em;
         top: -.5em;
     }
+
+    /* Following two selectors disable controlbar rise and lower on mouseEnter and mouseLeave events */
+    .video-js:not(.myClass):not(.not-hover) .vjs-control-bar {
+      transform: translateY(3em);
+    }
+
+    .video-js:not(.myClass):not(.not-hover) .vjs-progress-control {
+        height: .3em;
+        top: -.3em;
+    }
+
   </style>
 </head>
 
