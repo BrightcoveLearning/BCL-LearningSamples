@@ -35,7 +35,9 @@
 
 
   <script type="text/javascript">
-    videojs.getPlayer('myPlayerID').ready(function() {
+    var registerPlugin = videojs.registerPlugin || videojs.plugin;
+
+    registerPlugin("downloadButton", function() {
       // Create variables and new div, anchor and image for download icon
       var myPlayer = this,
         videoName,
@@ -301,6 +303,11 @@
         }
         return true;
       }; /* end download() */
+    });
+
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var player = this;
+      player.downloadButton();
     });
 
   </script>
