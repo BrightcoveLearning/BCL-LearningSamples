@@ -1,0 +1,120 @@
+New Docs
+
+Title: Brightcove Player Sample: Toggle Controlbar
+Description: In this topic, you will learn how to have a button toggle the display of the controlbar.
+Link: https://support.brightcove.com/brightcove-player-sample-toggle-controlbar
+Category: Brightcove Player
+
+Title: Brightcove Player Sample: Back and Forward Buttons
+Description: In this topic, you will learn how to place buttons in the controlbar that rewind and advance the video a specified number of seconds.
+Link: https://support.brightcove.com/brightcove-player-sample-back-and-forward-buttons
+Category: Brightcove Player
+
+Title: Configuring Player Localization
+Description: In this topic you will learn how to configure player localization using the Players module.
+Link: https://support.brightcove.com/configuring-player-localization
+Category: Create & Configure Players & Localization
+
+Title: iOS SDK deprecating support for iOS 10 and EOL support for iOS 9
+Description: As of version 6.4.0, the Brightcove Native Player SDK for iOS will be removing support for iOS9 and deprecating support for iOS10.
+Link: https://support.brightcove.com/ios-sdk-deprecating-support-ios-10-and-eol-support-ios-9
+Category: iOS SDK
+
+Title: Change Log: Live API
+Description: Add Live API change log
+Link: https://support.brightcove.com/change-log-live-api
+Category: Live API
+
+Title: In-Page Experience API Error Reference
+Description: Error reference for IPX (platform) API
+Link: https://support.brightcove.com/page-experience-api-error-reference
+Category: In-Page Experiences API (Platform)
+
+
+
+Major Updates
+
+Title: Creating and Managing Live Events using the Live Module
+Description: Add bitrate/billing details for different ingest profiles
+Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module
+Category: Live Module & Live Streaming
+
+Title: Live API Reference
+Description: Support for new input protocols that deliver MPEG2-TS
+Link: https://docs.brightcove.com/live-api/v1/doc/index.html#operation/CreateALiveJob and https://support.brightcove.com/overview-brightcove-live-api#input_protocol
+Category: Live API
+
+Title: Overview: Dynamic Ingest API
+Description: Added section with links to (unsupported) sample code in Java, Python, and C#
+Link:https://support.brightcove.com/overview-dynamic-ingest-api-dynamic-delivery#sample_code
+Category: Add Videos/Assets  Topic(s) API Overviews Dynamic Delivery  API(s) Dynamic Ingest API
+
+
+Minor Updates
+
+Title: Zencoder Encoding Settings: Notifications
+Description: update number of auto-retries for Zencoder jobs (25 -> 20)
+Link: https://support.brightcove.com/zencoder-encoding-settings-notifications and https://support.brightcove.com/zencoder-getting-notifications-when-videos-are-finished
+Category: Zencoder
+
+Title: Exporting Video Data
+Description: Added note on user types for created by and updated by, and on an issue with double-byte characters if the CSV is opened in Excel
+Link: https://support.brightcove.com/exporting-video-data
+Category: Get Video Metadata & Manage Videos
+
+Title: Code Snippets using the Native SDK for Android
+Description: Added new Android code snippet to disable automatic hiding of the player controls
+Link: https://support.brightcove.com/code-snippets-using-native-sdk-android#Showing_player_controls
+Category: Android SDK
+
+Title: Overview: Brightcove Player SDK for iOS
+Description: The latest release of Native SDK for iOS now supports Chromecast
+Link: https://support.brightcove.com/overview-brightcove-player-sdk-ios#Integrations
+Category: iOS SDK
+
+Title: Known Issues: Studio, Brightcove Player, APIs and SDKs
+Description: Added Known Issue for iOS Offline Playback when using multibyte characters in the Display Name Key
+Link: https://support.brightcove.com/known-issues-studio-brightcove-player-apis-and-sdks#sdks
+Category: iOS SDK
+
+Title: Offline Playback with the Native Player SDKs
+Description: Added Known Issues section
+Link: https://support.brightcove.com/offline-playback-native-player-sdks#Known_issues
+Category: Native SDKs
+
+Title: Player Feature Support by Browser
+Description: Added column for Chrome iOS support
+Link: https://support.brightcove.com/player-feature-support-browser
+Category: Brightcove Player
+
+Title: Configuring Player Settings
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/configuring-player-settings#preload
+Category: Brightcove Player
+
+Title: Configuring Player Playback Properties
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/configuring-player-playback-properties#preload
+Category: Brightcove Player
+
+Title: Available Options for the Advanced (in-page) Embed Code
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/available-options-advanced-page-embed-code#preload_details
+Category: Brightcove Player
+
+Title: Available Options for the Standard (iframe) Embed Code
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/available-options-standard-iframe-embed-code
+Category: Brightcove Player
+
+Title: iOS and Brightcove Player
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/ios-and-brightcove-player
+Category: Brightcove Player
+
+Title: Player Configuration Guide
+Description: Added note that BC recommends setting preload=none when using SSAI
+Link: https://support.brightcove.com/player-configuration-guide#configproperties
+Category: Brightcove Player
+
+

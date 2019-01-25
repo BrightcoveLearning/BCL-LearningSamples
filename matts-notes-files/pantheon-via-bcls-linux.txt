@@ -14,3 +14,14 @@
 
 
 **TO LOGOUT TYPE exit
+
+
+
+// Terminus PATH Issues
+Terminus was installed, but the installer was not able to write to your bin dir. To enable the `terminus` command, add this alias to your .bash_profile (Mac) or .bashrc (Linux) file:
+
+alias terminus=/home/VIDMARK.LOCAL/bclsserverworker/vendor/bin/terminus
+
+Or you can enable it by adding the directory the executable file is in to your path:
+
+PATH="/home/VIDMARK.LOCAL/bclsserverworker/vendor/bin:$PATH"
