@@ -56,10 +56,10 @@
       newElementFB.appendChild(newImageFB);
 
       // +++ Get controlbar and insert elements +++
-      // Remember that getElementsByClassName() returns an array
-      controlBar = document.getElementsByClassName('vjs-control-bar')[0];
+      controlBar = myPlayer.$('.vjs-control-bar');
       // Get the element to insert buttons in front of in conrolbar
-      insertBeforeNode = document.getElementsByClassName('vjs-volume-panel vjs-control vjs-volume-panel-horizontal')[0];
+      insertBeforeNode = myPlayer.$('.vjs-volume-panel');
+
       // Insert the button div in proper location
       controlBar.insertBefore(newElementBB, insertBeforeNode);
       controlBar.insertBefore(newElementFB, insertBeforeNode);
