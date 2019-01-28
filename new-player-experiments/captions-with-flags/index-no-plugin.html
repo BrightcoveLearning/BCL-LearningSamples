@@ -23,40 +23,22 @@
     videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
       myPlayer.on('loadedmetadata',function(){
-        var textItems = myPlayer.$$('.vjs-menu-item-text'),
-          englishItemIndex,
-          germanItemIndex,
-          englishItem,
-          germanItem;
-        englishItemIndex = findObjectInArray(textItems,'innerText','English');
-        germanItemIndex = findObjectInArray(textItems,'innerText','German');
-        englishItem = textItems[englishItemIndex];
-        germanItem = textItems[germanItemIndex];
-        englishItem.innerHTML = '🇺🇸'+ ' English';
-        germanItem.innerHTML = '🇩🇪'+ ' German';
-      });
+        // +++ Retrieve the menu options +++
+        var menuOptions = myPlayer.controlBar.subsCapsButton.menu.children();
 
-      /**
-       * find index of an object in array of objects
-       * based on some property value
-       *
-       * @param {array} targetArray array to search
-       * @param {string} objProperty object property to search
-       * @param {string} value of the property to search for
-       * @return {integer} index of first instance if found, otherwise returns -1
-      */
-      function findObjectInArray(targetArray, objProperty, value) {
-          var i, totalItems = targetArray.length, objFound = false;
-          for (i = 0; i < totalItems; i++) {
-              if (targetArray[i][objProperty] === value) {
-                  objFound = true;
-                  return i;
-              }
+        // +++ Add flag to each menu option +++
+        menuOptions.forEach(function(item) {
+          if (item.track.language === 'de') {
+            item.$('.vjs-menu-item-text').innerHTML = '🇩🇪 ' + item.track.label;
           }
-          if (objFound === false) {
-              return -1;
+        });
+
+        menuOptions.forEach(function(item) {
+          if (item.track.language === 'en') {
+            item.$('.vjs-menu-item-text').innerHTML = '🇺🇸 ' + item.track.label;
           }
-      }
+        });
+      });
     });
   </script>
 </body>
