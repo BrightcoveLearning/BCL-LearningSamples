@@ -19,23 +19,21 @@
     width="640" height="380"></video>
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
-&#127482;&#127480;
-&#x1F1FA;&#x1F1F8;
-
-
-&#x1F1E9;&#x1F1EA;
-&#127465;&#127466;
   <script>
     videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
       myPlayer.on('loadedmetadata',function(){
         var textItems = myPlayer.$$('.vjs-menu-item-text'),
-        englishItem,
-        germanItem;
-        englishItem = findObjectInArray(textItems,'innerText','English');
-        germanItem = findObjectInArray(textItems,'innerText','German');
-        console.log('englishItem',textItems[3]);
-        console.log('germanItem',germanItem);
+          englishItemIndex,
+          germanItemIndex,
+          englishItem,
+          germanItem;
+        englishItemIndex = findObjectInArray(textItems,'innerText','English');
+        germanItemIndex = findObjectInArray(textItems,'innerText','German');
+        englishItem = textItems[englishItemIndex];
+        germanItem = textItems[germanItemIndex];
+        englishItem.innerHTML = '🇺🇸'+ ' English';
+        germanItem.innerHTML = '🇩🇪'+ ' German';
       });
 
 
