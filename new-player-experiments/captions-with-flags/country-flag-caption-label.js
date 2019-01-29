@@ -1,4 +1,4 @@
-videojs.registerPlugin('flagCaptionLabels', function() {
+videojs.registerPlugin('countryFlagCaptionLabel', function() {
   var myPlayer = this;
   myPlayer.on('loadedmetadata',function(){
     // +++ Retrieve the menu options +++
