@@ -1,4 +1,4 @@
-1. Connect to VNP
+1. Connect to VPN
 2. Open Terminal
 3. Connect to our Ubuntu server: ssh bclsserverworker@snapdocs.vidmark.local
 4. Password is BCServLearn
