@@ -1,3 +1,19 @@
-Find files matching pattern: find . -name '*.orig'
-Delete files matching pattern: find . -name '*.orig' -delete
+*Basics:
+ls (just lists), ls -l (lists with details)
+cd
+mv
+mkdir
+rmdir
+rm
+locate -i *pan
+clear
+
+*Find files matching pattern: find . -name '*.orig'
+*Delete files matching pattern: find . -name '*.orig' -delete
+*Get path where you currently are: pwd
+*Use date in filename:
+  #!/bin/bash
+  today=`date '+%Y_%m_%d__%H_%M_%S'`;
+  filename="/home/el/myfile/$today.ponies"
+  echo $filename;
 
