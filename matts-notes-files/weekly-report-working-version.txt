@@ -1,0 +1,71 @@
+New Docs
+
+Title: Configuring a Brightcove Player for SSAI
+Description: This video shows how to configure a Brightcove Player for Server-Side Ad Insertion (SSAI).
+Link: https://support.brightcove.com/configuring-brightcove-player-ssai
+Category: SSAI
+
+Title: Adding a 3Play Media Interactive Transcript to a Video
+Description: In this topic you will learn how to use the 3Play Plugin to add an interactive transcript to a Brightcove Player.
+Link: https://support.brightcove.com/adding-3play-media-interactive-transcript-video
+Category: Accessibility
+
+Title: Live API: RTMP Outputs
+Description: This topic explains how you can output RTMP using the Live API. RTMP outputs are useful when you will be streaming to a platform that does not support HLS live streams.
+Link: https://support.brightcove.com/live-api-rtmp-outputs
+Category: Live API
+
+Title: Quick Start: Using RTMP Outputs for Live Events
+Description: This tutorial will walk you through creating RTMP outputs to set up live events on YouTube Live and Facebook Live.
+Link: https://support.brightcove.com/quick-start-using-rtmp-outputs-live-events
+Category: Live API
+
+Title: Change Log: Live API
+Description: This is a summary of changes to the Live API.
+Link: https://support.brightcove.com/change-log-live-api
+Category: Live API
+
+Title: Brightcove Player Sample: Add Country Flag to Caption Label
+Description: In this topic, you will learn how to add a country flag in front of the country caption label.
+Link: https://support.brightcove.com/brightcove-player-sample-add-country-flag-caption-label
+Category: Brightcove Player
+
+
+Major Updates
+
+Title: Overview: Brightcove Player SDK for tvOS
+Description: Added FreeWheel support with the latest version of the Native SDK for iOS/tvOS.
+Link: https://support.brightcove.com/overview-brightcove-player-sdk-tvos#Integrations
+Category: tvOS SDK
+
+Title: Live API Reference
+Description: Added RTMP outputs.
+Link: https://docs.brightcove.com/live-api/v1/doc/index.html#tag/RTMP-Outputs
+Category: Live API
+
+Minor Updates
+
+Title: Overview: Brightcove Player SDK for iOS
+Description: Updated FreeWheel plugin support for FreeWheel Ad Manager v6.26.0.
+Link: https://support.brightcove.com/overview-brightcove-player-sdk-ios#Integrations
+Category: iOS SDK
+
+Title: Overview: Playback API
+Description: Fixed paging count for returned videos.
+Link: https://support.brightcove.com/overview-playback-api#Search_videos
+Category: Playback API
+
+Title: Advertising with the SSAI Plugin
+Description: Added training video for configuring a Brightcove Player for SSAI.
+Link: https://support.brightcove.com/advertising-ssai-plugin#Overview
+Category: SSAI
+
+Title: Viewing Billing Information
+Description: Added detail for the billing on the 3 different ingest tiers for Live (module).
+Link: https://support.brightcove.com/viewing-billing-information
+Category: Administration
+
+Title: TLS for Media, Player, and API URLs
+Description: Removed the section on When will Brightcove stop supporting TLS 1.0/1.1 as the deprecation process is ongoing.
+Link: https://support.brightcove.com/tls-media-player-and-api-urls
+Category: Video Cloud General Info

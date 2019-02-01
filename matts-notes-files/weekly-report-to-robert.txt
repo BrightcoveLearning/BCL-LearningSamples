@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 1 Feb **
+1. Closed 10 JIRAs, 2 of which were administrivia.
+JIRA Work Includes:
+2. New sample with flag emojis in front of caption country labels
+3. Finished up REST API intro videos I had started, added the head shot intros
+4. Got the bash script working to download the backups (with Pantheon 3 different backups: code, db and files) so they download to our Linux server at 9:00 PM each day
+Work NOT Reflected in JIRAs:
+5. Attended 3 hour Pantheon developer training
+
+
 ** Week Ending 25 Jan **
 1. Closed 13 JIRAs, 4 of which were administrivia.
 JIRA Work Includes:
