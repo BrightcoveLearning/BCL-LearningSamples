@@ -1,3 +1,22 @@
+1. Pantheon auto backups working (https://dashboard.pantheon.io/sites/cbf6ac35-4ffc-4cb6-b2ed-daee10637429#live/backups/backup-log)
+2. Brightcove Player API docs up to date
+3. Backups copied to our Linux server
+a. Connect to VNP
+b. Open Terminal
+c. Connect to our Ubuntu server: ssh bclsserverworker@snapdocs.vidmark.local
+d. Password is BCServLearn)
+e. cd pantheon-backup
+f. ls
+g. You should see a set of files similar to:
+  code-2019-02-01T16-54-50.tar.gz  database-2019-02-01T16-54-50.sql.gz  files-2019-02-01T16-54-50.tar.gz
+  code-2019-02-01T18-14-06.tar.gz  database-2019-02-01T18-14-06.sql.gz  files-2019-02-01T18-14-06.tar.gz
+You will see at least 5 versions of each of the code, database and files zips
+h. Logout from the Linux server: exit
+i. Close Terminal
+
+
+
+
 sudo EDITOR=/usr/bin/nano crontab -u mboles -e
 10,20,30 * * * * platform snapshot:create --project=6sglloa4yrkti --environment=dev --yes
 
