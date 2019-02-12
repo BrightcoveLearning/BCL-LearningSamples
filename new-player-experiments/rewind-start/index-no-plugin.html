@@ -21,10 +21,16 @@
 
 <script>
   videojs.getPlayer('myPlayerID').ready(function() {
-    var myPlayer = this;
+    var myPlayer = this,
+      repeatTime = 5;
     myPlayer.muted(true);
     myPlayer.on('loadedmetadata', function(){
-      //myPlayer.play();
+      myPlayer.play();
+      myPlayer.on('timeupdate',function(){
+        if (myPlayer.currentTime()>= repeatTime) {
+          myPlayer.currentTime(0);
+        }
+      })
     })
   });
 </script>
