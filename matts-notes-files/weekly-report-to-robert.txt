@@ -1,4 +1,12 @@
 Major accomplishments:
+** Week Ending 15 Feb **
+1. Closed 7 JIRAs, 4 of which were administrivia.
+JIRA Work Includes:
+2. Got new machine configured, and it was painful and time consuming
+Work NOT Reflected in JIRAs:
+None
+
+
 ** Week Ending 1 Feb **
 1. Closed 10 JIRAs, 2 of which were administrivia.
 JIRA Work Includes:
