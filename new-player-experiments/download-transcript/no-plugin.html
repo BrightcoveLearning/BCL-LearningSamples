@@ -8,26 +8,74 @@
 
 <body>
 
-<video id="myPlayerID" 
-  data-video-id="5993987133001"
-  data-account="1752604059001"
-  data-player="default"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls
-  width="640"
-  height="360"></video>
-<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
-
-<script>
-  videojs.getPlayer('myPlayerID').ready(function() {
-    var myPlayer = this;
-    myPlayer.on('loadstart',function(){
-      console.log('mediainfo', myPlayer.mediainfo);
+  <video id="myPlayerID"
+    data-video-id="5993987133001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640"
+    height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this,
+        regex = /(\d)(\d)(:)(\d)(\d)(\.)(\d)(\d)(\d)(\s+)(-)(-)(>)(\s+)(\d)(\d)(:)(\d)(\d)(\.)(\d)(\d)(\d).*/ig,
+        url;
+      myPlayer.on('loadstart',function(){
+        url = myPlayer.mediainfo.textTracks[1].src;
+        getFile(url, function(response) {
+            if (response) {
+                var responseEdited = response.replace(regex,'');
+                var responseEdited = responseEdited.replace('WEBVTT','');
+                console.log('***********response', responseEdited);
+            }
+        });
+      });
     });
-  });
-</script>
+
+
+    /**
+     * get the contents of a text file
+     * @param  {String} url the url of the txt file
+     * @param  {Function} [callback] callback function that will process the response
+     */
+    function getFile(url, callback) {
+        var httpRequest = new XMLHttpRequest(),
+            response,
+            // response handler
+            getResponse = function() {
+                try {
+                    if (httpRequest.readyState === 4) {
+                        if (httpRequest.status === 200) {
+                            response = httpRequest.responseText;
+                            // some API requests return '{null}' for empty responses - breaks JSON.parse
+                            if (response === '{null}') {
+                                response = null;
+                            }
+                            // return the response
+                            callback(response);
+                        } else {
+                            callback(null);
+                        }
+                    }
+                } catch (e) {
+                    callback(null);
+                }
+            };
+        /**
+         * set up request data
+         */
+        // set response handler
+        httpRequest.onreadystatechange = getResponse;
+        // open the request
+        httpRequest.open('GET', url);
+        // open and send request
+        httpRequest.send();
+    }
+  </script>
 
 </body>
 
