@@ -4,91 +4,92 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
+  <style media="screen">
+    textarea {
+      width: 300px;
+      height: 300px;
+    }
+  </style>
 </head>
 
 <body>
 
-<video id="myPlayerID"
-  data-video-id="5993987133001"
-  data-account="1752604059001"
-  data-player="default"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls
-  width="640"
-  height="360"></video>
-<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-video-id="5996462763001"
+    data-account="1543299976"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640"
+    height="360"></video>
+  <script src="//players.brightcove.net/1543299976/default_default/index.min.js"></script>
 
-<script>
-  videojs.getPlayer('myPlayerID').ready(function() {
-    var myPlayer = this;
-      //theVTT = "00:02.836 --> 00:03.716 other text 03:09.266 --> 03:11.886";
-    myPlayer.on('loadstart',function(){
-      console.log('mediainfo', myPlayer.mediainfo);
-    });
-//console.log('theVTT',theVTT);
+  <p>See transcript here:</p>
+  <textarea id="transcriptOutput"></textarea>
 
-
-var regex = /(\d)(\d)(:)(\d)(\d)(\.)(\d)(\d)(\d)(\s+)(-)(-)(>)(\s+)(\d)(\d)(:)(\d)(\d)(\.)(\d)(\d)(\d)/ig;
-
-//console.log(theVTT.replace(regex, 'hello'));
-
-
-  });
-//var url = './' + notificationsFile;
-var url = 'https://bcboltbde696aa-a.akamaihd.net/media/v1/text/vtt/clear/1752604059001/104bde89-4a76-41ba-9cd4-4682032768ad/a440d40c-1f74-49d8-9249-852f04e64170/text.vtt?akamai_token=exp=1552592847~acl=/media/v1/text/vtt/clear/1752604059001/104bde89-4a76-41ba-9cd4-4682032768ad/a440d40c-1f74-49d8-9249-852f04e64170/text.vtt*~hmac=b9c2414b7fb7dcce2291c9c6983b60fd3a6ce500c0013c5c5cb2822fadd6fcf4';
-
-getFile(url, function(response) {
-    if (response) {
-        //responseDecoded = JSON.parse(response);
-        //logMessage(notifications, JSON.stringify(responseDecoded, null, '  '));
-        //console.log('response',response);
-        console.log('*************',response.replace(regex, 'hello'));
-    }
-});
-
-/**
- * get the contents of a text file
- * @param  {String} url the url of the txt file
- * @param  {Function} [callback] callback function that will process the response
- */
-function getFile(url, callback) {
-  console.log('in getFile the URL', url);
-    var httpRequest = new XMLHttpRequest(),
-        response,
-        // response handler
-        getResponse = function() {
-            try {
-                if (httpRequest.readyState === 4) {
-                    if (httpRequest.status === 200) {
-                        response = httpRequest.responseText;
-                        // some API requests return '{null}' for empty responses - breaks JSON.parse
-                        if (response === '{null}') {
-                            response = null;
-                        }
-                        // return the response
-                        callback(response);
-                    } else {
-                        callback(null);
-                    }
-                }
-            } catch (e) {
-                callback(null);
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this,
+        regex = /\d\d:\d\d\.\d\d\d\s+-->\s+\d\d:\d\d\.\d\d\d.*\n/ig,
+        url,
+        transcriptArea = document.getElementById('transcriptOutput'),
+        hiddenElement = document.createElement('a');
+      myPlayer.on('loadstart',function(){
+        url = myPlayer.mediainfo.textTracks[0].src;
+        getFile(url, function(response) {
+            if (response) {
+                var responseEdited = response.replace(regex,'');
+                var responseEdited = responseEdited.replace('WEBVTT','');
+                var responseEdited = responseEdited.replace('&gt;','');
+                var responseEdited = responseEdited.replace('&gt;','');
+                transcriptArea.textContent = responseEdited;
             }
-        };
-    /**
-     * set up request data
-     */
-    // set response handler
-    httpRequest.onreadystatechange = getResponse;
-    // open the request
-    httpRequest.open('GET', url);
-    // open and send request
-    httpRequest.send();
-}
+        });
+      });
+    });
 
-</script>
+
+    /**
+     * get the contents of a text file
+     * @param  {String} url the url of the txt file
+     * @param  {Function} [callback] callback function that will process the response
+     */
+    function getFile(url, callback) {
+        var httpRequest = new XMLHttpRequest(),
+            response,
+            // response handler
+            getResponse = function() {
+                try {
+                    if (httpRequest.readyState === 4) {
+                        if (httpRequest.status === 200) {
+                            response = httpRequest.responseText;
+                            // some API requests return '{null}' for empty responses - breaks JSON.parse
+                            if (response === '{null}') {
+                                response = null;
+                            }
+                            // return the response
+                            callback(response);
+                        } else {
+                            callback(null);
+                        }
+                    }
+                } catch (e) {
+                    callback(null);
+                }
+            };
+        /**
+         * set up request data
+         */
+        // set response handler
+        httpRequest.onreadystatechange = getResponse;
+        // open the request
+        httpRequest.open('GET', url);
+        // open and send request
+        httpRequest.send();
+    }
+  </script>
 
 </body>
 
