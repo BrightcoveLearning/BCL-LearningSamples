@@ -3,20 +3,39 @@
 
 
 *** Open JIRAs that you can't do anything on because you need information that you can't or don't know how to get ***
+KNOW-14867 Player FullScreen Issue
+KNOW-14822 Fwd: Plugin Info in a support doc
+KNOW-14369 Player Reference does not play HLS on IE11/Win7
+KNOW-13861 Quality Selector not showing up
+KNOW-13855 Video playback issue on Safari
 
 
 
 *** Open JIRAs that will require more than a day of work ***
+KNOW-14551 On support.brightcove.com force requests to be via HTTPS
+KNOW-13846 Using DFP Premium with Brightcove Player
+KNOW-13756 Create Video - Overview of Delivery System API
+KNOW-13303 DFP Set-up
+KNOW-13173 Check all player docs for issues shown below
+KNOW-12921 create quick start for IPX client api
+KNOW-12894 Sample for using custom skin
+
 
 
 
 *** Open JIRAs that will require about a day of work ***
+KNOW-14842 Scholastic - Download Text Track
+KNOW-12809 Migrate Blog Post - Hide the Player if There Are No Videos
+KNOW-12805 Migrate Blog Post - Faking Mid-Point or Post-Video Bumpers
+KNOW-12760 Add "simple" jump starts
+---->KNOW-12747 Dynamically build the serverUrl example
 
 
 
 *** Open JIRAs that will require a half-day of work or less ***
-
-
-
+KNOW-14949 Consolidate locations where rendition selection content exists
+KNOW-14806 Players Plugins
+KNOW-14351 build list of most viewed docs for player engineering team
+KNOW-13867 Get "relevant" event lists from Andrew and add to Player Events doc
 
 
