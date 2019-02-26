@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
+  <style media="screen">
+    #download-button {
+        background-color: #FFFFFF;
+        color: #000000;
+        position: absolute;
+        margin-top: 8px;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,8 +27,6 @@
     width="640"
     height="360"></video>
 
-  <p><button onclick="downloadTranscript()">Download Transcript</button></p>
-
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script>
@@ -29,14 +35,29 @@
       var myPlayer = this,
         // +++ Define the regular expression +++
         regex = /\d\d:\d\d\.\d\d\d\s+-->\s+\d\d:\d\d\.\d\d\d.*\n/ig,
-        url;
+        spacer,
+        url,
+        // +++ Create button and place in player +++
+        downloadBtn = document.createElement('button');
+        downloadBtn.innerHTML = 'Download Transcript';
+        downloadBtn.id = 'download-button';
+        // Get a handle on the spacer element
+        spacer = myPlayer.controlBar.customControlSpacer.el();
+        // Set the content of the spacer to be right justified
+        spacer.setAttribute("style", "justify-content: flex-end;");
+        // Place the new element in the spacer
+        spacer.appendChild(downloadBtn);
+        downloadBtn.addEventListener('click', function(){
+          // +++ Call download function +++
+          download(responseEdited, "transcript.txt", "text/plain");
+        });
+
       myPlayer.on('loadstart',function(){
         // +++ Retrieve the URL for the text track, which is in this case a WebVTT caption file +++
-        // +++ The use the getFile function to get the actual file from the URL +++
+        // +++ Call the getFile function to get the actual file from the URL +++
         url = myPlayer.mediainfo.textTracks[0].src;
         getFile(url, function(response) {
             if (response) {
-              // +++ Remove WebVTT formatting from the retrieved file +++
                 responseEdited = response.replace(regex,'');
                 responseEdited = responseEdited.replace('WEBVTT','');
             }
@@ -44,6 +65,7 @@
       });
     });
 
+    // +++ Function that gets the actual file based on URL +++
     /**
      * get the contents of a text file
      * @param  {String} url the url of the txt file
@@ -83,11 +105,7 @@
         httpRequest.send();
     }
 
-    // +++ On button click send cleaned up file to user's browswer +++
-    function downloadTranscript(){
-      download(responseEdited, "transcript.txt", "text/plain");
-    }
-
+    // +++ download function used for graceful browser download +++
     //download.js v4.21, by dandavis; 2008-2018. [MIT] see http://danml.com/download.html for tests/usage
     // v1 landed a FF+Chrome compatible way of downloading strings to local un-named files, upgraded to use a hidden frame and optional mime
     // v2 added named files via a[download], msSaveBlob, IE (10+) support, and window.URL support for larger+faster saves than dataURLs
