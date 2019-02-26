@@ -1,0 +1,22 @@
+*** JIRAs that represent something you thought would be nice to have, but no one has really asked for it: close as won't fix ***
+
+
+
+*** Open JIRAs that you can't do anything on because you need information that you can't or don't know how to get ***
+
+
+
+*** Open JIRAs that will require more than a day of work ***
+
+
+
+*** Open JIRAs that will require about a day of work ***
+
+
+
+*** Open JIRAs that will require a half-day of work or less ***
+
+
+
+
+
