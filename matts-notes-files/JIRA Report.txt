@@ -1,4 +1,10 @@
 *** JIRAs that represent something you thought would be nice to have, but no one has really asked for it: close as won't fix ***
+KNOW-12200 Hero video documentation
+KNOW-12166 BC Audience Product Integration Lytics
+KNOW-11498 Build plugin for AirPlay
+KNOW-9792 question regarding http://docs.brightcove.com/en/video-cloud/concepts/integrating-with-video-cloud/integrating-with-video-cloud.html
+KNOW-9496 Question regarding https://brightcovelearning.github.io/Brightcove-API-References/cms-api/v1/doc/index.html#api-assetGroup-Add_HLS_Manifest
+KNOW-7649 General advertising workflow
 
 
 
@@ -19,8 +25,17 @@ KNOW-13303 DFP Set-up
 KNOW-13173 Check all player docs for issues shown below
 KNOW-12921 create quick start for IPX client api
 KNOW-12894 Sample for using custom skin
-
-
+KNOW-11033 Create an Ad Reference Player
+KNOW-9679 Create On-Demand Training Class - Developing Player Plugins
+KNOW-9112 Request a Diagram showing the connections between our FW Plugin and Freewheel's AdManager
+KNOW-7425 Player Management Client - Mention it in the docs
+KNOW-7179 Fw: Speedier ads via Google AMP
+KNOW-6995 Create a sample player with the title and social icons outside and above the player
+KNOW-6807 VPAID 2.0 Javascript Implementation : Insecure with Friendly iframe
+KNOW-6603 DFP : Targeting content using tags and macros
+KNOW-6252 Fwd: Investigation Summary
+KNOW-6059 Re: advertising training
+KNOW-4563 Ad Feature Support
 
 
 *** Open JIRAs that will require about a day of work ***
@@ -28,7 +43,14 @@ KNOW-14842 Scholastic - Download Text Track
 KNOW-12809 Migrate Blog Post - Hide the Player if There Are No Videos
 KNOW-12805 Migrate Blog Post - Faking Mid-Point or Post-Video Bumpers
 KNOW-12760 Add "simple" jump starts
----->KNOW-12747 Dynamically build the serverUrl example
+KNOW-12747 Dynamically build the serverUrl example
+KNOW-12224 Create a doc for header bidding
+KNOW-11742 ETA on doc re: video header bidding
+KNOW-9701 Sample not working
+KNOW-9549 Update Style of Training Video Player
+KNOW-9247 FW flash example doesn't show ads
+KNOW-9234 IP Restriction Error Messaging
+KNOW-6789 Customize Right-Click menu for player
 
 
 
@@ -37,5 +59,27 @@ KNOW-14949 Consolidate locations where rendition selection content exists
 KNOW-14806 Players Plugins
 KNOW-14351 build list of most viewed docs for player engineering team
 KNOW-13867 Get "relevant" event lists from Andrew and add to Player Events doc
+KNOW-12537 Updated player-management-client to Brightcove github org
+KNOW-12240 Should Pre-Roll support with cue points even be mentioned?
+KNOW-12231Brightcove Player and self-hosting
+KNOW-12194 Update all uses of IMA3 plugin to 3.x
+KNOW-9448 Localizing Brightcove Player: In-page embed implementation missing on the doc
+KNOW-9292 Soften language on choosing iframe over in-page embed
+
+*** JIRAs that represent something you thought would be nice to have, but no one has really asked for it: close as won't fix ***
+6
+
+*** Open JIRAs that you can't do anything on because you need information that you can't or don't know how to get ***
+5
+
+*** Open JIRAs that will require more than a day of work ***
+18
+
+*** Open JIRAs that will require about a day of work ***
+12
+
+*** Open JIRAs that will require a half-day of work or less ***
+10
+
 
 

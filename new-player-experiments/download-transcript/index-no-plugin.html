@@ -56,6 +56,9 @@
         // +++ Retrieve the URL for the text track, which is in this case a WebVTT caption file +++
         // +++ Call the getFile function to get the actual file from the URL +++
         url = myPlayer.mediainfo.textTracks[0].src;
+        console.log('url',url);
+        url = url.replace('http:','https:');
+        console.log('url',url);
         getFile(url, function(response) {
             if (response) {
                 responseEdited = response.replace(regex,'');
