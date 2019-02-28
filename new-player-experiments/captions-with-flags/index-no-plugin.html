@@ -20,12 +20,12 @@
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
   <script>
+  console.log('language',navigator.language);
     videojs.getPlayer('myPlayerID').ready(function() {
       var myPlayer = this;
       myPlayer.on('loadedmetadata',function(){
         // +++ Retrieve the menu options +++
         var menuOptions = myPlayer.controlBar.subsCapsButton.menu.children();
-
         // +++ Add flag to each menu option +++
         menuOptions.forEach(function(item) {
           if (item.track.language === 'de') {

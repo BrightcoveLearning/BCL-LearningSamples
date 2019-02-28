@@ -17,7 +17,7 @@
 <body>
 
   <video id="myPlayerID"
-    data-video-id="6006854351001"
+    data-video-id="6008016522001"
     data-account="1752604059001"
     data-player="default"
     data-embed="default"
@@ -56,9 +56,8 @@
         // +++ Retrieve the URL for the text track, which is in this case a WebVTT caption file +++
         // +++ Call the getFile function to get the actual file from the URL +++
         url = myPlayer.mediainfo.textTracks[0].src;
-        console.log('url',url);
+        // Note, if serving page via HTTPS, must ask for file also via HTTPS
         url = url.replace('http:','https:');
-        console.log('url',url);
         getFile(url, function(response) {
             if (response) {
                 responseEdited = response.replace(regex,'');
