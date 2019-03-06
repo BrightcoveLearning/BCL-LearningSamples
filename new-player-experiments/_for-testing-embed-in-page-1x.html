@@ -10,12 +10,18 @@
       height: 344px;
       width: 610px;
     }
-    #myPlayerID .vjs-control-bar {
-      transform: none;
-    }
-    /*.bc-player-default_default .vjs-control:focus:before, .bc-player-default_default .vjs-control:hover:before{
-      10px 10px 1em #f00,10px -10px 1em #f00,-10px 10px 1em #f00,-10px -10px 1em #f00;
-    }*/
+
+
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
+.video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar,
+.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
+  transform: none;
+  -webkit-transform: none;
+  -ms-transform: none;
+}
   </style>
 
 </head>
@@ -30,7 +36,11 @@
   controls></video>
   <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
-
+<script>
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this;
+  });
+</script>
 
 
 </body>
