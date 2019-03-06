@@ -1,0 +1,36 @@
+.video-js {
+  height: 344px;
+  width: 610px;
+}
+
+.downloadStyle {
+  order: 9;
+  -webkit-box-ordinal-group: 9;
+  -moz-box-ordinal-group: 9;
+  -webkit-order: 9;
+  -ms-flex-order: 9;
+  padding-top: 7px !important;
+}
+
+/* keep the controls visible during playback */
+#myPlayerID .vjs-control-bar {
+  transform: none;
+  background-color: transparent;
+}
+
+/* round the corners of the player */
+#myPlayerID {
+  border-radius: 1em;
+  width: 480px;
+  height: 80px;
+}
+
+/* remove the background from the big play button */
+.video-js.vjs-mouse .vjs-big-play-button {
+  background: none;
+}
+
+/* round the corners of the dock */
+#myPlayerID .vjs-dock-text {
+  border-radius: 1em 1em 0 0;
+}
