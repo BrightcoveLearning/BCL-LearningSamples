@@ -1,18 +1,40 @@
-New Docs
+New docs:
+
+Title: Eloqua Integration Testing Guide
+Description: In this topic you will learn how to verify an integration  between Video Cloud and Eloqua.
+Link: https://support.brightcove.com/eloqua-integration-testing-guide
+Category: Video Cloud
+
+Title: Marketo REST Integration Testing Guide
+Description: In this topic you will learn how to verify an integration between Video Cloud and Marketo.
+Link: https://support.brightcove.com/marketo-rest-integration-testing-guide
+Category: Video Cloud
+
+Title: HubSpot Integration Testing Guide
+Description: In this topic you will learn how to verify an integration between Video Cloud and HubSpot.
+Link: https://support.brightcove.com/hubspot-integration-testing-guide
+Category: Video Cloud
+
+Title: Brightcove Player Sample: Download Audio Plugin
+Description: In this topic, you will learn how to create a link to allow downloading the best quality MP4 of an audio asset playing in Brightcove Player.
+Link: https://support.brightcove.com/brightcove-player-sample-download-audio-plugin
+Category: Brightcove Player
 
 
-Major Updates
+Major updates:
 
+Title: Overview: Analytics API
+Description: date and date_hour can now be used with other dimensions - fixed tables and the inpage app to see fields and tests requests to reflect this; also, requests now can only return up to one million items
+Link: https://support.brightcove.com/overview-analytics-api-v1
+Category: Analytics API
 
+Title: Use Postman for API Requests
+Description: Added new section showing how you can get the OpenAPI specification for any of our platform APIs and import that into Postman to create a collection that will have all the available requests for that API
+Link: https://support.brightcove.com/use-postman-api-requests
+Category: Developer Tools and Concepts
 
-Minor Updates
-
-
-
-Title:
-Description:
-Link:
-Category:
-Type: New Doc / Major Update / Minor Update
-
+Title: Player Events
+Description: Fixed Fullscreen Events sample
+Link: https://support.brightcove.com/player-events#bc-ipnav-4
+Category: Brightcove Player
 
