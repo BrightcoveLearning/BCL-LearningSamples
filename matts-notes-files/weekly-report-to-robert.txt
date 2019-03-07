@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 8 Mar **
+1. Closed 13 JIRAs, 4 of which were administrivia
+JIRA Highlights Include:
+2. Got the "Download Audio" sample completed
+3. Password for playlist code completed, waiting for any feedback from customer
+Work NOT Reflected in JIRAs:
+4. About 6 hours work on Pantheon/Composer configuration
+
+
+** Week Ending 1 Mar **
+1. Closed 19 JIRAs, 2 of which were administrivia. Some were closed based on review of JIRAs.
+JIRA Highlights Include:
+2. Got the "Download Transcript" sample completed.
+Work NOT Reflected in JIRAs:
+3. Review of JIRAs.
+
+
 ** Week Ending 22 Feb **
 1. Closed 18 JIRAs (!!!!!), 2 of which were administrivia.
 JIRA Work Includes:
