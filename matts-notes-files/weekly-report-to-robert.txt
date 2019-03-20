@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 22 Mar **
+1. Closed 7 JIRAs, 1 of which was administrivia
+JIRA Highlights Include:
+2. 
+3.
+Work NOT Reflected in JIRAs:
+4. Created "Document Naming Conventions" document and discussed with team members.
+
+** Week Ending 15 Mar **
+1. Closed 7 JIRAs, 1 of which was administrivia
+JIRA Highlights Include:
+2. Wrote questions for LMS: was quite time consuming as I had no experience with Audience or Social
+3. Finished doc on Ben Clifford's video SEO schema builder
+Work NOT Reflected in JIRAs:
+4. Spent another hour with Leah on updating docs/images
+5. A small amount of time on Pantheon deploy
+
+
 ** Week Ending 8 Mar **
 1. Closed 13 JIRAs, 4 of which were administrivia
 JIRA Highlights Include:

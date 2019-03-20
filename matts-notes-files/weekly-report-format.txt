@@ -1,40 +1,29 @@
 New docs:
 
-Title: Eloqua Integration Testing Guide
-Description: In this topic you will learn how to verify an integration  between Video Cloud and Eloqua.
-Link: https://support.brightcove.com/eloqua-integration-testing-guide
+Title: CMS API Sample: Video Sitemap Generator
+Description: This sample demonstrates how you can generate a video sitemap using the CMS API.
+Link: https://support.brightcove.com/cms-api-sample-video-sitemap-generator
+Category: CMS API, SEO
+
+Title: Managing Account Information
+Description: In this topic you will learn how to manage the Account Information settings.
+Link: https://support.brightcove.com/managing-account-information
 Category: Video Cloud
 
-Title: Marketo REST Integration Testing Guide
-Description: In this topic you will learn how to verify an integration between Video Cloud and Marketo.
-Link: https://support.brightcove.com/marketo-rest-integration-testing-guide
-Category: Video Cloud
-
-Title: HubSpot Integration Testing Guide
-Description: In this topic you will learn how to verify an integration between Video Cloud and HubSpot.
-Link: https://support.brightcove.com/hubspot-integration-testing-guide
-Category: Video Cloud
-
-Title: Brightcove Player Sample: Download Audio Plugin
-Description: In this topic, you will learn how to create a link to allow downloading the best quality MP4 of an audio asset playing in Brightcove Player.
-Link: https://support.brightcove.com/brightcove-player-sample-download-audio-plugin
-Category: Brightcove Player
+Title: Video SEO Schema Generator Plugin (open source)
+Description: In this topic, you will learn how to use a plugin that generates a video schema for SEO.
+Link: https://support.brightcove.com/video-seo-schema-generator-plugin
+Category: SEO, Brightcove Player
 
 
-Major updates:
+Minor updates:
 
-Title: Overview: Analytics API
-Description: date and date_hour can now be used with other dimensions - fixed tables and the inpage app to see fields and tests requests to reflect this; also, requests now can only return up to one million items
-Link: https://support.brightcove.com/overview-analytics-api-v1
-Category: Analytics API
+Title: SSAI (Live and VOD) 
+Description: Added note: ads that our system is seeing for first time won’t play until they have been transcoded
+Link: https://support.brightcove.com/video-cloud-ssai-overview, https://support.brightcove.com/live-api-server-side-ad-insertion-ssai
+Category: SSAI
 
-Title: Use Postman for API Requests
-Description: Added new section showing how you can get the OpenAPI specification for any of our platform APIs and import that into Postman to create a collection that will have all the available requests for that API
-Link: https://support.brightcove.com/use-postman-api-requests
-Category: Developer Tools and Concepts
-
-Title: Player Events
-Description: Fixed Fullscreen Events sample
-Link: https://support.brightcove.com/player-events#bc-ipnav-4
-Category: Brightcove Player
-
+Title: Zencoder API version history
+Description: Note that Flixcloud API has been discontinued
+Link: https://support.brightcove.com/zencoder-api-version-history
+Category: Zencoder
