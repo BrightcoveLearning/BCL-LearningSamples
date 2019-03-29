@@ -1,29 +1,38 @@
 New docs:
 
-Title: CMS API Sample: Video Sitemap Generator
-Description: This sample demonstrates how you can generate a video sitemap using the CMS API.
-Link: https://support.brightcove.com/cms-api-sample-video-sitemap-generator
-Category: CMS API, SEO
+Title: Dynamic Deliver: Change to Sources Returned
+Description: Changes to Dynamic Delivery sources - ***NOTE: this was meant to be a transparent change, and for almost all customers was - a very small number of customers who are using DRM and have created custom code around players are affected — we know who they are, and this page is meant only for those customers - AMs will direct them to it as needed. This page should not be promoted for general customer consumption, as that will likely create unnecessary concerns and confusion***
+Link: https://support.brightcove.com/dynamic-deliver-change-sources-returned
+Category: Dynamic Delivery, Playback
 
-Title: Managing Account Information
-Description: In this topic you will learn how to manage the Account Information settings.
-Link: https://support.brightcove.com/managing-account-information
-Category: Video Cloud
+Title:  Integrating Video Cloud with HubSpot Using the Client-Side APIs
+Description:  This topic explains how to configure the Audience module for use with HubSpot using the Client-Side APIs.
+Link:  https://support.brightcove.com/integrating-video-cloud-hubspot-using-client-side-apis
+Category: Audience
 
-Title: Video SEO Schema Generator Plugin (open source)
-Description: In this topic, you will learn how to use a plugin that generates a video schema for SEO.
-Link: https://support.brightcove.com/video-seo-schema-generator-plugin
-Category: SEO, Brightcove Player
+Title:  Identify and Delete Low Performing Videos
+Description:  In this topic, you will learn how to use Studio and a spreadsheet to identify and delete low performing videos.
+Link:  https://support.brightcove.com/identify-and-delete-low-performing-videos
+Category: Brightcove Player
+
+
+Major updates:
+
+Title: 4 sample apps that create MRSS feeds using the CMS or Playback APIs
+Description: All these apps were updated to insure that they create valid feeds according to the current MRSS specification
+Link: https://support.brightcove.com/playback-api-sample-mrss-generator, https://support.brightcove.com/cms-api-sample-mrss-generator, https://support.brightcove.com/cms-api-sample-mrss-feed-playlist, https://support.brightcove.com/playback-api-sample-jsonmrss-feed-playlist
+Category: CMS API, Playback API, SEO, sample apps
 
 
 Minor updates:
 
-Title: SSAI (Live and VOD) 
-Description: Added note: ads that our system is seeing for first time won’t play until they have been transcoded
-Link: https://support.brightcove.com/video-cloud-ssai-overview, https://support.brightcove.com/live-api-server-side-ad-insertion-ssai
-Category: SSAI
+Title: SSAI: Ad Block Detection and Auto-Failover 
+Description: Added note that Enable ad information overlays needs to be selected for the skip ad countdown + button appear for skippable ads with SSAI
+Link: https://support.brightcove.com/ssai-ad-block-detection-and-auto-failover
+Category: Brightcove Player
 
-Title: Zencoder API version history
-Description: Note that Flixcloud API has been discontinued
-Link: https://support.brightcove.com/zencoder-api-version-history
-Category: Zencoder
+Title: Implementing Server-Side Ads with the Brightcove Player 
+Description: Added note that Enable ad information overlays needs to be selected for the skip ad countdown + button appear for skippable ads with SSAI
+Link: https://support.brightcove.com/implementing-server-side-ads-brightcove-player
+Category: Brightcove Player
+
