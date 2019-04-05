@@ -1,11 +1,21 @@
 Major accomplishments:
+** Week Ending 5 Apr **
+1. Closed 11 JIRAs, 3 of which was administrivia
+JIRA Highlights Include:
+2. PAS implementation for Brightcove Player doc.
+3. Getting Adrian site editing info included writing up steps for all of us.
+4. Made a video of the 66 steps needed to identify and delete low performing videos.
+Work NOT Reflected in JIRAs:
+5 Fair amount of time getting the process down for moving ooyala-help from Dev/Test/Live. If only our original support site was as easy.
+6. Worked with Jeff on the onboarding doc.
+
+
 ** Week Ending 29 Mar **
 1. Closed 10 JIRAs, 4 of which was administrivia
 JIRA Highlights Include:
 2. Closed low performing video JIRA three times. :-) Interesting to consider account with 10,000 videos.
 Work NOT Reflected in JIRAs:
 None
-
 
 ** Week Ending 22 Mar **
 1. Closed 21 JIRAs, 4 of which was administrivia

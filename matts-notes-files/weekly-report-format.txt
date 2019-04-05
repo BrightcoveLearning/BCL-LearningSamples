@@ -1,38 +1,81 @@
 New docs:
 
-Title: Dynamic Deliver: Change to Sources Returned
-Description: Changes to Dynamic Delivery sources - ***NOTE: this was meant to be a transparent change, and for almost all customers was - a very small number of customers who are using DRM and have created custom code around players are affected — we know who they are, and this page is meant only for those customers - AMs will direct them to it as needed. This page should not be promoted for general customer consumption, as that will likely create unnecessary concerns and confusion***
-Link: https://support.brightcove.com/dynamic-deliver-change-sources-returned
-Category: Dynamic Delivery, Playback
+Title: The Native SDK for Android will EOL support for ExoPlayer 1
+Description: In July of 2019, the Brightcove Native SDK for Android will be removing support for ExoPlayer 1
+Link: https://support.brightcove.com/native-sdk-android-will-eol-support-exoplayer-1 
+Category: Android SDK
 
-Title:  Integrating Video Cloud with HubSpot Using the Client-Side APIs
-Description:  This topic explains how to configure the Audience module for use with HubSpot using the Client-Side APIs.
-Link:  https://support.brightcove.com/integrating-video-cloud-hubspot-using-client-side-apis
-Category: Audience
+Title: Live API: Insert ID3 timed metadata
+Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find
+Link: https://support.brightcove.com/live-api-insert-id3-timed-metadata
+Category: Live API
+Type: New Doc
 
-Title:  Identify and Delete Low Performing Videos
-Description:  In this topic, you will learn how to use Studio and a spreadsheet to identify and delete low performing videos.
-Link:  https://support.brightcove.com/identify-and-delete-low-performing-videos
-Category: Brightcove Player
+Title: Analytics API: Overview of Dimensions, Fields, and Parameters
+Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find - also updated it a bit
+Link: https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
+Category: Analytics API
 
+Title: Implementing Server-Side Ads in the Live Module
+Description: In this topic you will learn how to implement server-side advertising in the Live module.
+Link: https://support.brightcove.com/implementing-server-side-ads-live-module
+Category: Live Module
+
+Title: Configuring Server-Side Ad Settings
+Description: In this topic you will learn how to manage and create Live and VOD server-side ad configurations.
+Link: https://support.brightcove.com/configuring-server-side-ad-settings
+Category: Video Cloud Admin
 
 Major updates:
 
-Title: 4 sample apps that create MRSS feeds using the CMS or Playback APIs
-Description: All these apps were updated to insure that they create valid feeds according to the current MRSS specification
-Link: https://support.brightcove.com/playback-api-sample-mrss-generator, https://support.brightcove.com/cms-api-sample-mrss-generator, https://support.brightcove.com/cms-api-sample-mrss-feed-playlist, https://support.brightcove.com/playback-api-sample-jsonmrss-feed-playlist
-Category: CMS API, Playback API, SEO, sample apps
+Title: Video Cloud SSAI Ad Config API 
+Description: Added steps to use Studio UI to create an SSAI Ad Configuration
+Link: https://support.brightcove.com/video-cloud-ssai-ad-config-api 
+Category: SSAI
+
+Title: SSAI: Ad Block Detection and Auto-Failover 
+Description: Added steps to use Studio UI to create an SSAI Ad Configuration
+Link: https://support.brightcove.com/ssai-ad-block-detection-and-auto-failover
+Category: SSAI
+
+Title: Implementing Server-Side Ads with the Brightcove Player 
+Description: Added steps to use Studio UI to create an SSAI Ad Configuration
+Link: https://support.brightcove.com/implementing-server-side-ads-brightcove-player  
+Category: SSAI
+
+Title: Implementing Server-Side Ads with the Native Player SDKs 
+Description: Added steps to use Studio UI to create an SSAI Ad Configuration
+Link: https://support.brightcove.com/implementing-server-side-ads-native-player-sdks 
+Category: SSAI
+
+Title: Analytics API Dimension guides
+Description: Added descriptions for fields that can be returns
+Link: all the dimension guides linked from https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
+Category: Analytics API
+Type: Major Update
+
+Title: Text Tracks and Dynamic Delivery
+Description: Added notes explaining that regardless of whether text tracks are added to Dynamic Delivery videos as “captions” or “subtitles”, in the Player they are presented as subtitles (i.e not closed captions for 608/708 accessibility)
+Link: https://support.brightcove.com/adding-captions-videos-video, https://support.brightcove.com/dynamic-ingest-api-sample-adding-text-tracks
+Category: Dynamic Ingest, Dynamic Delivery
+Type: Major Update
 
 
 Minor updates:
 
-Title: SSAI: Ad Block Detection and Auto-Failover 
-Description: Added note that Enable ad information overlays needs to be selected for the skip ad countdown + button appear for skippable ads with SSAI
-Link: https://support.brightcove.com/ssai-ad-block-detection-and-auto-failover
-Category: Brightcove Player
+Title: Video Cloud SSAI Overview 
+Description: Updated some links and link names
+Link: https://support.brightcove.com/video-cloud-ssai-overview 
+Category: SSAI
 
-Title: Implementing Server-Side Ads with the Brightcove Player 
-Description: Added note that Enable ad information overlays needs to be selected for the skip ad countdown + button appear for skippable ads with SSAI
-Link: https://support.brightcove.com/implementing-server-side-ads-brightcove-player
-Category: Brightcove Player
+Title: Video Cloud SSAI Ad Tag Validation 
+Description: Clarified the API calls to trace and retrieve trace details for an SSAI ad configuration
+Link: https://support.brightcove.com/video-cloud-ssai-ad-tag-validation  
+Category: SSAI
+
+Title: CMS API Reference
+Description: API supports updating multiple videos by ids: /videos/348237234,230893049,18926382376
+Link: http://docs.brightcove.com/cms-api/v1/doc/index.html#operation/DeleteVideo
+Category: CMS API
+Type: Minor Update
 
