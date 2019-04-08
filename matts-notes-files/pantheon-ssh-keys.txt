@@ -1,3 +1,10 @@
+
+
+*****************
+THIS IS NOW LOCATED AT http://docs.brightcove.com/en/staging/test-matt/pantheon-ooyala.html
+*****************
+
+
 I. GENERATE SSH KEYS
     1. Open Terminal
     2. Move into /Users/YOURNAME/.ssh
@@ -34,8 +41,8 @@ III. ADD THE SITE TO YOUR GITHUB CLIENT
 If you do not already have one, create a file in the .ssh folder named config
 In that file add the following
     Host *
-       AddKeysToAgent yes
        UseKeychain yes 
+       AddKeysToAgent yes
 Redo your ssh-add   
     ssh-add -K ~/.ssh/pantheon_rsa
 
