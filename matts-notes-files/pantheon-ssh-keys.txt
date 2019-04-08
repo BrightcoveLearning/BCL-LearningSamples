@@ -31,6 +31,16 @@ III. ADD THE SITE TO YOUR GITHUB CLIENT
     4. Click 'Add Repository'
 
 
+If you do not already have one, create a file in the .ssh folder named config
+In that file add the following
+    Host *
+       AddKeysToAgent yes
+       UseKeychain yes 
+Redo your ssh-add   
+    ssh-add -K ~/.ssh/pantheon_rsa
+
+
+
 Ready to go!!
 
 Path to files example: http://test-ooyala-help.pantheonsite.io/video-platform/tasks/video_ad_upload.html
