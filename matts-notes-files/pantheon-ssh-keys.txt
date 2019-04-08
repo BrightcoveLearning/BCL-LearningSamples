@@ -38,13 +38,7 @@ III. ADD THE SITE TO YOUR GITHUB CLIENT
     4. Click 'Add Repository'
 
 
-If you do not already have one, create a file in the .ssh folder named config
-In that file add the following
-    Host *
-       UseKeychain yes 
-       AddKeysToAgent yes
-Redo your ssh-add   
-    ssh-add -K ~/.ssh/pantheon_rsa
+http://docs.brightcove.com/en/staging/test-matt/pantheon-ooyala.html
 
 
 
