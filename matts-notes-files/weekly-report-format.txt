@@ -9,7 +9,6 @@ Title: Live API: Insert ID3 timed metadata
 Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find
 Link: https://support.brightcove.com/live-api-insert-id3-timed-metadata
 Category: Live API
-Type: New Doc
 
 Title: Analytics API: Overview of Dimensions, Fields, and Parameters
 Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find - also updated it a bit
@@ -25,6 +24,7 @@ Title: Configuring Server-Side Ad Settings
 Description: In this topic you will learn how to manage and create Live and VOD server-side ad configurations.
 Link: https://support.brightcove.com/configuring-server-side-ad-settings
 Category: Video Cloud Admin
+
 
 Major updates:
 
@@ -52,13 +52,16 @@ Title: Analytics API Dimension guides
 Description: Added descriptions for fields that can be returns
 Link: all the dimension guides linked from https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
 Category: Analytics API
-Type: Major Update
 
 Title: Text Tracks and Dynamic Delivery
 Description: Added notes explaining that regardless of whether text tracks are added to Dynamic Delivery videos as “captions” or “subtitles”, in the Player they are presented as subtitles (i.e not closed captions for 608/708 accessibility)
 Link: https://support.brightcove.com/adding-captions-videos-video, https://support.brightcove.com/dynamic-ingest-api-sample-adding-text-tracks
 Category: Dynamic Ingest, Dynamic Delivery
-Type: Major Update
+
+Title: Identify and Delete Low Performing Videos
+Description: Video of the steps now added
+Link: https://support.brightcove.com/identify-and-delete-low-performing-videos
+Category: Studio / Managing Videos
 
 
 Minor updates:
@@ -77,5 +80,3 @@ Title: CMS API Reference
 Description: API supports updating multiple videos by ids: /videos/348237234,230893049,18926382376
 Link: http://docs.brightcove.com/cms-api/v1/doc/index.html#operation/DeleteVideo
 Category: CMS API
-Type: Minor Update
-

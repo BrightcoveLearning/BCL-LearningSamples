@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 12 Apr **
+1. Closed 5 JIRAs, 1 of which was administrivia
+JIRA Highlights Include:
+2. Updated Intro to Analytics video to match new document structure
+3. Fine tuned the how to update ooyala-help document to make SSH key use permanent
+Work NOT Reflected in JIRAs:
+4. Vast majority of time this week done on Drupal work on ooyala-help, especially search and Japanese localization
+
+
 ** Week Ending 5 Apr **
 1. Closed 11 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
