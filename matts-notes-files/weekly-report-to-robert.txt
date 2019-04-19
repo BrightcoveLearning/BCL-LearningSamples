@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 19 Apr **
+1. Closed 16 JIRAs, 3 of which was administrivia
+JIRA Highlights Include:
+2. New doc from Andrew's verbiage on new catalog search (https://support.brightcove.com/catalog-search-upgrade)
+3. Couple of features for release 6.33.0 ({PLAYER_CLASS} selector and volume_orientation)
+Work NOT Reflected in JIRAs:
+4. Still some major time on Drupal work on ooyala-help
+
+
 ** Week Ending 12 Apr **
 1. Closed 5 JIRAs, 1 of which was administrivia
 JIRA Highlights Include:
