@@ -1,82 +1,39 @@
 New docs:
 
-Title: The Native SDK for Android will EOL support for ExoPlayer 1
-Description: In July of 2019, the Brightcove Native SDK for Android will be removing support for ExoPlayer 1
-Link: https://support.brightcove.com/native-sdk-android-will-eol-support-exoplayer-1 
-Category: Android SDK
+Title: Catalog Search Upgrade
+Description: In this topic, you will learn about Brightcove's upgrade to it catalog search technology.
+Link: https://support.brightcove.com/catalog-search-upgrade
+Category: CMS API / Playback API / Catalog Search Methods
 
-Title: Live API: Insert ID3 timed metadata
-Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find
-Link: https://support.brightcove.com/live-api-insert-id3-timed-metadata
-Category: Live API
-
-Title: Analytics API: Overview of Dimensions, Fields, and Parameters
-Description: This information was in the API overview, but pulled it out into a new doc to make it easier for customers to find - also updated it a bit
-Link: https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
-Category: Analytics API
-
-Title: Implementing Server-Side Ads in the Live Module
-Description: In this topic you will learn how to implement server-side advertising in the Live module.
-Link: https://support.brightcove.com/implementing-server-side-ads-live-module
-Category: Live Module
-
-Title: Configuring Server-Side Ad Settings
-Description: In this topic you will learn how to manage and create Live and VOD server-side ad configurations.
-Link: https://support.brightcove.com/configuring-server-side-ad-settings
-Category: Video Cloud Admin
 
 
 Major updates:
-
-Title: Video Cloud SSAI Ad Config API 
-Description: Added steps to use Studio UI to create an SSAI Ad Configuration
-Link: https://support.brightcove.com/video-cloud-ssai-ad-config-api 
-Category: SSAI
-
-Title: SSAI: Ad Block Detection and Auto-Failover 
-Description: Added steps to use Studio UI to create an SSAI Ad Configuration
-Link: https://support.brightcove.com/ssai-ad-block-detection-and-auto-failover
-Category: SSAI
-
-Title: Implementing Server-Side Ads with the Brightcove Player 
-Description: Added steps to use Studio UI to create an SSAI Ad Configuration
-Link: https://support.brightcove.com/implementing-server-side-ads-brightcove-player  
-Category: SSAI
-
-Title: Implementing Server-Side Ads with the Native Player SDKs 
-Description: Added steps to use Studio UI to create an SSAI Ad Configuration
-Link: https://support.brightcove.com/implementing-server-side-ads-native-player-sdks 
-Category: SSAI
-
-Title: Analytics API Dimension guides
-Description: Added descriptions for fields that can be returns
-Link: all the dimension guides linked from https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
-Category: Analytics API
-
-Title: Text Tracks and Dynamic Delivery
-Description: Added notes explaining that regardless of whether text tracks are added to Dynamic Delivery videos as “captions” or “subtitles”, in the Player they are presented as subtitles (i.e not closed captions for 608/708 accessibility)
-Link: https://support.brightcove.com/adding-captions-videos-video, https://support.brightcove.com/dynamic-ingest-api-sample-adding-text-tracks
-Category: Dynamic Ingest, Dynamic Delivery
-
-Title: Identify and Delete Low Performing Videos
-Description: Video of the steps now added
-Link: https://support.brightcove.com/identify-and-delete-low-performing-videos
-Category: Studio / Managing Videos
+None
 
 
 Minor updates:
 
-Title: Video Cloud SSAI Overview 
-Description: Updated some links and link names
-Link: https://support.brightcove.com/video-cloud-ssai-overview 
-Category: SSAI
+Title: Beta: Chromecast Plugin for Brightcove Player
+Description: Added note that the cast button only appears when an available Chromecast device is in range
+Link: https://support.brightcove.com/beta-chromecast-plugin-brightcove-player
+Category: Brightcove Player
 
-Title: Video Cloud SSAI Ad Tag Validation 
-Description: Clarified the API calls to trace and retrieve trace details for an SSAI ad configuration
-Link: https://support.brightcove.com/video-cloud-ssai-ad-tag-validation  
-Category: SSAI
+Title: The SSAI Plugin for the Native SDK for Android
+Description: Updated SSAI events in Appendix B
+Link: https://support.brightcove.com/ssai-plugin-native-sdk-android#Appendix_B
+Category: Android SDK
 
-Title: CMS API Reference
-Description: API supports updating multiple videos by ids: /videos/348237234,230893049,18926382376
-Link: http://docs.brightcove.com/cms-api/v1/doc/index.html#operation/DeleteVideo
-Category: CMS API
+Title: Overview: Brightcove Player SDK for Android
+Description: Added SSAI Plugin links
+Link: https://support.brightcove.com/overview-brightcove-player-sdk-android#Integrations
+Category: Android SDK
+
+Title: Customizing Player Appearance
+Description: Added info on the {PLAYER_CLASS} selector
+Link: https://support.brightcove.com/customizing-player-appearance#PLAYER_CLASS
+Category: Brightcove Player
+
+Title: Player Configuration Guide
+Description: Added info on volume_orientation option
+Link: https://support.brightcove.com/player-configuration-guide#volume_orientation
+Category: Brightcove Player
