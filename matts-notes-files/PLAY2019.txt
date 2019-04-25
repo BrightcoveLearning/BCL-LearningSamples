@@ -1,11 +1,39 @@
 **Player Delivery A/B Testing Improvements
 - Hook to motivate the attendee to care about this
 - 8 content slides, so need to talk on each one for 5 minutes, not sure enough content here
-- 
+-Remember to add a review highlighting the 2-3 main learning points you want attendees to remember from the session
 
 
-**
 
+**Monitoring The Internet At Scale
+- Maybe start the session with the Case Studies. This is most relevant to customers, how does Brightcove help correct issues. What a great "hook". The rest of the content can then be discussed in context of how they helped in the case studies.
+-I hope slide 10 is just an overview and not going to try to talk through all of those terms
+-Good slides, not too much text
+-Remember to add a review highlighting the 2-3 main learning points you want attendees to remember from the session
+
+
+
+**Inside End User Testing
+-Possible hook: Examples of poor end user testing, what are some real-life examples of NOT following a good methodology (roll back releases, etc.)
+-Seems to just end, but remember to add a review highlighting the 2-3 main learning points you want attendees to remember from the session
+-Any issue with copyright and the comics used (hope not, as they are effective)
+-Good job on the slides, not too much text
+
+
+
+
+**PLAYER TOOLBOX
+-I see the hook being the problems, and then the solution presented. Good idea.
+-Maybe for each of the demos, Player Loader, React Component and Webpack Plugin, have a slide that shows a few key lines of code before going to the demo to clue the attendees into what will be shown
+-Remember to add a review highlighting the 2-3 main learning points you want attendees to remember from the session
+
+
+**Brightcove Native Player SDK and the new SSAI Plugin
+-Need some kind of hook, why should attendees sit up and listen? Any stats on how much more revenue a company has after starting to use SSAI (everyone listens to revenue issues)
+-Need a "Why SSAI?" slide before the "What is SSAI?" slide. Could tie this back to the hook and increased revenue.
+-Great you have slide 15 to preview what is going to be happening in the migration.
+-Be careful going into too much depth on the code. Realize that there is no way the attendees will remember all the details, so explain the concept and be sure to provide a way for attendees to somehow get the details.
+-Remember to add a review highlighting the 3-4 main learning points you want attendees to remember from the session
 
 
 

@@ -1,0 +1,27 @@
+Last login: Thu Apr 25 13:38:26 on ttys000
+-bash: /Users/mboles/.profile: No such file or directory
+Matthews-MacBook-Pro:composertest mboles$ git checkout -b addr-module
+M   composer.json
+M   composer.lock
+M   console/config.yml
+M   pantheon.yml
+Switched to a new branch 'addr-module'
+Matthews-MacBook-Pro:composertest mboles$ composer require "drupal/address ~1.0"
+./composer.json has been updated
+Gathering patches for root package.
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Package operations: 2 installs, 0 updates, 0 removals
+Gathering patches for root package.
+Gathering patches for dependencies. This might take a minute.
+  - Installing commerceguys/addressing (v1.0.3): Downloading (100%)         
+  - Installing drupal/address (1.6.0): Downloading (100%)         
+Writing lock file
+Generating optimized autoload files
+> DrupalProject\composer\ScriptHandler::createRequiredFiles
+Create a sites/default/files directory with chmod 0777
+> find tests/scripts/ -type f | xargs chmod 755
+find: tests/scripts/: No such file or directory
+Matthews-MacBook-Pro:composertest mboles$ 
+
+
