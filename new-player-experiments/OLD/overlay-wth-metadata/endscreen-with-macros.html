@@ -25,14 +25,14 @@
 
   <script src="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.min.js"></script>
   <script type="text/javascript">
-    videojs.getPlayer("myPlayerID").on("loadstart", function() {
-      var myPlayer = this;
+videojs.getPlayer("myPlayerID").on("loadstart", function() {
+  var myPlayer = this;
 
-      // +++ Call endscreen method +++
-      myPlayer.customEndscreen({
-        content: '{mediainfo.name} - {mediainfo.description}'
-      });
-    });
+  // +++ Call endscreen method +++
+  myPlayer.customEndscreen({
+    content: '{mediainfo.name} - {mediainfo.description}'
+  });
+});
   </script>
 
 </body>
