@@ -1,39 +1,60 @@
 New docs:
 
-Title: Catalog Search Upgrade
-Description: In this topic, you will learn about Brightcove's upgrade to it catalog search technology.
-Link: https://support.brightcove.com/catalog-search-upgrade
-Category: CMS API / Playback API / Catalog Search Methods
-
+Title: Publishing a Live Event to Facebook
+Description: In this topic you will learn how to publish a live event to Facebook using Brightcove Social.
+Link: https://support.brightcove.com/publishing-live-event-facebook
+Category: Social
 
 
 Major updates:
-None
+
+Title: Implementing Server-Side Ads with the Native Player SDKs 
+Description: Updated to use the new SSAI plugins for Android and iOS. The OnceUX plugins are now deprecated.
+Link: https://support.brightcove.com/implementing-server-side-ads-native-player-sdks
+Category: Native SDKs
+
+Title: CMS API Reference
+Description: add parameter to get videos for playlist request that suppresses text track info to improve performance
+Link: https://docs.brightcove.com/cms-api/v1/doc/index.html
+Category: CMS API
 
 
 Minor updates:
 
-Title: Beta: Chromecast Plugin for Brightcove Player
-Description: Added note that the cast button only appears when an available Chromecast device is in range
-Link: https://support.brightcove.com/beta-chromecast-plugin-brightcove-player
+Title: Brightcove Native SDKs Feature Support
+Description: Updated for latest plugin versions. Deprecated OnceUX plugins.
+Link: https://support.brightcove.com/brightcove-native-sdks-feature-support
+Category: Native SDKs
+
+Title: Appending Ad Query Params with the Native SDKs
+Description: Replaced references to OnceUX plugins to new SSAI plugins.
+Link: https://support.brightcove.com/appending-ad-query-params-native-sdks
+Category: Native SDKs
+
+Title: Update to Proxies used in Platform API Samples
+Description: modified proxies to all requests from cs1.brightcodes.net (Support sample apps)
+Link: n/a
+Category: Platform API Samples
+
+Title: Explanation of Fragment Duration and Segment Length
+Description: Added explanation of what these terms mean for DASH/HLS video
+Link: https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions
+Category: Ingest profiles
+
+Title: CMS Connectors for Video Cloud
+Description: Added demain that must be allowed for CMS Connectors
+Link: https://support.brightcove.com/debugging-network-and-api-connection-issues-cms-and-dam-integrations
+Category: CMS Connectors for Video Cloud
+
+Title: Custom Endscreen Plugin 
+Description: Macros and can be used as content for a custom endscreen.
+Link: https://support.brightcove.com/custom-endscreen-plugin#Using_macros
 Category: Brightcove Player
 
-Title: The SSAI Plugin for the Native SDK for Android
-Description: Updated SSAI events in Appendix B
-Link: https://support.brightcove.com/ssai-plugin-native-sdk-android#Appendix_B
-Category: Android SDK
-
-Title: Overview: Brightcove Player SDK for Android
-Description: Added SSAI Plugin links
-Link: https://support.brightcove.com/overview-brightcove-player-sdk-android#Integrations
-Category: Android SDK
-
-Title: Customizing Player Appearance
-Description: Added info on the {PLAYER_CLASS} selector
-Link: https://support.brightcove.com/customizing-player-appearance#PLAYER_CLASS
+Title: 360°/VR Video Plugin
+Description: Added motionControls option
+Link: https://support.brightcove.com/360degvr-video-plugin
 Category: Brightcove Player
 
-Title: Player Configuration Guide
-Description: Added info on volume_orientation option
-Link: https://support.brightcove.com/player-configuration-guide#volume_orientation
-Category: Brightcove Player
+
+

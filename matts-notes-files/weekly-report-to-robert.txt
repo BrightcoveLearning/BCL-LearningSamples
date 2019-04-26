@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 26 Apr **
+- Closed 19 JIRAs, 5 of which was administrivia
+JIRA Highlights Include:
+- No big tasks, but lots of smallish/medium type updates, a number of which required some research
+Work NOT Reflected in JIRAs:
+- Reviewed 4 PLAY presentations and then discussed with Jeff (3 hours)
+- Debriefed PLAY presentation comments with Mike Arguin (1 hour)
+- Started investigation of updating from Dev > Test > Live on the support site (4 hours)
+
+
 ** Week Ending 19 Apr **
 1. Closed 16 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
