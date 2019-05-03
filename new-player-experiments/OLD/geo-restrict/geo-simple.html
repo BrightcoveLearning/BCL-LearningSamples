@@ -14,31 +14,32 @@
 
 <body>
 
-<video id="myPlayerID" data-video-id="4040394419001"
-data-account="1486906377"
-data-player="XJhO7JGxY"
-data-embed="default"
-data-application-id
-class="video-js"
-controls></video>
-<script src="//players.brightcove.net/1486906377/XJhO7JGxY_default/index.min.js"></script>
-
-<div id="textTarget"></div>
+  <video id="myPlayerID"
+    data-video-id="4040394419001"
+    data-account="1486906377"
+    data-player="XJhO7JGxY"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1486906377/XJhO7JGxY_default/index.min.js"></script>
+  <br>
+  <div id="textTarget"></div>
 
   <script type="text/javascript">
-    videojs('myPlayerID').one('bc-catalog-error', function(){
+    videojs('myPlayerID').one('bc-catalog-error', function() {
       var myPlayer = this,
         specificError;
       if (myPlayer.catalog.error !== undefined) {
         specificError = myPlayer.catalog.error.data[0];
-console.log('myPlayer.catalog.error',myPlayer.catalog.error);
+        console.log('myPlayer.catalog.error', myPlayer.catalog.error);
         if (specificError !== undefined & specificError.error_subcode == "CLIENT_GEO") {
-          document.getElementById("textTarget").innerHTML = "The video you are trying to watch cannot be viewed from your current country or location.";
+          document.getElementById("textTarget").innerHTML = "<strong>The video you are trying to watch cannot be viewed from your current country or location.</strong>";
         };
       };
     });
 
-    videojs("myPlayerID").ready(function(){
+    videojs("myPlayerID").ready(function() {
       var myPlayer = this;
       console.log('in ready');
     });
