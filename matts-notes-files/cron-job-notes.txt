@@ -18,6 +18,8 @@ MAILTO="mboles@brightcove.com"
 PATH=/home/VIDMARK.LOCAL/mboles/.platformsh/bin:/usr/local/sbin:/usr/local/bin:$
 0 5,21 * * * platform snapshot:create --project=6sglloa4yrkti --environment=mas$
 
+*If adding a script must make it executable:
+chmod u+x backup-database-ooyala.sh
 
 
 LOGIN

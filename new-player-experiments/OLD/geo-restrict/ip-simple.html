@@ -3,22 +3,22 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>geo restrict</title>
+  <title>ip restrict</title>
 </head>
 
 <body>
 
   <video-js id="myPlayerID"
-    data-video-id="4040394419001"
-    data-account="1486906377"
-    data-player="XJhO7JGxY"
+    data-video-id="5981021521001"
+    data-account="5977711152001"
+    data-player="iYNDnCGt9"
     data-embed="default"
     data-application-id
     class="video-js"
     controls
     width="640"
     height="360"></video-js>
-  <script src="//players.brightcove.net/1486906377/XJhO7JGxY_default/index.min.js"></script>
+  <script src="//players.brightcove.net/5977711152001/iYNDnCGt9_default/index.min.js"></script>
   <br>
   <div id="textTarget"></div>
 
@@ -29,8 +29,8 @@
       if (myPlayer.catalog.error !== undefined) {
         specificError = myPlayer.catalog.error.data[0];
         console.log('myPlayer.catalog.error', myPlayer.catalog.error);
-        if (specificError !== undefined & specificError.error_subcode == 'CLIENT_GEO') {
-          document.getElementById('textTarget').innerHTML = '<strong>The video you are trying to watch cannot be viewed from your current country or location.</strong>';
+        if (specificError !== undefined & specificError.error_subcode == 'CLIENT_IP') {
+          document.getElementById('textTarget').innerHTML = '<strong>The video you are trying to watch cannot be viewed from your current IP address.</strong>';
         };
       };
     });

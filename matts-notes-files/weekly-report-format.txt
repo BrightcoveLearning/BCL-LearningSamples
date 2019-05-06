@@ -1,60 +1,52 @@
 New docs:
 
-Title: Publishing a Live Event to Facebook
-Description: In this topic you will learn how to publish a live event to Facebook using Brightcove Social.
-Link: https://support.brightcove.com/publishing-live-event-facebook
+Title: Broadcasting a Live Event to Facebook (new training video)
+Description: Learn how to broadcast a live event to Facebook using the Live to Social feature.
+Link: https://support.brightcove.com/broadcasting-live-event-facebook-video
 Category: Social
+
+Title: Playing Live Streams
+Description: In this topic, you will learn about the functionality used by Brightcove Player to play live streams.
+Link: https://support.brightcove.com/playing-live-streams
+Category: Brightcove Player
 
 
 Major updates:
 
-Title: Implementing Server-Side Ads with the Native Player SDKs 
-Description: Updated to use the new SSAI plugins for Android and iOS. The OnceUX plugins are now deprecated.
-Link: https://support.brightcove.com/implementing-server-side-ads-native-player-sdks
-Category: Native SDKs
+Title:The SSAI Plugin for the Native SDK for Android 
+Description: Added section for handling SSAI-specific events.
+Link: https://support.brightcove.com/ssai-plugin-native-sdk-android#Handling_events
+Category: Android SDK
 
-Title: CMS API Reference
-Description: add parameter to get videos for playlist request that suppresses text track info to improve performance
-Link: https://docs.brightcove.com/cms-api/v1/doc/index.html
-Category: CMS API
+Title: Live API: Insert ID3 timed metadata
+Description: Added more info on use cases and showed how to add multiple entries
+Link: https://support.brightcove.com/live-api-insert-id3-timed-metadata
+Category: Live API
+
+Title: Live DVRUX Plugin
+Description: In Brightcove Player versions previous to 6.33.0 the Live DVRUX plugin was required to play live streams. This is no longer the case, as that functionality is now built into Brightcove Player. See the Playing Live Streams document for further details. The Live DVRUX plugin is now deprecated and should no longer be used.
+Link: https://support.brightcove.com/live-dvrux-plugin
+Category: Brightcove Player
 
 
 Minor updates:
 
-Title: Brightcove Native SDKs Feature Support
-Description: Updated for latest plugin versions. Deprecated OnceUX plugins.
-Link: https://support.brightcove.com/brightcove-native-sdks-feature-support
-Category: Native SDKs
+Title: Zencoder Job Encoding Settings
+Description: Minor correction - escaping file names not required
+Link: https://support.brightcove.com/zencoder-encoding-settings-job#input
+Category: Zencoder
 
-Title: Appending Ad Query Params with the Native SDKs
-Description: Replaced references to OnceUX plugins to new SSAI plugins.
-Link: https://support.brightcove.com/appending-ad-query-params-native-sdks
-Category: Native SDKs
+Title: Zencoder DRM Encoding Settings
+Description:Removed Beta label
+Link:https://support.brightcove.com/zencoder-encoding-settings-drm
+Category: Zencoder
 
-Title: Update to Proxies used in Platform API Samples
-Description: modified proxies to all requests from cs1.brightcodes.net (Support sample apps)
-Link: n/a
-Category: Platform API Samples
+Title: AMP Using a Video Cloud Video
+Description: New feature support: The dock attribute will "dock" the player when it would be scrolled out of view. The player is made smaller and moved near the top-right of the web page. Note that HTML standards refer to this feature as picture-in-picture. 
+Link: https://support.brightcove.com/amp-using-video-cloud-video#dock
+Category: Brightcove Player/ AMP
 
-Title: Explanation of Fragment Duration and Segment Length
-Description: Added explanation of what these terms mean for DASH/HLS video
-Link: https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding#Renditions
-Category: Ingest profiles
-
-Title: CMS Connectors for Video Cloud
-Description: Added demain that must be allowed for CMS Connectors
-Link: https://support.brightcove.com/debugging-network-and-api-connection-issues-cms-and-dam-integrations
-Category: CMS Connectors for Video Cloud
-
-Title: Custom Endscreen Plugin 
-Description: Macros and can be used as content for a custom endscreen.
-Link: https://support.brightcove.com/custom-endscreen-plugin#Using_macros
+Title: Player Catalog
+Description: Added content for handling geo-filtering and IP restriction errors.
+Link: https://support.brightcove.com/player-catalog#catalogerrors
 Category: Brightcove Player
-
-Title: 360°/VR Video Plugin
-Description: Added motionControls option
-Link: https://support.brightcove.com/360degvr-video-plugin
-Category: Brightcove Player
-
-
-
