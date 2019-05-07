@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 3 May **
+- Closed 22 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+- New doc on Playing Live Streams to replace LIve DVRUX plugin doc, also update DVRUX doc as deprecated and points to new doc
+- Also did some cleanup that has long been needed, for instance checked that IMA3 plugin version used everywhere is v3 AND cleaned up CodePens to use getPlayer('myPlayerID') method instead of vidceojs('myPlayerID'). I had done this for the docs, but forgot about CodePens
+- Added content in Catalog doc on how to handle geo-filtering and IP restriction catalog errors
+Work NOT Reflected in JIRAs:
+- Did give adding a module to the Dev site for support.brightcove.com, but failed again. Will work with Pronovix next week.
+
+
 ** Week Ending 26 Apr **
 - Closed 19 JIRAs, 5 of which was administrivia
 JIRA Highlights Include:
