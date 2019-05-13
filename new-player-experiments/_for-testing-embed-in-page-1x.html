@@ -6,21 +6,8 @@
   <title>Testing </title>
   <!-- styles for page -->
     <style>
-      .video-js {
-      height: 344px;
-      width: 610px;
-    }
-
-
-.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
-.video-js.not-hover.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
-.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-active .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
-.video-js.not-hover.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible),
-.video-js.vjs-has-started.vjs-paused.vjs-ad-playing.vjs-user-inactive .vjs-control-bar,
-.video-js.vjs-has-started.vjs-playing.vjs-user-inactive .vjs-control-bar:not(.vjs-focus-within):not(.vjs-control-bar-visible){
-  transform: none;
-  -webkit-transform: none;
-  -ms-transform: none;
+.video-js .vjs-play-progress {
+  background-color: green;
 }
   </style>
 
@@ -28,19 +15,16 @@
 
 <body>
 
-  <video id="myPlayerID" data-video-id="4093372393001"
-  data-account="1507807800001"
-  data-player="default"
-  data-embed="default"
-  class="video-js"
-  controls></video>
-  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
-
-<script>
-  videojs.getPlayer('myPlayerID').ready(function() {
-    var myPlayer = this;
-  });
-</script>
+<video data-video-id="6036098963001"
+data-account="1507807800001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls
+width="640"
+height="360"></video>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
 
 </body>
