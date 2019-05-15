@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="6033855353001"
+    data-account="1752604059001"
+    data-player="BJAZNkRV"
+    data-embed="default"
+    class="video-js"
+    controls
+    width="640px" height="360px"></video-js>
+
+  <script src="//players.brightcove.net/1752604059001/BJAZNkRV_default/index.min.js"></script>
+
+  <script src="auto-audio-track.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.autoAudioTrack();
+    });
+  </script>
+
+</body>
+
+</html>
