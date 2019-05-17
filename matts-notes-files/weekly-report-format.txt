@@ -1,52 +1,27 @@
 New docs:
 
-Title: Broadcasting a Live Event to Facebook (new training video)
-Description: Learn how to broadcast a live event to Facebook using the Live to Social feature.
-Link: https://support.brightcove.com/broadcasting-live-event-facebook-video
-Category: Social
-
-Title: Playing Live Streams
-Description: In this topic, you will learn about the functionality used by Brightcove Player to play live streams.
-Link: https://support.brightcove.com/playing-live-streams
-Category: Brightcove Player
+Title: 
+Description: 
+Link: 
+Category: 
+Type: New doc/Major Update/Minor Update
 
 
 Major updates:
 
-Title:The SSAI Plugin for the Native SDK for Android 
-Description: Added section for handling SSAI-specific events.
-Link: https://support.brightcove.com/ssai-plugin-native-sdk-android#Handling_events
-Category: Android SDK
-
-Title: Live API: Insert ID3 timed metadata
-Description: Added more info on use cases and showed how to add multiple entries
-Link: https://support.brightcove.com/live-api-insert-id3-timed-metadata
-Category: Live API
-
-Title: Live DVRUX Plugin
-Description: In Brightcove Player versions previous to 6.33.0 the Live DVRUX plugin was required to play live streams. This is no longer the case, as that functionality is now built into Brightcove Player. See the Playing Live Streams document for further details. The Live DVRUX plugin is now deprecated and should no longer be used.
-Link: https://support.brightcove.com/live-dvrux-plugin
-Category: Brightcove Player
+Title: 
+Description: 
+Link: 
+Category: 
+Type: New doc/Major Update/Minor Update
 
 
 Minor updates:
 
-Title: Zencoder Job Encoding Settings
-Description: Minor correction - escaping file names not required
-Link: https://support.brightcove.com/zencoder-encoding-settings-job#input
-Category: Zencoder
+Title: 
+Description: 
+Link: 
+Category: 
+Type: New doc/Major Update/Minor Update
 
-Title: Zencoder DRM Encoding Settings
-Description:Removed Beta label
-Link:https://support.brightcove.com/zencoder-encoding-settings-drm
-Category: Zencoder
 
-Title: AMP Using a Video Cloud Video
-Description: New feature support: The dock attribute will "dock" the player when it would be scrolled out of view. The player is made smaller and moved near the top-right of the web page. Note that HTML standards refer to this feature as picture-in-picture. 
-Link: https://support.brightcove.com/amp-using-video-cloud-video#dock
-Category: Brightcove Player/ AMP
-
-Title: Player Catalog
-Description: Added content for handling geo-filtering and IP restriction errors.
-Link: https://support.brightcove.com/player-catalog#catalogerrors
-Category: Brightcove Player
