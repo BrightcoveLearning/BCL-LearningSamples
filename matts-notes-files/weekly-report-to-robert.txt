@@ -1,4 +1,23 @@
 Major accomplishments:
+** Week Ending 24 May **
+- Closed 11 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+-Peer reviews for Jeff and Bob. I try to do a good job with those, and it is time consuming.
+-Got through the drudge work of updating Quick Starts to Step-by-Steps. I had LOTS of references in other docs to change.
+Work NOT Reflected in JIRAs:
+- Great progress on the first three Developer Basics docs. Videos finished and will demo for team next week the code highlighting option.
+ 
+ 
+** Week Ending 17 May **
+- Closed 8 JIRAs, 4 of which was administrivia
+JIRA Highlights Include:
+-New sample to auto select text track to match browser language
+-Send product restriction doc out for review, only Tim Walling has replied and that is with info on Eloqua API restrictions
+-Got the 93 references to "Quick Start: Plugin Development" to use the step-by-step name
+Work NOT Reflected in JIRAs:
+- Cheating a bit and using 1 1/2 days on basics videos. Want to get the first three done early next week.
+ 
+ 
 ** Week Ending 10 May **
 - Closed 8 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
@@ -10,7 +29,6 @@ Work NOT Reflected in JIRAs:
     *Updating the names of Quick Starts to Step-by-Step (doing about 10 at a time, a few times a day, so should finish sometime next week)
     *Have the scripts written for three Developer Basics videos, with audio recorded
 
-    
 
 
 ** Week Ending 3 May **

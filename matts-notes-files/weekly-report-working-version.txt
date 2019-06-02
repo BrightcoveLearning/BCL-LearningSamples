@@ -1,79 +1,65 @@
-New Docs
+New docs:
 
-Title: CMS API Sample: Report on Audio-Only Content
-Description: If you have audio-only content in your video library, you might find it useful to run a report displaying just those audio-only videos. This sample shows you how to do that.
-Link: https://support.brightcove.com/cms-api-sample-report-audio-only-content
-Category: CMS API
+Title: Fields for Custom Live Ingest Profiles
+Description: Fields that can be used in Live ingest profiles
+Link: https://support.brightcove.com/fields-custom-live-ingest-profiles
+Category: Live API, Ingest Profiles API
 
-Title: Zencoder: Getting an API Key
-Description: All requests to the Zencoder API must be authenticated using an API Key. This topic explains the different types of API Keys for Zencoder, and how to obtain them.
-Link: https://support.brightcove.com/zencoder-getting-api-key
-Category: Zencoder
-
-Title: SSAI API Error Reference
-Description: This topic provides an error reference for the SSAI API.
-Link: https://support.brightcove.com/ssai-api-error-reference
-Category: SSAI API
-
-Title: Quick Start: Create a Live Job for MPEG2-TS Input
-Description: This tutorial walks you through creating a live job that will accept MPEG2-TS input. The job is created using the Live API.
-Link: https://support.brightcove.com/quick-start-create-live-job-mpeg2-ts-input
-Category: Live API
-
-Title:  Using Live RTMP Outputs to Stream to Facebook and YouTube
-Description:  In this topic you will learn how to use RTMP outputs in the Live module to stream live events to Facebook and YouTube.
-Link:  https://support.brightcove.com/using-live-rtmp-outputs-stream-facebook-and-youtube
-Category:  Live module
-
-
-Major Updates
-
-Title: SSAI API Reference
-Description: Added Ad Tracing Operations
-Link: https://docs.brightcove.com/ssai-api/v1/doc/index.html
-Category: SSAI API
-
-Title: Live API: Server-Side Ad Insertion (SSAI)
-Description: Added section on dynamically adding a query string dynamically
-Link: https://support.brightcove.com/live-api-server-side-ad-insertion-ssai#Targeting_using_Targeting_using_query_strings
-Category: SSAI, Live Streaming , Live API
-
-Title: Beta: Chromecast Plugin for Brightcove Player
-Description: Updated steps for adding the chromecast-receiver plugin using the Players module in Studio
-Link: https://support.brightcove.com/beta-chromecast-plugin-brightcove-player#Using_the_plugin
+Title: Bulk Updating Brightcove Default Player
+Description: In this topic, you will learn how to update Brightcove Default Player from multiple accounts using curl, a shell script and Terminal.
+Link: https://support.brightcove.com/bulk-updating-brightcove-default-player
 Category: Brightcove Player
 
-Title: Picture-in-Picture Plugin (aka "floating" or "pinned")
-Description: Updated steps for adding the pip plugin using the Players module in Studio
-Link:https://support.brightcove.com/picture-picture-plugin-aka-floating-or-pinned#Implement_using_Players_module
-Category: Brightcove Player
+Title: Ooyala Internal Training
+Description: Ooyala product Tech Support Training Videos
+Link: https://support.brightcove.com/ooyala-internal-training
+Category: Ooyala Products
 
-Title: Overview: Digital Rights Management (DRM) in Video Cloud
-Description: Added information about DRM Security Levels with Android Devices
-Link: https://support.brightcove.com/overview-digital-rights-management-drm-video-cloud#DRM_support_details
-Category: DRM
 
-Title: Policy Keys
-Description: Changed how to get a Policy Key from config.json to viewing the Players module
-Link: https://support.brightcove.com/policy-keys#Getting_the_policy_key
-Category: Policy API
+Major updates:
 
-Title: REST APIs
-Description: Added introductory videos to some REST API landing pages.
-Links: https://support.brightcove.com/analytics-api
-https://support.brightcove.com/cms-api
-https://support.brightcove.com/player-management-api
-Category: Policy API
+Title: Standard Live Ingest Profiles
+Description: Updated for new standard profiles
+Link: https://support.brightcove.com/standard-live-ingest-profiles
+Category: Live API, Ingest Profiles API
+
+Title: Standard Ingest Profiles for Dynamic Delivery and Context Aware Encoding
+Description: Updated for new renditions
+Link: https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding
+Category: Ingest Profiles API, Dynamic Delivery, CAE
 
 
 Minor updates:
 
-Title: Ingest Profiles API Reference
-Description: Flag min and max resolution height and width as required fields for creating CAE profiles
-Link: https://docs.brightcove.com/ingest-profiles-api/v1/doc/index.html
-Category: Ingest Profiles API
+Title: Audience API Reference
+Description: fixed sample response for get view events
+Link: https://docs.brightcove.com/audience-api/v1/doc/index.html#operation/GetViewEvents
+Category: Audience API
+Type: Minor Update
 
-Title: Player Configuration Guide
-Description: Added content on the breakpoints and responsive options
-Link: https://support.brightcove.com/player-configuration-guide
-Category: Player Management
+Title: HLS Plugin
+Description: Updated enableLowInitialPlaylist default value and handling for Android devices
+Link: https://support.brightcove.com/hls-plugin#options
+Category: Brightcove Player
+
+Title: Android Pie Support with the Native SDK for Android
+Description: Added note about HTTPS sources for captions and subtitles
+Link: https://support.brightcove.com/android-pie-support-native-sdk-android
+Category: Android SDK
+
+Title: Android: Source Selection
+Description: Added note about HTTPS sources for captions and subtitles
+Link: https://support.brightcove.com/android-source-selection
+Category: Android SDK
+
+Title: Known Issues: Brightcove Native Player SDKs
+Description: Added issue about HTTPS sources for captions and subtitles
+Link: https://support.brightcove.com/known-issues-brightcove-native-player-sdks 
+Category: Native SDKs
+
+Title: Protecting Videos with HLS Encryption
+Description: Made information more clear that once HLSe enabled for account, all videos ingested use HLSe. Removed content that inferred, incorrectly, that one could use ingest profiles to control HLSe in an account.
+Link: https://support.brightcove.com/protecting-videos-hls-encryption
+Category: Brightcove Player 
+
+

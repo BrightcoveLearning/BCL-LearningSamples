@@ -1,3 +1,13 @@
+**Preso - A/B Testing
+-Nohook
+
+
+
+
+
+-------------------------------------------------------------
+
+
 **Player Delivery A/B Testing Improvements
 - Hook to motivate the attendee to care about this
 - 8 content slides, so need to talk on each one for 5 minutes, not sure enough content here
