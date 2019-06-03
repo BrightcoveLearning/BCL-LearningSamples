@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="videojs.afk-monitor.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="2026627037001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640" height="360"></video-js>
+
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script src="videojs.afk-monitor.js"></script>
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
+      var options = {'showMessageAfter': 1000, 'pausePlayerAfter': 1000};
+      myPlayer.AFKMonitor(options);
+    });
+  </script>
+
+</body>
+
+</html>
