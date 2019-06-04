@@ -5,15 +5,6 @@
   <meta charset="UTF-8">
   <title>Untitled Document</title>
   <style>
-    /* Size the video */
-    .video-js {
-      width: 640px;
-      height: 360px;
-    }
-/* Hide the overlay */
-    .hide-overlay .vjs-overlay {
-      display: none;
-    }
     /* Style the overlay */
     .vjs-overlay, .vjs-overlay.vjs-overlay-top {
       position: absolute;
@@ -28,20 +19,25 @@
       text-align: left;
     }
   </style>
+  <link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'>
 </head>
 
 <body>
+
   <video-js id="myPlayerID"
-    data-video-id="5393799460001"
+    data-video-id="4607357817001"
     data-account="1752604059001"
-    data-player="ryxfFuudub"
+    data-player="NqheO14Tj"
     data-embed="default"
     data-application-id
     class="video-js"
-    controls></video-js>
-  <script src="//players.brightcove.net/1752604059001/ryxfFuudub_default/index.min.js"></script>
+    controls
+    width="640"
+    height="360"></video-js>
+  <script src="//players.brightcove.net/1752604059001/NqheO14Tj_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
 
-  <script type="text/javascript">
+  <script>
     // +++ Helpful method to convert seconds +++
     /**
      * Utility to extract h/m/s from seconds
@@ -72,15 +68,17 @@
       return obj;
     }
 
-  videojs.getPlayer('myPlayerID').ready(function() {
-      var myPlayer = this,
-       adPlayerElement = document.querySelector('#adOverlay').parentElement;
-       adPlayerElement.setAttribute('style','display: none');
-console.log('adPlayerElement',adPlayerElement);
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
 
-      // Initially  hide the overlay
-      //adPlayerElement.addClass("hide-overlay");
-      // +++ Set up listening for ad events +++
+      myPlayer.overlay({
+        "content": "<p id='adOverlay'>Ad: <span id='timeTarget'></span></p>",
+        "start": "loadedmetadata"
+      })
+
+     var adPlayerElement = document.querySelector('#adOverlay').parentElement;
+     adPlayerElement.setAttribute('style','display: none');
+
       myPlayer.on('loadedmetadata', function() {
         var theInterval,
           timeLeftInAd;
@@ -91,31 +89,32 @@ console.log('adPlayerElement',adPlayerElement);
           var timeObject = secondsToTime(Math.floor(myPlayer.ima3.adPlayer.duration() - myPlayer.ima3.adPlayer.currentTime()));
           document.getElementById('timeTarget').innerHTML = timeObject.m + ':' + timeObject.s;
         }
-        // +++ On start of ad +++
-        myPlayer.on('ima3-started', function() {
-console.log('my ima3-started dispatch');
 
-       adPlayerElement.setAttribute('class','vjs-overlay-top vjs-overlay');
-       //adPlayerElement.addClass('.vjs-overlay');
-
-          // Remove the hide class so overlay displays
-          //adPlayerElement.removeClass("hide-overlay");
-          adPlayerElement.setAttribute("style","display: block;");
-          // Start the counter that calls function every second
-          theInterval = setInterval(everySecond, 1000);
-        });
-        // +++ On end of ad +++
-        myPlayer.on('ima3-complete', function() {
+        function videoCompleteOrSkipped(){
           // Stop the counter
           clearInterval(theInterval);
           // Hide the overlay
           adPlayerElement.setAttribute('style','display: none');
           // Clear any numbers so on display of overlay no small numbers left
           document.getElementById('timeTarget').innerHTML = '';
+        }
+
+        // +++ On start of ad +++
+        myPlayer.on('ima3-started', function() {
+         adPlayerElement.setAttribute('class','vjs-overlay-top vjs-overlay');
+
+          // Remove the hide class so overlay displays
+          adPlayerElement.setAttribute("style","display: block;left: 20%");
+          // Start the counter that calls function every second
+          theInterval = setInterval(everySecond, 1000);
         });
+        // +++ On end of ad +++
+        myPlayer.on('ima3-complete', videoCompleteOrSkipped);
+        myPlayer.on('ads-ad-skipped', videoCompleteOrSkipped);
       });
     });
   </script>
+
 </body>
 
 </html>
