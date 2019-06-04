@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
   <video-js id="myPlayerID"
     data-video-id="4607357817001"
     data-account="1752604059001"
@@ -28,6 +27,7 @@
     controls
     width="640"
     height="360"></video-js>
+
   <script src="//players.brightcove.net/1752604059001/NqheO14Tj_default/index.min.js"></script>
   <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
 
@@ -62,7 +62,7 @@
       return obj;
     }
 
-    videojs.getPlayer('myPlayerID').ready(function() {
+    videojs.getPlayer('myPlayerID').ready(function () {
       var myPlayer = this;
 
       // +++ Add the overlay to the player +++
@@ -71,13 +71,11 @@
         "start": "loadedmetadata"
       })
 
-     // +++ Get reference to element containing overlay +++
-     var adPlayerElement = document.querySelector('#adOverlay').parentElement;
-     // Hide overlay at startup
-     adPlayerElement.setAttribute('style','display: none');
-
-
-     myPlayer.on('loadedmetadata', function() {
+      // +++ Get reference to element containing overlay +++
+      var adPlayerElement = document.querySelector('#adOverlay').parentElement;
+      // Hide overlay at startup
+      adPlayerElement.setAttribute('style', 'display: none');
+      myPlayer.on('loadedmetadata', function () {
         var theInterval,
           timeLeftInAd;
 
@@ -90,21 +88,20 @@
         }
 
         // +++ Clean up at ad end or ad skipped +++
-        function videoCompleteOrSkipped(){
+        function videoCompleteOrSkipped() {
           // Stop the counter
           clearInterval(theInterval);
           // Hide the overlay
-          adPlayerElement.setAttribute('style','display: none');
+          adPlayerElement.setAttribute('style', 'display: none');
           // Clear any numbers so on display of overlay no small numbers left
           document.getElementById('timeTarget').innerHTML = '';
         }
 
         // +++ Start counter on start of ad +++
-        myPlayer.on('ima3-started', function() {
-         adPlayerElement.setAttribute('class','vjs-overlay');
-
+        myPlayer.on('ima3-started', function () {
+          adPlayerElement.setAttribute('class', 'vjs-overlay');
           // Display the overlay
-          adPlayerElement.setAttribute("style","display: block; left: 5px");
+          adPlayerElement.setAttribute("style", "display: block; left: 5px");
           // Start the counter that calls function every second
           theInterval = setInterval(everySecond, 1000);
         });
@@ -115,7 +112,6 @@
       });
     });
   </script>
-
 </body>
 
 </html>
