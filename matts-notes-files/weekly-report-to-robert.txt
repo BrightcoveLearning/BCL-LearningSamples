@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 31 May **
+- Closed 9 JIRAs, 3 of which was administrivia
+JIRA Highlights Include:
+- Got ad countdown timer sample working
+Work NOT Reflected in JIRAs:
+- Got the content/examples ready to go for the new playback_rate option. When feature released can just paste and publish.
+ 
+ 
+** Week Ending 31 May **
+- Closed 9 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+-Finished the docs that accompany the three Developers Basics videos.
+Work NOT Reflected in JIRAs:
+- Work on companion ad. Getting close but not there.
+ 
+ 
 ** Week Ending 24 May **
 - Closed 11 JIRAs, 2 of which was administrivia
 JIRA Highlights Include:

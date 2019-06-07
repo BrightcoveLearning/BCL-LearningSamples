@@ -1,65 +1,58 @@
 New docs:
 
-Title: Fields for Custom Live Ingest Profiles
-Description: Fields that can be used in Live ingest profiles
-Link: https://support.brightcove.com/fields-custom-live-ingest-profiles
-Category: Live API, Ingest Profiles API
+Title: Get Started - Video Cloud Studio
+Description: Get started learning about the video publishing process using Video Cloud Studio. Click below to watch videos on each step in the process.
+Link: https://support.brightcove.com/getting-started-video-cloud-studio-0
+Category: Studio
 
-Title: Bulk Updating Brightcove Default Player
-Description: In this topic, you will learn how to update Brightcove Default Player from multiple accounts using curl, a shell script and Terminal.
-Link: https://support.brightcove.com/bulk-updating-brightcove-default-player
-Category: Brightcove Player
+Title: Live API: Cue Points and Ad Beacons with SSAI
+Description: In this topic, you will learn how to manage cue points and ad beacons when using Brightcove's Server-Side Ad Insertion (SSAI) for your live stream jobs.
+Link: https://support.brightcove.com/live-api-cue-points-and-ad-beacons-ssai
+Category: Live SSAI
 
-Title: Ooyala Internal Training
-Description: Ooyala product Tech Support Training Videos
-Link: https://support.brightcove.com/ooyala-internal-training
-Category: Ooyala Products
+Title: Live Platforms Comparison Matrix
+Description: Differences and similarities that you can find between Brightcove and Ooyala Live platforms.
+Link: https://support.brightcove.com/live-platforms-comparison-matrix
+Category: Live, Ooyala
+
 
 
 Major updates:
 
-Title: Standard Live Ingest Profiles
-Description: Updated for new standard profiles
-Link: https://support.brightcove.com/standard-live-ingest-profiles
-Category: Live API, Ingest Profiles API
+Title: Live API: Server-Side Ad Insertion (SSAI)
+Description: Re-organized this doc for using server-side ad insertion (SSAI) with live streams.
+Link: https://support.brightcove.com/live-api-server-side-ad-insertion-ssai
+Category: Live SSAI
 
-Title: Standard Ingest Profiles for Dynamic Delivery and Context Aware Encoding
-Description: Updated for new renditions
-Link: https://support.brightcove.com/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding
-Category: Ingest Profiles API, Dynamic Delivery, CAE
+Title: Preload IMA ads
+Description:  How to preload ads using the Native SDK for Android and the IMA plugin.
+Link: https://support.brightcove.com/code-snippets-using-native-sdk-android#Preload_IMA_ads
+Category: Android SDK, Advertising
+
+Title: Brightcove Live
+Description: Added the new Live Introduction Video to the Landing Page.
+Link: https://support.brightcove.com/live
+Category: Live
+
+Title: Brightcove Player Sample: Ad Countdown Timer
+Description: Major code rewrite.
+Link: https://support.brightcove.com/brightcove-player-sample-ad-countdown-timer
+Category: Brightcove Player
 
 
 Minor updates:
 
-Title: Audience API Reference
-Description: fixed sample response for get view events
-Link: https://docs.brightcove.com/audience-api/v1/doc/index.html#operation/GetViewEvents
-Category: Audience API
-Type: Minor Update
-
-Title: HLS Plugin
-Description: Updated enableLowInitialPlaylist default value and handling for Android devices
-Link: https://support.brightcove.com/hls-plugin#options
-Category: Brightcove Player
-
-Title: Android Pie Support with the Native SDK for Android
-Description: Added note about HTTPS sources for captions and subtitles
-Link: https://support.brightcove.com/android-pie-support-native-sdk-android
-Category: Android SDK
-
-Title: Android: Source Selection
-Description: Added note about HTTPS sources for captions and subtitles
-Link: https://support.brightcove.com/android-source-selection
-Category: Android SDK
-
-Title: Known Issues: Brightcove Native Player SDKs
-Description: Added issue about HTTPS sources for captions and subtitles
-Link: https://support.brightcove.com/known-issues-brightcove-native-player-sdks 
+Title: FAQ for the Brightcove Native Player SDKs
+Description: Updated answers about Chromecast and playlists
+Link: https://support.brightcove.com/faq-brightcove-native-player-sdks
 Category: Native SDKs
 
-Title: Protecting Videos with HLS Encryption
-Description: Made information more clear that once HLSe enabled for account, all videos ingested use HLSe. Removed content that inferred, incorrectly, that one could use ingest profiles to control HLSe in an account.
-Link: https://support.brightcove.com/protecting-videos-hls-encryption
-Category: Brightcove Player 
+Title: CMS API Video Fields Reference
+Description: Removed reference to 4-letter country codes for Geo-filtering (technically they are allowed, but there is no legitimate use case for them, as they are obsolete)
+Link: https://support.brightcove.com/cms-api-video-fields-reference#geo
+Category: CMS API geo-filtering
 
-
+Title: Overview: CMS API
+Description: Added list of fields that you can sort results on for video requests (this was available in the API reference, but added it here for convenience)
+Link: https://support.brightcove.com/cmsplayback-api-videos-search#Sorting_of_search_results
+Category: CMS API 
