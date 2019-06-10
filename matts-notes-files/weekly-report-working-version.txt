@@ -1,58 +1,26 @@
+
 New docs:
 
-Title: Get Started - Video Cloud Studio
-Description: Get started learning about the video publishing process using Video Cloud Studio. Click below to watch videos on each step in the process.
-Link: https://support.brightcove.com/getting-started-video-cloud-studio-0
-Category: Studio
-
-Title: Live API: Cue Points and Ad Beacons with SSAI
-Description: In this topic, you will learn how to manage cue points and ad beacons when using Brightcove's Server-Side Ad Insertion (SSAI) for your live stream jobs.
-Link: https://support.brightcove.com/live-api-cue-points-and-ad-beacons-ssai
-Category: Live SSAI
-
-Title: Live Platforms Comparison Matrix
-Description: Differences and similarities that you can find between Brightcove and Ooyala Live platforms.
-Link: https://support.brightcove.com/live-platforms-comparison-matrix
-Category: Live, Ooyala
-
+Title: 
+Description: 
+Link: 
+Category: 
+Type: New Doc
 
 
 Major updates:
 
-Title: Live API: Server-Side Ad Insertion (SSAI)
-Description: Re-organized this doc for using server-side ad insertion (SSAI) with live streams.
-Link: https://support.brightcove.com/live-api-server-side-ad-insertion-ssai
-Category: Live SSAI
-
-Title: Preload IMA ads
-Description:  How to preload ads using the Native SDK for Android and the IMA plugin.
-Link: https://support.brightcove.com/code-snippets-using-native-sdk-android#Preload_IMA_ads
-Category: Android SDK, Advertising
-
-Title: Brightcove Live
-Description: Added the new Live Introduction Video to the Landing Page.
-Link: https://support.brightcove.com/live
-Category: Live
-
-Title: Brightcove Player Sample: Ad Countdown Timer
-Description: Major code rewrite.
-Link: https://support.brightcove.com/brightcove-player-sample-ad-countdown-timer
-Category: Brightcove Player
+Title: Getting Started with Brightcove Video Connect for Adobe Experience Manager
+Description: AEM 6.4 is now supported by the Brightcove connector.
+Link: https://support.brightcove.com/getting-started-brightcove-video-connect-adobe-experience-manager
+Category: CMS Integrations
 
 
 Minor updates:
 
-Title: FAQ for the Brightcove Native Player SDKs
-Description: Updated answers about Chromecast and playlists
-Link: https://support.brightcove.com/faq-brightcove-native-player-sdks
-Category: Native SDKs
+Title: 
+Description: 
+Link: 
+Category: 
+Type: Minor Update
 
-Title: CMS API Video Fields Reference
-Description: Removed reference to 4-letter country codes for Geo-filtering (technically they are allowed, but there is no legitimate use case for them, as they are obsolete)
-Link: https://support.brightcove.com/cms-api-video-fields-reference#geo
-Category: CMS API geo-filtering
-
-Title: Overview: CMS API
-Description: Added list of fields that you can sort results on for video requests (this was available in the API reference, but added it here for convenience)
-Link: https://support.brightcove.com/cmsplayback-api-videos-search#Sorting_of_search_results
-Category: CMS API 
