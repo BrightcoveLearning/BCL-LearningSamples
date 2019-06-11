@@ -1,0 +1,25 @@
+[Browser showing with video ready for button functionality demo]
+Since this video is about converting code that somehow enhances the functionality of Brightcove Player into a custom plugin, we need to start with some code. Although the actual code functionality is NOT the purpose of the video, we still want to start with something meaningful. In this case, the starting code adds reverse and fast forward buttons to the player. In this case the buttons jump the current time of the video forward or backwards 5 seconds. The amount of the jump is of course programmable.
+
+[In Atom, looking a one page code]
+Here we see the code on one page that adds the buttons. In addition of the video tag, there is CSS and JavaScript.
+
+Let's first create the files we will need in which we will place the CSS and JavaScript once they are removed from the one page code. I usually like to name these files so they reflect the functionality of the custom plugin, so in this case they are named:
+  back-forward-buttons.css and back-forward-buttons.js.
+
+Now copy the CSS, minus the style tags, into the CSS file.
+
+Next grab all the JavaScript between the script tags and put into the JS file. There is one change we need to make. In nearly all code that alters the player there will be a line that uses the getPlayer() method which lets us get a handle on the video element. For a plugin you remove that line of code and at the top of the JavaScript use the code that defines a Brightcove Player plugin.
+
+This code uses the registerPlugin() method, and also defines the name of the plugin. Again, a best practice is to name the plugin so it reflects the plugin's purpose. In this case a good name is backForwardButtons. Note that the file names use hyphens and the actual plugin name uses camel case. That is simply a convention, and you can choose what you feel is best for naming.
+
+Now we need to use the new files that have been created and be sure the button still work.
+
+We'll remove the style tags and use a link tag to pull in the css.
+
+Next use a script tag to pull in the JavaScript.
+
+Lastly, alter the script block so after we assign the myPlayer variable the reference to the player, we'll call the name of the plugin, which we set to backForwardButtons.
+
+[Back in the browser]
+Let's refresh the page so we get our changes, play the video, and yep, it works!
