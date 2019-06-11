@@ -4,7 +4,7 @@ First, you want to add some functionality to multiple players without having to 
 
 Another great reason for creating a custom plugin, and this includes if you are only going to use it in one location, is the custom code can become part of the player. This means you don't have to have the custom CSS and JavaScript on the actual HTML page where the player is used AND where others might accidentally or on purpose alter it. In Studio you can associate the code with player, and it then becomes part of the player, and just by using the player you gain the enhanced functionality the custom plugin provides.
 
-Now that you know you can't live without custom plugins, how do build them? The following big picture steps present a best practice approach to creating a custom plugin:
+Now that you know you can't live without custom plugins, how do build them? The following high-level steps present a best practice approach to creating a custom plugin:
 1. Write the code for the enhanced functionality in one page. You will see this is the hard part of creating a custom plugin, since the process of converting working code to a plugin is quite straight forward.
 2. Create a new file that contains just the CSS. This simply means copying the CSS from the working code to a separate file with a .css extension. You do NOT copy the style tags, just the actual styles.
 3. Create a new file that contains the JavaScript. This process if much like creating the CSS file, but there is a change that needs to be made. First copy all the JavaScript between the script tags and paste into another file, which has an .js extension. Then alter line of code that uses the getPlayer() method to code that defines the plugin.
