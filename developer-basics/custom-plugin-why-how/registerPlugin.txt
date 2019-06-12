@@ -1,1 +1,1 @@
-videojs.registerPlugin('backForwardButtons', function() {
+videojs.registerPlugin('pluginName', function() {
