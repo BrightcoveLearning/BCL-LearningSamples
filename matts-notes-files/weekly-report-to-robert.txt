@@ -1,5 +1,13 @@
 Major accomplishments:
-** Week Ending 31 May **
+** Week Ending 14 June **
+- Closed 14 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+- Wrapped up the "Are You Still Watching" sample update; thought I had it, then Ludovic offered some code so it would work with Live.
+Work NOT Reflected in JIRAs:
+- Have 3 "Developer Basics" videos done on custom plugins. Two more to go and I will publish them all. Also need to setup a page for them now that I think I have enough (there will be 8) to justify a landing page.
+ 
+  
+** Week Ending 7June **
 - Closed 9 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
 - Got ad countdown timer sample working

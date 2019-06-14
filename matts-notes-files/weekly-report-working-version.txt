@@ -1,11 +1,19 @@
-
 New docs:
 
-Title: 
-Description: 
-Link: 
-Category: 
-Type: New Doc
+Title: Support Tools
+Description: Support Tools page for Ooyala docs
+Link: https://docs.brightcove.com/apidocs-ooyala/community/tools/bd-p/tst.html
+Category: Ooyala Video Platform
+
+Title: IMA Open Measurement with the Native SDKs
+Description: In this topic, you will learn how to use the Open Measurement SDK with the IMA plugins for the Brightcove Native SDKs.
+Link: https://support.brightcove.com/ima-open-measurement-native-sdks
+Category: Native SDKs
+
+Title: Manually Setting the Player Version
+Description: In this topic, you will learn how to manually set the player version.
+Link: https://support.brightcove.com/manually-setting-player-version
+Category: Brightcove Player
 
 
 Major updates:
@@ -15,12 +23,43 @@ Description: AEM 6.4 is now supported by the Brightcove connector.
 Link: https://support.brightcove.com/getting-started-brightcove-video-connect-adobe-experience-manager
 Category: CMS Integrations
 
+Title: Brightcove Player Sample: Are You Still Watching?
+Description: Major code update, now use a 3rd party plugin for assistance
+Link: https://support.brightcove.com/brightcove-player-sample-are-you-still-watching
+Category: Brightcove Player
+
 
 Minor updates:
 
-Title: 
-Description: 
-Link: 
-Category: 
+Title: Zencoder Encoding Settings: Broadcast
+Description: Fixed examples for audio_sample_rate to show Hz instead of KHz
+Link: https://support.brightcove.com/zencoder-encoding-settings-broadcast
+Category: Zencoder
 Type: Minor Update
 
+Title: Brightcove Live: Best Practices
+Description: Added framesize recommendations for outputs and tweaked some other recommendations
+Link: https://support.brightcove.com/brightcove-live-best-practices#output_recommendations
+Category: Live
+Type: Minor Update
+
+Title: CMS/Playback API: Videos Search
+Description: Added note that unless an explicit sort is specified in the request, the response may contain duplicate items
+Link: https://support.brightcove.com/cmsplayback-api-videos-search
+Category: CMS API, Playback API
+Type: Minor Update
+
+Title: Architecture: Brightcove Player SDK for Android
+Description: Added Learning Path right-side navigation
+Link: https://support.brightcove.com/architecture-brightcove-player-sdk-android
+Category: Native SDK for Android
+
+Title: Architecture: Brightcove Player SDK for iOS
+Description: Added Learning Path right-side navigation
+Link: https://support.brightcove.com/architecture-brightcove-player-sdk-ios
+Category: Native SDK for iOS
+
+Title: Guide: Playlist API
+Description: Added info on using second parameter with the playlist() method to load the playlist, but not a video in the player
+Link: https://support.brightcove.com/guide-playlist-api#playlist
+Category: Brightcove Player
