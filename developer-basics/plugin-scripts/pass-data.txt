@@ -1,15 +1,15 @@
-Custom plugins can be written to accept data that will customize the plugin's behavior. As you will see in this video, it is much like passing data to a function in normal JavaScript.
+Custom plugins can be written to accept data that customizes the plugin's behavior. As you will see in this video, it is much like passing data to a function in normal JavaScript.
 
-In the plugin itself you simply accept a parameter in the anonymous function where the plugin is defined. The properties of the object passed to the plugin can then be used. Convention has it you name the parameter **options**, but it is not required.
+Here you see a simple custom plugin. The plugin redirects the browser to a new page when the video ends. Note that the page to which the browser redirects is passed as a parameter.
 
-Here you see in this simple custom plugin, a URL is passed in, which determines to which page the browser is redirected when the video ends.
+The plugin accepts a parameter in the anonymous function where the plugin is defined. Convention has it the object is named **options**. The properties of the object passed to the plugin can then be used. The **options.redirectURL** property value is used in the redirection.
 
 
 On the HTML page where the custom plugin is called, we first use standard code to link to the plugin's JavaScript. BTW, there is no CSS needed for this custom plugin.
 
-In the script block that utilizes the getPlayer() method to get a handle on the Brightcove Player, a variable is created. In this case the variable is called **options**, and contains a JavaScript object which will be passed to the plugin. For this plugin we only define one property, but the options object can have as many properties as the plugin requires.
+In the script block where we place code to affect the player, a variable is created. The variable is called **options**, which is a JavaScript object that is passed to the plugin. For this plugin we only define one property, named **redirectURL**, which must match the property name used in the plugin. This object contains only one property, but the options object can have as many properties as the plugin requires.
 
-Then, when calling the custom plugin, in this case named navigateOnVideoEnd, you pass the **options** object.
+Now, when calling the custom plugin, named navigateOnVideoEnd, you pass the **options** object.
 
 That's it for the code. Let's test to be sure it works.
 
