@@ -15,4 +15,4 @@ That's it for the code. Let's test to be sure it works.
 
 We'll browse the HTML page, and when the video ends, the redirect takes us to the page specified in the object's property.
 
-Note that you can pass data to a plugin using Studio. Here you see the configuration screen for a the custom plugin we have been using. To pass data, place the options object definition in the **Options(JSON)** form field. Then, when using the player the custom plugin's functionality is part of the player, and you need no other code on the page other than the video tag.
+Note that you can pass data to a plugin using Studio. Here you see the configuration screen for the custom plugin we have been using. To pass data, place the options object definition in the **Options(JSON)** form field. Then, when using the player the custom plugin's functionality is part of the player, and you need no other code on the page other than the video tag.
