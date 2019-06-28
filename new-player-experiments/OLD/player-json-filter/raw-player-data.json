@@ -9425,7 +9425,9 @@
       "name": "matt test 2 jun 27 19",
       "description": "",
       "branches": {
-        "preview": {
+        "master": {
+          "template_updated_at": "2019-06-27T19:04:31.005Z",
+          "updated_at": "2019-06-28T17:08:55.914Z",
           "configuration": {
             "ad_config_id": null,
             "plugins": [
@@ -9443,6 +9445,56 @@
                 },
                 "version": "3.x",
                 "registry_id": "@brightcove/videojs-ima3"
+              },
+              {
+                "registry_id": "@brightcove/videojs-social",
+                "version": "3.x",
+                "options": {
+                  "title": "",
+                  "description": "",
+                  "url": "",
+                  "offset": "",
+                  "services": {
+                    "facebook": true,
+                    "twitter": true,
+                    "pinterest": true,
+                    "linkedin": true,
+                    "tumblr": true
+                  },
+                  "displayAfterVideo": true
+                }
+              },
+              {
+                "registry_id": "@brightcove/videojs-pip",
+                "version": "1.x"
+              },
+              {
+                "name": "overlay",
+                "scripts": [
+                  "https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"
+                ],
+                "stylesheets": [
+                  "https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css"
+                ],
+                "options": {
+                  "overlays": [
+                    {
+                      "align": "bottom",
+                      "start": 2,
+                      "end": 6,
+                      "content": "<a href='http://www.brightcove.com'>Proceed to Home Page</a>"
+                    }
+                  ]
+                }
+              },
+              {
+                "stylesheets": [
+                  "https://solutions.brightcove.com/bcls/test-matt/junk.css"
+                ],
+                "scripts": [
+                  "https://solutions.brightcove.com/bcls/test-matt/junk.js"
+                ],
+                "name": "backForwardButtons"
               }
             ],
             "ad_failover": false,
@@ -9465,11 +9517,11 @@
               }
             }
           },
-          "updated_at": "2019-06-27T19:05:09.529Z",
-          "template_updated_at": "2019-06-27T19:04:30.993Z",
-          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/nabvmsURGL/preview/embeds/default/master/index.html"
+          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/nabvmsURGL/master/embeds/default/master/index.html"
         },
-        "master": {
+        "preview": {
+          "template_updated_at": "2019-06-27T19:04:30.993Z",
+          "updated_at": "2019-06-28T17:08:28.627Z",
           "configuration": {
             "studio_configuration": {
               "player": {
@@ -9505,13 +9557,61 @@
                   "vpaidMode": "ENABLED",
                   "useMediaCuePoints": false
                 }
+              },
+              {
+                "options": {
+                  "displayAfterVideo": true,
+                  "services": {
+                    "tumblr": true,
+                    "linkedin": true,
+                    "pinterest": true,
+                    "twitter": true,
+                    "facebook": true
+                  },
+                  "offset": "",
+                  "url": "",
+                  "description": "",
+                  "title": ""
+                },
+                "version": "3.x",
+                "registry_id": "@brightcove/videojs-social"
+              },
+              {
+                "version": "1.x",
+                "registry_id": "@brightcove/videojs-pip"
+              },
+              {
+                "options": {
+                  "overlays": [
+                    {
+                      "content": "<a href='http://www.brightcove.com'>Proceed to Home Page</a>",
+                      "end": 6,
+                      "start": 2,
+                      "align": "bottom"
+                    }
+                  ]
+                },
+                "stylesheets": [
+                  "https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css"
+                ],
+                "scripts": [
+                  "https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"
+                ],
+                "name": "overlay"
+              },
+              {
+                "name": "backForwardButtons",
+                "scripts": [
+                  "https://solutions.brightcove.com/bcls/test-matt/junk.js"
+                ],
+                "stylesheets": [
+                  "https://solutions.brightcove.com/bcls/test-matt/junk.css"
+                ]
               }
             ],
             "ad_config_id": null
           },
-          "updated_at": "2019-06-27T19:05:15.677Z",
-          "template_updated_at": "2019-06-27T19:04:31.005Z",
-          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/nabvmsURGL/master/embeds/default/master/index.html"
+          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/nabvmsURGL/preview/embeds/default/master/index.html"
         }
       },
       "last_viewed": [
@@ -9979,51 +10079,8 @@
       "branches": {
         "preview": {
           "configuration": {
-            "ad_config_id": null,
-            "plugins": [
-              {
-                "options": {
-                  "useMediaCuePoints": false,
-                  "vpaidMode": "ENABLED",
-                  "adTechOrder": [
-                    "html5"
-                  ],
-                  "requestMode": "onload",
-                  "hardTimeouts": true,
-                  "timeout": 4000,
-                  "serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
-                },
-                "version": "3.x",
-                "registry_id": "@brightcove/videojs-ima3"
-              }
-            ],
-            "ad_failover": false,
-            "player": {
-              "template": {
-                "version": "6.35.1",
-                "name": "single-video-template"
-              }
-            },
-            "video_cloud": {
-              "policy_key": "BCpkADawqM1u5ja0xYqMbtfxBqQzOeNGqveraQaBRVudb6ZuomH0I7va85jRk_X_-CvbGVea3NQ3eRUFBs40SRo79Opu1iFVTUE_UgHdBPzIrVzf8HadnUjs69M"
-            },
-            "compatibility": true,
             "studio_configuration": {
-              "player": {
-                "responsive": true,
-                "height": 540,
-                "width": 960,
-                "units": "px"
-              }
-            }
-          },
-          "updated_at": "2019-06-27T19:03:53.720Z",
-          "template_updated_at": "2019-06-27T19:03:35.383Z",
-          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/r4Aqtxhfc0/preview/embeds/default/master/index.html"
-        },
-        "master": {
-          "configuration": {
-            "studio_configuration": {
+              "overlayImage": "//players.brightcove.net/57838016001/studio_overlays/r4Aqtxhfc0-3f27af7a-401d-4781-8366-0609bfe45e6d.png",
               "player": {
                 "units": "px",
                 "width": 960,
@@ -10057,11 +10114,112 @@
                   "vpaidMode": "ENABLED",
                   "useMediaCuePoints": false
                 }
+              },
+              {
+                "options": {
+                  "displayAfterVideo": true,
+                  "services": {
+                    "tumblr": true,
+                    "linkedin": true,
+                    "pinterest": true,
+                    "twitter": true,
+                    "facebook": true
+                  },
+                  "offset": "",
+                  "url": "",
+                  "description": "",
+                  "title": ""
+                },
+                "version": "3.x",
+                "registry_id": "@brightcove/videojs-social"
+              },
+              {
+                "options": {
+                  "showBackground": false,
+                  "attachToControlBar": true,
+                  "align": "bottom-right",
+                  "content": "<img src=\"//players.brightcove.net/57838016001/studio_overlays/r4Aqtxhfc0-3f27af7a-401d-4781-8366-0609bfe45e6d.png\" style=\"max-width: 100%;\">"
+                },
+                "version": "2.x",
+                "registry_id": "@brightcove/videojs-overlay"
               }
             ],
             "ad_config_id": null
           },
-          "updated_at": "2019-06-27T19:05:29.319Z",
+          "updated_at": "2019-06-28T16:55:34.705Z",
+          "template_updated_at": "2019-06-27T19:03:35.383Z",
+          "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/r4Aqtxhfc0/preview/embeds/default/master/index.html"
+        },
+        "master": {
+          "configuration": {
+            "ad_config_id": null,
+            "plugins": [
+              {
+                "options": {
+                  "useMediaCuePoints": false,
+                  "vpaidMode": "ENABLED",
+                  "adTechOrder": [
+                    "html5"
+                  ],
+                  "requestMode": "onload",
+                  "hardTimeouts": true,
+                  "timeout": 4000,
+                  "serverUrl": "https://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator="
+                },
+                "version": "3.x",
+                "registry_id": "@brightcove/videojs-ima3"
+              },
+              {
+                "registry_id": "@brightcove/videojs-social",
+                "version": "3.x",
+                "options": {
+                  "title": "",
+                  "description": "",
+                  "url": "",
+                  "offset": "",
+                  "services": {
+                    "facebook": true,
+                    "twitter": true,
+                    "pinterest": true,
+                    "linkedin": true,
+                    "tumblr": true
+                  },
+                  "displayAfterVideo": true
+                }
+              },
+              {
+                "registry_id": "@brightcove/videojs-overlay",
+                "version": "2.x",
+                "options": {
+                  "content": "<img src=\"//players.brightcove.net/57838016001/studio_overlays/r4Aqtxhfc0-3f27af7a-401d-4781-8366-0609bfe45e6d.png\" style=\"max-width: 100%;\">",
+                  "align": "bottom-right",
+                  "attachToControlBar": true,
+                  "showBackground": false
+                }
+              }
+            ],
+            "ad_failover": false,
+            "player": {
+              "template": {
+                "version": "6.35.1",
+                "name": "single-video-template"
+              }
+            },
+            "video_cloud": {
+              "policy_key": "BCpkADawqM1u5ja0xYqMbtfxBqQzOeNGqveraQaBRVudb6ZuomH0I7va85jRk_X_-CvbGVea3NQ3eRUFBs40SRo79Opu1iFVTUE_UgHdBPzIrVzf8HadnUjs69M"
+            },
+            "compatibility": true,
+            "studio_configuration": {
+              "player": {
+                "responsive": true,
+                "height": 540,
+                "width": 960,
+                "units": "px"
+              },
+              "overlayImage": "//players.brightcove.net/57838016001/studio_overlays/r4Aqtxhfc0-3f27af7a-401d-4781-8366-0609bfe45e6d.png"
+            }
+          },
+          "updated_at": "2019-06-28T16:55:49.830Z",
           "template_updated_at": "2019-06-27T19:03:35.392Z",
           "preview_url": "http://preview-players.brightcove.net/v2/accounts/57838016001/players/r4Aqtxhfc0/master/embeds/default/master/index.html"
         }
