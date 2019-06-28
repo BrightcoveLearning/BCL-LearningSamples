@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+<video-js id="myPlayerID" data-account="1507807800001" data-player="default" data-embed="default" controls="" data-video-id="5796745147001" data-playlist-id="" data-application-id="" width="640" height="360"></video-js><script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+
+  <button onclick="disposePlayer()">Dispose Player</button>
+
+<script>
+  var myPlayer;
+  videojs.getPlayer('myPlayerID').ready(function() {
+    myPlayer = this;
+  });
+
+  function disposePlayer() {
+    myPlayer.dispose();
+  }
+
+</script>
+
+</body>
+
+</html>

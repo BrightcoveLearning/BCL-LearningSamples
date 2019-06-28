@@ -1,0 +1,22 @@
+*Use Git to download site
+
+*Add to GitHub tool of choice
+
+*Place site in maintenance mode - CONFIGURATION > MAINTENANCE MODE
+
+*Get list of modules to update - MODULES > UPDATE
+
+*Click on "(Release notes)" and download zip
+
+*Unzip file
+
+*Replace folder in ooyala-help/sites/all/modules with the unzipped folder 
+
+
+
+
+
+Install new rules
+Turned on Rules module
+add acquia connector, then uninstall
+

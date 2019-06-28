@@ -1,65 +1,68 @@
 New docs:
 
-Title: Support Tools
-Description: Support Tools page for Ooyala docs
-Link: https://docs.brightcove.com/apidocs-ooyala/community/tools/bd-p/tst.html
-Category: Ooyala Video Platform
+Title: Analytics API Release Notes
+Description: Added Analytics API release notes page
+Link: https://support.brightcove.com/analytics-api-release-notes
+Category: Analytics API
 
-Title: IMA Open Measurement with the Native SDKs
-Description: In this topic, you will learn how to use the Open Measurement SDK with the IMA plugins for the Brightcove Native SDKs.
-Link: https://support.brightcove.com/ima-open-measurement-native-sdks
-Category: Native SDKs
+Title: Developer Basics: Generating Player Code
+Description: Three video "Developer Basics" series on getting started with Brightcove Player development. See the "Learning Path" on the right side to navigate all three videos. 
+Link: https://support.brightcove.com/developer-basics-generating-player-code
+Category: Brightcove Player
 
-Title: Manually Setting the Player Version
-Description: In this topic, you will learn how to manually set the player version.
-Link: https://support.brightcove.com/manually-setting-player-version
+Title: Developer Basics: Custom Plugin - Why and How
+Description: Four video "Developer Basics" series on getting started with custom plugin development. See the "Learning Path" on the right side to navigate all four videos. 
+Link: https://support.brightcove.com/developer-basics-custom-plugin-why-and-how
 Category: Brightcove Player
 
 
 Major updates:
 
-Title: Getting Started with Brightcove Video Connect for Adobe Experience Manager
-Description: AEM 6.4 is now supported by the Brightcove connector.
-Link: https://support.brightcove.com/getting-started-brightcove-video-connect-adobe-experience-manager
-Category: CMS Integrations
+Title: Overview: Analytics API v1
+Description: Added section on Live Analytics and also permissions needed for client credentials
+Link: https://support.brightcove.com/overview-analytics-api-v1
+Category: Analytics API
 
-Title: Brightcove Player Sample: Are You Still Watching?
-Description: Major code update, now use a 3rd party plugin for assistance
-Link: https://support.brightcove.com/brightcove-player-sample-are-you-still-watching
+Title: Analytics API Reference
+Description: Added two new operations for getting Live Analytics
+Link: https://docs.brightcove.com/analytics-api/v1/doc/index.html#tag/Live-Analytics
+Category: Analytics API
+
+Title: Player Configuration - playback_rates
+Description: New section added on how to configure the new playback_rates option. Also put note at top of "Brightcove Player Sample: Variable Speed Playback" (https://support.brightcove.com/brightcove-player-sample-variable-speed-playback) document stating the sample should no longer be used, and use the now built-in option.
+Link: https://support.brightcove.com/player-configuration-guide#playback_rates
 Category: Brightcove Player
 
 
 Minor updates:
 
-Title: Zencoder Encoding Settings: Broadcast
-Description: Fixed examples for audio_sample_rate to show Hz instead of KHz
-Link: https://support.brightcove.com/zencoder-encoding-settings-broadcast
-Category: Zencoder
-Type: Minor Update
+Title: Overview: Adding Captions to a Video
+Description: Added note on 608/708 embedded captions discarded during video processing
+Link: https://support.brightcove.com/overview-adding-captions-video#filelocation
+Category: Manage Videos  Topic(s)Text Tracks Accessibility Captions  API(s)CMS API Dynamic Ingest API Playback API
 
-Title: Brightcove Live: Best Practices
-Description: Added framesize recommendations for outputs and tweaked some other recommendations
-Link: https://support.brightcove.com/brightcove-live-best-practices#output_recommendations
-Category: Live
-Type: Minor Update
+Title: Domains and Ports that Must Be Accessible to Video Cloud
+Description: Re-formatted and updated a few items
+Link: https://support.brightcove.com/domains-and-ports-must-be-accessible-video-cloud
+Category: System Requirements
 
-Title: CMS/Playback API: Videos Search
-Description: Added note that unless an explicit sort is specified in the request, the response may contain duplicate items
-Link: https://support.brightcove.com/cmsplayback-api-videos-search
-Category: CMS API, Playback API
-Type: Minor Update
+Title: Working with Remote Asset Videos
+Description: Added note that remote assets in Video Cloud Basic accounts cannot be edited
+Link: https://support.brightcove.com/working-remote-asset-videos#edit
+Category: Add Videos/Assets Manage Videos  Topic(s)Remote Assets
 
-Title: Architecture: Brightcove Player SDK for Android
-Description: Added Learning Path right-side navigation
-Link: https://support.brightcove.com/architecture-brightcove-player-sdk-android
-Category: Native SDK for Android
+Title: Live API: Server-Side Ad Insertion (SSAI)
+Description: Added some explanatory notes about scte35 variables
+Link: https://support.brightcove.com/live-api-server-side-ad-insertion-ssai#Ad_configuration_variables
+Category: Live, SSAI
 
-Title: Architecture: Brightcove Player SDK for iOS
-Description: Added Learning Path right-side navigation
-Link: https://support.brightcove.com/architecture-brightcove-player-sdk-ios
-Category: Native SDK for iOS
+Title: Playback API Video Fields Reference and API Reference
+Description: Added missing published_at field for videos
+Link: https://support.brightcove.com/playback-api-video-fields-reference, https://docs.brightcove.com/playback-api/v1/doc/index.html
+Category: Playback API
 
-Title: Guide: Playlist API
-Description: Added info on using second parameter with the playlist() method to load the playlist, but not a video in the player
-Link: https://support.brightcove.com/guide-playlist-api#playlist
-Category: Brightcove Player
+Title: Code Sample: Video Analytics Report by Country and Day
+Description: Corrected a minor issue and moved the sample into a CodePen to isolate the code
+Link: https://support.brightcove.com/code-sample-video-analytics-report-country-and-day
+Category: Analytics API
+
