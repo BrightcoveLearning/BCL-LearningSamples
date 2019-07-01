@@ -43,6 +43,8 @@
     .bcls-Data-Table {
       border: 1px RGB(54, 72, 133) solid;
       border-collapse: collapse;
+      table-layout: fixed;
+      word-break:break-all;
     }
 
     .bcls-Data-Table td, .bcls-Data-Table th {
@@ -264,7 +266,6 @@
        *builds a table from the players' last_viewed array
        * @param JSON rawPlayerData - all data returned from the Player Mgmt API call /players
        */
-
     function buildTable(rawPlayerData){
       // Build skeleton of table
       switch(selectedReportType) {
@@ -272,7 +273,7 @@
           playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 40%">Name</th><th style="width: 20%">Player ID</th><th style="width: 40%">Version</th></tr></table>';
           break;
         case 'imapluginServerUrl':
-          playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 40%">Name</th><th style="width: 20%">Player ID</th><th style="width: 40%">IMA3 Plugin serverUrl</th></tr></table>';
+          playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 20%">Name</th><th style="width: 20%">Player ID</th><th style="width: 60%">IMA3 Plugin serverUrl</th></tr></table>';
           break;
         case 'allplugins':
           playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 40%">Name</th><th style="width: 20%">Player ID</th><th style="width: 40%">All Plugins</th></tr></table>';
@@ -289,6 +290,7 @@
 
       switch(selectedReportType) {
         case 'version':
+
           //Loop over all players
           for (var i = 0; i < numPlayers; i++) {
             // Insert a row
@@ -304,8 +306,10 @@
                  cell2.innerHTML = arrayOfPlayers[i].id;
                  cell3.innerHTML = arrayOfPlayers[i].branches.master.configuration.player.template.version;
           }
+
           break;
         case 'imapluginServerUrl':
+
           //Loop over all players
           for (var i = 0; i < numPlayers; i++) {
             // Insert a row
@@ -327,84 +331,12 @@
               }
             }
           }
+
           break;
         case 'allplugins':
-          //Loop over all players
-          for (var i = 0; i < numPlayers; i++) {
-            // Insert a row
-            var row = table.insertRow(i+1),
-              playerVersion,
-              pluginsLength;
-            playerVersion = arrayOfPlayers[i].branches.master.configuration.player.template.version;
-
-            var havePluginAra = 'plugins' in arrayOfPlayers[i].branches.master.configuration;
-            if (havePluginAra) {
-              pluginsLength = arrayOfPlayers[i].branches.master.configuration.plugins.length;
-            }
-            if (playerVersion.charAt(0) == '6' && pluginsLength !== 0) {
-
-              if ('plugins' in arrayOfPlayers[i].branches.master.configuration) {
-                   // Insert new cells (<td> elements):
-                   var cell1 = row.insertCell(0);
-                   var cell2 = row.insertCell(1);
-                   var cell3 = row.insertCell(2);
-                   // Add some text to the new cells:
-                   cell1.innerHTML = arrayOfPlayers[i].name;
-                   cell2.innerHTML = arrayOfPlayers[i].id;
 
 
-                for (var j = 0; j < pluginsLength; j++) {
-                  if ('registry_id' in arrayOfPlayers[i].branches.master.configuration.plugins[j]) {
-                    cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id + '<br>';
-                    console.log('bc plugin', arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id);
-                  } else {
-                    cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].name  + '<br>';
-                    console.log('custom login name', arrayOfPlayers[i].branches.master.configuration.plugins[j].name);
-                  }
-                }
-              }
-            }
-          }
           break;
-      }
-
-
-
-      //Loop over all players
-      for (var i = 0; i < numPlayers; i++) {
-        // Insert a row
-        var row = table.insertRow(i+1),
-          playerVersion,
-          pluginsLength;
-        playerVersion = arrayOfPlayers[i].branches.master.configuration.player.template.version;
-
-        var havePluginAra = 'plugins' in arrayOfPlayers[i].branches.master.configuration;
-        if (havePluginAra) {
-          pluginsLength = arrayOfPlayers[i].branches.master.configuration.plugins.length;
-        }
-        if (playerVersion.charAt(0) == '6' && pluginsLength !== 0) {
-
-          if ('plugins' in arrayOfPlayers[i].branches.master.configuration) {
-               // Insert new cells (<td> elements):
-               var cell1 = row.insertCell(0);
-               var cell2 = row.insertCell(1);
-               var cell3 = row.insertCell(2);
-               // Add some text to the new cells:
-               cell1.innerHTML = arrayOfPlayers[i].name;
-               cell2.innerHTML = arrayOfPlayers[i].id;
-
-
-            for (var j = 0; j < pluginsLength; j++) {
-              if ('registry_id' in arrayOfPlayers[i].branches.master.configuration.plugins[j]) {
-                cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id + '<br>';
-                console.log('bc plugin', arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id);
-              } else {
-                cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].name  + '<br>';
-                console.log('custom login name', arrayOfPlayers[i].branches.master.configuration.plugins[j].name);
-              }
-            }
-          }
-        }
       }
     }
 
