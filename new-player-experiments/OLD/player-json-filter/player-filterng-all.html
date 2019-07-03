@@ -29,8 +29,8 @@
       cursor: pointer;
     }
     fieldset {
-      color: #64aab2;
-      border: 1px #64aab2 solid;
+      color: #FFFFFF;
+      border: 1px #FFFFFF solid;
       border-radius: 0.5em;
     }
     .buttonBlock {
@@ -57,7 +57,7 @@
 
 <body>
 
-  <h1>In-Page Experience API Tester</h1>
+  <h1>Brightcove Player Filtered Reports</h1>
   <p>If you do not provide account information, a Brightcove Learning test account will be used.</p>
   <div class="buttonBlock">
     <p><strong>Account Information</strong></p>
@@ -70,25 +70,25 @@
       <legend>Choose the report type:</legend>
       <div>
         <input type="radio" id="version" name="reportType" value="version" checked>
-        <label for="version">Version</label>
+        <label for="version" style="font-size:14px">Version</label>
       </div>
       <div>
         <input type="radio" id="imapluginServerUrl" name="reportType" value="imapluginServerUrl">
-        <label for="version">IMA Plugin ServerUrl</label>
+        <label for="version" style="font-size:14px">IMA Plugin ServerUrl</label>
       </div>
       <div>
         <input type="radio" id="allplugins" name="reportType" value="allplugins">
-        <label for="version">All Plugins</label>
+        <label for="version" style="font-size:14px">All Plugins</label>
       </div>
     </fieldset>
     <p><button id="get_last_viewed" class="bcls-button">Generate Report</button></p>
     <p><button id="reset_app" class="bcls-reset">Reset</button></p>
   </div>
-  <p><strong>API request:</strong></p>
+  <!-- <p><strong>API request:</strong></p>
   <textarea id="apiRequest" class="bcls-code" style="height:.7rem;min-height:.7rem;"></textarea>
   <p><strong>Request method:</strong></p>
   <textarea id="apiMethod" class="bcls-code" style="height:.7rem;min-height:.7rem;"></textarea>
-  <p><strong>Player information:</strong></p>
+  <p><strong>Player information:</strong></p> -->
   <div id="playerTable" class="bcls-code"></div>
   <p><strong>Raw player response data:</strong></p>
   <textarea id="apiResponse" class="bcls-code"></textarea>
@@ -104,9 +104,9 @@
       account_id_input = document.getElementById('account_id_input'),
         client_id_input = document.getElementById('client_id_input'),
         client_secret_input = document.getElementById('client_secret_input'),
-        apiRequest = document.getElementById('apiRequest'),
+        // apiRequest = document.getElementById('apiRequest'),
         playerTable = document.getElementById('playerTable'),
-        apiMethod = document.getElementById('apiMethod'),
+        // apiMethod = document.getElementById('apiMethod'),
         apiResponse = document.getElementById('apiResponse'),
         // buttons
         all_buttons = document.querySelectorAll('.bcls-button'),
@@ -171,8 +171,8 @@
         endPoint = options.account_id + '/players';
         options.url = playerMngmtURL + endPoint;
         options.requestType = 'GET';
-        apiRequest.textContent = options.url;
-        apiMethod.textContent = options.requestType;
+        // apiRequest.textContent = options.url;
+        // apiMethod.textContent = options.requestType;
         makeRequest(options, function(response) {
           var parsedData,
             i,
@@ -239,28 +239,49 @@
       }
 
 
-    /**
-     * find index of an object in array of objects
-     * based on some property value
-     *
-     * @param {array} targetArray array to search
-     * @param {string} objProperty object property to search
-     * @param {string} value of the property to search for
-     * @return {integer} index of first instance if found, otherwise returns -1
-    */
-    function findObjectInArray(targetArray, objProperty, value) {
-        var i, totalItems = targetArray.length, objFound = false;
-        for (i = 0; i < totalItems; i++) {
-            if (targetArray[i][objProperty] === value) {
-                objFound = true;
-                return i;
-            }
-        }
-        if (objFound === false) {
-            return -1;
-        }
-    }
+      /**
+       * find index of an object in array of objects
+       * based on some property value
+       *
+       * @param {array} targetArray array to search
+       * @param {string} objProperty object property to search
+       * @param {string} value of the property to search for
+       * @return {integer} index of first instance if found, otherwise returns -1
+      */
+      function findObjectInArray(targetArray, objProperty, value) {
+          var i, totalItems = targetArray.length, objFound = false;
+          for (i = 0; i < totalItems; i++) {
+              if (targetArray[i][objProperty] === value) {
+                  objFound = true;
+                  return i;
+              }
+          }
+          if (objFound === false) {
+              return -1;
+          }
+      }
 
+
+      /**
+       * sort an array of objects based on an object property
+       * @param {array} targetArray - array to be sorted
+       * @param {string|number} objProperty - object property to sort on
+       * @return sorted array
+       */
+      function sortArray(targetArray, objProperty) {
+          targetArray.sort(function (a, b) {
+              var propA = a[objProperty].toLowerCase(), propB = b[objProperty].toLowerCase();
+              // sort ascending; reverse propA and propB to sort descending
+              if (propA < propB) {
+                   return -1;
+              } else if (propA > propB) {
+                   return 1;
+              } else {
+                   return 0;
+              }
+          });
+          return targetArray;
+      }
 
       /**
        *builds a table from the players' last_viewed array
@@ -276,7 +297,7 @@
           playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 20%">Name</th><th style="width: 20%">Player ID</th><th style="width: 60%">IMA3 Plugin serverUrl</th></tr></table>';
           break;
         case 'allplugins':
-          playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 40%">Name</th><th style="width: 20%">Player ID</th><th style="width: 40%">All Plugins</th></tr></table>';
+          playerTable.innerHTML = '<table id="myTable"><tr><th style="width: 30%">Name</th><th style="width: 20%">Player ID</th><th style="width: 50%">All Plugins</th></tr></table>';
           break;
       }
       // Extract items array from raw JSON
@@ -290,6 +311,8 @@
 
       switch(selectedReportType) {
         case 'version':
+          //Sort array on version
+          //arrayOfPlayers = sortArray(arrayOfPlayers,branches.master.configuration.player.template.version)
 
           //Loop over all players
           for (var i = 0; i < numPlayers; i++) {
@@ -335,7 +358,42 @@
           break;
         case 'allplugins':
 
+          //Loop over all players
+          for (var i = 0; i < numPlayers; i++) {
+            // Insert a row
+            var row = table.insertRow(i+1),
+              playerVersion,
+              pluginsLength;
+            playerVersion = arrayOfPlayers[i].branches.master.configuration.player.template.version;
 
+            var havePluginAra = 'plugins' in arrayOfPlayers[i].branches.master.configuration;
+            if (havePluginAra) {
+              pluginsLength = arrayOfPlayers[i].branches.master.configuration.plugins.length;
+            }
+            if (playerVersion.charAt(0) == '6' && pluginsLength !== 0) {
+
+              if ('plugins' in arrayOfPlayers[i].branches.master.configuration) {
+                   // Insert new cells (<td> elements):
+                   var cell1 = row.insertCell(0);
+                   var cell2 = row.insertCell(1);
+                   var cell3 = row.insertCell(2);
+                   // Add some text to the new cells:
+                   cell1.innerHTML = arrayOfPlayers[i].name;
+                   cell2.innerHTML = arrayOfPlayers[i].id;
+
+
+                for (var j = 0; j < pluginsLength; j++) {
+                  if ('registry_id' in arrayOfPlayers[i].branches.master.configuration.plugins[j]) {
+                    cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id + '<br>';
+                    console.log('bc plugin', arrayOfPlayers[i].branches.master.configuration.plugins[j].registry_id);
+                  } else {
+                    cell3.innerHTML += arrayOfPlayers[i].branches.master.configuration.plugins[j].name  + '<br>';
+                    console.log('custom login name', arrayOfPlayers[i].branches.master.configuration.plugins[j].name);
+                  }
+                }
+              }
+            }
+          }
           break;
       }
     }
