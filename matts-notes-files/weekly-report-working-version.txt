@@ -1,41 +1,47 @@
 New docs:
 
-None this week
+Title: Brightcove Forum Groups and Email Lists
+Description: In this topic, you will learn about the Brightcove forum groups and email lists that you can follow to stay informed about the latest solutions and release announcements.
+Link: https://support.brightcove.com/brightcove-forum-groups-and-email-lists
+Category: Brightcove Player. Native SDKs, Analytics API
+
+Title: Reporting on Brightcove Player Configurations
+Description: In this topic, you will be able to generate reports on Brightcove Player configurations.
+Link: https://support.brightcove.com/reporting-brightcove-player-configurations
+Category: Brightcove Player
 
 
 Major updates:
 
-Title: Brightcove Native Player SDKs
-Description: Created new tabbed layout for this landing page
-Link: https://support.brightcove.com/native-player-sdks
-Category: Native SDKs
-
-Title: Advertising with the SDKs
-Description: Added tvOS and removed Once UX references
-Link: https://support.brightcove.com/advertising-sdks
-Category: Native SDKs
-
-Title: Ooyala Web Player Release Notes
-Description: 4.34.13 release
-Link: https://docs.brightcove.com/apidocs-ooyala/concepts/pbv4_release_notes.html
-Category: Ooyala
-
-Title: Ooyala iOS SDK Release Notes
-Description: 4.46 release
-Link: https://docs.brightcove.com/apidocs-ooyala/concepts/mobile_sdk_ios_release_notes.html
-Category: Ooyala
-
-Title: Ooyala iOS Android Release Notes
-Description: 4.46 release
-Link: https://docs.brightcove.com/apidocs-ooyala/concepts/mobile_sdk_android_release_notes.html
-Category: Ooyala
+Title: Brightcove Forum Groups and Email Lists
+Description: In this topic, you will learn about the Brightcove forum groups and email lists that you can follow to stay informed about the latest solutions and release announcements.
+Link: https://support.brightcove.com/brightcove-forum-groups-and-email-lists
+Category: Brightcove Player. Native SDKs, Analytics API
 
 
 Minor updates:
 
-Title: HLS limitations without Brightcove's Native SDK
-Description: Removed old Android OS versions
-Link: https://support.brightcove.com/hls-limitations-without-brightcoves-native-sdk
-Category: Native SDK for Android
+Title: Dimension: live_stream
+Description: Added note with link to new Live Analytics endpoints
+Link: https://support.brightcove.com/dimension-livestream
+Category: Analytics API, LIve Streaming
 
+Title: TTL (token authentication)
+Description: Since this was just a short overview, moved the content to https://support.brightcove.com/overview-content-protection#ttl (with a redirect)
+Link: https://support.brightcove.com/signed-urls-and-token-auth
+Category: Content protection
 
+Title: TTL (token authentication)
+Description: Since this was just a short overview, moved the content to https://support.brightcove.com/overview-content-protection#ttl (with a redirect)
+Link: https://support.brightcove.com/signed-urls-and-token-auth
+Category: Content protection
+
+Title: Source File Upload API for Dynamic Ingest
+Description: Added note about double-byte characters not allowed in source file names
+Link: https://support.brightcove.com/source-file-upload-api-dynamic-ingest#Source_file_names
+Category: Dynamic Ingest API
+
+Title: Uploading assets via the Backlot API
+Description: Added note about an edge case where updating the asset status will fail
+Link: https://help-ooyala.brightcove.com/sites/all/libraries/dita/en/video-platform/tasks/api_asset_upload.html
+Category: Ooyala docs

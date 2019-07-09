@@ -52,12 +52,17 @@
           download(responseEdited, "transcript.txt", "text/plain");
         });
 
-      myPlayer.on('loadstart',function(){
+      myPlayer.on('loadstart',function
+        var colonLocation;
         // +++ Retrieve the URL for the text track, which is in this case a WebVTT caption file +++
         // +++ Call the getFile function to get the actual file from the URL +++
+
         url = myPlayer.mediainfo.textTracks[0].src;
-        // Note, if serving page via HTTPS, must ask for file also via HTTPS
-        url = url.replace('http:','https:');
+
+        // Make URL for text track protocol relative (no http or https)
+        colonLocation = url.indexOf(':');
+        url =  url.substr(colonLocation + 1);
+
         getFile(url, function(response) {
             if (response) {
                 responseEdited = response.replace(regex,'');
@@ -74,6 +79,8 @@
      * @param  {Function} [callback] callback function that will process the response
      */
     function getFile(url, callback) {
+console.log('url in function',url);
+
         var httpRequest = new XMLHttpRequest(),
             response,
             // response handler

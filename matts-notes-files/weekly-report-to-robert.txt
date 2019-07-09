@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 5 Jul **
+- Closed 15 JIRAs, 3 of which was administrivia
+JIRA Highlights Include:
+- Closed some JIRAs that were submitted by folks no longer with BC, and didn't think I would ever get to them anyway, OR the issue was so obscure that didn't need to be documented.
+- Lots of small/medium JITA tasks, but nothing major.
+Work NOT Reflected in JIRAs:
+- Spend LOTS of time on a player filtering app. Have the first three reports working, those being: Version, IMA3 plugin server URL and all plugins associated with a player. Need to clean up the page and it will be ready to go.
+ 
+  
 ** Week Ending 28 June **
 - Closed 15 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
