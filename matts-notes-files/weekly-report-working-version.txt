@@ -1,47 +1,67 @@
 New docs:
 
-Title: Brightcove Forum Groups and Email Lists
-Description: In this topic, you will learn about the Brightcove forum groups and email lists that you can follow to stay informed about the latest solutions and release announcements.
-Link: https://support.brightcove.com/brightcove-forum-groups-and-email-lists
-Category: Brightcove Player. Native SDKs, Analytics API
+Title: Configuring Google Analytics Event Tracking
+Description: In this topic you will learn how to configure Google Analytics event tracking in the Players module.
+Link: https://support.brightcove.com/configuring-google-analytics-event-tracking
+Category: Video Cloud Studio
 
-Title: Reporting on Brightcove Player Configurations
-Description: In this topic, you will be able to generate reports on Brightcove Player configurations.
-Link: https://support.brightcove.com/reporting-brightcove-player-configurations
-Category: Brightcove Player
+Title: Reviewing Player Event Data in Google Analytics
+Description: In this topic you will learn how to view Brightcove Player event data that was sent to Google Analytics.
+Link: https://support.brightcove.com/reviewing-player-event-data-google-analytics
+Category: Video Cloud Studio
+
+Title: Configuring Adobe Analytics Event Tracking
+Description: In this topic you will learn how to configure Adobe Analytics event tracking in the Players module.
+Link: https://support.brightcove.com/configuring-adobe-analytics-event-tracking
+Category: Video Cloud Studio
+
+Title: Opening a Case with Brightcove Support
+Description: In this topic you will learn how to open a case with Brightcove Support.
+Link: https://support.brightcove.com/opening-case-brightcove-support
+Category: General
 
 
 Major updates:
 
-Title: Brightcove Forum Groups and Email Lists
-Description: In this topic, you will learn about the Brightcove forum groups and email lists that you can follow to stay informed about the latest solutions and release announcements.
-Link: https://support.brightcove.com/brightcove-forum-groups-and-email-lists
-Category: Brightcove Player. Native SDKs, Analytics API
+Title: Brightcove Live: Best Practices
+Description: Added info and notes on best practices for TS inputs
+Link: https://support.brightcove.com/brightcove-live-best-practices#input_requirements
+Category: Live, Live API
+
+Title: Dynamic Ingest API Sample: Re-transcoding Videos (Dynamic Delivery)
+Description: Added option to keep existing images during re-transcoding
+Link: https://support.brightcove.com/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery
+Category: Dynamic Ingest API
+
+Title: Analytics API: Overview of Dimensions, Fields, and Parameters
+Description: Added params for Live Analytics Endpoints
+Link:https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
+Category: Analytics API
+
+Title: Creating a Charles Log
+Description: Added section to show how to add Akamai headers
+Link: https://support.brightcove.com/creating-charles-log
+Category: General
+
+Title: Connected TV / Set Top Box Apps
+Description: Added section for building your own platform
+Link: https://support.brightcove.com/connected-tv-set-top-box-apps#Your_own_platform
+Category: Connected TV, Playback API
 
 
 Minor updates:
 
-Title: Dimension: live_stream
-Description: Added note with link to new Live Analytics endpoints
-Link: https://support.brightcove.com/dimension-livestream
-Category: Analytics API, LIve Streaming
+Title: Overview: Adding Captions to a Video
+Description: Added note on limit of 1000 text tracks per video
+Link: https://support.brightcove.com/overview-adding-captions-video
+Category: Captions
 
-Title: TTL (token authentication)
-Description: Since this was just a short overview, moved the content to https://support.brightcove.com/overview-content-protection#ttl (with a redirect)
-Link: https://support.brightcove.com/signed-urls-and-token-auth
-Category: Content protection
+Title: Viewing Billing Information
+Description: Added note to clarify that Storage included video assets and digital masters, though they are stored in different placed
+Link: https://support.brightcove.com/viewing-billing-information#metrics
+Category: Billing
 
-Title: TTL (token authentication)
-Description: Since this was just a short overview, moved the content to https://support.brightcove.com/overview-content-protection#ttl (with a redirect)
-Link: https://support.brightcove.com/signed-urls-and-token-auth
-Category: Content protection
-
-Title: Source File Upload API for Dynamic Ingest
-Description: Added note about double-byte characters not allowed in source file names
-Link: https://support.brightcove.com/source-file-upload-api-dynamic-ingest#Source_file_names
-Category: Dynamic Ingest API
-
-Title: Uploading assets via the Backlot API
-Description: Added note about an edge case where updating the asset status will fail
-Link: https://help-ooyala.brightcove.com/sites/all/libraries/dita/en/video-platform/tasks/api_asset_upload.html
-Category: Ooyala docs
+Title: Advertising with the FreeWheel Plugin
+Description: Before SDK version 6.24 (approximately mid-year 2019) FreeWheel provided an "auto upgrade" URL to the latest version of the JS AdManger SDK. This URL always pointed to the most current version of the SDK. This is no longer the case.
+Link: https://support.brightcove.com/advertising-freewheel-plugin#Implement_using_Players_module
+Category: Brightcove Player / Advertising

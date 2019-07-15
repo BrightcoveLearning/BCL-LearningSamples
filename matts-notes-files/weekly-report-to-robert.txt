@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 12 Jul **
+- Closed 9 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+- Updated FreeWheel doc to show there is no longer a "auto update" URL for latest SDK. Customers now have to manually update the SDK URL for each upgrade to the SDK.
+Work NOT Reflected in JIRAs:
+- A few Drupal and server issues (as you well know).
+- Working on Ooyala to Video Cloud Migration: Player Embed Codes document.
+ 
+  
 ** Week Ending 5 Jul **
 - Closed 9 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
