@@ -1,67 +1,60 @@
+New Migration doc for Ooyala customers:
+
+Title: Ooyala to Brightcove Migration: CMS Integration
+Description: This topic provides guidance on Video Cloud with your CMS.
+Link: https://docs.brightcove.com/apidocs-ooyala/migration/cms-integration.html
+Category: Ooyala Migration
+
+
 New docs:
 
-Title: Configuring Google Analytics Event Tracking
-Description: In this topic you will learn how to configure Google Analytics event tracking in the Players module.
-Link: https://support.brightcove.com/configuring-google-analytics-event-tracking
-Category: Video Cloud Studio
+Title: Analytics API Sample: Concurrent Viewers for Live Events
+Description: This topic provides a sample app for getting the concurrent viewers for a live event.
+Link: https://support.brightcove.com/analytics-api-sample-concurrent-viewers-live-events
+Category: Analytics API. Live Analytics
 
-Title: Reviewing Player Event Data in Google Analytics
-Description: In this topic you will learn how to view Brightcove Player event data that was sent to Google Analytics.
-Link: https://support.brightcove.com/reviewing-player-event-data-google-analytics
-Category: Video Cloud Studio
+Title: Data Collection API
+Description: Landing page for the Data Collection API
+Link: https://support.brightcove.com/data-collection-api
+Category: Analytics, Data Collection API
 
-Title: Configuring Adobe Analytics Event Tracking
-Description: In this topic you will learn how to configure Adobe Analytics event tracking in the Players module.
-Link: https://support.brightcove.com/configuring-adobe-analytics-event-tracking
-Category: Video Cloud Studio
-
-Title: Opening a Case with Brightcove Support
-Description: In this topic you will learn how to open a case with Brightcove Support.
-Link: https://support.brightcove.com/opening-case-brightcove-support
-Category: General
+Title: Using a Non-Brightcove Player
+Description: This topic provides an overview of delivering Video Cloud content in a non-Brightcove player.
+Link: https://support.brightcove.com/using-non-brightcove-player
+Category: Player Developer
 
 
 Major updates:
 
-Title: Brightcove Live: Best Practices
-Description: Added info and notes on best practices for TS inputs
-Link: https://support.brightcove.com/brightcove-live-best-practices#input_requirements
-Category: Live, Live API
+Title: Quality Selection Plugin
+Description: Added section on styling the gear icon and the menu items
+Link: https://support.brightcove.com/quality-selection-plugin#Styling_the_control
+Category: Brightcove Player
 
-Title: Dynamic Ingest API Sample: Re-transcoding Videos (Dynamic Delivery)
-Description: Added option to keep existing images during re-transcoding
-Link: https://support.brightcove.com/dynamic-ingest-api-sample-re-transcoding-videos-dynamic-delivery
-Category: Dynamic Ingest API
+Title: Conditional outputs
+Description: Conditional outputs now available for DD ingest (Support configuration required)
+Link: https://support.brightcove.com/conditional-output
+Category: Ingest Profiles, Dynamic Delivery
 
-Title: Analytics API: Overview of Dimensions, Fields, and Parameters
-Description: Added params for Live Analytics Endpoints
-Link:https://support.brightcove.com/analytics-api-overview-dimensions-fields-and-parameters
-Category: Analytics API
+Title: Zencoder Encoding Settings: Watermarks
+Description: Added info on how to add watermarks for CAE jobs
+Link: https://support.brightcove.com/zencoder-encoding-settings-watermarks
+Category: Zencoder
 
-Title: Creating a Charles Log
-Description: Added section to show how to add Akamai headers
-Link: https://support.brightcove.com/creating-charles-log
-Category: General
-
-Title: Connected TV / Set Top Box Apps
-Description: Added section for building your own platform
-Link: https://support.brightcove.com/connected-tv-set-top-box-apps#Your_own_platform
-Category: Connected TV, Playback API
+Title: Implementing Playlists
+Description: The web player now supports collapsable playlists with In-Page Embed code.
+Link: https://support.brightcove.com/implementing-playlists
+Category: Brightcove Player
 
 
 Minor updates:
 
-Title: Overview: Adding Captions to a Video
-Description: Added note on limit of 1000 text tracks per video
-Link: https://support.brightcove.com/overview-adding-captions-video
-Category: Captions
+Title: Using Live RTMP Outputs to Stream to Facebook and YouTube
+Description: Added note that ads, including SSAI, are not supported with RTMP outputs
+Link: https://support.brightcove.com/using-live-rtmp-outputs-stream-facebook-and-youtube
+Category: Live
 
-Title: Viewing Billing Information
-Description: Added note to clarify that Storage included video assets and digital masters, though they are stored in different placed
-Link: https://support.brightcove.com/viewing-billing-information#metrics
-Category: Billing
-
-Title: Advertising with the FreeWheel Plugin
-Description: Before SDK version 6.24 (approximately mid-year 2019) FreeWheel provided an "auto upgrade" URL to the latest version of the JS AdManger SDK. This URL always pointed to the most current version of the SDK. This is no longer the case.
-Link: https://support.brightcove.com/advertising-freewheel-plugin#Implement_using_Players_module
-Category: Brightcove Player / Advertising
+Title: Adding Chapters to a Video
+Description: Added a note about how to display capital letters on the Chapters
+Link: https://support.brightcove.com/adding-chapters-video
+Category: Brightcove Player
