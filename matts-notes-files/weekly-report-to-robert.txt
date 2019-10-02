@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 27 Sep **
+- Closed 3 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+-  A bit behind on the two Brightcove Beacon docs I was to have finished today as the Sturm und Drang around the Funchal trip booking, unbooking, ... cost me a bit of time. Will have those two finished COB Monday.
+Work NOT Reflected in JIRAs:
+- Rolled in suggestions to Phases doc done by Burno. Fairly significant update and caused some of the verbiage to need reworkining. (Seems you can edit a Brightcove Beacon Experience before it is created.)
+
+
+** Week Ending 20 Sep **
+- Closed 3 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+- First Brightcove Beacon doc finished, Phases doc
+Work NOT Reflected in JIRAs:
+- Wrote verbiage for request for tasks
+
+  
 ** Week Ending 13 Sep **
 - Closed 7 JIRAs, 4 of which was administrivia
 JIRA Highlights Include:
@@ -7,7 +23,7 @@ Work NOT Reflected in JIRAs:
 - Started docs for Beacon - great start on phases doc. Will publish due dates on Monday.
 
   
-** Week Ending 6 Sep **
+1** Week Ending 6 Sep **
 - Closed 7 JIRAs, 2 of which was administrivia
 JIRA Highlights Include:
 - Updated FreeWheel doc (again) with more info on new FreeWheel policy about no longer having a alway up-to-date URL for latest version. Customers (including Brightcove in the plugin) must manually update the URL.

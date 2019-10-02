@@ -1,102 +1,47 @@
 
 New docs:
 
-Title: Migration Docs for Ooyala Customers
-Description: Landing page
-Link: https://support.brightcove.com/migration-docs-ooyala-customers
-Category: Ooyala-to-Brightcove Migration
+Title: Google Tag Manager Plugin for Brightcove Player
+Description: In this topic, you will learn the how to use the Google Tag Manager (GTM) plugin for Brightcove Player.
+Link: https://support.brightcove.com/google-tag-manager-plugin-brightcove-player
+Category: Brightcove Player
 
-Title: Using the Ooyala Players to Deliver Video Cloud Content
-Description: Continue using Ooyala player with Video Cloud
-Link: https://support.brightcove.com/using-ooyala-players-deliver-video-cloud-content
-Category: Ooyala-to-Brightcove Migration
+Title: Tealium Plugin for Brightcove Player
+Description: In this topic, you will learn the how to use the Tealium iQ tag manager with Brightcove Player.
+Link: https://support.brightcove.com/tealium-plugin-brightcove-player
+Category: Brightcove Player
 
-Title: Adding the Brightcove DNS Server for Testing
-Description: In order to test the Playback Adapter and CMS Connector that allow you to continue using Ooyala players to deliver Video Cloud content, you will need to add a DNS server to your systems and provide some information to Brightcove for the configuration.
-Link: https://support.brightcove.com/ooyala-video-cloud-migration-adding-brightcove-dns-server-testing
-Category: Ooyala-to-Brightcove Migration
-
-Title: Migrating to Video Cloud: Ingestion Adapter
-Description: Add videos to Video Cloud using Ooyala methods
-Link: https://support.brightcove.com/migrating-video-cloud-ingestion-adapter
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Ingesting with OIS 2.5
-Description: Add videos to Video Cloud using OIS 2.5
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-ingesting-ois-25
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Manifest File Formats
-Description: Add videos to Video Cloud - Manifest formats
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-manifest-file-formats
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Supported Ingest Formats
-Description: Add videos to Video Cloud - input file formats
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-supported-ingest-formats
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Ingesting with Aspera
-Description: Add videos to Video Cloud Using Aspera
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-ingesting-aspera
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Ingesting with FTPS
-Description: Add videos to Video Cloud Using FTPS
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-ingesting-ftps
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Ingesting from a Remotely Hosted MRSS Feed
-Description: Add videos to Video Cloud Using MRSS feeds
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-ingesting-remotely-hosted-mrss-feed
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: Ingesting Remote Assets via MRSS
-Description: Add remote assets to Video Cloud Using MRSS feeds
-Link:https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-ingesting-remote-assets-mrss
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: CSV Manifest Files
-Description: Add videos to Video Cloud: CSV Manifest
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-csv-manifest-files
-Category: Ooyala-to-Brightcove Migration
-
-Title: Ooyala-Video Cloud Ingestion Adapter: XML Manifest Files
-Description: Add videos to Video Cloud: XML Manifest
-Link: https://support.brightcove.com/ooyala-video-cloud-ingestion-adapter-xml-manifest-files
-Category: Ooyala-to-Brightcove Migration
-
-Title: Migrating from the Analytics REST API to Brightcove Analytics API
-Description: Migrating from the IQ API to the Analytics API
-Link: https://support.brightcove.com/migrating-analytics-rest-api-brightcove-analytics-api
-Category: Ooyala-to-Brightcove Migration
-
-Title: Authentication for Brightcove API Requests
-Description: Getting started with authentication for the Video Cloud Platform (REST) APIs
-Link: https://support.brightcove.com/ooyala-video-cloud-migration-authentication-brightcove-api-requests
-Category: Ooyala-to-Brightcove Migration
 
 
 Major updates:
 
-Title: Clipping from LIve Streams
-Description: Live streams are available for clipping for up to 7 days now after the live event ends
-Link: https://support.brightcove.com/creating-video-clip-using-live-module
-https://support.brightcove.com/overview-brightcove-live-api#Creating_clips
-https://support.brightcove.com/creating-and-managing-live-events-using-live-module#clip
-Category: live streaming, Live Module, Live API
-
-Title: Adding Captions to Videos using the Media Module
-Description: Added section on editing properties for captions file (like the language) (this is not obvious)
-Link: http://support.brightcove.com/adding-captions-videos-using-media-module
-Category: Media Module, Captions
-
-Title: Analytics with the SDKs
-Description: Added sample app information for using Adobe Analytics with the Native SDKs
-Link: https://support.brightcove.com/analytics-sdks
-Category: Native SDKs
+Title: Updates to Live Clipping documentation
+Description: 3 things added: 
+1) availability of streams for clipping and DVR is now 7 days instead of 24 hours; 
+2) also, clipping uses Dynamic Delivery ingest profiles and so renditions will differ from those specified in the default profiles for Legacy ingest customers; 
+3) Information on the Fast clipping option removed, as that is now the default: a segment-accurate clip is first created, and then replaced by a frame-accurate version as soon as it is available
+Link: https://support.brightcove.com/creating-video-clip-using-live-module and https://support.brightcove.com/live-api-creating-vod-clips
+Category: Live Module, Live API
 
 
 Minor updates:
 
-None
+Title: Playback API Video Fields Reference
+Description: Removed note stating that the economics field is not supported with iOS/tvOS.
+Link: https://support.brightcove.com/playback-api-video-fields-reference
+Category: Native SDK for iOS/tvOS
+
+Title: Creating and Managing Live Events using the Live Module
+Description: Update docs with RTMP outputs can now be added via UI when SEP
+Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module
+Category: Live
+
+Title: Using Live RTMP Outputs to Stream to Facebook and YouTube
+Description: Update docs with RTMP outputs can now be added via UI when SEP
+Link: https://support.brightcove.com/using-live-rtmp-outputs-stream-facebook-and-youtube
+Category: Live
+
+Title: Viewing Billing Information
+Description: Add a note about Live Origin data is not available in the Billing module.
+Link: https://support.brightcove.com/viewing-billing-information
+Category: Live Billing 
