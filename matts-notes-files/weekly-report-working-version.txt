@@ -1,47 +1,44 @@
 
 New docs:
 
-Title: Google Tag Manager Plugin for Brightcove Player
-Description: In this topic, you will learn the how to use the Google Tag Manager (GTM) plugin for Brightcove Player.
-Link: https://support.brightcove.com/google-tag-manager-plugin-brightcove-player
-Category: Brightcove Player
-
-Title: Tealium Plugin for Brightcove Player
-Description: In this topic, you will learn the how to use the Tealium iQ tag manager with Brightcove Player.
-Link: https://support.brightcove.com/tealium-plugin-brightcove-player
-Category: Brightcove Player
-
+Title: Live Video Glossary
+Description: A Live Video Glossary for clients to understand the concepts. 
+Link: https://support.brightcove.com/live-glossary
+Category: Live
 
 
 Major updates:
 
-Title: Updates to Live Clipping documentation
-Description: 3 things added: 
-1) availability of streams for clipping and DVR is now 7 days instead of 24 hours; 
-2) also, clipping uses Dynamic Delivery ingest profiles and so renditions will differ from those specified in the default profiles for Legacy ingest customers; 
-3) Information on the Fast clipping option removed, as that is now the default: a segment-accurate clip is first created, and then replaced by a frame-accurate version as soon as it is available
-Link: https://support.brightcove.com/creating-video-clip-using-live-module and https://support.brightcove.com/live-api-creating-vod-clips
-Category: Live Module, Live API
+Title: Overview: Digital Rights Management (DRM) in Video Cloud
+Description: improved summary table to provide more comprehensive information
+Link: https://support.brightcove.com/overview-digital-rights-management-drm-video-cloud#Summary_of_DRM_support?
+Category: DRM
+
+Title: Ooyala Player Release
+Description: Ooyala player now runs on videojs
+Link: https://docs.brightcove.com/apidocs-ooyala/concepts/pbv4_release_notes.html
+Category: Ooyala
+
+Title: Ooyala iOS SDK Release
+Description: Add support for WebVTT captions, bug fixes
+Link: https://docs.brightcove.com/apidocs-ooyala/concepts/mobile_sdk_ios_release_notes.html
+Category: Ooyala
+
+Title: Ooyala Andriod SDK Release
+Description: Add support for WebVTT captions, bug fixes
+Link: https://docs.brightcove.com/apidocs-ooyala/concepts/mobile_sdk_android_release_notes.html
+Category: Ooyala
 
 
 Minor updates:
 
-Title: Playback API Video Fields Reference
-Description: Removed note stating that the economics field is not supported with iOS/tvOS.
-Link: https://support.brightcove.com/playback-api-video-fields-reference
-Category: Native SDK for iOS/tvOS
-
-Title: Creating and Managing Live Events using the Live Module
-Description: Update docs with RTMP outputs can now be added via UI when SEP
-Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module
-Category: Live
-
-Title: Using Live RTMP Outputs to Stream to Facebook and YouTube
-Description: Update docs with RTMP outputs can now be added via UI when SEP
-Link: https://support.brightcove.com/using-live-rtmp-outputs-stream-facebook-and-youtube
-Category: Live
+Title: Content Delivery Options
+Description: Added Limelight as a supported BYO CDN
+Link: https://support.brightcove.com/content-delivery-options#cdns
+Category: CDN
 
 Title: Viewing Billing Information
-Description: Add a note about Live Origin data is not available in the Billing module.
-Link: https://support.brightcove.com/viewing-billing-information
-Category: Live Billing 
+Description: Added note on encryption loading in players before the video
+Link: https://support.brightcove.com/viewing-billing-information#metrics
+Category: Administration
+

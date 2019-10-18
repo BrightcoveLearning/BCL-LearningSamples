@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 4 Oct **
+- Closed 13 JIRAs, 4 of which was administrivia
+JIRA Highlights Include:
+- Got a couple of more Beacon docs completed, although I think revisions are going to be extensive until I get a better feel for the product.
+- The others mostly small updates and fixes. Getting a bit too far behind so took some time to catch up on open Brightcove Player develoment JIRAs
+Work NOT Reflected in JIRAs:
+- Sent out email request for use cases pertaining to jobs a customer would need to do. So far only two responses. Not really a huge concern right now as I don't think the Admin Console docs will be a priority for the 31 Oct release as all customers will still be having their hands held for the coming release. From what I understand, next week I will be given directions to focus on docs that help customers prepare for the meeting with a BC representative to configure the Brightcove Beacon Experience.
+
+
 ** Week Ending 27 Sep **
 - Closed 3 JIRAs, 2 of which was administrivia
 JIRA Highlights Include:
