@@ -1,0 +1,8 @@
+1. Ruby was installed
+2. Get Ruby Version Manager (RVM) to update to required version of Ruby
+    curl -L https://get.rvm.io | bash -s stable
+3. Did the following because RVM said I had to
+    source /Users/mboles/.rvm/scripts/rvm
+4. Install desired version of Ruby
+    rvm install ruby-2.4.1
+5. 

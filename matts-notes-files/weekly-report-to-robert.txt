@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 18 Oct **
+- Closed 3 JIRAs, 3 of which was administrivia
+JIRA Highlights Include:
+-  Nothing special
+Work NOT Reflected in JIRAs:
+- Finally gained enough knowledge to really start writing Beacon docs. Will spend some time this weekend to get a "home page" done on the staging site with all the docs listed. Biggest chore is converting some Google Docs to HTML that need to be on the staging site. Honestly, before this week had real trepidation about getting the required docs done before 31 Oct, but now feeling like it will happen.
+
+
+** Week Ending 11 Oct **
+- Closed 2 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+-  Nothing special
+Work NOT Reflected in JIRAs:
+- Lots of good learning of Beacon that has helped focus on the highest priority docs and content therein. 
+
+
 ** Week Ending 4 Oct **
 - Closed 13 JIRAs, 4 of which was administrivia
 JIRA Highlights Include:
