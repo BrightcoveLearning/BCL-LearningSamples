@@ -5,4 +5,14 @@
     source /Users/mboles/.rvm/scripts/rvm
 4. Install desired version of Ruby
     rvm install ruby-2.4.1
-5. 
+5. Check to be sure Ruby version installed correctly
+    ruby -v
+6. Add path to Ruby
+    export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
+7. Install Bundler, Ruby gem and dependency manager
+    sudo gem install bundler
+8. Install Jekyll
+    sudo gem install -n /usr/local/bin/ jekyll
+9. Update all dependencies
+    bundle update
+10. 
