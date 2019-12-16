@@ -825,7 +825,7 @@ curl \
   --request GET \
   --data '{}' \
   --write-out "HTTP Status: %{http_code}" \
-  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+  https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
 
 
 
@@ -1034,6 +1034,14 @@ curl \
     }' \
     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
 
+
+//Most simple embed creation
+curl \
+    --header "Content-Type: application/json" \
+    --user $EMAIL \
+    --request POST \
+    --data '{}' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
 
 curl \
   --header "Content-Type: application/json" \

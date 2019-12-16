@@ -59,7 +59,8 @@ console.log('chosenTrack',chosenTrack);
         var colonLocation;
         // +++ Retrieve the URL for the text track, which is in this case a WebVTT caption file +++
         // +++ Call the getFile function to get the actual file from the URL +++
-        url = myPlayer.mediainfo.textTracks[0].src;
+        // url = myPlayer.mediainfo.textTracks[0].src;
+        url = chosenTrack[0].src;
         // Make URL for text track protocol relative (no http or https)
         colonLocation = url.indexOf(':');
         url =  url.substr(colonLocation + 1);

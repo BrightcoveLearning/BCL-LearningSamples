@@ -1,74 +1,37 @@
 New docs:
 
-Title: Live DRM
-Description: In this topic, you will learn how to enable content protection for your live stream.
-Link: https://support.brightcove.com/live-drm
-Category: Live DRM
+Title: Reducing Latency for Live Streams
+Description: This topic explains how you can reduce latency for you Brightcove Live streams.
+Link: https://support.brightcove.com/reducing-latency-live-streams
+Category: Live Streaming
+
+Title: Using Live SSAI with the Native SDKs
+Description: In this topic, you will learn how to play live streams enabled for server-side ad insertion (SSAI) using the Brightcove Native SDKs. This includes BYO CDN.
+Link: https://support.brightcove.com/using-live-ssai-native-sdks
+Category: Live SSAI, Native SDKs
 
 
 Major updates:
 
-None
+Title: Playback API Error Reference
+Description: Updated error codes based on engineering notes
+Link: https://support.brightcove.com/playback-api-error-reference
+Category: Playback API
+
+Title: Live Video Glossary
+Description: Added new concepts and definitions to the Live Glossary 
+Link: https://support.brightcove.com/live-video-glossary
+Category: Live 
 
 
 Minor updates:
 
 Title: Creating and Managing Live Events using the Live Module
-Description: Added Digital Rights Management (DRM) as a Content Encryption type.
-Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module#advanced
-Category: Live DRM
+Description: Edition about if a Live account select hasn't been enabled for Live, an introductory Brightcove Live video page will appear.
+Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module
+Category: Live
 
-Title: Creating a Video Clip Using the Live Module
-Description: Added property to remove ad break content.
-Link: https://support.brightcove.com/creating-video-clip-using-live-module#create
-Category: Live Clip
-
-Title: Creating a DASH DRM Manifest for the Brightcove Player
-Description: Moved browser support table to Brightcove Player and Video Cloud customers.
-Link: https://support.brightcove.com/creating-dash-drm-manifest-brightcove-player
-Category: Brightcove Player
-
-Title: Configuring the Brightcove Player for DRM
-Description: Added note: Brightcove currently does not support video-only or audio-only DRM playback.
-Link: https://support.brightcove.com/configuring-brightcove-player-drm
-Category: DRM
-
-Title: DRM Output Protection Settings
-Description: Added note: Brightcove currently does not support video-only or audio-only DRM playback.
-Link: https://support.brightcove.com/drm-output-protection-settings
-Category: DRM
-
-Title: Ingesting content with DRM
-Description: Added note: Brightcove currently does not support video-only or audio-only DRM playback.
-Link: https://support.brightcove.com/ingesting-content-drm
-Category: DRM
-
-Title: Overview: Digital Rights Management (DRM) in Video Cloud
-Description: Added note: Brightcove currently does not support video-only or audio-only DRM playback.
-Link: https://support.brightcove.com/overview-digital-rights-management-drm-video-cloud
-Category: DRM
-
-Title: Zencoder: CAE Settings
-Description: Change range for quality_rate_tune
-Link: https://support.brightcove.com/zencoder-cae-settings#quality_rate_tune (also in the Zencoder API reference)
-Category: Zencoder
-
-Title: Zencoder: Brightcove Player Sample: Creating a Video Loop
-Description: Removed note that the loop attribute does not work in Safari - no longer true
-Link: https://support.brightcove.com/brightcove-player-sample-creating-video-loop
-Category: Brightcove Player
-
-Title: Managing Profile Information
-Description: Added description for setting time zone in your account profile.
-Link: https://support.brightcove.com/managing-profile-information
-Category: Studio
-
-Title: Overview: Brightcove Player SDK for Android
-Description: Added note that companion and click-through ads are not supported with Android TV
-Link: https://support.brightcove.com/overview-brightcove-player-sdk-android#Best_practices
-Category: Android SDK
-
-Title: Overview: Brightcove Player SDK for tvOS
-Description: Added note that companion and click-through ads are not supported with Apple TV. Added link to solution guide for using TV player UI.
-Link: https://support.brightcove.com/overview-brightcove-player-sdk-tvos#Best_practices
-Category: tvOS SDK
+Title: Overview: Brightcove Live API
+Description: Added an extra sentence in the doc about the us-west-2 exception with a limit up to 10
+Link: https://support.brightcove.com/overview-brightcove-live-api
+Category: Live API

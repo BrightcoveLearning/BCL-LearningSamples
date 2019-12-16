@@ -11,8 +11,10 @@
     export PATH=$HOME/.gem/ruby/2.4.0/bin:$PATH
 7. Install Bundler, Ruby gem and dependency manager
     sudo gem install bundler
-8. Install Jekyll
-    sudo gem install -n /usr/local/bin/ jekyll
-9. Update all dependencies
+8. Update all dependencies
     bundle update
-10. 
+    NOTE: Answered yes to a couple of questions during the install
+9. Install Jekyll
+    sudo gem install -n /usr/local/bin/ jekyll
+10. Start Jekyll
+    jekyll serve

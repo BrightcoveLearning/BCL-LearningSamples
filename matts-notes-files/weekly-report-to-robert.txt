@@ -1,4 +1,60 @@
 Major accomplishments:
+** Week Ending 13 Dec **
+- Closed 5 JIRAs, 4 of which were administrivia
+JIRA Highlights Include:
+- Wrote questions for the PLAY 2020 Tech Sessions questionnaire. Google forms very easy to use (if we ever have a need). Here is the form URL: https://docs.google.com/forms/d/1pPGGMQPo3s2fUxXXmqrGbXpdkc7JAivEeEPjbDmlG3g/edit. You can also see how results are tabulated by clicking on the Responses tab.
+Work NOT Reflected in JIRAs:
+- Good progress on two new docs for Brightcove Beacon, both centered around using the Pages option in the UI. Should have them done next week.
+
+FYI: Trying to get Jim Duval to get a Beacon account just for Learning Services. Been a bit of a frustration to see the videos and playlists changing nearly all the time in Video Cloud, as this changes what is available in the Beacon UI. I keep bugging him and think I will have success next week on this front, but has definitely slowed me down this week.
+
+
+
+** Week Ending 6 Dec **
+- Closed 5 JIRAs, 4 of which were administrivia
+JIRA Highlights Include:
+- Corrections to IMA3 doc, Google has made a few changes and doc needed to reflect that.
+Work NOT Reflected in JIRAs:
+- Continue work on Beacon docs. Added three docs and getting drafts of those.
+
+
+** Week Ending 22 Nov **
+- Closed 8 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- More updates to Beacon docs.
+Work NOT Reflected in JIRAs:
+- Got Jeff setup on Jekyll and Beacon site running on his machine
+- Had meeting with Jim Duvall and outlined the docs we need to have done for the Jan 1 Brightcove Beacon release date.
+
+
+** Week Ending 15 Nov **
+- Closed 8 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Bob should be all setup and ready to go on  his own
+- Finally getting in some comments on Beacon docs and rolling in the updates
+Work NOT Reflected in JIRAs:
+- Renamed all the Beacon site groups and adjusted Jekyll appropriately
+- Continue pushing all Beacon docs forward and also refinement of the web site.
+
+
+** Week Ending 8 Nov **
+- Closed 2 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+-  Nothing special
+Work NOT Reflected in JIRAs:
+- Continue pushing all Beacon docs forward and also refinement of the web site (many thanks to you).
+- Friday afternoon got access to the new "slimmed" down Brightcove Beacon UI. I can now update the docs Jeff wrote last week with new screenshots.
+
+
+
+** Week Ending 1 Nov **
+- Closed 2 JIRAs, 2 of which was administrivia
+JIRA Highlights Include:
+-  Nothing special
+Work NOT Reflected in JIRAs:
+- Finalized (in my view at least) initial set of Beacon docs. Reviews were non-existent on the latest set. Meeting with Jim at 11:00 Monday morning to see what needs to be done.
+
+
 ** Week Ending 18 Oct **
 - Closed 3 JIRAs, 3 of which was administrivia
 JIRA Highlights Include:
