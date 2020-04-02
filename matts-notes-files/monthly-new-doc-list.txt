@@ -1,0 +1,49 @@
+Title: Live DRM via the Live API
+Description: Creating DRM packaged streams via the Live API
+Link: https://support.brightcove.com/live-drm-live-api
+Category: Live API
+
+Title: Creating a Commerce Package
+Description: In this topic, you will learn how to configure a video sales package using the Commerce tab for Brightcove Beacon.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/create-commerce-package.html
+Category: Beacon
+
+
+
+
+
+
+
+
+
+
+
+
+Title: Native SDK for iOS EOL support for iOS/tvOS 10
+Description: As of version 6.6.2, the Brightcove Native Player SDK for iOS has removed support for iOS 10 and tvOS 10.
+Link: https://support.brightcove.com/native-sdk-ios-eol-support-iostvos-10
+Category: Native SDK for iOS/tvOS
+
+
+Title: Creating a Subscription Package
+Description: In this topic, you will learn how to configure a video subscription package using the Commerce tab of Brightcove Beacon.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/create-subscription-package.html
+Category: Brightcove Beacon
+
+
+Title: Using a Subscription Package
+Description: In this topic, you will learn how to use a video subscription package that was created using the Commerce tab of Brightcove Beacon.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/use-subscription-package.html
+Category: Brightcove Beacon
+
+
+Title: Brightcove Player Sample: Google Analytics Advanced Integration
+Description: In this topic, you will learn how to set the Google Analytics Tracking ID dynamically at runtime when using a Brightcove player.
+Link: https://support.brightcove.com/brightcove-player-sample-google-analytics-advanced-integration
+Category: Brightcove Player
+
+
+Title: Device Apps Validation Guide
+Description: In this topic, you will learn information to validate the behavior or your device application(s) so that you can submit them to corresponding stores.
+Link: https://beacon.support.brightcove.com/creating-your-apps/device-apps-validation-guide.html
+Category: Brightcove Beacon

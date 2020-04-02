@@ -1,37 +1,40 @@
 New docs:
 
-Title: Reducing Latency for Live Streams
-Description: This topic explains how you can reduce latency for you Brightcove Live streams.
-Link: https://support.brightcove.com/reducing-latency-live-streams
-Category: Live Streaming
+Title: Brightcove Player Sample: Google Analytics Advanced Integration
+Description: In this topic, you will learn how to set the Google Analytics Tracking ID dynamically at runtime when using a Brightcove player.
+Link: https://support.brightcove.com/brightcove-player-sample-google-analytics-advanced-integration
+Category: Brightcove Player
 
-Title: Using Live SSAI with the Native SDKs
-Description: In this topic, you will learn how to play live streams enabled for server-side ad insertion (SSAI) using the Brightcove Native SDKs. This includes BYO CDN.
-Link: https://support.brightcove.com/using-live-ssai-native-sdks
-Category: Live SSAI, Native SDKs
+Title: Device Apps Validation Guide
+Description: In this topic, you will learn information to validate the behavior or your device application(s) so that you can submit them to corresponding stores.
+Link: https://beacon.support.brightcove.com/creating-your-apps/device-apps-validation-guide.html
+Category: Brightcove Beacon
+
 
 
 Major updates:
 
-Title: Playback API Error Reference
-Description: Updated error codes based on engineering notes
-Link: https://support.brightcove.com/playback-api-error-reference
-Category: Playback API
-
-Title: Live Video Glossary
-Description: Added new concepts and definitions to the Live Glossary 
-Link: https://support.brightcove.com/live-video-glossary
-Category: Live 
+None
 
 
 Minor updates:
 
-Title: Creating and Managing Live Events using the Live Module
-Description: Edition about if a Live account select hasn't been enabled for Live, an introductory Brightcove Live video page will appear.
-Link: https://support.brightcove.com/creating-and-managing-live-events-using-live-module
+Title: Offline Playback with the Native Player SDKs
+Description: Added note about support for audio-only content
+Link: https://support.brightcove.com/offline-playback-native-player-sdks#Notes
+Category: Native SDKs
+
+Title:  Live Module Guidelines and Best Practices
+Description: Added a new troubleshooting solution for redundancy streams 
+Link: https://support.brightcove.com/live-module-guidelines-and-best-practices
 Category: Live
 
-Title: Overview: Brightcove Live API
-Description: Added an extra sentence in the doc about the us-west-2 exception with a limit up to 10
-Link: https://support.brightcove.com/overview-brightcove-live-api
-Category: Live API
+Title: Live API: Cue Points and Ad Beacons with SSAI
+Description: Error edition about RTMP support.
+Link: https://support.brightcove.com/live-api-cue-points-and-ad-beacons-ssai
+Category: Live
+
+Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
+Description: Add notes about SRT protocol is now supported in OBS
+Link: https://support.brightcove.com/step-step-using-live-module-open-broadcaster-software-obs
+Category: Live

@@ -1,4 +1,108 @@
 Major accomplishments:
+** Week Ending 27 Feb **
+- Closed 4 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- New Beacon doc out the door on App Validation
+Work NOT Reflected in JIRAs:
+- Finished the Series/Seasons/Episodes doc, out for review
+- Ended up in a bunch of meetings about Beacon, good do know info but it does kill time to work
+
+
+** Week Ending 20 Feb **
+- Closed 12 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- Docs on creating and using subscription package finally wrapped up (kept getting new information and reviews)
+- Big update to the custom fields needed for Beacon doc. First go round was right from the doc the Beacon team had, and now have learned/discovered lots of details that have been rolled in
+Work NOT Reflected in JIRAs:
+- Started the Series/Seasons/Episodes doc, and top priority for Jose
+
+
+** Week Ending 13 Feb **
+- Closed 7 JIRAs, 4 of which were administrivia
+JIRA Highlights Include:
+- SE Google Form out the door and given to Kait for distribution
+- Rolled in a long list of suggestions for the Beacon docs from Matt Iorlano, very nice of him to take the time to read and record issues
+Work NOT Reflected in JIRAs:
+- Wrestling the custom fields doc to update for Jim D
+
+
+** Week Ending 6 Feb **
+- Closed 9 JIRAs, 4 of which were administrivia
+JIRA Highlights Include:
+- Version 1 of Google Form for Beacon info gathering complete.
+- Another great meeting with Funchal engineer for help with Samsung/Tizen app store submission
+Work NOT Reflected in JIRAs:
+- LOTS of meetings and planning around Beacon
+- Got the import of videos into Beacon with a sales package in the custom fields working. Very close to finishing that doc.
+
+
+** Week Ending 28 Feb **
+- Closed 6 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- New doc out on creating a sales package for Beacon.
+- Great meeting with Funchal engineer about app submission to Roku Store  
+Work NOT Reflected in JIRAs:
+- LOTS of meetings and planning around Beacon. Most notedly further development of info architecture and template selection docs.
+
+
+** Week Ending 21 Feb **
+- Closed 7 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Mostly minor issues  
+Work NOT Reflected in JIRAs:
+- Nearly done with a major Beacon doc on creating a "sales package", which is a tab on the UI
+- Met with Jose for an hour about creating a live event in Beacon, will build doc around this next week
+- Contemplating and testing possible solutions for includes in the Jekyll sites
+
+
+** Week Ending 14 Feb **
+- Closed 17 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Major revisions on a number of Beacon docs from feedback from Jose
+- Attended both the Unpacking and Ideation Beacon workshops. Quite interesting stuff but never really talked about Beacon and comments from customers about the Beacon prototype. Not sure why.   
+Work NOT Reflected in JIRAs:
+- none
+
+
+** Week Ending 7 Feb **
+- Closed 12 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- Helped out conversion effort working up a schedule/plan, and also updated the doc conversion reflecting moving to Jekyll.   
+Work NOT Reflected in JIRAs:
+- Create a doc reflecting the "Doc Plan" for initial phase of Beacon documentation. Will run by Jose to get priorities: https://docs.google.com/document/d/1MtG3BrDBRANxdMWaZYbcaKAAleV3KV7NQ08xbe9YQxQ/edit
+
+
+** Week Ending 24 Jan **
+- Closed 6 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Added CSS selectors to the Customizing the Player document (generated from a feedback item)
+- Updated picture-in-picture doc to show complete syntax for using p-in-p methods
+- Added new configuration information to the Player Configuration doc as how turn off p-in-p since it is now on by default in Video.js   
+Work NOT Reflected in JIRAs:
+- In Boston all week and attended LOTS of meetings. Had a great meeting with Jose, Joao and JP reviewing Beacon docs that resulted in 17 JIRAs reflecting major work. Numerous of changes to docs will be made, but minor issues not worth tracking in JIRA.
+
+
+** Week Ending 17 Jan **
+- Closed 7 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- Forgot to close a few JIRAs after doing the work, including:
+    >Wrote survey questions for querying past "technical" PLAY attendees to help guide selection of this year's tech sessions.
+    >Couple of "Using Brightcove Beacon" docs on using the CMS UI
+-Finished a doc on how to use "non-configurable" pages in a Beacon app. By "non-configurable" I mean pages you add to the app, but cannot configure the page in any way. Like settings, login, signout, etc.
+Work NOT Reflected in JIRAs:
+-Nearly finished an "Intro to Pages" for Beacon apps. Will live in the Getting Started section as the Using Brightcove Beacon docs are more hands-on instructions.
+
+
+
+** Week Ending 20 Dec **
+- Closed 5 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Added code so samples with repeating background playlist do not repeat forever.
+- Added info that now in iOS 13 developers must use Apple's Permissions API to have the app ask for permission to use the gyroscope.
+Work NOT Reflected in JIRAs:
+- Finally seems I have a stable Beacon account for testing. Progress good, and met with engineer this morning to see if some of the oddities I was seeing were my misunderstandings or bugs. Turns out I discovered a few bugs, web app centric.
+
+
 ** Week Ending 13 Dec **
 - Closed 5 JIRAs, 4 of which were administrivia
 JIRA Highlights Include:
