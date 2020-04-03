@@ -1,40 +1,84 @@
 New docs:
 
-Title: Brightcove Player Sample: Google Analytics Advanced Integration
-Description: In this topic, you will learn how to set the Google Analytics Tracking ID dynamically at runtime when using a Brightcove player.
-Link: https://support.brightcove.com/brightcove-player-sample-google-analytics-advanced-integration
-Category: Brightcove Player
+Title: Overview: Public Social Syndication API
+Description: Overview of new social syndication configuring API for creating and managing feeds
+Link: https://support.brightcove.com/overview-public-social-syndication-api
+Category: Video Cloud
 
-Title: Device Apps Validation Guide
-Description: In this topic, you will learn information to validate the behavior or your device application(s) so that you can submit them to corresponding stores.
-Link: https://beacon.support.brightcove.com/creating-your-apps/device-apps-validation-guide.html
+Title: Overview: the Syndication Feed API
+Description: Overview of new social syndication feed API for retrieving feeds
+Link: https://support.brightcove.com/overview-syndication-feed-api
+Category: Video Cloud
+
+Title: Sample Templates for Universal Syndication
+Description: sample templates for the new social syndication APIs
+Link: https://support.brightcove.com/sample-templates-universal-syndication
+Category: Video Cloud
+
+Title: Brightcove Syndication Configuration API Reference
+Description: Reference for the Syndication Configuration API
+Link: https://docs.brightcove.com/mrss-config-api/v1/doc/index.html
+Category: Video Cloud
+
+Title: Brightcove Syndication Feed API Reference
+Description: Reference for the Syndication Feed API
+Link: https://docs.brightcove.com/mrss-feed-api/v1/doc/index.html
+Category: Video Cloud
+
+Title: Static URL Delivery
+Description: In this topic, you will learn how to use static URLs from the Brightcove Playback API v2.
+Link: https://support.brightcove.com/static-url-delivery
+Category: Playback API
+
+Title: Creating a JSON Web Token (JWT)
+Description: In this topic, you will learn how to create a JSON Web Token (JWT) which can be used when communicating with Brightcove's Playback API.
+Link: https://support.brightcove.com/creating-json-web-token-jwt
+Category: Playback API
+
+Title: Customizing Android TV Controls
+Description: In this topic, you will learn how to customize the rewind and fast-forward buttons for Android TV.
+Link: https://support.brightcove.com/customizing-android-tv-controls
+Category: Native SDK for Android
+
+Title: Creating Series/Seasons/Episodes
+Description: In this topic, you will learn how to create a series that contains associated seasons and episodes.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
 Category: Brightcove Beacon
 
+
+Title: Images and Their Specifications
+Description: In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc.
+Link: https://beacon.support.brightcove.com/references/image-requirements.html 
+Category: Brightcove Beacon
+
+New Courses
+
+Title: Optimize Your Video Marketing Strategy with Brightcove Campaign
+Description: This is a strategy course that will help our customers understand how to use video for their marketing funnel strategies, and the advantages of using Brightcove Campaign to analyze and improve their content.
+Customer Link: https://university.brightcove.com/catalog/courses/757490
+Employee Link: https://bcovemployees.learnupon.com/catalog/courses/791548
+Category: Brightcove University
+
+Title: Simplify your Workflows with Tags
+Description: This course is designed to help our customers understand the importance of using tags in their videos and the benefits our products give them.
+Customer Link: https://university.brightcove.com/catalog/courses/789212
+Employee Link: https://bcovemployees.learnupon.com/catalog/courses/790220
+Category: Brightcove University
 
 
 Major updates:
 
-None
+Title: Google Tag Manager Plugin for Brightcove Player
+Description: Updated steps for configuring dimensions automatically
+Link: https://support.brightcove.com/google-tag-manager-plugin-brightcove-player#Configuring_dimensions_automatically
+Category: Brightcove Player
 
 
 Minor updates:
 
-Title: Offline Playback with the Native Player SDKs
-Description: Added note about support for audio-only content
-Link: https://support.brightcove.com/offline-playback-native-player-sdks#Notes
-Category: Native SDKs
+Title: Creating a Charles Log
+Description: Added link to Charles with Mobile Document
+Link: https://support.brightcove.com/creating-charles-log#Charles_for_mobile
+Category: Brightcove Player
 
-Title:  Live Module Guidelines and Best Practices
-Description: Added a new troubleshooting solution for redundancy streams 
-Link: https://support.brightcove.com/live-module-guidelines-and-best-practices
-Category: Live
 
-Title: Live API: Cue Points and Ad Beacons with SSAI
-Description: Error edition about RTMP support.
-Link: https://support.brightcove.com/live-api-cue-points-and-ad-beacons-ssai
-Category: Live
-
-Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
-Description: Add notes about SRT protocol is now supported in OBS
-Link: https://support.brightcove.com/step-step-using-live-module-open-broadcaster-software-obs
-Category: Live
