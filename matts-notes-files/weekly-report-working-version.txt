@@ -1,84 +1,74 @@
 New docs:
 
-Title: Overview: Public Social Syndication API
-Description: Overview of new social syndication configuring API for creating and managing feeds
-Link: https://support.brightcove.com/overview-public-social-syndication-api
+Title: Configuring Language Settings
+Description: In this topic you will learn how to define a primary metadata language and add additional metadata languages that are supported.
+Link: https://studio.support.brightcove.com/admin/configuring-language-settings.html
 Category: Video Cloud
 
-Title: Overview: the Syndication Feed API
-Description: Overview of new social syndication feed API for retrieving feeds
-Link: https://support.brightcove.com/overview-syndication-feed-api
+Title: Working with Multi-Lingual Metadata
+Description: In this topic you will learn how to add multi-lingual metadata to videos.
+Link: https://studio.support.brightcove.com/media/working-multi-lingual-metadata.html
 Category: Video Cloud
 
-Title: Sample Templates for Universal Syndication
-Description: sample templates for the new social syndication APIs
-Link: https://support.brightcove.com/sample-templates-universal-syndication
-Category: Video Cloud
+Title: Creating Lead Forms
+Description: In this topic, you will learn how to create a lead form.
+Link: https://campaign.support.brightcove.com/admin/creating-lead-forms.html
+Category: Campaign
 
-Title: Brightcove Syndication Configuration API Reference
-Description: Reference for the Syndication Configuration API
-Link: https://docs.brightcove.com/mrss-config-api/v1/doc/index.html
-Category: Video Cloud
+Title: Creating Lead Forms in Oracle Eloqua
+Description: In this topic you will learn how to create an Oracle Eloqua form that can be used to capture lead data during video playback.
+Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-oracle-eloqua.html
+Category: Campaign
 
-Title: Brightcove Syndication Feed API Reference
-Description: Reference for the Syndication Feed API
-Link: https://docs.brightcove.com/mrss-feed-api/v1/doc/index.html
-Category: Video Cloud
+Title: Creating Lead Forms in Marketo
+Description: In this topic you will learn how to create a Marketo form that can be used to capture lead data during video playback.
+Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-marketo.html
+Category: Campaign
 
-Title: Static URL Delivery
-Description: In this topic, you will learn how to use static URLs from the Brightcove Playback API v2.
-Link: https://support.brightcove.com/static-url-delivery
-Category: Playback API
+Title: Creating Lead Forms in HubSpot
+Description: In this topic you will learn how to create a HubSpot form that can be used to capture lead data during video playback.
+Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-hubspot.html
+Category: Campaign
 
-Title: Creating a JSON Web Token (JWT)
-Description: In this topic, you will learn how to create a JSON Web Token (JWT) which can be used when communicating with Brightcove's Playback API.
-Link: https://support.brightcove.com/creating-json-web-token-jwt
-Category: Playback API
-
-Title: Customizing Android TV Controls
-Description: In this topic, you will learn how to customize the rewind and fast-forward buttons for Android TV.
-Link: https://support.brightcove.com/customizing-android-tv-controls
+Title: Selecting Captions Programmatically with the Native SDK for Android
+Description: In this topic, you will learn how to programmatically select captions when using the Brightcove Native SDK for Android.
+Link: https://support.brightcove.com/selecting-captions-programmatically-native-sdk-android
 Category: Native SDK for Android
 
-Title: Creating Series/Seasons/Episodes
-Description: In this topic, you will learn how to create a series that contains associated seasons and episodes.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
+Title: Common Configuration Settings
+Description: In this topic, you will learn about the common configuration settings used when creating or modifying your app in Brightcove Beacon. 
+Link: https://beacon.support.brightcove.com/references/common-configuration-settings.html
 Category: Brightcove Beacon
 
+Title: Live Redundancy
+Description: In this topic, you will learn how to create Redundancy streams for your Live event. Redundancy will allow you to combine 2 or more Live Jobs into a single stream with automatic failover for uninterrupted reliable playback.
+Link: https://support.brightcove.com/live-redundancy
+Category: Live Module
 
-Title: Images and Their Specifications
-Description: In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc.
-Link: https://beacon.support.brightcove.com/references/image-requirements.html 
-Category: Brightcove Beacon
-
-New Courses
-
-Title: Optimize Your Video Marketing Strategy with Brightcove Campaign
-Description: This is a strategy course that will help our customers understand how to use video for their marketing funnel strategies, and the advantages of using Brightcove Campaign to analyze and improve their content.
-Customer Link: https://university.brightcove.com/catalog/courses/757490
-Employee Link: https://bcovemployees.learnupon.com/catalog/courses/791548
-Category: Brightcove University
-
-Title: Simplify your Workflows with Tags
-Description: This course is designed to help our customers understand the importance of using tags in their videos and the benefits our products give them.
-Customer Link: https://university.brightcove.com/catalog/courses/789212
-Employee Link: https://bcovemployees.learnupon.com/catalog/courses/790220
-Category: Brightcove University
+Title: Using Live Redundancy
+Description: Redundant Groups allow you to combine 2 or more Live Jobs into a single stream with automatic failover for uninterrupted reliable playback. This guide will walk you through creating a Redundant Group, adding Jobs, and forcing a failover using the Live API.
+Link: https://support.brightcove.com/live-redundancy
+Category: Live API
 
 
 Major updates:
 
-Title: Google Tag Manager Plugin for Brightcove Player
-Description: Updated steps for configuring dimensions automatically
-Link: https://support.brightcove.com/google-tag-manager-plugin-brightcove-player#Configuring_dimensions_automatically
-Category: Brightcove Player
+Title: Live API Reference
+Description: Updated for Live Redundancy
+Link: https://docs.brightcove.com/live-api/v1/doc/index.html
+Category: Live API
 
 
 Minor updates:
 
-Title: Creating a Charles Log
-Description: Added link to Charles with Mobile Document
-Link: https://support.brightcove.com/creating-charles-log#Charles_for_mobile
+Title: Brightcove Player Error Reference
+Description: Added Network security errors section
+Link: https://support.brightcove.com/brightcove-player-error-reference#Network_security_errors
 Category: Brightcove Player
+
+Title: Code Snippets using the Native SDK for iOS
+Description: Added code to show how to remove the player and view
+Link: https://support.brightcove.com/code-snippets-using-native-sdk-ios#Removing_the_player
+Category: Native SDKs
 
 
