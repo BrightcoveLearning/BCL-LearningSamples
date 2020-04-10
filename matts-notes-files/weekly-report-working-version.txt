@@ -40,6 +40,11 @@ Description: In this topic, you will learn about the common configuration settin
 Link: https://beacon.support.brightcove.com/references/common-configuration-settings.html
 Category: Brightcove Beacon
 
+Title: Images and Their Specifications
+Description: In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc. Some images are needed for videos ingested into Video Cloud, while others are used in Brightcove Beacon. 
+Link: https://beacon.support.brightcove.com/references/image-requirements.html
+Category: Brightcove Beacon
+
 Title: Live Redundancy
 Description: In this topic, you will learn how to create Redundancy streams for your Live event. Redundancy will allow you to combine 2 or more Live Jobs into a single stream with automatic failover for uninterrupted reliable playback.
 Link: https://support.brightcove.com/live-redundancy
