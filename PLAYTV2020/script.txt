@@ -3,7 +3,7 @@ I'm a Senior Learning specialist at Bright Cove.
 I'm going to be walking you through learning about the Bright Cove rest APIs.
 This is an introductory look, although We'll definitely look at some code, but we're not going to try to cover every detail of every API.
 
-Our agenda.
+This is Our agenda.
 Well, we probably better know what rest APIs are, so we'll take a look at that.
 And then once you know what they are, the next logical question is why do we want to use them?
 We're going to concentrate on looking at the writing, the client side code, but we need a high level view to have base knowledge on which to build.
@@ -19,117 +19,39 @@ and the whole design pattern requires both a client and a Web service resource.
 
 Why should we use the rest APIs?
 The main reason is to add functionality and do things we can't get by default in Video Cloud Studio or Brightcove Player.
-We will also see the location of samples
-and some demonstration of added function ality samples.
+We will also see the location of samples and some demonstration of added functionality samples.
 And there's also lots of functionality, we'll just take a brief look at all the APIs that are available.
 
-One of the reasons we'd want to use, we want to add functionality That's not available by default.
-So, we have information, and we can do some things with the player.
-We can do some things in studio, but we may want to do things beyond what's like, in a UI.
-Are there by default?
-Some general use cases optimal want to build custom reports or playlists.
-We're going to go out and use custom searching to get information back.
-We want We may want to combine functionality for multiple rest API.
-So we may do something where we do some search.
-To get some eight, to get some videos back, then We want all the information about the video, so we use another API to go and get those.
-And we also may want to integrate system, so you may use your own CMS and you want to integrate Video Cloud and CMS.
-That almost invariably means you're going to need to use some API functionality.
+One of the reasons we'd want to use the APIs is to add functionality That's not available by default.
+Some general use cases are building custom reports or playlists, like the best or worst performing videos.
+We may want to combine functionality for multiple rest API, like using the Analytics API to get a specific set of video IDs, then the CMS API to get all the information about those videos.
+We also may want to integrate system, so you may use your own CMS and you want to integrate Video Cloud and CMS. That almost invariably means you're going to need to use some API functionality.
 
-03:21 - 03:27
-Some specific use cases, that actually, we're going to, some specific use cases.
+You see a few specific use cases, and we will look later at working sample of these.
 
-03:27 - 03:32
-You may want to build a playlist from the newest videos, rather than having to maintain that by hand.
+Sometimes a working sample of what you want to do, or at least close functionality, is the best teacher. There are quite a few samples out there in these locations.
 
-03:32 - 03:34
-You want to do it automatically.
 
-03:34 - 03:41
-We may want to get Analytics on a playlist, so you can get Analytics on a player on a video, but not a playlist.
-
-03:41 - 03:42
-So we want to get those.
-
-03:42 - 03:47
-We may want to retrieve data and display that in a player.
-
-03:51 - 03:59
-Real quickly, some of these ideas, some of these samples out there using the rest API.
-
-03:59 - 04:14
-The rest APIs, we have one that we have a whole bunch of the actual API, API side, and then the other one, we have samples that use an API with the player.
-
-04:16 - 04:16
-All right.
-
-04:16 - 04:19
 Let's go look at some samples.
 
-04:26 - 04:28
-The first sample, we can play here.
+The first sample, we can play here. It's going to display the total views of the video in the control bar. The total views was retrieved from the Analytics API and then we display it in the players' control bar.
 
-04:28 - 04:38
-It's going to display the toy unis in a, in the control bar here.
+The next one, we want to get the newest video in a dynamically created playlist. We get the 10 newest videos in an account, and then automatically build a playlist. Here's you see our playlist, And here's the 10 latest videos.
 
-04:39 - 04:39
-Right?
+The advantage here is that we don't have to manually every day, or every week, or however often you want to do that, build the playslist. Whenever someone looks at it, it's going to get the 10 latest.
 
-04:39 - 04:45
-So we go out to the Analytics API and we grab the total views.
+The first two videos interacted with the player, but of course that is not required. This one is a little app to identify low performing content.
+What this means is we're going to grab X number of videos and over the last Y number of months, we're going to get the videos that have less than Z number of views.
 
-04:45 - 04:48
-And then we display it in the players' control bar.
+Generate the report.
 
-04:50 - 04:53
-The next one, we want to get the newest video.
+You can look at the API requests here.
 
-04:53 - 05:06
-So we're gonna pick the 10, newest videos in an account, and we're going to automatically build a playlist, and here's you see our playlist, And here's the 10 latest videos.
+And here are the videos as JSON data.
 
-05:06 - 05:18
-So, rather than having to maintain that manually every day, or every week, or however often you want to do that, you can go through, and you can simply have this, whenever someone looks at it, it's going to get the 10 latest.
+If you want to use it a spreadsheet, you can convert it to CSV.
 
-05:20 - 05:27
-You also may want to know like What videos are performing well, so we can go through and.
-
-05:30 - 05:35
-So, the first two samples use the player, That's what I'm most familiar with.
-
-05:35 - 05:42
-I do a lot of work with the player, but sometimes you just want to use the data and to retrieve information.
-
-05:42 - 05:50
-It's not going to interact with the player at all, and so here's one where a little app is girl to identify low performing content.
-
-05:50 - 06:06
-And what this means is we're going to grab X number of videos and over the last X number of months, we're going to get the views are going to get videos with less than X number of views.
-
-06:07 - 06:09
-So generate the report.
-
-06:09 - 06:12
-And you can look at the API request UCSB.
-
-06:14 - 06:22
-Index them there OK, so all of the videos, returns.
-
-06:23 - 06:26
-And then, here it is JSON data.
-
-06:26 - 06:27
-And also this little app.
-
-06:27 - 06:33
-If you want to use it a spreadsheet, you can convert it to CSB.
-
-06:35 - 06:37
-Just some very simple examples.
-
-06:37 - 06:39
-All kinds of examples you can do.
-
-06:40 - 06:41
-Go back to the slides here.
+OK, back to the slides.
 
 06:44 - 06:46
 And there's lots of functionality.
