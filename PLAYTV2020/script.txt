@@ -145,122 +145,46 @@ Whew, that is complex. The good thing is lots of details are in the makeRequest 
 
 **NEW SLIDE**
 Here are some details about using the reuseable makeRequest function
-Though the make requests function, again, notice is this re-usable.
 
-12:22 - 12:26
-So if you're writing your old code, we can just get this make requests copied in.
+Note there are two parameters passed in. One object named options, and the other a callback function named, not ironically, callback.
 
-12:26 - 12:33
-Notice, there's things passed in the options, and the callback, or the two parameters we pass in.
+The options object contains the full request URL, which HTTP method to use, get, post, patch, put or delete. And finally the URL to the proxy.
 
-12:34 - 12:39
-The first option is called, the first parameter is called options.
+And we either pass in credentials in the options object, or they're hard coded in the proxy server.
 
-12:39 - 12:50
- We have to pass in the full request URL, the URL, we have to pass in the type of requests, which method, get post, put, delete.
 
-12:50 - 12:55
-And then, we also have to pass in the location of your proxy.
+Then, we also have to pass in a callback function, which again is JavaScript functionality we are using to return the API's data to the client.
 
-12:55 - 13:01
-And we either pass their credentials in the options object, or they're hard coded in the proxy server.
+Specifically the data is returned in the callback function's parameter, which in the code we name response. 
 
-13:02 - 13:05
-Then, we also have to pass in a callback function.
+**NEW SLIDE**
+As mentioned, we have to write the code to build the request.
 
-13:05 - 13:09
-And the great thing about this, the way it's written, this is JavaScript functionality.
+In the three black rectangles we see actual options objects displayed in a browser's console.
 
-13:10 - 13:13
- We pass in a parameter called response.
+The first two show the minimal requirements of proxyURL, HTTP method and complete URL for the API request.
 
-13:13 - 13:19
-And then in this whole process happening, the data is put into the response parameter.
+By the way, the first one is getting all time views of a video using the Analytics API, and the second is getting the 10 most recently created videos from an account using the CMS API.
 
-13:19 - 13:23
-And that's where we can retrieve it when we want to use it.
+The last one includes other information specific to a task, which in this case is updating a specific video's metadata, again using the CMS API. 
 
-13:24 - 13:24
-All right.
+We see we must pass the minimum three properties of the options object, but can pass other properties as needed.
 
-13:24 - 13:27
-So first of all, the code we have to write, we talked about.
 
-13:27 - 13:28
- We have to build the requests.
+**NEW SLIDE**
+We gone from very general, understanding we must write the code for a request, to more specific by seeing the results of the code, to now looking at actual code used.
 
-13:28 - 13:29
-So here's some examples.
+Line 9 starts with the base URL of the specific API, which of course is in the documentation.
 
-13:29 - 13:30
-I said there's a minimum of three things.
+In line 10 the endpoint is defined, which customizes the API call to do specifically what we want. Of course, documentation exists to explain the functionality.
 
-13:30 - 13:33
-So here's the proxy URL.
+Line 11 simply stores the URL to the proxy in the options object.
 
-13:33 - 13:35
-So this is where our proxy says.
+Line 12 concatenates the baseURL and the endpoint to build the URL for the API call and assigns it to the options object.
 
-13:35 - 13:40
-It's going to be a get request, and in this case, we're calling the Analytics API.
+And in line 13 we specify the HTTP method in the options object. 
 
-13:40 - 13:46
-And notice we can call the all-time views, and we supply the account, and the video.
-
-13:46 - 13:52
-So this is for the one where we display the all-time views in the control bar.
-
-13:52 - 13:55
-The next one, we have the proxy URL.
-
-13:55 - 13:58
-Again, that's the same or doing a get, and.
-
-13:58 - 14:02
-Then the URL here, we're using the CMS API, and we're getting sorted.
-
-14:06 - 14:07
-And we're getting the sorted.
-
-14:07 - 14:12
-And in this case, we're getting the most recent one sorted, just as an example.
-
-14:12 - 14:14
-And here's another example.
-
-14:14 - 14:17
-We're going through where we're going to do a patch.
-
-14:17 - 14:26
-And we're updating, we're updating the metadata, and so we're writing to something that already exists for the proxies.
-
-14:26 - 14:31
-The same here, we also need an account ID, the URL using the CMS.
-
-14:32 - 14:35
-We're talking about the account and the video we're going to be working with.
-
-14:39 - 14:41
-And then here's the new data we want written in.
-
-14:42 - 14:43
-And, of course, it's a patch.
-
-14:46 - 14:48
-So we build the request.
-
-14:48 - 14:50
-So we've seen the results.
-
-14:50 - 14:59
-These are the actual I took these from, these are screenshots from the console we see out there, this is what's actually sent, but this is how we build them.
-
-14:59 - 15:02
-We talk about the base URL, right?
-
-15:02 - 15:12
-We have the endpoint, and then the proxy URL, We use some variables to put the base URL and the endpoint together, and then we say the request is a get.
-
+And of course, the options object is then passed as a  parameter to the makeRequest function.
 
 
 Displaying the data, well, how do we want to display the data?  That's probably going to be different for every application.
