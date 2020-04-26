@@ -3,6 +3,7 @@ I'm a Senior Learning specialist at Bright Cove.
 I'm going to be walking you through learning about the Bright Cove rest APIs.
 This is an introductory look, although We'll definitely look at some code, but we're not going to try to cover every detail of every API.
 
+**NEW SLIDE**
 This is Our agenda.
 Well, we probably better know what rest APIs are, so we'll take a look at that.
 And then once you know what they are, the next logical question is why do we want to use them?
@@ -10,6 +11,7 @@ We're going to concentrate on looking at the writing, the client side code, but 
 Then we'll dive into the client side code.
 We'll look at some example code and then we'll wrap it up.
 
+**NEW SLIDE**
 So what are rest APIs?
 You can see Representational state, transfer application programming interface.
 Not very helpful. It's a nice acronym but I don't know how helpful that is.
@@ -17,11 +19,13 @@ Basically, rest APIs are a design pattern that defines Web services, and you can
 Information will be returned in JSON format, 
 and the whole design pattern requires both a client and a Web service resource.
 
+**NEW SLIDE**
 Why should we use the rest APIs?
 The main reason is to add functionality and do things we can't get by default in Video Cloud Studio or Brightcove Player.
 We will also see the location of samples and some demonstration of added functionality samples.
 And there's also lots of functionality, we'll just take a brief look at all the APIs that are available.
 
+**NEW SLIDE**
 One of the reasons we'd want to use the APIs is to add functionality That's not available by default.
 Some general use cases are building custom reports or playlists, like the best or worst performing videos.
 We may want to combine functionality for multiple rest API, like using the Analytics API to get a specific set of video IDs, then the CMS API to get all the information about those videos.
@@ -29,9 +33,10 @@ We also may want to integrate system, so you may use your own CMS and you want t
 
 You see a few specific use cases, and we will look later at working sample of these.
 
+**NEW SLIDE**
 Sometimes a working sample of what you want to do, or at least close functionality, is the best teacher. There are quite a few samples out there in these locations.
 
-
+**NEW SLIDE**
 Let's go look at some samples.
 
 The first sample, we can play here. It's going to display the total views of the video in the control bar. The total views was retrieved from the Analytics API and then we display it in the players' control bar.
@@ -53,32 +58,26 @@ If you want to use it a spreadsheet, you can convert it to CSV.
 
 OK, back to the slides.
 
-06:44 - 06:46
+
+**NEW SLIDE**
 And there's lots of functionality.
 
-06:46 - 06:52
-So here's a screenshot of the index page of our APIs site.
+Here's a screenshot of the index page of our APIs site. 
 
-06:52 - 06:56
-And you can see all the different APIs listed there on the left side.
+You can see all the different APIs listed there on the left side.
 
-06:59 - 07:04
-If you want to use the APIs, there's some things that have to happen.
 
-07:04 - 07:11
-And we have, basically, three entities that have to exist to use the API.
+**NEW SLIDE**
+Now we want to get a high-level understanding of how to use Brightcove's REST APIs.
 
-07:12 - 07:18
-So we're going to talk about what they are, and then how, and then, what the interaction is between those three entities.
+We'll start by discussing the three entities involved in the process, then see how the three entities interact to get the job done.
 
-07:19 - 07:21
-The three entries are the client code.
+**NEW SLIDE**
+The three entries are the client code, the proxy server and the REST APIs themselves.
 
-07:21 - 07:25
-That's what we're going to focus on most, because that's what you have to write each time.
+We will focus the most attention on the client code as that is what we have to write.
 
-07:26 - 07:30
-And so every time you want to use an API, chances are you up to do the client code.
+Every time you want to use an API, chances are you will need to write new client code.
 
 07:31 - 07:33
 You'll also meet a proxy server.
