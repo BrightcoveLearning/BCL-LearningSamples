@@ -1,4 +1,38 @@
 Major accomplishments:
+** Week Ending 24 Mar **
+- Closed 4 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Final proof of Alberto's Amazon app submission doc
+- Finished Creating a Stripe account doc
+- Finished Submitting Apps to the Android Store doc
+Work NOT Reflected in JIRAs:
+- Attended various Beacon Onboarding meetings
+- Attended various Beacon Q2 meetings
+
+
+** Week Ending 10 Mar **
+- Closed 4 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Final proof of Alberto's SSAI doc, one technical issue and waiting for Jose help
+- Updated Android/Google app store submission doc
+Work NOT Reflected in JIRAs:
+- Docs worked on, but need some further guidance
+    *Stripe account setup 
+    *Test build installation
+    *EPG 
+-Preparing my slides for the PLAY TV presentation (not putting this on note to Carolyn in case she doesn't want me doing this, but I committed to PLAY a long time ago)
+
+
+
+** Week Ending 3 Mar **
+- Closed 12 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- Two new Beacon docs added to the navigation
+- Reviewed Alberto's "Creating a Live Event" doc and now ready for review. Three sessions back and forth needed. I think good progress in Alberto's skills, but will proof will be in his next doc.
+Work NOT Reflected in JIRAs:
+- WAY too many Beacon.Next meetings, but worthwhile to see what is coming, and also I have helped with some of my (meager) knowledge of Beacon
+
+
 ** Week Ending 27 Feb **
 - Closed 4 JIRAs, 3 of which were administrivia
 JIRA Highlights Include:

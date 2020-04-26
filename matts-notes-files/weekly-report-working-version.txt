@@ -1,79 +1,115 @@
 New docs:
 
-Title: Configuring Language Settings
-Description: In this topic you will learn how to define a primary metadata language and add additional metadata languages that are supported.
-Link: https://studio.support.brightcove.com/admin/configuring-language-settings.html
-Category: Video Cloud
+Title: Securing a Portal Experience with Auth0
+Description: In this topic you will learn how to secure Portal Experiences using Auth0 SSO.
+Link: https://gallery.support.brightcove.com/settings/securing-portal-experience-auth0.html
+Category: Gallery
 
-Title: Working with Multi-Lingual Metadata
-Description: In this topic you will learn how to add multi-lingual metadata to videos.
-Link: https://studio.support.brightcove.com/media/working-multi-lingual-metadata.html
-Category: Video Cloud
+Title: Securing Experiences Using Auth0
+Description: In this topic you will learn how to secure experiences using Auth0 SSO.
+Link: https://engage.support.brightcove.com/experiences/securing-experiences-auth0.html
+Category: Engage
 
-Title: Creating Lead Forms
-Description: In this topic, you will learn how to create a lead form.
-Link: https://campaign.support.brightcove.com/admin/creating-lead-forms.html
+Title: Securing Experiences Using Auth0 Passwordless Authentication
+Description: In this topic you will learn how to secure experiences using Auth0 Passwordless authentication.
+Link: https://engage.support.brightcove.com/experiences/securing-experiences-passwordless.html
+Category: Engage
+
+Title: Connecting to Salesforce
+Description: In this topic you will learn how to configure Brightcove Campaign™ for use with Salesforce.
+Link: https://campaign.support.brightcove.com/admin/connecting-to-salesforce.html
 Category: Campaign
 
-Title: Creating Lead Forms in Oracle Eloqua
-Description: In this topic you will learn how to create an Oracle Eloqua form that can be used to capture lead data during video playback.
-Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-oracle-eloqua.html
+Title: Creating Lead Forms in Salesforce
+Description: In this topic you will learn how to create a Salesforce form that can be used to capture lead data during video playback.
+Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-salesforce.html
 Category: Campaign
 
-Title: Creating Lead Forms in Marketo
-Description: In this topic you will learn how to create a Marketo form that can be used to capture lead data during video playback.
-Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-marketo.html
+Title: Creating a Custom Salesforce Object for Pardot Integration
+Description: In this topic you will learn how to create the Salesforce custom object that is required when using the Pardot integration.
+Link: https://campaign.support.brightcove.com/admin/creating-salesforce-object-pardot.html
 Category: Campaign
 
-Title: Creating Lead Forms in HubSpot
-Description: In this topic you will learn how to create a HubSpot form that can be used to capture lead data during video playback.
-Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-hubspot.html
-Category: Campaign
-
-Title: Selecting Captions Programmatically with the Native SDK for Android
-Description: In this topic, you will learn how to programmatically select captions when using the Brightcove Native SDK for Android.
-Link: https://support.brightcove.com/selecting-captions-programmatically-native-sdk-android
+Title: HEVC Selection with the Native SDK for Android
+Description: In this topic, you will learn how to play HLS content using the Native SDK for Android.
+Link: https://support.brightcove.com/hevc-selection-native-sdk-android
+New Site Link: https://sdks.support.brightcove.com/android/playback/hevc-selection-native-sdk-android.html
 Category: Native SDK for Android
 
-Title: Common Configuration Settings
-Description: In this topic, you will learn about the common configuration settings used when creating or modifying your app in Brightcove Beacon. 
-Link: https://beacon.support.brightcove.com/references/common-configuration-settings.html
+Title: Using the Pulse plugin with the Native SDK for Android
+Description: In this topic, you will learn how to use the Pulse plugin with Brightcove's Native SDK for Android.
+Link: https://support.brightcove.com/using-pulse-plugin-native-sdk-android
+New Site Link: https://sdks.support.brightcove.com/android/advertising/using-pulse-plugin-native-sdk-android.html
+Category: Native SDK for Android
+
+Title: Creating a Simulated Live Event
+Description: Before you invest in the cost and workflow of creating and running live events, you may want to try a test to gauge the interest of your viewers. This sample shows you how to simulate a live streaming event to do that.
+Link: https://player.support.brightcove.com/code-samples/brightcove-player-samples-simulated-live.html
+Category: Player Sample
+
+Title: Multilingual Metadata Using the CMS and Dynamic Ingest APIs
+Description: This topic provides an overview of adding multilingual metadata to videos for viewers who speak different languages. Multilingual metadata is particularly important to Brightcove Beacon customers, but may be used with Video Cloud videos generally.
+Link: https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html
+Category: Dynamic Ingest API, CMS API
+
+Title: Submitting New Apps to the Android Store
+Description: In this topic, you will learn how to submit your device app to the Android store.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-android.html
 Category: Brightcove Beacon
 
-Title: Images and Their Specifications
-Description: In this topic, you will learn of the images required for your Brightcove Beacon Experience. Also detailed are the required image sizes, aspect ratios, etc. Some images are needed for videos ingested into Video Cloud, while others are used in Brightcove Beacon. 
-Link: https://beacon.support.brightcove.com/references/image-requirements.html
+Title: Submitting Apps to the Roku Store
+Description: In this topic, you will learn how to submit your device app to the Roku store.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-roku.html
 Category: Brightcove Beacon
 
-Title: Live Redundancy
-Description: In this topic, you will learn how to create Redundancy streams for your Live event. Redundancy will allow you to combine 2 or more Live Jobs into a single stream with automatic failover for uninterrupted reliable playback.
-Link: https://support.brightcove.com/live-redundancy
-Category: Live Module
+Title: Submitting Apps to the Samsung Store
+Description: In this topic, you will learn how to submit your device app to the Samsung store.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-samsung.html
+Category: Brightcove Beacon
 
-Title: Using Live Redundancy
-Description: Redundant Groups allow you to combine 2 or more Live Jobs into a single stream with automatic failover for uninterrupted reliable playback. This guide will walk you through creating a Redundant Group, adding Jobs, and forcing a failover using the Live API.
-Link: https://support.brightcove.com/live-redundancy
-Category: Live API
+Title: Submitting Apps to the LG (webOS) Store
+Description: In this topic, you will learn how to submit your device app to the LG store.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-lg.html
+Category: Brightcove Beacon
+
+Title: Submitting Apps to the Amazon Appstore
+Description: In this topic, you will learn how to submit your Fire TV app to the Amazon Appstore.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-amazon.html
+Category: Brightcove Beacon
+
+Title: Submitting Apps to the Panasonic Store
+Description: In this topic, you will learn how to submit your device app to the Panasonic store.
+Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-panasonic.html
+Category: Brightcove Beacon
+
+Title: Updating Android Apps to Brightcove Beacon
+Description: In this topic, you will learn how to update an existing app to a Brightcove Beacon app using the Google Play Console.
+Link: https://beacon.support.brightcove.com/creating-your-apps/updating-android-apps-to-bcb.html
+Category: Brightcove Beacon
+
+Title: Adding Subscriptions to Android
+Description: In this topic, you will learn how to create subscriptions and Google Play service accounts used for testing those subscriptions.
+Link: https://beacon.support.brightcove.com/creating-your-apps/adding-subscriptions-in-android.html
+Category: 
 
 
 Major updates:
 
-Title: Live API Reference
-Description: Updated for Live Redundancy
-Link: https://docs.brightcove.com/live-api/v1/doc/index.html
-Category: Live API
+Title: Images and the Dynamic Ingest API
+Description: Added new image types (mainly for beacon)
+Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html
+Category: Dynamic Ingest API
+
+Title: Dynamic Ingest API Reference
+Description: Added new image types (mainly for beacon)
+Link: https://apis.support.brightcove.com/dynamic-ingest/references/reference.html
+Category: Dynamic Ingest API
+
+Title: CMS API Reference
+Description: Added new operations for multilingual variants
+Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetVideoVariants
+Category: CMS API
 
 
 Minor updates:
-
-Title: Brightcove Player Error Reference
-Description: Added Network security errors section
-Link: https://support.brightcove.com/brightcove-player-error-reference#Network_security_errors
-Category: Brightcove Player
-
-Title: Code Snippets using the Native SDK for iOS
-Description: Added code to show how to remove the player and view
-Link: https://support.brightcove.com/code-snippets-using-native-sdk-ios#Removing_the_player
-Category: Native SDKs
-
-
+None
