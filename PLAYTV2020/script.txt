@@ -7,17 +7,19 @@ This is an introductory look, although We'll definitely explore some code and ge
 This is Our agenda.
 Well, we probably better know what rest APIs are, so we'll take a look at that.
 And then once we know what they are, the next logical question is why do we want to use them?
-We're going to concentrate on writing the client side code, but we need a high level view to have base knowledge on which to build.
+It's always good to  a high level view to have base knowledge on which to build, so that's next.
 Then we'll dive into the client side code in detail.
 Finally we'll review and wrap it up.
+
 
 **NEW SLIDE**
 So what are rest APIs?
 We can see the acronym's defintion: Representational state, transfer application programming interface.
-uhhhh, Not very helpful. It's a nice acronym but I don't know how helpful that is.
+uhhhh, Not very helpful. It's a nice acronym but I don't know what insight that provides.
 Basically, rest APIs are a design pattern that defines Web services, and we can get information or write information using the HTTP methods, get, put, post, patch and delete
-Information will be returned in JSON format, 
+Information will be returned, often in JSON format, 
 and the whole design pattern requires both a client and a Web service resource.
+
 
 **NEW SLIDE**
 Why should we use the rest APIs?
@@ -28,10 +30,10 @@ And there's also lots of functionality, we'll just take a brief look at all the 
 **NEW SLIDE**
 One of the reasons we'd want to use the APIs is to add functionality that's not available by default.
 Some general use cases are building custom reports or playlists, like the best or worst performing videos.
-We may want to combine functionality from multiple rest APIs, like using the Analytics API to get a specific set of video IDs, then the CMS or Playback API to get all the information about those videos.
+We may want to combine functionality from multiple rest APIs, like using the Analytics API to get a specific set of video IDs based on some criteria, then the CMS or Playback API to get all the information about those videos.
 We also may want to integrate systems, so if we are using our own CMS and we want to integrate that with Video Cloud, that invariably means we're going to need to use some API functionality.
 
-We see a few specific use cases, and we will look later at working sample of these.
+We see a few specific use cases, and we will look later at working samples of these.
 
 **NEW SLIDE**
 Sometimes a working sample of what we want to do, or at least close functionality, is the best teacher. These two URLs point to lots of samples in Brightcove's documentation.
@@ -43,18 +45,18 @@ The first sample, we can play here. It's going to display the total views in the
 
 The next sample, we want to get the newest videos in a dynamically created playlist. We get the 10 newest videos in an account, and then automatically build a playlist. Here's we see our playlist, And here's the 10 latest videos.
 
-The advantage here is that we don't have to every day, or every week, or however often we want to do that, build the playslist manually. Whenever someone uses this player, it's going to get the 10 latest videos.
+The advantage here is that we don't have to every day, or every week, or however often we want to do that, build the playlist manually. Whenever someone uses this player, it's going to get the 10 latest videos.
 
 The first two videos interacted with the player, but of course that is not required. This one is a little app to identify low performing content.
 What this means is we're going to grab X number of videos and over the last Y number of months and we want to get the videos that have less than Z number of views.
 
-Generate the report.
+Let's generate the report.
 
 We can look at the API requests here.
 
 And here are the videos as JSON data.
 
-If we want to use it a spreadsheet, we can convert it to CSV.
+If we want to use it a spreadsheet, we can convert the data to CSV.
 
 OK, back to the slides.
 
@@ -62,7 +64,7 @@ OK, back to the slides.
 **NEW SLIDE**
 And there's lots of functionality.
 
-Here's a screenshot of the index page of our APIs site. 
+Here's a screenshot of the index page of Brightcove's API documentation site. 
 
  We can see all the different APIs listed on the page. 
  **PAUSE**
@@ -76,23 +78,23 @@ We'll start by discussing the three entities involved in the process, then see h
 **NEW SLIDE**
 The three entries are the client code, the proxy server and the REST APIs themselves.
 
-We will focus the most attention on the client code as that is what we have to write.
+We will focus the most attention on the client code, as that is what we have to write.
 
 Every time we want to use an API, chances are we will need to write new client code for a specific API request, then new code to display the returned data in the manner we wish.
 
-It is common APIs will not accept requests directly from a client. The pattern is to have the client request from the proxy, then the proxy makes requests to the API.
+It is common APIs will not accept requests directly from a client. The pattern is to have the client request data from a proxy, then the proxy makes requests to the API.
 
 As shown in the link, a proxy written in PHP is available in the documentation.
 
-And finally, we need the rest APIs. These are written by Brightcove and we can get, post, post, patch, and delete data.
+And finally, we need the rest APIs. These are written by Brightcove and we can get, put, post, patch, and delete data.
 
 **NEW SLIDE**
 Now, how do these three entities interact?
 
 First of all, we have a client, and we have to gather info for the specific API call. For instance we may want to,
 *GET the number of views a video has
-*GET all the videos that share a common tag, also called metadata
-*Update metadata for a set of videos 
+*GET all the videos that share a common tag or metadata
+*Update metadata for a set of videos via PATCH
 
 We may have to get the credentials in the form, for instance client secret and client ID, or that can be written into the proxy.
 
@@ -100,7 +102,7 @@ We then call the proxy passing the gathered data.
 
 We see this big note about asynchronous delay, because when we call the proxy, we see the proxy then has to call the rest API.
 
-It takes some time for the REST API to get the data, and this can be seconds. 
+It takes some time for the REST API to get the data. This can even be seconds. 
 
 The REST API sends data back to the proxy, and the proxy returns data to the client code, which then uses/displays the data in some manner.
 
@@ -115,11 +117,11 @@ We'll start with a quick overview of what the client must do.
 
 There is a function, named makeRequest, which we can probably guess, makes a request to the proxy for REST API data. 
 
-What's nice, the way this is written, it's re-usable by us in our code. We don't have to change a thing. We just have to pass the correct data in, using two parameters.
+What's nice, the way this is function is written, it's re-usable by us in our code. We don't have to change a thing. We just have to pass the correct data in, using two parameters.
 
 We do have to write custom code in two places. 
 
-The first being to build the request, the second being to display the return data specifically for our application.
+The first being to build the request, the second being to display the returned data specifically for our application.
 
 **NEW SLIDE**
 Here is the Client code Functionality Overview.
@@ -132,7 +134,7 @@ The first parameter contains the specific information for the actual API call. F
 
 And then we also pass a callback function. 
 
-This is not a JavaScript course, so we don't want to go into great detail, but basically the callback function is how we return the data from the REST API.
+This is not a JavaScript course, so we don't want to go into great detail, but basically the callback function is how we return the data from the proxy/REST API.
 
 Next we actually call the makeRequest function. We don't know how long with will take to get the data back, hence there's asynchronous activity.
 
@@ -149,13 +151,16 @@ Here are some details about using the reuseable makeRequest function
 
 Note there are two parameters passed in. One object named options, and the other a callback function named, not ironically, callback.
 
-The options object contains the full API request URL, which HTTP method to use, get, post, patch, put or delete. And finally the URL to the proxy.
+The options object contains 
+1. the full API request URL
+2. which HTTP method to use, that is get, post, patch, put or delete
+3. the URL to the proxy.
 
 And we either pass in credentials in the options object, or they're hard coded in the proxy server.
 
 Then, we also have to pass in a callback function, which again is JavaScript functionality we are using to return the API's data to the client.
 
-Specifically the data is returned in the callback function's parameter, which in the code we name response. 
+Specifically the data is returned in the callback function's parameter, which in this code we name response. 
 
 **NEW SLIDE**
 As mentioned, we have to write the code to build the request.
@@ -168,15 +173,15 @@ By the way, the first one is getting all time views of a video using the Analyti
 
 The last one includes other information specific to a task, which in this case is updating a specific video's metadata, again using the CMS API. 
 
-We see we must pass the minimum three properties of the options object, but can pass other properties as needed.
+We see we must pass the minimal three properties of the options object, but can pass other properties as needed.
 
 
 **NEW SLIDE**
-We've gone from very general understanding we must write the code for a request, to more specific by seeing the results of the code, to now looking at actual code used to build the API request.
+We've gone from very general understanding we must write the code for a request, to more specific by seeing the results of the code, to now looking at actual code used to build an API request.
 
 Line 9 starts with the base URL of the specific API, which of course is in the documentation.
 
-In line 10 the endpoint is defined, which customizes the API call to do specifically what we want. Of course, documentation exists to explain the functionality.
+In line 10 the endpoint is defined, which customizes the API call to do specifically what we want. Of course, documentation exists to explain API functionalities.
 
 Line 11 simply stores the URL to the proxy in the options object.
 
@@ -184,21 +189,21 @@ Line 12 concatenates the baseURL and the endpoint to build the full URL for the 
 
 In line 13 we specify the HTTP method in the options object. 
 
-Of course, later in the code the options object is then passed as a  parameter to the makeRequest function.
+Of course, later in the code the options object is then passed as a parameter to the makeRequest function.
 
 **NEW SLIDE**
 Displaying the data, another task we have to write in the client code.
 
 How do we want to display the data?  That's probably going to be different for nearly every application.
 
-Some specific examples we've seen is to place results in the player's control bar.
+Some specific examples we've seen are:
+1. Place results in the player's control bar.
+2. Build an RSS feed with the returned data
+3. Display the data in JSON or comma separated value format.
 
-or we may want to build an RSS feed with the returned data
-
-or we may want to display the data in JSON or comma separated value format.
 
 **NEW SLIDE**
-Here's example actual code where we're displaying the data in the control bar.
+Here's actual example code where we're displaying the data in the control bar.
 
 We first create a new div, 
 
@@ -209,7 +214,7 @@ We then grab the spacer, an element by default in the controlbar
 And append the newly created div into the spacer.
 
 **NEW SLIDE**
-And here's the results of the code, we can see there's the total number of views in the control bar.
+And here's the results of the code, we can see in the yellow box the total number of views in the control bar.
 
 
 **NEW SLIDE**
@@ -217,7 +222,7 @@ All right, so that wraps it up.
 
 Let's take a quick look at the main learning points.
 
-We discussed what and why about rest APIs, What they are, and why we'd want to use them.
+We discussed what and why of rest APIs, What they are, and why we'd want to use them.
 
 And we found out there were three key entities, the client code, a proxy, and the actual rest API.
 
@@ -233,15 +238,15 @@ The Learning Guide:  a lot of the content and images we've seen in this presenta
 
 The Video Cloud Platform APIs documentation: This provides all the info about what each API can do and details on how to build the requests. Also included are many samples.
 
-Player samples: There's a special section in the player samples that shows interacting with the APIs.
+Player samples: There's special sections in the player samples that shows interacting with the APIs.
 
 
 **NEW SLIDE**
-Keep an eye out for the exciting (I hope) next chapter in our discovery of using the Brightcove REST APIs. 
+Keep an eye out for the next, exciting (I hope) chapter in our discovery of using the Brightcove REST APIs. 
 
 There will be another video and we will discuss a template on which to begin writing our client code
 
-and a detailed discussion of three samples
+and also detailed discussions of three samples
 
 **NEW SLIDE**
 That's it and Thank you for taking your valuable time to watch this video.
