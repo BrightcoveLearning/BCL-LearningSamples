@@ -149,7 +149,7 @@ Whew, that is complex. The good thing is, lots of details are in the makeRequest
 **NEW SLIDE**
 Here are some details about using the reuseable makeRequest function
 
-Note there are two parameters passed in. One object named options, and the other a callback function named, not ironically, callback.
+Note there are two parameters passed in. One object named options, and the other a callback function. In this case the callback function is an anonymous callback function. This means the function definition is the parameter, so the function need not be named. And, since it has no name is is called an anonymous function.
 
 The options object contains 
 1. the full API request URL
