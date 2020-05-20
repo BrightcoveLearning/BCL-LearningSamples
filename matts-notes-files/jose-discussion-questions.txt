@@ -1,9 +1,2 @@
-Big questions
-1. EPG overview (got a technical explanation from JP, but still some other questions)
-2. Live Event not working (Alberto's doc issue)
-3. Stripe to Beacon connection
-4. Demo of setting up test builds
+1. Live Event w/ SSAI not working (Alberto's doc issue)
 
-Specific questions
-1. Can a Live Event be scheduled as part of the EPG?
-2. What is the difference between age rating and content rating?

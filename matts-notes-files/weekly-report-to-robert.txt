@@ -1,4 +1,45 @@
 Major accomplishments:
+** Week Ending 15 May **
+- Closed 8 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+-  Nothing special
+Work NOT Reflected in JIRAs:
+- Spent LOTS of time on Beacon doc Creating a Playlist. Originally this tab was NOT going to be show to customers, but turns out then need parts of it. After updating and checking with Jose and Joao about functionality Jose suggested a meeting to get all the details worked out.
+- Worked on styling of search results page
+
+
+** Week Ending 8 May **
+- Closed 9 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Google Analytics for new sites
+- Built vocabulary spreadsheet for Beacon terminology
+- Reviewed Alberto's Fire TV install test build doc
+- Moved Brightcove Player release and pre-release pages from Drupal ot new site 
+Work NOT Reflected in JIRAs:
+- Help with search implementation
+- Fixed broken links on Beacon and Player sites
+
+
+** Week Ending 1 May **
+- Closed 2 JIRAs, 0 of which were administrivia
+JIRA Highlights Include:
+- PLAY TV video done, 17 minutes long
+- Reviewed a couple of times Alberto's EPG doc. First time he was missing a couple of major secctions.
+Work NOT Reflected in JIRAs:
+- Some search research
+- LOTS of meetings on Beacon next, LOTS
+
+
+** Week Ending 24 Apr **
+- Closed 9 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Finished Updating Android Apps to Brightcove Beacon doc
+- Finished Creating Subscriptions in Android doc
+- Closed some of the Player Dev low  hanging fruit JIRAs
+Work NOT Reflected in JIRAs:
+- None
+
+
 ** Week Ending 24 Mar **
 - Closed 4 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:

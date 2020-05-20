@@ -1,115 +1,42 @@
 New docs:
 
-Title: Securing a Portal Experience with Auth0
-Description: In this topic you will learn how to secure Portal Experiences using Auth0 SSO.
-Link: https://gallery.support.brightcove.com/settings/securing-portal-experience-auth0.html
-Category: Gallery
-
-Title: Securing Experiences Using Auth0
-Description: In this topic you will learn how to secure experiences using Auth0 SSO.
-Link: https://engage.support.brightcove.com/experiences/securing-experiences-auth0.html
+Title: Creating and Managing Push Notifications
+Description: In this topic you will learn how to create and manage push notifications.
+Link: https://engage.support.brightcove.com/experiences/creating-and-managing-push-notifications.html
 Category: Engage
 
-Title: Securing Experiences Using Auth0 Passwordless Authentication
-Description: In this topic you will learn how to secure experiences using Auth0 Passwordless authentication.
-Link: https://engage.support.brightcove.com/experiences/securing-experiences-passwordless.html
-Category: Engage
-
-Title: Connecting to Salesforce
-Description: In this topic you will learn how to configure Brightcove Campaign™ for use with Salesforce.
-Link: https://campaign.support.brightcove.com/admin/connecting-to-salesforce.html
-Category: Campaign
-
-Title: Creating Lead Forms in Salesforce
-Description: In this topic you will learn how to create a Salesforce form that can be used to capture lead data during video playback.
-Link: https://campaign.support.brightcove.com/admin/creating-lead-forms-salesforce.html
-Category: Campaign
-
-Title: Creating a Custom Salesforce Object for Pardot Integration
-Description: In this topic you will learn how to create the Salesforce custom object that is required when using the Pardot integration.
-Link: https://campaign.support.brightcove.com/admin/creating-salesforce-object-pardot.html
-Category: Campaign
-
-Title: HEVC Selection with the Native SDK for Android
-Description: In this topic, you will learn how to play HLS content using the Native SDK for Android.
-Link: https://support.brightcove.com/hevc-selection-native-sdk-android
-New Site Link: https://sdks.support.brightcove.com/android/playback/hevc-selection-native-sdk-android.html
-Category: Native SDK for Android
-
-Title: Using the Pulse plugin with the Native SDK for Android
-Description: In this topic, you will learn how to use the Pulse plugin with Brightcove's Native SDK for Android.
-Link: https://support.brightcove.com/using-pulse-plugin-native-sdk-android
-New Site Link: https://sdks.support.brightcove.com/android/advertising/using-pulse-plugin-native-sdk-android.html
-Category: Native SDK for Android
-
-Title: Creating a Simulated Live Event
-Description: Before you invest in the cost and workflow of creating and running live events, you may want to try a test to gauge the interest of your viewers. This sample shows you how to simulate a live streaming event to do that.
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-samples-simulated-live.html
-Category: Player Sample
-
-Title: Multilingual Metadata Using the CMS and Dynamic Ingest APIs
-Description: This topic provides an overview of adding multilingual metadata to videos for viewers who speak different languages. Multilingual metadata is particularly important to Brightcove Beacon customers, but may be used with Video Cloud videos generally.
-Link: https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html
-Category: Dynamic Ingest API, CMS API
-
-Title: Submitting New Apps to the Android Store
-Description: In this topic, you will learn how to submit your device app to the Android store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-android.html
+Title: Understanding Monetization Options
+Description: A monetization package defines how you can generate revenue from your app, if you choose to do so.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/monetization-options.html
 Category: Brightcove Beacon
 
-Title: Submitting Apps to the Roku Store
-Description: In this topic, you will learn how to submit your device app to the Roku store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-roku.html
+Title: Streaming a Live Event
+Description: In this topic, you will learn how to stream a Live event to a Brightcove Beacon app.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html
 Category: Brightcove Beacon
-
-Title: Submitting Apps to the Samsung Store
-Description: In this topic, you will learn how to submit your device app to the Samsung store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-samsung.html
-Category: Brightcove Beacon
-
-Title: Submitting Apps to the LG (webOS) Store
-Description: In this topic, you will learn how to submit your device app to the LG store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-lg.html
-Category: Brightcove Beacon
-
-Title: Submitting Apps to the Amazon Appstore
-Description: In this topic, you will learn how to submit your Fire TV app to the Amazon Appstore.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-amazon.html
-Category: Brightcove Beacon
-
-Title: Submitting Apps to the Panasonic Store
-Description: In this topic, you will learn how to submit your device app to the Panasonic store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/submitting-to-panasonic.html
-Category: Brightcove Beacon
-
-Title: Updating Android Apps to Brightcove Beacon
-Description: In this topic, you will learn how to update an existing app to a Brightcove Beacon app using the Google Play Console.
-Link: https://beacon.support.brightcove.com/creating-your-apps/updating-android-apps-to-bcb.html
-Category: Brightcove Beacon
-
-Title: Adding Subscriptions to Android
-Description: In this topic, you will learn how to create subscriptions and Google Play service accounts used for testing those subscriptions.
-Link: https://beacon.support.brightcove.com/creating-your-apps/adding-subscriptions-in-android.html
-Category: 
 
 
 Major updates:
 
-Title: Images and the Dynamic Ingest API
-Description: Added new image types (mainly for beacon)
-Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/images-and-dynamic-ingest-api.html
-Category: Dynamic Ingest API
-
-Title: Dynamic Ingest API Reference
-Description: Added new image types (mainly for beacon)
-Link: https://apis.support.brightcove.com/dynamic-ingest/references/reference.html
-Category: Dynamic Ingest API
-
-Title: CMS API Reference
-Description: Added new operations for multilingual variants
-Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetVideoVariants
-Category: CMS API
+Title: Creating a Subscription Package
+Description: Added a section on creating a Stripe coupon
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/creating-subscription-package.html#Creating_a_Stripe_Coupon
+Category: Brightcove Beacon
 
 
 Minor updates:
-None
+
+Title: Video Cloud SSAI Overview
+Description: Added limitation for SSAI with media sharing
+Link: https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html#Limitations
+Category: SSAI
+
+Title: Media Sharing using the Media Module
+Description: Added limitation for SSAI with media sharing
+Link: https://studio.support.brightcove.com/media/media-sharing-using-media-module.html#limitations
+Category: Studio
+
+Title: Media Sharing
+Description: Added limitation for SSAI with media sharing
+Link: https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html#Limitations
+Category: CMS API
