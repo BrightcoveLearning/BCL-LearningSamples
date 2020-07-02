@@ -1,4 +1,32 @@
 Major accomplishments:
+** Week Ending 12 June **
+- Closed 3 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+-  Got the email notifications working with the Beacon Configuration Wizard, including bcc'ing onboarding folks
+Work NOT Reflected in JIRAs:
+- Finally focus and writing on first draft of the analytics doc
+- (Thought I would have this meeting this week, but put off until next week) Next week will schedule a meeting with the Design System Governance group to finalize some vocabulary
+- Added to vocabulary spreadsheet based on numerous meetings with customers in which I sat in
+ 
+
+
+** Week Ending 5 June **
+- Closed 6 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+-  Getting the Beacon Configuration Wizard results in a nicer format was big. I have had that request a number of times, but had not really dug into a solution. I have a few requests out for review.
+Work NOT Reflected in JIRAs:
+- Nothing
+
+
+** Week Ending 29 May **
+- Closed 5 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+-  Creating a Playlist in Brightcove Beacon document done
+Work NOT Reflected in JIRAs:
+- Progressing on Using Analytics with Brightcove Beacon doc
+- Continue work on vocabulary standardization (LOTS of hour long meetings involved in the process)
+
+
 ** Week Ending 15 May **
 - Closed 8 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:

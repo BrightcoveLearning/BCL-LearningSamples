@@ -5,20 +5,18 @@ Carolyn and Robert-
 Onboarding:
 Nothing today
 
+
 Beacon.Next
-1. UX Research takeaways and action items
-2. Sky - Brightcove customer feedback
+1. Beacon Design Review meeting
+2. More updates to the Brightcove Beacon Configuration Wizard (suggested by Mike Smith, SE)
 
 
 Docs
-1. Matt: Great meeting with Jose about the Playlists tab functionality, most of which is either not functional or he does not want customers using.
-2. Matt: Continuing work on Playlists doc
-3. Matt: Continuing work on Beacon Analytics doc
-4. Alberto:
-5. Alberto: 
-6. Jeff: Added Smart Hub Preview section to the Submitting Apps to the Samsung Store document per request of Jose
+1. Matt: Meeting with Rogerio (Funchal Google Analytics expert) and got questions answered to now start writing additional content for Brightcove Beacon / Google Analytics doc 
+2. Alberto: Update the In-Channel Product in Beacon doc with the new Roku UI images
 
 -M
+
 
 
 
@@ -32,13 +30,15 @@ Nothing today
 
 
 Beacon.Next
-1. TN Marketing customer design feedback (this was very interesting hearing customers feedback on current and proposed Beacon)
+1. UX Research takeaways and action items meeting
 
 
 Docs
-1. Matt: Great meeting with Rogerio Fernandes (Funchal Beacon analytics guru) and helped me get started on understanding how Goggle Analytics and Beacon work together. Got started on the doc. This doc will be a process of back and forth with Rogerio as lots I still need to learn and understand.
-2. Alberto: Meeting with Andre to review the Samsung TV installation process
-3. Alberto: Created the Samsung Smart TV  test install draft
+1. Matt: Start review of Alberto's Creating a Channel in Beacon doc (we had a brief meeting to discuss the doc)
+2. Matt: More work on Google Analytics Data Studio for Beacon Analytics doc
+3. Jeff: Finished Becoming a Samsung Partner doc and posted for review
+4. Alberto: Update the Creating a Channel in Beacon doc based on Matt’s feedback
+5. Alberto: Work in the Roku Ad Framework requirements section
 
 -M
 
@@ -52,17 +52,139 @@ Carolyn and Robert-
 Onboarding:
 Nothing today
 
+Beacon.Next
+1. Watch4 - Brightcove meeting
+2. Stadium- Brightcove meeting
+3. Sky - Brightcove meeting
+
+Docs
+1. Matt: Investigate Google Analytics Data Studio for additions to Beacon/Google Analytics doc
+2. Alberto: Finished the Creating a Channel in Beacon doc
+3. Alberto: Update the In-channel Products in Roku doc, based on SME comments
+4. Jeff: Continues work on Becoming a Samsung Partner doc
+
+-M
+
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+1. RHN TV - Beacon Stand Up (checking progress with customer)
 
 Beacon.Next
 1. Beacon Pattern Deep Dive meeting
-2. Q2 Experiences - Cross-disciplinary Design Reviews meeting
+
+Docs
+1. Matt: Update Brightcove Beacon Configuration Wizard with feedback from two SEs
+2. Alberto: Convert the Beacon Creating a Channel doc to HTML
+3. Alberto: Research in the Roku Advertising Framework for a new Roku section
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Start Standardized Vocabulary Discussion meeting
+2. Design System Governance meeting
+
+Docs
+Nothing today
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+1. RHN TV - Media Module/Custom Fields meeting (Miguel led)
+
+
+Beacon.Next
+1. Beacon Design Review meeting
 
 
 Docs
-1. Matt: Review Installing an Android Test Build doc and add to navigation
-2. Matt: Added additional content to Samsung store submission doc per JIRA from Jose
-3. Alberto: Finished Fire TV install build update
-4. Alberto: Met with Andre (Funchal engineer) on Samsung test build install 
+1. Matt: Finalize standard vocabulary sheets for meeting tomorrow
+2. Alberto: Talk with Jose Esteves about Channels in Beacon
+3. Alberto: Work on the Creating a Channel doc for Brightcove Beacon.
+
+-M
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Beacon Research Sprint Planning meeting
+
+
+Docs
+1. Matt: Review Alberto's Setting Up In-Channel Products in Roku doc
+2. Alberto: Work on the Creating a Channel doc
+3. Alberto: Research in Beacon Live to make an update regarding Live SEPs
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Watch4 - Brightcove design feedback meeting 
+
+
+Docs
+1. Matt: Minor updates and posted Using Beacon Analytics for review
+2. Alberto: Updated the In-channel products doc based on Matt’s feedback
+3. Alberto: Work on the Creating a Channel in Brightcove Beacon doc
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Design Studio: Core Pages meeting
+
+
+Docs
+1. Matt: Finished (finally) the Using Beacon Analytics do, will publish for review tomorrow
+2. Alberto: Working on Creating Channels in Brightcove Beacon doc
 
 -M
 
@@ -81,9 +203,116 @@ Beacon.Next
 
 
 Docs
-1. Matt: Edits on Creating a Playlist doc, this is a mess as much of the functionality on the tab is either not working or shouldn't be used by customers at this point. After a bunch of back and forths with Jose and Joao  decided best to actually meet with Jose to get this worked out 
-2. Alberto: Meeting with Andre about Fire TV email installation procedure
-3. Alberto: Adding  new steps in email installment section on Fire TV doc based on Andre conversation
+1. Matt: Writing Beacon and Google Analytics docs
+
+-M
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+
+Beacon.Next
+1. Beacon Design Review meeting
+2. Revry - Brightcove Design meeting
+
+
+Docs
+1. Matt: Writing Beacon and Google Analytics docs
+2. Alberto: Research the customer permissions level for Analytics doc
+3. Alberto: Research and start draft for the Beacon Channels creation doc
+
+-M
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+1. Investigation and clarification on docs roll in new onboarding process
+
+
+Beacon.Next
+1. UX Research takeaways and action items meeting
+
+
+Docs
+1. Matt: Continue research and writing on Beacon and Google Analytics
+2. Alberto: Finished the How to Setup In-Channel Products in Roku doc.
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Stadium - Brightcove Design meeting
+2. TN Marketing - Brightcove Design meeting
+3. Telequebec - Brightcove Design meeting
+4. Sky - Brightcove Design meeting
+5. Updated the Email Notifications for Google Forms setup so onboarding (Erica, Miguel & Renato) will be emailed results when a form is completed
+
+
+Docs
+1. Alberto: Work in the How to Setup Products in the Roku Store doc
+
+-M
+
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+
+Beacon.Next
+1. Beacon Pattern Deep Dive meeting
+2. Q2 Experiences - Cross-disciplinary Design Reviews meeting
+3. Added Email Notifications Google Form add-on to the Beacon Configuration Wizard for better formatted results to the SEs
+
+Docs
+1. Matt: Finished review of Alberto's Implementing VOD SSAI
+2. Alberto: Research and start a draft on the Roku subscription settings
+3. Alberto: Start research on Beacon permissions for BC users
+
+-M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+Beacon.Next
+1. Design System Governance meeting
+
+
+Docs
+1. Matt: Review Alberto's SSAI VOD doc
+2. Matt: Continue work on Beacon analytics doc
+
 
 -M
 
@@ -100,14 +329,13 @@ Nothing today
 
 Beacon.Next
 1. Beacon Design Review meeting
+2. A bit more work on the Standardized Vocabulary spreadsheet 
 
 
 Docs
-1. Matt: Final review and pushed live new coupon content on creating subscription page 
-2. Matt: Started updates to Creating a Playlist doc based on review feedback
-3. Matt & Bob: Updated search results look on all new sites
-4: Alberto: Converted the Android mobile and Android TV test build install doc to HTML
-5. Alberto: Research on the Fire Base Android install
+1. Matt: Continued work on Beacon Analytics doc (really mostly about Google Analytics)
+2. Jeff: Finished rolling in content Jose provided on vouchers into existing doc
+3. Alberto: Finished VOD with SSAI doc
 
 -M
 
@@ -119,16 +347,17 @@ Beacon Onboarding/Docs Daily Brief
 Carolyn and Robert-
 
 Onboarding:
-Nothing today
+1. OneX TV - Beacon Status Meeting (Canceled after 10 minutes, no representative from OneX)
+
 
 Beacon.Next
-Nothing today
+1. Beacon Research Sprint Planning meeting
+2. More work on Standardized Vocabulary spreadsheet 
+
 
 Docs
-1. Matt: Finished adding content on creating coupons into subscription doc. Will review and post tomorrow.
-2. Alberto: Updated Fire TV test build install doc based on comments from Jose
-3. Alberto: Finished Android test build install doc. I will review tomorrow and post.
+1. Alberto: Finished the VOD SSAI draft, doing the conversion to HTML
+2. Jeff: Research if content Jose provided on vouchers already in existing doc
+3. Matt: Nothing today
 
 -M
-
-
