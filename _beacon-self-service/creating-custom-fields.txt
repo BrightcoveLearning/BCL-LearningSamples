@@ -1,0 +1,20 @@
+As you have learned, your video content for Brightcove Beacon comes from Video Cloud. In most cases the video will have metadata associated with them that is critical to the proper functioning and use of the videos. 
+
+For instance, metadata is used to associate videos that are episodes of a specific series to that series. Also, some advertising configuration is done via the video's metadata.
+
+At a high level the process of using videos in Brightcove Beacon is:
+1. Ingest the videos into Video Cloud
+2. Assign the videos the proper metadata, via custom fields
+3. Ingest the Video Cloud videos into Brightcove Beacon, either individually or via a playlist.
+
+This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
+
+Note that the there is a corresponding document you will need to reference to get a complete list of required custom fields.
+
+OK, let's get started. I am going to log in to Video Cloud Studio and then navigate to the Admin module.
+
+In the Admin Module we need to go to Video Fields. Video fields will display both the standard metadata fields, and any custom fields you add.
+
+You see the Standard Fields here.
+
+Let's add a custom field. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in. 
