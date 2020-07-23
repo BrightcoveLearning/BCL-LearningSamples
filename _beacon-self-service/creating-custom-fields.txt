@@ -17,4 +17,4 @@ In the Admin Module we need to go to Video Fields. Video fields will display bot
 
 You see the Standard Fields here.
 
-Let's add a custom field. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in. 
+Let's add a custom field. In the associated document we see a custom field to hold genres is needed. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in, with the period replaced by an underscore. If you change the display name, which you can do, you MUST be sure the Internal Name 
