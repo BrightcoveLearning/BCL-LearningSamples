@@ -1,4 +1,41 @@
 Major accomplishments:
+** Week Ending 24 July **
+- Closed 11 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Closed 6 Player Dev JIRAs this week (will continue to try to close a few each week)
+- Spreadsheet filled in for Christel on Beacon Self Service tasks 
+Work NOT Reflected in JIRAs:
+- Nothing this week
+
+
+
+** Week Ending 10 July **
+- Closed 6 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Big thing was getting the Viewing Analytics doc done for Beacon. Had a version done then Jose wanted info on the Dashboard and Data Studio report that BC will provide.
+Work NOT Reflected in JIRAs:
+- Looked through requests for Beacon docs from Miguel and open JIRAs. Finally getting both lists down. After I get back from vacation I think I will meet with Miguel again and see what he thinks priorities are now.
+
+
+
+** Week Ending 2 July **
+- Closed 4 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Rolled in suggestions for the Brightcove Beacon Configuration Wizard. Took more time than I expected as tried to find ways to put in questions in the manner suggested, but couldn't find a way (Like checkboxes with additional info added)
+Work NOT Reflected in JIRAs:
+- Finally got enough info and questions answered to start writing new content for the Brightcove Beacon/Google Analytics doc
+- LOTS of meetings, Tuesday I had 5 different hour long meetings (meet with Beacon design partners)
+
+
+** Week Ending 26 June **
+- Closed 12 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Finally got a Beacon Analytics doc out for review
+Work NOT Reflected in JIRAs:
+- First official Beacon vocabulary meeting
+- Picked off some low fruit from the the Player Dev JIRAs
+
+
 ** Week Ending 12 June **
 - Closed 3 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:

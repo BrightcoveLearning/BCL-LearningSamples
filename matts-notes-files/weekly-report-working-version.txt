@@ -1,85 +1,48 @@
 New docs:
 
-Title: Creating a Custom Salesforce Object for Pardot Integration
-Description: In this topic you will learn how to create the Salesforce custom object that is required when using the Pardot integration.
-Link: https://audience.support.brightcove.com/integrations/salesforce/creating-salesforce-object-pardot.html
-Category: Audience
+Title: Working with Labels
+Description: Create hierarchical labels and add them to videos
+Link: https://apis.support.brightcove.com/cms/managing-videos/working-with-labels.html
+Category: CMS API
 
-Title: Overview: Cross-Device Resume
-Description: In this topic, you will learn about the Brightcove's cross-device resume (XDR) feature.
-Link: https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html
-Category: XDR API
+Title: Brightcove University Courses
+Description: Public course catalog for Brightcove University
+Link: https://general.support.brightcove.com/training/brightcove-university.html
+Category: Brightcove University
 
-Title: Getting Playback Position from XDR API
-Description: In this topic, you will learn the how to retrieve the user's playback position from the Cross-Device Resume (XDR) API.
-Link: https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html
-Category: XDR API
+Title: Contacting Sales
+Description: Information on how to contact Brightcove Sales
+Link: Contact Sales
+Category: Brightcove Sales
 
-Title: Cross-Device Resume with Brightcove Player
-Description: In this topic, you will learn the how to use cross-device resume with Brightcove Player.
-Link: https://player.support.brightcove.com/playback/xdr-with-bcplayer.html
-Category: XDR API
+Title: Adobe Magento Commerce Extension Installation Guide
+Description: Installation guide for extension to Integrate Video Cloud with Adobe Magentor Commerces
+Link: https://integrations.support.brightcove.com/adobe-magento-commerce/installation-guide.html
+Category: Video Cloud Commerce Integrations
 
-Title: Cross-Device Resume with the Native SDKs
-Description: In this topic, you will learn how to use Cross-Device Resume with the Brightcove Native SDKs.
-Link: https://sdks.support.brightcove.com/features/cross-device-resume-sdks.html
-Category: XDR API
-
-Title: Cross-Device Resume (XDR) API Reference
-Description: Reference for the Brightcove Cross-Device Resume (XDR) API. This API allows you to read all of the playheads for a viewer or read the playhead for a specific viewer and video.
-Link: https://apis.support.brightcove.com/xdr/references/reference.html
-Category: XDR API
-
-Title: Kollective eCDN Deployment Guide
-Description: In this topic, you will learn the how to integrate the Kollective eCDN with Brightcove Player.
-Link: https://integrations.support.brightcove.com/kollective/kollective-deployment-guide.html
-Category: CMS Integration
-
-Title: Kollective eCDN User Guide
-Description: In this topic, you will learn the how to synchronize your VOD and Live content with the Kollective syndicator application.
-Link: https://integrations.support.brightcove.com/kollective/kollective-user-guide.html
-Category: CMS Integration
-
-Title: Implementing Live SSAI
-Description: In this topic, you will learn how to manage and create Live server-side ad configurations in Brightcove Beacon.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/live-ssai.html
-Category: Brightcove Beacon
-
-Title: Becoming a Samsung Partner
-Description: In this topic, you will learn how to request partnership status with Samsung.
-Link: https://beacon.support.brightcove.com/creating-your-apps/samsung/samsung-partner.html
-Category: Brightcove Beacon
+Title: Adobe Magento Commerce Extension User Guide
+Description: User guide for extension to Integrate Video Cloud with Adobe Magentor Commerces
+Link: https://integrations.support.brightcove.com/adobe-magento-commerce/user-guide.html
+Category: Video Cloud Commerce Integrations
 
 
 Major updates:
 
-Title: Salesforce Commerce Cloud Installation Guide
-Description: Complete rewrite
-Link: https://integrations.support.brightcove.com/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html
-Category: Video Cloud Salesforce Commerce Cloud integration
-
-Title: Salesforce Commerce Cloud User Guide
-Description: Complete rewrite
-Link: https://integrations.support.brightcove.com/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html
-Category: Video Cloud Salesforce Commerce Cloud integration
-
-Title: Integrating Video Cloud with Salesforce
-Description: Updated to include identifying users using Pardot
-Link: https://audience.support.brightcove.com/integrations/salesforce/integrating-video-cloud-salesforce.html
-Category: Audience
-
-Title: Offline Playback with the Native Player SDKs
-Description: Added section about downloading secondary tracks for iOS
-Link: https://sdks.support.brightcove.com/features/offline-playback-native-player-sdks.html#Manage_downloads
-Category: Native SDKs
+Title: Label Operations
+Description: Add label operations to CMS API reference
+Link: CMS API Reference
+Category: CMS API
 
 
-Minor update:
+Minor updates:
 
-Title: Creating a Video Clip Using the Live Module
-Description: Adding a note about Safari is not supported for the Clipping timeline UI.
-Link: https://live.support.brightcove.com/live-module/creating-video-clip-using-live-module.html
-Category: Live
+Title: Display Error Messages Plugin
+Description: Added alert that one CANNOT customize errors by altering the player configuration
+Link: https://player.support.brightcove.com/plugins/display-error-messages-plugin.html
+Category: Brightcove Player
+
+
+
 
 
 New docs:
