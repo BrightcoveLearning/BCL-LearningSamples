@@ -1,11 +1,11 @@
-As you have learned, your video content for Brightcove Beacon comes from Video Cloud. In most cases the video will have metadata associated with them that is critical to the proper functioning and use of the videos. 
+As you have learned, your video content for Brightcove Beacon comes from Video Cloud. In most cases the video will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
 
-For instance, metadata is used to associate videos that are episodes of a specific series to that series. Also, some advertising configuration is done via the video's metadata.
+For instance, metadata is used to associate videos that are episodes of a specific series. Also, some advertising configuration is done via the video's metadata.
 
 At a high level the process of using videos in Brightcove Beacon is:
 1. Ingest the videos into Video Cloud
-2. Assign the videos the proper metadata, via custom fields
-3. Ingest the Video Cloud videos into Brightcove Beacon, either individually or via a playlist.
+2. Assign the videos the proper metadata via custom fields
+3. Ingest the Video Cloud videos and playlists into Brightcove Beacon
 
 This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
 
@@ -19,3 +19,10 @@ You see the Standard Fields here.
 
 Let's add a custom field. In the associated document we see a custom field to hold genres is needed. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in, with the period replaced by an underscore. If you change the display name, which you can do, you MUST be sure the Internal Name remains as shown in the table.
 
+Now you choose the data type. In this case you would enter either Text or List.
+
+Text can be up to 1024 single byte characters
+
+List means the user will select from a list of values. Lists can have no more than 150 possible values and each value in the list can be no more than 100 characters long.
+
+If you choose list, the UI changes and we can enter values for the list. You can enter the values 
