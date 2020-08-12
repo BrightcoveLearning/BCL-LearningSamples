@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Intro Demo</title>
+</head>
+
+<body>
+
+  <!-- Place player code here -->
+  <!-- Be sure to add an id -->
+
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="5793330982001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
+
+  <script>
+    // Get the PLAYER and be sure the PLAYER is ready to interact with
+    videojs.getPlayer('myPlayerID').ready(function() {
+      //  Get a reference to the PLAYER
+      var myPlayer = this;
+      // Mute the PLAYER so no autoplay issues arise
+      myPlayer.muted(true);
+      // Be sure the VIDEO is ready to interact with
+      myPlayer.on('loadedmetadata', function(){
+        myPlayer.play();
+      });
+    });
+  </script>
+
+</body>
+
+</html>

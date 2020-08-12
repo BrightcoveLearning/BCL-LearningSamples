@@ -1,0 +1,20 @@
+1. In Studio > Players create a new player
+2. In Studio > Media publish a video using new player
+3. Set aspect ration, width and height
+3. Copy Advanced code
+4. Open demo.html
+5. Paste in advanced code
+6. Add id (mypid)
+7. In script insert "ready" code
+      videojs.getPlayer('myPlayerID').ready(function() { })
+8. Move closing down below all comments
+9. Get reference to player
+      var myPlayer = this;
+10. Mute video
+      myPlayer.muted(true);
+11. Wait for loadedmetadata and play video
+      myPlayer.on('loadedmetadata', function(){
+        myPlayer.play();
+      })
+12. Test
+

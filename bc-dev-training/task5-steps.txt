@@ -1,0 +1,15 @@
+1. Go to Studio
+2. Fill in the Advertsing section, accepting defaults except for Server URL
+  *Server URL value: http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml
+3. The player code on the page  need not change
+
+***Core Code***
+  <video-js id="myPlayerID"
+    data-video-id="4036854518001"
+    data-account="921483702001"
+    data-player="NJB3JCBqe"
+    data-embed="default"
+    class="video-js"
+    controls></video-js>
+
+  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>

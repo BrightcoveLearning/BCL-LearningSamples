@@ -1,0 +1,51 @@
+1. Create player
+2. Examine settings
+3. Go to Media module and associate video WITH AUDIO with player
+4. Copy published In-Page Embed Code and paste into body of task1.html HTML page
+5. Add an id to video tag with value of myPlayerID
+6. Add a script block below existing script tag
+7. Use videojs' loadedmetadata to create block for startup code
+  videojs.getPlayer('myPlayerID').on('loadedmetadata',function(){
+    var myPlayer = this;
+    myPlayer.muted(true);
+    myPlayer.play();
+  });
+
+OPTIONAL - Only if ahead of schedule
+13. After using play() method add event listener for timeupate
+  myPlayer.on("timeupdate",showUpdate);
+14. Create event listener function
+    function showUpdate(evt){
+      console.log(evt);
+    }
+15. View Console to see timeupdate events being dispatched
+
+
+***Core Code***\
+
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="5793330982001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer =this;
+      myPlayer.muted(true);
+      myPlayer.on('loadedmetadata', function(){
+        myPlayer.play();
+      });
+      myPlayer.on("timeupdate",showUpdate);
+    });
+
+    function showUpdate(evt){
+      console.log(evt);
+    }
+  </script>
