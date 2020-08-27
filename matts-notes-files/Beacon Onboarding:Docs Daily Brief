@@ -3,115 +3,16 @@ Beacon Onboarding/Docs Daily Brief
 Carolyn and Robert-
 
 Onboarding:
-1.
-2.
-
-
-Beacon.Next
-1. 
-2. 
-
-
-Docs
-1. 
-2.
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. Matt: Writing script for self service creating custom fields video
-2. Bob: Creating video template for Self Service videos
-
-Beacon.Next
-1. Beacon Design Review meeting
-
-Docs
-1. Alberto: Work on the Streaming VODs to a BC Beacon Channel doc
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Today I spent some time getting a tiny bit caught up on Player Development open JIRAs. Got 6 closed and very close on one more. I will get back to Beacon tomorrow.
-
-
-Docs
-1. Alberto: Work in the Streaming VODs to a BC Beacon Channel doc 
-2.
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. Completed work on the Beacon Onboarding Tasks - Self Service Tracking spreadsheets. Added notes on what we have done, what we need and the training sessions we wish to build. Will discuss this with Christel when she has open time.
-
-
-Beacon.Next
-1. Updated Beacon Configuration Wizard with two new questions
-
-
-Docs
-1. Alberto: Work in the Streaming VODs to a BC Beacon Channel doc
-
--M
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. Robert and I met with Christel about docs/training needed for Beacon Onboarding Tasks - Self Service Tracking. She showed us this spreadsheet https://docs.google.com/spreadsheets/d/11PVrzJDjUEcoxHIizbkUpIybdCT_trUp7Eb1Kasf6_g/edit?ts=5f0c30e4#gid=0 and asked us to comment in rows I and J what we will do.
-2. For the Learning Services staff meeting we discussed this spreadsheet, created a new sheet in which to work (Named Learning Services Copy) and put our info in that.
-3. Jeff, Alberto and I expanded on line 20 of the sheet about sessions we could deliver to customers. We put these topics in a new sheet named Trainings. Near the end of our discussion we realized we probably should be list not topics, but tasks. I am going to update the list to tasks and Learning Services will meet to approve.
-
-Beacon.Next
-1. Q2 Experiences - Cross-disciplinary Design Reviews meeting. Team discussed when documentation could start being written, and conclusion was soon, but not quite yet.
-
-
-Docs
-1. Alberto: Work in the Streaming VODs to a BC Beacon Channel Doc.
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
 Nothing today
 
-
 Beacon.Next
-1. Design System Governance meeting
+1. TN Marketing - Brightcove Design Design Partner Meeting
+2. Finished slides for meeting with Jim and Robert on Beacon Training (https://drive.google.com/file/d/1qJglySu2wzybbumqIOvYqgVZXx7MdaSN/view?usp=sharing) 
 
 
 Docs
-1. Matt: Update Forcing a Sync document based on comments from Jose
-2. Matt: Update Tools document based on comments from Jose
+1. Alberto: Published the How to Test Promo Codes doc
+2. Alberto: Research in System permissions for BC users
 
 -M
 
@@ -125,390 +26,18 @@ Carolyn and Robert-
 
 Onboarding:
 Nothing today
-
-
-Beacon.Next
-1. Beacon Design Review meeting
-
-
-Docs
-1. Matt: Review Creating a Channel doc and then add to navigation (reviewed previously, review was of suggested changes)
-2. Alberto: Update the Creating a Channel in Beacon doc
-3. Alberto: Update the Submitting Apps to Roku doc with a Partner Payouts Program note
-4. Alberto: Research on how to stream VODs to Beacon Live 
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Beacon Research Sprint Planning meeting
-
-
-Docs
-1. Matt: Updates (major) to the Viewing Analytics Data doc completed, reviewed by Rogerio (Funchal Google Analytics wizard), updates approved by Rogerio and doc added to navigation 
-2. Alberto: Chat with Jose Esteves (Funchal engineer) about Channel’s creation in Beacon
-3. Alberto: Update the Creating a Channel doc after the SMEs update
-
--M
-
-
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-NOthing today
-
-Docs
-1. Matt: Major progress (finally) on Using Beacon Analytics doc update
-2. Alberto: Update the Creating an EPG doc after updates in the uploading process.
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-
-Beacon.Next
-1. Beacon Cross-functional Design Team Playbacks meeting 
-2. Beacon Pattern Deep Dive meeting
-3. Revry - Brightcove design team meeting
-
-
-Docs
-1. Matt: Review Configuring In-Channel Product in Beacon
-2. Matt: Writing Beacon / Google Analytics doc
-3. Alberto: Configuring In-Channel Product in Beacon doc updated and published
-4. Alberto: Work in the Roku Ad Framework requirements doc.
-
--M
-
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-
-Beacon.Next
-1. Beacon Design Review meeting
-2. More updates to the Brightcove Beacon Configuration Wizard (suggested by Mike Smith, SE)
-
-
-Docs
-1. Matt: Meeting with Rogerio (Funchal Google Analytics expert) and got questions answered to now start writing additional content for Brightcove Beacon / Google Analytics doc 
-2. Alberto: Update the In-Channel Product in Beacon doc with the new Roku UI images
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-
-Beacon.Next
-1. UX Research takeaways and action items meeting
-
-
-Docs
-1. Matt: Start review of Alberto's Creating a Channel in Beacon doc (we had a brief meeting to discuss the doc)
-2. Matt: More work on Google Analytics Data Studio for Beacon Analytics doc
-3. Jeff: Finished Becoming a Samsung Partner doc and posted for review
-4. Alberto: Update the Creating a Channel in Beacon doc based on Matt’s feedback
-5. Alberto: Work in the Roku Ad Framework requirements section
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Watch4 - Brightcove meeting
-2. Stadium- Brightcove meeting
-3. Sky - Brightcove meeting
-
-Docs
-1. Matt: Investigate Google Analytics Data Studio for additions to Beacon/Google Analytics doc
-2. Alberto: Finished the Creating a Channel in Beacon doc
-3. Alberto: Update the In-channel Products in Roku doc, based on SME comments
-4. Jeff: Continues work on Becoming a Samsung Partner doc
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. RHN TV - Beacon Stand Up (checking progress with customer)
-
-Beacon.Next
-1. Beacon Pattern Deep Dive meeting
-
-Docs
-1. Matt: Update Brightcove Beacon Configuration Wizard with feedback from two SEs
-2. Alberto: Convert the Beacon Creating a Channel doc to HTML
-3. Alberto: Research in the Roku Advertising Framework for a new Roku section
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Start Standardized Vocabulary Discussion meeting
-2. Design System Governance meeting
-
-Docs
-Nothing today
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. RHN TV - Media Module/Custom Fields meeting (Miguel led)
-
-
-Beacon.Next
-1. Beacon Design Review meeting
-
-
-Docs
-1. Matt: Finalize standard vocabulary sheets for meeting tomorrow
-2. Alberto: Talk with Jose Esteves about Channels in Beacon
-3. Alberto: Work on the Creating a Channel doc for Brightcove Beacon.
-
--M
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Beacon Research Sprint Planning meeting
-
-
-Docs
-1. Matt: Review Alberto's Setting Up In-Channel Products in Roku doc
-2. Alberto: Work on the Creating a Channel doc
-3. Alberto: Research in Beacon Live to make an update regarding Live SEPs
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Watch4 - Brightcove design feedback meeting 
-
-
-Docs
-1. Matt: Minor updates and posted Using Beacon Analytics for review
-2. Alberto: Updated the In-channel products doc based on Matt’s feedback
-3. Alberto: Work on the Creating a Channel in Brightcove Beacon doc
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Design Studio: Core Pages meeting
-
-
-Docs
-1. Matt: Finished (finally) the Using Beacon Analytics do, will publish for review tomorrow
-2. Alberto: Working on Creating Channels in Brightcove Beacon doc
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Design System Governance meeting
-
-
-Docs
-1. Matt: Writing Beacon and Google Analytics docs
-
--M
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-
-Beacon.Next
-1. Beacon Design Review meeting
-2. Revry - Brightcove Design meeting
-
-
-Docs
-1. Matt: Writing Beacon and Google Analytics docs
-2. Alberto: Research the customer permissions level for Analytics doc
-3. Alberto: Research and start draft for the Beacon Channels creation doc
-
--M
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-1. Investigation and clarification on docs roll in new onboarding process
-
-
-Beacon.Next
-1. UX Research takeaways and action items meeting
-
-
-Docs
-1. Matt: Continue research and writing on Beacon and Google Analytics
-2. Alberto: Finished the How to Setup In-Channel Products in Roku doc.
-
--M
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
-Beacon.Next
-1. Stadium - Brightcove Design meeting
-2. TN Marketing - Brightcove Design meeting
-3. Telequebec - Brightcove Design meeting
-4. Sky - Brightcove Design meeting
-5. Updated the Email Notifications for Google Forms setup so onboarding (Erica, Miguel & Renato) will be emailed results when a form is completed
-
-
-Docs
-1. Alberto: Work in the How to Setup Products in the Roku Store doc
-
--M
-
-
-
-
-
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding:
-Nothing today
-
 
 Beacon.Next
 1. Beacon Pattern Deep Dive meeting
 2. Q2 Experiences - Cross-disciplinary Design Reviews meeting
-3. Added Email Notifications Google Form add-on to the Beacon Configuration Wizard for better formatted results to the SEs
+3. BCLS Staff Meeting where in-app user assistance was discussed for the entire team
+4. Creating slides for meeting with Robert and Jim Duval on BCLS training to help with self-service and ease pressure on onboarding (sill run slides by Carolyn and Robert when finished)
 
 Docs
-1. Matt: Finished review of Alberto's Implementing VOD SSAI
-2. Alberto: Research and start a draft on the Roku subscription settings
-3. Alberto: Start research on Beacon permissions for BC users
+1. Alberto: Worked on the How to Test Promo Codes doc (HTML conversion)
 
 -M
+
 
 
 
@@ -519,15 +48,14 @@ Carolyn and Robert-
 
 Onboarding:
 Nothing today
+
 
 Beacon.Next
-1. Design System Governance meeting
+Nothing today 
 
 
 Docs
-1. Matt: Review Alberto's SSAI VOD doc
-2. Matt: Continue work on Beacon analytics doc
-
+1. Matt: Uploaded videos and created second season (Florida's Beaches) of the America's Coastlines series. LOTS of images to create for each episode, season and series.
 
 -M
 
@@ -540,17 +68,41 @@ Carolyn and Robert-
 
 Onboarding:
 Nothing today
-
 
 Beacon.Next
 1. Beacon Design Review meeting
-2. A bit more work on the Standardized Vocabulary spreadsheet 
+2. Beacon Help and User Assistance: Kick-off meeting
+3. Product Q4 Roadmap Reveal & Discussion meeting
 
 
 Docs
-1. Matt: Continued work on Beacon Analytics doc (really mostly about Google Analytics)
-2. Jeff: Finished rolling in content Jose provided on vouchers into existing doc
-3. Alberto: Finished VOD with SSAI doc
+1. Matt: Finished uploading and ingesting Oregon season of America's Coastlines series for the BCLS Beacon app (glad a better UI is coming for customers!!) Getting videos from Nathan Veer for Florida Beaches season (non-copyrighted).
+2. Alberto: Worked on the How to Test Promo Codes doc
+
+-M
+
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+Nothing today
+
+
+Beacon.Next
+1. Provided vocabulary help on a monetization plan selection screen
+2. Beacon Research Sprint Planning meeting
+
+
+Docs
+1. Matt: Created series, season and then ingested an episode from VC, and it all worked! Building a series called America's Beautiful Coastlines with all non-copyrighted content.
+2. Matt: Updated some image specifications for series/seasons/episodes in the corresponding document
+3. Alberto: Worked on the How to Test Promo Codes doc 
+4. Jeff: Working on training video script for Ingesting Episodes
 
 -M
 
@@ -562,17 +114,40 @@ Beacon Onboarding/Docs Daily Brief
 Carolyn and Robert-
 
 Onboarding:
-1. OneX TV - Beacon Status Meeting (Canceled after 10 minutes, no representative from OneX)
+Nothing today
 
 
 Beacon.Next
-1. Beacon Research Sprint Planning meeting
-2. More work on Standardized Vocabulary spreadsheet 
+1. Watch4 - Brightcove Design Partner meeting 
 
 
 Docs
-1. Alberto: Finished the VOD SSAI draft, doing the conversion to HTML
-2. Jeff: Research if content Jose provided on vouchers already in existing doc
-3. Matt: Nothing today
+1. Matt: Completed script for Creating Video Cloud Custom Fields video
+2. Matt: Started building the American Coastlines series (images causing me some issues)
+3. Jeff: Completed training video scripts for: Creating a Series, Creating a Season
+4. Alberto: Sent In-App Subscriptions doc for review to Joao
+5. Alberto: Worked on the How to Test Promo Codes doc
 
 -M
+
+
+
+
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding:
+1. Met with Miguel (45m minutes) on current plans for video/webinar slides for Beacon topics identified here: https://docs.google.com/spreadsheets/d/11PVrzJDjUEcoxHIizbkUpIybdCT_trUp7Eb1Kasf6_g/edit#gid=45790770. He was very happy to hear we are preparing to help him out as well as looking forward for a more self service Beacon. He will review our list of tasks and add any tasks he sees that are missing, and put in his priority rankings if they differ from Christel's.
+
+Beacon.Next
+1. Q2 Experiences - Cross-disciplinary Design Reviews meeting
+
+
+Docs
+1. Matt: Collecting videos for BCLS Experience series & seasons
+2. Alberto: Worked on the In-App subscriptions doc 
+
+-M
+
+

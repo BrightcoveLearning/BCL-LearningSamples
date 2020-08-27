@@ -1,47 +1,25 @@
 New docs:
-
-Title: Working with Labels
-Description: Create hierarchical labels and add them to videos
-Link: https://apis.support.brightcove.com/cms/managing-videos/working-with-labels.html
-Category: CMS API
-
-Title: Brightcove University Courses
-Description: Public course catalog for Brightcove University
-Link: https://general.support.brightcove.com/training/brightcove-university.html
-Category: Brightcove University
-
-Title: Contacting Sales
-Description: Information on how to contact Brightcove Sales
-Link: Contact Sales
-Category: Brightcove Sales
-
-Title: Adobe Magento Commerce Extension Installation Guide
-Description: Installation guide for extension to Integrate Video Cloud with Adobe Magentor Commerces
-Link: https://integrations.support.brightcove.com/adobe-magento-commerce/installation-guide.html
-Category: Video Cloud Commerce Integrations
-
-Title: Adobe Magento Commerce Extension User Guide
-Description: User guide for extension to Integrate Video Cloud with Adobe Magentor Commerces
-Link: https://integrations.support.brightcove.com/adobe-magento-commerce/user-guide.html
-Category: Video Cloud Commerce Integrations
+ None this week
 
 
 Major updates:
 
-Title: Label Operations
-Description: Add label operations to CMS API reference
-Link: CMS API Reference
-Category: CMS API
+Title: Display Overlay Plugin
+Description: Added code sample for displaying an overlay before video playback starts
+Link: https://player.support.brightcove.com/plugins/display-overlay-plugin.html#options
+Category: Brightcove Player
 
+Title: Quality Selection Plugin
+Description: Added section for implementing with code
+Link: https://player.support.brightcove.com/plugins/quality-selection-plugin.html#Implement_using_Code
+Category: Brightcove Player
 
 Minor updates:
 
-Title: Display Error Messages Plugin
-Description: Added alert that one CANNOT customize errors by altering the player configuration
-Link: https://player.support.brightcove.com/plugins/display-error-messages-plugin.html
-Category: Brightcove Player
-
-
+Title: Live Redundancy
+Description: Note added about redundant groups counting against the account limit.
+Link: https://live.support.brightcove.com/live-module/live-redundancy.html
+Category: Live
 
 
 
@@ -51,7 +29,7 @@ Title:
 Description: 
 Link: 
 Category: 
-Type: New Doc
+
 
 Major updates:
 

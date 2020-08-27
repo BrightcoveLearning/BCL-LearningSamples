@@ -1,6 +1,6 @@
-As you have learned, your video content for Brightcove Beacon comes from Video Cloud. In most cases the video will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
+As you have learned, video content for Brightcove Beacon comes from Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
 
-For instance, metadata is used to associate videos that are episodes of a specific series. Also, some advertising configuration is done via the video's metadata.
+For instance, metadata is used to associate videos that are episodes with a specific season of a series. Also, some advertising configuration is done via the video's metadata.
 
 At a high level the process of using videos in Brightcove Beacon is:
 1. Ingest the videos into Video Cloud
@@ -9,20 +9,30 @@ At a high level the process of using videos in Brightcove Beacon is:
 
 This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
 
-Note that the there is a corresponding document you will need to reference to get a complete list of required custom fields.
+There is a corresponding document we will need to reference to get a complete list of custom fields needed by Brightcove Beacon. We'll see that doc in just a moment.
 
-OK, let's get started. I am going to log in to Video Cloud Studio and then navigate to the Admin module.
+OK, let's get started. We are going to log in to Video Cloud Studio and then navigate to the Admin module.
 
-In the Admin Module we need to go to Video Fields. Video fields will display both the standard metadata fields, and any custom fields you add.
+In the Admin Module we need to go to Video Fields. Video fields will display both the standard metadata fields, and any custom fields we add.
 
-You see the Standard Fields here.
+Here we see the Standard Fields.
 
-Let's add a custom field. In the associated document we see a custom field to hold genres is needed. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in, with the period replaced by an underscore. If you change the display name, which you can do, you MUST be sure the Internal Name remains as shown in the table.
+Let's add a custom field. Now is a good time to look at the document that lists the custom fields that will need to be created in your Video Cloud account. We'll go to the Brightcove Beacon documentation site,  then navigate to Syncing with Video Cloud and finally Creating Video Cloud Custom Fields.
+
+As we scroll through this document we first see how to add custom fields, which we will be doing shortly.
+
+Next comes a list of the Standard fields, the metadata fields that automatically exist for every video.
+
+And here is the first list of custom fields that must be created for Brightcove Beacon, the General, Custom fields.
+
+The first row of the table shows a custom field to hold genres is needed. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in, with the period replaced by an underscore. The display name can be changed, but we must be sure the Internal Name remains as show in the table.
 
 Now you choose the data type. In this case you would enter either Text or List.
 
 Text can be up to 1024 single byte characters
 
-List means the user will select from a list of values. Lists can have no more than 150 possible values and each value in the list can be no more than 100 characters long.
+List means the user will select one item from a list of values. Lists can have no more than 150 possible values and each value in the list can be no more than 100 characters long.
 
-If you choose list, the UI changes and we can enter values for the list. You can enter the values 
+If you choose list, the UI changes and we can enter values for the list. You can enter the values comma separated, individually or a combo thereof.
+
+Also note that you can make a custom field required, but none of the custom fields entered for Brightcove Beacon will be required.
