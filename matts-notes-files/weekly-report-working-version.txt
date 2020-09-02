@@ -1,25 +1,61 @@
 New docs:
- None this week
+ 
+Title: Migrating to Brightcove's IMA Plugin 6.15.0
+Description: In this topic, you will learn how to migrate your app to use Brightcove's IMA plugin for the Native SDK for Android 6.15.0.
+Link: https://sdks.support.brightcove.com/android/advertising/migrating-to-ima-plugin-6-15-0.html
+Category: Android SDK
+
+Title: Hosting an INXPO Event on Brightcove Live
+Description: RTMP connection steps for the INXPO platform
+Link: https://live.support.brightcove.com/live-module/host-inxpo-live.html
+Category: Live
+
+Title: Creating Promo Coupons on Brightcove Beacon 
+Description: Steps in how to create Beacon coupons for the use of customers when paying
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/promo-codes.html
+Category: Brightcove Beacon
 
 
 Major updates:
 
-Title: Display Overlay Plugin
-Description: Added code sample for displaying an overlay before video playback starts
-Link: https://player.support.brightcove.com/plugins/display-overlay-plugin.html#options
-Category: Brightcove Player
+Title:  Code Sample: Generate a Policy Key
+Description:  Changed title (was Quick Start: Policy API). Enhanced the app to allow domain restriction, geo restriction, and require SSAI options, in addition to search
+Link: https://apis.support.brightcove.com/policy/getting-started/quick-start-policy-api.html
+Category:  Policy API
 
-Title: Quality Selection Plugin
-Description: Added section for implementing with code
-Link: https://player.support.brightcove.com/plugins/quality-selection-plugin.html#Implement_using_Code
-Category: Brightcove Player
+Title:  Brightcove Live Product Updates
+Description:  Brought Live release notes up to date
+Link: https://live.support.brightcove.com/release-notes/live-api-release-notes.html
+Category:  Brightcove Live
+
+Title:  HEVC Video
+Description:  Improvements in HEVC support, including refinements in standard profiles and ability to create multi-codec (HEVC/H.264) profiles for CAE
+Link: https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html
+Category:  HEVC, Ingest Profiles API, Dynamic Ingest
+
+Title:  Ingest Profiles Fields Reference
+Description:  New fields for multi-codec (HEVC/H.264) profiles for CAE
+Link: https://apis.support.brightcove.com/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding.html
+Category:  HEVC, Ingest Profiles API, Dynamic Ingest
+
+Title:  Ingest Profiles API Reference
+Description:  New fields for multi-codec (HEVC/H.264) profiles for CAE
+Link: https://apis.support.brightcove.com/ingest-profiles/references/reference.html
+Category:  HEVC, Ingest Profiles API, Dynamic Ingest
+
 
 Minor updates:
 
-Title: Live Redundancy
-Description: Note added about redundant groups counting against the account limit.
-Link: https://live.support.brightcove.com/live-module/live-redundancy.html
-Category: Live
+Title: Known Issue
+Description: Added issue: You cannot currently get bandwidth for videos in the Analytics Module custom reports if the account is set up for Dynamic Delivery
+Link: https://general.support.brightcove.com/general/known-issues-studio-brightcove-player-and-apis.html
+Category:  Analytics
+
+Title: Getting Started with Brightcove Video Connect for Adobe Experience Manager
+Description: Update plugin version to 5.5.4
+Link: https://integrations.support.brightcove.com/adobe/getting-started-brightcove-video-connect-adobe-experience-manager.html
+Category:  CMS Connectors
+
 
 
 
