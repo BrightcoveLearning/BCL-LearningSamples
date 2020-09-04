@@ -1,6 +1,36 @@
 Major accomplishments:
+** Week Ending 28 Aug **
+- Closed 3 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Created and added new playlist to BCLS Beacon app, Waves playlist now featured on home page
+- Been working with Andrea on UI vocabulary issues
+Work NOT Reflected in JIRAs:
+- Building usertesting.com Test Plan
+- Created presentation for Jim and Jose on Beacon training, and delivered
+
+
+
+** Week Ending 21 Aug **
+- Closed 6 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Got an actual series added to our BCLS Beacon app. America's Beautiful Coastlines is the series with two seasons, Oregon Coast and Florida Beaches
+Work NOT Reflected in JIRAs:
+- LOTS of meeting this week
+
+
+** Week Ending 7 Aug **
+- Closed 7 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Self eval and goals done
+- Another update to the Beacon Configuration Wizard. Just FYI, SE Mike Smith are both making changes. I have setup a changelog where we are recording changes. I also do a backup whenever I make a change.
+- Alberto did a tough doc on setting up VODs as a channel. Quite a few changes needed, so I worked in a branch and then discussed major changes with Alberto
+Work NOT Reflected in JIRAs:
+- Very close to finishing the "Connect Brightcove Beacon to VC account" doc
+
+
+
 ** Week Ending 24 July **
-- Closed 11 JIRAs, 1 of which were administrivia
+- Closed 11 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
 - Closed 6 Player Dev JIRAs this week (will continue to try to close a few each week)
 - Spreadsheet filled in for Christel on Beacon Self Service tasks 
