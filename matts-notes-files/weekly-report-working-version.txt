@@ -1,40 +1,34 @@
-New docs:
+New courses:
 
-Title: Resizing Video View with the Native SDK for Android
-Description: In this topic, you will learn how to resize/stretch the inner Video View to fill the BrightcoveVideoView when working with the Native SDK for Android.
-Link: https://sdks.support.brightcove.com/android/framework/resizing-video-view.html
-Category: Android SDK
+Title: Getting Started With Your Video Cloud Account
+Description: In this course customers will learn how to manage their account settings and perform administration functions.
+Customer Link: https://university.brightcove.com/catalog/courses/920195
+Employee Link: https://bcovemployees.learnupon.com/catalog/courses/892349
+Category: Brightcove University
+
+Title: Understanding Ingest Profiles
+Description: In this course customers will learn how their videos are processed when they upload them into Video Cloud, the importance of choosing the right ingest profile for their content, and how to create a custom one according to their content needs.
+Customer Link: https://university.brightcove.com/catalog/courses/920193
+Employee Link: https://bcovemployees.learnupon.com/catalog/courses/912298
+Category: Brightcove University
 
 
 Major updates:
 
-Title: Introducing Pages
-Description: Added section on building screen pages with screenshots of all types of blocks and layouts
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/introducing-pages.html#Configuring_screen_pages
-Category: Brightcove Beacon
+None this week
 
 
 Minor updates:
 
-Title: Static URL Delivery
-Description: Updated Static URL Delivery for MP4 support
-Link: https://apis.support.brightcove.com/playback/guides/static-url-delivery.html
-Category: Playback API
+Title: Creating Series/Seasons/Episodes
+Description: Updated image requirements for series and seasons
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
+Category: Brightcove Beacon
 
-Title: Overview: Digital Rights Management (DRM) in Video Cloud
-Description: Added support for HLS Widevine for the Chrome browser on Android
-Link: https://studio.support.brightcove.com/general/overview-digital-rights-management-drm-video-cloud.html
-Category: DRM
-
-Title: Native Video Playback
-Description: Reworded webview section to emphasize that Brightcove does not recommend using this
-Link: https://sdks.support.brightcove.com/getting-started/native-video-playback.html#Using_a_WebView
-Category: Native SDKs
-
-Title: Step-by-Step: Simple Video App using Swift
-Description: Fixed code typo and updated screenshots
-Link: https://sdks.support.brightcove.com/ios/basics/step-step-simple-video-app-using-swift.html
-Category: Native SDK for iOS
+Title: Quick Start: Create a Live Job for MPEG2-TS Input
+Description: Added a note about the Brightcove port ranges
+Link: https://live.support.brightcove.com/live-api/code-samples/quick-start-create-live-job-mpeg2-ts-input.html
+Category: Live
 
 
 

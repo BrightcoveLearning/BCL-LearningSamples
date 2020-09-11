@@ -1,4 +1,23 @@
 Major accomplishments:
+** Week Ending 11 Sep **
+- Closed 4 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Got usertesting.com Test Plan built and first user did the plan. Interesting results and will have more users test next week to confirm vocabulary issues.
+Work NOT Reflected in JIRAs:
+- LOTS of meetings
+- Continued work on Beacon course slides template and my course
+
+
+** Week Ending 4 Sep **
+- Closed 4 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Added screenshots of all block and layout types for Beacon video screen pages
+- Create and refined slides/template for Beacon courses
+Work NOT Reflected in JIRAs:
+- Added more content to our BCLS Beacon app
+- Started to fill in slide notes for the Video Cloud/Custom Fields course
+
+
 ** Week Ending 28 Aug **
 - Closed 3 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
