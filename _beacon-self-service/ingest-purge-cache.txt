@@ -1,0 +1,18 @@
+Title:
+
+
+Intro:
+Most likely you have done lots of work configuring videos and associated custom fields in Video Cloud. Of course, you want to use these assets in Brightcove Beacon and see if they work. In this video you will see how to do just that.
+
+
+Overview:
+There are two tasks you need to complete to get your video assets into Brightcove Beacon, those are:
+1. Ingest videos from Video Cloud into Brightcove Beacon, sometimes referred to as syncing the videos.
+2. Clearing the cache so you can see the videos appear in your app.
+
+Ingest Guidepost:
+First we are going to discuss how to ingest videos from Video Cloud to Brightcove Beacon
+
+Ingest Content:
+To ingest the videos, and playlists by the way, you need to use the Brightcove Beacon UI. In the UI, click the Tools option, which is the icon that looks like a wrench. Click the Ingestion menu option from on the left side of the screen. Now simply click the Update Brightcove Videos button, and the corresponding Update Brightcove Playlists button if you choose. That's it, the videos have been pulled into Brightcove Beacon!
+
