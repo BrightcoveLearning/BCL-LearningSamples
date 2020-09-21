@@ -1,13 +1,22 @@
 **Opening slide
-Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
+Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video we will learn what video custom fields need to be created for Brightcove Beacon, and how to create them in Video Cloud Studio.
 
-For instance, metadata is used to associate videos that are episodes with a specific season of a series. Also, some advertising configuration is done via the video's metadata.
 
 **Slide 2
-At a high level the process of using videos in Brightcove Beacon is:
-1. Ingest the videos into Video Cloud
-2. Assign the videos the proper metadata via custom fields
-3. Ingest the Video Cloud videos and playlists into Brightcove Beacon
+The major learning points for this video are:
+1. What video fields exist by default in Video Cloud, and there are few that Brightcove Beacon ingests, including image data.
+2. Brightcove Beacon requires some Video Cloud custom fields be created for Brightcove Beacon integration. We will look at those fields and how they are grouped.
+3. Once we learn some are required, of course we will need to learn how to create custom fields
+
+**Slide 3
+We will now move into the content on the first main learning point, what fields are automatically create by Video Cloud that we leverage in Brightcove Beacon.
+
+**Slide 4 - Have open Studio instance with untouched custom fields 
+In Studio we'll go into ADMIN → Video Fields
+
+This account has no custom fields yet, and that is good as we want concentrate on the standard (that is default) fields
+
+
 
 This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
 
