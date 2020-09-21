@@ -17,7 +17,7 @@ Ingest Content:
 To ingest the videos, and playlists by the way, we need to use the Brightcove Beacon UI. In the UI, click the Tools option, which is the icon that looks like a wrench. Click the Ingestion menu option from on the left side of the screen. Now simply click the Update Brightcove Videos button, and the corresponding Update Brightcove Playlists button if we choose. That's it, the videos have been pulled into Brightcove Beacon!
 
 Clearing Cache Guidepost:
-Once we've pulled our videos into Brightcove Beacon, and now we want to see them in action! Do to so we need to clear the Brightcove Beacon app cache to insure we are seeing the latest and greatest videos.
+Once we've pulled our videos into Brightcove Beacon,  now we want to see them in action! Do to so we need to clear the Brightcove Beacon app cache to insure we are seeing the latest and greatest videos.
 
 Clearing Cache Content:
 To clear the cache, we will continue to work in the Tools section of the Brightcove Beacon UI. Click the Cache menu option on the left side of the screen. Here we see two options, one for Cache Purge and one for Image Purge. The Cache purge will purge all non-image data. The Image Cache will purge the images from the app cache in case we have uploaded new images and want to see those.

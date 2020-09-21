@@ -1,44 +1,74 @@
-New courses:
+New docs:
 
-Title: Getting Started With Your Video Cloud Account
-Description: In this course customers will learn how to manage their account settings and perform administration functions.
-Customer Link: https://university.brightcove.com/catalog/courses/920195
-Employee Link: https://bcovemployees.learnupon.com/catalog/courses/892349
-Category: Brightcove University
+Title:  Using MTR (my trace route)
+Description:  Short tutorial on using the popular MTR tool
+Link: https://general.support.brightcove.com/developer/using-mtr-to-look-at-network-traffic.html
+Category:  General developer information
 
-Title: Understanding Ingest Profiles
-Description: In this course customers will learn how their videos are processed when they upload them into Video Cloud, the importance of choosing the right ingest profile for their content, and how to create a custom one according to their content needs.
-Customer Link: https://university.brightcove.com/catalog/courses/920193
-Employee Link: https://bcovemployees.learnupon.com/catalog/courses/912298
-Category: Brightcove University
+Title:  Brightcove Integrations Support Documentation
+Description:  Not really new, but the site is completely reorganized, and Brightcove Live integrations with web conferencing platforms now live here
+Link: https://integrations.support.brightcove.com/
+Category:  3rd party integrations with Brightcove
+
+Title:  Brightcove with Peer5 Integration
+Description:  Integration of Peer5 with Brightcove is done through Studio. This topic provides the steps to add the Peer5 Plugin to a Brightcove Player.
+Link: https://integrations.support.brightcove.com/peer5/brightcove-with-peer5-integration.html
+Category:  3rd party integrations with Brightcove
 
 
 Major updates:
 
-None this week
+Title: Video SEO Schema Generator Plugin
+Description:  Replaced the section on Google’s Structured Data tool with one on Google’s Rich Results tool
+Link: https://player.support.brightcove.com/plugins/video-seo-schema-generator-plugin.html
+Category: Brightcove Player Plugins, SEO
+
+Title: Playback API v2 Reference (Limited Availability)
+Description:  Added reference material for static URLs
+Link: https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Static-URLs
+Category: Playback API v2, Static URL Delivery
+
+Title: Images and Their Specifications
+Description: Added content on how you MUST change the default ingest profile for the Video Cloud images to work in Brightcove Beacon
+Link: https://beacon.support.brightcove.com/references/image-requirements.html
+Category: Brightcove Beacon
 
 
 Minor updates:
 
+Title: Implementing Server-Side Ads with the Native SDKs
+Description: Added seek without ads links for Android and iOS implementations
+Link: https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html
+Category: Native SDKs
+
+Title: Known Issues: Brightcove Native Player SDKs
+Description: Updated Android known issue for downloading offline content
+Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android
+Category: Native SDK for Android
+
 Title: Creating Series/Seasons/Episodes
-Description: Updated image requirements for series and seasons
+Description: Updated overview and episodes sections
 Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
 Category: Brightcove Beacon
 
-Title: Quick Start: Create a Live Job for MPEG2-TS Input
-Description: Added a note about the Brightcove port ranges
-Link: https://live.support.brightcove.com/live-api/code-samples/quick-start-create-live-job-mpeg2-ts-input.html
-Category: Live
+Title: Static Entry Points
+Description:  Corrected the false assertion that accounts are limited to 3 SEP jobs - it’s actually 3 per region
+Link: https://live.support.brightcove.com/live-api/guides/live-api-static-entry-points.html
+Category: Brightcove Live
+
+Title: Static URL Delivery (Limited Availability)
+Description:  Added endpoints for highest and lowest bitrate MP4s and a few notes
+Link: https://apis.support.brightcove.com/playback/guides/static-url-delivery.html
+Category: Playback API v2, Static URL Delivery
+
+
+
 
 
 
 
 New docs:
 
-Title: 
-Description: 
-Link: 
-Category: 
 
 
 Major updates:
