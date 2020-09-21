@@ -16,6 +16,20 @@ In Studio we'll go into ADMIN → Video Fields
 
 This account has no custom fields yet, and that is good as we want concentrate on the standard (that is default) fields
 
+Note that from this list 
+Short Description
+Long Description
+Scheduling Start Date
+Scheduling End Date
+values will be pulled into Brightcove Beacon UNLESS the corresponding custom field has a value, then the custom field value is used.
+
+Now if we go look at a specific video's properties we can see how the standard fields are reflected in the Studio UI.
+
+The name, and as mentioned before, both descriptions and scheduling dates are ingested into Brightcove Beacon if the corresponding custom field does not have a value.
+
+Also, the Poster and Thumbnail images are used by Brightcove Beacon. YOU HAVE A JOB TO DO BEFORE THEY WORK CORRECTLY. 
+
+Let's go back to the slides and see I have a note in bold, red text, and a name of a doc to look at for help on the task you must perform BEFORE ingested any videos into Brightcove Beacon.
 
 
 This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
