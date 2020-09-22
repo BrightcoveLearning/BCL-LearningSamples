@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 25 Sep **
+- Closed 9 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Delivered the Using Video Cloud Videos/Custom Fields course to Onboarding, well received. Will break the course into 4 videos.
+- Wrote script for first video of new course
+- Started the doc on how we will utilize user testing
+Work NOT Reflected in JIRAs:
+- 1 1/2 hour conversation with Alberto about how we build courses and associated slides
+
+
+
 ** Week Ending 18 Sep **
 - Closed 9 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
