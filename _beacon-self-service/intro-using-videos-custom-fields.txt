@@ -1,4 +1,5 @@
 **Opening slide
+
 Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
 
 For instance, metadata is used to associate videos that are episodes with a specific season of a series. Also, some advertising configuration is done via the video's metadata.
