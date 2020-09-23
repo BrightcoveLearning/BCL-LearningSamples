@@ -1,18 +1,22 @@
 **Opening slide
-Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video we will learn what video custom fields need to be created for Brightcove Beacon, and how to create them in Video Cloud Studio.
-
 
 **Slide 2
-The major learning points for this video are:
-1. What video fields exist by default in Video Cloud, and there are few that Brightcove Beacon ingests, including image data.
-2. Brightcove Beacon requires some Video Cloud custom fields be created for Brightcove Beacon integration. We will look at those fields and how they are grouped.
-3. Once we learn some are required, of course we will need to learn how to create custom fields
+Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn the following:
+1. What standard (or defualt) video fields exist in Video Cloud that Brightcove Beacon leverages
+2. What video custom fields need to be created for Brightcove Beacon
+3. How to actually create the fields in Video Cloud Studio
+4. And finally, how to populate the fields with values.
+
 
 **Slide 3
 We will now move into the content on the first main learning point, what fields are automatically create by Video Cloud that we leverage in Brightcove Beacon.
 
-**Slide 4 - Have open Studio instance with untouched custom fields 
-In Studio we'll go into ADMIN → Video Fields
+**Slide 4 
+Let's jump into the Studio, then we will use this slide for later review
+
+**Studio instance with untouched custom fields 
+
+In Studio select ADMIN → Video Fields
 
 This account has no custom fields yet, and that is good as we want concentrate on the standard (that is default) fields
 
@@ -23,78 +27,99 @@ Scheduling Start Date
 Scheduling End Date
 values will be pulled into Brightcove Beacon UNLESS the corresponding custom field has a value, then the custom field value is used.
 
+**Move into VIDEO PROperties
 Now if we go look at a specific video's properties we can see how the standard fields are reflected in the Studio UI.
 
 The name, and as mentioned before, both descriptions and scheduling dates are ingested into Brightcove Beacon if the corresponding custom field does not have a value.
 
-Also, the Poster and Thumbnail images are used by Brightcove Beacon. YOU HAVE A JOB TO DO BEFORE THEY WORK CORRECTLY. 
+Also, the Poster and Thumbnail images are used by Brightcove Beacon. WE HAVE A JOB TO DO BEFORE THEY WORK CORRECTLY. 
 
-Let's go back to the slides and see I have a note in bold, red text, and a name of a doc to look at for help on the task you really should perform BEFORE ingested any videos into Brightcove Beacon.
+**Back into slide 4
+Let's go back to the slides and see I have a note in bold, red text, and the name of a document to look at for help on the task that really should be done BEFORE ingesting any videos into Brightcove Beacon. Let's go look at that document and the task to be done.
 
-In the Images and Their Specifications document, in the first section, which is highlighted in red, explains the process of altering your default ingest profile. The profile is altered is such a way that the Thumbnail image allows bigger, portrait orientation images.
+**Open images doc
+In the Images and Their Specifications document, in the first section we see an explanation of the process of altering the default ingest profile. The profile is altered is such a way that the Thumbnail image allows bigger, portrait orientation images.
 
-Scrolling down a bit more we see how the images in Video Cloud Studio relate to Brightcove Beacon. Oddly, for the Poster you will supply a landscape image in the recommended size range, and for the Thumbnail you will supply a portrait image in the recommended size range. This is confusing, but the way it is.
+In the first section, in the alert box, we see the steps to to alter the default ingest profile. The bottom line, we will have to alter some JSON, it will look like one of these examples depending on the profile used, to change the thumbnail image size. If we do not do this, no matter what size portrait image is uploaded for the thumbnail, it will be downsized to a thumbnail.
 
-Now that the default ingest profile is changed, we can go back to the video information page in Studio. Here we see where we supply the two images.
+**Back to Studio
+Now that the default ingest profile is changed, we can go back to the video information page in Studio. 
+
+Scrolling down a bit we see how the images in Video Cloud Studio relate to Brightcove Beacon. Oddly, for the Poster we will supply a landscape image in the recommended size range, and for the Thumbnail we will supply a portrait image in the recommended size range. This is confusing, but the way it is.
+
+A poster(landscape) image will be generated from some part of the video. It may work for the landscape image.
+
+The Thumbnail (portrait) image will need to be taken and they uploaded. The generated default does not use portrait orientation.
 
 In summary, we know some of these standard (default) Video Cloud fields will be ingested by Brightcove Beacon. Some of them will only be pulled over if the corresponding custom field is empty.
+
+**Back to slide 4
+To reiterate, some fields are pulled into Brightcove Beacon if corresponding custom fields values are not assigned.
+
+And also, the default ingest profile must be altered.
 
 
 **Slide 5
 We've been discussing custom fields a bit already, and now we will look specifically at the custom fields that need to be created for Brightcove Beacon.
 
 **Slide 6
-There are lots of these fields, so we need a reference. That reference is the Creating Video Cloud Custom Fields document, and let's take a look at that.
+The custom fields for Brightcove Beacon are placed into three groups, those being:
+1. General custom fields
+2. Rights management fields
+3. Episode Fields
 
-We are going to jump to the custom field names section. This lets us know that the custom field has both a display name and an internal name. You can choose the display name, but the internal name MUST match what we will see in the doc.
+**Create vd fields doc
+There are lots of these fields, so we need a reference. That reference is the Creating Video Cloud Custom Fields document, and let's take a look at this in some more detail.
 
-Next we see the general custom fields. Not surprisingly, the represent general information about you video asset. Note that there are short and long description fields, that if given values will override the values entered in the videos properties page in Studio.
+We are going to jump to the custom field names section. This lets us know that a custom field has both a display name and an internal name. We can choose the display name, but the internal name MUST match what we will see in the doc.
+
+Next we see the general custom fields. Not surprisingly, they represent general information about the video asset. Note that there are short and long description fields, that if given values, will override the values entered in the videos properties page in Studio.
 
 Now onto the rights management fields. 
 
-These fields support the monetization and access restrictions for assets. As opposed to other custom fields, these fields work together in groups. There is a counter you need to insert for each group. In the screenshot you see the first group has a 0 as the counter and the second group has a 1 as a counter.
+These fields support the monetization and access restrictions for the video assets. As opposed to other custom fields, these fields work together in groups. There is a counter needed for each group. In the screenshot we see the first group has a 0 as the counter and the second group has a 1 as a counter.
 
-You see in this two sets you can specify when, where and what devices would be able to see this video. In addition, the next screenshot shows the implementation of server-side ad insertion (SSAI) for a Video Cloud video. Note that in this case, only the beacon.rights.<counter>.adConfiguration and beacon.rights.<counter>.type are used.
+We see in these two sets, the rights management custom fields specify when, where and what devices would be able to see a video to which these fields are given values. In addition, the next screenshot shows the implementation of server-side ad insertion (SSAI) for a Video Cloud video. Note that in this case, only the beacon.rights.<counter>.adConfiguration and beacon.rights.<counter>.type are used.
 
-And finally, here is the list of all the rights management fields.
+And finally, the last group of custom fields are for episodes. The screenshot shows the relationship of series/seasons/episodes. And then we see values that would be assigned. Finally we see a screenshot the actual values assigned to the custom fields for a specific video.
 
-And finally, the last group of custom fields are for episodes. The screenshot shows the relationship of series/seasons/episodes. And then we see values that would be assigned, and finally the actual values assigned to the custom fields for a specific video.
-
-It is instructive to understand that the information on the series and seasons entities are created in the the Brightcove Beacon UI, and the episode video is then ingested into Brightcove Beacon.
+It is instructive to understand that the information on the series and seasons entities are created in the the Brightcove Beacon UI, whereas the episode video is then ingested into Brightcove Beacon. As expected, custom field values assign the episode to the correct series and season.
 
 Lastly, we see there are only three custom fields associated with episode videos.
 
 **Slide 7
-We have seen that custom fields are critical to successfully using Video Cloud videos in Brightcove Beacon. Let's look at relatively simple process of creating the custom fields now.
+We have seen that custom fields are critical to successfully using Video Cloud videos in Brightcove Beacon. Let's look at the relatively simple process of creating the custom fields.
 
 **Slide 8
-Back to the ADMIN → video fields screen. And to no one's surprise we'll click the ADD CUSTOM FIELD button.
+We create custom fields back in the ADMIN → video fields screen, so lets get there.
 
-Give the custom field a name from the tables in the doc with the names. Note that you can change the display name, but the Internal name MUST be as shown in the tables.
+**Admin custom fields
+And to no one's surprise, we'll click the ADD CUSTOM FIELD button.
 
-The data type defines if you have a free form text field or a list, which is a dropdown box to select the value. Note that if you use a list only one value can be selected when assigning a value.
+Give the custom field a name from the tables in the doc. Note that we can change the display name, but the Internal name MUST be as shown as in the tables.
+
+The data type defines if we have a free form text field or a list. The list is a dropdown box from which we can select a value. Note that if we use a list, only one value can be selected when assigning data.
 
 Descriptions are optional, and no custom fields for Brightcove Beacon should be marked required.
 
-If you change the data type to LIST, the UI changes. You can enter list values as comma separated, or one at a time, or both.
+If we change the data type to LIST, the UI changes. We can enter list values as comma separated, or one at a time, or both.
 
-**Change to doc
-Note that at the top of the document we have been looking at are the steps to create a custom field, along with details like number of characters allowed and how to edit lists.
+And that is how custom fields are created.
+
+**Change to  custom field doc
+Note that at the top of the custom fields document are the steps to create a custom field, along with details about custom fields like number of characters allowed and how to edit lists.
 
 **Slide 9
 Here are some details about managing custom fields
 1. As mentioned, the internal names must match what is in the tables.
-2. Once a custom field is created, we cannot edit or remove it. If you make a typo, just create a new, correct field. You can ask Brightcove support to remove the incorrect custom field.
+2. Once a custom field is created, we cannot edit or remove it. If we make a typo, just create a new, correct field. Brightcove support can be asked to remove the incorrect custom field.
 
 **Slide 10
-Well, the fun's over. We are sadly at the last slide.
+Well, the fun's over. We are sadly to the last slide.
 
 To review:
-*Some of the standard Video Cloud video fields are used by Brightcove Beacon, including the descriptions and image fields.
-*Some custom video fields MUST be created to ingest video assets into Brightcove Beacon successfully. As you've seen, that document we have been looking through is essential for successful custom field implementation.
-*If you want even more information on custom fields (it is exciting), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both documents are the document from which you played this video.
+*Some of the standard Video Cloud video fields are used by Brightcove Beacon, including the descriptions, time range,  and image fields.
+*Some custom video fields MUST be created to ingest video assets into Brightcove Beacon successfully. As we've seen, the custom fields document we have been looking through is essential for successful custom field implementation.
+*If we want even more information on custom fields (it is exciting), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both of those documents are in the document from which you played this video.
 
 Thanks much, and have fun with Brightcove Beacon.
-
-
-
