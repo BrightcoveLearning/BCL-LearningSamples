@@ -1,8 +1,8 @@
 **Opening slide
 
 **Slide 2
-Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have custome fields of metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn the following:
-1. What are the general grouping of custom fields used in Brightcove Beacon?
+Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have custom fields of metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn the following:
+1. What are the general groupings of custom fields used in Brightcove Beacon?
 2. What custom fields need to be created for Brightcove Beacon?
 3. How do you populate the custom fields with meaningful data?
 
@@ -12,17 +12,17 @@ It is instructive to understand the types of custom fields Brightcove Beacon use
 **Slide 4
 The custom fields for Brightcove Beacon are placed into three groups, those being:
 1. General custom fields which hold, surprise, general information about the video like cast, music, director, etc. These fields are created once and then you can provide values corresponding to each video.
-2. Rights management fields support monetization and access restrictions. So if you want to show a pre-roll and mid-roll advertisements in a video it can be done via these fields. Also, if you have a special set of holiday videos, you could set when the videos would be available. These fields are created as related groups via a counter system, which we will see in action later.
+2. Rights management fields support monetization and access restrictions. So if you want to show pre-roll and mid-roll advertisements in a video it can be done via these fields. Also, if you have a special set of holiday videos, you could set when the videos would be available. These fields are created as related groups via a counter system, which we will see in action later.
 3. Episode Fields assign a video that is an episode of a series to the correct series and season of that series. Like the general fields, they are created once and you can then assign values for each individual episode.
 
 **Slide 5
-Now we are ready to see all the fields and how to sue them 
+Now we are ready to see all the fields and how to populate them 
 
 **Slide 6, 7, 8
-Rather than look strictly at these three slides, lets go and look at the doc that has been referenced so many times, and also the actual UIs
+Rather than look strictly at these three slides, lets go and look at the document that has been referenced so many times, and also the actual UIs
 
 **Create video fields doc
-There are lots of these fields, so we need a reference. That reference is the Creating Video Cloud Custom Fields document.  Let's take a look at this in some more detail.
+There are lots of these custom fields needed by Brightcove Beacon, so we need a reference. That reference is the Creating Video Cloud Custom Fields document.  Let's take a look at this in some more detail.
 
 Note that the doc starts with info creating custom fields, and a discussion on standard Video Cloud fields, both of which are topics of earlier videos in this course series.
 
@@ -34,7 +34,7 @@ Now onto the rights management fields.
 
 These fields support the monetization and access restrictions for the video assets. As opposed to other custom fields, these fields work together in groups. There is a counter needed for each group. In the screenshot, we see the first group has 0 as the counter and the second group has 1 as a counter.
 
-We see in these two sets, the rights management custom fields specify when, where and what devices would be able to see a video to which these fields are given values. In addition, the next screenshot shows the implementation of server-side ad insertion (SSAI) for a Video Cloud video. Note that in this case, only the beacon.rights.<counter>.adConfiguration and beacon.rights.<counter>.type are used.
+In these two sets the rights management custom fields specify when, where and what devices would be able to see a video to which these fields are given values. In addition, the next screenshot shows the implementation of server-side ad insertion (SSAI) for a Video Cloud video. Note that in this case, only the beacon.rights.<counter>.adConfiguration and beacon.rights.<counter>.type are needed to implement advertising.
 
 And finally, the last group of custom fields are for episodes. The screenshot shows the relationship of series/seasons/episodes. And then we see values that would be assigned. Finally we see a screenshot the actual values assigned to the custom fields for a specific video.
 
@@ -42,39 +42,27 @@ It is instructive to understand that the information on the series and seasons e
 
 Lastly, we see there are only three custom fields associated with episode videos.
 
-**Slide 7
-We have seen that custom fields are critical to successfully using Video Cloud videos in Brightcove Beacon. Let's look at the relatively simple process of creating the custom fields.
+**Studio video with custom fields entered - Smokey display
+Lets look at a video from an account where the custom fields have been created, and values entered.  Into the Media module, then click on a video to see its properties.
 
-**Slide 8
-We create custom fields back in the ADMIN → video fields screen, so lets get there.
+First, lets check if the images look good. Click to view the Poster (which is landscape orientation in the Brightcove Beacon world). And it looks good.
 
-**Admin custom fields
-And to no one's surprise, we'll click the ADD CUSTOM FIELD button.
+Next click on the Thumbnail (which is portrait orientation in the Brightcove Beacon world). That looks good also.
 
-Give the custom field a name from the tables in the doc. Note that we can change the display name, but the Internal name MUST be as shown as in the tables.
+Now scroll down to the custom fields, and we will edit them. We see values in the description fields (btw, those values are for testing). The custom field values would override the description values from the video properties.
 
-The data type defines if we have a free form text field or a list. The list is a dropdown box from which we can select a value. Note that if we use a list, only one value can be selected when assigning data.
+When editing, I can either enter free form text, or select from a list. This is determined when the custom field is created.
 
-Descriptions are optional, and no custom fields for Brightcove Beacon should be marked required.
+Here are the episode fields, but since this video is not part of a series, those are left blank.
 
-If we change the data type to LIST, the UI changes. We can enter list values as comma separated, or one at a time, or both.
-
-And that is how custom fields are created.
-
-**Change to  custom field doc
-Note that at the top of the custom fields document are the steps to create a custom field, along with details about custom fields like number of characters allowed and how to edit lists.
+We see two rights management fields used to implement SSAI. In the docs it states that if a ad configuration is used, the type must be set to AVOD.
+**PAUSE for a bit of scrolling
+This video has start dates and end dates entered. Since no rights management custom fields are used to override them, these dates will be ingested into Brightcove Beacon and sets the video's availability there.
 
 **Slide 9
-Here are some details about managing custom fields
-1. As mentioned, the internal names must match what is in the tables.
-2. Once a custom field is created, we cannot edit or remove it. If we make a typo, just create a new, correct field. Brightcove support can be asked to remove the incorrect custom field.
-
-**Slide 10
-Well, the fun's over. We are sadly to the last slide.
-
 To review:
 *Some of the standard Video Cloud video fields are used by Brightcove Beacon, including the descriptions, time range,  and image fields.
 *Some custom video fields MUST be created to ingest video assets into Brightcove Beacon successfully. As we've seen, the custom fields document we have been looking through is essential for successful custom field implementation.
-*If we want even more information on custom fields (it is exciting), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both of those documents are in the document from which you played this video.
+*If we want even more information on custom fields (it is exciting), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both of the documents mentioned in this review are linked to in the document from which you played this video.
 
 Thanks much, and have fun with Brightcove Beacon.
