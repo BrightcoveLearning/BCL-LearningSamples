@@ -1,0 +1,65 @@
+**Opening slide
+
+**Slide 2
+Brightcove Beacon's video assets are stored in Video Cloud. By default there are a set of metadata fields that Video Cloud create for each video. Some of these standard fields are leveraged in Brightcove Beacon. In this video I will help you learn how to use these Video Cloud standard fields in Brightcove Beacon, and more specifically:
+1. Know the standard Video Cloud fields that Brightcove Beacon uses
+2. Change the default ingestion profile so Video Cloud image fields function properly
+
+
+**Slide 3
+We will now move into the content on the first main learning point, what fields are automatically created by Video Cloud that we can leverage in Brightcove Beacon.
+
+**Slide 4 
+Let's jump into the Studio, then we will use this slide for later review
+
+**Studio instance with untouched custom fields 
+
+In Studio select ADMIN → Video Fields
+
+This account has no custom fields yet, and that is good as we want concentrate on the standard (that is default) fields
+
+Note that from this list 
+Short Description
+Long Description
+Scheduling Start Date
+Scheduling End Date
+values will be pulled into Brightcove Beacon UNLESS the corresponding custom field has a value, then the custom field value is used.
+
+
+**Move into VIDEO PROperties
+Here in a specific video's properties we can see how the standard fields just discussed are reflected in the Studio UI.
+
+The name, and as mentioned before, both descriptions and scheduling dates are ingested into Brightcove Beacon if the corresponding custom field does not have a value.
+
+**Another account with custom fields
+Here is an account with the Brightcove Beacon custom fields created so you fully understand this overwriting issue. Here we see description custom fields with values. So if data was entered for the descriptions in Studio's VIDEO INFORMATION screen, those values would not be used, and the ones in the custom fields would be used.
+
+**Back to video properties
+Now again back in the video information. We see Poster and Thumbnail images are standard. These images are actually used by Brightcove Beacon, but WE HAVE A JOB TO DO BEFORE THEY WORK CORRECTLY. We must change the default ingest profile for the images to work correctly in Brightcove Beacon.
+
+**Back into slide 4
+Back in the slides we see the note in bold, red text. The name of a document to look at for help on changing the default ingestion profile is given. Let's go look at that document and the steps to accomplish the change.
+
+**Open images doc
+In the Images and Their Specifications document, in the first section we see an explanation of the process of altering the default ingest profile. The profile is altered is such a way that the Thumbnail image allows bigger, portrait orientation images.
+
+In the first section, in the alert box, we see the steps to to alter the default ingest profile. The bottom line, we will have to alter some JSON, it will look like one of these examples shown, depending on the profile used. The change modifies the thumbnail image size. If we do not do this, no matter what size portrait image is uploaded for the thumbnail, it will be downsized to a thumbnail.
+
+**Back to Studio
+Now that the default ingest profile is changed, lets see how the images in Video Cloud Studio relate to Brightcove Beacon. Oddly, for the Poster we will supply a landscape image in the recommended size range, and for the Thumbnail we will supply a portrait image in the recommended size range. This may be a bit confusing, but just the way it is.
+
+A poster(landscape) image will be generated from some part of the video. It may work for the landscape image.
+
+The Thumbnail (portrait) image will need to be taken and then uploaded. The generated default does not use portrait orientation.
+
+In summary, we know some of these standard (default) Video Cloud fields will be ingested by Brightcove Beacon. Some of them will only be pulled over if the corresponding custom field is empty.
+
+**Beacon app
+Here is an example of where the images are used. When a video is ingested as an episode of a series the Portrait/thumbnail image is used. If this image looks heavily pixelated, most likely the update to the ingest profile was not done.
+
+**Back to slide 4
+To reiterate, some fields are pulled into Brightcove Beacon if corresponding custom fields values are not assigned.
+
+And also, the default ingest profile must be altered.
+
+Thanks much, and have fun with Brightcove Beacon.
