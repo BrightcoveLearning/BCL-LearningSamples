@@ -1,26 +1,24 @@
 **Opening slide
 
 **Slide 2
-Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn the following:
-1. What standard video fields exist in Video Cloud that Brightcove Beacon leverages
-2. What video custom fields need to be created for Brightcove Beacon
-3. How to actually create the fields in Video Cloud Studio
-4. And finally, how to populate the fields with values.
+Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have custom metadata fields associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn how to create custom fields.
 
 
 **Slide 3
+What custom fields need to be created? Lets go look at the document referenced in this slide.
 
+**Creating custom fields doc
+We'll jump down to the General, custom fields section. This is the first of three tables where we see the custom fields that may need to be created for  your Brightcove Beacon implementation. The specifics for these fields are covered in another video in this course series. Note that both a display name and an internal name are shown in the table. Both of these are critical values for successful custom field creation.
 
-**Slide 7
-We have seen that custom fields are critical to successfully using Video Cloud videos in Brightcove Beacon. Let's look at the relatively simple process of creating the custom fields.
+**Slide 4
+Let's look at the relatively simple process of creating the custom fields. Rather than looking at a slide, lets go into the actual UI.
 
-**Slide 8
-We create custom fields back in the ADMIN → video fields screen, so lets get there.
+**Studio
+In Studio select ADMIN → Video Fields
 
-**Admin custom fields
 And to no one's surprise, we'll click the ADD CUSTOM FIELD button.
 
-Give the custom field a name from the tables in the doc. Note that we can change the display name, but the Internal name MUST be as shown as in the tables.
+Give the custom field a name from the tables in the doc. Note that we can change the display name, but the Internal name MUST match what is shown in the tables.
 
 The data type defines if we have a free form text field or a list. The list is a dropdown box from which we can select a value. Note that if we use a list, only one value can be selected when assigning data.
 
@@ -30,20 +28,14 @@ If we change the data type to LIST, the UI changes. We can enter list values as 
 
 And that is how custom fields are created.
 
-**Change to  custom field doc
-Note that at the top of the custom fields document are the steps to create a custom field, along with details about custom fields like number of characters allowed and how to edit lists.
-
-**Slide 9
+**Slide 5
 Here are some details about managing custom fields
 1. As mentioned, the internal names must match what is in the tables.
-2. Once a custom field is created, we cannot edit or remove it. If we make a typo, just create a new, correct field. Brightcove support can be asked to remove the incorrect custom field.
+2. Once a custom field is created, we cannot edit or remove it. If we make a typo in a name, just create a new, correct field. Brightcove support can be asked to remove the incorrect custom field.
 
 **Slide 10
-Well, the fun's over. We are sadly to the last slide.
-
 To review:
-*Some of the standard Video Cloud video fields are used by Brightcove Beacon, including the descriptions, time range,  and image fields.
 *Some custom video fields MUST be created to ingest video assets into Brightcove Beacon successfully. As we've seen, the custom fields document we have been looking through is essential for successful custom field implementation.
-*If we want even more information on custom fields (it is exciting), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both of those documents are in the document from which you played this video.
+*If we want even more information on custom fields (and who wouldn't), check out the Creating Custom Metadata Fields video and document from our Studio documentation. The link to both of the documents mentioned in this review are linked to in the document from which you played this video.
 
-Thanks much, and have fun with Brightcove Beacon.
+Thanks much, and enjoy Brightcove Beacon.

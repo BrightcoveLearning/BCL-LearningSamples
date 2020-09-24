@@ -4,16 +4,16 @@
 Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have custom fields of metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. In this video I will be helping you learn the following:
 1. What are the general groupings of custom fields used in Brightcove Beacon?
 2. What custom fields need to be created for Brightcove Beacon?
-3. How do you populate the custom fields with meaningful data?
+3. How are the custom fields populated with meaningful data?
 
 **Slide 3
 It is instructive to understand the types of custom fields Brightcove Beacon uses from Video Cloud. It will help us better understand how to provide values for the fields.
 
 **Slide 4
 The custom fields for Brightcove Beacon are placed into three groups, those being:
-1. General custom fields which hold, surprise, general information about the video like cast, music, director, etc. These fields are created once and then you can provide values corresponding to each video.
-2. Rights management fields support monetization and access restrictions. So if you want to show pre-roll and mid-roll advertisements in a video it can be done via these fields. Also, if you have a special set of holiday videos, you could set when the videos would be available. These fields are created as related groups via a counter system, which we will see in action later.
-3. Episode Fields assign a video that is an episode of a series to the correct series and season of that series. Like the general fields, they are created once and you can then assign values for each individual episode.
+1. General custom fields which hold, surprise, general information about the video like cast, music, director, etc. These fields are created once and then we  can provide values corresponding to each video.
+2. Rights management fields support monetization and access restrictions. So if we want to show pre-roll and mid-roll advertisements in a video it can be done via these fields. Also, if we have a special set of holiday videos, we could set when the videos would be available. These fields are created as related groups via a counter system, which we will see in action later.
+3. Episode Fields assign a video that is an episode of a series to the correct series and season of that series. Like the general fields, they are created once and we can then assign values for each individual episode.
 
 **Slide 5
 Now we are ready to see all the fields and how to populate them 
