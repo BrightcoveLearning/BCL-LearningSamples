@@ -1,64 +1,46 @@
 **Opening slide
 
-Brightcove Beacon's video assets are stored in Video Cloud. In most cases the videos will have metadata associated with them that is critical to the proper functioning and use of the videos within Brightcove Beacon. 
-
-For instance, metadata is used to associate videos that are episodes with a specific season of a series. Also, some advertising configuration is done via the video's metadata.
-
 **Slide 2
-At a high level the process of using videos in Brightcove Beacon is:
-1. Ingest the videos into Video Cloud
-2. Assign the videos the proper metadata via custom fields
-3. Ingest the Video Cloud videos and playlists into Brightcove Beacon
+Brightcove Beacon's video assets are stored in Video Cloud. In this course, you will learn how to setup the connection between Video Cloud and Brightcove Beacon.
 
-This video will focus on creating the custom fields in Video Cloud Studio that are needed by Brightcove Beacon. Other training videos exist for how to populate the custom fields and then ingest the videos into Brightcove Beacon.
+Part of implementing this connection is using metadata on the Video Cloud videos so when they are ingested into Brightcove Beacon they function as intended. This metadata is stored in custom fields, so you will need to understand how to create and populate Video Cloud custom fields.
 
-**Move to Creating Video Cloud Custom Fields
-There is a corresponding document we will need to reference to get a complete list of custom fields needed by Brightcove Beacon. We'll see that doc in just a moment.
+A couple of examples would be instructive to see this connection in action.
 
-OK, let's get started. We are going to log in to Video Cloud Studio and then navigate to the Admin module.
+**Studio
+Here we are looking a video that is an episode of a series. The custom fields define the series and season to which this video belongs, and also defines what episode number it is in the particular season.
 
-In the Admin Module, we need to go to Video Fields. Video fields will display both the standard metadata fields, and any custom fields we add.
+**App
+After this video is ingested, we see it is in fact showing up just as defined in the custom fields.
 
-Here we see the Standard Fields. Every video asset in Video Cloud have these fields available in which to add values.
+**Studio
+Here is a video which has been assigned custom field values that tell it to use advertising. 
 
-Before we add a custom field, let's take a look at the document that lists the custom fields that will need to be created in your Video Cloud account. We'll go to the Brightcove Beacon documentation site,  then navigate to Syncing with Video Cloud and finally Creating Video Cloud Custom Fields.
+**App
+And here is that video with a pre-roll and a mid-roll at 5 seconds
 
-As we scroll through this document we first see how to add custom fields, which we will be doing in this video shortly.
+**LONG PAUSE
 
-Next comes a list of the Standard fields, the metadata fields that automatically exist for every video.
+**Slide 3
+So what should you learn from this course, let's look at the objectives.
 
-And here is the first list of custom fields that must be created for Brightcove Beacon, the General, Custom fields.
+First, it needs to be clear that videos in your Brightcove Beacon app come from Video Cloud
 
-The first row of the table shows a custom field is needed to hold genres. The Video Cloud display name will be beacon.genre. Note the internal name is automatically added in, with the period replaced by an underscore. The display name can be changed, but we must be sure the Internal Name remains as show in the table.
+Second, you will know the steps of how to create and populate custom fields, then ingest the video to which you have added custom field values
 
-Now we choose the data type. In this case we would select either Text or List.
+Lastly, you really need to know the documentation that will help you accomplish the second objective. There are lots of custom fields to be created, and details of their use. The documentation will guide you to successfully ingesting Video Cloud assets into Brightcove Beacon.
 
-Text can be up to 1024 single byte characters
+**Slide 4
+There are four more videos in this On Demand training course.
 
-List means the user will select one item from a list of values. Lists can have no more than 150 possible values and each value in the list can be no more than 100 characters long.
+The first helps you see how metadata fields automatically created for every Video Cloud video can be leveraged in Brightcove Beacon.
 
-If we choose list, the UI changes and we can enter values for the list. We can enter the values comma separated, individually or a combo thereof.
+Next, you've already seen that custom fields are key to get videos ingested into Brightcove Beacon properly, so you will need to know how to create those custom fields.
 
-Also note that we can make a custom field required, but none of the custom fields entered for Brightcove Beacon will be required.
+The third video goes into details about the types of custom fields you will use, and how to populate them
 
-Now we know how to create custom fields in Video Cloud. Let's go back to the doc look at the different groups of custom fields that need to be created for Brightcove Beacon.
+Finally, after doing all the work of uploading videos into Video Cloud and populating the custom fields, you will of course want to use them. The last video shows you how to ingest the videos into Brightcove Beacon and clear the app cache so you can see your work come to fruition!
 
-We've seen this list, the general, custom fields. It contains fields that one would consider common metadata for Brightcove Beacon video assets.
+**Slide 5
+Thanks for being a Brightcove Beacon customer, and hope you enjoy the course!!
 
-Next comes the rights management fields. These fields support the monetization and access restrictions for assets. Since it is possible for a video asset to have multiple sets of restrictions, these fields are used as numeric sets. 
-
-**Navigate to Understanding the rights management custom field of Using Subscription Package doc
-This document details how to use the rights management custom fields.
-
-We see the fields use the <counter> holder to indicate where a number should go. And here we see how to actually use the fields with the counters 0-2. Any set of numbers will work, like 1-3.
-
-What we want to understand at this point is HOW the rights management fields work. In a later video we'll actually supply values and use them.
-
-**Back to Creating Video Cloud Custom Fields doc
-OK, back to our Creating Video Cloud Custom Fields document.
-
-The last set of Brightcove Beacon custom fields are for episodes. If a video belongs to a series, then these fields must be use. 
-
-You will create a series and seasons for that series in Brightcove Beacon. Then in the episode custom fields you would associate the video with the correct series and season.
-
-Here is an example of values for the custom fields. All the videos belong to the Adventures on the Oregon Coast series. Then the six videos use the custom fields to assign each video to that series and either season one or season 2.
