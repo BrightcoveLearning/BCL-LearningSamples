@@ -29,34 +29,34 @@ values will be pulled into Brightcove Beacon UNLESS the corresponding custom fie
 **Move into VIDEO PROperties
 Here in a specific video's properties, we can see how the standard fields just discussed are reflected in the Studio UI.
 
-The name, and as mentioned before, both descriptions and scheduling dates are ingested into Brightcove Beacon if the corresponding custom field does not have a value.
+The name, and as mentioned before, both descriptions and scheduling dates are ingested into Brightcove Beacon if the corresponding custom fields do not have a value.
 
 **Another account with custom fields
-Here is an account with the Brightcove Beacon custom fields already created. This will help us fully understand this overwriting issue. Here we see description custom fields with values. So if data was entered for the descriptions in Studio's VIDEO INFORMATION screen, those values would not be used, and the ones in these custom fields would be used.
+Here is an account with the Brightcove Beacon custom fields already created. This will help us fully understand this overwriting issue. Here we see description custom fields with values. **PAUSE** So if data was entered for the descriptions in Studio's VIDEO INFORMATION screen, those values would not be used, and the ones in these custom fields would be used.
 
 **Back to video properties
 Now again back in the video information. We see Poster and Thumbnail images are standard. These images are actually used by Brightcove Beacon, but WE HAVE A JOB TO DO BEFORE THEY WORK CORRECTLY. We must change the default ingest profile for the images to work correctly in Brightcove Beacon.
 
 **Slide 5
-For the image fields we've seen in the video information, the default ingest profile must be altered. This is a one time task.
+For the image fields we've seen in the video information to work well in Brightcove Beacon, the default ingest profile must be altered. This is a one time task.
 
 **Slide 6
-Back in the slides we see the note in bold, red text. The name of a document to look at for help on changing the default ingestion profile is shown. Let's go look at that document and the steps to accomplish the change.
+Back in the slides we see the note in bold, red text about altering the ingest profile. The name of the document to look at for help on changing the default ingestion profile is shown. Let's go look at that document and the steps to accomplish the change.
 
 **Open images doc
-In the Images and Their Specifications document, in the first section we see an explanation of the process of altering the default ingest profile. The profile is altered is such a way that the Thumbnail image allows bigger, portrait orientation images.
+In the Images and Their Specifications document, in the first section we see an explanation of the process of altering the default ingest profile. The profile is altered is such a way that both images allow larger sizes and the correct orientation.
 
-In the first section, in the alert box, we see the steps to to alter the default ingest profile. The bottom line, we will have to alter some JSON, it will look like one of these examples shown, depending on the profile used. The change modifies the thumbnail image size. If we do not do this, no matter what size portrait image is uploaded for the thumbnail, it will be downsized to a thumbnail.
+In the first section, in the alert box, we see the steps to to alter the default ingest profile. The bottom line, we will have to alter some JSON, it will be similar to the example shown, depending on the profile used. If we do not do this, the images will not be optimal for Brightcove Beacon usage.
 
 **Back to Studio
 Now that the default ingest profile is changed, lets see how the images in Video Cloud Studio relate to Brightcove Beacon. Oddly, for the Poster we will supply a landscape image in the recommended size range, and for the Thumbnail we will supply a portrait image in the recommended size range. This may be a bit confusing, but just the way it is.
 
-A poster(landscape) image will be generated from some part of the video. It may work for the landscape image.
+A poster(landscape) image will be automatically generated from some part of the video. It may work for the landscape image.
 
-The Thumbnail (portrait) image will need to be taken and then uploaded. The generated default does not use portrait orientation.
+The Thumbnail (portrait) image will need to be created and then uploaded. The generated default does not use portrait orientation.
 
 **Beacon app
-Here is an example of where the images are used. When a video is ingested as an episode of a series the Portrait/thumbnail image is used. If this image looks heavily pixelated, most likely the update to the ingest profile was not done.
+Here is an example of where the images are used. When a video is ingested as an episode of a series the thumbnail (which is portrait in Brightcove Beacon) image is used. If this image looks heavily pixelated, most likely the update to the ingest profile was not done.
 
 **Slide 7
 To reiterate, some fields are pulled into Brightcove Beacon if corresponding custom fields values are not assigned.

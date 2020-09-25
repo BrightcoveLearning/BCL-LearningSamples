@@ -1,65 +1,40 @@
 New docs:
 
-Title:  Using MTR (my trace route)
-Description:  Short tutorial on using the popular MTR tool
-Link: https://general.support.brightcove.com/developer/using-mtr-to-look-at-network-traffic.html
-Category:  General developer information
-
-Title:  Brightcove Integrations Support Documentation
-Description:  Not really new, but the site is completely reorganized, and Brightcove Live integrations with web conferencing platforms now live here
-Link: https://integrations.support.brightcove.com/
-Category:  3rd party integrations with Brightcove
-
-Title:  Brightcove with Peer5 Integration
-Description:  Integration of Peer5 with Brightcove is done through Studio. This topic provides the steps to add the Peer5 Plugin to a Brightcove Player.
-Link: https://integrations.support.brightcove.com/peer5/brightcove-with-peer5-integration.html
-Category:  3rd party integrations with Brightcove
+Title: Localization with the Brightcove Native SDKs
+Description: In this topic, you will learn about localizing the player with the Brightcove Native SDKs.
+Link: https://sdks.support.brightcove.com/features/localization-with-native-sdks.html
+Category: Native SDKs
 
 
 Major updates:
 
-Title: Video SEO Schema Generator Plugin
-Description:  Replaced the section on Google’s Structured Data tool with one on Google’s Rich Results tool
-Link: https://player.support.brightcove.com/plugins/video-seo-schema-generator-plugin.html
-Category: Brightcove Player Plugins, SEO
-
-Title: Playback API v2 Reference (Limited Availability)
-Description:  Added reference material for static URLs
-Link: https://apis.support.brightcove.com/playback/references/reference_v2.html#tag/Static-URLs
-Category: Playback API v2, Static URL Delivery
-
-Title: Images and Their Specifications
-Description: Added content on how you MUST change the default ingest profile for the Video Cloud images to work in Brightcove Beacon
-Link: https://beacon.support.brightcove.com/references/image-requirements.html
-Category: Brightcove Beacon
+Title: Using Delivery Rules with Brightcove Player
+Description: Added explanation of how to retrieve the delivery rule via a Catalog request
+Link: https://player.support.brightcove.com/playback/using-delivery-rules-with-bcp.html
+Category: Delivery Rules, Brightcove Player
 
 
 Minor updates:
 
-Title: Implementing Server-Side Ads with the Native SDKs
-Description: Added seek without ads links for Android and iOS implementations
-Link: https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html
-Category: Native SDKs
+Title: Player Catalog
+Description: Added deliveryConfigId to parameters table (and reformatted the table to make it more readable)
+Link: https://player.support.brightcove.com/references/player-catalog.html#Catalog_parameters_object
+Category: Delivery Rules, Brightcove Player
 
-Title: Known Issues: Brightcove Native Player SDKs
-Description: Updated Android known issue for downloading offline content
-Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android
-Category: Native SDK for Android
+Title: Getting Playback Position from XDR API
+Description: Added note on how to get client credentials via the Learning Services online app until the XDR permissions are available in the Studio UI
+Link: https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html
+Category: Cross-Device Playback
 
 Title: Creating Series/Seasons/Episodes
-Description: Updated overview and episodes sections
+Description: Added note that you need at least 1 permitted location or you will see an error in your app
 Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
 Category: Brightcove Beacon
 
-Title: Static Entry Points
-Description:  Corrected the false assertion that accounts are limited to 3 SEP jobs - it’s actually 3 per region
-Link: https://live.support.brightcove.com/live-api/guides/live-api-static-entry-points.html
-Category: Brightcove Live
-
-Title: Static URL Delivery (Limited Availability)
-Description:  Added endpoints for highest and lowest bitrate MP4s and a few notes
-Link: https://apis.support.brightcove.com/playback/guides/static-url-delivery.html
-Category: Playback API v2, Static URL Delivery
+Title: Implementing Client-Side Ads with the Native SDKs
+Description: Added links for Code Samples and Seek without Ads information
+Link: https://sdks.support.brightcove.com/features/implementing-client-side-ads-native-sdks.html
+Category: Native SDKs
 
 
 
