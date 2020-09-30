@@ -1,0 +1,13 @@
+We have three types of pages, which serve VERY different purposes.
+
+First on non-configurable pages. These pages are like system pages, provide viewers info about the app and status of the app. For instance 
+-Downloads
+-Settings
+-Favorites
+-Recently watched
+
+are all examples of non-configurable pages.
+
+They are called non-configurable as you choose a layout, and that is how the page will look. You cannot go in and tweak the page in any way.
+
+Next we have configurable pages. In the Brightcove Beacon UI they are listed as SCREEN type pages. 
