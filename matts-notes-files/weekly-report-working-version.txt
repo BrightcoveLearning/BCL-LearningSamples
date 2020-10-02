@@ -1,44 +1,80 @@
 New docs:
 
-Title: Localization with the Brightcove Native SDKs
-Description: In this topic, you will learn about localizing the player with the Brightcove Native SDKs.
-Link: https://sdks.support.brightcove.com/features/localization-with-native-sdks.html
-Category: Native SDKs
+Title: Training on Demand - Using Video Cloud Videos/Custom Fields video course
+Description: Five part video course on using Video Cloud videos and custom fields in Brightcove Beacon 
+Link: https://beacon.support.brightcove.com/training/training-demand-custom-fields.html
+Category: Brightcove Beacon
 
 
 Major updates:
 
-Title: Using Delivery Rules with Brightcove Player
-Description: Added explanation of how to retrieve the delivery rule via a Catalog request
-Link: https://player.support.brightcove.com/playback/using-delivery-rules-with-bcp.html
-Category: Delivery Rules, Brightcove Player
+Title: Introducing Pages
+Description: Added information on three added page types
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/introducing-pages.html
+Category: Brightcove Beacon
 
 
 Minor updates:
 
-Title: Player Catalog
-Description: Added deliveryConfigId to parameters table (and reformatted the table to make it more readable)
-Link: https://player.support.brightcove.com/references/player-catalog.html#Catalog_parameters_object
-Category: Delivery Rules, Brightcove Player
+Title: Live API: Static Entry Points
+Description: Updated note about stopping the decoder before deactivating a live stream
+Link: https://live.support.brightcove.com/live-api/guides/live-api-static-entry-points.html
+Category: Live API
 
-Title: Getting Playback Position from XDR API
-Description: Added note on how to get client credentials via the Learning Services online app until the XDR permissions are available in the Studio UI
-Link: https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html
-Category: Cross-Device Playback
+Title: Code Snippets using the Native SDK for Android
+Description:Updated note that seek without ads is supported by all ad plugins
+Link: https://sdks.support.brightcove.com/android/resources/code-snippets-using-native-sdk-android.html#Seek_without_ads
+Category: Native SDK for Android
 
-Title: Creating Series/Seasons/Episodes
-Description: Added note that you need at least 1 permitted location or you will see an error in your app
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
+Title: CMS API Reference
+Description: Add 204 response for get digital master info request (204 means there is no master)
+Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetDigitalMasterInfo
+Category: CMS API
+
+Title: Live API Reference
+Description: corrected ramp_credentials field to credentials
+Link: https://docs.brightcove.com/live-api/v1/doc/index.html#operation/CreateALiveJob
+Category: Live API
+
+Title: Live RTMP outputs
+Description: added list of the statuses returned in notifications
+Link: https://live.support.brightcove.com/live-api/guides/live-api-rtmp-outputs.html#notifications
+Category: Live API
+
+Title: Creating Live Events in the Live Module 
+Description: added a note that outputs cannot be changed after the event is created
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
+Category: Live Module
+
+Title: Using Live RTMP Outputs to Stream to Facebook and YouTube 
+Description: Added notes on the RTMP URL format supported
+Link: https://live.support.brightcove.com/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html
+Category: Live Module
+
+Title: Integrations home page
+Description: Moved Peer5 documentation under eCDNs
+Link: https://integrations.support.brightcove.com/
+Category: eCDN integrations
+
+Title: Creating Live Events in the Live Module
+Description: Added note on the limit of current SEP jobs per region
+Link:https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#work_recurring
+Category: Live Module
+
+Title: Ingesting Content with DRM
+Description: clarified the notes on what to do about existing videos (dynamic delivery and legacy) when DRM is added to an account
+Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html
+Category: Ingestion, DRM
+
+Title: Managing Ingest Profiles
+Description: added a note that custom renditions can be added to profile only using the Advanced Editor
+Link: https://studio.support.brightcove.com/admin/creating-ingest-profiles-dynamic-delivery.html#using_the_advanced_editor
+Category: Managing Ingest Profiles
+
+Title: Streaming a Live Event in Brightcove Beacon
+Description:  Added a note about how to disconnect a VOD Clip from a Live event in Beacon
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#ClipToBeacon
 Category: Brightcove Beacon
-
-Title: Implementing Client-Side Ads with the Native SDKs
-Description: Added links for Code Samples and Seek without Ads information
-Link: https://sdks.support.brightcove.com/features/implementing-client-side-ads-native-sdks.html
-Category: Native SDKs
-
-
-
-
 
 
 
