@@ -1,6 +1,6 @@
 We have three types of pages, which serve VERY different purposes.
 
-First we have configurable pages. In the Brightcove Beacon UI we will see they are called SCREEN pages. We use these pages to layout how viewers should see our video content. In this course, a later video is entirely dedicated to configuring these kind of pages.
+First we have configurable pages. In the Brightcove Beacon UI we will see these are called SCREEN pages. We use these pages to layout how viewers should see our video content. In this course, a later video is entirely dedicated to creating and configuring these kind of pages.
 
 Next are non-configurable pages. These pages are like system pages, which provide viewers info about the app, the status of the app and their activities in the app. For instance 
 -Downloads
@@ -11,7 +11,7 @@ are all examples of non-configurable pages.
 
 The last type of page only applies to Brightcove Beacon web apps, and these are redirect pages. These pages redirect to other web pages.
 
-The page creation process varies between the three pages types, but there are more similarities than differences. We'll create one page to see the flow.
+The page creation process varies between the three page types, but there are more similarities than differences. We'll create a page later in this video to see the flow.
 
 **Slide 3
 This is a quick glimpse of where we are headed. This is a screenshot of the Brightcove Beacon UI to build pages. The gray dropdown displays all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.
@@ -20,10 +20,10 @@ This is a quick glimpse of where we are headed. This is a screenshot of the Brig
 lets fill in the Why/What and Hows about configurable pages.
 
 **Slide 5
-Before seeing these details, let's go look at some configurable pages in an actual Brightcove Beacon web app.
+Before examining these details, let's go look at some configurable pages in an actual Brightcove Beacon web app.
 
 **Web app
-The Home page is showing a featured playlist of videos in a carousel across the top, then using tabs to let users choose what other videos to browse.
+The Home page is showing a featured playlist of videos in a carousel across the top, then using tabs to let viewers choose what other videos to browse.
 
 The tabs show Florida beaches in another carousel, while the Living Desert Animals are displayed in a grid.
 
@@ -31,28 +31,28 @@ Already we see we have different thumbnail sizes as well as different display la
 
 On the Test Page we see a configurable page that uses a hero image. The background is an uploaded image, then we can choose what and how to display videos.
 
-For the last example, the All Playlists shows two playlists displayed in Grids, but of different size of thumbnails.
+For the last example, the All Playlists shows two playlists displayed in Grids, but of different size thumbnails.
 
 **Slide 5 again
 A few details here. Configurable pages are called screen pages in the Brightcove Beacon UI.
 
 The layouts are quite flexible, but not quite totally free form, hence the quotes.
 
-And as mentioned, another video goes into details of configurable page creation and the various options and layouts.
+And as mentioned, another video in this course goes into details of configurable page creation and the various options and layouts.
 
 **Slide 6
-Non-configurable pages you choose the one you want from the type list, and that's it, no configuration
+We choose non-configurable pages from the type list, and that's it, no further configuration
 
 Slide 7
-Before seeing these details, let's go look at some non-configurable pages in an actual Brightcove Beacon web app.
+Before examining these details, let's go look at some non-configurable pages in an actual Brightcove Beacon web app.
 
 **Web app
-In this app the Favorites, Recently Watched and Settings are the non-configurable pages used.
+In this app, the Favorites, Recently Watched and Settings are the non-configurable pages used.
 
 **Slide 7 again
 These pages are also referred to as system pages, which provide info on the status of the app and what viewers have done in the app
 
-Some non-configurable pages permit you to choose a layout in the Wizard, but not configurable in the Brightcove Beacon UI
+Some non-configurable pages permit you to choose a layout in the Wizard, but once selected the layout is not configurable in the Brightcove Beacon UI
 
 Listed are some example non-configurable pages. 
 
@@ -60,12 +60,12 @@ Listed are some example non-configurable pages.
 Here are two different layouts for the Landing page. Once you choose one of these, there are no tweaks you can make to them
 
 **Slide 9
-Here's a note to make us aware that not every page will appear the same on each platform, and sometimes pages won't appear at all based on a particular configuration
+Here's a note to make us aware that not every page will appear the same on every platform, and sometimes pages won't appear at all based on a particular configuration
 
 **Slide 10
 Here are a few details about page creation before we create a non-configurable page.
 
-We see the path in the UI.
+We see the path in the UI for new page creation.
 
 Also, there is a one-to-one correspondence between the pages we create and menu items in the apps.
 
@@ -83,15 +83,15 @@ Now click the Add new page button
 
 For Basic data we will provide the System Title, which is the internal name. And we'll use the CreateDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
 
-Then use the order we chose.
+Then use the Order number we chose earlier.
 
 We don't need to worry about Friendly URL or Genre Type.
 
-Now select a page type, for this walkthrough we'll my_stuff-all, which shows favorites and recently watched on one page.
+Now select a page type, for this walkthrough we'll choose my_stuff-all, which shows favorites and recently watched on one page.
 
-For the menu item just text is fine.
+For the menu item appearance, Presentation Type, just text is fine.
 
-For Textual data enter the Title views will see as a menu Item in the actual Brightcove Beacon app, so Create Demo, with a space.
+For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon app, so Create Demo, with a space.
 
 For non-textual data, icons can be uploaded that appear either beside or in place of the text name in the menu. The backgrounds are only needed if using a specific type of screen page.
 
@@ -105,14 +105,14 @@ Indicate the devices on which the page can be viewed.
 
 And lastly handle the locations. Be sure at least one permitted location is supplied.
 
-That's the process.
+That's it, that's the page creation process.
 
-Let's create the new page.
+Click Create Page to actually create the new page.
 
-We want to see it right away, so the cache needs to be cleared.
+We want to see immediately if the process worked, so the cache needs to be cleared.
 
 **Web app
-Refresh the page, and there is our new page. And we see the my stuff all.
+Refresh the page, and there is our new page. And we see the my stuff all layout.
 
 **Slide 12
 Redirect pages are only for use on the Brightcove Beacon web apps, and quite straight forward to implement.
@@ -136,3 +136,15 @@ The redirect-blank opens a specified URL in a new tab, and the redirect-self ope
 Redirect type pages add one configuration tab, and that is where we place the specified URL
 
 **Slide 15
+Let's review the main learning points in one more time.
+
+We have three types of pages
+1. Configurable, called screen types in the UI, and are used to display video content in a layout under our control.
+2. Non-configurable which provide system and user interaction information
+3. Finally, redirect which are used in Brightcove Beacon web apps and provide, not surprisingly, redirect functionality.
+
+Also, when you create a page a corresponding menu item is also created.
+
+That's it, sadly we've come to the end of another exciting video in this course. 
+
+Thanks for using Brightcove Beacon and watching these videos!
