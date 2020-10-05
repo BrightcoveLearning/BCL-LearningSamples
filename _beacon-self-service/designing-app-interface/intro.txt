@@ -25,3 +25,4 @@ Here are the objectives for the course. These are most important learning points
 
 
 **Slide 3
+This is a quick glimpse of where we are headed. This is the Brightcove Beacon UI to build pages. The gray dropdown are all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.

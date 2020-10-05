@@ -17,11 +17,6 @@ Along the way we will see that the creation process of the pages varies between 
 This is a quick glimpse of where we are headed. This is a screenshot of the Brightcove Beacon UI to build pages. The gray dropdown displays all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.
 
 **Slide 4
-
-
-
-
-
 Let fill in the Why/What and Hows about configurable pages.
 
 **Slide 5
