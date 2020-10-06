@@ -17,7 +17,7 @@ The page creation process varies between the three page types, but there are mor
 This is a quick glimpse of where we are headed. This is a screenshot of the Brightcove Beacon UI to build pages. The gray dropdown displays all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.
 
 **Slide 4
-lets fill in the Why/What and Hows about configurable pages.
+Lets fill in the Why/What and Hows about configurable pages.
 
 **Slide 5
 Before examining these details, let's go look at some configurable pages in an actual Brightcove Beacon web app.
@@ -27,11 +27,11 @@ The Home page is showing a featured playlist of videos in a carousel across the 
 
 The tabs show Florida beaches in another carousel, while the Living Desert Animals are displayed in a grid.
 
-Already we see we have different thumbnail sizes as well as different display layouts.
+Already we see we have different thumbnail sizes and different display layout possibilities.
 
 On the Test Page we see a configurable page that uses a hero image. The background is an uploaded image, then we can choose what and how to display videos.
 
-For the last example, the All Playlists shows two playlists displayed in Grids, but of different size thumbnails.
+For the last example, the All Playlists page shows two playlists displayed in Grids, but of different sized thumbnails.
 
 **Slide 5 again
 A few details here. Configurable pages are called screen pages in the Brightcove Beacon UI.
@@ -47,7 +47,7 @@ Slide 7
 Before examining these details, let's go look at some non-configurable pages in an actual Brightcove Beacon web app.
 
 **Web app
-In this app, the Favorites, Recently Watched and Settings are the non-configurable pages used.
+In this app, Favorites, Recently Watched and Settings are the non-configurable pages used.
 
 **Slide 7 again
 These pages are also referred to as system pages, which provide info on the status of the app and what viewers have done in the app
@@ -57,7 +57,7 @@ Some non-configurable pages permit you to choose a layout in the Wizard, but onc
 Listed are some example non-configurable pages. 
 
 **Slide 8
-Here are two different layouts for the Landing page. Once you choose one of these, there are no tweaks you can make to them
+Here are two different layouts for the Landing page. Once you choose one of these, there are no tweaks you can make to your selection.
 
 **Slide 9
 Here's a note to make us aware that not every page will appear the same on every platform, and sometimes pages won't appear at all based on a particular configuration
@@ -72,7 +72,7 @@ Also, there is a one-to-one correspondence between the pages we create and menu 
 For each page type, we will see these four tabs on which we will need to supply configuration information.
 
 **Slide 11
-Now let's actually build a page. This will be a simple page where we choose some non-configurable page to display.
+Now let's actually build a page. This will be a simple page where we choose a non-configurable page to display.
 
 **UI
 In the Brightcove Beacon UI we have a pages tab, and from there we create a new page. 
@@ -81,7 +81,7 @@ Before clicking the new page button, we'll want to decide where our new page sho
 
 Now click the Add new page button
 
-For Basic data we will provide the System Title, which is the internal name. And we'll use the CreateDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
+For Basic data we will provide the System Title, which is the internal name. And here we'll use the CreateDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
 
 Then use the Order number we chose earlier.
 
@@ -89,9 +89,9 @@ We don't need to worry about Friendly URL or Genre Type.
 
 Now select a page type, for this walkthrough we'll choose my_stuff-all, which shows favorites and recently watched on one page.
 
-For the menu item appearance, Presentation Type, just text is fine.
+For the menu item appearance, Presentation Type form field, just text is fine.
 
-For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon app, so Create Demo, with a space.
+For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon apps, so Create Demo, with a space this time.
 
 For non-textual data, icons can be uploaded that appear either beside or in place of the text name in the menu. The backgrounds are only needed if using a specific type of screen page.
 
@@ -105,9 +105,9 @@ Indicate the devices on which the page can be viewed.
 
 And lastly handle the locations. Be sure at least one permitted location is supplied.
 
-That's it, that's the page creation process.
-
 Click Create Page to actually create the new page.
+
+That's it, that's the page creation process.
 
 We want to see immediately if the process worked, so the cache needs to be cleared.
 
@@ -115,7 +115,7 @@ We want to see immediately if the process worked, so the cache needs to be clear
 Refresh the page, and there is our new page. And we see the my stuff all layout.
 
 **Slide 12
-Redirect pages are only for use on the Brightcove Beacon web apps, and quite straight forward to implement.
+Redirect pages are only for use on the Brightcove Beacon WEB apps, and quite straight forward to implement.
 
 **Slide 13
 Again, let's see an example of the page type in action before looking at implementation details.
@@ -123,20 +123,20 @@ Again, let's see an example of the page type in action before looking at impleme
 **Web app
 When the Redirect Demo link is clicked, we are redirected to a new tab and sent to a URL that was specified, in this case the Brightcove Beacon docs index page.
 
-In this case a new tab was opened, but you can choose another type if you want to redirect to a new page in the same tab.
+In this case a new tab was opened, but you can choose another type if you want to redirect to a new page in the SAME tab.
 
 **Slide 13 again
 Again, redirect pages only good for web apps
 
 There are two redirect types, redirect-blank and redirect-self. These are akin to using anchors/links in HTML, if you have ever done that. 
 
-The redirect-blank opens a specified URL in a new tab, and the redirect-self opens a specified URL in the same tab.
+The redirect-blank opens a specified URL in a NEW tab, and the redirect-self opens a specified URL in the SAME tab.
 
 **Slide 14
 Redirect type pages add one configuration tab, and that is where we place the specified URL
 
 **Slide 15
-Let's review the main learning points in one more time.
+Let's review the main learning points.
 
 We have three types of pages
 1. Configurable, called screen types in the UI, and are used to display video content in a layout under our control.
