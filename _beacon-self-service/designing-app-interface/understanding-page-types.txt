@@ -1,4 +1,4 @@
-We have three types of pages, which serve VERY different purposes.
+In this video, I will be helping you learn about the three different types of pages we can use in a Brightcove Beacon app. All of the pages serve VERY different purposes.  You will also learn how to create pages of the different types.
 
 First we have configurable pages. In the Brightcove Beacon UI we will see these are called SCREEN pages. We use these pages to layout how viewers should see our video content. In this course, a later video is entirely dedicated to creating and configuring these kind of pages.
 
