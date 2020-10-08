@@ -1,43 +1,43 @@
-Matthew Boles
+
 00:09 - 00:16
 Ok, today's topic in our exciting series of Beacon Courses, Designing the Application Layout.
-Matthew Boles
+
 00:17 - 00:26
 Of course, you'll want to add content or add a page or whatever it may be and this will give us the skills to do that.
-Matthew Boles
+
 00:27 - 00:40
 Basically, when we are designing the page, designing the app, we have four mange items we can use to change the design, enhance the design.
-Matthew Boles
+
 00:40 - 00:42
 Whatever you wanna call it, we have pages.
-Matthew Boles
+
 00:42 - 00:53
 And by the way, we'll see pages directly, correspond to menu items there, 1 to 1, the playlist content, and that's actually what videos do we want to show.
-Matthew Boles
+
 00:53 - 00:58
 And we show the videos on something called configurable pages.
-Matthew Boles
+
 00:58 - 01:03
 And we also have non configurable pages, right?
-Matthew Boles
+
 01:03 - 01:08
 So, those are the tools we have to create our app design.
-Matthew Boles
+
 01:08 - 01:12
 And if you have any questions or comments, we got great feedback.
-Matthew Boles
+
 01:12 - 01:13
 The last two times we've done this.
-Matthew Boles
+
 01:13 - 01:20
 So please just interrupt me with questions, or interrupt me with corrections, or if you have added content.
 Bob Bailey
 01:21 - 01:22
 A map.
-Matthew Boles
+
 01:22 - 01:23
 Yeah.
-Matthew Boles
+
 01:23 - 01:23
 I.
 Bob Bailey
@@ -46,412 +46,412 @@ Think what I would do, like, I was going to ask you if we should interrupt you.
 Bob Bailey
 01:26 - 01:49
 I think what I would almost do is, start off with just like, a couple of screenshots to just show, like what you mean by application design, like showing a screenshot of light to television, with the images up there, or whatever, You know, just like, like three images on top of, you know, kind of overlapping to just kinda throw out what you mean by application design.
-Matthew Boles
+
 01:50 - 01:51
 Yep, OK.
-Matthew Boles
+
 01:52 - 01:57
 I am going right now to actually show an application design, but that's a good idea.
-Matthew Boles
+
 02:00 - 02:00
 Notes here.
-Matthew Boles
+
 02:02 - 02:02
 Alright.
-Matthew Boles
+
 02:02 - 02:06
 So let's go see what this actually means, right?
-Matthew Boles
+
 02:06 - 02:08
 What do these things mean?
-Matthew Boles
+
 02:08 - 02:10
 So, let's go into an app.
-Matthew Boles
+
 02:11 - 02:18
 And, here is an app, And this is the home page.
-Matthew Boles
+
 02:18 - 02:23
 And so the application design, things we can control, or what's on the menu here, right?
-Matthew Boles
+
 02:23 - 02:27
 What's displayed and how they're displayed.
-Matthew Boles
+
 02:28 - 02:33
 And, so what we want to talk about are those four things.
-Matthew Boles
+
 02:34 - 02:38
 First of all, the pages, the pages correspond to menu items.
-Matthew Boles
+
 02:38 - 02:47
 And I even asked, like, I always hate to say something absolute, until I know it's true, and, so, I said, our pages in menu items.
-Matthew Boles
+
 02:47 - 02:50
 Are they 1 to 1, And the answer is yes, right.
-Matthew Boles
+
 02:50 - 02:56
 When you create a page, then you're gonna get a menu item for it, if it's published, and meets all the requirements.
-Matthew Boles
+
 02:56 - 03:00
 Right, so that's what we mean by the different pages.
-Matthew Boles
+
 03:00 - 03:03
 So, here's the wine: This town holds a single series.
-Matthew Boles
+
 03:04 - 03:11
 Here's the different playlists we have, and then there's some other things.
-Matthew Boles
+
 03:11 - 03:26
 And I want to talk about these first because we're talking about configurable pages in playlists, and that's where these come from, basically configurable pages When you add those to your app, like, this is a configurable page.
-Matthew Boles
+
 03:26 - 03:28
 That's where we show videos.
-Matthew Boles
+
 03:28 - 03:29
 Right?
-Matthew Boles
+
 03:29 - 03:30
 It's that simple.
-Matthew Boles
+
 03:30 - 03:33
 If we're going to show videos were in charge of how it looks.
-Matthew Boles
+
 03:33 - 03:35
 That's a configurable page.
-Matthew Boles
+
 03:35 - 03:38
 Also, the screen type will see is on the page.
-Matthew Boles
+
 03:38 - 03:40
 Type is called a screen.
-Matthew Boles
+
 03:40 - 03:41
 That's the way it is.
-Matthew Boles
+
 03:42 - 03:45
 So then we also mentioned these non breakable pages.
-Matthew Boles
+
 03:45 - 03:51
 So, for instance, Favorites is a non configurable page, you can say, I want to include this.
-Matthew Boles
+
 03:52 - 03:52
 And he said, Well, no.
-Matthew Boles
+
 03:52 - 03:56
 I want it to have like, poster images.
-Matthew Boles
+
 03:56 - 03:58
 And I don't want channels.
-Matthew Boles
+
 03:58 - 04:01
 Nope, nope, nope, nope, nope, Non configurable.
-Matthew Boles
+
 04:01 - 04:04
 You say I want Favorites.
-Matthew Boles
+
 04:04 - 04:05
 And it is what it is.
-Matthew Boles
+
 04:05 - 04:08
 You were some of these non configurable pages.
-Matthew Boles
+
 04:08 - 04:14
 You have a choice of layouts, but once you choose the layout, that's it.
-Matthew Boles
+
 04:14 - 04:15
 There's no like tweaking it.
-Matthew Boles
+
 04:15 - 04:17
 So this is a non configurable page.
-Matthew Boles
+
 04:17 - 04:22
 Recently watched another non configurable page.
-Matthew Boles
+
 04:24 - 04:37
 And we're gonna see Settings actually is non configurable page, but we have a couple different layouts we can choose, but if you don't like this order, nope, it's non configurable, you can't do that.
-Matthew Boles
+
 04:41 - 04:44
 Now, another thing I just want to show you, kind of, this is an inch row.
-Matthew Boles
+
 04:44 - 04:44
 And.
-Matthew Boles
+
 04:46 - 04:59
 Let's look at this page, so we seem to have like, some kind of carousel here, and then we have these tabs that we can do different playlist sweat.
-Matthew Boles
+
 04:59 - 05:03
 I'm going to real quickly jump in to the Bright co beacon.
-Matthew Boles
+
 05:05 - 05:13
 Cms here, or the Brightcove Beacon UI, I'm going to home and we see this at first.
-Matthew Boles
+
 05:13 - 05:14
 I remember the first time I looked at.
-Matthew Boles
+
 05:14 - 05:16
 This is like, oh, my God.
-Matthew Boles
+
 05:16 - 05:21
 But, it's not too terrible once you get used to it.
-Matthew Boles
+
 05:21 - 05:24
 I'm just going to grab this real quick, we're going to look at this later.
-Matthew Boles
+
 05:24 - 05:34
 Also, but basically, we lay out, and what's called a block, and we want to feature, which has to do with how big the images are.
-Matthew Boles
+
 05:35 - 05:39
 I want the labels outside, and then the playlist I want as waves, OK?
-Matthew Boles
+
 05:39 - 05:46
 So, I want us to kinda understand how we're gonna approach this before we dive into the details, which we'll do a little later.
-Matthew Boles
+
 05:46 - 05:49
 And again, I have another one.
-Matthew Boles
+
 05:49 - 05:53
 A tab block, I know that spelled wrong, but I don't have any control of that.
-Matthew Boles
+
 05:53 - 05:57
 And then I have a carousel here, right?
-Matthew Boles
+
 05:57 - 06:04
 And of Florida Beaches and Living Desert animals.
-Matthew Boles
+
 06:04 - 06:08
 So, these are the actual things, we mean, Like, what is the application design?
-Matthew Boles
+
 06:08 - 06:10
 So, this is what we can change.
-Matthew Boles
+
 06:10 - 06:14
 Like, what pages we want, we have control over some of those pages.
-Matthew Boles
+
 06:15 - 06:25
 And some, if we may have a layout to choose, but, that's all then, we call those non configurable, by the way, and this, I wouldn't teach this in.
-Matthew Boles
+
 06:25 - 06:25
 A normal wouldn't say this.
-Matthew Boles
+
 06:25 - 06:33
 In a normal class, we're still battling over what these pages should be called, like, configurable non configurable.
-Matthew Boles
+
 06:33 - 06:42
 Some people are calling the non configurable, like, Favorites recently watched, and settings like system pages.
-Matthew Boles
+
 06:42 - 06:46
 So, if you're thinking to be thinking about good words for those, as we continue.
-Matthew Boles
+
 06:46 - 06:50
 And, we'll gather some info, hopefully at the end.
-Matthew Boles
+
 06:52 - 06:53
 This way.
-Matthew Boles
+
 06:54 - 07:01
 All right, so we've seen that an action, and now we have some idea what we even mean by application design.
-Matthew Boles
+
 07:01 - 07:06
 We know we have these configurable pages where the videos go, it's playlist content, it.
-Matthew Boles
+
 07:06 - 07:08
 Add on there, and I can control some of those.
-Matthew Boles
+
 07:10 - 07:16
 And we've seen this colorful block down here, and these are the page types.
-Matthew Boles
+
 07:16 - 07:22
 This will really be, a lot of our effort, in this course, will be understanding these two things.
-Matthew Boles
+
 07:22 - 07:23
 We're gonna pick a page type.
-Matthew Boles
+
 07:24 - 07:27
 And, if it's a screen one, then we can configure it.
-Matthew Boles
+
 07:29 - 07:31
 All right, main learning points.
-Matthew Boles
+
 07:31 - 07:46
 So, whenever I think about this, I hope tomorrow, if someone was to ask you, like, what did you learn yesterday in the designing, the application design course, and these are, I hope, the things that you learned.
-Matthew Boles
+
 07:46 - 07:49
 Number one, we have different types of pages.
-Matthew Boles
+
 07:49 - 07:50
 And we've talked about two of them.
-Matthew Boles
+
 07:50 - 07:51
 There's only three.
-Matthew Boles
+
 07:51 - 07:57
 So, we have different types of pages configurable, not configurable, and redirect pages.
-Matthew Boles
+
 08:00 - 08:02
 We need to know how to create pages and build the menu.
-Matthew Boles
+
 08:02 - 08:07
 Again, 1 to 1 correspondence, that's why I'm listening, listing them together.
-Matthew Boles
+
 08:09 - 08:15
 We have to know how to build, configure our screen pages.
-Matthew Boles
+
 08:15 - 08:17
 Those are the configurable pages.
-Matthew Boles
+
 08:18 - 08:21
 And also, we want to know how to include non configurable pages.
-Matthew Boles
+
 08:23 - 08:31
 Now, you can probably guess, we're going to jump into these understanding the types of pages I pointed out, non configurable, configurable.
-Matthew Boles
+
 08:31 - 08:36
 I still want to show you what a redirect pages, and those of you that have been around for awhile.
-Matthew Boles
+
 08:37 - 08:39
 Redirect Pages may be new to you.
-Matthew Boles
+
 08:39 - 08:43
 They have come in, I don't know how long ago, but I know they weren't around initially.
-Matthew Boles
+
 08:44 - 08:49
 So, again, just real quickly to review, and I hope you're already sick of this, and you already know.
-Matthew Boles
+
 08:49 - 08:56
 So, for instance, the Homepage, Configurable, America's coastline's, that's I'm in Charge, configurable.
-Matthew Boles
+
 08:56 - 08:58
 This is just showing one series.
-Matthew Boles
+
 08:58 - 09:05
 I can put all these series under one, uh, on one page and call, like Series, if we want.
-Matthew Boles
+
 09:06 - 09:10
 All Playlists, again, configurable, I'm in charge of that.
-Matthew Boles
+
 09:10 - 09:12
 Favorites.
-Matthew Boles
+
 09:12 - 09:14
 Nope, we talked about that.
-Matthew Boles
+
 09:15 - 09:22
 Recently watched, it is what it is, Settings, you can pick a couple of different layouts.
-Matthew Boles
+
 09:22 - 09:23
 That's it.
-Matthew Boles
+
 09:23 - 09:30
 Now, the third type of page is called a redirect, and this is only for the web app.
-Matthew Boles
+
 09:31 - 09:32
 Right.
-Matthew Boles
+
 09:32 - 09:35
 Beacon is going to generate different kinds of half the only for the web app.
-Matthew Boles
+
 09:35 - 09:42
 And so, what this lets you do, you can put a page that automatically just when you click it, shoots you off to another page.
-Matthew Boles
+
 09:42 - 09:50
 And so, watch appear as Bright Cove, and then CMS, I'm going to click the redirect and notice a new tab opens.
-Matthew Boles
+
 09:50 - 09:52
 And I am shooting at the.
-Matthew Boles
+
 09:55 - 09:56
 Beacon documentation.
-Matthew Boles
+
 09:57 - 10:00
 And you have the option with these redirect pages.
-Matthew Boles
+
 10:01 - 10:13
 You can either have it open in a new tab, or you can have it replaced the tab, you're in, which would be a little odd, because that would basically be getting rid of the, the app, the Bronco Beacon app.
-Matthew Boles
+
 10:15 - 10:17
 Again, feel free to ask questions.
-Matthew Boles
+
 10:18 - 10:20
 All right, non configurable.
-Matthew Boles
+
 10:20 - 10:21
 See some information there.
-Matthew Boles
+
 10:21 - 10:23
 We've already discussed, Configurable.
-Matthew Boles
+
 10:23 - 10:27
 We're also going to call a screen page, and we have these redirect pages.
-Matthew Boles
+
 10:28 - 10:36
 Here's an example of non configurable, and I said, you can sometimes sometimes choose different layout.
-Matthew Boles
+
 10:36 - 10:37
 So, here's one.
-Matthew Boles
+
 10:37 - 10:42
 You say, oh, these are my sign in, or I think they call landing page, right?
-Matthew Boles
+
 10:42 - 10:43
 Landing page.
-Matthew Boles
+
 10:43 - 10:48
 You have two different ways, it can work, but once you choose it, you can't change the order, that kind of stuff.
-Matthew Boles
+
 10:50 - 10:57
 Also, sometimes, you're gonna add a page, it'll look different, depending on the platform.
-Matthew Boles
+
 10:57 - 11:02
 So on the left-hand side, when you add a search, in fact, search is always in the web app.
-Matthew Boles
+
 11:03 - 11:16
 It just happens, but with the i-phone, you'll actually get when you add the page, and you'll actually get a search option on the i-phone, excuse me, on the i-phone.
-Matthew Boles
+
 11:16 - 11:18
 So it's not like there.
-Matthew Boles
+
 11:18 - 11:22
 It's going to be exactly the same across all platforms.
-Matthew Boles
+
 11:22 - 11:26
 For instance, if there's no registered users, it's smart enough to know.
-Matthew Boles
+
 11:26 - 11:32
 It's not gonna, if you say, I want to log out page, if there's no registered users that knows, that doesn't make sense.
-Matthew Boles
+
 11:32 - 11:33
 No one's login.
-Matthew Boles
+
 11:33 - 11:34
 And so why would somebody want to log out?
-Matthew Boles
+
 11:35 - 11:35
 All right.
-Matthew Boles
+
 11:35 - 11:38
 So, just some details about non configurable pages.
-Matthew Boles
+
 11:40 - 11:47
 Showing you a whole bunch of these Basically video pages, and I've considered maybe suggesting that for the name, for these configurable pages.
-Matthew Boles
+
 11:47 - 11:48
 They're like the page.
-Matthew Boles
+
 11:48 - 11:50
 There's the pages that contain videos.
-Matthew Boles
+
 11:50 - 11:56
 The only thing that makes that tricky is, like recently watched and favorites, also have videos on them.
-Matthew Boles
+
 11:58 - 12:05
 The redirect pages, if you haven't used one of these before, when you go in and you build the page, you get an extra tab.
-Matthew Boles
+
 12:05 - 12:24
 It's almost always these five tabs, but you get this external redirect, and you put in the link in there, that's all and and, like, I said, we'll see, there's, you can control, if you want it, Just like you do in an anchor HTML anchor, you can choose if it opens in a New tab or in the same tab.
-Matthew Boles
+
 12:27 - 12:28
 Alright, pause for a second.
-Matthew Boles
+
 12:28 - 12:35
 Any questions you might have, right now, any clarifications needed?
 Armando Navarro
@@ -460,13 +460,13 @@ Not so far from me.
 Armando Navarro
 12:38 - 12:39
 Thanks!
-Matthew Boles
+
 12:39 - 12:40
 Cool!
 Bob Bailey
 12:40 - 12:41
 Hey, Matt.
-Matthew Boles
+
 12:41 - 12:41
 Just.
 Bob Bailey
@@ -484,43 +484,43 @@ I think I would just say, now, I can figure old pages.
 Bob Bailey
 12:58 - 13:03
 Then, if anything, on the second slide, just say, like, you know, how, yes, you will see, like, continued or something.
-Matthew Boles
+
 13:04 - 13:05
 I can put content.
 Bob Bailey
 13:06 - 13:06
 In here.
-Matthew Boles
+
 13:07 - 13:07
 Yeah.
-Matthew Boles
+
 13:08 - 13:12
 I just wanted to make sure that they knew was not configurable pages.
-Matthew Boles
+
 13:12 - 13:14
 And there are a couple of details.
-Matthew Boles
+
 13:14 - 13:15
 Yeah, I'll look at that.
-Matthew Boles
+
 13:19 - 13:19
 Thank you.
-Matthew Boles
+
 13:23 - 13:33
 Now, of course, we need to know how to actually create a page, and we're going to go in to the Brico Beacon UI.
-Matthew Boles
+
 13:33 - 13:43
 There's actually a Pages tab, and then there's the add new page, but probably not too exciting there, figure it is, and then we have some basic kinds of information.
-Matthew Boles
+
 13:43 - 13:47
 There's the five tabs we almost see when we're creating anything.
-Matthew Boles
+
 13:48 - 13:51
 So, rather than just looking at slides about that, let's go.
 Bob Bailey
 13:51 - 13:52
 Yeah.
-Matthew Boles
+
 13:53 - 13:53
 Yeah.
 Bob Bailey
@@ -532,7 +532,7 @@ This is called creating a page.
 Bob Bailey
 13:58 - 14:02
 I think the first bullet point I would have would be the second bullet you have.
-Matthew Boles
+
 14:02 - 14:03
 Ok.
 Bob Bailey
@@ -541,55 +541,55 @@ It's like, let's talk about creating a page, How do I do that?
 Bob Bailey
 14:06 - 14:14
 In the UI, go to pages, add new page, and then say you're after you create a page, then a lake is, you know what, I mean, just reverse the Apple, it's wanted to?
-Matthew Boles
+
 14:15 - 14:15
 Yep.
-Matthew Boles
+
 14:16 - 14:16
 Good.
-Matthew Boles
+
 14:26 - 14:27
 All right.
-Matthew Boles
+
 14:27 - 14:29
 Going to go into.
-Matthew Boles
+
 14:31 - 14:38
 The Bright co beacon UI of the CMS as we refer to it now, I'm going to click on Pages, going to add a New page.
-Matthew Boles
+
 14:39 - 14:43
 System Title, and I'm just can put the date on here, because I know then I can delete it.
-Matthew Boles
+
 14:43 - 14:48
 So it's my one October page.
-Matthew Boles
+
 14:48 - 14:51
 Now, the order I'm going to jump right out of this, actually.
-Matthew Boles
+
 14:52 - 14:55
 The order number is here.
-Matthew Boles
+
 14:55 - 15:02
 And what the order means is What order do I want the menu items to appear?
-Matthew Boles
+
 15:02 - 15:10
 So for instance, one is Home American coastlines Travel Show Cooking Show, and sure enough, though they are.
-Matthew Boles
+
 15:11 - 15:11
 Right?
-Matthew Boles
+
 15:13 - 15:14
 Yeah, what.
 Bob Bailey
 15:14 - 15:17
 Happens if I put the same order on two pages?
-Matthew Boles
+
 15:17 - 15:21
 The first one gets shown, The second one does not.
-Matthew Boles
+
 15:27 - 15:31
 Yeah, that's what, actually, I haven't tested that we could test that, but that's what I was told.
-Matthew Boles
+
 15:31 - 15:34
 When I asked that same question to someone's, I should test that.
 Bob Bailey
@@ -610,427 +610,427 @@ All right.
 Bob Bailey
 15:43 - 15:44
 Just curious.
-Matthew Boles
+
 15:44 - 15:45
 Yeah.
-Matthew Boles
+
 15:46 - 15:47
 Yeah.
-Matthew Boles
+
 15:47 - 15:49
 So, again, so we know what the order is.
-Matthew Boles
+
 15:49 - 15:50
 So let's go back.
-Matthew Boles
+
 15:50 - 15:51
 We'll do a new page.
-Matthew Boles
+
 15:52 - 16:05
 The one, whoops, October page, this is the internal name, and you probably gonna wanna make it the same as the text page, but I I like to do them different in training.
-Matthew Boles
+
 16:05 - 16:08
 So, you know, they can be different.
-Matthew Boles
+
 16:08 - 16:11
 But on the other hand, it can be distracting.
-Matthew Boles
+
 16:11 - 16:17
 Amina, confusing, if you name this, and it's really no relation to the actual name, that can be a little tricky.
-Matthew Boles
+
 16:17 - 16:21
 So I want to put, this is five.
-Matthew Boles
+
 16:21 - 16:23
 We're going to tasks will see what happens here.
-Matthew Boles
+
 16:23 - 16:31
 The friendly name, the genre type right now, this is going to disappear, by the way.
-Matthew Boles
+
 16:31 - 16:37
 Now this is where I pick This is where I pick the screen type.
-Matthew Boles
+
 16:38 - 16:38
 Right.
-Matthew Boles
+
 16:38 - 16:44
 And so let's say we're going to do another redirect page.
-Matthew Boles
+
 16:44 - 16:47
 We're going to talk about all these types later, where we get information.
-Matthew Boles
+
 16:47 - 16:51
 So I'll do a redirect, because all we're going to do is create it, and then we're going to end it.
-Matthew Boles
+
 16:52 - 16:52
 Yeah.
-Matthew Boles
+
 16:54 - 16:55
 Do that.
-Matthew Boles
+
 16:55 - 16:58
 And if you have an icon, will see a non textual data.
-Matthew Boles
+
 16:58 - 17:07
 If you have pages, you can do an icon, and the text, or just the icon, or just the tax if you upload those.
-Matthew Boles
+
 17:07 - 17:16
 And right now, this whole thing, notice we only see that kind of light up when we do a screen page, and then we can put stuff down here.
-Matthew Boles
+
 17:17 - 17:18
 But, that's special.
-Matthew Boles
+
 17:18 - 17:20
 We're going to talk about that also.
-Matthew Boles
+
 17:23 - 17:33
 Now, the textual data and this is the name that will appear in the menu, so I'm gonna stay with one October, Paige.
-Matthew Boles
+
 17:33 - 17:33
 Good.
-Matthew Boles
+
 17:36 - 17:37
 Non textual data.
-Matthew Boles
+
 17:37 - 17:45
 For instance, if you want an icon and if there are hovered over it, in go clicked on, like if it's the actual page, you can have the icon change.
-Matthew Boles
+
 17:46 - 18:04
 Horizontal background, vertical background, I could never figure out what this was for until I started to look at more detail, and there was another new kind of page added than the last time I looked carefully called the hero page, and I'll show you why we have to upload those when we talk about the hero page.
-Matthew Boles
+
 18:05 - 18:09
 So here, really, for most of the time, you don't have to upload anything.
-Matthew Boles
+
 18:10 - 18:16
 Since I picked a redirect, here, we can put in the redirect.
-Matthew Boles
+
 18:25 - 18:29
 Tags, not implemented right now, and writes and scheduling.
-Matthew Boles
+
 18:30 - 18:33
 This probably starts to feel like Groundhog's Day.
-Matthew Boles
+
 18:33 - 18:39
 If you work with the beacon much, because this almost always look the same, I want it published.
-Matthew Boles
+
 18:39 - 18:45
 I'm gonna pick a date before today, I'm going to pick a date after today.
-Matthew Boles
+
 18:49 - 18:52
 And I want all devices, OK.
-Matthew Boles
+
 18:52 - 18:54
 Ama, let it for the world.
-Matthew Boles
+
 18:54 - 18:55
 I have this.
 Bob Bailey
 18:56 - 18:57
 Start date before today.
-Matthew Boles
+
 19:01 - 19:02
 Oh, sorry.
-Matthew Boles
+
 19:02 - 19:02
 I Yep.
-Matthew Boles
+
 19:03 - 19:03
 Thanks.
-Matthew Boles
+
 19:05 - 19:05
 Click through.
-Matthew Boles
+
 19:05 - 19:07
 I was thinking it was September still.
-Matthew Boles
+
 19:08 - 19:08
 Yeah.
-Matthew Boles
+
 19:08 - 19:10
 So, thank you for catching that.
-Matthew Boles
+
 19:10 - 19:16
 So, before today after day and I have this is the TIF later on, happened mean just today As a matter of fact.
-Matthew Boles
+
 19:17 - 19:25
 I had created, when I first started playing with this instance, I had created a page and the favorites page actually wasn't showing up.
-Matthew Boles
+
 19:25 - 19:33
 Like, what the heck, why isn't that showing up and then, went in here and sure enough, I'd put a date that had the end date had passed, right.
-Matthew Boles
+
 19:33 - 19:34
 So, you want to make sure.
-Matthew Boles
+
 19:34 - 19:38
 And I think Jeff and I found out, you have to put something in here.
-Matthew Boles
+
 19:39 - 19:40
 Otherwise, you actually get an error.
-Matthew Boles
+
 19:40 - 19:42
 If you try to view it, then.
-Matthew Boles
+
 19:43 - 19:45
 So all these things are important to put in.
-Matthew Boles
+
 19:46 - 19:47
 And that's the standard.
-Matthew Boles
+
 19:47 - 19:51
 And even with the redirect, you get this X, this external redirect.
-Matthew Boles
+
 19:51 - 19:53
 Which is a bonus to that.
-Matthew Boles
+
 19:54 - 19:55
 So I'm going to create the new page.
-Matthew Boles
+
 19:59 - 20:01
 I want to test it right away.
-Matthew Boles
+
 20:01 - 20:08
 I don't want to wait an hour to see if it works and that's how often the cache will be cleared.
-Matthew Boles
+
 20:08 - 20:14
 So it's kind of in determine, so I'm gonna go to the cache and I'm gonna, and I didn't load any images.
-Matthew Boles
+
 20:14 - 20:15
 But I always pick both.
-Matthew Boles
+
 20:15 - 20:17
 Now, we're gonna see this.
-Matthew Boles
+
 20:17 - 20:18
 Let's see what happens.
-Matthew Boles
+
 20:18 - 20:19
 I'm gonna go to pages.
-Matthew Boles
+
 20:20 - 20:22
 Notice We have two: number: five.
-Matthew Boles
+
 20:23 - 20:24
 Right.
-Matthew Boles
+
 20:24 - 20:34
 And I don't know why this one, maybe, because I created it, so let's see if what I was told earlier, and I'll refresh this.
-Matthew Boles
+
 20:41 - 20:45
 So what it did, Travel shop.
-Matthew Boles
+
 20:46 - 20:46
 Yeah, it.
-Matthew Boles
+
 20:47 - 20:50
 It replaced it, right, We're not seeing American coastlines.
-Matthew Boles
+
 20:51 - 20:57
 So if you have the same number The one on top, probably I didn't know.
-Matthew Boles
+
 20:58 - 21:00
 You know, there's no way to determine which would come first.
-Matthew Boles
+
 21:00 - 21:07
 So, that's like a bad thing to do, Though, We'll go in, and let's make this like.
-Matthew Boles
+
 21:07 - 21:08
 20.
-Matthew Boles
+
 21:14 - 21:15
 Change this to 20.
-Matthew Boles
+
 21:23 - 21:25
 I got to clear the cache again.
-Matthew Boles
+
 21:41 - 21:50
 Sometimes, this isn't supposed to happen, but sometimes it happens where there'll be dumped out in testing into a.
-Matthew Boles
+
 21:55 - 21:58
 Into a different CMS and we're on 45.
-Matthew Boles
+
 22:03 - 22:08
 Used to happen all the time, now, I think, sometimes just happens some of the time.
-Matthew Boles
+
 22:08 - 22:11
 So there's that back, and there's our one October page.
-Matthew Boles
+
 22:11 - 22:14
 So what's going to happen since this is a redirect page.
-Matthew Boles
+
 22:14 - 22:16
 Now, off, I go, right.
-Matthew Boles
+
 22:16 - 22:18
 I was redirected the right code dot com.
-Matthew Boles
+
 22:21 - 22:25
 And that's the process of creating pages.
-Matthew Boles
+
 22:29 - 22:32
 Questions before we move on?
-Matthew Boles
+
 22:42 - 22:45
 So, creating pages, We know where to go to do it.
-Matthew Boles
+
 22:45 - 22:52
 We're going to have these five, And if you do redirect, you get the bonus external link, or whatever the tap was called.
-Matthew Boles
+
 22:52 - 22:58
 And, again, we have the key documents listed here, and we also have them where this course will be posted.
-Matthew Boles
+
 22:59 - 23:02
 There'll be like the video and beside it, the key documents listed.
-Matthew Boles
+
 23:05 - 23:10
 Now, we want to go and look at configuring screen pages.
-Matthew Boles
+
 23:10 - 23:13
 So, the screen pages are the configurable ones.
-Matthew Boles
+
 23:14 - 23:16
 And we're gonna go to Brightcove.
-Matthew Boles
+
 23:16 - 23:19
 Beacon UI, new pages, the basic data tab.
-Matthew Boles
+
 23:20 - 23:22
 And we have three entity entities to use.
-Matthew Boles
+
 23:22 - 23:26
 We have Blocks, layouts, and playlists.
-Matthew Boles
+
 23:26 - 23:33
 So, blocks contain the layouts, and the layouts contain the playlists, which is your data.
-Matthew Boles
+
 23:33 - 23:36
 And so, here's how it looks.
-Matthew Boles
+
 23:36 - 23:40
 It's not, it takes a while to get used to it.
-Matthew Boles
+
 23:40 - 23:41
 Let's say it that way.
-Matthew Boles
+
 23:41 - 23:45
 If I have a single block, which means I can only put one thing in it.
-Matthew Boles
+
 23:45 - 23:53
 And I put in the layout I want to feature, which means they're big, the labels outside.
-Matthew Boles
+
 23:54 - 23:56
 And here's the data A-list block.
-Matthew Boles
+
 23:56 - 24:04
 I can have multiple things in, and here's the carousel going across the labels in, and I could put two in there.
-Matthew Boles
+
 24:05 - 24:05
 Right?
-Matthew Boles
+
 24:05 - 24:08
 So, so that's how we can kind of look at this.
-Matthew Boles
+
 24:08 - 24:14
 And we did that early on, the relationship between this, and how the page actually looks.
-Matthew Boles
+
 24:15 - 24:25
 I do want to go out and show you some information from this doc called Introducing Pages, so you know what's there.
-Matthew Boles
+
 24:25 - 24:28
 And also, it takes awhile to demo each thing.
-Matthew Boles
+
 24:28 - 24:32
 And I'm going to show you some examples here, rather than going through.
-Matthew Boles
+
 24:32 - 24:39
 And once and trying to build each one refresh.
-Matthew Boles
+
 24:39 - 24:40
 It just takes too long.
-Matthew Boles
+
 24:40 - 24:43
 So these are the types of pages.
-Matthew Boles
+
 24:43 - 24:54
 If you haven't looked carefully for awhile, like I hadn't knew in some time, I don't know how long ago, redirect blank, redirect, self, and screen hero image.
-Matthew Boles
+
 24:55 - 25:03
 I talked about the categories, just a quick review, non configurable screen, and here's this.
-Matthew Boles
+
 25:03 - 25:09
 It's, this is like a special type of screen, this one, that is called the Hero Hero image.
-Matthew Boles
+
 25:09 - 25:15
 And what that does, and I mentioned, you have to put in an image for this page because it kind of becomes background.
-Matthew Boles
+
 25:17 - 25:21
 Right and what I wanted to do.
-Matthew Boles
+
 25:24 - 25:28
 Yeah, Here's an example of the Hero page.
-Matthew Boles
+
 25:28 - 25:34
 You have this big image here, and then you can put whatever content you want underneath it.
-Matthew Boles
+
 25:35 - 25:46
 And you need to upload both the landscape image and a portrait damage landscape if you're on like a TV, and if you're on a mobile up and down, then you'll need the portrait image.
-Matthew Boles
+
 25:49 - 25:51
 And the redirect pages.
-Matthew Boles
+
 25:51 - 25:57
 This is just a table of all the, like, some specifics about that.
-Matthew Boles
+
 25:57 - 25:58
 That's fine.
-Matthew Boles
+
 25:59 - 26:00
 Screen pages, we're going to work on that.
-Matthew Boles
+
 26:00 - 26:05
 Now, here's what I wanted to talk about, and it just takes too much time to demo.
-Matthew Boles
+
 26:05 - 26:08
 So, first of all, we have different kinds of blocks.
-Matthew Boles
+
 26:08 - 26:13
 So right here, we have a single block, means we can just add one thing, right.
-Matthew Boles
+
 26:13 - 26:13
 That's it.
-Matthew Boles
+
 26:13 - 26:14
 That's good.
-Matthew Boles
+
 26:15 - 26:24
 List block, let's just put multiple things in and here what I've done, three carousels, and I've added three.
-Matthew Boles
+
 26:25 - 26:27
 Different playlists ways.
-Matthew Boles
+
 26:27 - 26:28
 Florida Beaches and Oregon Coast.
-Matthew Boles
+
 26:28 - 26:31
 So that's the list block, Tabb block.
-Matthew Boles
+
 26:31 - 26:36
 We've seen an example that, again, it's misspelled, but that's the way it is.
-Matthew Boles
+
 26:37 - 26:40
 I have Waves, Oregon Coast in Florida Beaches.
-Matthew Boles
+
 26:40 - 27:00
 Again, you can also use a drop-down block, and you get this drop-down over here with your three with your three different, in this case playlist, right, so these are the blocks, the four kind of blocks, again, single block, list, block.
-Matthew Boles
+
 27:01 - 27:04
 Tab, block, and drop-down block.
 Miguel Ascanio
 27:05 - 27:18
 One question to just to see, just check in by any chance, you know, um, what's the maximum amount of playlist that you can put up on, on the drop-down blog, too, you know?
-Matthew Boles
+
 27:19 - 27:21
 No, idea, but that's a good question.
-Matthew Boles
+
 27:21 - 27:22
 I'll find that out.
 Miguel Ascanio
@@ -1042,7 +1042,7 @@ I'll check that out as well.
 Bob Bailey
 27:26 - 27:27
 Hey, Matt.
-Matthew Boles
+
 27:28 - 27:28
 Yeah.
 Bob Bailey
@@ -1060,298 +1060,298 @@ Because I'm just thinking for like, localization Like this combos makes sense.
 Bob Bailey
 27:41 - 27:43
 Should we change it to combination.
-Matthew Boles
+
 27:44 - 27:44
 Ok?
 Bob Bailey
 27:45 - 27:46
 Just a small thing.
-Matthew Boles
+
 27:54 - 27:55
 They can notes.
-Matthew Boles
+
 28:00 - 28:03
 Same, I don't know if there's a limit, Like, I don't know what would happen.
-Matthew Boles
+
 28:03 - 28:06
 If you have so many tabs, it's wider than your screen?
-Matthew Boles
+
 28:06 - 28:11
 I don't know how they know that, but all I'll ask about that if there is some kind of limit.
 Miguel Ascanio
 28:12 - 28:14
 All right, thanks.
-Matthew Boles
+
 28:14 - 28:15
 Cool.
-Matthew Boles
+
 28:16 - 28:20
 Now we have a bunch of different kinds of layouts.
-Matthew Boles
+
 28:20 - 28:29
 And I'm not gonna go through each one, because they're basically combinations of a limited set of layout parameters, right?
-Matthew Boles
+
 28:29 - 28:37
 And so we have these combinations, but again, they're just combine their combinations of this limited set.
-Matthew Boles
+
 28:37 - 28:46
 So first of all, we have a carousel and the labels in So a carousel it lists some across on one, and here you can go to the edge.
-Matthew Boles
+
 28:46 - 29:01
 And by the way, I don't think I have on my demo, you do have a view all page and when you get to the end, if there's a whole bunch, you can rather than having a carousel of like one thousand videos, you can say, I want I think it's 10.
-Matthew Boles
+
 29:01 - 29:08
 I'm like 10, and then there's the view all you can click, and then it goes to another page and just kind of puts them in a grid.
-Matthew Boles
+
 29:09 - 29:15
 So here's carousel with the labels out, so with the labels, then it covers up part of your thumbnail, ...
-Matthew Boles
+
 29:15 - 29:16
 Easy to see.
-Matthew Boles
+
 29:16 - 29:21
 And this one, if you look at this Rock, you just see a little love it here, the labels out.
-Matthew Boles
+
 29:21 - 29:23
 You see it, and then you see the ocean in front.
-Matthew Boles
+
 29:25 - 29:28
 So that's Carrousel labels in labels out.
-Matthew Boles
+
 29:30 - 29:34
 Featured means your images here are going to be larger.
-Matthew Boles
+
 29:34 - 29:41
 So you can just tell, see this image is bigger than this one, so this is a featured carousel.
-Matthew Boles
+
 29:42 - 29:46
 They think, and actually, there was talk a while ago.
-Matthew Boles
+
 29:46 - 29:48
 Well, that's always at the top, but I don't know.
-Matthew Boles
+
 29:48 - 29:51
 If you look at, Uh, I can't remember it was.
-Matthew Boles
+
 29:51 - 30:01
 If it was, um, Netflix or Prime video, that now sometimes we're using bigger ones in the middle so they didn't want to limit it that way.
-Matthew Boles
+
 30:03 - 30:12
 You can also choose to have your thumbnails displayed in landscape or as posters in portrait.
-Matthew Boles
+
 30:15 - 30:18
 And again, this goes back combinations in here.
-Matthew Boles
+
 30:19 - 30:21
 You can look through the list of them.
-Matthew Boles
+
 30:22 - 30:24
 Now this is the one that's kind of confusing.
-Matthew Boles
+
 30:26 - 30:32
 When I first saw this, I said Grid three, OK, so it's going to be a grid, I can either go three across, or for cross.
-Matthew Boles
+
 30:33 - 30:35
 No, that's the wrong answer.
-Matthew Boles
+
 30:35 - 30:51
 What the Grid three in grid for mean is that their relative sizes, so you can see right here, if you look at the width of this and the width of this one, the grid three, and this is I tested.
-Matthew Boles
+
 30:51 - 30:55
 It's like 800 pixel wide, you do get three across and four across.
-Matthew Boles
+
 30:55 - 31:05
 But if you have a wider screen, Here's the grid: 3 is 4 Cross, and the grid 4 is 5 across.
-Matthew Boles
+
 31:05 - 31:13
 So, really featured grid three and grid for have to do with relative size.
-Matthew Boles
+
 31:13 - 31:21
 If the biggest ones are featured, the next bigger ones are Grid three, then the smallest ones would be grid for.
-Matthew Boles
+
 31:23 - 31:35
 And, and that's a little tricky, because in my it was my mistake going in with my expectations, like, oh, grid three means is three across, no matter what, as I get bigger, like, I guess the images get bigger or something, but that's not true.
-Matthew Boles
+
 31:36 - 31:36
 Right.
-Matthew Boles
+
 31:36 - 31:41
 It's just relative size featured Grid three and Grid four.
-Matthew Boles
+
 31:43 - 31:47
 And again, I talk about the common configuration.
-Matthew Boles
+
 31:47 - 31:54
 And, in fact, Jeff wrote a doc on those and nicely documented.
-Matthew Boles
+
 31:55 - 31:55
 Note here.
-Matthew Boles
+
 31:55 - 31:56
 Permitted locations.
-Matthew Boles
+
 31:56 - 32:01
 You'll actually get an error if you have, if you don't have permitted locations.
-Matthew Boles
+
 32:01 - 32:06
 Whereas if you don't specify validates, the page just doesn't show up.
-Matthew Boles
+
 32:06 - 32:09
 So Lilah consisting consistency there.
-Matthew Boles
+
 32:14 - 32:35
 Again, key doc here, when it comes time, just a real quickly reinforce, we talk about blocks, single block lists, block, tab, block, drop-down block, and the layouts are a combination of the features I listed down below, like carousel labels and labels out grid, featured, pallister.
-Matthew Boles
+
 32:35 - 32:36
 Landscape.
-Matthew Boles
+
 32:36 - 32:39
 That kind of stuff and you can choose which one to use.
-Matthew Boles
+
 32:43 - 32:46
 Give a pregnant pause of silence here.
-Matthew Boles
+
 32:46 - 32:50
 So, you can just think through what we've done if you have any questions.
-Matthew Boles
+
 32:55 - 32:57
 No, perfect.
-Matthew Boles
+
 33:01 - 33:03
 Including non configurable pages.
-Matthew Boles
+
 33:03 - 33:06
 Well, this is really straightforward, actually.
-Matthew Boles
+
 33:07 - 33:12
 You go in, all of them are non configurable, except the two self ones.
-Matthew Boles
+
 33:13 - 33:15
 And you decide what you want.
-Matthew Boles
+
 33:16 - 33:17
 And you put it in.
-Matthew Boles
+
 33:17 - 33:18
 And.
-Matthew Boles
+
 33:18 - 33:20
 Yeah, so that's pretty much it.
-Matthew Boles
+
 33:20 - 33:27
 We do have a Doc on that, also, including non configurable.
-Matthew Boles
+
 33:27 - 33:29
 So here's another example.
-Matthew Boles
+
 33:29 - 33:31
 Settings has three to choose from.
-Matthew Boles
+
 33:32 - 33:32
 Right?
-Matthew Boles
+
 33:32 - 33:36
 And once you choose that, though, they're not configurable after that.
-Matthew Boles
+
 33:37 - 33:45
 And you choose the type there, and here's a table with information about it and how to select it, right?
-Matthew Boles
+
 33:45 - 33:47
 So those are straightforward.
-Matthew Boles
+
 33:47 - 33:51
 I'm not gonna go through everyone, that's no fun for anybody, especially you guys.
-Matthew Boles
+
 33:51 - 33:52
 So I'm not gonna go there.
-Matthew Boles
+
 33:54 - 33:58
 All right, a couple of tips and traps, tips.
-Matthew Boles
+
 33:58 - 34:05
 When adding a series to a page, it must be first must be first placed in a playlist.
-Matthew Boles
+
 34:05 - 34:06
 That took me a little while.
-Matthew Boles
+
 34:06 - 34:10
 We were building, working with series, Jeff, and I was like, wait a SEC.
-Matthew Boles
+
 34:10 - 34:17
 I don't see where I can add a series, and then I realize you have to put it in playlists first, also, what we tested.
-Matthew Boles
+
 34:17 - 34:21
 Don't consecutively number the order places, right?
-Matthew Boles
+
 34:21 - 34:22
 And I ran into that.
-Matthew Boles
+
 34:22 - 34:25
 I was putting everything at the end, like 100, 101, 102.
-Matthew Boles
+
 34:25 - 34:28
 And then if I wanted to put in one in between, I had to re number above.
-Matthew Boles
+
 34:28 - 34:29
 So that's no fun.
-Matthew Boles
+
 34:31 - 34:34
 So just leave them spaced out my five, or 10, whatever.
-Matthew Boles
+
 34:35 - 34:49
 Then the traps, if you have a page that is non visible, is not appearing, or you get an error occur, no kind of a no content available at the moment, First thing to go look at is the rights and scheduling tab.
-Matthew Boles
+
 34:49 - 34:55
 Like, is it Mark publish, there's a little checkbox, are the start and end dates valid for the time?
-Matthew Boles
+
 34:55 - 34:59
 Do you have devices enabled and you have a permitted location or locations?
-Matthew Boles
+
 35:01 - 35:02
 Put those in.
-Matthew Boles
+
 35:02 - 35:02
 Yeah.
-Matthew Boles
+
 35:04 - 35:05
 Quick review.
-Matthew Boles
+
 35:06 - 35:08
 Three types configurable screen.
-Matthew Boles
+
 35:08 - 35:13
 That's where we put the videos non configurable, kinda like the system pages.
-Matthew Boles
+
 35:14 - 35:17
 The Settings, the Favorites.
-Matthew Boles
+
 35:17 - 35:25
 And there's different kinds of you can put them together, like Favorites recently watched the redirects for the web only.
-Matthew Boles
+
 35:26 - 35:32
 Also, remember, when you're creating a page, you're going to have a menu item for it and building your configurable screen pages.
-Matthew Boles
+
 35:32 - 35:41
 You have blocks, layouts, and playlists, and that my friends wraps it up.
-Matthew Boles
+
 35:42 - 35:57
 First question I have any suggestions on configurable versus non configurable or are should we work hard to just avoid the term's somehow?
-Matthew Boles
+
 35:58 - 36:03
 And we're really, I'm really looking forward to the new UI is what I'm talking about here.
-Matthew Boles
+
 36:03 - 36:05
 We have documents about it, it's done.
-Matthew Boles
+
 36:05 - 36:07
 Any suggestions on, on that?
-Matthew Boles
+
 36:07 - 36:08
 First of all?
 Bob Bailey
 36:13 - 36:15
 I believe that I would leave the names in.
-Matthew Boles
+
 36:16 - 36:19
 You think, not configurable, non configurable, or Yeah.
 Bob Bailey
@@ -1369,7 +1369,7 @@ You know, I think there's a better name.
 Bob Bailey
 36:31 - 36:33
 But for right now, that's what they're called, I'd leave that in there.
-Matthew Boles
+
 36:34 - 36:36
 Going forward, like.
 Bob Bailey
@@ -1387,16 +1387,16 @@ I like system, right, Because it's kinda like it's provided, I think it kind of 
 Bob Bailey
 36:57 - 36:58
 That's just my opinion.
-Matthew Boles
+
 36:59 - 37:03
 Yeah, Any other thoughts, suggestions?
-Matthew Boles
+
 37:07 - 37:13
 Any questions about or suggestions about the course, the content.
-Matthew Boles
+
 37:13 - 37:14
 Any tips?
-Matthew Boles
+
 37:14 - 37:19
 Miguel, anything I did wrong, any other enrichment you can give me.
 Miguel Ascanio
@@ -1417,7 +1417,7 @@ Happen and just make the comparison between the blocks and the carousels, that w
 Bob Bailey
 37:49 - 37:51
 Hmm, a map.
-Matthew Boles
+
 37:52 - 37:52
 Yeah.
 Bob Bailey
@@ -1441,34 +1441,34 @@ Like I would, I would cover that first.
 Bob Bailey
 38:26 - 38:31
 And either not do or I would do the redirects like later.
-Matthew Boles
+
 38:31 - 38:32
 Yeah.
-Matthew Boles
+
 38:32 - 38:40
 The only reason, that was a conscious choice, that I did that in, because that was where I was talking about creating the page.
-Matthew Boles
+
 38:41 - 38:44
 And I didn't want to go into like a screen by.
 Bob Bailey
 38:45 - 38:46
 Saying, that.
-Matthew Boles
+
 38:46 - 38:49
 Begs the question, well, wait, how do I put stuff on the page?
-Matthew Boles
+
 38:49 - 38:56
 And I didn't want that, but what I can do is maybe I won't like have favorites showing already, and I could go in and just add favorites.
-Matthew Boles
+
 38:57 - 38:57
 No.
-Matthew Boles
+
 38:57 - 39:02
 I want a page, though, that no one wants to say, well, how do I put videos on?
-Matthew Boles
+
 39:02 - 39:03
 Because that's actually the next section.
-Matthew Boles
+
 39:04 - 39:10
 So, yeah, I'll change that, Gotta take notes.
 Bob Bailey
@@ -1477,22 +1477,22 @@ Yeah, my only comment, because like I've invested with the new UI, is, Man, the 
 Bob Bailey
 39:19 - 39:20
 Does it suck?
-Matthew Boles
+
 39:22 - 39:23
 I try.
-Matthew Boles
+
 39:24 - 39:33
 I told the designers that, you know, when the when the current customers see the new UI, you can probably expect tears of joy when they see it.
-Matthew Boles
+
 39:33 - 39:35
 And I'm not exaggerating.
-Matthew Boles
+
 39:35 - 39:40
 I mean, wow, I give all of our current customers credit for braving this thing.
-Matthew Boles
+
 39:40 - 39:49
 And just as importantly, all the onboarding people credit for walking people through really, what is a mess?
-Matthew Boles
+
 39:49 - 39:51
 I mean, there's no other way to say.
 Miguel Ascanio
@@ -1501,37 +1501,37 @@ About it.
 Miguel Ascanio
 39:52 - 39:57
 I'm the one receiving the heat and then our mothers probably remember.
-Matthew Boles
+
 40:00 - 40:08
 You'll, probably, you'll probably have nightmares for years, Miguel, about this old UI, you know?
-Matthew Boles
+
 40:08 - 40:09
 It's like, Oh, no.
-Matthew Boles
+
 40:09 - 40:11
 Oh, God, I thought, we were still using that UI, you wake up.
 Miguel Ascanio
 40:14 - 40:18
 Really looking forward to it for anyone, but I think it's just going to take a little longer, right.
-Matthew Boles
+
 40:19 - 40:25
 Yeah, the first, and this is absolutely internal only, right, no customers can be told this.
-Matthew Boles
+
 40:25 - 40:37
 But even the first hints of working things for, for down, for, like even demoing will be, like, late in Q four.
-Matthew Boles
+
 40:37 - 40:38
 Right.
-Matthew Boles
+
 40:39 - 40:47
 So, and there is a plan for our, some of our design partners to have a beta to look at stuff, but I'm not even sure.
-Matthew Boles
+
 40:47 - 40:49
 I don't think that even has a day yet.
-Matthew Boles
+
 40:49 - 40:56
 But, like, for internal training, there's talk of being able to show stuff in Q four.
-Matthew Boles
+
 40:57 - 41:00
 All right, yeah.
 Jeff Doktor
@@ -1543,133 +1543,133 @@ So, um, episodes reside in video cloud play lists are also residing in a video c
 Jeff Doktor
 41:12 - 41:12
 Is that correct?
-Matthew Boles
+
 41:13 - 41:14
 Correct.
-Matthew Boles
+
 41:15 - 41:30
 You can also playlists are one thing that you can build, either in video cloud, or you can build them in, ah, Beacon UI.
 Jeff Doktor
 41:31 - 41:31
 Bye.
-Matthew Boles
+
 41:34 - 41:35
 Go ahead and.
 Jeff Doktor
 41:35 - 41:37
 Import them from video cloud is going to overwrite?
-Matthew Boles
+
 41:38 - 41:50
 Yeah, but the thing is, you can create it, for instance, right, I had to create, I had to create a new playlist that, I own, I don't wanna credit, well Yeah, I did create a new playlist.
-Matthew Boles
+
 41:50 - 41:53
 When I wanted to add a series to it, right?
-Matthew Boles
+
 41:53 - 41:55
 That's something you can't do.
 Jeff Doktor
 41:55 - 41:55
 Right?
-Matthew Boles
+
 41:56 - 42:07
 Right, so, the thing with, and that's, this is naming, and this is your vocabulary, so what I think's gonna happen, we're gonna refer to play lists to mean video only.
-Matthew Boles
+
 42:08 - 42:09
 And what is current?
-Matthew Boles
+
 42:09 - 42:13
 Referred to a playlist in Beacon, or give me called Collections.
 Jeff Doktor
 42:13 - 42:14
 Ok.
-Matthew Boles
+
 42:14 - 42:19
 Or, the other thing, we're just going to call them Collections, right, everything, If It's just videos, that's fine.
-Matthew Boles
+
 42:20 - 42:27
 The thing with playlists, you create and here, they can contain things other than just, you know, the movies, right?
-Matthew Boles
+
 42:27 - 42:29
 Or it pull in.
-Matthew Boles
+
 42:29 - 42:37
 So the playlist you pull in from video cloud are automatically listed here.
-Matthew Boles
+
 42:38 - 42:45
 But you can also go into here and create playlists that, ah.
-Matthew Boles
+
 42:46 - 42:48
 You have things more than just the video.
-Matthew Boles
+
 42:48 - 42:59
 So you might want to, first, let's say you want to do a preview of, you know, the burst installment of certain series.
-Matthew Boles
+
 42:59 - 43:06
 And you're gonna say, oh, these are the first, you know, watch the first installment of the series, then you can just put like the episodes in, if you wanted.
-Matthew Boles
+
 43:06 - 43:10
 So, you could build a playlist of just the episodes and here, if you want.
 Jeff Doktor
 43:11 - 43:18
 Ok, so only if your platelets had the same name as defined in Visual Cloud, then it would be overwritten.
-Matthew Boles
+
 43:19 - 43:20
 Well, actually.
 Jeff Doktor
 43:21 - 43:22
 Or is it never.
-Matthew Boles
+
 43:22 - 43:23
 Overwritten?
-Matthew Boles
+
 43:23 - 43:24
 No, I think it's either overwritten.
-Matthew Boles
+
 43:24 - 43:27
 Or it might list both of them.
-Matthew Boles
+
 43:27 - 43:30
 Because I did something I honestly, Jaffe, you'll want to test that.
-Matthew Boles
+
 43:31 - 43:36
 Because I can't remember if if they both showed up in the list.
-Matthew Boles
+
 43:36 - 43:37
 Was like, no, that's interesting.
-Matthew Boles
+
 43:37 - 43:41
 So, I, I think if I had to guess.
-Matthew Boles
+
 43:41 - 43:44
 I think it's overwritten, but that's what you want to think of.
-Matthew Boles
+
 43:44 - 43:50
 We're going to be calling these collections, and collections contain things other than just videos, right.
 Jeff Doktor
 43:52 - 43:52
 Nice.
-Matthew Boles
+
 43:54 - 44:01
 And the best thing we ran into that is, we had to create a playlist to add the Series' two.
 Jeff Doktor
 44:01 - 44:02
 Right?
-Matthew Boles
+
 44:02 - 44:02
 Right?
-Matthew Boles
+
 44:08 - 44:08
 Yeah.
-Matthew Boles
+
 44:11 - 44:20
 Miguel had to drop off, but next week, Jeff kinda gave us a little teaser just going to be speaking on.
-Matthew Boles
+
 44:20 - 44:22
 Right next week, Jeff, or not.
 Jeff Doktor
 44:22 - 44:23
 Next week, I didn't know.
-Matthew Boles
+
 44:25 - 44:28
 Next week is Alberto, right.
 Alberto Ladron
@@ -1678,30 +1678,30 @@ Dad's me!
 Alberto Ladron
 44:31 - 44:34
 I will show you how to publish the Android app.
-Matthew Boles
+
 44:34 - 44:38
 Yeah, so next week's Alberto showing us how to publish an Android app.
-Matthew Boles
+
 44:38 - 44:42
 Then, I think the following week is Jeff or me, again.
-Matthew Boles
+
 44:42 - 44:43
 I'd have to look.
-Matthew Boles
+
 44:43 - 44:44
 But.
 Jeff Doktor
 44:44 - 44:44
 Doesn't.
-Matthew Boles
+
 44:44 - 44:45
 Matter.
 Jeff Doktor
 44:45 - 44:47
 Once I figure out how playlists work.
-Matthew Boles
+
 44:51 - 44:51
 Alright.
-Matthew Boles
+
 44:51 - 45:00
 Thanks a lot for your time, folks, and we'll be a week from tomorrow, a week from tomorrow.

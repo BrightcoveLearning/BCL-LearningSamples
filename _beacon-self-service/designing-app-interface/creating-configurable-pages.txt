@@ -118,3 +118,178 @@ The redirect-blank opens a specified URL in a new tab, and the redirect-self ope
 One example is the Favorites page. When you mark a video, series or channel as a favorite it will appear in this list. This is a feature we need to decide we want to offer in our app, and include this non-configurable page in the app. And since it is non-configurable we cannot change the design of the favorites page.
 
 Now let's look at a couple of configurable pages. First is the home page. 
+
+
+
+So, the screen pages are the configurable ones.
+
+And we're gonna go to Brightcove.
+
+Beacon UI, new pages, the basic data tab.
+
+Before clicking the new page button, we'll want to decide where our new page should be located in the  menu, and get a the Order number for that position. This time lets use 75.
+
+That will put it right after recently watched.
+
+Now click the Add new page button
+
+For Basic data we will provide the System Title, which is the internal name. And here we'll use the LayoutDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
+
+Then use the Order number we chose earlier.
+
+We don't need to worry about Friendly URL or Genre Type.
+
+Now select a page type, for this walkthrough we'll choose screen, which lets us add video content, and is the topic of this video.
+
+For the menu item appearance, Presentation Type form field,  text is fine.
+
+Now finally onto the layout.
+
+We have three entity entities to use, blocks, layouts, and playlists.
+
+The relationship is that blocks contain the layouts, and the layouts contain the playlists, which is your data.
+
+Let's use those tools to build a layout.
+
+We have a single block, which means we can only put one layout in it.
+
+And we select the layout to be Featured Banner Labels Out, which means the thumbnails will be large, the labels outside.
+
+Now we add the actual video data, via a playlist.
+
+Choose Waves as the playlist.
+
+We want more data on the page, and we want to use two more layouts, so let's choose a tabbed block. 
+ 
+The tabbed block uses menu tabs, from which the viewer can choose what to watch.
+
+In the tabbed block first add	a Grid 4 Columns Landscape Labels In
+
+Then add the Oregon Coast playlist, which will be displayed in the grid just selected
+
+Let's add more videos, and add another layout in the tabbed block
+
+This time the Carousel Posters 5 Columns Labels Out will be called into service
+
+And add the Living Desert Animals as the playlist.
+
+Kind of messy looking, but hopefully by going through the process of building it you can decipher it.
+
+Now thorugh the rest of the tabs quickly so we can view the new page in the app.
+
+For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon apps, so Layout Demo, with a space this time.
+
+For non-textual data, icons can be uploaded that appear either beside or in place of the text name in the menu. The backgrounds are only needed if using a specific type of screen page.
+
+Tags is not functioning now, so we can skip that.
+
+Lastly Rights & Scheduling. Be sure the page is published.
+
+Enter dates when the page can be used.
+
+Indicate the devices on which the page can be viewed.
+
+And lastly handle the locations. Be sure at least one permitted location is supplied.
+
+Click Create Page to actually create the new page. 
+
+And we have a new page!!
+
+We want to see immediately if the process worked, so the cache needs to be cleared.
+
+And we'll head to the web app so see the fruits of our labor.
+
+**Web app
+Refresh the page, and there is our new page. 
+
+To confirm, a featured carousel at the top
+
+Two tabs.
+
+The oregon coast videos in a grid
+
+And the Living Desert Animals videos as Posters
+
+Yes! Just as we planned.
+
+**Slide with link to doc
+We need to get a handle on all the layout possibilities, and a great doc exists to help us with that, so lets go have a look
+
+We have a bunch of different kinds of layouts.
+
+And I'm not gonna go through each one, because they're basically combinations of a limited set of block and layout permutations
+
+First of all, we have a carousel and the labels in.
+
+A carousel, as we've seen, displays the thumbnails across in a single row.
+
+Here's carousel with the labels out, so with the labels, then it covers up part of your thumbnail, ...
+
+29:15 - 29:16
+Easy to see.
+
+29:16 - 29:21
+And this one, if you look at this Rock, you just see a little love it here, the labels out.
+
+29:21 - 29:23
+You see it, and then you see the ocean in front.
+
+29:25 - 29:28
+So that's Carrousel labels in labels out.
+
+29:30 - 29:34
+Featured means your images here are going to be larger.
+
+29:34 - 29:41
+So you can just tell, see this image is bigger than this one, so this is a featured carousel.
+
+29:42 - 29:46
+They think, and actually, there was talk a while ago.
+
+29:46 - 29:48
+Well, that's always at the top, but I don't know.
+
+29:48 - 29:51
+If you look at, Uh, I can't remember it was.
+
+29:51 - 30:01
+If it was, um, Netflix or Prime video, that now sometimes we're using bigger ones in the middle so they didn't want to limit it that way.
+
+30:03 - 30:12
+You can also choose to have your thumbnails displayed in landscape or as posters in portrait.
+
+30:15 - 30:18
+And again, this goes back combinations in here.
+
+30:19 - 30:21
+You can look through the list of them.
+
+30:22 - 30:24
+Now this is the one that's kind of confusing.
+
+30:26 - 30:32
+When I first saw this, I said Grid three, OK, so it's going to be a grid, I can either go three across, or for cross.
+
+30:33 - 30:35
+No, that's the wrong answer.
+
+30:35 - 30:51
+What the Grid three in grid for mean is that their relative sizes, so you can see right here, if you look at the width of this and the width of this one, the grid three, and this is I tested.
+
+30:51 - 30:55
+It's like 800 pixel wide, you do get three across and four across.
+
+30:55 - 31:05
+But if you have a wider screen, Here's the grid: 3 is 4 Cross, and the grid 4 is 5 across.
+
+31:05 - 31:13
+So, really featured grid three and grid for have to do with relative size.
+
+31:13 - 31:21
+If the biggest ones are featured, the next bigger ones are Grid three, then the smallest ones would be grid for.
+
+31:23 - 31:35
+And, and that's a little tricky, because in my it was my mistake going in with my expectations, like, oh, grid three means is three across, no matter what, as I get bigger, like, I guess the images get bigger or something, but that's not true.
+
+31:36 - 31:36
+Right.
