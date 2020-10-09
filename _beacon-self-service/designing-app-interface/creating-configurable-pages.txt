@@ -123,9 +123,9 @@ Now let's look at a couple of configurable pages. First is the home page.
 
 So, the screen pages are the configurable ones.
 
-And we're gonna go to Brightcove.
+And we're going to to Brightcove Beacon UI.
 
-Beacon UI, new pages, the basic data tab.
+In the UI, new pages, the basic data tab.
 
 Before clicking the new page button, we'll want to decide where our new page should be located in the  menu, and get a the Order number for that position. This time lets use 75.
 
@@ -147,7 +147,7 @@ Now finally onto the layout.
 
 We have three entity entities to use, blocks, layouts, and playlists.
 
-The relationship is that blocks contain the layouts, and the layouts contain the playlists, which is your data.
+The relationship is that blocks contain the layouts, and the layouts contain the playlists, which is your video data.
 
 Let's use those tools to build a layout.
 
@@ -159,23 +159,31 @@ Now we add the actual video data, via a playlist.
 
 Choose Waves as the playlist.
 
-We want more data on the page, and we want to use two more layouts, so let's choose a tabbed block. 
+For contrast lets add a playlist where the thumbnails are portrait orientation.
+
+Again, we are putting in just one playlist, so we'll add another single block.
+
+For the layout choose Carousel Posters 5 Columns Labels In, which gives us the portrait orientation.
+
+And for the videos, lets choose the Florida Beaches.
+
+We want more data on the page, and we want to use a tabbed block. 
  
 The tabbed block uses menu tabs, from which the viewer can choose what to watch.
 
-In the tabbed block first add	a Grid 4 Columns Landscape Labels In
+In the tabbed block first add	a Grid 3 Columns Landscape Labels In
+
+By the way, in a tabbed block the layouts must be the same, and the layouts should be a type of grid. So we've made a correct choice.
 
 Then add the Oregon Coast playlist, which will be displayed in the grid just selected
 
-Let's add more videos, and add another layout in the tabbed block
-
-This time the Carousel Posters 5 Columns Labels Out will be called into service
+Add another Grid 3 Columns Landscape Labels In
 
 And add the Living Desert Animals as the playlist.
 
 Kind of messy looking, but hopefully by going through the process of building it you can decipher it.
 
-Now thorugh the rest of the tabs quickly so we can view the new page in the app.
+Now through the rest of the tabs quickly so we can view the new page in the app.
 
 For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon apps, so Layout Demo, with a space this time.
 
@@ -204,18 +212,34 @@ Refresh the page, and there is our new page.
 
 To confirm, a featured carousel at the top
 
-Two tabs.
+Portrait thumbnails for Florida Beaches
 
-The oregon coast videos in a grid
+In the tabbed block, first the oregon coast videos in a grid
 
-And the Living Desert Animals videos as Posters
+And the Living Desert Animals using the same layout
 
 Yes! Just as we planned.
 
 **Slide with link to doc
 We need to get a handle on all the layout possibilities, and a great doc exists to help us with that, so lets go have a look
 
-We have a bunch of different kinds of layouts.
+This is the Introducing Pages document.
+
+We see the type list, and explanations of the different page types.
+
+Then a table with all the page type details. By the way, there is a video in this course dedicated to explaining the page types.
+
+And here is what we want to look at more closely
+
+As we've seen, we have blocks, layout and playlists to manipulate to display our videos.
+
+And here are the different kinds of blocks highlighted in yellow.
+
+Let's look at an example of each kind of block.
+
+
+
+
 
 And I'm not gonna go through each one, because they're basically combinations of a limited set of block and layout permutations
 
