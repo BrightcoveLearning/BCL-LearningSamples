@@ -1,131 +1,53 @@
-We have three types of pages, which serve VERY different purposes.
+**Cover Page
+One of the most essential functions of any Brightcove Beacon app is displaying videos for viewers to choose to watch. In this video, I am going to help you learn how to display videos on a page and control the layouts of the thumbnails that represent videos.
 
-First we have configurable pages. In the Brightcove Beacon UI we will see they are called SCREEN pages. We use these pages to layout how viewers should see our video content. In this course, a later video is entirely dedicated to configuring these kind of pages.
+**Slide 2
+In this video we'll have four main points to learn. And here they are:
 
-Next are non-configurable pages. These pages are like system pages, which provide viewers info about the app, the status of the app and their activities in the app. For instance 
--Downloads
--Settings
--Favorites
+Only certain kinds of pages can display videos, and we'll learn those types and how to create those pages.
 
-are all examples of non-configurable pages.
+Next, we'll actually build a page that utilizes different blocks, layouts and playlists to display the videos in a manner we choose.
 
-The last type of page only applies to Brightcove Beacon web apps, and these are redirect pages. These pages redirect to other web pages.
+This will give us a basis on which to organize the rest of the learning points from the video, rather than discussing items in the abstract before seeing a page and actual layout created.
 
-Along the way we will see that the creation process of the pages varies between the three pages types, but there are more similarities than differences.
+Key to the layout of pages that display videos are afore mentioned blocks and layouts. These items control the look of the video display  pages.
+
+When we use blocks and layouts, the videos that are displayed by these must be in playlists. We'll gain a high level understanding of playlists.
 
 **Slide 3
-This is a quick glimpse of where we are headed. This is a screenshot of the Brightcove Beacon UI to build pages. The gray dropdown displays all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.
+This is a quick glimpse of where we are headed. This is a screenshot of the Brightcove Beacon UI to build pages. The gray dropdown displays all the page types. In this list, screen and screen-hero_image are where our focus will be in this video. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages and utilize blocks, layouts and playlists.
 
 **Slide 4
-Let fill in the Why/What and Hows about configurable pages.
+The only type of page we can use to display videos are configurable or screen type pages. Let's dig into these.
 
 **Slide 5
-Before seeing these details, let's go look at some configurable pages in an actual Brightcove Beacon web app.
+As we've said,  configurable pages are used to display videos.
+
+We'll soon see that configurable pages are called screen pages in the Brightcove Beacon UI.
+
+Not surprisingly the Brightcove Beacon UI provides functionality to layout videos on a configurable page.
+
+There are two types of these video layout pages, screen and screen-hero_image
 
 **Web app
-The Home page is showing a featured playlist of videos in a carousel across the top, then using tabs to let users choose what other videos to browse.
+Let's look at each type. Most common is screen. And we can display videos in multiple ways, as show on these pages.
 
-The tabs show Florida beaches in another carousel, while the Living Desert Animals are displayed in a grid.
-
-Already we see we have different thumbnail sizes as well as different display layouts.
-
-On the Test Page we see a configurable page that uses a hero image. The background is an uploaded image, then we can choose what and how to display videos.
-
-For the last example, the All Playlists shows two playlists displayed in Grids, but of different size of thumbnails.
-
-**Slide 5
-A few details here. Again, we'll soon see that configurable pages are called screen pages in the Brightcove Beacon UI.
-
-The layouts are quite flex, but not quite totally free form, hence the quotes.
-
-And as mentioned, another video goes into details of the options and layouts.
+And this is an example of a screen-hero_image, where the background is an image we've uploaded.
 
 **Slide 6
-Before we jump in and start to create a configurable page, a few details about page creation.
-
-We see the path in the UI.
-
-Also, there is a one-to-one correspondence between the pages we create and menu items in the apps.
-
-For each page type, we will see these four tabs on which we will need to supply configuration information.
+Now let's actually build a configurable page.
 
 **Slide 7
-Now let's actually build a configurable page. This will be a simple page where we display one video playlist in a carousel.
+In this page we are going to use the following:
+First, at the top of the page a Featured banner, which means the thumbnails will be large
+Next, a carousel that display thumbnails in portrait orientation
+And lastly, two grids of thumbnails that we can choose which one to view based on tabs
+
+OK, let's get started.
 
 **UI
-In the Brightcove Beacon UI we have a pages tab, and from there we create a new page. 
 
-Before clicking the new page button, we'll want to decide where our new page should be located in the  menu, and get a the Order number for that position. This time lets use 55.
-
-Now click the Add new page button
-
-For Basic data we will provide the System Title, which is the internal name. And we'll use the ConfigDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
-
-Then use the order we chose.
-
-We don't need to worry about Friendly URL or Genre Type.
-
-Now select a page type, for this walkthrough we're creating a screen type page.
-
-For the menu item just text is fine.
-
-Now to display some videos.
-
-First the block. We'll choose the single-block since we are displaying just one entity.
-
-For the layout, a carousel landscape labels in is fine.
-
-And finally we'll choose the video content to display and Waves will suffice.
-
-That is about as simple a configurable page as we can get. Watch the later video for all the details on using BLocks/layouts and playlists.
-
-For Textual data enter the Title views will see as a menu Item in the actual Brightcove Beacon app, so Config Demo, with a space.
-
-Non-textual data icons can be uploaded that appear either beside or in place of the text name in the menu. The backgrounds are only needed if using a specific type of screen pages, which will be shown later.
-
-Tags is not functioning now, so we can skip that.
-
-Lastly Rights & Scheduling. Be sure the page is published.
-
-Enter dates when the page can be used.
-
-Indicate the devices on which the page can be viewed.
-
-And lastly handle the locations. Be sure at least one permitted location is supplied.
-
-That's the process.
-
-Let's create the new page.
-
-We want to see it right away, so the cache needs to be cleared.
-
-**Web app
-Refresh the page, and there is our new page. And we see the Wave videos displayed as configured.
-
-
-
-
-
-There are two redirect types, redirect-blank and redirect-self. These are akin to using links in HTML, if you have ever done that. 
-
-The redirect-blank opens a specified URL in a new tab, and the redirect-self opens a specified URL in the same tab.
-
-
-
-
-
-**Web app
-One example is the Favorites page. When you mark a video, series or channel as a favorite it will appear in this list. This is a feature we need to decide we want to offer in our app, and include this non-configurable page in the app. And since it is non-configurable we cannot change the design of the favorites page.
-
-Now let's look at a couple of configurable pages. First is the home page. 
-
-
-
-So, the screen pages are the configurable ones.
-
-And we're going to to Brightcove Beacon UI.
-
-In the UI, new pages, the basic data tab.
+In the UI, we'll go to the pages tab.
 
 Before clicking the new page button, we'll want to decide where our new page should be located in the  menu, and get a the Order number for that position. This time lets use 75.
 
@@ -133,7 +55,7 @@ That will put it right after recently watched.
 
 Now click the Add new page button
 
-For Basic data we will provide the System Title, which is the internal name. And here we'll use the LayoutDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
+For Basic data we will provide the System Title, which is the internal name. And here we'll use LayoutDemo. Here we use a name with no spaces just to show that this name can be different than the name that is visible in the actual app.
 
 Then use the Order number we chose earlier.
 
@@ -147,13 +69,13 @@ Now finally onto the layout.
 
 We have three entity entities to use, blocks, layouts, and playlists.
 
-The relationship is that blocks contain the layouts, and the layouts contain the playlists, which is your video data.
+The relationship is that blocks contain the layouts, and the layouts contain the playlists. Playlist are our video data.
 
 Let's use those tools to build a layout.
 
 We have a single block, which means we can only put one layout in it.
 
-And we select the layout to be Featured Banner Labels Out, which means the thumbnails will be large, the labels outside.
+And we select the layout to be Featured Banner Labels Out, which means the thumbnails will be large, the labels not covering any part of the thumbnail.
 
 Now we add the actual video data, via a playlist.
 
@@ -167,7 +89,7 @@ For the layout choose Carousel Posters 5 Columns Labels In, which gives us the p
 
 And for the videos, lets choose the Florida Beaches.
 
-We want more data on the page, and we want to use a tabbed block. 
+We want more data on the page, and we will use a tabbed block. 
  
 The tabbed block uses menu tabs, from which the viewer can choose what to watch.
 
@@ -181,13 +103,15 @@ Add another Grid 3 Columns Landscape Labels In
 
 And add the Living Desert Animals as the playlist.
 
-Kind of messy looking, but hopefully by going through the process of building it you can decipher it.
+Kind of messy looking, but hopefully by going through the process of building it we can better decipher it.
 
 Now through the rest of the tabs quickly so we can view the new page in the app.
 
 For Textual data, enter the Title viewers will see as a menu Item in the actual Brightcove Beacon apps, so Layout Demo, with a space this time.
 
-For non-textual data, icons can be uploaded that appear either beside or in place of the text name in the menu. The backgrounds are only needed if using a specific type of screen page.
+For non-textual data, icons can be uploaded that appear either beside or in place of the text name in the menu. By the way, these icons do NOT work in the web apps.
+
+The backgrounds are only needed if using a specific type of screen page.
 
 Tags is not functioning now, so we can skip that.
 
@@ -220,18 +144,24 @@ And the Living Desert Animals using the same layout
 
 Yes! Just as we planned.
 
-**Slide with link to doc
-We need to get a handle on all the layout possibilities, and a great doc exists to help us with that, so lets go have a look
+**Slide 8
+Lets find out about all the possibilities when it come to blocks and layouts.
 
+**Slide 9
+As we've just seen blocks contain layouts and layouts contain playlists.
+
+We need to get a handle on all the block/layout possibilities, and a great doc exists to help us with that, so lets go have a look
+
+**Intro pages doc 
 This is the Introducing Pages document.
 
 We see the type list, and explanations of the different page types.
 
 Then a table with all the page type details. By the way, there is a video in this course dedicated to explaining the page types.
 
-And here is what we want to look at more closely
+And now here is what we want to look at more closely
 
-As we've seen, we have blocks, layout and playlists to manipulate to display our videos.
+As we've seen, we have blocks, layout and playlists to manipulate the display of our videos.
 
 And here are the different kinds of blocks highlighted in yellow.
 
@@ -239,16 +169,15 @@ Let's look at an example of each kind of block.
 
 We've just used a single-block, and that is when we want to put a single layout in a block.
 
-The example shows a carousel in a single block with a carousel in it.
+The example shows a carousel in a single block.
 
-The note shown if from the UI when an attempt was made to change a block that can hold multiple layouts to a single-block. It is not allowed.
+The note shown is from the UI when an attempt was made to change a block that can hold multiple layouts to a single-block. That is not allowed.
 
 And here is a list-block with three carousels, and shows we can put multiple layout/playlist combinations in a list-block.
 
-Next a tabbed block, which we used earlier. This example shows three carousels in the tabbed block, hence three tabs.
+Next a tabbed block, which we used earlier. This example shows three grids in the tabbed block, hence three tabs.
 
-And finally the dropdown block, which in function is like the tabbed block, it permits the viewer to select one of multiple carousels to view. A dropdown box is used for selection in place of tabs.
-
+And finally the dropdown block, which in function is like the tabbed block, it permits the viewer to select one of multiple GRIDS to view. A dropdown box is used for selection in place of tabs.
 
 Now we come to layouts. We won't go through an example of every layout, because they're basically combinations of a limited set of block and layout permutations.
 
@@ -258,15 +187,15 @@ First of all, we have a carousel and the labels in.
 
 A carousel, as we've seen, displays the thumbnails across in a single row.
 
-Here's carousel with the labels out, so with the labels in part of your thumbnail is covered.
+Here's A carousel with the labels out, so with the labels in - part of our thumbnail is covered.
 
-Featured means your images here are going to be larger, in fact the largest they can be using any layout.
+Featured means our thumbnail images here are going to be larger, in fact the largest they can be using any layout.
 
 We see this image is bigger than this one, so this is a featured carousel.
 
 Often, but not always, a featured layout is used at the top of a page.
 
-In some layouts we can choose to have our thumbnails displayed in landscape or as posters in portrait.
+In some layouts we can choose to have our thumbnails displayed in landscape or as posters in portrait orientation.
 
 This is the one that the name of the layout can lead to a bit of confusion.
 
@@ -280,11 +209,35 @@ Here is a Grid 3 and Grid 4 showing three and four thumbnails across respectivel
 
 This is a screenshot with the browser 800 pixels wide, and we do get three across and four across.
 
-But if you have a wider screen, here's the grid 3 at 4 across, and the grid 4 is 5 across.
+But if we have a wider screen, here's the grid 3 at 4 across, and the grid 4 is 5 across.
 
-So, really featured grid three and grid four have to do with relative size.
+So, really featured,  grid three, and grid four have to do with relative thumbnail size.
 
 The biggest thumbnails are displayed by featured, the next biggest ones are Grid three, then the smallest ones would be grid four.
 
-And finally in this doc, a reference to the five tabs we see when creating a pages, which we've configured a few times in this course.
+And finally in this doc, a reference to the five tabs we see when creating a pages, which we've done in this video.
 
+**Slide 10
+The videos are contained in playlists, which we put in the layouts. A few quick details on playlists now.
+
+**Slide 11
+To answer the question, "Why Must the Videos be in Playlists?", well, that is the only entity we can place in a layout.
+
+Playlists are created either in Video Cloud Studio or the Brightcove Beacon UI
+
+If created in Brightcove Beacon UI, a playlist can contain other types of assets in addition to videos, like series and events
+
+There is an entire course in this collection of Brightcove Beacon courses dedicated to playlist creation and configuration
+
+**Slide 12
+Here we are at the end of yet another video.
+
+Let's review the main learning points to reinforce out learning.
+
+First, configurable pages are used to display videos, and in the Brightcove Beacon UI the configurable pages are called screen pages
+
+To control the display of the videos, we use block, layouts and playlists
+
+Playlists contain videos, but can contain other media assets
+
+What makes coming to the end of this video even more sad than ending other videos in this course, is that this is the last video of this particular course. But never fear, more courses are available about Brightcove Beacon!
