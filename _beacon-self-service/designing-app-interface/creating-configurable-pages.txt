@@ -237,83 +237,54 @@ And here are the different kinds of blocks highlighted in yellow.
 
 Let's look at an example of each kind of block.
 
+We've just used a single-block, and that is when we want to put a single layout in a block.
+
+The example shows a carousel in a single block with a carousel in it.
+
+The note shown if from the UI when an attempt was made to change a block that can hold multiple layouts to a single-block. It is not allowed.
+
+And here is a list-block with three carousels, and shows we can put multiple layout/playlist combinations in a list-block.
+
+Next a tabbed block, which we used earlier. This example shows three carousels in the tabbed block, hence three tabs.
+
+And finally the dropdown block, which in function is like the tabbed block, it permits the viewer to select one of multiple carousels to view. A dropdown box is used for selection in place of tabs.
 
 
+Now we come to layouts. We won't go through an example of every layout, because they're basically combinations of a limited set of block and layout permutations.
 
-
-And I'm not gonna go through each one, because they're basically combinations of a limited set of block and layout permutations
+What we will examine is each individual feature that make up these combinations.
 
 First of all, we have a carousel and the labels in.
 
 A carousel, as we've seen, displays the thumbnails across in a single row.
 
-Here's carousel with the labels out, so with the labels, then it covers up part of your thumbnail, ...
+Here's carousel with the labels out, so with the labels in part of your thumbnail is covered.
 
-29:15 - 29:16
-Easy to see.
+Featured means your images here are going to be larger, in fact the largest they can be using any layout.
 
-29:16 - 29:21
-And this one, if you look at this Rock, you just see a little love it here, the labels out.
+We see this image is bigger than this one, so this is a featured carousel.
 
-29:21 - 29:23
-You see it, and then you see the ocean in front.
+Often, but not always, a featured layout is used at the top of a page.
 
-29:25 - 29:28
-So that's Carrousel labels in labels out.
+In some layouts we can choose to have our thumbnails displayed in landscape or as posters in portrait.
 
-29:30 - 29:34
-Featured means your images here are going to be larger.
+This is the one that the name of the layout can lead to a bit of confusion.
 
-29:34 - 29:41
-So you can just tell, see this image is bigger than this one, so this is a featured carousel.
+We might think Grid three means three thumbnails across in a grid.
 
-29:42 - 29:46
-They think, and actually, there was talk a while ago.
-
-29:46 - 29:48
-Well, that's always at the top, but I don't know.
-
-29:48 - 29:51
-If you look at, Uh, I can't remember it was.
-
-29:51 - 30:01
-If it was, um, Netflix or Prime video, that now sometimes we're using bigger ones in the middle so they didn't want to limit it that way.
-
-30:03 - 30:12
-You can also choose to have your thumbnails displayed in landscape or as posters in portrait.
-
-30:15 - 30:18
-And again, this goes back combinations in here.
-
-30:19 - 30:21
-You can look through the list of them.
-
-30:22 - 30:24
-Now this is the one that's kind of confusing.
-
-30:26 - 30:32
-When I first saw this, I said Grid three, OK, so it's going to be a grid, I can either go three across, or for cross.
-
-30:33 - 30:35
 No, that's the wrong answer.
 
-30:35 - 30:51
-What the Grid three in grid for mean is that their relative sizes, so you can see right here, if you look at the width of this and the width of this one, the grid three, and this is I tested.
+What the Grid three and Grid 4 refers to is their relative sizes.
 
-30:51 - 30:55
-It's like 800 pixel wide, you do get three across and four across.
+Here is a Grid 3 and Grid 4 showing three and four thumbnails across respectively. 
 
-30:55 - 31:05
-But if you have a wider screen, Here's the grid: 3 is 4 Cross, and the grid 4 is 5 across.
+This is a screenshot with the browser 800 pixels wide, and we do get three across and four across.
 
-31:05 - 31:13
-So, really featured grid three and grid for have to do with relative size.
+But if you have a wider screen, here's the grid 3 at 4 across, and the grid 4 is 5 across.
 
-31:13 - 31:21
-If the biggest ones are featured, the next bigger ones are Grid three, then the smallest ones would be grid for.
+So, really featured grid three and grid four have to do with relative size.
 
-31:23 - 31:35
-And, and that's a little tricky, because in my it was my mistake going in with my expectations, like, oh, grid three means is three across, no matter what, as I get bigger, like, I guess the images get bigger or something, but that's not true.
+The biggest thumbnails are displayed by featured, the next biggest ones are Grid three, then the smallest ones would be grid four.
 
-31:36 - 31:36
-Right.
+And finally in this doc, a reference to the five tabs we see when creating a pages, which we've configured a few times in this course.
+
