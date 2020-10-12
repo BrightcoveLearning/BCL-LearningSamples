@@ -1,80 +1,36 @@
 New docs:
 
-Title: Training on Demand - Using Video Cloud Videos/Custom Fields video course
-Description: Five part video course on using Video Cloud videos and custom fields in Brightcove Beacon 
-Link: https://beacon.support.brightcove.com/training/training-demand-custom-fields.html
+Title: Training on Demand: Creating Series, Seasons and Episodes video course
+Description: Three part video course on creating Series, which contains seasons and episodes
+Link: https://beacon.support.brightcove.com/training/training-demand-series-seasons-episodes.html
 Category: Brightcove Beacon
 
 
 Major updates:
 
-Title: Introducing Pages
-Description: Added information on three added page types
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/introducing-pages.html
-Category: Brightcove Beacon
+Title: Standard Ingest Profiles (Dynamic Delivery and CAE)
+Description: updated to include HEVC renditions and profiles
+Link: https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html, https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
+Category: Ingest Profiles
 
 
 Minor updates:
 
-Title: Live API: Static Entry Points
-Description: Updated note about stopping the decoder before deactivating a live stream
-Link: https://live.support.brightcove.com/live-api/guides/live-api-static-entry-points.html
-Category: Live API
+Title: Zencoder Encoding Settings: Watermarks
+Description: Corrected to indicate GIFs are not supported
+Link: https://zencoder.support.brightcove.com/encoding-settings/assets/encoding-settings-watermarks.html
+Category: Zencoder, Encoding Settings, Watermarks
 
-Title: Code Snippets using the Native SDK for Android
-Description:Updated note that seek without ads is supported by all ad plugins
-Link: https://sdks.support.brightcove.com/android/resources/code-snippets-using-native-sdk-android.html#Seek_without_ads
-Category: Native SDK for Android
+Title: Viewing Billing Information
+Description: Added notes on the lag between deleting videos and assets and the removal of the files to explain why this is not immediately reflected in billing. Also added note that you can now see billing information for expired accounts, and reworded the bandwidth definition to clarify what it includes
+Link: http://support.brightcove.com/viewing-billing-information
+Category: Video Cloud billing information
 
-Title: CMS API Reference
-Description: Add 204 response for get digital master info request (204 means there is no master)
-Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetDigitalMasterInfo
-Category: CMS API
+Title: Introducing Pages
+Description: Added restrictions on tabed_block and dropdown-block blocks
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/introducing-pages.html
+Category:Brightcove Beacon
 
-Title: Live API Reference
-Description: corrected ramp_credentials field to credentials
-Link: https://docs.brightcove.com/live-api/v1/doc/index.html#operation/CreateALiveJob
-Category: Live API
-
-Title: Live RTMP outputs
-Description: added list of the statuses returned in notifications
-Link: https://live.support.brightcove.com/live-api/guides/live-api-rtmp-outputs.html#notifications
-Category: Live API
-
-Title: Creating Live Events in the Live Module 
-Description: added a note that outputs cannot be changed after the event is created
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
-Category: Live Module
-
-Title: Using Live RTMP Outputs to Stream to Facebook and YouTube 
-Description: Added notes on the RTMP URL format supported
-Link: https://live.support.brightcove.com/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html
-Category: Live Module
-
-Title: Integrations home page
-Description: Moved Peer5 documentation under eCDNs
-Link: https://integrations.support.brightcove.com/
-Category: eCDN integrations
-
-Title: Creating Live Events in the Live Module
-Description: Added note on the limit of current SEP jobs per region
-Link:https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#work_recurring
-Category: Live Module
-
-Title: Ingesting Content with DRM
-Description: clarified the notes on what to do about existing videos (dynamic delivery and legacy) when DRM is added to an account
-Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-content-drm.html
-Category: Ingestion, DRM
-
-Title: Managing Ingest Profiles
-Description: added a note that custom renditions can be added to profile only using the Advanced Editor
-Link: https://studio.support.brightcove.com/admin/creating-ingest-profiles-dynamic-delivery.html#using_the_advanced_editor
-Category: Managing Ingest Profiles
-
-Title: Streaming a Live Event in Brightcove Beacon
-Description:  Added a note about how to disconnect a VOD Clip from a Live event in Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html#ClipToBeacon
-Category: Brightcove Beacon
 
 
 
