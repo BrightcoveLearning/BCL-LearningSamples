@@ -1,28 +1,39 @@
 **Slide 2
-As we continue to use our Brightcove Beacon apps, we'll almost invariably want to change the application. Maybe we want to add a page for a holiday, or put more videos on a page as new content becomes available. All this is done by using the four items listed here:
-*Pages contain content, also are represented by a menu item.
-*Playlist content are the videos to display on a page. The videos are contained in a playlist, and you put playlists on a page.
-*Configurable pages are are a page type on which videos are placed.
-*Non-configurable pages are pages that you choose to include, but cannot customize them in the Brightcove Beacon UI. For instance, we may want a favorites page, or a recently watched page. Great, we add them to the app and that's it. No customization.
+As we continue to use our Brightcove Beacon apps, we'll almost invariably want to change the application layout. Maybe we want to add a page for a holiday, or put more videos on a page as new content becomes available. All this is done by using the following four items:
+*Pages  - Which contain content, each page is also represented by a menu item. Pages and menu items have a one-to-one correspondence.
+*Playlists - These contain the videos to display on a page. The videos are contained in a playlist, and you put playlists on a page.
+*Configurable pages - These are pages we design and are the page type from which videos are displayed.
+*Non-configurable - This is another kind of page that you choose to include, but cannot customize them in the Brightcove Beacon UI. For instance, we may want a favorites page, or a recently watched page. Great, we add them to the app and that's it. No customization.
 
 **Web app
 Let's go look at examples of these items in a Brightcove Beacon web app.
 
 First, we see these menu items, and each one represent a page.
 
-As we see a page that displays videos, we are seeing video from playlists.
+As we see a page that displays videos, we are seeing videos from playlists.
 
-Here we see videos placed in this page in a certain way, so we know it is a configurable, also called a screen, page.
+Here we see videos placed in this page using a certain layout, so we know it is a configurable, also called a screen, page.
 
-Recently Watched is an example of a non-configurable page. We want one and it is placed in the app. It is possible there might be different layouts of the Recently Watched page, but the layout is chosen early in the design process and whichever one you choose, the design of that selection is fixed.
+This is another kind of screen page, called a hero page. It allows us to have a background image on the page.
 
-**Objective Slide
+Favorites is an example of a non-configurable page. We want this page and it is placed in the app. It is possible there might be different layouts of the Favorites page, but the layout is chosen early in the design process and whichever one you choose, the design of that selection is fixed.
+
+**Slide 3
 Here are the objectives for the course. These are most important learning points we want to carry away from  watching the videos that comprise this course:
-1. We need a conceptual understanding of configurable and non-configurable page types.
+1. We need a conceptual understanding of configurable and non-configurable page types. We should understand the differences and similarities of these two page types.
 2. Building pages and populating them with video content maybe the most important objective. We obviously need to know how to do that.
 3. When adding content to pages, the formatting is done with blocks, layouts and and playists. We need to know what they are, but more importantly actually be able to use the interface to leverage blocks, layouts and playlists to display videos in the manner we wish.
 4. Certain non-configurable pages will be selected for use in the app based upon our business cases.
 
 
-**Slide 3
-This is a quick glimpse of where we are headed. This is the Brightcove Beacon UI to build pages. The gray dropdown are all the page types. The colorful nested boxes at the bottom of the screenshot are how we will place content on configurable pages.
+**Slide 4
+There are three more videos in this On Demand training course.
+
+First we gain an understanding of the three page types. This is vital as when we go to create a page we need to know its purpose, and that purpose will guide us on the page type to use.
+
+Once we know the page type to use, we will actually need to create the page, and that is the topic of the second video.
+
+In a Brightcove Beacon app, displaying videos for viewers to choose and watch is what it is all about. The last video of this course takes you through the process and options of laying out the video display using blocks, layouts and playlists. 
+
+**Slide 5
+Thanks for being a Brightcove Beacon customer, and hope you enjoy the course!!
