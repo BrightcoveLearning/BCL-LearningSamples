@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 9 Oct **
+- Closed 17 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Two of 4 video created for the Designing Your Application course. Script nearly done for third, and the fourth is the course intro, which is very short. 
+Work NOT Reflected in JIRAs:
+- LOTS of time (multiple hours) spent with Alberto working on slides for course, and course presentation. His delivery of the first course was actually pretty good. Next week we should speak about it. 
+- Spending more time with Han and Andrea helping with wording for UIs. Now about 1 hour per week. 
+
+
+
 ** Week Ending 2 Oct **
 - Closed 17 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
