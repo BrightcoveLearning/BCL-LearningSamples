@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 16 Oct **
+- Closed 17 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Second course, Designing the Application Layout, out the door 
+Work NOT Reflected in JIRAs:
+- Slides for next course, Viewing Analytics Data, nearly complete
+- Again some substantial time spent with Alberto. This time reviewing structure/script/slides for the first video from his course 
+
+
+Major accomplishments:
 ** Week Ending 9 Oct **
 - Closed 17 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:

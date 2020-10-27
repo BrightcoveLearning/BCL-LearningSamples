@@ -1,36 +1,85 @@
 New docs:
 
-Title: Training on Demand: Creating Series, Seasons and Episodes video course
-Description: Three part video course on creating Series, which contains seasons and episodes
-Link: https://beacon.support.brightcove.com/training/training-demand-series-seasons-episodes.html
+Title: Training on Demand: Designing the Application Layout
+Description: Four part video course: Viewing the Designing the Application Layout training course gets you up to speed on creating and configuring pages for your Brightcove Beacon application. Gain the skills to create or update the look of your Brightcove Beacon applications.
+Link: https://beacon.support.brightcove.com/training/training-demand-design-layout.html
 Category: Brightcove Beacon
 
 
 Major updates:
 
-Title: Standard Ingest Profiles (Dynamic Delivery and CAE)
-Description: updated to include HEVC renditions and profiles
-Link: https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html, https://studio.support.brightcove.com/admin/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
-Category: Ingest Profiles
+Title: Salesforce Commerce Cloud Installation Guide
+Description: Updated with major enhancements to the integration
+Link: https://integrations.support.brightcove.com/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-installation.html
+Category: eCommerce integrations, Saleforce Commerce Cloud
+
+Title: Salesforce Commerce Cloud User Guide
+Description: Updated with major enhancements to the integration (updates still in progress, but will be finished today)
+Link: https://integrations.support.brightcove.com/ecommerce/salesforce/brightcove-custom-cartridge-salesforce-commerce-cloud-user-guide.html
+Category: eCommerce integrations, Saleforce Commerce Cloud
+
+Title: Brightcove University Training Courses
+Description: Updated the catalog with several new courses and learning path
+Link: https://studio.support.brightcove.com/training/brightcove-university.html
+Category: Brightcove University
+
+Title: Using Zencoder with Azure
+Description: Updated for support of SAS policies
+Link: https://zencoder.support.brightcove.com/general-information/using-zencoder-azure.html
+Category: Zencoder
+
+Title: Video Source File Specifications and Recommendations
+Description: Added a section on H.265 (HEVC)
+Link: https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
+Category: Ingest Profiles, Video Source files
+
+Title: Chromecast Plugin for Brightcove Player
+Description: Updated for new Chromecast plugin (2.x) which uses the CAF (Cast Application Framework) API
+Link: https://player.support.brightcove.com/plugins/chromecast-plugin-brightcove-player.html
+Category: Brightcove Player
+
+Title: Cast plugin for the Native SDK for Android
+Description: Updated to use the Brightcove Receiver v2.0.0
+Link: https://sdks.support.brightcove.com/android/tv/cast-plugin-native-sdk-android.html
+Category: Native SDK for Android
 
 
 Minor updates:
 
-Title: Zencoder Encoding Settings: Watermarks
-Description: Corrected to indicate GIFs are not supported
-Link: https://zencoder.support.brightcove.com/encoding-settings/assets/encoding-settings-watermarks.html
-Category: Zencoder, Encoding Settings, Watermarks
+Title: Overview: Player Enhancements for Live SSAI
+Description: Added eu-central-1 (Frankfurt) as a new region supported from Live+SSAI
+Link: https://live.support.brightcove.com/live-api/ssai/overview-player-enhancements-live-ssai.html#Limitations
+Category: Live, SSAI
 
-Title: Viewing Billing Information
-Description: Added notes on the lag between deleting videos and assets and the removal of the files to explain why this is not immediately reflected in billing. Also added note that you can now see billing information for expired accounts, and reworded the bandwidth definition to clarify what it includes
-Link: http://support.brightcove.com/viewing-billing-information
-Category: Video Cloud billing information
+Title: Standard Ingest Profiles
+Description: Reordered rendition tables by bitrate (ascending) for better readability 
+Link: https://apis.support.brightcove.com/ingest-profiles/references/standard-ingest-profiles-dynamic-delivery-and-context-aware-encoding.html
+Category: Ingest Profiles
 
-Title: Introducing Pages
-Description: Added restrictions on tabed_block and dropdown-block blocks
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/introducing-pages.html
-Category:Brightcove Beacon
+Title: Many docs across all sites
+Description: Updated links to API references that were still pointing to old locations on docs.brightcove.com
+Link: various 
+Category: Platform APIs
 
+Title: HEVC Video
+Description: Updated advantages and disadvantages of H.265
+Link: https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html
+Category: Ingest Profiles, HEVC
+
+Title: Audio Settings
+Description: Updated to indicate that 6 audio channels are supported (source and outputs) with some specific requirements
+Link: https://zencoder.support.brightcove.com/encoding-settings/general-audio-video/encoding-settings-audio.html
+Category: Zencoder audio encoding settings
+
+Title: Known Issues: Brightcove Native Player SDKs
+Description:Added code snippet to show how to add support for downloading when the device is locked
+Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android
+Category: Native SDK for Android
+
+Title: Viewing Analytics Data
+Description: Updated document to new Google Analytics UI
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/viewing-analytics-data.html
+Category: Brightcove Beacon
 
 
 
