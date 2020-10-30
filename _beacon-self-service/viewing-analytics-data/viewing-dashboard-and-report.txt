@@ -1,0 +1,319 @@
+Now we will go in and look at the Dashboard that Brightcove will add to your Google Analytics account.
+
+The fist bullet is Google's definition of what an Analytics Dashboard is.
+
+As we would expect, the Dashboard is customizable, but customizing dashboards is not the point of this course.
+
+We will take a very quick into building dashboards, but the goal of this course is NOT to teach Google Analytics.
+
+Once we go into Google Analytics we will have to do three things to see the Brightcove supplied Dashboard. They are:
+1. Choose the desired account
+2. Choose the desired view
+3. From the UI navigation choose Customization then Dashboards.
+
+
+
+But I don't want to go into the docs, because then it's like, where do you stop?
+
+
+But in a course, it's easy to say, Hey, this is just a quick demo, so let's go do that.
+
+
+We're going to go into Analytics here, and we're going to go to dashboards, create, am excuse a blank canvas.
+
+
+I'm getting this 29 October.
+
+
+I know if it's a date for me, I can delete it.
+
+
+And then am I willing to click the create dashboard.
+
+
+And they give you these widgets.
+
+
+You can put on their kind of prebuilt.
+
+
+So the first one we're going to do is we want to do a geo map and we just want to find by country where the users users, are going to click on Geo Map.
+
+
+And then the metric is country, and we're gonna talk a little bit more about metrics, What we're gonna do, country, and then, what we want it to be do.
+
+
+If we wanna go down, and we're excuse me, we're going to say just, Hey, this.
+
+
+Oh, sorry about that.
+
+
+I have to say what we want to look at.
+
+
+And this one users, there's a long list here, So it's nice, too.
+
+
+Do a search there.
+
+
+There we go.
+
+
+Sorry about that, and we click save.
+
+
+And so, that's how we can add these widgets.
+
+
+And you can probably see what's happened, because this looks just like something we did.
+
+
+We looked at on the dashboard.
+
+
+So you can go in here, and you can build these.
+
+
+Let's do another one.
+
+
+That's a pie chart that's.
+Bob Bailey
+
+Based on feedback.
+
+
+I.
+Bob Bailey
+
+Have a question, though.
+Bob Bailey
+
+So yeah, the geo map by user.
+Bob Bailey
+
+Like, what is the user metric, right?
+Bob Bailey
+
+Like, is it the number of people that have logged into the app are logged in?
+Bob Bailey
+
+Like, what is the user metrics specifically?
+
+
+That's why you should, I know.
+
+
+Because I have no idea.
+
+
+There's a whole bunch.
+
+
+I'll take, you know, I'll find that our user.
+Bob Bailey
+
+I'm just curious right away.
+Bob Bailey
+
+What you know?
+Bob Bailey
+
+Like, video plays.
+Bob Bailey
+
+I'd understand all that, but I'm wondering, all right, If it's a Google thing, that's fine.
+Bob Bailey
+
+I was just curious.
+
+
+Yeah.
+
+
+Yeah, I'll look that up.
+
+
+That is a good thing.
+
+
+If I'm going to use it.
+
+
+There are a bunch of different kinds of users there.
+
+
+I don't know if you noticed think I can edit this.
+Bob Bailey
+
+I don't know if it's, like, logged in, or, you know, they watched at least one thing or whatever.
+Bob Bailey
+
+I was just curious.
+
+
+Yeah.
+
+
+So I'll find out exactly what that means.
+
+
+I hope let's look here and see.
+
+
+I just, that's?
+
+
+Users who have initiated at least one session during the date range.
+
+
+So, whatever initiated a session they went into, watch something for us then.
+
+
+Would that be good enough for you, Bob?
+
+
+Prefer?
+Bob Bailey
+
+That makes sense.
+
+
+Yeah, I was.
+Bob Bailey
+
+Just curious, Riker's users like, so vague, so.
+
+
+Right?
+
+
+And that's the one, this is a classic thing about demo even.
+
+
+And that's why I don't do it in the docs.
+
+
+Or I'm still hesitant about doing well, if I'd be hesitant, if I were doing this, like the instructor led because you're starting down a path that there's no end to.
+
+
+And it's, it can be scary.
+Bob Bailey
+
+That I should say and I never get to say this.
+Bob Bailey
+
+I'm gonna say it.
+
+
+They're.
+Bob Bailey
+
+Walking into a hornet's Nest.
+
+
+My kids go on.
+
+
+It's this like this.
+
+
+Yeah.
+
+
+I want to add another way to just so you see, and this is going to be a pie chart and the metric we're going to use is time watched.
+
+
+We'll see the time watched is special at aoa and the dimension, and we want the dimension to be these are long lists.
+
+
+What have I done to have time?
+
+
+Oh, that's why?
+
+
+Somehow I selected the wrong one.
+
+
+Cancel, Start again.
+
+
+I don't know why wouldn't let me change that.
+
+
+Hi.
+
+
+Metric is.
+
+
+Time watched, There it is, mm weird, and the dimension, we're going to talk about definition for these in just a second, John Meira.
+
+
+So there's our widget that shows our time watched by genre.
+
+
+And again, this is just to give people the idea that, OK, I can go in and with a little more knowledge, probably build what I want to see if I don't like the standard one.
+
+
+And, of course, just like we've always done, if you have questions, or comments, or you can teach us all something, feel free to interact.
+
+
+All right, did a quick intro, and we saw how we could add some widgets using the bright toll supply Data Studio Studio Report.
+
+
+And, again, there's a definition of Data Studio for my very limited experience, and it's probably a Google people upset.
+
+
+What I think Data Studio is, kinda like dashboards, are the drawing tools.
+
+
+You can go in and arrange things.
+
+
+I've gone through one of their little demos and you can put bars in and color things and separators, and all that kinda stuff.
+
+
+And so, what you can do is really dress up and make a dashboard look pretty.
+
+
+Let's go look at the report.
+
+
+Again, this is one that's supply to us.
+
+
+So I'm gonna go to the Data Studio.
+
+
+And here's the one that's supplied to us.
+
+
+I gave you a quick glimpse of this earlier, and so here's some three poor taught movies, top series, blah, blah, blah.
+
+
+Notice it has pages.
+
+
+So, there's this, this Student Data Studio report has three pages.
+
+
+I wanted to see, I actually logged in.
+
+
+I don't see, I thought, maybe, Paul Harbor.
+
+
+I was curious how fast it's got updated, thought I was prepping for this.
+
+
+I went in, but it doesn't update that rapidly turns out.
+
+
+Again, reference in the view analytics.
+
+
+Something else that's given us the look at.
