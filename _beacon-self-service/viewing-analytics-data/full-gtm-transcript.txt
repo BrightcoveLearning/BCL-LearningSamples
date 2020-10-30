@@ -1,0 +1,1012 @@
+So, as I mentioned, really, Google Analytics is the tool, seem to the right call, a Beacon Viewer Information, what your viewers are doing, and it can't be Video Cloud Analytics.
+
+
+And Bright Coal Supplies for us, some reports and resources, and we're going to look at those different reports and Reese, resources.
+
+
+And let me just show you one part, one of those things that you're given.
+Bob Bailey
+
+Just, so, you know, I'm gonna grab some screen captures that just slackened to you.
+
+
+Sure, four.
+Bob Bailey
+
+Things I would tweak.
+
+
+Ok, no problem, Oh, by the way, folks, I haven't had time to update this to the new, uh, branding.
+
+
+It will happen, but not for today.
+
+
+There's something called Data Studio, and I'll talk about what it is more later.
+
+
+But if you go to data studio dot google dot com, and you're logged in, and you'll see that there's a report for us to use.
+
+
+And again, this is actually put in when when a customer comes on board, they make sure that they give access to their Google Analytics to bright Cov folks, and these will be installed automatically.
+
+
+And so this is a default Look at this report, and we'll talk a little bit more About that later, But just the idea that we're, we're given information.
+
+
+That's the main point here.
+
+
+Books, one committee.
+
+
+We're going to look at a bright, co supply dashboards.
+
+
+And if you're familiar at all Google Analytics, that's probably a name.
+
+
+Bright co supply, Data Studio Data Studio, honestly, was something I didn't know about, because I am certainly not a Google Analytics pro until getting some help from some of the folks influential, showed me that they install this in the Data Studio.
+
+
+There's also something called dimensions and metrics that are added to Google Analytics for us by Brightcove.
+
+
+And where we will go in and see those and see how to use them.
+
+
+And I will give you a tiny little glimpse into creating some reports that utilize these dimensions and metrics.
+
+
+And it's actually just one metric.
+
+
+But this is not nor do the Doc's try to be a explanation of how to use Google Analytics.
+
+
+Right, I'm going to show you a couple of things.
+
+
+But it is not to take place of the Google Analytics Academy for sure.
+
+
+Using the Dashboard, and I put it quote in there, I'm not gonna read it to you what Google Analytics dashboards are.
+
+
+And that's from Google themselves, customizable with knowledge of Google Analytics, and there's three steps we need to go in.
+
+
+And we're going to talk about accounts, views, and then actually, in Google Analytics, will go to customization dashboards, and we'll see the ...
+
+
+Is built for us.
+
+
+And also, notice, there is a doc that contains information about viewing analytics.
+
+
+Let me see.
+
+
+Turn off notifications.
+
+
+All right, so let's go in and look at that real quickly.
+
+
+So this is Google Analytics and going to go to customization, dashboards, And, again, this is something that is installed for us by the, there's one person in food scholl that is a Google Analytics wizard.
+
+
+And he builds these and installs them for people.
+
+
+Here's the dashboard, and I'm not gonna, you can look at it, and kind of the standard things you want to see.
+
+
+Maybe.
+
+
+But of course, knowing customers are gonna wanna have different views into this thing, but for right now, that's all we want to see.
+
+
+Someone is online, you can have Active users, and here's some summary information.
+
+
+Of course, these are customizable, but not the point of this, excuse me, not the point of this course, to do that.
+
+
+I'm going to give a very quick, quick look into building dashboards, and I'm not going to do this in the docs, by the way, but I will do it in the course just to give people a view in that it's not like brain surgery, as they say.
+
+
+But I don't want to go into the docs, because then it's like, where do you stop?
+
+
+But in a course, it's easy to say, Hey, this is just a quick demo, so let's go do that.
+
+
+We're going to go into Analytics here, and we're going to go to dashboards, create, am excuse a blank canvas.
+
+
+I'm getting this 29 October.
+
+
+I know if it's a date for me, I can delete it.
+
+
+And then am I willing to click the create dashboard.
+
+
+And they give you these widgets.
+
+
+You can put on their kind of prebuilt.
+
+
+So the first one we're going to do is we want to do a geo map and we just want to find by country where the users users, are going to click on Geo Map.
+
+
+And then the metric is country, and we're gonna talk a little bit more about metrics, What we're gonna do, country, and then, what we want it to be do.
+
+
+If we wanna go down, and we're excuse me, we're going to say just, Hey, this.
+
+
+Oh, sorry about that.
+
+
+I have to say what we want to look at.
+
+
+And this one users, there's a long list here, So it's nice, too.
+
+
+Do a search there.
+
+
+There we go.
+
+
+Sorry about that, and we click save.
+
+
+And so, that's how we can add these widgets.
+
+
+And you can probably see what's happened, because this looks just like something we did.
+
+
+We looked at on the dashboard.
+
+
+So you can go in here, and you can build these.
+
+
+Let's do another one.
+
+
+That's a pie chart that's.
+Bob Bailey
+
+Based on feedback.
+
+
+I.
+Bob Bailey
+
+Have a question, though.
+Bob Bailey
+
+So yeah, the geo map by user.
+Bob Bailey
+
+Like, what is the user metric, right?
+Bob Bailey
+
+Like, is it the number of people that have logged into the app are logged in?
+Bob Bailey
+
+Like, what is the user metrics specifically?
+
+
+That's why you should, I know.
+
+
+Because I have no idea.
+
+
+There's a whole bunch.
+
+
+I'll take, you know, I'll find that our user.
+Bob Bailey
+
+I'm just curious right away.
+Bob Bailey
+
+What you know?
+Bob Bailey
+
+Like, video plays.
+Bob Bailey
+
+I'd understand all that, but I'm wondering, all right, If it's a Google thing, that's fine.
+Bob Bailey
+
+I was just curious.
+
+
+Yeah.
+
+
+Yeah, I'll look that up.
+
+
+That is a good thing.
+
+
+If I'm going to use it.
+
+
+There are a bunch of different kinds of users there.
+
+
+I don't know if you noticed think I can edit this.
+Bob Bailey
+
+I don't know if it's, like, logged in, or, you know, they watched at least one thing or whatever.
+Bob Bailey
+
+I was just curious.
+
+
+Yeah.
+
+
+So I'll find out exactly what that means.
+
+
+I hope let's look here and see.
+
+
+I just, that's?
+
+
+Users who have initiated at least one session during the date range.
+
+
+So, whatever initiated a session they went into, watch something for us then.
+
+
+Would that be good enough for you, Bob?
+
+
+Prefer?
+Bob Bailey
+
+That makes sense.
+
+
+Yeah, I was.
+Bob Bailey
+
+Just curious, Riker's users like, so vague, so.
+
+
+Right?
+
+
+And that's the one, this is a classic thing about demo even.
+
+
+And that's why I don't do it in the docs.
+
+
+Or I'm still hesitant about doing well, if I'd be hesitant, if I were doing this, like the instructor led because you're starting down a path that there's no end to.
+
+
+And it's, it can be scary.
+Bob Bailey
+
+That I should say and I never get to say this.
+Bob Bailey
+
+I'm gonna say it.
+
+
+They're.
+Bob Bailey
+
+Walking into a hornet's Nest.
+
+
+My kids go on.
+
+
+It's this like this.
+
+
+Yeah.
+
+
+I want to add another way to just so you see, and this is going to be a pie chart and the metric we're going to use is time watched.
+
+
+We'll see the time watched is special at aoa and the dimension, and we want the dimension to be these are long lists.
+
+
+What have I done to have time?
+
+
+Oh, that's why?
+
+
+Somehow I selected the wrong one.
+
+
+Cancel, Start again.
+
+
+I don't know why wouldn't let me change that.
+
+
+Hi.
+
+
+Metric is.
+
+
+Time watched, There it is, mm weird, and the dimension, we're going to talk about definition for these in just a second, John Meira.
+
+
+So there's our widget that shows our time watched by genre.
+
+
+And again, this is just to give people the idea that, OK, I can go in and with a little more knowledge, probably build what I want to see if I don't like the standard one.
+
+
+And, of course, just like we've always done, if you have questions, or comments, or you can teach us all something, feel free to interact.
+
+
+All right, did a quick intro, and we saw how we could add some widgets using the bright toll supply Data Studio Studio Report.
+
+
+And, again, there's a definition of Data Studio for my very limited experience, and it's probably a Google people upset.
+
+
+What I think Data Studio is, kinda like dashboards, are the drawing tools.
+
+
+You can go in and arrange things.
+
+
+I've gone through one of their little demos and you can put bars in and color things and separators, and all that kinda stuff.
+
+
+And so, what you can do is really dress up and make a dashboard look pretty.
+
+
+Let's go look at the report.
+
+
+Again, this is one that's supply to us.
+
+
+So I'm gonna go to the Data Studio.
+
+
+And here's the one that's supplied to us.
+
+
+I gave you a quick glimpse of this earlier, and so here's some three poor taught movies, top series, blah, blah, blah.
+
+
+Notice it has pages.
+
+
+So, there's this, this Student Data Studio report has three pages.
+
+
+I wanted to see, I actually logged in.
+
+
+I don't see, I thought, maybe, Paul Harbor.
+
+
+I was curious how fast it's got updated, thought I was prepping for this.
+
+
+I went in, but it doesn't update that rapidly turns out.
+
+
+Again, reference in the view analytics.
+
+
+Something else that's given us the look at.
+
+
+All right.
+
+
+So, now we've talked about this dimensions and metrics.
+
+
+And basically, a dimension is an attribute of your data.
+
+
+So, for instance, the city is an example of a metric, the Values A metric can have different values like You can probably guess.
+
+
+We just looked at some food Shaw, Boston, Guadalajara, Palm, Harbor Clearwater.
+
+
+Then, the metric is a qualitative measurement on that dimension.
+
+
+So, for instance, the number of sessions from a particular city would be the metric, just so you have one more, like, to kinda get this down to you, one more example, dimensions and metrics.
+
+
+Another dimension could be browser, right?
+
+
+So browser, of course, could have multiple values, Chrome, Firefox, Safari, Whatever it is, then the metric would be the people that visited which browser, so 80% of the people were using Safari 15, blah, blah, blah.
+
+
+So, that's dimensions, and metrics.
+
+
+And the dimensions and metrics were given.
+
+
+Bradco didn't feel like that was a complete set.
+
+
+But given by default, in Google Analytics, and they didn't feel that was a complete set.
+
+
+So, what they've done, they have actually added some custom dimensions.
+
+
+And, they say, dimensions and metrics.
+
+
+It's actually, they've added one metric that we've already seen.
+
+
+And let me go in and show you how you can see those.
+
+
+Go back to Analytics, Admin, customed definitions, Custom Dimensions, so here's the custom Dimensions.
+
+
+And up here, I'm going to look.
+
+
+I'll show you this just a little bit.
+
+
+Notice up here.
+
+
+This is Beacon, iOS, and so this is from all accounts, Beacon, Beacon, iOS, and Mobile.
+
+
+Notice, we have 16 of them.
+
+
+And so these are dimensions that have been added by Brian Cole because, they feel they're necessary for customers to have a view of these.
+
+
+And they probably want this information.
+
+
+And custom metrics are just one, which we use as that's time watched.
+
+
+Now, I'm going to select a different view.
+
+
+I'm going to go to Web.
+
+
+All website Data.
+
+
+Metrics are the same dimensions.
+
+
+Notice there's 20, So, it depends on what your view is, how many dimensions you may have.
+
+
+And so, there are different dimensions that are put in that are provided to you.
+
+
+I just have a quick summary here, iOS.
+
+
+Here's, I think, it was 16.
+
+
+And here's the web, with 20, and honestly, I don't, I haven't bothered to go through and count up for each one, but I wanted to show that they can be different.
+
+
+I know I play with iOS and Web most knows the ones I knew that were different.
+
+
+So these are tools we have to use.
+
+
+Well, then the next question is, well, how can I use them?
+
+
+Again, this is not a class on Google Analytics.
+
+
+This is just giving us a peek as to what's been supplied to us, and then also a peek into you can do other things with them.
+
+
+And so what we want to do, is we want to build a report that uses genre, which is a custom dimension, and time watched, which is the custom and the only custom metric.
+
+
+So let's go and do that.
+
+
+And there's one other thing in here that I had a question about when I was working on this, and I'll show you what was, I wanted to see.
+
+
+So what we're going to do, he's me going to go into customization customer Reports.
+
+
+And I'm going to do a new customer report.
+
+
+I'll give it a name again, 26, October Up Up here.
+
+
+Sorry about that.
+
+
+46, October, I'll just call this, see our customer report demo.
+
+
+And so here, we're going to add a metric.
+
+
+And the metric we want to use is actually a custom metric.
+
+
+And it's the only one that's custom.
+
+
+The only one that's added for us is time watched.
+
+
+And then we might want to add a dimension.
+
+
+So we're going to add a Dimension.
+
+
+And again, custom Dimensions.
+
+
+And I know.
+
+
+Click the right one.
+
+
+Yeah.
+
+
+And let's use.
+
+
+Genre.
+
+
+There it is.
+
+
+Now, here's the thing that I was wondering, because up here I don't know.
+
+
+If you notice, when you did like website data, you picked Beacon of law counts, Beacon.
+
+
+Then you had to pick like iOS or the web, or Roku.
+
+
+But what if you wanted to do a report that uses more of those what you can do?
+
+
+That's the views.
+
+
+You can pick more views.
+
+
+So here, you see this pops up.
+
+
+So OK, I'm going to do Android, like everything Beacon, the web, iOS, Roku.
+
+
+So those are going to be my views.
+
+
+I'm going to gather data from all those different views to generate this.
+
+
+And they'll click save.
+
+
+And there is my Report here, and with all that information, here's the genre, the time, course you can flip these if you want to see what's not doing well it seems like thrillers, Thrillers, and Hors should pick up right being halloweens on its way.
+
+
+And That's how you can use those Custom reports.
+
+
+And you'll also notice That those appeared in Other places and that's why I intentionally use some of the customer earlier Because you don't have to, you don't have to do custom Reports to use those.
+
+
+You can see in the regular dashboards, or when you're creating a dashboard, also.
+
+
+Attach, You want to learn Google Analytics?
+
+
+It's more than what I can provide when I'm talking about this.
+
+
+So, there's something called Google Analytics Academy.
+
+
+I've actually looked through some materials and watch some of them, so I'd have some idea of what's going on, and so that's a good resource to do.
+
+
+And also, remember that bright Koebel add these entities to your Google Analytics account.
+
+
+And the trap is customization as a customer's responsibility.
+
+
+I need possessive.
+
+
+They're gonna make a note.
+
+
+Yeah, quick review, so bright, co supply some reports.
+
+
+We know, both, a default dashboard, a default Data Studio Report, and these other resources, meaning dimensions and the one metrics for use in Google Analytics those are put in by Brightcove.
+
+
+So what are these?
+
+
+As I mentioned, we have the dashboard, the Data Studio report.
+
+
+The dimensions in the metric and customization of reports is the customer's responsibility.
+
+
+And this course is basically to get you to understand that the data from all the view's feeds into Google Analytics, it does not use there's actually a couple of things fed back.
+
+
+I think maybe two properties are fed back from the.
+
+
+Video Js back to video cloud analytics.
+
+
+But it's, it's so incomplete It's it's not helpful to us.
+
+
+And that completes this introduction to how analytics for use and before everyone came on, I was mentioning it, like, this felt more like show and tell that really teaching anything and because that's basically what it is, you're gonna go in.
+
+
+And if you want to dig deeper, then that's what the Google Analytics Academy is forward is not the point of this course.
+
+
+To teach all that, just to give you a little hint into that, you can customize reports.
+
+
+And if you want them to look pretty, you can use Data Studio.
+
+
+All right, that wraps it up.
+
+
+Thank you for your time, comments, questions.
+
+
+And honestly, one of the things I want to ask is, should I even bother to show, like, the little bit of building your own analytics reports?
+
+
+I just wanted to do to T So they know it's possible, But on the other hand, is it bad to show it when I'm not trying to teach anything?
+
+
+I just want to make them aware of it.
+
+
+And will that be more frustrating than helpful if you have any comments on that, I'd appreciate it.
+
+
+Actually.
+Bob Bailey
+
+I have a comment.
+
+
+Go ahead.
+Bob Bailey
+
+I would show that map.
+Bob Bailey
+
+No, And I think what you just said is exactly what I was thinking, Right?
+Bob Bailey
+
+Like, Google Analytics is just such a rat's Nest of so much stuff in there, right, so like, I'm thinking like, OK, can I go out, do it right now, laptop or not?
+Bob Bailey
+
+But you know what, like, at least I know the dimensions are there.
+Bob Bailey
+
+Right?
+Bob Bailey
+
+So even though I'm not going to remember, like, how you did that, or whatever, at least I know, hey, there's some breakout metrics there.
+Bob Bailey
+
+In addition to what Google supplies that I could use.
+Bob Bailey
+
+So, I would do what exactly how you did it, so that's my opinion.
+
+
+And I do, by the way, if any of you ever, I don't know if we'll ever do these instructor led classes.
+
+
+But I don't know if you can hear me shuffling papers.
+
+
+I'm a Google analytics expert, but I have the steps on how to do all these things, because I just I learned it like two weeks ago, and I don't have it all memorized.
+
+
+And so if you ever teaching this, or you want to see how these things are done, where there's something to be done, I have the steps there here.
+
+
+Like, what are Google, and have some more examples of dimensions and metrics.
+
+
+Any other feelings about that, Besides Bob?
+
+
+Ambivalent, good, bad.
+Armando Navarro
+
+Not enough for me.
+Armando Navarro
+
+I think it's good.
+Armando Navarro
+
+It's clear.
+Armando Navarro
+
+I like it.
+Miguel Ascanio
+
+For me, there is great.
+Miguel Ascanio
+
+I mean.
+
+
+This.
+Miguel Ascanio
+
+Is the first time that I, that I receive some sort of training, a wall analytics.
+Miguel Ascanio
+
+Yeah.
+
+
+And honestly, and this is somebody's name, Jeff.
+
+
+And Alberto will know what I mean with this.
+
+
+I'm trying to track who in food scholl as the person to talk with about this, and I can't remember his name will have to do some asking about it.
+
+
+But the, if you have any questions about Google Analytics, the guy in Food shawl L get his name, you can reach out to me.
+
+
+He is the wizard, he's the one that's built all this then.
+
+
+I got out of session with him and I had to keep putting the brakes on cars he.
+
+
+He's really knowledgeable.
+
+
+Really excited.
+
+
+And I said, this is great but you're going way beyond what I'm ready to learn and way beyond what I'm going to put in my course.
+
+
+So as much as I want to learn it, I just not ready for it.
+
+
+And so he is really a sharp guy.
+
+
+Other comments.
+
+
+There's one, and this is more, again for Jeff, and Alberto and Bob, I didn't, I don't know, I just asked to get set up and where I could see Beacon's stuff and a lot of other stuff appeared.
+
+
+Um, in here, there's ah, R, X, I think, you guys, this is our new site, so, if we wanted, we could go and you can go and look like, well, let's see, Let's go in and look at.
+
+
+I guess, Duty of support, see if this makes sense, Bob, that this is real data.
+
+
+Yeah, this probably is ha, like the number of, of users, so, we can, if we wanted to, we could actually build a dashboard.
+
+
+Looking at each of our, you know, micro or mini support sites.
+
+
+Anyway.
+
+
+Any other questions or comments?
+
+
+Everybody wants to make sure?
+
+
+You're on top of.
+Miguel Ascanio
+
+Azure.
+
+
+What's that?
+Miguel Ascanio
+
+Now, not, not for me, thank you, Mark.
+
+
+Cool, well, get out here on time.
+
+
+Probably nobody wants to hear me talk anymore, which, I understand.
+
+
+So, thanks for your time, And any, if you want to send me other comments, when you think about this, I'll be starting the recordings soon.
+
+
+So, please let me know soon, because I don't want to have to edit the recordings.
+
+
+I'm not very good at it, and takes me time.
+
+
+All.
+Miguel Ascanio
+
+Right.
+
+
+Guys.
+Armando Navarro
+
+Right.
+Jeff Doktor
+
+Ok.
+
+
+Yeah.
+Jeff Doktor
+
+Are you saying that these customers don't also get Video Cloud Analytics.
+
+
+Well, if they're pure Beacon customers, it's of no use tool?
+
+
+It says, we don't.
+Jeff Doktor
+
+Get Video View, right?
+Jeff Doktor
+
+I mean, all the videos reside in Video cloud.
+
+
+Yeah, but how how are the views recorded, too?
+
+
+Video Cloud Analytics.
+
+
+What does the reporting?
+Jeff Doktor
+
+I think just all the player, right, so Exactly.
+
+
+That's why I think it reports and I shoot someone told me I can't remember.
+
+
+I probably shouldn't even bring it up.
+
+
+One thing is sent back, went up, would have movie is playing in the web, which uses video Js, like a couple.
+
+
+I think 1 or 2 statistics were sent back to Video Cloud.
+
+
+But, you know, it's worse to look at that, but not to look at it.
+
+
+You don't think it's meaningful, because it's not.
+Jeff Doktor
+
+I see.
+Jeff Doktor
+
+So it is clear, right, that these customers have to look here for their analytics.
+Jeff Doktor
+
+Oh.
+
+
+Yep.
+
+
+And that's why this courses exist, You know.
+
+
+That's what I put in the docs, that.
+
+
+Even though the videos were in video Cloud, the analytics are of no, there are no use to you, because nothing gets reported back, the video, clapp Yeah.
+
+
+Yeah.
+
+
+Now to look at a wall.
+
+
+We're still here.
+
+
+Like So this is for I can't I can't tell if this is actually broken down.
+Jeff Doktor
+
+Hmm, hmm.
+
+
+Like, is there social?
+Jeff Doktor
+
+You can stop the recording.
+
+
+Oh, yeah.
+
+
+Good idea.
