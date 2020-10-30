@@ -1,14 +1,21 @@
 Major accomplishments:
+** Week Ending 30 Oct **
+- Closed 9 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Slides created, and test class delivered, for Beacon video course Viewing Analytics Data
+Work NOT Reflected in JIRAs:
+- Working to get an AuthVOD implementation working. Have questions out to Funchal engineers. Also have doc mostly done, just waiting to confirm I have the rights steps as what I am doing is not quite working.
+
+
 ** Week Ending 16 Oct **
-- Closed 17 JIRAs, 2 of which were administrivia
+- Closed 11 JIRAs, 3 of which were administrivia
 JIRA Highlights Include:
 - Second course, Designing the Application Layout, out the door 
 Work NOT Reflected in JIRAs:
 - Slides for next course, Viewing Analytics Data, nearly complete
-- Again some substantial time spent with Alberto. This time reviewing structure/script/slides for the first video from his course 
+- Again some substantial time spent with Alberto. This time reviewing structure/script/slides for the first video from his course.
 
 
-Major accomplishments:
 ** Week Ending 9 Oct **
 - Closed 17 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
