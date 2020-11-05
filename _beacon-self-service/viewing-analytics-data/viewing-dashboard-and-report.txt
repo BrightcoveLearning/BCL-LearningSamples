@@ -97,3 +97,13 @@ We see the visually enhanced dashboard.
 
 Notice it has pages. This Data Studio report has three pages.
 
+**Slide 8
+The learning points here were very well defined
+
+First, Brightcove supplies resources in your Google Analytics report, and in the next video we will see other added resources.
+
+We have the dashboard ---- and the Data Studio Report.
+
+**Slide 9
+Thanks much for being a Brightcove customer, and if you are like most others I'm sure you can't wait to see the exciting conclusion of this video course, so go watch it!
+
