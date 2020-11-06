@@ -1,88 +1,37 @@
 New docs:
 
-Title: Training on Demand: Creating and Using Playlists
-Description: You can either create playlists in Video Cloud and import them into Brightcove Beacon, or you can create playlists in Brightcove Beacon.
-Link: https://beacon.support.brightcove.com/training/training-demand-playlists.html
+Title: Publishing the Android App on the Play Store Video Course
+Description:  Training on Demand for Publishing the Android App on the Play Store
+Link: https://beacon.support.brightcove.com/training/training-demand-publish-android-app.html
+Category: Brightcove Beacon
+Status: Released 
+
+Title: Implementing AuthVOD
+Description: In this topic, you will learn how to create an AuthVOD monetization package.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/implementing-authvod.html
 Category: Brightcove Beacon
 Status: Released
 
 
 Major updates:
 
-Title: Overview Live API
-Description: Revised old note on jobs created via the API not showing up in the Live Module, to show how to make them appear
-Link: https://live.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html#Limitations
-Category: Live API
-Status: Released
-
-Title: SSAI Live Player Enhancements
-Description: Added sample request body to show how to create an SLS job with a Video Cloud video (as opposed to a remote asset)
-Link: https://live.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html#Limitations
-Category: Live API
-Status: Released
-
-Title: Creating Video Cloud Custom Fields
-Description: All custom field data types are now Text, none List
-Link: https://beacon.support.brightcove.com/syncing-with-video-cloud/vc-custom-fields.html
-Category: Brightcove Beacon
+Title: Brightcove Documentation (home page)
+Description: Added Announcements
+Link: https://support.brightcove.com 
+Category: General information
 Status: Released
 
 
 Minor updates:
 
-Title: Playback API Reference
-Description: Modified the limit param description to clarify
-Link: https://apis.support.brightcove.com/playback/references/reference_v1.html
-Category: Playback API
+Title: Brightcove Player Sample: Live Custom Error Message
+Description: Updated how to display the error message image
+Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-live-custom-error-message.html
+Category: Brightcove Player
 Status: Released
 
-Title: Deleting Digital Master
-Description: Added step to generate access token
-Link: https://apis.support.brightcove.com/cms/managing-videos/digital-master-delete-api.html
-Category: CMS API
-Status: Released
 
-Title: Fetch and Display Videos with same tag
-Description: Fixed a bad link
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-related-videos-tags-playback-api.html
-Category: Player API, Player Samples
-Status: Released
 
-Title: Live API Reference
-Description: Fixed default value for live_dvr_sliding_window_duration to clarify that it must be explicitly set to 0 to avoid charges for DVR
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-related-videos-tags-playback-api.html
-Category: Live API
-Status: Released
-
-Title: Known Issues
-Description: Added issue and workaround for ads blocked by Safari
-Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html
-Category: Player, Advertising
-Status: Released
-
-Title: Live Analytics
-Description: Added note that certain ad blockers may prevent analytics data from being loaded in the Live Module
-Link: https://live.support.brightcove.com/live-module/reviewing-live-analytics.html
-Category: Live Analytics
-Status: Released
-
-Title: Pulse Plugin for Android SDK
-Description: Updated Links to Pulse documentation
-Link: https://sdks.support.brightcove.com/android/advertising/using-pulse-plugin-native-sdk-android.html
-Category: Android SDK Plugins
-Status: Released
-
-Title: Thumbnail and Poster Images
-Description: Added note that new images can not be uploaded until the video has finished processing
-Link: https://studio.support.brightcove.com/media/uploading-poster-and-thumbnail-images.html, https://studio.support.brightcove.com/media/capturing-poster-and-thumbnail-images.html
-Category: Custom thumbnail and poster
-Status: Released
-
-Title: Creating Series/Seasons/Episodes
-Description: Wide banner images are now required for series and seasons
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/series-seasons-episodes.html
-Category: Brightcove Beacon
-Status: Released
 
 
 New docs:
