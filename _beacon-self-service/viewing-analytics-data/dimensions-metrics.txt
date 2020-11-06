@@ -1,148 +1,74 @@
-In the last video is was mostly learning where analytics information supplied be Brightcove was, and how to see those assets.
+**Opening 
+The previous video in this course was mostly about learning how to view the Brightcove supplied Google Analytics dashboard and report. In this video you will learn about the Brightcove supplied dimensions and metric.
 
+**Slide 2
+Brightcove supplies some dimensions and one metric in your Google Analytics account. So, we should should probably understand what exactly what analytics dimensions and one metrics are before we try to use them.
 
-So, now we've talked about this dimensions and metrics.
+To utilize these dimensions and metric we need to what ones are available, so we'll see where they are located in the Google Analytics UI.
 
+And lastly, we use some of the dimensions and the one metric in reports.
 
-And basically, a dimension is an attribute of your data.
+**Slide 3
+We'll jump in first learning what dimensions and metrics are, then where we can see the Brightcove supplied one are.
 
+**Slide 4
+Basically, a dimension is an attribute of your data.
 
-So, for instance, the city is an example of a metric, the Values A metric can have different values like You can probably guess.
+For instance, the city is an example of a dimension, and that dimension can have many values.
 
+The metric is a qualitative measurement on that dimension.
 
-We just looked at some food Shaw, Boston, Guadalajara, Palm, Harbor Clearwater.
+The number of sessions from a particular city would be the metric.
 
+Another dimension could be browser
 
-Then, the metric is a qualitative measurement on that dimension.
+Browser, of course, could have multiple values, Chrome, Firefox, Safari, whatever it is.
 
+Then the metric would be the people that visited with each browser.
 
-So, for instance, the number of sessions from a particular city would be the metric, just so you have one more, like, to kinda get this down to you, one more example, dimensions and metrics.
+80% of the people were using Safari, 15% using Chrome, etc.
 
+That's a quick view of what dimensions and metrics are.
 
-Another dimension could be browser, right?
+**Slide 5
+Google supplies by default numerous dimensions and metrics. Brightcove felt that customers would want a few more added that would be particularly helpful for Brightcove Beacon, for instance the metric Time Watched for videos.
 
+We see the navigation to see these custom dimensions and the single metric.
 
-So browser, of course, could have multiple values, Chrome, Firefox, Safari, Whatever it is, then the metric would be the people that visited which browser, so 80% of the people were using Safari 15, blah, blah, blah.
+**Slide 6
+Note that not all the dimensions are the same for each platform. Here we see the 16 dimensions for iOS and the 20 dimensions for web.
 
+**WEB Google Analytics
+Go back to Analytics, Admin, custom definitions, Custom Dimensions, PAUSE and here's the custom Dimensions for web. There are 20 of them.
 
-So, that's dimensions, and metrics.
+Let's change the view to iOS, PAUSE and there are 16 here.
 
+Custom metrics are just one, which we use as that's time watched.
 
-And the dimensions and metrics were given.
+And these are the added tools we have to use.
 
+**Slide 7
+The the next logical question is, how we can use these dimensions and metic? Lets take a quick look.
 
-Bradco didn't feel like that was a complete set.
+**Slide 8
+Again, this is not a class on Google Analytics. 
 
+This is just giving us a peek as to what's been supplied to us, and then also a peek into what other things we can do with them.
 
-But given by default, in Google Analytics, and they didn't feel that was a complete set.
+What we want to do is build a report that uses genre, which is a custom dimension, and time watched, which is the custom, and the only, custom metric.
 
+Let's go and do that.
 
-So, what they've done, they have actually added some custom dimensions.
+**WEB Google Analytics
+We'll start by first clicking customization then customer Reports.
 
+Next a new custom report.
 
-And, they say, dimensions and metrics.
+For the title, ReportDemo
 
+For the name, Genre by Time Watched
 
-It's actually, they've added one metric that we've already seen.
-
-
-And let me go in and show you how you can see those.
-
-
-Go back to Analytics, Admin, customed definitions, Custom Dimensions, so here's the custom Dimensions.
-
-
-And up here, I'm going to look.
-
-
-I'll show you this just a little bit.
-
-
-Notice up here.
-
-
-This is Beacon, iOS, and so this is from all accounts, Beacon, Beacon, iOS, and Mobile.
-
-
-Notice, we have 16 of them.
-
-
-And so these are dimensions that have been added by Brian Cole because, they feel they're necessary for customers to have a view of these.
-
-
-And they probably want this information.
-
-
-And custom metrics are just one, which we use as that's time watched.
-
-
-Now, I'm going to select a different view.
-
-
-I'm going to go to Web.
-
-
-All website Data.
-
-
-Metrics are the same dimensions.
-
-
-Notice there's 20, So, it depends on what your view is, how many dimensions you may have.
-
-
-And so, there are different dimensions that are put in that are provided to you.
-
-
-I just have a quick summary here, iOS.
-
-
-Here's, I think, it was 16.
-
-
-And here's the web, with 20, and honestly, I don't, I haven't bothered to go through and count up for each one, but I wanted to show that they can be different.
-
-
-I know I play with iOS and Web most knows the ones I knew that were different.
-
-
-So these are tools we have to use.
-
-
-Well, then the next question is, well, how can I use them?
-
-
-Again, this is not a class on Google Analytics.
-
-
-This is just giving us a peek as to what's been supplied to us, and then also a peek into you can do other things with them.
-
-
-And so what we want to do, is we want to build a report that uses genre, which is a custom dimension, and time watched, which is the custom and the only custom metric.
-
-
-So let's go and do that.
-
-
-And there's one other thing in here that I had a question about when I was working on this, and I'll show you what was, I wanted to see.
-
-
-So what we're going to do, he's me going to go into customization customer Reports.
-
-
-And I'm going to do a new customer report.
-
-
-I'll give it a name again, 26, October Up Up here.
-
-
-Sorry about that.
-
-
-46, October, I'll just call this, see our customer report demo.
-
-
-And so here, we're going to add a metric.
+Here we're going to add a metric.
 
 
 And the metric we want to use is actually a custom metric.
@@ -157,7 +83,7 @@ The only one that's added for us is time watched.
 And then we might want to add a dimension.
 
 
-So we're going to add a Dimension.
+We're going to add a Dimension.
 
 
 And again, custom Dimensions.
