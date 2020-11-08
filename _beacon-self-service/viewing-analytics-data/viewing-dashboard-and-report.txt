@@ -87,11 +87,15 @@ And here are the three steps to view the report, which is much like viewing a da
 **Web Data Studio
 Into the Data Studio.
 
-And here's the one that's supplied for us.
+And here's the report that's supplied for us.
 
 We see the visually enhanced dashboard.
 
-Notice it has pages. This Data Studio report has three pages.
+We can choose what view, or data, to use in the report. We'll use the what's already set.
+
+Note also, we can change the data range for the report.
+
+Data Studio reports can have multiple pages. This report has three pages.
 
 **Slide 8
 The learning points here were very well defined
