@@ -5,12 +5,12 @@ In this video, you will learn how to view the Google Analytics Dashboard and Goo
 Those are our two only two agenda items.
 
 **Slide 3
-First we will go and look at the Dashboard that Brightcove will add to your Google Analytics account.
+First, we will go and look at the Dashboard that Brightcove will add to your Google Analytics account.
 
 **Slide 4
 Here is some information on that dashboard.
 
-The fist bullet is Google's definition of what an Analytics Dashboard is.
+The first bullet is Google's definition of what an Analytics Dashboard is.
 
 As we would expect, the Dashboard is customizable. We will take a very quick into building dashboards, but the goal of this course is NOT to teach Google Analytics.
 
@@ -42,7 +42,7 @@ This is definitely NOT a course on Google Analytics, but lets take a quick peek 
 We're going to go back into Analytics, then dashboards, create, and blank canvas.
 
 
-For the name I will say VideoDemo.
+For the name, I will say VideoDemo.
 
 
 I know if it's a date for me, I can delete it.
@@ -53,7 +53,7 @@ The first one we're going to do is a geo map and we just want to find by country
 
 Click on Geo Map.
 
-And then the first part of the metric is country. BTW in another video in this course the details of what a metric is will be discussed.
+And then the first part of the metric is country. BTW in another video in this course, that details what a metric.
 
 Now we'll select users, which is way at the bottom of this list.
 
@@ -100,10 +100,11 @@ Notice it has pages. This Data Studio report has three pages.
 **Slide 8
 The learning points here were very well defined
 
-First, Brightcove supplies resources in your Google Analytics report, and in the next video we will see other added resources.
+First, Brightcove supplies resources in your Google Analytics report, and in the next video, we will see other added resources.
 
 We have the dashboard ---- and the Data Studio Report.
 
 **Slide 9
 Thanks much for being a Brightcove customer, and if you are like most others I'm sure you can't wait to see the exciting conclusion of this video course, so go watch it!
+
 
