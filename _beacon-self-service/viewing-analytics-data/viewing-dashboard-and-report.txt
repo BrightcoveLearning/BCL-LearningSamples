@@ -1,11 +1,11 @@
 **Slide 1
-In this video, you will learn how to view the Google Analytics Dashboard and Google Data Studio Report, both of which Brightcove will place in your Google Analytics report.
+In this video, you will learn how to view the Google Analytics Dashboard and Google Data Studio Report specific to Brightcove Beacon, both of which Brightcove will place in your Google Analytics account.
 
 **Slide 2
-Those are our two only two agenda items.
+And those are the only two agenda items.
 
 **Slide 3
-First, we will go and look at the Dashboard that Brightcove will add to your Google Analytics account.
+First, we will go and look at the Dashboard.
 
 **Slide 4
 Here is some information on that dashboard.
@@ -14,17 +14,17 @@ The first bullet is Google's definition of what an Analytics Dashboard is.
 
 As we would expect, the Dashboard is customizable. We will take a very quick into building dashboards, but the goal of this course is NOT to teach Google Analytics.
 
-Once we go into Google Analytics we will have to do three things to see the Brightcove supplied Dashboard. They are:
+Once we go into Google Analytics, we will have to do three things to see the Brightcove supplied Dashboard. They are:
 1. Choose the desired account
 2. Choose the desired view
 3. From the UI navigation choose Customization then Dashboards, and we will see a link for the Dashboard.
 
-Also notice a document exists that addresses the information in this video.
+Also, notice a document exists that addresses the information in this video.
 
 OK, let's go now and look at the Dashboard.
 
 **Web Google Analytics
-We are logged in, and so the first task from the slide is to choose.
+We are logged in, and so the first task from the slide is to choose the data to place into the Dashboard.
 
 We'll select Beacon → Beacon Web → All Web Site Data.
 
@@ -38,14 +38,10 @@ Click on that, and here we see the dashboard built for us by Brightcove and plac
 **Slide 5
 This is definitely NOT a course on Google Analytics, but lets take a quick peek into building a dashboard
 
-**Back to gave
+**Back to GA
 We're going to go back into Analytics, then dashboards, create, and blank canvas.
 
-
-For the name, I will say VideoDemo.
-
-
-I know if it's a date for me, I can delete it.
+For the name, let's use VideoDemo.
 
 Let's use a couple of these widgets.
 
@@ -53,7 +49,7 @@ The first one we're going to do is a geo map and we just want to find by country
 
 Click on Geo Map.
 
-And then the first part of the metric is country. BTW in another video in this course, that details what a metric.
+And then the first part of the metric is country. BTW in another video in this course you will learn details on exactly what a metric is.
 
 Now we'll select users, which is way at the bottom of this list.
 
@@ -86,7 +82,7 @@ Although not completely accurate, we can think Data Studio as dashboards with dr
 
 Data Studio reports are customizable, but Brightcove made the report they added as non-customizable.
 
-And the three steps to see the report much like viewing a dashboard.
+And here are the three steps to view the report, which is much like viewing a dashboard.
 
 **Web Data Studio
 Into the Data Studio.
@@ -100,7 +96,7 @@ Notice it has pages. This Data Studio report has three pages.
 **Slide 8
 The learning points here were very well defined
 
-First, Brightcove supplies resources in your Google Analytics report, and in the next video, we will see other added resources.
+First, Brightcove supplies resources in our Google Analytics accounts, and BTW in the next video, we will see other added resources.
 
 We have the dashboard ---- and the Data Studio Report.
 
