@@ -1,0 +1,21 @@
+**Intro/SLide 2
+Google Analytics is the tool we use to see what our viewers are watching in our Brightcove Beacon apps.
+
+Brightcove supplies for us dashboards, reports, dimensions and a metic, from which we can see viewer information or build our own dashboards and reports.
+
+**Slide 3
+The objectives for this course are:
+We will open Google Analytics and see how to view a Dashboard customized for our use, and is added to our account by Brightcove.
+Similarly, in Google Data Studio we will view a Report customized for Brightcove Beacon, which is also added to our account by Brightcove.
+Next, we will learn what dimensions and metrics are in terms of analytics, and view the custom dimensions and one metric added to our account.
+Lastly, we'll take a peak at building reports in Google Analytics and use the custom dimensions and metic in a custom report.
+
+**Slide 4
+In addition to this introductory video, two more videos follow in this course.
+
+The first is learning how to view the Goggle Analytics Dashboard and the Data Studio Report.
+
+In the second we dig into analytics dimensions and metrics, and learn how to create a custom report use those tools.
+
+**Slide 5
+Thanks for being a Brightcove Beacon customer, and hope you enjoy the course!!
