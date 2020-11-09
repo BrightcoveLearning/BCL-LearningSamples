@@ -1,5 +1,7 @@
 **Slide 1
-In this video, you will learn how to view the Google Analytics Dashboard and Google Data Studio Report specific to Brightcove Beacon, both of which Brightcove will place in your Google Analytics account.
+In this video, you will learn how to view the Google Analytics Dashboard and Google Data Studio Report both specific to Brightcove Beacon.
+
+Brightcove places these two assets in your Google Analytics account.
 
 **Slide 2
 And those are the only two agenda items.
