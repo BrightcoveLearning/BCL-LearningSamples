@@ -1,10 +1,14 @@
 **Opening 
-The previous video in this course was mostly about learning how to view the Brightcove supplied Google Analytics dashboard and report. In this video you will learn about the Brightcove supplied dimensions and metric.
+The previous video in this course was mostly about learning how to view the Brightcove supplied Google Analytics dashboard and report. 
+
+In this video, you will learn about the Brightcove supplied dimensions and metric.
 
 **Slide 2
-Brightcove supplies some dimensions and one metric in your Google Analytics account. So, we should probably understand what exactly what analytics dimensions and one metrics are before we try to use them.
+Brightcove supplies some dimensions and one metric in our Google Analytics account. 
 
-To utilize these dimensions and metric we need to what ones are available, so we'll see where they are located in the Google Analytics UI.
+So, we should probably understand what exactly analytics dimensions and metrics are before we try to use them.
+
+To utilize these dimensions and metric we need to know which ones are available, so we'll see where they are located in the Google Analytics UI.
 
 And lastly, we use some of the dimensions and the one metric in reports.
 
@@ -12,9 +16,9 @@ And lastly, we use some of the dimensions and the one metric in reports.
 We'll jump in first learning what dimensions and metrics are, then where we can see the Brightcove supplied ones.
 
 **Slide 4
-Basically, a dimension is an attribute of your data.
+Basically, a dimension is an attribute of our data.
 
-For instance, the city is an example of a dimension, and that dimension can have many values.
+For instance, the city where a viewer is watching from is an example of a dimension, and that dimension can have many values.
 
 The metric is a qualitative measurement on that dimension.
 
@@ -24,31 +28,41 @@ Another dimension could be browser
 
 Browser, of course, could have multiple values, Chrome, Firefox, Safari, whatever it is.
 
-Then the metric would be the people that visited with each browser.
+Then the metric would be the count of the people that visited with each browser.
 
 80% of the people were using Safari, 15% using Chrome, etc.
 
 That's a quick view of what dimensions and metrics are.
 
 **Slide 5
-Google supplies by default numerous dimensions and metrics. Brightcove felt that customers would want a few more added that would be particularly helpful for Brightcove Beacon, for instance, the metric Time Watched for videos.
+By default, Google supplies numerous dimensions and metrics. 
 
-We see the navigation to see these custom dimensions and the single metric.
+Brightcove felt that customers would want a few more added that would be particularly helpful for Brightcove Beacon, for instance, the metric Time Watched for videos.
+
+The slide details the navigation to see these custom dimensions and the single metric. 
+
+We'll go in and look at those in just a moment.
 
 **Slide 6
-Note that not all the dimensions are the same for each platform. Here we see the 16 dimensions for iOS and the 20 dimensions for web.
+Note that not all the dimensions are the same for each platform. 
+
+Here we see the 16 dimensions for iOS and the 20 dimensions for web.
+
+Lets go see where these dimensions and metric can be viewed.
 
 **WEB Google Analytics
 Go back to Analytics, Admin, custom definitions, Custom Dimensions, PAUSE and here's the custom Dimensions for web. There are 20 of them.
 
 Let's change the view to iOS, PAUSE and there are 16 here.
 
-Custom metrics are just one, which we use as that's time watched.
+Custom metrics are just one, and that's time watched.
 
 And these are the added tools we have to use.
 
 **Slide 7
-The next logical question is, how we can use these dimensions and metic? Let’s take a quick look.
+The next logical question is, how we can use these dimensions and metic? 
+
+Let’s take a quick look.
 
 **Slide 8
 Again, this is not a course on Google Analytics. 
@@ -84,14 +98,17 @@ Custom Dimensions.
 
 Genre.
 
-Before we save the report, we can add different views. So far we have only seen using data from one view, like iOS OR Web. We can now select multiple views.
+Before we save the report, we can add different views. 
+
+So far we have only seen using data from one view, like iOS OR Web. 
+
+We can now select multiple views.
 
 Here we see what opens on click.
 
+OK, let's add everything Beacon. PAUSE
 
-OK, I'm going to do add everything Beacon. PAUSE
-
-Those are going to be my FIVE views.
+We have FIVE views.
 
 We'll click save.
 
@@ -104,16 +121,16 @@ Obviously, we aren't quite experts in report building from that introduction, bu
 **Slide 9
 Let's do a quick review to drive home the learning points for this video.
 
-Brightcove adds custom dimensions and a custom metric for your use.
+Brightcove adds custom dimensions and a custom metric for our use.
 
 And there is how to navigate to see both.
 
 We've looked at a brief example using a custom dimension and custom metric in a custom report.
 
-We know we aren't experts in building reports from what we did in this video, but to learn more a great place to start is the Google Analytics Academy.
+We know we aren't experts in building reports from what we did in this video, but to learn more,  a great place to start is the Google Analytics Academy.
 
 **Slide 10
-Thanks for getting through another video, and moreover thanks for being a Brightcove customer!
+Thanks for watching another video, and moreover thanks for being a Brightcove customer!
 
 Sadly this is the end of not only this video but another Brightcove Beacon course. But fear not, chances are you still have other courses to watch in this series. Enjoy and learn. 
 
