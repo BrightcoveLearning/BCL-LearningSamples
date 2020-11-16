@@ -1,4 +1,38 @@
+Beacon Onboarding/Docs Daily Brief
+
+Carolyn and Robert-
+
+Onboarding / Self Service:
+1. Matt: Recorded all three videos for the Viewing Analytics Data course (including writing two scripts)
+2. Jeff: Created notes and updated slides for Implementing Video on Demand with SSAI presentation
+
+Beacon.Next:
+1. Matt: Beacon Pattern Deep Dive meeting
+2. Matt: Q2 Experiences - Cross-disciplinary Design Reviews meeting
+3. Matt: Beacon Research Sprint Planning meeting
+
+Docs:
+1. Bob: Updating Admin docs for latest UI changes
+
+-M
+
+
+
+
 Major accomplishments:
+** Week Ending 6 Nov **
+- Closed 7 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- CLosed a couple of Brightcove Player JIRAs, good to get my head back in that so I don't forget everything!
+- Slides made and one script completed for the 3 videos that make up the Viewing Analytics Data video course.
+- Completed a new doc on Implementing AuthVOD. Never did get a technical review from a few requests. I went ahead and published and that sometimes forces folks to read it and send me corrections. :-)
+Work NOT Reflected in JIRAs:
+- Second script for Viewing Analytics Data video course nearly completed.
+- More work with Alberto on course development.
+- Chased engineers to get Events working in the BCLS Beacon app. I think down to one issue.
+
+
+
 ** Week Ending 30 Oct **
 - Closed 9 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
