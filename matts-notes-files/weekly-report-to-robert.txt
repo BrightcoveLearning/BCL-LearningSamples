@@ -1,25 +1,13 @@
-Beacon Onboarding/Docs Daily Brief
-
-Carolyn and Robert-
-
-Onboarding / Self Service:
-1. Matt: Recorded all three videos for the Viewing Analytics Data course (including writing two scripts)
-2. Jeff: Created notes and updated slides for Implementing Video on Demand with SSAI presentation
-
-Beacon.Next:
-1. Matt: Beacon Pattern Deep Dive meeting
-2. Matt: Q2 Experiences - Cross-disciplinary Design Reviews meeting
-3. Matt: Beacon Research Sprint Planning meeting
-
-Docs:
-1. Bob: Updating Admin docs for latest UI changes
-
--M
-
-
-
 
 Major accomplishments:
+** Week Ending 13 Nov **
+- Closed 8 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Video course on Analytics out the door
+Work NOT Reflected in JIRAs:
+- As you know, LOTS of discussion on in-app help, and started the doc on it
+
+
 ** Week Ending 6 Nov **
 - Closed 7 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:

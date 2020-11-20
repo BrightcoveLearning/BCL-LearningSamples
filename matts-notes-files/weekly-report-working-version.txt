@@ -1,35 +1,70 @@
 New docs:
 
-Title: Publishing the Android App on the Play Store Video Course
-Description:  Training on Demand for Publishing the Android App on the Play Store
-Link: https://beacon.support.brightcove.com/training/training-demand-publish-android-app.html
-Category: Brightcove Beacon
-Status: Released 
-
-Title: Implementing AuthVOD
-Description: In this topic, you will learn how to create an AuthVOD monetization package.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/implementing-authvod.html
+Title: Training on Demand: Implementing VOD Server-Side Ads - New video course!
+Description: Learn how to add server-side advertising to your video playback in Brightcove Beacon.
+Link: https://beacon.support.brightcove.com/training/training-demand-vod-ssai.html
 Category: Brightcove Beacon
 Status: Released
 
 
 Major updates:
 
-Title: Brightcove Documentation (home page)
-Description: Added Announcements
-Link: https://support.brightcove.com 
-Category: General information
-Status: Released
+Title: Player events
+Description: Added the analytics_request event
+Link: https://player.support.brightcove.com/coding-topics/player-events.html#analytics_events
+Category: Brightcove Player
+Status: Released 
+
+Title: EPG API
+Description: Add new Get Channels API
+Link: https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html, https://apis.support.brightcove.com/epg/references/reference-channels.html
+Category: EPG API, Cloud Playout
+Status: LA 
+
+Title: Moving to Dynamic Delivery
+Description: Added Notice of the Legacy Ingest EOL and more information on what customers should do
+Link: https://studio.support.brightcove.com/general/moving-to-dynamic-delivery.html
+Category: Video Cloud Ingestion
+Status: Release 
+
+Title: Creating a JSON Web Token (JWT)
+Description: Consolidated all claims in this doc
+Link: https://general.support.brightcove.com/developer/create-jwt-stage.html
+Category: JWT (JSON Web Tokens)
+Status: Release 
 
 
 Minor updates:
 
-Title: Brightcove Player Sample: Live Custom Error Message
-Description: Updated how to display the error message image
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-live-custom-error-message.html
-Category: Brightcove Player
+Title: CMS API Reference
+Description: Removed the limit and offset parameters for the Get Folders operation, as they are not valid. The request always returns all folders
+Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetFolders
+Category: CMS API
+Status: Released 
+
+Title: Analytics Module FAQ
+Description: Corrected an inaccurate explanation of the reconciliation process
+Link: https://studio.support.brightcove.com/analytics/faq-analytics-module.html
+Category: Analytics Module
+Status: Released 
+
+Title: Configuring Google Analytics Event Tracking
+Description: Added note that you must use the advanced (in-page) embed code for the Google Analytics Plugin to work properly
+Link: https://studio.support.brightcove.com/analytics/faq-analytics-module.html
+Category: Brightcove Player plugins, Google Analytics
+Status: Released 
+
+Title: Localization with the Brightcove Native SDKs
+Description: Added supported languages and iOS IMA code snippet
+Link: https://sdks.support.brightcove.com/features/localization-with-native-sdks.html
+Category: Native SDKs
 Status: Released
 
+Title: Picture in Picture with the Native SDKs
+Description: Updated for support with iOS 14
+Link: https://sdks.support.brightcove.com/features/picture-picture-native-sdks.html
+Category: Native SDKs
+Status: Released
 
 
 
