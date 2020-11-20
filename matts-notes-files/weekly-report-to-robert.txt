@@ -1,5 +1,13 @@
-
 Major accomplishments:
+** Week Ending 20 Nov **
+- Closed 4 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Working on in-app help and got ready for two demos
+- Updated Brightcove Beacon Configuration Wizard based on feedback from two sources
+Work NOT Reflected in JIRAs:
+- Nothing this week
+
+
 ** Week Ending 13 Nov **
 - Closed 8 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
