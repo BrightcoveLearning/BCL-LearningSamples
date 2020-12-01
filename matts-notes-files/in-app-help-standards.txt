@@ -1,0 +1,48 @@
+**Salesforce**
+
+*These are the top use cases for in-app guidance:
+    -Train users: Provide a link to Trailhead about a feature right on the page where the feature shows up.
+    -Onboard new users: Provide tips and tricks to familiarize new users with top used features in the app.
+    -Highlight changes: Alert specific groups of users (based on permissions) of policy changes that may affect them.
+    -Make announcements: Make universal announcements such as updates to the Travel and Expense Policy to everyone.
+
+*Advantage of model window: Users can maximize, minimize, or keep the docked prompt open while they navigate around the app, making it perfect for instructions the user can follow as they work.
+
+*Docked prompt ok for length, whereas floating prompt 120 or less
+
+*Docked prompt resizeable
+
+
+**Microsoft**
+
+*All help, no matter what kind, should follow these principles:
+    -Easy to understand: Help that confuses the user is worse than no help at all.
+    -Straightforward: Users looking for help want clear answers presented directly to them.
+    -Relevant: Users do not want to have to search for their specific issue. They want the most relevant help presented straight to them (this is called "Contextual Help"), or they want an easily navigated interface.
+    -Direct: When a user looks for help, they want to see help. If your app includes pages for reporting bugs, giving feedback, viewing term of service, or similar functions, it is fine if your help links to those pages. But they should be included as an afterthought on the main help page, and not as items of equal or greater importance.
+    -Consistent: No matter the type, help is still a part of your app, and should be treated as any other part of the UI. The same design principles of usability, accessibility, and style which are used throughout the rest of your app should also be present in the help you offer.
+
+*When to use in-app help
+    -In-app help should be the default method of displaying help for the user. It should be used for any help which is simple, straightforward, and does not introduce new content to the user. Instructions, advice, and tips & tricks are all suitable for in-app help.
+
+*In-app help should:
+    -Be concise: A large library of help topics is unwieldy and unsuited for in-app help.
+    -Be consistent: Make sure that users can reach your help pages the same way from any part of your app. They should never have to search for it.
+    -Users scan, not read: Because the help a user is looking for might be on the same page as other help topics, make sure they can easily tell which one they need to focus on.
+
+
+**Whatfix**
+*With in-app user assistance, your users can learn while doing which helps them to retain information better and more effectively. Additionally, as users apply concepts in real-time and experience your application hands-on, it improves how users engage with the application as well.
+* Guide users with the help of goal-oriented tasks
+* With instructional videos, users are guided through the complexities of handling a task with the help of visual aids in an effective and engaging manner.
+
+
+
+Salesforce: https://help.salesforce.com/articleView?id=customhelp_lexguid.htm&type=5
+Microsoft: https://docs.microsoft.com/en-us/windows/uwp/design/in-app-help/guidelines-for-app-help
+Whatfix: https://academy.whatfix.com/user-assistance/
+
+
+
+Found differing opinions in the research on behavior for the in-app help modal behavior. Some say it should be closeable, moveable, resizable and collapsible so it can be altered to view the needed areas of the app. While others say fixed in same location and always the same size so there is no question about where the help is. In the requirements doc I have the former, but we need to discuss.
+

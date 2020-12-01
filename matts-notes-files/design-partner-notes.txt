@@ -1,0 +1,39 @@
+**Manchester City
+-Context is king
+-Saw steps and backed up by video content "felt I would get help"
+-"If I don't get it from the steps I can get help from the video"
+-"Feels like a companion"
+-Help on Dashboard confusing, didn't see it was for each main page, expecting beginner tasks/common tasks in the list
+-Different help for different level of users
+
+**Stadium
+-Relevant information right away
+-No search bar showing - didn't see link to general docs below
+-Both video and steps helpful, both options good for different kind of users
+-Don't want to have modal disappear on click outside
+-Arrows to show leave to new tab look like logout
+-Should box get bigger depending on content?
+-100% sticky
+-Prefer floating modal on top of app, movable and resizable 
+-Add "most popular" functionality, the doc links ordered by most popular
+-Like both video and steps
+-Want to right click on a doc link and able to open in new tab
+-EXTRA valuable to have both video and steps
+-Want to jump to step in video
+-Learn More in tool tip good
+-The Dashboard help should obviously match the main pages
+-Support link context sensitive about where you are, take screenshot automatically 
+-Demo: Interaction good, the links out to full documentation clear
+-Feedback in line, not a separate click
+
+**TN Marketing
+-Want the steps to live as doing the How To
+-Would want to move, but not necessary, ok to resize but not necessary
+-Content look
+-Wants text that says "Open in new tab"
+-Question mark should be on top right where help box opens
+-Demo: See Back to Top link, and title remains (freeze header)
+-Feedback allow comments on anything in the app, not limited to feedback on help window comment
+
+**Telequebec
+-
