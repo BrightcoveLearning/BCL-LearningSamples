@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>Index</title>
+</head>
+
+<body>
+
+    <iframe src="child.html" width="300" height="300"></iframe>
+
+    <script type="text/javascript">
+        var eventMethod = window.addEventListener ?
+            "addEventListener" :
+            "attachEvent";
+        var eventer = window[eventMethod];
+        var messageEvent = eventMethod === "attachEvent" ?
+            "onmessage" :
+            "message";
+        console.log('eventer: ', eventer);
+        console.log('messageEvent:', messageEvent);
+        window.addEventListener(messageEvent, function(e) {
+
+            // if (e.origin !== 'http://the-trusted-iframe-origin.com') return;
+
+            if (e.data === "myevent" || e.message === "myevent")
+                alert('Message from iframe just came!');
+
+            console.log(e);
+        });
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <iframe id="doc_frame" src="child.html"></iframe>
+
+
+    <script>
+        console.log('im here');
+        window.addEventListener('message', function(e) {
+            //window.alert('got it');
+            console.log('got it');
+            console.log('e.data: ', e.data)
+        }, false);
+    </script>
+
+</body>
+
+</html>

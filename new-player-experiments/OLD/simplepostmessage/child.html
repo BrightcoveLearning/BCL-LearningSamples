@@ -1,0 +1,48 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Iframe</title>
+</head>
+
+<body>
+
+    <button>Botão</button>
+
+    <script type="text/javascript">
+        document.querySelector('button').onclick = function() {
+            // parent.postMessage("message to be sent", "http://the-website-that-will-receive-the-msg.com")
+            parent.postMessage("myevent", "*")
+        };
+    </script>
+
+</body>
+
+</html>
+ -->
+
+
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <button id="my-btn">Start</button>
+
+    <script>
+        document.getElementById('my-btn').addEventListener('click', handleButtonClick, false);
+
+        function handleButtonClick(e) {
+            //window.alert('sent');
+            window.parent.postMessage('iframe_message', '*')
+        }
+    </script>
+
+</body>
+
+</html>
