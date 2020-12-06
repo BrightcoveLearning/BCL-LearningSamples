@@ -1,71 +1,142 @@
 New docs:
 
-Title: Training on Demand: Implementing VOD Server-Side Ads - New video course!
-Description: Learn how to add server-side advertising to your video playback in Brightcove Beacon.
-Link: https://beacon.support.brightcove.com/training/training-demand-vod-ssai.html
-Category: Brightcove Beacon
+Title: AV1 Guide
+Description: Guide to Zencoder support for the AV1 video codec (Not released yet)
+Link: https://zencoder.support.brightcove.com/encoding-guides/av1-guide.html
+Category: Zencoder, video codecs
+Status: Internal
+
+Title: Overview: Delivery Rules
+Description: In this topic, you will learn how Brightcove's Delivery Rules enable you to customize how your media is delivered to meet your business objectives
+Link: https://apis.support.brightcove.com/delivery-rules/getting-started/overview-delivery-rules.html
+Category: APIs
 Status: Released
+
+Title: Implementing Delivery Rules
+Description: In this topic, you will learn how to implement Brightcove's Delivery Rules, which enable you to customize how your media is delivered to meet your business objectives
+Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html
+Category: APIs
+Status: Released
+
+Title: Delivery Rules API Reference
+Description: This API allows you to fetch Delivery Rules and manage Conditions and Actions
+Link: https://apis.support.brightcove.com/delivery-rules/references/reference.html
+Category: APIs
+Status: Released
+
+Title: Using Delivery Rules with Brightcove Player
+Description: In this topic, you will learn how to configure Brightcove Player to use Brightcove's Delivery Rules
+Link: https://player.support.brightcove.com/playback/using-delivery-rules-with-bcp.html
+Category: Brightcove Player
+Status: Released
+
+Title: Using Delivery Rules with the Native SDKs
+Description: In this topic, you will learn how to use Brightcove's Delivery Rules with the Native SDKs
+Link: https://sdks.support.brightcove.com/features/using-delivery-rules-with-sdks.html
+Category: Native SDKs
+Status: Released
+
+Title: Ingesting via an MRSS Feed
+Description: You can use Media RSS (MRSS) to have Brightcove pull your content from your own system from an MRSS feed that you publish. Video Cloud pulls the metadata from the MRSS feed and either creates a remote asset or downloads (from where they are hosted) and processes the videos and any associated assets (thumbnails, closed caption files, etc.).
+Link: hhttps://apis.support.brightcove.com/mrss-ingestion/getting-started/ingesting_from_a_remotely_hosted_mrss_feed.html
+Category: Ingestion
+Status: LA
+
+Title: XML Manifest for Ingestion via MRSS
+Description: This topic explains the structure of the XML used by MRSS ingestion to upload videos to Video Cloud. Note: This is a Beta ingestion service.
+Link: https://apis.support.brightcove.com/mrss-ingestion/getting-started/xml-manifest-for-ingestion-via-mrss.html
+Category: Ingestion
+Status: LA
+
+Title: Live Multi-Language Audio
+Description: This topic explains how create a live job with multiple audio tracks in different languages.
+Link: https://live.support.brightcove.com/live-api/guides/live-multi-language-audio.html
+Category: Live API
+Status: Internal (still in testing)
 
 
 Major updates:
 
-Title: Player events
-Description: Added the analytics_request event
-Link: https://player.support.brightcove.com/coding-topics/player-events.html#analytics_events
-Category: Brightcove Player
-Status: Released 
+Title: Editing Video Properties using the Media Module
+Description: Updated to include content on new Categorization panel
+Link: https://studio.support.brightcove.com/media/editing-video-properties-using-media-module.html#categorization
+Category: Video Cloud
+Status: Released
 
-Title: EPG API
-Description: Add new Get Channels API
-Link: https://apis.support.brightcove.com/epg/getting-started/overview-epg-api.html, https://apis.support.brightcove.com/epg/references/reference-channels.html
-Category: EPG API, Cloud Playout
-Status: LA 
+Title: Using Cloud Playout to Stream Videos
+Description: Live now supports EPA/PAS
+Link: https://studio.support.brightcove.com/general/cloud-playout-stream-vod.html
+Category: Cloud Playout
+Status: LA
 
-Title: Moving to Dynamic Delivery
-Description: Added Notice of the Legacy Ingest EOL and more information on what customers should do
-Link: https://studio.support.brightcove.com/general/moving-to-dynamic-delivery.html
-Category: Video Cloud Ingestion
-Status: Release 
-
-Title: Creating a JSON Web Token (JWT)
-Description: Consolidated all claims in this doc
-Link: https://general.support.brightcove.com/developer/create-jwt-stage.html
-Category: JWT (JSON Web Tokens)
-Status: Release 
+Title: HEVC Video
+Description: Added paragraph explaining that we support UHD sizes (4K+) but you need to request custom renditions
+Link: https://apis.support.brightcove.com/ingest-profiles/guides/hevc-video.html
+Category: HEVC, Ingest Profiles
+Status: Released
 
 
 Minor updates:
 
-Title: CMS API Reference
-Description: Removed the limit and offset parameters for the Get Folders operation, as they are not valid. The request always returns all folders
-Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetFolders
-Category: CMS API
-Status: Released 
+Title: Implementing Server-Side Ads (SSAI)
+Description: Just added the (SSAI) to the title for findability
+Link: https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html
+Category: Live, SSAI
+Status: Released
 
-Title: Analytics Module FAQ
-Description: Corrected an inaccurate explanation of the reconciliation process
-Link: https://studio.support.brightcove.com/analytics/faq-analytics-module.html
-Category: Analytics Module
-Status: Released 
+Title: Using Cloud Playout to Stream Videos
+Description: Added note on how to input the ingest point in OBS settings
+Link: https://studio.support.brightcove.com/general/cloud-playout-stream-vod.html
+Category: Cloud Playout
+Status: LA
 
-Title: Configuring Google Analytics Event Tracking
-Description: Added note that you must use the advanced (in-page) embed code for the Google Analytics Plugin to work properly
-Link: https://studio.support.brightcove.com/analytics/faq-analytics-module.html
-Category: Brightcove Player plugins, Google Analytics
-Status: Released 
+Title: Creating a Video Clip Using the Live Module
+Description: Removed note indicating media sharing will fail for clips created using the Live Module, as this has been fixed
+Link: https://live.support.brightcove.com/live-module/creating-video-clip-using-live-module.html
+Category: Live Module, Media Sharing
+Status: Released
 
-Title: Localization with the Brightcove Native SDKs
-Description: Added supported languages and iOS IMA code snippet
-Link: https://sdks.support.brightcove.com/features/localization-with-native-sdks.html
+Title: Using EPA with the SDKS
+Description: Added note the only DRM DASH is supported for Android with EPA
+Link: https://apis.support.brightcove.com/playback-rights/guides/using-epa-with-sdks.html
+Category: EPA, Android SDK
+Status: LA
+
+Title: Overview: Data Collection API v2
+Description: Correctly an inaccurate statement that the video_play event is only sent when playback initially begins (if the user pauses and restarts the video, it it sent each time)
+Link: https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html
+Category: Analytics, Data Collection
+Status: LA
+
+Title: Release Notes for the Brightcove Native SDKs
+Description:Added link to join mailing list for release announcements for the Native SDKs
+Link: https://sdks.support.brightcove.com/developer-support/questions/release-notes-brightcove-native-sdks.html
 Category: Native SDKs
 Status: Released
 
-Title: Picture in Picture with the Native SDKs
-Description: Updated for support with iOS 14
-Link: https://sdks.support.brightcove.com/features/picture-picture-native-sdks.html
+Title: Report an Issue with the Brightcove Native SDKs
+Description: Updated link to create a customer support ticket
+Link: https://sdks.support.brightcove.com/developer-support/questions/report-issue-brightcove-native-sdks.html#Submit_your_bug
 Category: Native SDKs
 Status: Released
 
+Title:  Overview: Cross-Device Resume
+Description: Updated link to Cross-Device Resume with the Native SDKs
+Link: https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html
+Category: APIs
+Status: Released
+
+Title: Brightcove Live: Best Practices
+Description: changed wording to emphasize that the recommended keyframe rate applies to both inputs and outputs
+Link: https://live.support.brightcove.com/live-api/guides/brightcove-live-best-practices.html
+Category: Live Module
+Status: Released
+
+Title: Video Cloud SSAI Overview
+Description: updated supported versions of Android and iOS
+Link: https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-overview.html
+Category: SSAI
+Status: Released
 
 
 
