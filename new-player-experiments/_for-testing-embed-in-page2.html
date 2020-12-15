@@ -2,48 +2,37 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Untitled Document</title>
-  <style media="screen">
-    .vjs-control-bar.vjs-control-bar.vjs-control-bar.vjs-control-bar.vjs-control-bar.vjs-control-bar.vjs-control-bar.vjs-control-bar {
-      transform: none;
-      -webkit-transform: none;
-      -ms-transform: none;
-    }
-
-/* Style the icon */
-button.vjs-quality-menu-button.vjs-menu-button.vjs-menu-button-popup.vjs-button {
-  color: red;
-}
-/* Style the background of the menu items */
-div.vjs-quality-menu-wrapper.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button.vjs-quality-menu-button-use-resolution .vjs-menu-item {
-  background-color: yellow;
-}
-/* Style the text of menu items */
-div.vjs-quality-menu-wrapper.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button.vjs-quality-menu-button-use-resolution .vjs-menu-item-text {
-  color: green;
-}
-/* Style the background color of selected menu item */
-div.vjs-quality-menu-wrapper.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button.vjs-quality-menu-button-use-resolution .vjs-menu-item.vjs-selected {
-  background-color: white;
-}
-/* Style the text color of selected menu item */
-div.vjs-quality-menu-wrapper.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button.vjs-quality-menu-button-use-resolution .vjs-menu-item.vjs-selected .vjs-menu-item-text{
-  color: blue;
-}
-/* Style the HD label */
-div.vjs-quality-menu-wrapper.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button.vjs-quality-menu-button-use-resolution .vjs-quality-menu-item-sub-label {
-  color: lime;
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
 </head>
 
 <body>
 
+    <video id="myPlayerID" data-video-id="5993987133001" data-account="1752604059001" data-player="default" data-embed="default" data-application-id class="video-js" controls width="640" height="380"></video>
+    <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
-<video-js data-account="1507807800001" data-player="tNIK3HSNyH" data-embed="default" controls="" data-video-id="6062253584001" data-playlist-id="" data-application-id="" width="640" height="360" muted></video-js><script src="https://players.brightcove.net/1507807800001/tNIK3HSNyH_default/index.min.js"></script>
+    <script>
+        videojs.getPlayer('myPlayerID').ready(function() {
+            var myPlayer = this;
+            myPlayer.on('loadedmetadata', function() {
+                // +++ Retrieve the menu options +++
+                var menuOptions = myPlayer.controlBar.subsCapsButton.menu.children();
 
+                // +++ Add flag to each menu option +++
+                menuOptions.forEach(function(item) {
+                    if (item.track.language === 'de') {
+                        item.$('.vjs-menu-item-text').innerHTML = '🇩🇪 ' + item.track.label;
+                    }
+                });
+
+                menuOptions.forEach(function(item) {
+                    if (item.track.language === 'en') {
+                        item.$('.vjs-menu-item-text').innerHTML = '🇺🇸 ' + item.track.label;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

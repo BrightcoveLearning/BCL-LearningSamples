@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 11 Dec **
+- Closed 10 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Got AuthVOD working in our Beacon demo app. Finally found an Funchal engineer with time and willingness to help.
+- Doc out on limitations of remote assets when using Brightcove Beacon. Put that in a separate doc.
+-Obviously LOTS of work on the in-app help demos
+Work NOT Reflected in JIRAs:
+- Still working with Jeff on last video Beacon classic video. I am doing the demos.
+
+
+** Week Ending 4 Dec **
+- Closed 4 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Delivered part of a new video course on Intro to Monetization, I did the demonstrations and Jeff did the content
+Work NOT Reflected in JIRAs:
+- Vast majority of time on in-app help meetings and planning, including all Design Partner meetings on Tuesday 
+
+
 ** Week Ending 20 Nov **
 - Closed 4 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:

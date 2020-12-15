@@ -55,23 +55,21 @@
 
 
 **Revry
--Mark documents found particularly helpful
--
+-Mark documents found particularly helpful - group or individual collection
+-Great to move see all the rest of the app
+-Open in another window as previous partner suggested
+-Slide in other windows over modal
+-Want to change size of window
+-Likes bolding in the docs
+-Resize app on modal open
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+**Gunpowder & Sky
+-Help too generic for Dashboard (although no functionality now)
+-No resize or move
+-Multiple monitors
+-Would close modal
+-Right click on breadcrumbs
+-5 minutes or less, way to jump around, need to get info in < 1 minute or jump around
 
 
 
