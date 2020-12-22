@@ -1,47 +1,77 @@
 New docs:
 
-Title: Integrating a Zoom meeting into Brightcove Live
-Description: In this topic, you will learn how to integrate a Zoom meeting into Brightcove Live.
-Link: https://live.support.brightcove.com/live-module/zoom-live-integration.html
-Category: Live
-Status: Not released yet, this feature is in QA at the moment, and will be in production until next week. 
-
-Title: Implementing SSAI with Non-Brightcove Players and SDKs
-Description: In this topic, you will learn how to use Brightcove's Server-Side Ad Insertion (SSAI) with non-Brightcove players and SDKs.
-Link: https://ssai.support.brightcove.com/vod/guides/ssai-non-bc-players.html
-Category: SSAI
-Status: Released
-
-Title: Remote Asset Limitations
-Description: In this topic, you will learn limitations of using remote assets videos in your Brightcove Beacon app.
-Link: https://beacon.support.brightcove.com/references/remote-asset-limitations.html
-Category: Brightcove Beacon
-Status: Released
+None this week
 
 
 Major updates:
 
-None
+Title: Multilingual Metadata
+Description: Added all operations for managing multi-lingual variants using the CMS API and how the variants show up in Playback API responses
+Link: https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html
+Category: CMS API, Playback API
+Status: LA 
+
+Title: Multilingual Metadata
+Description: Added how the variants show up in Playback API responses
+Link: https://apis.support.brightcove.com/playback/references/reference_v1.html, https://apis.support.brightcove.com/playback/references/reference_v2.html, https://apis.support.brightcove.com/playback/references/playback-api-video-fields-reference.html
+Category: Playback API
+Status: LA 
+
 
 Minor updates:
 
-Title: Customizing Player Appearance
-Description: Added audio track information to the component selectors section
-Link: https://player.support.brightcove.com/styling/customizing-player-appearance.html#Component_selectors
-Category: Brightcove Player
+Title: Step-by-Step: Using the Live Module with Telestream Wirecast
+Description: Updated the "Reconnect Time" in events
+Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html
+Category: Live
+Status: Released 
+
+Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
+Description: Updated the "Reconnect Time" in events
+Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html
+Category: Live
+Status: Released 
+
+Title: Integrating a Zoom meeting into Brightcove Live
+Description: New warnings added. 
+Link: https://live.support.brightcove.com/live-module/zoom-live-integration.html
+Category: Live
 Status: Released
 
+Title: Media Sharing
+Description: Added note clarifying that 2-way media sharing is supported
+Link: https://studio.support.brightcove.com/media/media-sharing-using-media-module.html, https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html 
+Category: Media Module, CMS API
+Status: Released
 
+Title: Code Snippets using the Native SDK for Android
+Description: Added code snippet to detect network bandwidth
+Link: https://sdks.support.brightcove.com/android/resources/code-snippets-using-native-sdk-android.html#Detecting_Network_Bandwidth
+Category: Native SDKs
+Status: Released
+
+Title: Multiple Audio Tracks with the Native SDKs
+Description: Added note that all audio tracks must have the same sampling rate
+Link: https://sdks.support.brightcove.com/features/multiple-audio-tracks-native-sdks.html
+Category: Native SDKs
+Status: Released
+
+Title: Implementing Delivery Rules
+Description: Added more details about creating multiple “if” “then” conditions with the Delivery Rules API
+Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html#Defining_rules
+Category: Delivery Rules
+Status: Released
 
 
 
 New docs:
 
-Title: Remote Asset Limitations
-Description: In this topic, you will learn limitations of using remote assets videos in your Brightcove Beacon app.
-Link: https://beacon.support.brightcove.com/references/remote-asset-limitations.html
-Category: Brightcove Beacon
-Status: Released
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: New Doc
 
 Major updates:
 
@@ -50,14 +80,15 @@ Description:
 Link: 
 Category: 
 Status: Released | LA | Internal
+Type: Major Update
 
 Minor updates:
 
-Title: Customizing Player Appearance
-Description: Added audio track information to the component selectors section
-Link: https://player.support.brightcove.com/styling/customizing-player-appearance.html#Component_selectors
-Category: Brightcove Player
-Status: Released
-
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Minor Update
 
 
