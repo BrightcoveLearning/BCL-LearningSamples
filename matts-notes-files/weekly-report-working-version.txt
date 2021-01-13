@@ -1,65 +1,63 @@
 New docs:
 
-None this week
+Title: Thumbnail Seeking with Brightcove Player
+Description: In this topic, you will learn the how to implement thumbnail seeking with Brightcove Player.
+Link: https://player.support.brightcove.com/plugins/thumbnails-plugin.html
+Category: Brightcove Player
+Status: Released
+
+Title: Thumbnail Seeking with the Native SDKs
+Description: In this topic, you will learn about thumbnail seeking with the Brightcove Native SDKs.
+Link: https://sdks.support.brightcove.com/features/thumbnails-native-sdks.html
+Category: Native SDKs
+Status: Released
+
+Title: Overview: Cloud Playout APIs
+Description: This topic provides and overview of the EPG API and the Channels API, which are used with Cloud Playout.
+Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html
+Category: Cloud Playout
+Status: Released
+
+Title: EPG API Reference (1.0.0)
+Description: Reference for the Brightcove EPG API, used to create and retrieve an Electronic Programming Guide for a channel created in Studio.
+https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.htmlLink: 
+Category: Cloud Playout
+Status: Released
+
+Title: Channel API Reference (1.0.0)
+Description: Reference for the Brightcove Channels API, used to retrieve a list of Cloud Playout channels created in Studio 
+Link: https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html
+Category: Cloud Playout
+Status: Released
+
+Title: Brightcove Delivery Rules API (1.0.0)
+Description: This API is used for managing operations related to Delivery Rules.
+Link: https://apis.support.brightcove.com/delivery-rules/references/reference.html
+Category: Delivery Rules
+Status: Released
 
 
 Major updates:
 
-Title: Multilingual Metadata
-Description: Added all operations for managing multi-lingual variants using the CMS API and how the variants show up in Playback API responses
-Link: https://apis.support.brightcove.com/cms/managing-videos/multilingual-metadata.html
-Category: CMS API, Playback API
-Status: LA 
-
-Title: Multilingual Metadata
-Description: Added how the variants show up in Playback API responses
-Link: https://apis.support.brightcove.com/playback/references/reference_v1.html, https://apis.support.brightcove.com/playback/references/reference_v2.html, https://apis.support.brightcove.com/playback/references/playback-api-video-fields-reference.html
-Category: Playback API
-Status: LA 
+Title: Code Snippets using the Native SDK for iOS
+Description: Added tabs for Obj-C and Swift code blocks
+Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html
+Category: Native SDKs
+Status: Released
 
 
 Minor updates:
 
-Title: Step-by-Step: Using the Live Module with Telestream Wirecast
-Description: Updated the "Reconnect Time" in events
-Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html
-Category: Live
-Status: Released 
-
-Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
-Description: Updated the "Reconnect Time" in events
-Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html
-Category: Live
-Status: Released 
-
-Title: Integrating a Zoom meeting into Brightcove Live
-Description: New warnings added. 
-Link: https://live.support.brightcove.com/live-module/zoom-live-integration.html
-Category: Live
+Title: iOS and Brightcove Player
+Description: Added note for video pause on full screen exit for BC Player on iOS
+Link: https://player.support.brightcove.com/playback/ios-and-brightcove-player.html
+Category: Brightcove Player
 Status: Released
 
-Title: Media Sharing
-Description: Added note clarifying that 2-way media sharing is supported
-Link: https://studio.support.brightcove.com/media/media-sharing-using-media-module.html, https://apis.support.brightcove.com/cms/managing-videos/media-sharing-cms-api.html 
-Category: Media Module, CMS API
-Status: Released
-
-Title: Code Snippets using the Native SDK for Android
-Description: Added code snippet to detect network bandwidth
-Link: https://sdks.support.brightcove.com/android/resources/code-snippets-using-native-sdk-android.html#Detecting_Network_Bandwidth
-Category: Native SDKs
-Status: Released
-
-Title: Multiple Audio Tracks with the Native SDKs
-Description: Added note that all audio tracks must have the same sampling rate
-Link: https://sdks.support.brightcove.com/features/multiple-audio-tracks-native-sdks.html
-Category: Native SDKs
-Status: Released
-
-Title: Implementing Delivery Rules
-Description: Added more details about creating multiple “if” “then” conditions with the Delivery Rules API
-Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html#Defining_rules
-Category: Delivery Rules
+Title: Brightcove Live API: Server-Side Ad Insertion (SSAI)
+Description: Added note about URI encoding of ad variables with Live SSAI
+Link: https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Targeting_ads_using_ad_macros
+Category: Live API
 Status: Released
 
 
