@@ -1,64 +1,95 @@
 New docs:
 
-Title: Thumbnail Seeking with Brightcove Player
-Description: In this topic, you will learn the how to implement thumbnail seeking with Brightcove Player.
-Link: https://player.support.brightcove.com/plugins/thumbnails-plugin.html
+Title: China Delivery with Brightcove Player
+Description: In this topic, you will learn how to use Brightcove Player to deliver video to China from outside the country.
+Link: https://player.support.brightcove.com/playback/china-delivery-with-bcp.html
 Category: Brightcove Player
-Status: Released
+Status: LA
 
-Title: Thumbnail Seeking with the Native SDKs
-Description: In this topic, you will learn about thumbnail seeking with the Brightcove Native SDKs.
-Link: https://sdks.support.brightcove.com/features/thumbnails-native-sdks.html
-Category: Native SDKs
-Status: Released
-
-Title: Overview: Cloud Playout APIs
-Description: This topic provides and overview of the EPG API and the Channels API, which are used with Cloud Playout.
-Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html
+Title: Creating a Cloud Playout Channel
+Description: In this topic you will learn how a collection of VOD videos and live events can be streamed as a live linear channel.
+Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-stream-vod.html
 Category: Cloud Playout
-Status: Released
+Status: LA 
 
-Title: EPG API Reference (1.0.0)
-Description: Reference for the Brightcove EPG API, used to create and retrieve an Electronic Programming Guide for a channel created in Studio.
-https://apis.support.brightcove.com/cloud-playout-apis/references/reference-epg.htmlLink: 
+Title: Using Channel Actions
+Description: In this topic you will learn how to use channel actions to activate, play, or stop a Cloud Playout channel.
+Link: https://studio.support.brightcove.com/cloud-playout/using-channel-actions.html
 Category: Cloud Playout
-Status: Released
+Status: LA 
 
-Title: Channel API Reference (1.0.0)
-Description: Reference for the Brightcove Channels API, used to retrieve a list of Cloud Playout channels created in Studio 
-Link: https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html
+Title: Monetizing Cloud Playout
+Description: In this topic you will learn how add Server-Side Ad (SSAI) to a Cloud Playout Channel.
+Link: https://studio.support.brightcove.com/cloud-playout/enabling-server-side-ads.html
 Category: Cloud Playout
-Status: Released
+Status: LA 
 
-Title: Brightcove Delivery Rules API (1.0.0)
-Description: This API is used for managing operations related to Delivery Rules.
-Link: https://apis.support.brightcove.com/delivery-rules/references/reference.html
-Category: Delivery Rules
-Status: Released
+Title: Generating the Channel Embed Code
+Description: In this topic you will learn how get the embed code to play a Cloud Playout channel in the Brightcove Player. The embed code can be placed in any web page.
+Link: https://studio.support.brightcove.com/cloud-playout/generating-channel-embed-code.html
+Category: Cloud Playout
+Status: LA 
+
+Title: Viewing Channel Output and Analytics
+Description: In this topic you will learn to view the output and analytics for a running Cloud Playout channel.
+Link: https://studio.support.brightcove.com/cloud-playout/viewing-channel-output-and-analytics.html
+Category: Cloud Playout
+Status: LA 
+
+Title: Multi-Language Audio
+Description: This feature allows ingesting multiple audio languages, descriptive or ambient audio experience tracks to be available for live playback.
+Link: https://live.support.brightcove.com/general/multi-language-audio.html
+Category: Live
+Status: Staging
 
 
 Major updates:
 
-Title: Code Snippets using the Native SDK for iOS
-Description: Added tabs for Obj-C and Swift code blocks
-Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html
-Category: Native SDKs
+Title: Overview: Playback Rights Management Service
+Description: Updated overview diagram based on feedback
+Link: https://apis.support.brightcove.com/playback-rights/getting-started/overview-epa.html
+Category: APIs
+Status: LA
+
+Title: Captions
+Description: updated supported types to include SCC
+Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-webvtt-files-text-trackscaptions.html, https://studio.support.brightcove.com/media/overview-adding-captions-video.html, https://campaign.support.brightcove.com/videos/adding-text-tracks-to-a-video.html
+Category: Captions
+Status: Released
+
+Title: Playback API Reference
+Description: Given the somewhat confusing update of the Playback API, combined the v1 and v2 references into one.
+Link: https://apis.support.brightcove.com/playback/references/reference_v2.html
+Category: Playback API
+Status: Released
+
+Title: Title: Playback API Reference
+Description: Updated this old doc to make clear that streaming formats (HLS/DASH) are now preferred over MP4 and almost always used for playback
+Link: https://studio.support.brightcove.com/general/content-delivery-options.html#types
+Category: Video Cloud general information
+Status: Released
+
+Title: Playback API Reference (2.0.0)
+Description: Given the somewhat confusing update of the Playback API, combined the v1 and v2 references into one.
+Link: https://apis.support.brightcove.com/playback/references/reference_v2.html
+Category: Playback API
 Status: Released
 
 
 Minor updates:
 
-Title: iOS and Brightcove Player
-Description: Added note for video pause on full screen exit for BC Player on iOS
-Link: https://player.support.brightcove.com/playback/ios-and-brightcove-player.html
-Category: Brightcove Player
+Title:Using a Subscription Package
+Description: Added subscription interval support table
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/using-subscription-package.html#Subscription_interval_support
+Category: Brightcove Beacon
 Status: Released
 
-Title: Brightcove Live API: Server-Side Ad Insertion (SSAI)
-Description: Added note about URI encoding of ad variables with Live SSAI
-Link: https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Targeting_ads_using_ad_macros
-Category: Live API
-Status: Released
+Title: Overview of Analytics API dimensions and paramters
+Description: updated where filter section for AND, OR, NOT logic for finding videos
+Link: https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#filterValues
+Category: Analytics API
+Status: Released 
+
 
 
 
