@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <video-js data-account="1507807800001" data-player="default" data-embed="default" data-video-id="6224964500001" width="324" height="118"></video-js>
+
+    <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+    <script>
+        var myPlayer;
+        videojs.getPlayer('myPlayerID').ready(function() {
+            myPlayer = this;
+            myPlayer.controlBar.hide();
+            myPlayer.muted(true);
+            myPlayer.autoplay(true);
+            myPlayer.loop(true);
+        });
+    </script>
+
+</body>
+
+</html>
