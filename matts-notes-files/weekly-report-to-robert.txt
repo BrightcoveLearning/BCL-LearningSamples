@@ -1,10 +1,11 @@
 Major accomplishments:
 ** Week Ending 22 Jan **
-- Closed 5 JIRAs, 1 of which were administrivia
+- Closed 8 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
 - Completed doc requested by Erica on tasks that must be done in VC for Beacon customers
+- Built Brightcove Player for use displaying "animated GIFs"
+- Completed Beacon product update page 
 Work NOT Reflected in JIRAs:
-- Continued expansion of the Standards doc
 - Continued writing content for Pages in-app help
 - A boatload of meetings
 
