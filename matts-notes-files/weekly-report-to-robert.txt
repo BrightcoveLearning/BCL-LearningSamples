@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 29 Jan **
+- Closed 10 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Three new Brightcove Beacon docs out the door
+- Created the "animated GIF" player - will update next week for added functionality 
+- Notes taken for 6 Design Partner meetings
+Work NOT Reflected in JIRAs:
+- One more new doc 90% done
+- A boatload of meetings
+
+
 ** Week Ending 22 Jan **
 - Closed 8 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:

@@ -1,21 +1,78 @@
 New docs:
 
+Title: Trending Now Report Reference
+Description: New analytics feature (ported from Ooyala) - in Limited Availability
+Link: https://studio.support.brightcove.com/analytics/trending-now-report-reference.html
+Category: Analytics
+Status:  LA 
+
+Title: Brightcove Videos on Roku Trick Play
+Description: Roku requires any VOD content longer than 15 minutes to be accompanied by images. In this topic you will learn how to generate those images for your Video Cloud videos.
+Link: https://general.support.brightcove.com/general/roku-trick-play.html
+Category: Roku, integration
+Status:  Released
+
 Title: Brightcove Beacon Tasks Performed in Video Cloud
 Description: In this topic, you will learn the tasks that must/should be done in Video Cloud Studio as a Brightcove Beacon customer.
 Link: https://beacon.support.brightcove.com/references/beacon-tasks-in-vc.html
 Category: Brightcove Beacon
 Status: Released
 
+Title: Brightcove Beacon Tasks Performed in Video Cloud
+Description: In this topic, you will learn the tasks that must/should be done in Video Cloud Studio as a Brightcove Beacon customer.
+Link: https://beacon.support.brightcove.com/references/beacon-tasks-in-vc.html
+Category: Brightcove Beacon
+Status: Released
 
+Title: Brightcove Beacon Product Updates
+Description: This topic outlines the updates that have been made to Brightcove Beacon.
+Link: https://beacon.support.brightcove.com/references/product-updates.html
+Category: Brightcove Beacon
+Status: Released
+
+Title: Branding Brightcove Beacon Apps
+Description: In this topic, you will learn how you can use your logo, color palette and imagery to brand your Brightcove Beacon apps.
+Link: https://beacon.support.brightcove.com/references/branding-beacon-apps.html
+Category: Brightcove Beacon
+Status: Released
 
 
 Major updates:
 
-
+Title: Implementing Player Enhancements for Live SSAI
+Description: Added a table describing the ad configuration options
+Link: https://ssai.support.brightcove.com/live/guides/implementing-player-enhancements-live-ssai.html
+Category: Live SSAI
+Status: Released
 
 
 Minor updates:
 
+Title: Using Player Enhancements for Live SSAI with Brightcove Player
+Description: Added note to programmatically add the SSAI plugin to the player
+Link: https://player.support.brightcove.com/advertising/using-player-enhancements-live-ssai-brightcove-player.html
+Category: Brightcove Player
+Status: Released
+
+Title: Thumbnail Seeking with Brightcove Player
+Description: Updated info about image frequency and a note about playlist players
+Link: https://player.support.brightcove.com/plugins/thumbnails-plugin.html
+Category: Brightcove Player
+Status: Released
+
+Title: Trending Now Report Reference
+Description: New analytics feature (ported from Ooyala) - in Limited Availability
+Link: https://studio.support.brightcove.com/analytics/trending-now-report-reference.html
+Category: Analytics
+Status:  LA 
+Type: New Doc
+
+Title: Brightcove Videos on Roku Trick Play
+Description: Roku requires any VOD content longer than 15 minutes to be accompanied by images. In this topic you will learn how to generate those images for your Video Cloud videos.
+Link: https://general.support.brightcove.com/general/roku-trick-play.html
+Category: Roku, integration
+Status:  Released
+Type: New Doc
 
 
 
