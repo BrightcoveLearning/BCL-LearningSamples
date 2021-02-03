@@ -1,5 +1,3 @@
-
-
 *Getting Started - Contain documents that provide a basis on which to begin your journey of building your Brightcove Beacon apps. 
 
 The key documents are the Learning Guide and Implementation phases.
@@ -10,8 +8,7 @@ The Learning Guide introduces you to
   -The major phases of implementing a Brightcove Beacon solution
   -How device apps are updated, and key feature and strength of Brightcove Beacon
 
-This doc can be especially helpful to your team members that are new to the Brightcove Beacon project.
+The Implementation phases doc give you an overview of what has to happen for a successful Brightcove Beacon launch. Brightcove Beacon is not software you buy on day 0 and launch apps on day 1. There is a process to go through and this the process, and who is involved and responsibilities of all parties is detailed in this document.
 
-Why Getting started still relevant,
-1. New employees
-2. Implementors not always the deciders
+These two document can be especially helpful to team members that come in after the Brightcove Beacon project has begun and need a high level overview of Brightcove Beacon and how it gets implemented.
+
