@@ -28,7 +28,7 @@
     videojs('myPlayerID').ready(function(){
       myPlayer = this;
       myPlayer.on('loadstart',function(){
-        console.log('mediainfo', myPlayer.mediainfo);
+        
         myPlayer.playlist.autoadvance(0);
         console.log(myPlayer.playlist());
         console.log ('currentItem', myPlayer.playlist.currentItem());
