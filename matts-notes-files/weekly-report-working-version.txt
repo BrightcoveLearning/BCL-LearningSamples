@@ -1,90 +1,83 @@
 New docs:
 
-Title: Trending Now Report Reference
-Description: New analytics feature (ported from Ooyala) - in Limited Availability
-Link: https://studio.support.brightcove.com/analytics/trending-now-report-reference.html
-Category: Analytics
-Status:  LA 
+AMP
 
-Title: Brightcove Videos on Roku Trick Play
-Description: Roku requires any VOD content longer than 15 minutes to be accompanied by images. In this topic you will learn how to generate those images for your Video Cloud videos.
-Link: https://general.support.brightcove.com/general/roku-trick-play.html
-Category: Roku, integration
-Status:  Released
+AMP
 
-Title: Brightcove Beacon Tasks Performed in Video Cloud
-Description: In this topic, you will learn the tasks that must/should be done in Video Cloud Studio as a Brightcove Beacon customer.
-Link: https://beacon.support.brightcove.com/references/beacon-tasks-in-vc.html
-Category: Brightcove Beacon
-Status: Released
+AMP
 
-Title: Brightcove Beacon Tasks Performed in Video Cloud
-Description: In this topic, you will learn the tasks that must/should be done in Video Cloud Studio as a Brightcove Beacon customer.
-Link: https://beacon.support.brightcove.com/references/beacon-tasks-in-vc.html
-Category: Brightcove Beacon
-Status: Released
+AMP
 
-Title: Brightcove Beacon Product Updates
-Description: This topic outlines the updates that have been made to Brightcove Beacon.
-Link: https://beacon.support.brightcove.com/references/product-updates.html
-Category: Brightcove Beacon
-Status: Released
+AMP
 
-Title: Branding Brightcove Beacon Apps
-Description: In this topic, you will learn how you can use your logo, color palette and imagery to brand your Brightcove Beacon apps.
-Link: https://beacon.support.brightcove.com/references/branding-beacon-apps.html
+
+
+Title: How Brightcove Beacon Gets Data
+Description: In this topic, you will learn how Brightcove Beacon obtains the various types of data used in building its apps. Also included is information covering the details of authentication.
+Link: https://beacon.support.brightcove.com/references/how-beacon-gets-data.html
 Category: Brightcove Beacon
 Status: Released
 
 
 Major updates:
 
-Title: Implementing Player Enhancements for Live SSAI
-Description: Added a table describing the ad configuration options
-Link: https://ssai.support.brightcove.com/live/guides/implementing-player-enhancements-live-ssai.html
-Category: Live SSAI
+Title: Integrating a Zoom meeting into Brightcove Live
+Description: Added Best Practices section
+Link: https://live.support.brightcove.com/live-module/zoom-live-integration.html
+Category: Live
+Status: Released 
+
+Title: Creating and Managing Live Events using the Live Module
+Description: Added Integrations section 
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
+Category: Live 
+Status: Released 
+
+Title: Video Cloud Documents
+Description: Video Cloud docs for the Upload, Media, Analytics and Admin modules have been updated with images for the blue steel rebranding
+Link: https://studio.support.brightcove.com/
+Category: Video Cloud Studio
+Status: Released
+
+Title: Live API Reference
+Description: Added missing request to cancel a clip job
+Link: https://live.support.brightcove.com/live-api/references/reference.html#tag/Clips
+Category: Live API
+Status: Released
+
+Title: Managing Cloud Playout Channels
+Description: All Cloud Playout docs updated and now public as this has been released
+Link: https://studio.support.brightcove.com/cloud-playout/index.html
+Category: Cloud Playout
+Status: Released
+
+Title: Implementing Delivery Rules
+Description: Updated the request and response blocks for Actions
+Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html
+Category: Delivery Rules
+Status: Released
+
+Title: Delivery Rules API Reference
+Description: Updated section structure as well as request and response blocks for Actions
+Link: https://apis.support.brightcove.com/delivery-rules/references/reference.html
+Category: Delivery Rules
 Status: Released
 
 
 Minor updates:
+None
 
-Title: Using Player Enhancements for Live SSAI with Brightcove Player
-Description: Added note to programmatically add the SSAI plugin to the player
-Link: https://player.support.brightcove.com/advertising/using-player-enhancements-live-ssai-brightcove-player.html
-Category: Brightcove Player
-Status: Released
-
-Title: Thumbnail Seeking with Brightcove Player
-Description: Updated info about image frequency and a note about playlist players
-Link: https://player.support.brightcove.com/plugins/thumbnails-plugin.html
-Category: Brightcove Player
-Status: Released
-
-Title: Trending Now Report Reference
-Description: New analytics feature (ported from Ooyala) - in Limited Availability
-Link: https://studio.support.brightcove.com/analytics/trending-now-report-reference.html
-Category: Analytics
-Status:  LA 
-Type: New Doc
-
-Title: Brightcove Videos on Roku Trick Play
-Description: Roku requires any VOD content longer than 15 minutes to be accompanied by images. In this topic you will learn how to generate those images for your Video Cloud videos.
-Link: https://general.support.brightcove.com/general/roku-trick-play.html
-Category: Roku, integration
-Status:  Released
-Type: New Doc
 
 
 
 
 New docs:
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: New Doc
+Title: How Brightcove Beacon Gets Data
+Description: In this topic, you will learn how Brightcove Beacon obtains the various types of data used in building its apps. Also included is information covering the details of authentication.
+Link: https://beacon.support.brightcove.com/references/how-beacon-gets-data.html
+Category: Brightcove Beacon
+Status: Released
 
 Major updates:
 
