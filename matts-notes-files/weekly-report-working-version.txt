@@ -1,71 +1,119 @@
 New docs:
 
-AMP
-
-AMP
-
-AMP
-
-AMP
-
-AMP
-
-
-
-Title: How Brightcove Beacon Gets Data
-Description: In this topic, you will learn how Brightcove Beacon obtains the various types of data used in building its apps. Also included is information covering the details of authentication.
-Link: https://beacon.support.brightcove.com/references/how-beacon-gets-data.html
-Category: Brightcove Beacon
+Title: AMP and Advertising
+Description: In this topic, you will learn how to display advertising with a Brightcove Player that uses AMP. You will also learn how to use client-side consent with the Brightcove Player/AMP configuration.
+Link: https://player.support.brightcove.com/amp/amp-and-advertising.html
+Category: AMP & Brightcove Player
 Status: Released
+
+Title: Exporting Virtual Event Viewer Data
+Description: https://gallery.support.brightcove.com/experiences/virtual-event/getting-analytics.html
+Link: https://gallery.support.brightcove.com/experiences/virtual-event/getting-analytics.html
+Category: Virtual Events
+Status:  Internal
+
+Title: FairPlay Certificate Registration
+Description: Learn the Apple process to create a FairPlay Streaming (FPS) DRM certificate.
+Link: https://beacon.support.brightcove.com/creating-your-apps/ios-tvos/fairplay-certificate.html
+Category: Beacon, DRM, Video Cloud
+Status: Released 
 
 
 Major updates:
 
-Title: Integrating a Zoom meeting into Brightcove Live
-Description: Added Best Practices section
-Link: https://live.support.brightcove.com/live-module/zoom-live-integration.html
-Category: Live
+Title: Creating an Electronic Program Guide (EPG)
+Description: Added a validation schema file.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/electronic-program-guides.html
+Category: Beacon
 Status: Released 
 
-Title: Creating and Managing Live Events using the Live Module
-Description: Added Integrations section 
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
-Category: Live 
-Status: Released 
-
-Title: Video Cloud Documents
-Description: Video Cloud docs for the Upload, Media, Analytics and Admin modules have been updated with images for the blue steel rebranding
-Link: https://studio.support.brightcove.com/
-Category: Video Cloud Studio
+Title: Video Metadata from mediainfo
+Description: Added multilingual variants metadata
+Link: https://player.support.brightcove.com/references/video-metadata-mediainfo.html
+Category: Player Catalog, Multi-Lingual metadata
 Status: Released
 
-Title: Live API Reference
-Description: Added missing request to cancel a clip job
-Link: https://live.support.brightcove.com/live-api/references/reference.html#tag/Clips
-Category: Live API
-Status: Released
-
-Title: Managing Cloud Playout Channels
-Description: All Cloud Playout docs updated and now public as this has been released
-Link: https://studio.support.brightcove.com/cloud-playout/index.html
-Category: Cloud Playout
-Status: Released
-
-Title: Implementing Delivery Rules
-Description: Updated the request and response blocks for Actions
-Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html
-Category: Delivery Rules
-Status: Released
-
-Title: Delivery Rules API Reference
-Description: Updated section structure as well as request and response blocks for Actions
-Link: https://apis.support.brightcove.com/delivery-rules/references/reference.html
-Category: Delivery Rules
+Title: CMS API Video Fields Reference
+Description: Added multilingual variants metadata
+Link:https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html
+Category: CMS API, Multi-Lingual metadata
 Status: Released
 
 
 Minor updates:
-None
+
+Title: AMP Using a Video Cloud Video
+Description: Removed advertising info since now in separate document
+Link: https://player.support.brightcove.com/amp/amp-using-video-cloud-video.html
+Category: AMP & Brightcove Player
+Status: Released
+
+Title: AMP Using an External Video
+Description: Removed advertising info since now in separate document
+Link: https://player.support.brightcove.com/amp/amp-using-external-video.html
+Category: AMP & Brightcove Player
+Status: Released
+
+Title: Brightcove Live API: Server-Side Ad Insertion (SSAI)
+Description: Added a note about SRT + SSAI is currently not supported.
+Link: https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html
+Category: Live, API, SSAI
+Status: Released 
+
+Title: Overview: Brightcove Live API
+Description: Added a note about SRT + SSAI is currently not supported.
+Link: https://live.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html#Managing_SSAI
+Category: Live, API, SSAI
+Status: Released 
+
+Title: Live API: Cue Points and Ad Beacons with SSAI
+Description: Added a note about SRT + SSAI is currently not supported.
+Link: https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html
+Category: Live, API, SSAI
+Status: Released
+
+Title: Implementing Server-Side Ads in the Live Module
+Description: Added a note about SRT + SSAI is currently not supported.
+Link: https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html
+Category: Live, SSAI
+Status: Released 
+
+Title: Implementing Device Limits
+Description: Fixed links and updated API response
+Link: https://apis.support.brightcove.com/playback-rights/guides/device-limits.html
+Category: Device Limits
+Status: Released
+
+Title: Devices API Reference
+Description: Updated API response
+Link: https://apis.support.brightcove.com/playback-rights/references/devices-api/reference.html
+Category: Device Limits
+Status: Released
+
+Title: Picture in Picture with the Native SDKs
+Description: Fixed internal and external links
+Link: https://sdks.support.brightcove.com/features/picture-picture-native-sdks.html
+Category: Native SDKs
+Status: Released
+
+
+
+
+
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
 
 
 
@@ -81,20 +129,19 @@ Status: Released
 
 Major updates:
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
+Title: AMP Using a Video Cloud Video
+Description: Removed advertising info since not in separate document
+Link: https://player.support.brightcove.com/amp/amp-using-video-cloud-video.html
+Category: AMP & Brightcove Player
+Status: Released
 Type: Major Update
 
 Minor updates:
 
 Title: 
-Description: 
+Description: Removed advertising info since not in separate document
 Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Minor Update
+Category: AMP & Brightcove Player
+Status: Released
 
 

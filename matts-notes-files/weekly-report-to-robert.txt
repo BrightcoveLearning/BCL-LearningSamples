@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 12 Feb **
+- Closed 7 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Beacon doc Google Analytics Self Configuration draft out for review
+- Notes taken for 4 customer support Registered Users design testing
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 5 Feb **
 - Closed 8 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
