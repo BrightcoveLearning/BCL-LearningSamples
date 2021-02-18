@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <video-js id="myPlayerID" data-account="6225316964001" data-player="Qznf2bKtV" data-embed="default" controls="" data-video-id="6232753991001" data-playlist-id="" data-application-id="" width="960" height="540"></video-js>
+    <script src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.min.js"></script>
+
+    <script>
+        var myPlayer, count = 0;
+        videojs.getPlayer('myPlayerID').ready(function() {
+            myPlayer = this;
+            myPlayer.controlBar.hide();
+            myPlayer.muted(true);
+            myPlayer.autoplay(true);
+            myPlayer.loop(true);
+            myPlayer.on("ended", function() {
+                console.log('in play handler');
+                count++;
+                console.log(count);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
