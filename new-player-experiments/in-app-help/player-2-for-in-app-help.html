@@ -12,17 +12,22 @@
     <script src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.min.js"></script>
 
     <script>
-        var myPlayer, count = 0;
+        var myPlayer, videoLoopNum = 0,
+            maxPlays = 3;
         videojs.getPlayer('myPlayerID').ready(function() {
             myPlayer = this;
             myPlayer.controlBar.hide();
             myPlayer.muted(true);
             myPlayer.autoplay(true);
-            myPlayer.loop(true);
+
             myPlayer.on("ended", function() {
-                console.log('in play handler');
-                count++;
-                console.log(count);
+                if (videoLoopNum < maxPlays - 1) { // Start video playback
+                    myPlayer.play(); // Increment number of times video played 
+                    videoLoopNum++;
+                }
+                if (videoLoopNum == maxPlays - 1) {
+                    myPlayer.controlBar.show();
+                }
             });
         });
     </script>
