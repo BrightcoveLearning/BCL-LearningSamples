@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 119 Feb **
+- Closed 3 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Worked with Rodrigo and Kristina on verbiage for some Beacon screens
+- Notes taken for 3 CX Sneak Peek design testing sessions
+Work NOT Reflected in JIRAs:
+- Continued work on Layout/Pages in-app help and LA docs
+- Working on two docs for Android API store access from Beacon (given notes but UI updated since notes taken, so challenging)
+- A boatload of meetings
+
+
 ** Week Ending 12 Feb **
 - Closed 7 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
