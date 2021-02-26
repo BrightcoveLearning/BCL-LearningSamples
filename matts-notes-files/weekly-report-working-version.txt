@@ -1,23 +1,20 @@
 New docs:
 
-Title: Adding Bumpers to Cloud Playout
-Description: In this topic you will learn how add bumpers (in-house ads, announcements, promotions, etc.) to VOD videos and live events in a Cloud Playout channel.
-Link: https://studio.support.brightcove.com/cloud-playout/adding-bumpers-to-vod.html
-Category: Cloud Playout
+Title: Google Analytics Self Configuration
+Description: In this topic, you will learn how to configure Google Analytics to work with Brightcove Beacon when you either can't, or choose not to, allow Brightcove to do this process for you.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/ga-self-configuration.html
+Category: Brightcove Beacon
 Status: Released
 
 
 Major updates:
 
-Title: Overview: Cloud Playout APIs
-Description: Added section on how bumpers affect the EPG, including things to avoid
-Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html
-Category: Cloud Playout
-Status: Released
+
 
 
 Minor updates:
-None this week
+
+
 
 
 
