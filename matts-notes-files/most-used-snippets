@@ -1,3 +1,5 @@
 topjek - Jekyll page template
 mbdetblock - collapsible details block for in-app help
 iahtemp - Template for in app help 
+bejb: sudo chmod -R g+w /Users/rcrooks/github
+bejs: sudo bundle exec jekyll build --trace
