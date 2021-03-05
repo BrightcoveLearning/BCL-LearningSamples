@@ -1,4 +1,14 @@
 Major accomplishments:
+** Week Ending 5 Mar **
+- Closed 8 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Two new docs for Beacon LA finished: Introducing the Layout Module & Page Detail Overview
+- Major update to Beacon LA doc: Managing Playlists on Pages
+- Major update to Beacon LA doc: Creating and Managing Pages
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 26 Feb **
 - Closed 8 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
@@ -7,7 +17,6 @@ JIRA Highlights Include:
 Work NOT Reflected in JIRAs:
 - Continued work on Layout in-app help and LA docs
 - A boatload of meetings
-
 
 ** Week Ending 19 Feb **
 - Closed 3 JIRAs, 1 of which were administrivia
