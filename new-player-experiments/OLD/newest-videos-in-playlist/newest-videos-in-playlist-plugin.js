@@ -27,7 +27,6 @@ videojs.registerPlugin('newestVideosInPlaylist', function() {
       accountId = '1752604059001',
       videoName,
       requestURL,
-      endPoint,
       requestData = {},
       dataReturned = false;
     requestURL = cmsURL + accountId + '/videos';
@@ -37,15 +36,16 @@ videojs.registerPlugin('newestVideosInPlaylist', function() {
     requestData.requestType = 'GET';
     return requestData;
   }
-
+  
   // +++ Makes actual call for data +++
   function getNewestVideos(options, callback) {
     var httpRequest = new XMLHttpRequest(),
-      responseRaw,
-      parsedData,
-      requestParams;
+    responseRaw,
+    parsedData,
+    requestParams;
     // set up request data
     requestParams = 'url=' + encodeURIComponent(options.url) + '&requestType=' + options.requestType;
+    console.log('requestParams:', requestParams);
     // set response handler
     httpRequest.onreadystatechange = getResponse;
     // open the request

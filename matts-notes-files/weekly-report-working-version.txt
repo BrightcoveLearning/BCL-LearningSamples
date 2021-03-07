@@ -1,112 +1,19 @@
 New Docs:
 
-Title: Overview: Cloud Playout
-Description: Overview of Cloud Playout for Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/cloud-playout-overview.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Creating a Cloud Playout Channel
-Description: Creating Cloud Playout Channels for Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/cloud-playout-stream-vod.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Using Channel Actions
-Description: Actions for Cloud Playout Channels for Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/using-channel-actions.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Adding Bumpers to a Cloud Playout Channel
-Description: Adding bumpers to Cloud Playout Channels for Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/adding-bumpers-to-vod.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Monetizing a Cloud Playout Channel
-Description: Adding SSAI to Cloud Playout Channels for Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/enabling-server-side-ads.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Viewing Cloud Playout Channel Output and Analytics
-Description: Analytics and Output for Cloud Playout Channels for Beacon
-Link: https://apis.support.brightcove.com/cms/managing-videos/managing-text-tracks.html
-Category: CMS API
-Status: Released 
-
-Title: Managing Text Tracks Using the CMS API
-Description: Detailed guide to managing text tracks using the CMS API
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/cloud-playout/viewing-channel-output-and-analytics.html
-Category: Cloud Playout for Beacon
-Status: Released 
-
-Title: Setting Playback Speed on Android Devices
-Description: In this topic, you will learn how to add variable speed playback functionality to apps using the Brightcove Native SDK for Android.
-Link: https://sdks.support.brightcove.com/android/playback/setting-playback-speed-android.html
-Category: Native SDKs
+Title: EPG API: Best Practices
+Description: This topic provides best practices for working with the Cloud Playout EPG API.
+Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/epg-best-practices.html
+Category: Cloud Playout
 Status: Released
 
 
 Major updates:
 
-Title: Creating Beacon Channels
-Description: Modified to show how to use Cloud Playout channels as the source for Beacon channels
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/creating-a-channel.html
-Category: Cloud Playout for Beacon
-Status: Released
-
-Title: Electronic Programming Guides
-Description: Added note that Brightcove generates the EPG for Cloud Playout channels 
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/electronic-program-guides.html
-Category: Cloud Playout for Beacon
-Status: Released
 
 
 Minor updates:
 
-Title: LIve to Vod
-Description: Added missing field for sending the VOD to Video Cloud
-Link: https://live.support.brightcove.com/live-api/guides/live-api-vod-live-event.html
-Category: Live API
-Status: Released
 
-Title: Overview: Player Enhancements for Live SSAI
-Description: Added support for ap-southeast-1 (Singapore) region
-Link: https://ssai.support.brightcove.com/live/guides/overview-player-enhancements-live-ssai.html
-Category: Live SSAI
-Status: Released
-
-Title: Implementing Player Enhancements for Live SSAI
-Description: Added support for ap-southeast-1 (Singapore) region
-Link: https://ssai.support.brightcove.com/live/guides/implementing-player-enhancements-live-ssai.html
-Category: Live SSAI
-Status: Released
-
-Title: Overview: Cross-Device Resume
-Description: Updated to use "viewer" instead of "user" to match the XDR API
-Link: https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html
-Category: Cross-Device Resume API
-Status: Released
-
-Title: Getting Playback Position from XDR API
-Description: Updated to use "viewer" instead of "user" to match the XDR API
-Link: https://apis.support.brightcove.com/xdr/getting-started/get-playback-position.html
-Category: Cross-Device Resume API
-Status: Released
-
-Brightcove Live API: Server-Side Ad Insertion (SSAI)
-Description: Live SSAI Known Issues update
-Link: https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html#Known_issues
-Category: Live SSAI
-Status: Released 
-
-Title: Creating Custom Live Ingest Profiles
-Description: Note that hidden Live profiles won't be selectable in the Live UI but they can still be used with the Live API.
-Link: https://live.support.brightcove.com/admin/creating-custom-live-ingest-profiles.html
-Category: Live
-Status: Released 
 
 
 
