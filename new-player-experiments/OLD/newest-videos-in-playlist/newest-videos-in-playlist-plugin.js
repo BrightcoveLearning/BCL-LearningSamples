@@ -24,7 +24,7 @@ videojs.registerPlugin('newestVideosInPlaylist', function() {
   // +++ Sets up the data for the API request +++
   function setRequestData() {
     var endPoint = '',
-      accountId = '1752604059001',
+      accountId = '1507807800001',
       videoName,
       requestURL,
       requestData = {},
