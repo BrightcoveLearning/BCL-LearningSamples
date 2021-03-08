@@ -2,30 +2,33 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Untitled Document</title>
-    <link href="newest-videos-in-playlist-plugin.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="newest-videos-in-playlist-plugin.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <video-js id="myPlayerID" data-account="1507807800001" data-player="rXHplU9As" data-embed="default" controls="" data-video-id="" class="video-js" data-application-id=""></video-js>
-    <script src="https://players.brightcove.net/1507807800001/rXHplU9As_default/index.min.js"></script>
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="BJlTEWMCAZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/BJlTEWMCAZ_default/index.min.js"></script>
 
-    <!--     <video id="myPlayerID" data-account="1752604059001" data-player="BJlTEWMCAZ" data-embed="default" data-application-id class="video-js" controls></video>
-    <script src="//players.brightcove.net/1752604059001/BJlTEWMCAZ_default/index.min.js"></script> -->
+  <ol class="vjs-playlist"></ol>
 
-    <ol class="vjs-playlist"></ol>
+  <script src="newest-videos-in-playlist-plugin.js"></script>
 
-    <script src="newest-videos-in-playlist-plugin.js"></script>
-
-    <script type="text/javascript">
-        videojs('myPlayerID').ready(function() {
-            var myPlayer = this;
-            console.log(myPlayer);
-            myPlayer.newestVideosInPlaylist();
-        });
-    </script>
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function () {
+      var myPlayer = this;
+      console.log(myPlayer);
+      myPlayer.newestVideosInPlaylist();
+    });
+  </script>
 
 </body>
 
