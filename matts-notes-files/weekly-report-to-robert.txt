@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 12 Mar **
+- Closed 11 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Two new docs finished, got review and published: Managing Google Subscriptions Part 1 &2
+- Lots of updates to Layout module in-app help: new buttons, verbiage, etc.
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 5 Mar **
 - Closed 8 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
