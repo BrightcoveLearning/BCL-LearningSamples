@@ -1,73 +1,65 @@
-New Docs:
+New docs:
 
-Title: EPG API: Best Practices
-Description: This topic provides best practices for working with the Cloud Playout EPG API.
-Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/epg-best-practices.html
-Category: Cloud Playout
-Status: Released
-
-Title: Step-by-Step: Streaming a Secure Reliable Transport (SRT) Live event
-Description: How to use the Live module and OBS to broadcast an SRT live event.
-Link: https://live.support.brightcove.com/get-started/step-step-live-srt.html
-Category: Live
-Status: Released 
-
-Title: Deliver Brightcove Content Using InPlayer
-Description: This provides a link to InPlayer documentation for delivering Brightcove content through the InPlayer.
-Link: https://integrations.support.brightcove.com/non-brightcove-players/inplayer.html
-Category: Non-Brightcove Player integrations
-Status: Released
-
-Title: Managing Google Subscriptions Part 1
-Description: In this topic, you will learn how to create a service account and configure it. This is the first part of the larger process of establishing communication between your Brightcove Beacon apps and the Google Store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/android/managing-google-subscriptions-1.html
-Category: Brightcove Beacon
-Status: Released
-
-
-Title: Managing Google Subscriptions Part 2
-Description: In this topic, you will learn how to configure Google subscriptions' publisher/subscriber data exchange. This is the second part of the larger process of establishing communication between your Brightcove Beacon apps and the Google Store.
-Link: https://beacon.support.brightcove.com/creating-your-apps/android/managing-google-subscriptions-2.html
-Category: Brightcove Beacon 
-Status: Released
+None this week
 
 
 Major updates:
 
-Title: Playback API labels support
-Description: Playback API responses now include labels
-Link: https://apis.support.brightcove.com/playback/references/reference_v2.html , https://apis.support.brightcove.com/playback/references/playback-api-video-fields-reference.html
-Category: Playback API, Video labels
-Status: Released
+Title: Dynamic Ingest API References
+Description: merge_with_existing flag for multiple audio tracks now defaults to true
+Link: https://apis.support.brightcove.com/dynamic-ingest/references/reference.html#operation/AccountsVideosIngestRequestsByAccountIdAndVideoIdPost, https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html
+Category: Dynamic Ingest API, multiple audio tracks
+Status: Released 
+
+Title: Data Collection Overview
+Description: Added new section to clarify the different metrics to be sent for VOD and live streams
+Link: https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html
+Category: Data Collection API
+Status: Released 
 
 
 Minor updates:
 
-Title: Live API: Cue Points and Ad Beacons with SSAI
-Description: Note removed regarding SRT + SSAI configuration is not supported on Brightcove Live. 
-Link: https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html
-Category: Live, SSAI
+Title: Creating and Managing Live Events using the Live Module
+Description: Added image allowing the DVR step.
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#publish
+Category: Live
 Status: Released 
 
-Title: Brightcove Live API: Server-Side Ad Insertion (SSAI)
-Description: Note removed regarding SRT + SSAI configuration is not supported on Brightcove Live. 
-Link: https://live.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html
-Category: Live, SSAI
+Title: Viewing Billing Information
+Description: Added note on how Zencoder items might show up in Video Cloud billing
+Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
+Category: billing
 Status: Released 
+Type: Minor Update
 
-Title: Implementing Server-Side Ads in the Live Module
-Description: Note removed regarding SRT + SSAI configuration is not supported on Brightcove Live. 
-Link: https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html
-Category: Live, SSAI
+Title: Zencoder FAQ: Basics
+Description: Adding note that only one input can be set per job
+Link: https://zencoder.support.brightcove.com/general-information/faq-basics.html
+Category: Zencoder
 Status: Released 
+Type: Minor Update
 
-Title: 360°/VR Video Plugin
-Description: Removed references to legacy ingest information
-Link: https://player.support.brightcove.com/plugins/360degvr-video-plugin.html
-Category: Brightcove Player
-Status: Released
+Title: Configuring the Brightcove Player for DRM
+Description: Added note that DRM-protected videos will not play unless the player has the DRM plugin enabled
+Link: https://player.support.brightcove.com/plugins/configuring-brightcove-player-drm.html
+Category: DRM, Brightcove Player
+Status: Released 
+Type: Minor Update
 
+Title: Live Redundancy
+Description: Added note that live redundancy cannot be used for DRM-protected streams
+Link: https://live.support.brightcove.com/live-module/live-redundancy.html, https://live.support.brightcove.com/live-api/guides/using-live-redundancy.html
+Category: DRM, Brightcove Live, Live Redundancy
+Status: Released 
+Type: Minor Update
 
+Title: Live API
+Description: Corrected some field descriptions for Live Analytics
+Link: https://apis.support.brightcove.com/analytics/references/reference.html#operation/GetLiveEvents
+Category: Brightcove Live, Analytics
+Status: Released 
+Type: Minor Update
 
 
 

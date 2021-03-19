@@ -1,4 +1,23 @@
 Major accomplishments:
+** Week Ending 19 Mar **
+- Closed 14 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Docs for the following topics moved and updated to Beacon LA site:
+    *Monetizating Content - New navigation topic
+    *Reviewing Analytics - New navigation topic
+    *Publishing Apps - Android
+    *Publishing Apps - iOS 7 tvOS
+    *Publishing Apps - LG
+    *Publishing Apps - Panasonic
+    *Publishing Apps - Roku
+    *Publishing Apps - Samsung
+- 4 hours of note taking for Media module CX Sneak Peeks
+-Finished training slide for CS training
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+Major accomplishments:
 ** Week Ending 12 Mar **
 - Closed 11 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
