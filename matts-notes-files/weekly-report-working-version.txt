@@ -1,67 +1,78 @@
 New docs:
 
-None this week
+Title: Overview: Scheduler for Live SEP Jobs
+Description: This topic provides an overview of the Live Scheduler, which allows you to schedule certain actions for Live SEP jobs. (NOT YET RELEASED)
+Link: https://live.support.brightcove.com/live-api/guides/live-scheduler.html
+Category: Live, Static Entry Point
+Status: Internal
+
+Title: Scheduling Activation/Deactivation of an SEP Stream
+Description: With the Clip endpoint, you can schedule the clip event of an existing SEP live job. At the specified time, our system will make the necessary API calls to start a Clip Job on your behalf. (NOT YET RELEASED)
+Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-stop-start.html
+Category: Live, Static Entry Point, Live API
+Status: Internal
+
+Title: Scheduling Clip Generation for an SEP Stream
+Description: With the JobStartStop endpoint, you can schedule the activation and deactivation of an existing live SEP job. At the specified time, our system will make the necessary API calls to activate and de-active a Job on your behalf. (NOT YET RELEASED)
+Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-clips.html
+Category: Live, Static Entry Point, Live API
+Status: Internal
+
+Title: Live Scheduler Notifications
+Description: When creating workflows with the scheduler, you can optionally configure notifications. (NOT YET RELEASED)
+Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-notifications.html
+Category: Live, Static Entry Point, Live API
+Status: Internal
 
 
 Major updates:
 
-Title: Dynamic Ingest API References
-Description: merge_with_existing flag for multiple audio tracks now defaults to true
-Link: https://apis.support.brightcove.com/dynamic-ingest/references/reference.html#operation/AccountsVideosIngestRequestsByAccountIdAndVideoIdPost, https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html
-Category: Dynamic Ingest API, multiple audio tracks
-Status: Released 
+Title: Code Snippets using the Native SDK for iOS
+Description: Added code snippet for modifying captions programmatically
+Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html#Modifying_captions_programmatically
+Category: Native SDKs
+Status: Released
 
-Title: Data Collection Overview
-Description: Added new section to clarify the different metrics to be sent for VOD and live streams
-Link: https://apis.support.brightcove.com/data-collection/overview-data-collection-api-v2.html
-Category: Data Collection API
-Status: Released 
+Title: Live API Reference
+Description: Added operations for scheduling SEP jobs and clip (NOT YET RELEASED)
+Link: https://live.support.brightcove.com/live-api/references/reference-staging.html (staged version)
+Category: Live, Static Entry Point, Live API
+Status: Internal
 
 
 Minor updates:
 
-Title: Creating and Managing Live Events using the Live Module
-Description: Added image allowing the DVR step.
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#publish
-Category: Live
+Title: Implementing Server-Side Ads with the Native SDKs
+Description: Removed references to OnceUX and updated links
+Link: https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html
+Category: Native SDKs
+Status: Released
+
+Title: Capturing Poster and Thumbnail Images
+Description: Added note that image capture may appear available but fail for videos ingested with legacy ingest profiles (workaround: retranscode or replace video with dynamic delivery profile)
+Link: https://studio.support.brightcove.com/media/capturing-poster-and-thumbnail-images.html
+Category: Media Module
 Status: Released 
 
-Title: Viewing Billing Information
-Description: Added note on how Zencoder items might show up in Video Cloud billing
-Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
-Category: billing
-Status: Released 
-Type: Minor Update
-
-Title: Zencoder FAQ: Basics
-Description: Adding note that only one input can be set per job
-Link: https://zencoder.support.brightcove.com/general-information/faq-basics.html
+Title: Using Zencoder with S3
+Description: Added note that Zencoder does NOT support “S3-compatible” buckets from non-AWS vendors
+Link: https://zencoder.support.brightcove.com/general-information/using-zencoder-s3.html
 Category: Zencoder
 Status: Released 
-Type: Minor Update
-
-Title: Configuring the Brightcove Player for DRM
-Description: Added note that DRM-protected videos will not play unless the player has the DRM plugin enabled
-Link: https://player.support.brightcove.com/plugins/configuring-brightcove-player-drm.html
-Category: DRM, Brightcove Player
-Status: Released 
-Type: Minor Update
-
-Title: Live Redundancy
-Description: Added note that live redundancy cannot be used for DRM-protected streams
-Link: https://live.support.brightcove.com/live-module/live-redundancy.html, https://live.support.brightcove.com/live-api/guides/using-live-redundancy.html
-Category: DRM, Brightcove Live, Live Redundancy
-Status: Released 
-Type: Minor Update
-
-Title: Live API
-Description: Corrected some field descriptions for Live Analytics
-Link: https://apis.support.brightcove.com/analytics/references/reference.html#operation/GetLiveEvents
-Category: Brightcove Live, Analytics
-Status: Released 
-Type: Minor Update
 
 
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released
 
 
 Title: 
