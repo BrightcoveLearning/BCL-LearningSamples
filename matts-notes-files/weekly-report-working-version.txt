@@ -24,6 +24,18 @@ Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-notific
 Category: Live, Static Entry Point, Live API
 Status: Internal
 
+Title: Google Analytics Self Configuration
+Description: In this topic, you will learn how to configure the Google Analytics plugin for Brightcove Player when you either cannot, or choose not to, allow Brightcove to do this process for you.
+Link: https://player.support.brightcove.com/general/ga-self-configure.html
+Category: Brightcove Player
+Status: Released
+
+Title: Auto Start/Stop of SEP Live Events in the Control Room
+Description: This feature allows the user to schedule and manage the start and stop time of one or many Live Job events.
+Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
+Category: Live 
+Status: Internal
+
 
 Major updates:
 
@@ -60,19 +72,17 @@ Link: https://zencoder.support.brightcove.com/general-information/using-zencoder
 Category: Zencoder
 Status: Released 
 
-
-
-Title: 
-Description: 
-Link: 
-Category: 
+Title: Advertising with the IMA3 Plugin
+Description: Update to macros {player.pageUrl} and {document.referrer} behavior
+Link: https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#Ad_macros_and_the_serverUrl
+Category: Brightcove Player
 Status: Released
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released
+
+
+
+
+
 
 
 Title: 

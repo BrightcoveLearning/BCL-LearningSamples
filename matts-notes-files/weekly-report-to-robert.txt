@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 26 Mar **
+- Closed 17 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Docs for the following topics moved and updated to Beacon LA site:
+    * Custom fields doc - now only applicable for monetization
+    * Implementing AVOD
+    * Implementing SVOD
+    * Using a Subscription Package
+    * Beacon Analytics Business Metrics
+    * Branding Brightcove Beacon Apps
+- New doc on Ben Clifford's advice: Google Analytics Self Configuration for Brightcove Player
+Work NOT Reflected in JIRAs:
+- Delivered Beacon LA Layout Module training to CS and updated slides
+- A boatload of meetings
+
+
+
 ** Week Ending 19 Mar **
 - Closed 14 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
