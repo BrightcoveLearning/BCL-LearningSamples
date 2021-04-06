@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 2 Apr **
+- Closed 7 JIRAs, 3 of which were administrivia
+JIRA Highlights Include:
+- Finished my part of the draft of the intro Beacon video for the Dashboard. Still need to find someone to do something "Cool" for the intro. 
+- Updated in-app help for the page creation workflow (UI keeps changing). This workflow will be used with the Design Partner testing on Tuesday.
+- Got the Confluence KB in good enough shape to show SEs. 
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 26 Mar **
 - Closed 17 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:

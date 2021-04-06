@@ -1,84 +1,106 @@
 New docs:
 
-Title: Overview: Scheduler for Live SEP Jobs
-Description: This topic provides an overview of the Live Scheduler, which allows you to schedule certain actions for Live SEP jobs. (NOT YET RELEASED)
-Link: https://live.support.brightcove.com/live-api/guides/live-scheduler.html
-Category: Live, Static Entry Point
-Status: Internal
+Title: Adding Content to a Cloud Playout Channel
+Description: How to add VOD content, playlists, and live events to a cloud playout channel
+Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-add-content.html
+Category: Cloud Playout
+Status: Released 
 
-Title: Scheduling Activation/Deactivation of an SEP Stream
-Description: With the Clip endpoint, you can schedule the clip event of an existing SEP live job. At the specified time, our system will make the necessary API calls to start a Clip Job on your behalf. (NOT YET RELEASED)
-Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-stop-start.html
-Category: Live, Static Entry Point, Live API
-Status: Internal
+Title: Beacon Apps Ad targeting
+Description: Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider. NOT YET RELEASED
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/beacon-apps-ad-targeting.html
+Category: Beacon Classic
+Status: Internal 
 
-Title: Scheduling Clip Generation for an SEP Stream
-Description: With the JobStartStop endpoint, you can schedule the activation and deactivation of an existing live SEP job. At the specified time, our system will make the necessary API calls to activate and de-active a Job on your behalf. (NOT YET RELEASED)
-Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-clips.html
-Category: Live, Static Entry Point, Live API
-Status: Internal
+Title: Overview: Brightcove Playback Restrictions 
+Description: In this topic, you will learn about different strategies for managing video playback by using Brightcove Playback Restrictions.
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html
+Category: Playback Restrictions
+Status: Staging - LA
 
-Title: Live Scheduler Notifications
-Description: When creating workflows with the scheduler, you can optionally configure notifications. (NOT YET RELEASED)
-Link: https://live.support.brightcove.com/live-api/guides/live-scheduler-notifications.html
-Category: Live, Static Entry Point, Live API
-Status: Internal
+Title: Implementing Playback Rights 
+Description: In this topic, you will learn how to manage video playback using Brightcove Playback Rights.
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html
+Category: Playback Restrictions
+Status: Staging - LA
 
-Title: Google Analytics Self Configuration
-Description: In this topic, you will learn how to configure the Google Analytics plugin for Brightcove Player when you either cannot, or choose not to, allow Brightcove to do this process for you.
-Link: https://player.support.brightcove.com/general/ga-self-configure.html
-Category: Brightcove Player
-Status: Released
+Title: Creating a JSON Web Token (JWT) 
+Description: In this topic, you will learn how to create a JSON Web Token (JWT) which can be used with Brightcove Playback Restrictions.
+Link: https://general.support.brightcove.com/developer/create-json-web-token.html
+Category: Playback Restrictions
+Status: Staging - LA
 
-Title: Auto Start/Stop of SEP Live Events in the Control Room
-Description: This feature allows the user to schedule and manage the start and stop time of one or many Live Job events.
-Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
-Category: Live 
-Status: Internal
+Title: Using Authentication APIs
+Description: In this topic, you will learn about the APIs used to manage key/license protection when using Brightcove Playback Restrictions.
+Link: https://apis.support.brightcove.com/playback-restrictions/guides/authentication-apis.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title:Limiting Concurrent Streams per Viewer
+Description: In this topic, you will learn how to limit concurrent streams when using Brightcove Playback Restrictions.
+Link: https://apis.support.brightcove.com/playback-restrictions/guides/stream-concurrency.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title:Implementing Device Limits
+Description: In this topic, you will learn how to enable device limits for video playback using Brightcove Playback Restrictions.
+Link: https://apis.support.brightcove.com/playback-restrictions/guides/device-limits.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title: Playback Restrictions with Live Streams
+Description: In this topic, you will learn how to use Playback Restrictions with Live streams.
+Link: https://live.support.brightcove.com/live-api/guides/live-playback-restrictions.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title: Playback Restrictions with Brightcove Player
+Description: In this topic, you will learn how to configure Brightcove Player to use Playback Restrictions.
+Link: https://player.support.brightcove.com/playback/playback-restrictions-with-bcp.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title: Playback Restrictions with the Native SDKs
+Description: In this topic, you will learn how to use Playback Restrictions with the Brightcove Native SDKs.
+Link: https://sdks.support.brightcove.com/features/playback-restrictions-with-sdks.html
+Category: Playback Restrictions
+Status: Staging - LA
 
 
 Major updates:
 
-Title: Code Snippets using the Native SDK for iOS
-Description: Added code snippet for modifying captions programmatically
-Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html#Modifying_captions_programmatically
-Category: Native SDKs
-Status: Released
+Title: Using Cloud Playout Channel Actions
+Description: Added new section on what happens after a channel is stopped
+Link: https://studio.support.brightcove.com/cloud-playout/using-channel-actions.html
+Category: Cloud Playout
+Status: Released 
 
-Title: Live API Reference
-Description: Added operations for scheduling SEP jobs and clip (NOT YET RELEASED)
-Link: https://live.support.brightcove.com/live-api/references/reference-staging.html (staged version)
-Category: Live, Static Entry Point, Live API
-Status: Internal
+Title: Adding Bumpers to Cloud Playout
+Description: Bumpers can. now be added to SSAI-enabled channels
+Link: https://studio.support.brightcove.com/cloud-playout/adding-bumpers-to-vod.html
+Category: Cloud Playout
+Status: Released 
+
+Title: Viewing Billing Information
+Description: Added note that deleted videos are kept in the system for 12 days, and so will still be reflected in managed content for that period
+Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
+Category: Billing
+Status: Released 
 
 
 Minor updates:
 
-Title: Implementing Server-Side Ads with the Native SDKs
-Description: Removed references to OnceUX and updated links
-Link: https://sdks.support.brightcove.com/features/implementing-server-side-ads-native-player-sdks.html
-Category: Native SDKs
+Title: Known Issues: Studio and Brightcove Player
+Description: Added known issue: auto-display captions does not work in Safari
+Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html
+Category: Captions
 Status: Released
 
-Title: Capturing Poster and Thumbnail Images
-Description: Added note that image capture may appear available but fail for videos ingested with legacy ingest profiles (workaround: retranscode or replace video with dynamic delivery profile)
-Link: https://studio.support.brightcove.com/media/capturing-poster-and-thumbnail-images.html
-Category: Media Module
-Status: Released 
-
-Title: Using Zencoder with S3
-Description: Added note that Zencoder does NOT support “S3-compatible” buckets from non-AWS vendors
-Link: https://zencoder.support.brightcove.com/general-information/using-zencoder-s3.html
-Category: Zencoder
-Status: Released 
-
-Title: Advertising with the IMA3 Plugin
-Description: Update to macros {player.pageUrl} and {document.referrer} behavior
-Link: https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#Ad_macros_and_the_serverUrl
-Category: Brightcove Player
+Title: Known Issues: Studio and Brightcove Player
+Description: Added explanation for why the bitrate for HLS renditions reported by the CMS API is greater than the video bitrate specified in the ingest profile
+Link: https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-delivery.html
+Category: Dynamic Delivery, HLS bitrate
 Status: Released
-
-
 
 
 
