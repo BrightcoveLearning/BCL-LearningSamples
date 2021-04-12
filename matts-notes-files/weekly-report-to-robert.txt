@@ -1,4 +1,13 @@
 Major accomplishments:
+** Week Ending 9 Apr **
+- Closed 10 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Got iOS ads working in player (that turned out to be a time sink, but working now, I'll fill you in once I find out WHY it is working)
+- Updated docs and in-app help for Layout module, want to keep up with changes so when time comes all I need to do is update screenshots/videos 
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 2 Apr **
 - Closed 7 JIRAs, 3 of which were administrivia
 JIRA Highlights Include:
@@ -7,7 +16,6 @@ JIRA Highlights Include:
 - Got the Confluence KB in good enough shape to show SEs. 
 Work NOT Reflected in JIRAs:
 - A boatload of meetings
-
 
 
 ** Week Ending 26 Mar **

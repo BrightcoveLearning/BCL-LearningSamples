@@ -1,107 +1,102 @@
 New docs:
 
-Title: Adding Content to a Cloud Playout Channel
-Description: How to add VOD content, playlists, and live events to a cloud playout channel
-Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-add-content.html
-Category: Cloud Playout
-Status: Released 
-
-Title: Beacon Apps Ad targeting
-Description: Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider. NOT YET RELEASED
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/beacon-apps-ad-targeting.html
-Category: Beacon Classic
-Status: Internal 
-
-Title: Overview: Brightcove Playback Restrictions 
-Description: In this topic, you will learn about different strategies for managing video playback by using Brightcove Playback Restrictions.
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Implementing Playback Rights 
-Description: In this topic, you will learn how to manage video playback using Brightcove Playback Rights.
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Creating a JSON Web Token (JWT) 
-Description: In this topic, you will learn how to create a JSON Web Token (JWT) which can be used with Brightcove Playback Restrictions.
-Link: https://general.support.brightcove.com/developer/create-json-web-token.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Using Authentication APIs
-Description: In this topic, you will learn about the APIs used to manage key/license protection when using Brightcove Playback Restrictions.
-Link: https://apis.support.brightcove.com/playback-restrictions/guides/authentication-apis.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title:Limiting Concurrent Streams per Viewer
-Description: In this topic, you will learn how to limit concurrent streams when using Brightcove Playback Restrictions.
-Link: https://apis.support.brightcove.com/playback-restrictions/guides/stream-concurrency.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title:Implementing Device Limits
-Description: In this topic, you will learn how to enable device limits for video playback using Brightcove Playback Restrictions.
-Link: https://apis.support.brightcove.com/playback-restrictions/guides/device-limits.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Playback Restrictions with Live Streams
-Description: In this topic, you will learn how to use Playback Restrictions with Live streams.
-Link: https://live.support.brightcove.com/live-api/guides/live-playback-restrictions.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Playback Restrictions with Brightcove Player
-Description: In this topic, you will learn how to configure Brightcove Player to use Playback Restrictions.
-Link: https://player.support.brightcove.com/playback/playback-restrictions-with-bcp.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Playback Restrictions with the Native SDKs
-Description: In this topic, you will learn how to use Playback Restrictions with the Brightcove Native SDKs.
-Link: https://sdks.support.brightcove.com/features/playback-restrictions-with-sdks.html
-Category: Playback Restrictions
-Status: Staging - LA
+None this week
 
 
 Major updates:
 
-Title: Using Cloud Playout Channel Actions
-Description: Added new section on what happens after a channel is stopped
-Link: https://studio.support.brightcove.com/cloud-playout/using-channel-actions.html
-Category: Cloud Playout
-Status: Released 
+Title: Working with Folders
+Description: Sorting added to the CMS API call to get the videos in a folder
+Link: https://apis.support.brightcove.com/cms/managing-videos/cms-api-working-folders.html , https://apis.support.brightcove.com/cms/references/reference.html#operation/GetVideosInFolder 
+Category: CMS API, Folders
+Status: Released
 
-Title: Adding Bumpers to Cloud Playout
-Description: Bumpers can. now be added to SSAI-enabled channels
-Link: https://studio.support.brightcove.com/cloud-playout/adding-bumpers-to-vod.html
-Category: Cloud Playout
-Status: Released 
+Title: Clips from Live Events
+Description: DRM’d/encrypted streams can now be clipped using the Live API (also in the Live Module soon)
+Link: https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html , https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html
+Category: Live, Clipping
+Status: Released
 
-Title: Viewing Billing Information
-Description: Added note that deleted videos are kept in the system for 12 days, and so will still be reflected in managed content for that period
-Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
-Category: Billing
-Status: Released 
+Title: Dynamic Ingest: Best Practices
+Description: Extensive rewrite to indicate that mulitple simultaneous ingest jobs on the the same video are not allowed, even if they involve processing different assets
+Link: https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html, https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html 
+Category: Dynamic Ingest
+Status: Released
+
+Title: Determining Which Rendition Will Play
+Description: Added section for audio track selection
+Link: https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html
+Category: Brightcove Player
+Status: Released
 
 
 Minor updates:
 
-Title: Known Issues: Studio and Brightcove Player
-Description: Added known issue: auto-display captions does not work in Safari
-Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html
-Category: Captions
+Title: MP4 Renditions
+Description: Added Cloud Playout and Social and reasons to generate MP4 renditions
+Link: https://apis.support.brightcove.com/ingest-profiles/guides/mp4s-dynamic-delivery.html
+Category: Ingest Profiles
 Status: Released
 
-Title: Known Issues: Studio and Brightcove Player
-Description: Added explanation for why the bitrate for HLS renditions reported by the CMS API is greater than the video bitrate specified in the ingest profile
-Link: https://apis.support.brightcove.com/dynamic-ingest/getting-started/overview-dynamic-delivery.html
-Category: Dynamic Delivery, HLS bitrate
+Title: Overview: Cloud Playout
+Description: Added note that video captions are not yet supported in Cloud Playout channels - will be in a future release
+Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-overview.html#limitations
+Category: Cloud Playout
 Status: Released
 
+Title: Opening a case with Brightcove Support
+Description: Added note that cases deleted by Support as duplicated do not appear in the Support Portal
+Link: https://sdks.support.brightcove.com/support/opening-case-with-brightcove-support.html#view-cases (and all ofter sites)
+Category: Contacting Support
+Status: Released
+
+Title: Replacing or Retranscoding a Video
+Description: Added note that if you choose the keep the existing thumbnail and poster, the URLs for those assets will change
+Link: https://studio.support.brightcove.com/media/replacing-video-source-file.html
+Category: Media Module
+Status: Released
+
+Title: Reviewing Live Analytics
+Description: Added note about the default live video ID
+Link: https://live.support.brightcove.com/live-module/reviewing-live-analytics.html#Notes
+Category: Live
+Status: Released
+
+Title: Implementing Playback Rights 
+Description: Added is_default and geo_global_rule fields to Playback Rights API
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html#Define_restrictions
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title: Host a Zoom Conference on Brightcove Live
+Description: Removed architecture diagram flow.
+Link: https://integrations.support.brightcove.com/web-conferencing/host-zoom-conference-brightcove-live.html
+Category: Live
+Status: Released 
+
+Title: Auto Start/Stop of SEP Live Events in the Control Room
+Description: Update Schedule doc with a note about scheduling of redundant groups is not supported. 
+Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
+Category: Live
+Status: Released 
+
+Title: Host a Zoom Conference on Brightcove Live
+Description: Added a note referring to the Zoom integration doc
+Link: https://integrations.support.brightcove.com/web-conferencing/host-zoom-conference-brightcove-live.html
+Category: Live
+Status: Released 
+
+Title: Creating and Managing Live Events using the Live Module
+Description: Added information about RTMP limitations
+Link: https://live.support.brightcove.com/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html
+Category: Live
+Status: Released 
+
+Title: Using Live RTMP Outputs to Stream to Facebook and YouTube
+Description: Added information about RTMP limitations
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#rtmp
+Category: Live
+Status: Released
 
 
 
