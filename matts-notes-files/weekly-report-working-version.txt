@@ -1,112 +1,125 @@
 New docs:
 
-None this week
+Title: Overview: Beacon Web Store
+Description: The Beacon Web Store is a configuration, features and API integration that enables Beacon licensees to implement subscriptions, in Bring Your Own (BYO) web stores.
+Link: https://beacon.support.brightcove.com/beacon-web-store/beacon-webstore-overview.html
+Category: Beacon Web Store
+Status: Released
+
+Title: Integrating with the Beacon Web Store
+Description: This topic covers Beacon Web Store integration via OIDC (Open ID Connect).
+Link: https://beacon.support.brightcove.com/beacon-web-store/integration-details.html
+Category: Beacon Web Store
+Status: Released
+
+Title: Beacon Store Webhook Reference
+Description: Reference for the Brightcove Beacon Webhook.
+Link: https://beacon.support.brightcove.com/beacon-web-store/beacon-store-webhook-reference.html
+Category: Beacon Web Store
+Status: Released
 
 
 Major updates:
 
-Title: Working with Folders
-Description: Sorting added to the CMS API call to get the videos in a folder
-Link: https://apis.support.brightcove.com/cms/managing-videos/cms-api-working-folders.html , https://apis.support.brightcove.com/cms/references/reference.html#operation/GetVideosInFolder 
-Category: CMS API, Folders
+Title: Submitting Apps to the Roku Store
+Description: Added 2 new sections for account validation and device linking
+Link: https://beacon.support.brightcove.com/creating-your-apps/roku/submitting-to-roku.html#Verify_your_account_and_link_a_device
+Category: Brightcove Beacon
 Status: Released
 
-Title: Clips from Live Events
-Description: DRM’d/encrypted streams can now be clipped using the Live API (also in the Live Module soon)
-Link: https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html , https://live.support.brightcove.com/live-api/guides/live-api-creating-vod-clips.html
-Category: Live, Clipping
-Status: Released
+Title: Implementing Playback Rights
+Description: Created 6 new diagrams for Playback Rights validation flow
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html#Validation_process
+Category: Playback Restrictions
+Status: Staging - LA
 
-Title: Dynamic Ingest: Best Practices
-Description: Extensive rewrite to indicate that mulitple simultaneous ingest jobs on the the same video are not allowed, even if they involve processing different assets
-Link: https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html, https://apis.support.brightcove.com/dynamic-ingest/general/dynamic-ingest-api-best-practices.html 
-Category: Dynamic Ingest
-Status: Released
+Title: Playback Rights API Reference
+Description: Added  is_default and geo_global_rule fields
+Link: https://apis.support.brightcove.com/playback-restrictions/references/playback-rights/reference.html
+Category: Playback Restrictions
+Status: Staging - LA
 
-Title: Determining Which Rendition Will Play
-Description: Added section for audio track selection
-Link: https://player.support.brightcove.com/playback/determining-which-rendition-will-play.html
-Category: Brightcove Player
+Title: Domains and Ports that Must Be Accessible to Video Cloud
+Description: Added Content Security Policies (CSPs)
+Link: https://studio.support.brightcove.com/general/domains-and-ports-must-be-accessible-video-cloud.html#content_security_policies
+Category: Video Cloud General Information
 Status: Released
 
 
 Minor updates:
 
-Title: MP4 Renditions
-Description: Added Cloud Playout and Social and reasons to generate MP4 renditions
-Link: https://apis.support.brightcove.com/ingest-profiles/guides/mp4s-dynamic-delivery.html
-Category: Ingest Profiles
-Status: Released
-
-Title: Overview: Cloud Playout
-Description: Added note that video captions are not yet supported in Cloud Playout channels - will be in a future release
-Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-overview.html#limitations
-Category: Cloud Playout
-Status: Released
-
-Title: Opening a case with Brightcove Support
-Description: Added note that cases deleted by Support as duplicated do not appear in the Support Portal
-Link: https://sdks.support.brightcove.com/support/opening-case-with-brightcove-support.html#view-cases (and all ofter sites)
-Category: Contacting Support
-Status: Released
-
-Title: Replacing or Retranscoding a Video
-Description: Added note that if you choose the keep the existing thumbnail and poster, the URLs for those assets will change
-Link: https://studio.support.brightcove.com/media/replacing-video-source-file.html
-Category: Media Module
-Status: Released
-
-Title: Reviewing Live Analytics
-Description: Added note about the default live video ID
-Link: https://live.support.brightcove.com/live-module/reviewing-live-analytics.html#Notes
+Title: Live API: Cue Points and Ad Beacons with SSAI
+Description: Updated notes for SCTE-35 cue points
+Link: https://live.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html
 Category: Live
 Status: Released
 
-Title: Implementing Playback Rights 
-Description: Added is_default and geo_global_rule fields to Playback Rights API
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html#Define_restrictions
+Title: Overview: Brightcove Playback Restrictions
+Description: Added  note that Playback Restrictions is not available for Brightcove Beacon
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html
 Category: Playback Restrictions
 Status: Staging - LA
 
-Title: Host a Zoom Conference on Brightcove Live
-Description: Removed architecture diagram flow.
-Link: https://integrations.support.brightcove.com/web-conferencing/host-zoom-conference-brightcove-live.html
+Title: Live API: Error Messages
+Description: There is an RTMP error displayed when the limit of 5 output streams is reached.
+Link: https://live.support.brightcove.com/live-api/references/live-api-error-messages.html
 Category: Live
 Status: Released 
 
-Title: Auto Start/Stop of SEP Live Events in the Control Room
-Description: Update Schedule doc with a note about scheduling of redundant groups is not supported. 
-Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
-Category: Live
-Status: Released 
-
-Title: Host a Zoom Conference on Brightcove Live
-Description: Added a note referring to the Zoom integration doc
-Link: https://integrations.support.brightcove.com/web-conferencing/host-zoom-conference-brightcove-live.html
-Category: Live
-Status: Released 
+Title: Overview: Brightcove Live API
+Description: Added a current limitation on which Safari will display the CC controls for Live streams, even when there are no captions to display.
+Link: https://live.support.brightcove.com/live-api/getting-started/overview-brightcove-live-api.html
+Category: Live, Player
+Status: Released
 
 Title: Creating and Managing Live Events using the Live Module
-Description: Added information about RTMP limitations
-Link: https://live.support.brightcove.com/live-module/using-live-rtmp-outputs-stream-facebook-and-youtube.html
+Description: Added a current limitation on which Safari will display the CC controls for Live streams, even when there are no captions to display.
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
 Category: Live
 Status: Released 
 
-Title: Using Live RTMP Outputs to Stream to Facebook and YouTube
-Description: Added information about RTMP limitations
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html#rtmp
-Category: Live
+Title: Analytics Reports
+Description: Added note that bytes_delivered no longer available in reports that include analytics by player, also removed that field from some API docs
+Link: https://studio.support.brightcove.com/analytics/creating-custom-analytics-reports.html#data
+Category: Analytics
+Status: Released
+
+Title: Live API Reference
+Description: Added missing error for creating RTMP outputs - max number reached
+Link: https://live.support.brightcove.com/live-api/references/reference.html#operation/CreateRTMPOutput
+Category: Live API
+Status: Released
+
+Title: Live Ingest Profiles
+Description: Added note on how the sum of bitrates for all renditions determines the tier
+Link: https://live.support.brightcove.com/admin/standard-live-ingest-profiles.html
+Category: Live Ingest Profiles
+Status: Released
+
+Title: Live Ingest Profiles
+Description: Added notes on how to save the digital master so that videos can be retranscoded
+Link: https://studio.support.brightcove.com/admin/creating-ingest-profiles-dynamic-delivery.html, https://studio.support.brightcove.com/admin/creating-ingest-profiles-context-aware-encoding.html
+Category: Custom Ingest Profiles
+Status: Released
+
+Title: Creating Custom Fields
+Description: Added some additional reserved words that cannot be used as custom field names
+Link: https://studio.support.brightcove.com/admin/creating-custom-metadata-fields.html#reserved
+Category: Video Cloud Custom Field
+Status: Released
+
+Title: Creating Your Application Design - Layout Options
+Description: Updated app screens show in the doc
+Link: https://beacon.support.brightcove.com/getting-started/creating-your-app-design-layout-options.html
+Category: Brightcove Beacon
 Status: Released
 
 
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released
+
+
 
 Title: 
 Description: 
