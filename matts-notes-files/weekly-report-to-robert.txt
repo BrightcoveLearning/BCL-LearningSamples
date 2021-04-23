@@ -1,12 +1,11 @@
 Major accomplishments:
-** Week Ending 16 Apr **
-- Closed 16 JIRAs, 1 of which were administrivia
+** Week Ending 23 Apr **
+- Closed 12 JIRAs, 2 of which were administrivia
 JIRA Highlights Include:
-- SE KB: More configuration; added Solution Documents page and added 59 rows to the table; extracted data from Man City and put in KB
-- Moved EPG and Beacon Channels docs into LA site and updated accordingly 
-- Updated all Layout docs and in-app help to latest Beacon Studio UI. I know the UI will be changing, but want to keep the docs somewhat close so final update less work 
+- SE KB: More configuration; add two new pages; extracted data from 2 stories; added links to our documentation, where appropriate
+- Updated Beacon Configuration Wizard after meeting with Doug, Mike and Teron
+- Added new page type (Purchased) to Beacon non-configurable pages doc
 Work NOT Reflected in JIRAs:
-- Half way done extracting data from Al Jazeera entry in Kanban board into SE KB
 - A boatload of meetings
 
 
