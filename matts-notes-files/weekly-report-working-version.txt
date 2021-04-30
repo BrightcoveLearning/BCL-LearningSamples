@@ -1,73 +1,102 @@
 New docs:
 
-None this week
+Title: Beacon Apps Ad Targeting
+Description: Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider.
+Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
+Category: Beacon monetization
+Status: Released
+
+Title: Overview: Beacon Advanced Monetization
+Description: This topic provides an overview of the integration between Brightcove Beacon and Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
+Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/overview-beacon-evergent.html
+Category: Beacon monetization
+Status: Internal
+
+Title: Locating Accounts in the Evergent CRM
+Description: This topic provides a guide to logging in and finding an existing account in the Evergent CRM system. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
+Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-finding-accounts.html
+Category: Beacon monetization
+Status: Internal
+
+Title: Evergent: Managing Account Details
+Description: This topic provides a guide to managing your user accounts in Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
+Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-managing-account-details.html
+Category: Beacon monetization
+Status: Internal
+
+Title: Evergent: Billing and Finance
+Description: This topic provides a guide to managing billing and finance records for your users. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
+Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-billing-finance.html
+Category: Beacon monetization
+Status: Internal
+
+Title: Evergent: Emailer and Coupons
+Description: This topic provides a guide to managing the emailer and coupon generation in Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
+Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/emailer-coupons.html
+Category: Beacon monetization
+Status: Internal
+
+Title: Using HLSe with Device Limits and Stream Concurrency 
+Description: In this topic, you will learn how to enable device limits and limit concurrent streams using HLSe and Brightcove Playback Restrictions.
+Link: https://apis.support.brightcove.com/playback-restrictions/guides/hlse-limits-and-concurrency.html
+Category: Playback Restrictions
+Status: Staging - LA
 
 
 Major updates:
 
-Title: Context Aware Encoding
-Description: select_distinct_configurations - If true, CAE will ensure that no two renditions use the same combination of: resolution, frame rate, and codec profile
-Link: https://apis.support.brightcove.com/ingest-profiles/references/ingest-profiles-api-fields-reference-dynamic-delivery-and-context-aware-encoding.html
-Category: Dynamic Ingest, CAE
+Title: Viewing Billing Information
+Description: Added section indicating that locked accounts will continue to show up in billing data for up to 60 days
+Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
+Category: 
 Status: Released
 
-Title: Context Aware Encoding Settings
-Description: select_distinct_configurations - If true, CAE will ensure that no two renditions use the same combination of: resolution, frame rate, and codec profile
-Link: https://zencoder.support.brightcove.com/encoding-settings/general/cae-settings.html#select_distinct_configurations
-Category: Zencoder, CAE
+Title: Overview: Brightcove Playback Restrictions
+Description: Updated Playback Restrictions for non-Brightcove players
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html
+Category: Playback Restrictions
+Status: Staging - LA
+
+Title: Live Redundancy
+Description: Added new section for Redundant Group deletion from the Completed Tab.
+Link: https://live.support.brightcove.com/live-module/live-redundancy.html
+Category: Live
+Status: Staging - LA
+
+Title: Auto Start/Stop of Live Events with Static Entry Points
+Description: Added Viewing Upcoming Activations section. 
+Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
+Category: Live
+Status: Released 
+
+Title: Brightcove Player System Requirements
+Description: Major changes to browsers support
+Link: https://player.support.brightcove.com/references/brightcove-player-system-requirements.html
+Category: Brightcove Player
 Status: Released
 
 
 Minor updates:
 
-Title: Live Release Notes
-Description: Add scheduling job events release
-Link: https://live.support.brightcove.com/release-notes/live-api-release-notes.html
-Category: Live
-Status: Released
-
-Title: Creating and Managing Live Events using the Live Module
-Description: Added information about RTMP limitations
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
-Category: Live
-Status: Released
-
-Title: Automatic Captions
-Description: tweaked code: use one(‘play’…) instead of on(‘metadataloaded’…)
-Link: https://support.brightcove.com/adding-captions-videos-programmatically#pubcode
-Category: Player, Captions
-Status: Released
-
-Title: Static URL Delivery
-Description: Updated the Widevine URL
-Link: https://apis.support.brightcove.com/playback/guides/static-url-delivery.html#Using_Content_protection_DRM
-Category: Playback API
-Status: Released
-
 Title: Implementing Playback Rights
-Description: Added hosting property to blocked_proxies object
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html#Define_restrictions
+Description: Added notes about the default Playback Right
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html
 Category: Playback Restrictions
 Status: Staging - LA
 
-Title: Playback Rights API Reference
-Description: Added hosting property to blocked_proxies object
-Link: https://apis.support.brightcove.com/playback-restrictions/references/playback-rights/reference.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Including Non-Configurable Pages
-Description: Added new "Purchased" non-configurable page type 
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/including-non-configurable-pages.html
-Category: Brightcove Beacon
-Status: Released
-
-Title: Brightcove Player Error Reference
-Description: Added content that the default player timeout error is thrown after 45 seconds
-Link: https://player.support.brightcove.com/references/brightcove-player-error-reference.html#Custom_Brightcove_errors
+Title: Quality Selection Plugin
+Description: Added content on how to configure options using Video Cloud Studio
+Link: https://player.support.brightcove.com/plugins/quality-selection-plugin.html#Configuration_options
 Category: Brightcove Player
 Status: Released
 
+Title: Known Issues
+Description: Added new known issue on mobile web device width
+Link: https://beacon.support.brightcove.com/references/known-issues.html
+Category: Brightcove Beacon
+Status: Released
+
+
 
 
 
@@ -87,12 +116,6 @@ Category:
 Status: Released | LA | Internal
 Type: Major Update
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
@@ -108,6 +131,20 @@ Category:
 Status: Released | LA | Internal
 Type: Major Update
 
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
 
 
 
