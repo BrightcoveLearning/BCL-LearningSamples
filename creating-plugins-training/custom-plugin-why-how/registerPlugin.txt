@@ -1,0 +1,1 @@
+videojs.registerPlugin('pluginName', function() {

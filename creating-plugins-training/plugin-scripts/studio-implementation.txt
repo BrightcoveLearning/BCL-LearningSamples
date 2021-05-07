@@ -1,0 +1,9 @@
+Once you have a custom plugin written, and the correct CSS and JavaScript files created, it’s time to use it. You have two choices, implementing the plugin in Studio or via code. The nice thing about using Studio is that you need no other code on the page on which the player is used. What you sacrifice is easier modification. When you implement a custom plugin in code you can pass data to the plugin, if it is written to accept options.
+
+Let's implement a custom plugin in Studio. Navigate to Studio's PLAYERS module and either create a new player, or choose an existing player, in which to implement the plugin. Once in the player's properties, click on the Plugins section. In the UI for plugins we will add a Custom Plugin.
+
+For our plugin, we will provide the name, JavaScript URL and CSS URL. This particular custom plugin uses no options.
+
+Now click save, publish the player, and the enhanced player is ready to go.
+
+Remember, anytime this player is used, it will now contain the custom plugin’s functionality.

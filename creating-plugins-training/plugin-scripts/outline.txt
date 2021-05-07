@@ -1,0 +1,9 @@
+1. Why and how for a custom plugin
+2. Converting custom code to a plugin
+3. Use a custom plugin in Studio
+4. use a custom plugin in code
+5. pass data to a custom plugin
+
+
+Custom Plugin - Studio Implementation
+Custom Plugin - Code Implementation

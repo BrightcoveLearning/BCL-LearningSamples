@@ -1,0 +1,13 @@
+Before creating a custom plugin you should know why you want to do that. The reasons are many, but two obvious ones will be discussed in this video.
+
+First, you want to add some functionality to multiple players without having to copy the same code again and again into different locations. The problem with having the code in multiple locations is, of course, you have to update it in multiple locations if you want/need to change it. Creating the code as a plugin will spare you this pain.
+
+Another great reason for creating a custom plugin, and this includes if you are only going to use it in one location, is the custom code can become part of the player. This means you don't have to have the custom CSS and JavaScript on the actual HTML page where the player is used. This means others won't be able to accidentally, or on purpose, alter the code. In Studio you can associate the code with the player, and it then becomes part of the player. Once you do this, just by using the player you gain the enhanced functionality the custom plugin provides.
+
+Now that you know you can't live without custom plugins, so how do you build them? The following high-level steps present a best practice approach to creating a custom plugin:
+1. Write the code for the enhanced functionality in one page. You will see this is the hard part of creating a custom plugin, since the process of converting working code to a plugin is quite straight forward.
+2. Create a new file that contains just the CSS. This simply means copying the CSS from the working code to a separate file with a .css extension.
+3. Create a new file that contains the JavaScript. This process is much like creating the CSS file, but there is a change that needs to be made. First copy all the JavaScript between the script tags and paste into another file, which has an .js extension. Then alter line of code that uses the getPlayer() method to code that defines the plugin.
+4. Lastly, use the plugin by linking to the CSS and JavaScript files, then call the name given to the custom plugin.
+
+That's it! You're now ready to build your own custom plugins!
