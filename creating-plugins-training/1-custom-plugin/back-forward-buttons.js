@@ -1,4 +1,6 @@
-videojs.registerPlugin('backForwardButtons', function() {
+// videojs.getPlayer('myPlayerID').ready(function () {
+
+videojs.registerPlugin('backForwardButtons', function () {
   var myPlayer = this,
       jumpAmount = 5,
       controlBar,

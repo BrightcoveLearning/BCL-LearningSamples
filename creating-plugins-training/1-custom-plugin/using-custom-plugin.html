@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Untitled Document</title>
-<link href="back-forward-buttons.css" rel="stylesheet">
+  <link href="back-forward-buttons.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,11 +18,14 @@
     class="video-js"
     controls
     width="640" height="360"></video>
+
   <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+
   <script src="back-forward-buttons.js"></script>
 
   <script>
-    videojs.getPlayer('myPlayerID').ready(function() {
+    videojs.getPlayer('myPlayerID').ready(function () {
       var myPlayer = this;
       myPlayer.backForwardButtons();
     });
