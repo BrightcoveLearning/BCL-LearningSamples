@@ -36,12 +36,28 @@ Status: Released
 Minor updates:
 
 Title: Brightcove Player Information Modal
-Description: Use new property contect_menu and remove old property debugger
+Description: Use new property context_menu and remove old property debugger
 Link: https://player.support.brightcove.com/troubleshooting/brightcove-player-information-modal.html
 Category: Brightcove Player
 Status: Released 
 
+Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
+Description: OBS notes update
+Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html
+Category: Live
+Status: Released 
 
+Title: Step-by-Step: Using the Live Module with Telestream Wirecast
+Description: Wirecast notes update
+Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html
+Category: Live
+Status: Released 
+
+Title: Live API: VOD from Live Event
+Description: Output field update
+Link: https://live.support.brightcove.com/live-api/guides/live-api-vod-live-event.html
+Category: Live
+Status: Released 
 
 
 
