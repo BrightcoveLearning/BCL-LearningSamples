@@ -1,100 +1,45 @@
 New docs:
 
-Title: Beacon Apps Ad Targeting
-Description: Beacon Apps Ad targeting allows Beacon customers to send important device-level and user-specific information from the customer’s Beacon apps to their ad server or ad provider.
-Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
-Category: Beacon monetization
+Description: Moved documents for Brightcove Playback Restrictions to production
+Link: https://apis.support.brightcove.com/playback-restrictions/index.html
+Category: Playback Restrictions
 Status: Released
 
-Title: Overview: Beacon Advanced Monetization
-Description: This topic provides an overview of the integration between Brightcove Beacon and Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
-Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/overview-beacon-evergent.html
-Category: Beacon monetization
-Status: Internal
-
-Title: Locating Accounts in the Evergent CRM
-Description: This topic provides a guide to logging in and finding an existing account in the Evergent CRM system. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
-Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-finding-accounts.html
-Category: Beacon monetization
-Status: Internal
-
-Title: Evergent: Managing Account Details
-Description: This topic provides a guide to managing your user accounts in Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
-Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-managing-account-details.html
-Category: Beacon monetization
-Status: Internal
-
-Title: Evergent: Billing and Finance
-Description: This topic provides a guide to managing billing and finance records for your users. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
-Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/evergent-billing-finance.html
-Category: Beacon monetization
-Status: Internal
-
-Title: Evergent: Emailer and Coupons
-Description: This topic provides a guide to managing the emailer and coupon generation in Evergent. ***Links to these docs are not to be given to customers without approval from Teron Samuel or Jim Duval 
-Link: https://beacon.support.brightcove.com/monetization/beacon-evergent/emailer-coupons.html
-Category: Beacon monetization
-Status: Internal
-
-Title: Using HLSe with Device Limits and Stream Concurrency 
-Description: In this topic, you will learn how to enable device limits and limit concurrent streams using HLSe and Brightcove Playback Restrictions.
-Link: https://apis.support.brightcove.com/playback-restrictions/guides/hlse-limits-and-concurrency.html
-Category: Playback Restrictions
+Title: Overview: China Delivery 
+Description: In this topic, you will get a high-level overview about Brightcove's China Delivery feature
+Link: https://studio.support.brightcove.com/general/china-delivery-overview.html
+Category: China Delivery
 Status: Staging - LA
 
 
 Major updates:
 
-Title: Viewing Billing Information
-Description: Added section indicating that locked accounts will continue to show up in billing data for up to 60 days
-Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
-Category: 
+Title: Use Postman for API Requests
+Description: Completely rewritten for UI changes and new features in Postman
+Link: https://apis.support.brightcove.com/general/use-postman-api-requests.html#environmentVariables
+Category: Developer Tools
 Status: Released
 
-Title: Overview: Brightcove Playback Restrictions
-Description: Updated Playback Restrictions for non-Brightcove players
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html
+Title: Playback Restrictions with Brightcove Player
+Description: Updated making requests with/without Playback Rights to use the JSON editor in the Players module
+Link: https://player.support.brightcove.com/playback/playback-restrictions-with-bcp.html
 Category: Playback Restrictions
-Status: Staging - LA
+Status: Released
 
-Title: Live Redundancy
-Description: Added new section for Redundant Group deletion from the Completed Tab.
-Link: https://live.support.brightcove.com/live-module/live-redundancy.html
-Category: Live
-Status: Staging - LA
-
-Title: Auto Start/Stop of Live Events with Static Entry Points
-Description: Added Viewing Upcoming Activations section. 
-Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
-Category: Live
-Status: Released 
-
-Title: Brightcove Player System Requirements
-Description: Major changes to browsers support
-Link: https://player.support.brightcove.com/references/brightcove-player-system-requirements.html
+Title: Player Configuration Guide
+Description: Numerous properties added and a few removed that have been deprecated
+Link: https://player.support.brightcove.com/general/player-configuration-guide.html
 Category: Brightcove Player
 Status: Released
 
 
 Minor updates:
 
-Title: Implementing Playback Rights
-Description: Added notes about the default Playback Right
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/implementing-playback-rights.html
-Category: Playback Restrictions
-Status: Staging - LA
-
-Title: Quality Selection Plugin
-Description: Added content on how to configure options using Video Cloud Studio
-Link: https://player.support.brightcove.com/plugins/quality-selection-plugin.html#Configuration_options
+Title: Brightcove Player Information Modal
+Description: Use new property contect_menu and remove old property debugger
+Link: https://player.support.brightcove.com/troubleshooting/brightcove-player-information-modal.html
 Category: Brightcove Player
-Status: Released
-
-Title: Known Issues
-Description: Added new known issue on mobile web device width
-Link: https://beacon.support.brightcove.com/references/known-issues.html
-Category: Brightcove Beacon
-Status: Released
+Status: Released 
 
 
 
@@ -102,19 +47,6 @@ Status: Released
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 
 Title: 
