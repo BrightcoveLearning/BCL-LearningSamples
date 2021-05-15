@@ -1,76 +1,29 @@
 New docs:
 
-Description: Moved documents for Brightcove Playback Restrictions to production
-Link: https://apis.support.brightcove.com/playback-restrictions/index.html
-Category: Playback Restrictions
-Status: Released
 
-Title: Overview: China Delivery 
-Description: In this topic, you will get a high-level overview about Brightcove's China Delivery feature
-Link: https://studio.support.brightcove.com/general/china-delivery-overview.html
-Category: China Delivery
-Status: Staging - LA
 
 
 Major updates:
 
-Title: Use Postman for API Requests
-Description: Completely rewritten for UI changes and new features in Postman
-Link: https://apis.support.brightcove.com/general/use-postman-api-requests.html#environmentVariables
-Category: Developer Tools
+Title: Creating an Advertisement
+Description: In this topic, you will learn how to create an advertisement configuration to which you can add video content.
+Link: https://beacon.support.brightcove.com/monetization/ssai/advertisement.html
+Category: Brightcove Beacon
 Status: Released
 
-Title: Playback Restrictions with Brightcove Player
-Description: Updated making requests with/without Playback Rights to use the JSON editor in the Players module
-Link: https://player.support.brightcove.com/playback/playback-restrictions-with-bcp.html
-Category: Playback Restrictions
-Status: Released
-
-Title: Player Configuration Guide
-Description: Numerous properties added and a few removed that have been deprecated
-Link: https://player.support.brightcove.com/general/player-configuration-guide.html
-Category: Brightcove Player
+Title: Beacon Apps Ad Targeting
+Description: Restructured document
+Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
+Category: Brightcove Beacon
 Status: Released
 
 
 Minor updates:
 
-Title: Brightcove Player Information Modal
-Description: Use new property context_menu and remove old property debugger
-Link: https://player.support.brightcove.com/troubleshooting/brightcove-player-information-modal.html
-Category: Brightcove Player
-Status: Released 
-
-Title: Step-by-Step: Using the Live Module with Open Broadcaster Software (OBS)
-Description: OBS notes update
-Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-open-broadcaster-software-obs.html
-Category: Live
-Status: Released 
-
-Title: Step-by-Step: Using the Live Module with Telestream Wirecast
-Description: Wirecast notes update
-Link: https://live.support.brightcove.com/get-started/step-step-using-live-module-telestream-wirecast.html
-Category: Live
-Status: Released 
-
-Title: Live API: VOD from Live Event
-Description: Output field update
-Link: https://live.support.brightcove.com/live-api/guides/live-api-vod-live-event.html
-Category: Live
-Status: Released 
 
 
 
 
-
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
