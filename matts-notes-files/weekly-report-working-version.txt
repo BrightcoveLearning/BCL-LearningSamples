@@ -1,9 +1,28 @@
 New docs:
 
+Title: Adding Mid-Roll Ads to a Channel
+Description: This topic covers adding mid-roll ads to VOD content in Cloud Playout channels.
+Link: https://studio.support.brightcove.com/cloud-playout/mid-roll-ad-insertion.html
+Category: Cloud Playout
+Status: Released
 
+Title: Reset Your Support Portal Password
+Description: In this topic you will learn how to reset your Support Portal password.
+Link: https://general.support.brightcove.com/support/reset-support-portal-password.html
+Category: General Information
+Status: Released
 
+Title: Activate/Deactivate or Schedule Videos
+Description: This topic shows how to activate, deactivate, or schedule a video using the CMS API.
+Link: https://apis.support.brightcove.com/cms/managing-videos/activate-deactivate-videos.html
+Category: CMS API
+Status: Released
 
-Major updates:
+Title: Using Page Types
+Description: In this topic, you will learn about the different page types, how they appear in your apps and how they fit into the page creation process.
+Link: https://beacon-help.support.brightcove.com/pages/using-page-types.html
+Category: Brightcove Beacon
+Status: LA
 
 Title: Creating an Advertisement
 Description: In this topic, you will learn how to create an advertisement configuration to which you can add video content.
@@ -11,68 +30,64 @@ Link: https://beacon.support.brightcove.com/monetization/ssai/advertisement.html
 Category: Brightcove Beacon
 Status: Released
 
-Title: Beacon Apps Ad Targeting
-Description: Restructured document
-Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
-Category: Brightcove Beacon
-Status: Released
-
-
-Minor updates:
-
-
-
-
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-
-
-
-New docs:
-
-Title: How Brightcove Beacon Gets Data
-Description: In this topic, you will learn how Brightcove Beacon obtains the various types of data used in building its apps. Also included is information covering the details of authentication.
-Link: https://beacon.support.brightcove.com/references/how-beacon-gets-data.html
-Category: Brightcove Beacon
-Status: Released
 
 Major updates:
 
-Title: AMP Using a Video Cloud Video
-Description: Removed advertising info since not in separate document
-Link: https://player.support.brightcove.com/amp/amp-using-video-cloud-video.html
-Category: AMP & Brightcove Player
+Title: Picture-in-Picture Plugin
+Description: Added major content detailing difference between native picture-in-picture functionality and that of the Brightcove Player plugin
+Link: https://player.support.brightcove.com/plugins/picture-picture-plugin-aka-floating-or-pinned.html#Brightcove_plugin_versus_native_functionality
+Category: Brightcove Player
 Status: Released
-Type: Major Update
+
 
 Minor updates:
 
-Title: 
-Description: Removed advertising info since not in separate document
-Link: 
-Category: AMP & Brightcove Player
+Title: Supported Video and Audio Formats
+Description: Added notes that HLS and DASH manifests are not supported as inputs for Zencoder
+Link: https://zencoder.support.brightcove.com/general-information/supported-video-and-audio-formats-codecs-and-containers.html
+Category: Zencoder
 Status: Released
+
+Title: CMS API Reference and Video Fields Reference
+Description: Added notes that schedule dates may be input with timezone values, but these are converted to, saved as, and returned as UTC values
+Link: https://apis.support.brightcove.com/cms/references/reference.html, https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html#schedule
+Category: CMS API
+Status: Released
+
+Title: Advertising with the IMA3 Plugin
+Description: Add a section on e GDPR Transparency and Consent Framework (TCF) macros
+Link: https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#TCF_macros
+Category: Brightcove Player
+Status: Released
+
+Title: Display Overlay Plugin
+Description: Updated code and added content to reflect if only using VOD content for the start event, you can use loadedmetadata instead of loadstart . If streaming content you must use loadstart.
+Link: https://player.support.brightcove.com/plugins/display-overlay-plugin.html 
+Category: Brightcove Player
+Status: Released
+
+
+
+
+
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+
+
+
+
 
 
