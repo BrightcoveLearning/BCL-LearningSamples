@@ -30,6 +30,24 @@ Link: https://beacon.support.brightcove.com/monetization/ssai/advertisement.html
 Category: Brightcove Beacon
 Status: Released
 
+Title: Configuring a Playlist Endscreen Using the playlist-endscreen Plugin
+Description: In this topic you will learn how you can add a playlist endscreen to a player using the playlist-endscreen plugin.
+Link: https://studio.support.brightcove.com/players/configuring-playlist-endscreen-using-plugin.html
+Category: Video Cloud
+Status: Released
+
+Title: Playlist Endscreen Plugin
+Description: In this topic, you will learn how to display a playlist at the end of a video. You can add this to a player either by using Video Cloud Studio or by using code with Brightcove Player.
+Link: https://player.support.brightcove.com/plugins/playlist-endscreen-plugin.html  
+Category: Brightcove Player
+Status: Released
+
+Title: Configuring Advertisements for Live SSAI with a Brightcove Beacon Channel
+Description: Update screenshots for the Live SSAI integration with Beacon
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/config-live-ssai-beacon.html
+Category: Live, Beacon
+Status: Released 
+
 
 Major updates:
 
@@ -37,6 +55,12 @@ Title: Picture-in-Picture Plugin
 Description: Added major content detailing difference between native picture-in-picture functionality and that of the Brightcove Player plugin
 Link: https://player.support.brightcove.com/plugins/picture-picture-plugin-aka-floating-or-pinned.html#Brightcove_plugin_versus_native_functionality
 Category: Brightcove Player
+Status: Released
+
+Title: Using Live SSAI with the Native SDKs
+Description: Updated steps to select your ad configuration before copying the embed code
+Link: https://sdks.support.brightcove.com/features/using-live-ssai-native-sdks.html   
+Category: Native SDKs
 Status: Released
 
 
@@ -65,6 +89,25 @@ Description: Updated code and added content to reflect if only using VOD content
 Link: https://player.support.brightcove.com/plugins/display-overlay-plugin.html 
 Category: Brightcove Player
 Status: Released
+
+Title: China Delivery with the Native SDKs
+Description: Updated support info for the Native SDK for Android
+Link: https://sdks.support.brightcove.com/features/china-delivery-sdks.html 
+Category: China Delivery
+Status: Staging - LA
+
+Title: Known Issues: Brightcove Native Player SDKs
+Description: Added note that subtitles now work with the latest release of the Android SDK
+Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android  
+Category: Native SDKs
+Status: Released
+
+Title: Creating and Managing Live Events using the Live Module
+Description: Added a recurrent event limitation description.  
+Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
+Category: Live
+Status: Released 
+
 
 
 
