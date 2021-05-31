@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 28 May **
+- Closed 17 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Updated all LA Pages/Layout module docs to latest UI
+- I was using the term "Brightcove Beacon" for Beacon Classic, so updated all those instance in LA docs
+- Created When to Use Beacon Studio and/or Beacon Classic page that shows what docs LA customers must use Classic and VC Studio
+Work NOT Reflected in JIRAs:
+- Started updating in-app help to latest UI
+- A boatload of meetings
+
+
 ** Week Ending 21 May **
 - Closed 13 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:

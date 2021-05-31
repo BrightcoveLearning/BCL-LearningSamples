@@ -1,118 +1,97 @@
 New docs:
 
-Title: Adding Mid-Roll Ads to a Channel
-Description: This topic covers adding mid-roll ads to VOD content in Cloud Playout channels.
-Link: https://studio.support.brightcove.com/cloud-playout/mid-roll-ad-insertion.html
-Category: Cloud Playout
+Title: (China Delivery documents)
+Description: Moved 3 documents to production
+Link: https://studio.support.brightcove.com/general/china-delivery-overview.html 
+Link: https://player.support.brightcove.com/playback/china-delivery-with-bcp.html 
+Link: https://sdks.support.brightcove.com/features/china-delivery-sdks.html 
+Category: China Delivery
 Status: Released
-
-Title: Reset Your Support Portal Password
-Description: In this topic you will learn how to reset your Support Portal password.
-Link: https://general.support.brightcove.com/support/reset-support-portal-password.html
-Category: General Information
-Status: Released
-
-Title: Activate/Deactivate or Schedule Videos
-Description: This topic shows how to activate, deactivate, or schedule a video using the CMS API.
-Link: https://apis.support.brightcove.com/cms/managing-videos/activate-deactivate-videos.html
-Category: CMS API
-Status: Released
-
-Title: Using Page Types
-Description: In this topic, you will learn about the different page types, how they appear in your apps and how they fit into the page creation process.
-Link: https://beacon-help.support.brightcove.com/pages/using-page-types.html
-Category: Brightcove Beacon
-Status: LA
-
-Title: Creating an Advertisement
-Description: In this topic, you will learn how to create an advertisement configuration to which you can add video content.
-Link: https://beacon.support.brightcove.com/monetization/ssai/advertisement.html
-Category: Brightcove Beacon
-Status: Released
-
-Title: Configuring a Playlist Endscreen Using the playlist-endscreen Plugin
-Description: In this topic you will learn how you can add a playlist endscreen to a player using the playlist-endscreen plugin.
-Link: https://studio.support.brightcove.com/players/configuring-playlist-endscreen-using-plugin.html
-Category: Video Cloud
-Status: Released
-
-Title: Playlist Endscreen Plugin
-Description: In this topic, you will learn how to display a playlist at the end of a video. You can add this to a player either by using Video Cloud Studio or by using code with Brightcove Player.
-Link: https://player.support.brightcove.com/plugins/playlist-endscreen-plugin.html  
-Category: Brightcove Player
-Status: Released
-
-Title: Configuring Advertisements for Live SSAI with a Brightcove Beacon Channel
-Description: Update screenshots for the Live SSAI integration with Beacon
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/config-live-ssai-beacon.html
-Category: Live, Beacon
-Status: Released 
 
 
 Major updates:
 
-Title: Picture-in-Picture Plugin
-Description: Added major content detailing difference between native picture-in-picture functionality and that of the Brightcove Player plugin
-Link: https://player.support.brightcove.com/plugins/picture-picture-plugin-aka-floating-or-pinned.html#Brightcove_plugin_versus_native_functionality
-Category: Brightcove Player
+Title: Streaming a Live Event
+Description: Update the new process to Stream a Live Event into Beacon. 
+Link:https://beacon-help.support.brightcove.com/live/streaming-live-event.html
+Category: Beacon 
+Status:  LA 
+
+Title: Streaming a Live Event into Brightcove Beacon
+Description: Update the new process to Stream a Live Event into Beacon. 
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html
+Category: Beacon 
+Status:   Released
+
+Title: Code Snippets using the Native SDK for iOS
+Description: Added code snippet for setting the audio behavior for an app
+Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html#Setting_audio_behavior  
+Category: Native SDK for iOS
 Status: Released
 
-Title: Using Live SSAI with the Native SDKs
-Description: Updated steps to select your ad configuration before copying the embed code
-Link: https://sdks.support.brightcove.com/features/using-live-ssai-native-sdks.html   
-Category: Native SDKs
-Status: Released
+Title: Managing Pages Index Page
+Description: All six Managnig Pages documents updated to latest LA UI
+Link: https://beacon-help.support.brightcove.com/pages/index.html
+Category: Brightcove Beacon
+Status: LA
 
 
 Minor updates:
 
-Title: Supported Video and Audio Formats
-Description: Added notes that HLS and DASH manifests are not supported as inputs for Zencoder
-Link: https://zencoder.support.brightcove.com/general-information/supported-video-and-audio-formats-codecs-and-containers.html
-Category: Zencoder
+Title: Live Module Best Practices
+Description: Added note that keyframe rate for 25fps input should be 2 seconds
+Link: https://live.support.brightcove.com/get-started/live-module-guidelines-and-best-practices.html#inputstream
+Category: Live Module
 Status: Released
 
-Title: CMS API Reference and Video Fields Reference
-Description: Added notes that schedule dates may be input with timezone values, but these are converted to, saved as, and returned as UTC values
-Link: https://apis.support.brightcove.com/cms/references/reference.html, https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html#schedule
-Category: CMS API
+Title: Live API Reference
+Description: Added notes that the live playback token is not security-related and therefore doesn't expire
+Link: https://live.support.brightcove.com/live-api/references/reference.html#operation/CreatePlaybackToken
+Category: Live API
 Status: Released
 
-Title: Advertising with the IMA3 Plugin
-Description: Add a section on e GDPR Transparency and Consent Framework (TCF) macros
-Link: https://player.support.brightcove.com/plugins/advertising-ima3-plugin.html#TCF_macros
-Category: Brightcove Player
-Status: Released
-
-Title: Display Overlay Plugin
-Description: Updated code and added content to reflect if only using VOD content for the start event, you can use loadedmetadata instead of loadstart . If streaming content you must use loadstart.
-Link: https://player.support.brightcove.com/plugins/display-overlay-plugin.html 
-Category: Brightcove Player
-Status: Released
-
-Title: China Delivery with the Native SDKs
-Description: Updated support info for the Native SDK for Android
-Link: https://sdks.support.brightcove.com/features/china-delivery-sdks.html 
-Category: China Delivery
-Status: Staging - LA
-
-Title: Known Issues: Brightcove Native Player SDKs
-Description: Added note that subtitles now work with the latest release of the Android SDK
-Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android  
-Category: Native SDKs
-Status: Released
-
-Title: Creating and Managing Live Events using the Live Module
-Description: Added a recurrent event limitation description.  
-Link: https://live.support.brightcove.com/live-module/creating-and-managing-live-events-using-live-module.html
+Title: Auto Start/Stop of Live Events with Static Entry Points
+Description: Added Recommendations and Best Practices for SEP events
+Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
 Category: Live
 Status: Released 
 
+Title: Overview: Brightcove Player SDK for iOS
+Description: Added note that mirroring with AirPlay on older devices may cause issues with text tracks
+Link: https://sdks.support.brightcove.com/ios/basics/overview-brightcove-player-sdk-ios.html#Platform_notes  
+Category: Native SDKs
+Status: Released
+
+Title: Video Cloud SSAI API
+Description: Added VOD SSAI system variable for ad.position_time
+Link: https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#System_variables 
+Category: SSAI
+Status: Released
 
 
 
 
 
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
+
+Title: 
+Description: 
+Link: 
+Category: 
+Status: Released | LA | Internal
+Type: Major Update
 
 Title: 
 Description: 
