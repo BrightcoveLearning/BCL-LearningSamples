@@ -1,5 +1,5 @@
-videojs.registerPlugin('forAnimatedGif', function () {
-  var videoLoopNum = 0, maxPlays = 3;
+videojs.registerPlugin('forAnimatedGif2', function () {
+  var videoLoopNum = 0, maxPlays = 2;
   myPlayer = this;
   myPlayer.controlBar.hide();
   myPlayer.muted(true);

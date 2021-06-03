@@ -2,35 +2,37 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Untitled Document</title>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
 </head>
 
 <body>
 
-    <video-js id="myPlayerID" data-account="6225316964001" data-player="Qznf2bKtV" data-embed="default" controls="" data-video-id="6232753991001" data-playlist-id="" data-application-id="" width="960" height="540"></video-js>
-    <script src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.min.js"></script>
+  <iframe src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.html?videoId=6256315118001" allowfullscreen="" allow="encrypted-media" width="960" height="540"></iframe>
 
-    <script>
-        var myPlayer, videoLoopNum = 0,
-            maxPlays = 3;
-        videojs.getPlayer('myPlayerID').ready(function() {
-            myPlayer = this;
-            myPlayer.controlBar.hide();
-            myPlayer.muted(true);
-            myPlayer.autoplay(true);
+  <!--   <video-js id="myPlayerID" data-account="6225316964001" data-player="Qznf2bKtV" data-embed="default" controls="" data-video-id="6232753991001" data-playlist-id="" data-application-id="" width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/6225316964001/Qznf2bKtV_default/index.min.js"></script>
 
-            myPlayer.on("ended", function() {
-                if (videoLoopNum < maxPlays - 1) { // Start video playback
-                    myPlayer.play(); // Increment number of times video played 
-                    videoLoopNum++;
-                }
-                if (videoLoopNum == maxPlays - 1) {
-                    myPlayer.controlBar.show();
-                }
-            });
-        });
-    </script>
+  <script>
+    var myPlayer, videoLoopNum = 0,
+      maxPlays = 2;
+    videojs.getPlayer('myPlayerID').ready(function () {
+      myPlayer = this;
+      myPlayer.controlBar.hide();
+      myPlayer.muted(true);
+      myPlayer.autoplay(true);
+
+      myPlayer.on("ended", function () {
+        if (videoLoopNum < maxPlays - 1) { // Start video playback
+          myPlayer.play(); // Increment number of times video played 
+          videoLoopNum++;
+        }
+        if (videoLoopNum == maxPlays - 1) {
+          myPlayer.controlBar.show();
+        }
+      });
+    });
+  </script> -->
 
 </body>
 
