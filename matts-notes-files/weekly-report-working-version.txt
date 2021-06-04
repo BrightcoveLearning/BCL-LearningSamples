@@ -1,47 +1,75 @@
 New docs:
 
-Title: (China Delivery documents)
-Description: Moved 3 documents to production
-Link: https://studio.support.brightcove.com/general/china-delivery-overview.html 
-Link: https://player.support.brightcove.com/playback/china-delivery-with-bcp.html 
-Link: https://sdks.support.brightcove.com/features/china-delivery-sdks.html 
-Category: China Delivery
+Title: Overview: Live Scheduler
+Description: This topic provides an overview of the Live Scheduler, which allows you to schedule certain actions for Live jobs.
+Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler.html
+Category: Live API
 Status: Released
 
-
-Major updates:
-
-Title: Streaming a Live Event
-Description: Update the new process to Stream a Live Event into Beacon. 
-Link:https://beacon-help.support.brightcove.com/live/streaming-live-event.html
-Category: Beacon 
-Status:  LA 
-
-Title: Streaming a Live Event into Brightcove Beacon
-Description: Update the new process to Stream a Live Event into Beacon. 
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html
-Category: Beacon 
-Status:   Released
-
-Title: Code Snippets using the Native SDK for iOS
-Description: Added code snippet for setting the audio behavior for an app
-Link: https://sdks.support.brightcove.com/ios/resources/code-snippets-using-native-sdk-ios.html#Setting_audio_behavior  
-Category: Native SDK for iOS
+Title: Scheduling Activation/Deactivation of an SEP Stream
+Description: With the JobStartStop endpoint, you can schedule the activation and deactivation of an existing live SEP job. At the specified time, our system will make the necessary API calls to activate and de-active a Job on your behalf.
+Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-stop-start.html
+Category: Live API
 Status: Released
 
-Title: Managing Pages Index Page
-Description: All six Managnig Pages documents updated to latest LA UI
-Link: https://beacon-help.support.brightcove.com/pages/index.html
+Title: Scheduling Clip Generation for an Live Streams
+Description: With the Clip endpoint, you can schedule the clip event of an existing live job. At the specified time, our system will make the necessary API calls to start a Clip Job on your behalf.
+Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-clips.html
+Category: Live API
+Status: Released
+
+Title: Live Scheduler Notifications
+Description: When creating workflows with the scheduler, you can optionally configure notifications.
+Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-notifications.html
+Category: Live API
+Status: Released
+
+Title: When to Use Beacon Studio and/or Beacon Classic
+Description: In this topic, you will learn that in Brightcove Beacon Limited Availability (LA) not all implementation tasks can be done in Beacon Studio. Sometimes you will also need to use Beacon Classic and/or Video Cloud Studio.
+Link: https://beacon-help.support.brightcove.com/general/beacon-studio-or-classic.html
 Category: Brightcove Beacon
 Status: LA
 
 
+Major updates:
+
+Title: Live API Reference
+Description: Added Live Scheduler endpoints
+Link: https://apis.support.brightcove.com/live-api/references/reference.html
+Category: Live api
+Status: Released 
+
+Title: Monetizing Cloud Playout
+Description: Added clarification that for SSAI enabled channels, the associated live stream must use the RTP protocol. Also applies to Cloud Playout used in Beacon.
+Link: https://studio.support.brightcove.com/cloud-playout/enabling-server-side-ads.html
+Category: Cloud Playout
+Status: Released 
+
+Title: Brightcove Live: Best Practices
+Description: Major overhaul with much more detail on the trade-offs about bitrate and profile, with attention to the kind of content to be streamed.
+Link: https://apis.support.brightcove.com/live-api/guides/brightcove-live-best-practices.html
+Category: Live API
+Status: Released 
+
+Title: Viewing Billing Information
+Description: Add the Brightcove Live DVR Hours section to the billing page. 
+Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
+Category: Studio, Live
+Status: Released 
+
+
 Minor updates:
 
-Title: Live Module Best Practices
-Description: Added note that keyframe rate for 25fps input should be 2 seconds
-Link: https://live.support.brightcove.com/get-started/live-module-guidelines-and-best-practices.html#inputstream
-Category: Live Module
+Title: Overview: Brightcove Playback Restrictions
+Description: Added note about proxy blocking
+Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html#Asset_level_restrictions  
+Category: Playback Restrictions
+Status: Released
+
+Title: Getting your BC_TOKEN
+Description: Added information about the expiration of the BC_TOKEN value
+Link: https://apis.support.brightcove.com/oauth/guides/get-your-bc-token.html
+Category: OAuth API, API authetication
 Status: Released
 
 Title: Live API Reference
@@ -50,33 +78,15 @@ Link: https://live.support.brightcove.com/live-api/references/reference.html#ope
 Category: Live API
 Status: Released
 
-Title: Auto Start/Stop of Live Events with Static Entry Points
-Description: Added Recommendations and Best Practices for SEP events
-Link: https://live.support.brightcove.com/live-module/scheduling-live-event.html
+Title: Streaming a Live Event
+Description: Added a note for the URL Notification step.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html
 Category: Live
 Status: Released 
 
-Title: Overview: Brightcove Player SDK for iOS
-Description: Added note that mirroring with AirPlay on older devices may cause issues with text tracks
-Link: https://sdks.support.brightcove.com/ios/basics/overview-brightcove-player-sdk-ios.html#Platform_notes  
-Category: Native SDKs
-Status: Released
-
-Title: Video Cloud SSAI API
-Description: Added VOD SSAI system variable for ad.position_time
-Link: https://apis.support.brightcove.com/ssai/getting-started/video-cloud-ssai-ad-config-api.html#System_variables 
-Category: SSAI
-Status: Released
 
 
 
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
 Type: Major Update
 
 Title: 
