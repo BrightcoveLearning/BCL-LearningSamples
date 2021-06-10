@@ -1,93 +1,39 @@
 New docs:
 
-Title: Overview: Live Scheduler
-Description: This topic provides an overview of the Live Scheduler, which allows you to schedule certain actions for Live jobs.
-Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler.html
-Category: Live API
-Status: Released
 
-Title: Scheduling Activation/Deactivation of an SEP Stream
-Description: With the JobStartStop endpoint, you can schedule the activation and deactivation of an existing live SEP job. At the specified time, our system will make the necessary API calls to activate and de-active a Job on your behalf.
-Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-stop-start.html
-Category: Live API
-Status: Released
-
-Title: Scheduling Clip Generation for an Live Streams
-Description: With the Clip endpoint, you can schedule the clip event of an existing live job. At the specified time, our system will make the necessary API calls to start a Clip Job on your behalf.
-Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-clips.html
-Category: Live API
-Status: Released
-
-Title: Live Scheduler Notifications
-Description: When creating workflows with the scheduler, you can optionally configure notifications.
-Link: https://apis.support.brightcove.com/live-api/guides/live-scheduler-notifications.html
-Category: Live API
-Status: Released
-
-Title: When to Use Beacon Studio and/or Beacon Classic
-Description: In this topic, you will learn that in Brightcove Beacon Limited Availability (LA) not all implementation tasks can be done in Beacon Studio. Sometimes you will also need to use Beacon Classic and/or Video Cloud Studio.
-Link: https://beacon-help.support.brightcove.com/general/beacon-studio-or-classic.html
-Category: Brightcove Beacon
-Status: LA
 
 
 Major updates:
 
-Title: Live API Reference
-Description: Added Live Scheduler endpoints
-Link: https://apis.support.brightcove.com/live-api/references/reference.html
-Category: Live api
-Status: Released 
 
-Title: Monetizing Cloud Playout
-Description: Added clarification that for SSAI enabled channels, the associated live stream must use the RTP protocol. Also applies to Cloud Playout used in Beacon.
-Link: https://studio.support.brightcove.com/cloud-playout/enabling-server-side-ads.html
-Category: Cloud Playout
-Status: Released 
-
-Title: Brightcove Live: Best Practices
-Description: Major overhaul with much more detail on the trade-offs about bitrate and profile, with attention to the kind of content to be streamed.
-Link: https://apis.support.brightcove.com/live-api/guides/brightcove-live-best-practices.html
-Category: Live API
-Status: Released 
-
-Title: Viewing Billing Information
-Description: Add the Brightcove Live DVR Hours section to the billing page. 
-Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
-Category: Studio, Live
-Status: Released 
 
 
 Minor updates:
 
-Title: Overview: Brightcove Playback Restrictions
-Description: Added note about proxy blocking
-Link: https://apis.support.brightcove.com/playback-restrictions/getting-started/overview-playback-restrictions.html#Asset_level_restrictions  
-Category: Playback Restrictions
+
+
+
+
+Title: Understanding Monetization Options
+Description: Added combos of AuthVOD/AVOD/SVOD
+Link: https://beacon.support.brightcove.com/monetization/general/monetization-options.html
+Category: Brightcove Beacon
 Status: Released
+Type: Major Update
 
-Title: Getting your BC_TOKEN
-Description: Added information about the expiration of the BC_TOKEN value
-Link: https://apis.support.brightcove.com/oauth/guides/get-your-bc-token.html
-Category: OAuth API, API authetication
+Title: Device Apps Validation Guide
+Description: Added specific version information
+Link: https://beacon.support.brightcove.com/creating-your-apps/device-apps-validation-guide.html
+Category: Brightcove Beacon
 Status: Released
+Type: Major Update
 
-Title: Live API Reference
-Description: Added notes that the live playback token is not security-related and therefore doesn't expire
-Link: https://live.support.brightcove.com/live-api/references/reference.html#operation/CreatePlaybackToken
-Category: Live API
+Title: Player Configuration Guide
+Description: Added content on new property source_selection_rules
+Link: https://player.support.brightcove.com/general/player-configuration-guide.html#video_cloud
+Category: Brightcove Player
 Status: Released
-
-Title: Streaming a Live Event
-Description: Added a note for the URL Notification step.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/streaming-live-event.html
-Category: Live
-Status: Released 
-
-
-
-
-Type: Major Update
+Type: Minor Update
 
 Title: 
 Description: 
@@ -116,7 +62,6 @@ Link:
 Category: 
 Status: Released | LA | Internal
 Type: Major Update
-
 
 
 

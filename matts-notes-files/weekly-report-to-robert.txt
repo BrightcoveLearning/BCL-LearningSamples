@@ -1,4 +1,15 @@
 Major accomplishments:
+** Week Ending 11 Jun **
+- Closed 9 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- Updated player configuration doc to include video_cloud.source_selection_rules
+- Added to the Monetization section of the non-LA Beacon docs
+- Updated first or quite a few monetization docs based on some feedback from Joao
+- Minor updates to a few Beacon LA docs with late breaking issues
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 4 Jun **
 - Closed 9 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
