@@ -34,6 +34,7 @@
       var myPlayer = this;
       myPlayer.on('play', function () {
         console.log('Bitrate of playing rendition :', myPlayer.tech(true).vhs.playlists.media().attributes.BANDWIDTH);
+        console.log(myPlayer.mediainfo);
       })
     });
   </script>
