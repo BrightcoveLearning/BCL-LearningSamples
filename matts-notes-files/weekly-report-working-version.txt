@@ -1,111 +1,25 @@
 New docs:
 
-Title: Static Image Overlays
-Description: You can use the static image overlay feature to superimpose a static image onto a video in a Cloud Playout channel. A static image is a still image that doesn't have motion. You prepare the image and store it outside of Cloud Playout and provide to us as a publicly accessible , unauthenticated http/https URL.
-Link: https://studio.support.brightcove.com/cloud-playout/static-image-overlays.html
-Category: Cloud Playout
-Status: Released
 
-Title: Retrieve Bitrate of Current Rendition
-Description: In this topic, you will learn how to retrieve the bitrate of the currently playing rendition.
-Link: https://player.support.brightcove.com/coding-topics/retrieve-bitrate-current-rendition.html
-Category: Brightcove Player
-Status: Released
 
 
 Major updates:
 
-Title: Supported Video and Audio Formats, Codecs, and Containers
-Description: Added notes on audio formats, especially around 5.1 channels
-Link: https://studio.support.brightcove.com/general/supported-video-and-audio-formats-codecs-and-containers.html
-Category: Video Cloud general information, audio format
-Status: Released
-
-Title: Advertising with the FreeWheel Plugin
-Description: Commented out Flash code and demo
-Link: https://player.support.brightcove.com/plugins/advertising-freewheel-plugin.html    
-Category: Brightcove Player
+Title: Marketing Automation - The Campaign Module
+Description: The Audience module has been renamed Campaign and all docs have been updated
+Link: https://studio.support.brightcove.com/campaign/index.html
+Category: Campaign & Audience
 Status: Released
 
 
 Minor updates:
 
-Title: Brightcove Cloud Playout Channel Manager API Reference
-Description: updated some descriptions
-Link: https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html
-Category: Cloud Playout APIs
-Status: Released
-
-Title: Autoplay Considerations
-Description: added note that muted autoplay fails in some edge cases on Chrome - and that this is up to the browser, not something we can control
-Link: https://player.support.brightcove.com/playback/autoplay-considerations.html
-Category: Brightcove Player
-Status: Released
-
-Title: Brightcove Live API: Server-Side Ad Insertion (SSAI)
-Description: added note that SSAI will increase consumption of origin bandwidth and explained why
-Link: https://apis.support.brightcove.com/live-api/ssai/live-api-server-side-ad-insertion-ssai.html
-Category: Live, SSAI
-Status: Released
-
-Title: Overview: Digital Rights Management (DRM) in Video Cloud
-Description: added note that DRM playback requires TLS 1.2 with a link to instructions on how to enable it if is not (in some older browwers)
-Link: https://studio.support.brightcove.com/general/overview-digital-rights-management-drm-video-cloud.html#Summary_of_DRM_support
-Category: DRM, Content Protection
-Status: Released
-
-Title: Integrating Your CMS with Video Cloud
-Description: added notes on handling ingest profiles
-Link: https://apis.support.brightcove.com/general/integrating-your-cms-video-cloud.html
-Category: Video Cloud integrations
-Status: Released
-
-Title: Notifications for Dynamic Ingest
-Description: added section on firewalls
-Link: https://apis.support.brightcove.com/dynamic-ingest/general/notifications-dynamic-delivery-video-cloud.html#Firewalls
-Category: Dynamic Ingest API
-Status: Released
-
-Title: Protecting Videos with HLS Encryption
-Description: added note that if HLSe is disabled for an account, encryption will be removed from videos automatically, no re-transcoding required
-Link: https://studio.support.brightcove.com/general/protecting-videos-hls-encryption.html#limitations
-Category: HLSe, Content Protection
-Status: Released
-
-Title: Chromecast Plugin for Brightcove Player
-Description: Added the appName option to override the default application name
-Link: https://player.support.brightcove.com/plugins/chromecast-plugin-brightcove-player.html    
-Category: Brightcove Player
-Status: Released
-
-Title: Static URL Delivery
-Description: Added URLs for thumbnail and poster images
-Link: https://player.support.brightcove.com/playback/static-url-delivery.html    
-Category: Brightcove Player
-Status: Released
-
-Title: Android: Understanding the BrightcovePlayer Class
-Description: Changed compile to implementation
-Link: https://sdks.support.brightcove.com/android/basics/android-understanding-brightcoveplayer-class.html#Support_library_components  
-Category: Native SDKs
-Status: Released
-
-Title: Playback Restrictions Error Reference
-Description: Added 403 error for device limits
-Link: https://apis.support.brightcove.com/playback-restrictions/references/playback-rights-errors.html  
-Category: Playback Restrictions
-Status: Released
 
 
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
+
 
 Title: 
 Description: 

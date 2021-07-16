@@ -1,4 +1,49 @@
 Major accomplishments:
+** Week Ending 16 July **
+- Closed 11 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Multi-lingual Beacon doc for Beacon Classic draft done
+- Updated Player Dev docs to new look and UI (finished this awhile ago but for got to close JIRA)
+- Note taking for Design Partner sessions
+Work NOT Reflected in JIRAs:
+- Multi-lingual Beacon doc for Beacon Studio LA draft close to finished
+- A boatload of meetings
+
+
+
+** Week Ending 9 July **
+- Closed 6 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- New player doc published: Retrieve Bitrate of Current Rendition
+
+Work NOT Reflected in JIRAs:
+- Rolling in comments on the Using Mulitple Languages Beacon doc. Jim wanted a screenshot for every item that could be updated in both the Classic and Beacon Studio. Overkill for me, but wanted to do all of the screenshots as this is the most feedback I've gotten from Jim and didn't want to discourage that.
+- Still chasing getting our Beacon app up and running, and Beacon Studio working with it 
+- A boatload of meetings
+
+
+
+** Week Ending 2 July **
+- Closed 10 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- UUpdated Getting Started Player Dev docs to new UI and changes to player code since docs were written
+- Multi-Language Beacon doc draft finished, lots of feedback to roll in (will do next week) for final version
+-A few minor Beacon doc updates from submitted JIRAs
+Work NOT Reflected in JIRAs:
+- Research on downloadable videos in Beacon (wish one person could just tell me how it works)
+- 75% done with new Brightcove Player Coding Topic doc on Retrieving Bitrate of Current Rendition (Gary K request via JIRA, and he gave me great content to work from, and immediately answered any questions I had via Slack)
+- A boatload of meetings
+
+
+** Week Ending 25 Jun **
+- Closed 10 JIRAs, 2 of which were administrivia
+JIRA Highlights Include:
+- Updated in-app help, Show Me How Layout module docs to latest UI changes
+- Couple of meetings with Jim on using Evergent Go, doc to follow
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
 ** Week Ending 11 Jun **
 - Closed 9 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
