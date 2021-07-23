@@ -1,12 +1,12 @@
 Major accomplishments:
-** Week Ending 16 July **
-- Closed 11 JIRAs, 2 of which were administrivia
+** Week Ending 23 July **
+- Closed 12 JIRAs, 3 of which were administrivia
 JIRA Highlights Include:
-- Multi-lingual Beacon doc for Beacon Classic draft done
-- Updated Player Dev docs to new look and UI (finished this awhile ago but for got to close JIRA)
-- Note taking for Design Partner sessions
+- Updated doc Adding a Trailer to Brightcove Beacon Movies, Series and Seasons (request from Iva in Onboarding)
+- New doc published Syncing with the Video Cloud Catalog 
+- Updated Layout in-app help and added five "animated gif" videos
 Work NOT Reflected in JIRAs:
-- Multi-lingual Beacon doc for Beacon Studio LA draft close to finished
+- FINALLY both versions (LA and Classic) Multi-Language Beacon doc out for second review from Jim D after HUGE changes
 - A boatload of meetings
 
 

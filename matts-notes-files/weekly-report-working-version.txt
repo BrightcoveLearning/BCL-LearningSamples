@@ -1,6 +1,10 @@
 New docs:
 
-
+Title: Syncing with the Video Cloud Catalog
+Description: In this topic, you will learn how Brightcove Beacon synchronizes with the Video Cloud catalog, including the new automated syncronization.
+Link: https://beacon.support.brightcove.com/syncing-with-video-cloud/syncing-video-cloud-catalog.html
+Category: Brightcove Beacon
+Status: Released
 
 
 Major updates:
@@ -11,29 +15,77 @@ Link: https://studio.support.brightcove.com/campaign/index.html
 Category: Campaign & Audience
 Status: Released
 
+Title: Creating a JSON Web Token (JWT)
+Description: Added a table to show claims associated with Playback Restrictions which security tier they can be used with
+Link: https://general.support.brightcove.com/developer/create-json-web-token.html#Claims_for_Playback_Restrictions   
+Category: Playback Restrictions
+Status: Released
+
+Title: Adding a Trailer to Brightcove Beacon Movies, Series and Seasons
+Description: In this topic, you will learn how to add a trailer to a movie, series and season.
+Link: https://beacon.support.brightcove.com/using-brightcove-beacon/adding-trailer-movie.html
+Category: Brightcove Beacon
+Status: Released
+
+Title: CMS API Reference
+Description: Added new search_syntax field for playlists that allows you to use v2 search syntax for more robust smart playlists
+Link: https://apis.support.brightcove.com/cms/references/reference.html
+Category: CMS API. Smart Playlists
+Status: Released
+
+Title: Publishing a Live Event to Facebook
+Description: "Unpublish after live video" section removed from the Live to Facebook settings option.
+Link: https://live.support.brightcove.com/live-module/publishing-live-event-facebook.html
+Category: Live, Social
+Status: Released 
+
 
 Minor updates:
 
+Title: Brightcove Player Sample: Download Plugin
+Description: Added explanation for the delay in downloading
+Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-download-video-plugin.html
+Category: Brightcove Player
+Status: Released
+
+Title: Brightcove Player System Requirements
+Description: Added note that HEVC video will not play on Windows 10 without a browser extension
+Link: https://player.support.brightcove.com/references/brightcove-player-system-requirements.html
+Category: Brightcove Player
+Status: Released
+
+Title: Video Source File Specifications and Recommendations
+Description: Added note that HEVC video will not play on Windows 10 without a browser extension
+Link: https://studio.support.brightcove.com/general/video-source-file-specifications-and-recommendations.html
+Category: Video Cloud General Information
+Status: Released
+
+Title: CMS API Reference
+Description: Added new field for Forensic Watermarking
+Link: https://apis.support.brightcove.com/cms/references/reference.html
+Category: CMS API
+Status: Released
+
+Title: Dynamic Ingest API Reference
+Description: Added new fields for Forensic Watermarking
+Link: https://apis.support.brightcove.com/cms/references/reference.html
+Category: Dynamic Ingest API
+Status: Released
+
+Title: Playback Restrictions with the Native SDKs
+Description: Removed Chromecast limitation with the Android SDK
+Link: https://sdks.support.brightcove.com/features/playback-restrictions-with-sdks.html  
+Category: Native SDKs
+Status: Released
+
+Title: Brightcove Native SDK for Android Release Notes
+Description: Removed BrightcoveCaptionFormat class and added support for Forensic Watermarnking
+Link: https://sdks.support.brightcove.com/android/resources/brightcove-native-sdk-android-release-notes.html  
+Category: Native SDKs
+Status: Released
 
 
 
-
-
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
