@@ -6,8 +6,8 @@ JIRA Highlights Include:
 - Published two (LA and Classic) Multi-Language Beacon docs
 - UI changed for creating packages (now called plans) in Beacon Classic UI, major updates to docs including name changes
 - Updated (and recreated two) of the six Layout module "animated gif" in-app help videos to match latest UI and standards
+- Updated Creating and Managing Pages doc for new UI
 Work NOT Reflected in JIRAs:
-- 
 - A boatload of meetings
 
 

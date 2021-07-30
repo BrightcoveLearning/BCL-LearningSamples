@@ -87,6 +87,7 @@ Link: https://studio.support.brightcove.com/training/brightcove-university.html
 Category: Brightcove University
 Status: Released
 
+
 Minor updates:
 
 Title: Live Redundancy
@@ -107,15 +108,14 @@ Link: https://player.support.brightcove.com/code-samples/brightcove-player-sampl
 Category: Brightcove Player Samples
 Status: Released
 
+Title: Creating and Managing Pages
+Description: In this topic, you will learn how to create and manage pages.
+Link: https://beacon-help.support.brightcove.com/layout/creating-managing-pages.html
+Category: Brightcove Beacon
+Status: LA
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
