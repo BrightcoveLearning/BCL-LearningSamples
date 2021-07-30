@@ -15,6 +15,12 @@ Status: LA
 
 Major updates:
 
+Title: Brightcove Player Sample: Variable Speed Playback
+Description: Removed sample code since this functionality is now part of BC Player
+Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-variable-speed-playback.html    
+Category: Brightcove Player
+Status: Released
+
 Title: Creating an SVOD Plan
 Description: In this topic, you will learn how to configure a video SVOD (subscription video on demand) plan using the Commerce tab of Brightcove Beacon. The SVOD plan implements monetization.
 Link: https://beacon.support.brightcove.com/monetization/general/creating-svod-plan.html
@@ -33,10 +39,73 @@ Link: https://beacon.support.brightcove.com/using-brightcove-beacon/adding-trail
 Category: Brightcove Beacon
 Status: Released
 
+Title: Managing Playlists Using the CMS API
+Description: Smart Playlists can now be created using the v2 search syntax, which allows more complex search strings
+Link: https://apis.support.brightcove.com/cms/managing-videos/managing-playlists-using-cms-api.html#Search_field
+Category: CMS API, Smart Playlists
+Status: Released
+
+Title: Kollective eCDN Deployment Guide
+Description: Several updates and corrections
+Link: https://integrations.support.brightcove.com/ecdn/kollective/kollective-deployment-guide.html
+Category: eCDN Integrations
+Status: Released
+
+Title: Playback API Overview and Reference
+Description: Added config_id parameter needed for Delivery Rules
+Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html and https://apis.support.brightcove.com/playback/references/reference_v2.html
+Category: Playback API, Delivery Rules
+Status: Released
+
+Title: Managing API Authentication Credentials
+Description: Added section on updating credentials
+Link: https://apis.support.brightcove.com/general/managing-api-authentication-credentials.html
+Category: OAuth API, API Authentication
+Status: Released
+
+Title: Adding Content to a Cloud Playout Channel
+Description: Added information on searching to find videos
+Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-add-content.html#add_videos
+Category: Cloud Playout
+Status: Released
+
+Title: Overview: EPG API
+Description: Added note on breaking change in permissions for API authentication and how to fix it
+Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html
+Category: Cloud Playout
+Status: Released
+
+Title: Brightcove Live: Best Practices
+Description: Added notes on recommendations for dedicated bandwidth to avoid Live event disruptions
+Link: https://live.support.brightcove.com/get-started/live-module-guidelines-and-best-practices.html
+Category: Live
+Status: Released
+
+Title: Brightcove University Training Courses
+Description: Added four new training courses
+Link: https://studio.support.brightcove.com/training/brightcove-university.html
+Category: Brightcove University
+Status: Released
 
 Minor updates:
 
+Title: Live Redundancy
+Description: Fixed a section ID that created a bad link
+Link: https://live.support.brightcove.com/live-module/live-redundancy.html#monitoring
+Category: Brightcove Live
+Status: Released
 
+Title: Getting Started with Brightcove Video Connect for the Drupal CMS
+Description: Added note: Brightcove will no longer support the 7.x-6.5 Drupal connector after 30 November 2021.
+Link: https://integrations.support.brightcove.com/drupal/getting-started-brightcove-video-connect-drupal-cms.html
+Category: CMS Connectors
+Status: Released
+
+Title: Brightcove Player Sample: Download Video Plugin and Brightcove Player Sample: Download Audio Plugin
+Description: Added notes on causes for delays in downloading the media files
+Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-download-video-plugin.html and https://player.support.brightcove.com/code-samples/brightcove-player-sample-download-audio-plugin.html
+Category: Brightcove Player Samples
+Status: Released
 
 
 
