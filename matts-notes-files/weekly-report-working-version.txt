@@ -1,119 +1,76 @@
 New docs:
 
-Title: Using Multiple Languages
-Description: In this topic, you will learn how to manage multiple languages for Brightcove Beacon. The multi-language capabilities of Brightcove Beacon apps provide you with the ability to present your content and apps in the native language of your viewers. Your viewers are able to select their language to interact with your content and apps.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/using-multiple-languages.html
-Category: Brightcove Beacon
+Title: Ad Intelligence Plugin
+Description: In this topic, you will learn how to use the Ad Intelligence plugin with Brightcove Player to generate reports that provide insights into ad performance.
+Link: https://player.support.brightcove.com/plugins/ad-intelligence-plugin.html    
+Category: Brightcove Player
+Status: Staging
+
+Title: Rename 608/708 Captions in the Player
+Description: This topic explains how to rename captions tracks for HLS in the player to conform with 608 and 708 naming requirements.
+Link: https://player.support.brightcove.com/general/rename-608-708-captions.html
+Category: Player Configuration, Accessibility, Player Management API
 Status: Released
 
-Title: Using Multiple Languages
-Description: In this topic, you will learn how to manage multiple languages for Brightcove Beacon. The multi-language capabilities of Brightcove Beacon apps provide you with the ability to present your content and apps in the native language of your viewers. Your viewers are able to select their language to interact with your content and apps.
-Link: https://beacon-help.support.brightcove.com/general/using-multiple-languages.html
-Category: Brightcove Beacon
-Status: LA
+Title: Installing the Connector for Teams
+Description: This topic covers the installation and configuration of the Brightcove Video Connector for Microsoft Teams.
+Link: https://integrations.support.brightcove.com/teams/installation.html
+Category: Video Cloud Integrations
+Status: Released
+
+Title: Using the Connector for Microsoft Teams
+Description: This topic covers using the Brightcove Connector for Microsoft Teams.
+Link: https://integrations.support.brightcove.com/teams/using.html
+Category: Video Cloud Integrations
+Status: Released
 
 
 Major updates:
 
-Title: Brightcove Player Sample: Variable Speed Playback
-Description: Removed sample code since this functionality is now part of BC Player
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-variable-speed-playback.html    
-Category: Brightcove Player
-Status: Released
-
-Title: Creating an SVOD Plan
-Description: In this topic, you will learn how to configure a video SVOD (subscription video on demand) plan using the Commerce tab of Brightcove Beacon. The SVOD plan implements monetization.
-Link: https://beacon.support.brightcove.com/monetization/general/creating-svod-plan.html
-Category: Brightcove Beacon
-Status: Released
-
-Title: Using an SVOD Plan
-Description: In this topic, you will learn how to use a video SVOD plan that was created using the Commerce tab of Brightcove Beacon.
-Link: https://beacon.support.brightcove.com/monetization/general/using-svod-plan.html
-Category: Brightcove Beacon
-Status: Released
-
-Title: Adding a Trailer to Brightcove Beacon Movies, Series and Seasons
-Description: (Expanded to include series and seasons)In this topic, you will learn how to add a trailer to a movie, series and season.
-Link: https://beacon.support.brightcove.com/using-brightcove-beacon/adding-trailer-movie.html
-Category: Brightcove Beacon
+Title: Managing Playlists Using the CMS API
+Description: Updated for renaming 608/708 captions
+Link: https://apis.support.brightcove.com/player-management/references/reference.html#operation/GetPlayerConfiguration
+Category: Player Configuration, Accessibility, Player Management API
 Status: Released
 
 Title: Managing Playlists Using the CMS API
-Description: Smart Playlists can now be created using the v2 search syntax, which allows more complex search strings
-Link: https://apis.support.brightcove.com/cms/managing-videos/managing-playlists-using-cms-api.html#Search_field
-Category: CMS API, Smart Playlists
+Description: Updated base URL to https://edge.api.brightcove.com/playback/v1 (now redirects all requests to the v2 version, except for customers still using v1)
+Link: https://apis.support.brightcove.com/playback/references/reference_v2.html
+Category: Playback API
 Status: Released
 
-Title: Kollective eCDN Deployment Guide
-Description: Several updates and corrections
-Link: https://integrations.support.brightcove.com/ecdn/kollective/kollective-deployment-guide.html
-Category: eCDN Integrations
-Status: Released
-
-Title: Playback API Overview and Reference
-Description: Added config_id parameter needed for Delivery Rules
-Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html and https://apis.support.brightcove.com/playback/references/reference_v2.html
-Category: Playback API, Delivery Rules
-Status: Released
-
-Title: Managing API Authentication Credentials
-Description: Added section on updating credentials
-Link: https://apis.support.brightcove.com/general/managing-api-authentication-credentials.html
-Category: OAuth API, API Authentication
-Status: Released
-
-Title: Adding Content to a Cloud Playout Channel
-Description: Added information on searching to find videos
-Link: https://studio.support.brightcove.com/cloud-playout/cloud-playout-add-content.html#add_videos
-Category: Cloud Playout
-Status: Released
-
-Title: Overview: EPG API
-Description: Added note on breaking change in permissions for API authentication and how to fix it
-Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-epg-api.html
-Category: Cloud Playout
-Status: Released
-
-Title: Brightcove Live: Best Practices
-Description: Added notes on recommendations for dedicated bandwidth to avoid Live event disruptions
-Link: https://live.support.brightcove.com/get-started/live-module-guidelines-and-best-practices.html
-Category: Live
-Status: Released
-
-Title: Brightcove University Training Courses
-Description: Added four new training courses
-Link: https://studio.support.brightcove.com/training/brightcove-university.html
-Category: Brightcove University
+Title: Getting Notifications When Videos Are Finished
+Description: Added PHP code for simple app to handle notifications
+Link: https://zencoder.support.brightcove.com/general-information/getting-notifications-when-videos-are-finished.html
+Category: Zencoder
 Status: Released
 
 
 Minor updates:
 
-Title: Live Redundancy
-Description: Fixed a section ID that created a bad link
-Link: https://live.support.brightcove.com/live-module/live-redundancy.html#monitoring
+Title: Google Tag Manager Plugin for Brightcove Player
+Description: Updated minimum player version required to use this plugin
+Link: https://player.support.brightcove.com/plugins/google-tag-manager-plugin-brightcove-player.html   
+Category: Brightcove Player
+Status: Released
+
+Title: Implementing Server-Side Ads in the Live Module
+Description: Added a note that the Live SSAI + DRM feature is not enabled at the moment. 
+Link: https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html
+Category: Live, SSAI
+Status: Released 
+
+Title: Known Issues: Studio and Brightcove Player
+Description: Known Live issue: Recurring events still published when inactive show 3 segments of playback
+Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html
 Category: Brightcove Live
 Status: Released
 
-Title: Getting Started with Brightcove Video Connect for the Drupal CMS
-Description: Added note: Brightcove will no longer support the 7.x-6.5 Drupal connector after 30 November 2021.
-Link: https://integrations.support.brightcove.com/drupal/getting-started-brightcove-video-connect-drupal-cms.html
-Category: CMS Connectors
+Title: Codecs and Formats
+Description: Updated to mention newer video codecs that are supported
+Link: https://zencoder.support.brightcove.com/general-information/faq-codecs-and-formats.html
+Category: Zencoder
 Status: Released
-
-Title: Brightcove Player Sample: Download Video Plugin and Brightcove Player Sample: Download Audio Plugin
-Description: Added notes on causes for delays in downloading the media files
-Link: https://player.support.brightcove.com/code-samples/brightcove-player-sample-download-video-plugin.html and https://player.support.brightcove.com/code-samples/brightcove-player-sample-download-audio-plugin.html
-Category: Brightcove Player Samples
-Status: Released
-
-Title: Creating and Managing Pages
-Description: In this topic, you will learn how to create and manage pages.
-Link: https://beacon-help.support.brightcove.com/layout/creating-managing-pages.html
-Category: Brightcove Beacon
-Status: LA
-
 
 
 

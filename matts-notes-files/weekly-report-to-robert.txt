@@ -1,5 +1,13 @@
-
 Major accomplishments:
+** Week Ending 6 August **
+- Closed 11 JIRAs, 1 of which were administrivia
+JIRA Highlights Include:
+- LOTS of fixes to Beacon LA docs and Beacon LA in-app help. Docs written quite awhile ago so needed to catch up to latest  UI.
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 30 July **
 - Closed 12 JIRAs, 3 of which were administrivia
 JIRA Highlights Include:
