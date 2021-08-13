@@ -1,92 +1,58 @@
 New docs:
 
-Title: Ad Intelligence Plugin
-Description: In this topic, you will learn how to use the Ad Intelligence plugin with Brightcove Player to generate reports that provide insights into ad performance.
-Link: https://player.support.brightcove.com/plugins/ad-intelligence-plugin.html    
-Category: Brightcove Player
-Status: Staging
-
-Title: Rename 608/708 Captions in the Player
-Description: This topic explains how to rename captions tracks for HLS in the player to conform with 608 and 708 naming requirements.
-Link: https://player.support.brightcove.com/general/rename-608-708-captions.html
-Category: Player Configuration, Accessibility, Player Management API
-Status: Released
-
-Title: Installing the Connector for Teams
-Description: This topic covers the installation and configuration of the Brightcove Video Connector for Microsoft Teams.
-Link: https://integrations.support.brightcove.com/teams/installation.html
-Category: Video Cloud Integrations
-Status: Released
-
-Title: Using the Connector for Microsoft Teams
-Description: This topic covers using the Brightcove Connector for Microsoft Teams.
-Link: https://integrations.support.brightcove.com/teams/using.html
-Category: Video Cloud Integrations
-Status: Released
 
 
 Major updates:
 
-Title: Managing Playlists Using the CMS API
-Description: Updated for renaming 608/708 captions
-Link: https://apis.support.brightcove.com/player-management/references/reference.html#operation/GetPlayerConfiguration
-Category: Player Configuration, Accessibility, Player Management API
+Title: Overview: Playback API
+Description: Updated steps for making a video request with SSAI
+Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Video_request_with_SSAI     
+Category: Playback API, SSAI
 Status: Released
 
-Title: Managing Playlists Using the CMS API
-Description: Updated base URL to https://edge.api.brightcove.com/playback/v1 (now redirects all requests to the v2 version, except for customers still using v1)
-Link: https://apis.support.brightcove.com/playback/references/reference_v2.html
-Category: Playback API
+Title: Overview: Cross-Device Resume
+Description: Added FAQ section based on answers from product team
+Link: https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html#FAQ    
+Category: XDR API
 Status: Released
 
-Title: Getting Notifications When Videos Are Finished
-Description: Added PHP code for simple app to handle notifications
-Link: https://zencoder.support.brightcove.com/general-information/getting-notifications-when-videos-are-finished.html
-Category: Zencoder
+Title: Beacon Known Issues
+Description: Expanded with information about offline playback 
+Link: Beacon Classic - https://beacon.support.brightcove.com/references/known-issues.html
+Link: Beacon LA - https://beacon-help.support.brightcove.com/general/known-issues.html
+Category: Brightcove Beacon
 Status: Released
 
 
 Minor updates:
 
-Title: Google Tag Manager Plugin for Brightcove Player
-Description: Updated minimum player version required to use this plugin
-Link: https://player.support.brightcove.com/plugins/google-tag-manager-plugin-brightcove-player.html   
-Category: Brightcove Player
+Title: Sample Templates for Universal Syndication
+Description: Fixed an error in one of the sample templates
+Link: https://apis.support.brightcove.com/social-syndication/getting-started/sample-templates-universal-syndication.html
+Category: Social Syndication APE
 Status: Released
 
-Title: Implementing Server-Side Ads in the Live Module
-Description: Added a note that the Live SSAI + DRM feature is not enabled at the moment. 
-Link: https://live.support.brightcove.com/live-module/implementing-server-side-ads-live-module.html
-Category: Live, SSAI
-Status: Released 
-
-Title: Known Issues: Studio and Brightcove Player
-Description: Known Live issue: Recurring events still published when inactive show 3 segments of playback
-Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html
-Category: Brightcove Live
+Title: Live API Reference
+Description: Added new ad_tracking_sample_percentage field that will be needed for coming SSAI Ad Logs
+Link: ad_tracking_sample_percentage
+Category: SSAI, Live API
 Status: Released
 
-Title: Codecs and Formats
-Description: Updated to mention newer video codecs that are supported
-Link: https://zencoder.support.brightcove.com/general-information/faq-codecs-and-formats.html
-Category: Zencoder
+Title: Known Issues: Brightcove Native Player SDKs
+Description: Added captions issue to Android Known Issues
+Link: https://sdks.support.brightcove.com/developer-support/questions/known-issues-brightcove-native-player-sdks.html#Native_SDK_for_Android  
+Category: Native SDKs
+Status: Released
+
+Title: Configuring Page Availability
+Description: Added info on the page status label "Scheduled"
+Link: https://beacon-help.support.brightcove.com/layout/configuring-page-availability.html#schedule
+Category: Brightcove Beacon
 Status: Released
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
