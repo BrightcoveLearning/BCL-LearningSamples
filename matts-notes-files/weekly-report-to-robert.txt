@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 13 August **
+- Closed 9 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Updated Beacon doc Known Issues 
+- Updated multiple Beacon navigation index pages 
+- Updated to the Beacon Schedule change docs (added content on new "Scheduled" page status label)
+- Added the Beacon Playlists doc to Beacon LA as new playlist functionality not yet ready in Media module
+- Updated the Branding Brightcove Beacon Apps doc based on info from Iva Dimitrova (onboarding person)
+- Added documentation information to the Beacon Studio LA Orientation slide deck
+
+Work NOT Reflected in JIRAs:
+- Finally made some progress on the Receiving In-App Purchase Notifications doc (actually setup an Amazon Simple Notification Service account and sent messages to my email and phone) ← LOTS of my time this week on this, with a little help from Jim or Jose will be able to finish it next week
+- A boatload of meetings
+
+
+
+
 ** Week Ending 6 August **
 - Closed 11 JIRAs, 1 of which were administrivia
 JIRA Highlights Include:
