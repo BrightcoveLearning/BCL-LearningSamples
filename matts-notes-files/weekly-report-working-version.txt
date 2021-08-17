@@ -1,5 +1,5 @@
 New docs:
-
+No new docs
 
 
 Major updates:
@@ -22,6 +22,12 @@ Link: Beacon Classic - https://beacon.support.brightcove.com/references/known-is
 Link: Beacon LA - https://beacon-help.support.brightcove.com/general/known-issues.html
 Category: Brightcove Beacon
 Status: Released
+
+Title: Live DRM
+Description: Added a matrix with the DRM-enabled technologies per browser. 
+Link: https://live.support.brightcove.com/general/live-drm.html
+Category: Live, DRM
+Status: Released 
 
 
 Minor updates:
