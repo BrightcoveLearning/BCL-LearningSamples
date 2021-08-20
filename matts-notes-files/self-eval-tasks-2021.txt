@@ -1,22 +1,28 @@
-One Team: Brightcove people are inquisitive, inventive, and driven by our customers’ success. When we put our heads together, we’re unstoppable.
+#### One Team: Brightcove people are inquisitive, inventive, and driven by our customers’ success. When we put our heads together, we’re unstoppable.
 *Helped Alberto
 *Started in-app conversation and worked with Jonathan and Robel to implement Carolyn's contextual help vision, then worked on Layout Module actual content (including near constrant revision)
 *Provided help to Design Team with verbiage used in UIs
 *Note taking at Design Partner sessions
 *Collected and uploaded videos for Design Team's Xtremely.com Beacon app
 *Started and maintained Document Standards document
-*Delivered training to Customer Support team on the Beacon LA Layout module 
+*Delivered training
+	-To onboarding on Beacon video courses I developed
+	-To Customer Support team on the Beacon LA Layout module 
+	-To new player engineers on developing custom plugins
 
 
-Innovation: We’ve spent more than 15 years as the pioneers of video technology. With 32 industry-defining patents and two Technology and Engineering Emmy Awards, we’ve proven that continuous innovation is in our DNA.
+
+
+### Innovation: We’ve spent more than 15 years as the pioneers of video technology. With 32 industry-defining patents and two Technology and Engineering Emmy Awards, we’ve proven that continuous innovation is in our DNA.
 *Beacon Configuration Wizard refinement and email notification plugin researched and added
 *Worked with usertesting.com and used it a few times for customer feedback
 *Developed and implemented using Video Cloud for BCLS's "animated GIF" videos
+*Performed initial implementation of Beacon Internal Knowledge Base in Confluence
 
 
 
 
-Execution: We believe that everything we do deserves our utmost effort. Because when video is done right, it has a limitless capacity to move people – so we make sure we always get it right.
+### Execution: We believe that everything we do deserves our utmost effort. Because when video is done right, it has a limitless capacity to move people – so we make sure we always get it right.
 *Developed the Beacon App (web version) created for BCLS and added content including series/seasons, AuthVOD, AVOD, SVOD and normal playlists/movies
 *Created Beacon Videos course Training on Demand: Using Video Cloud Videos/Custom Fields (five videos)
 *Created Beacon Videos course Training on Demand: Designing the Application Layout (four videos)
@@ -27,4 +33,8 @@ Execution: We believe that everything we do deserves our utmost effort. Because 
 	-Layout
 	-Monetization
 	-Analytics
+-Pushed and tracked development of Beacon LA Dashboard intro video, working with Tyler for finished product
+-Research from OTT Solution documents for Beacon Internal Knowledge Base
+
+
 

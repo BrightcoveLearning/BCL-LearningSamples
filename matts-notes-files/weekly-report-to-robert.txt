@@ -1,4 +1,17 @@
 Major accomplishments:
+** Week Ending 20 August **
+- Closed 4 JIRAs, 3 of which was administrivia
+
+JIRA Highlights Include:
+- Write self-eval review and 3 others (those take me a LONG time)
+
+Work NOT Reflected in JIRAs:
+- Started work on IMA Plugin v4 doc
+- Continue work on Receiving In-App Purchase Notifications (got review back from Jim, which some info contradicts other docs I have read on the subject)
+- A boatload of meetings
+
+
+
 ** Week Ending 13 August **
 - Closed 9 JIRAs, 1 of which was administrivia
 
@@ -13,7 +26,6 @@ JIRA Highlights Include:
 Work NOT Reflected in JIRAs:
 - Finally made some progress on the Receiving In-App Purchase Notifications doc (actually setup an Amazon Simple Notification Service account and sent messages to my email and phone) ← LOTS of my time this week on this, with a little help from Jim or Jose will be able to finish it next week
 - A boatload of meetings
-
 
 
 
