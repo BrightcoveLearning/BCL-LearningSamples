@@ -15,6 +15,12 @@ Status: LA
 
 Major updates:
 
+Title: Brightcove Social™ Documentation
+Description: All Brightcove Social™ documentation has been updated using the new Brightcove branding
+Link: https://studio.support.brightcove.com/social/index.html
+Category: Brightcove Social™ Documentation
+Status: Released
+
 Title: Overview: Playback API
 Description: Maximum videos per playlist increased to 1000. Also added information about how to retrieve videos for a playlist when there are more than 100
 Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Playlist_requests
@@ -69,12 +75,6 @@ Status: Released
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
