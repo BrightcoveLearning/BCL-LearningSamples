@@ -7,37 +7,28 @@
 </head>
 
 <body>
-
-  <!--   <video-js id="myPlayerID" data-account="1507807800001"
-    data-player="rXHplU9As"
+  <!-- <video-js id="myPlayerID" data-account="1752604059001"
+    data-player="m5mMmQpwJ"
     data-embed="default"
     controls=""
-    data-video-id=""
-    data-playlist-id="5455901760001"
-    data-application-id=""
-    width="640" height="360"></video-js>
-  <script src="https://players.brightcove.net/1507807800001/rXHplU9As_default/index.min.js"></script> -->
-
-  <video-js id="myPlayerID"
-    data-account="1507807800001"
-    data-player="default"
-    data-embed="default"
-    controls=""
-    data-video-id="6201753345001"
+    data-video-id="6077032244001"
     data-playlist-id=""
     data-application-id=""
     width="960" height="540"></video-js>
-  <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/1752604059001/m5mMmQpwJ_default/index.min.js"></script> -->
 
-  <script>
-    videojs.getPlayer('myPlayerID').ready(function () {
+  <video-js data-account="1752604059001" data-player="m5mMmQpwJ" data-embed="default" controls="" data-video-id="6152440604001" data-playlist-id="" data-application-id="" width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/m5mMmQpwJ_default/index.min.js"></script>
+
+
+  <!--   <script>
+    videojs.getPlayer('myPlayerID').on('loadedmetadata', function () {
       var myPlayer = this;
-      myPlayer.on('play', function () {
-        console.log('Bitrate of playing rendition :', myPlayer.tech(true).vhs.playlists.media().attributes.BANDWIDTH);
-        console.log(myPlayer.mediainfo);
-      })
-    });
-  </script>
+      myPlayer.ima3({
+        debug: true
+      });
+    })
+  </script> -->
 
 </body>
 

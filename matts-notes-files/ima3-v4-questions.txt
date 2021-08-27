@@ -1,0 +1,49 @@
+1. Still an issue: Conflict with gpt_proxy.js
+If using the GPT proxy script with IMA3, and the adTechOrder is HTML5 first, playback issues can occur. The IMA3 plugin will be affected when using any script that uses window.google or window.google.ima. It is suggested that you check if you're using Brightcove Player, and if so, don't load the proxy on those occasions.
+
+
+2. Replace this
+// Initialize IMA plugin
+myPlayer.ima3({
+  serverUrl: function(callback) {
+    if (myPlayer.mediainfo.id === '4034552795001') {
+      callback('https://pubads.g.doubleclick.net/.../url1');
+    } else {
+      callback('https://pubads.g.doubleclick.net/.../url2');
+    }
+  },
+  requestMode: 'onload',
+  debug: true,
+  debugContribAds: true
+});
+
+with
+
+// Initialize IMA plugin
+myPlayer.ima3({
+  serverUrl: function(callback) {
+    if (myPlayer.mediainfo.id === '4034552795001') {
+      callback('https://pubads.g.doubleclick.net/.../url1');
+    } else {
+      callback('https://pubads.g.doubleclick.net/.../url2');
+    }
+  },
+  requestMode: 'onload',
+  debug: true
+});
+
+
+Any changes made to this page will go live immediately.
+
+Brightcove recommends duplicating this page and making changes there. Learn More.
+Brightcove recommends duplicating this page for a working copy. Learn More.
+
+To avoid this, make a duplicate of this page, edit it and when satisfied with the new page, publish it and unpublish the old version.
+Duplicate Page
+
+
+Choose how all the videos in the selected playlist will be arranged on the linked page.
+Arrange all the videos in the selected playlist on the linked page.
+
+
+

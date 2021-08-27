@@ -1,128 +1,73 @@
 New docs:
 
-Title: Using Multi-Lingual Metadata
-Description: In this topic you will learn how to use multi-lingual video metadata in a Portal Experience
-Link: https://gallery.support.brightcove.com/experiences/portal/using-multi-lingual-metadata.html
-Category: Gallery
+Title: Description:https://www.gotomeet.me/RobertCrooks/learning-services
+Description: Added screenshot to show where forensic watermarking shows up in video properties
+Link: https://apis.support.brightcove.com/analytics/general/data-sent-from-brightcove-player.html
+Category: Analytics, Data Collection
 Status: Released
+
+Title: Receiving In-App Purchase Notifications
+Description: In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.
+Link: https://beacon.support.brightcove.com/monetization/general/receive-iap-notifications.html
+Category: Brightcove Beacon
+Status: LA
 
 
 Major updates:
 
-Title: Brightcove Native Player Controls
-Description: Added section about adding fast forward and rewind buttons
-Link: https://sdks.support.brightcove.com/features/brightcove-native-player-controls.html#Jump_forward_and_rewind_buttons     
-Category: Native SDKs
+Title: Overview: Playback API
+Description: Maximum videos per playlist increased to 1000. Also added information about how to retrieve videos for a playlist when there are more than 100
+Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Playlist_requests
+Category: Playback API, Playlists
+Status: Released
+
+Title: Playback API Reference
+Description: Maximum videos per limit parameter increased to 1000. Applies to general video and playlist videos requests
+Link: https://apis.support.brightcove.com/playback/references/reference_v1.html#operation/Get_Playlists_by_ID_or_Reference_ID
+Category: Playback API, Playlists
+Status: Released
+
+Title: Uploading Videos Using the Upload Module
+Description: Warning that video cannot currently be uploaded from dropbox - this is a bug introduced by a change in Dropbox, and a fix is in the works
+Link: https://studio.support.brightcove.com/media/uploading-videos-using-upload-module.html
+Category: Ingesting Videos
+Status: Released
+
+Title: Uploading Videos Using Remote URLs
+Description: Warning that video cannot currently be uploaded from dropbox - this is a bug introduced by a change in Dropbox, and a fix is in the works
+Link: https://studio.support.brightcove.com/media/uploading-videos-remote-urls.html
+Category: Ingesting Videos
 Status: Released
 
 Title: Debugging on Mobile Devices
-Description: Updated steps and images for Android debugging section
-Link: https://general.support.brightcove.com/developer/debugging-mobile-devices.html#Android_debugging      
+Description: Updated all sections for working with Android devices
+Link: https://general.support.brightcove.com/developer/debugging-mobile-devices.html      
 Category: General developer
 Status: Released
 
-Title: Managing Playlists Using the CMS API
-Description: Maximum videos per playlist increased to 1000. Also added information about how to retrieve videos for a playlist when there are more than 100
-Link: https://apis.support.brightcove.com/cms/managing-videos/managing-playlists-using-cms-api.html
-Category: CMS API, Playlists
-Status: Released
-
-Title: CMS API Reference
-Description: Maximum videos per playlist increased to 1000. Also new limit and offset params for Get Videos in Playlist request
-Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/GetVideosInPlaylist
-Category: CMS API, Playlists
-Status: Released
-
-Title: Overview: Forensic Watermarking
-Description: HEVC, Mixed-codec video, and 5.1 Audio now supported
-Link: https://apis.support.brightcove.com/general/overview-forensic-watermarking.html#related_topics
-Category: Dynamic Ingest, Uplaod Module, Forensic Watermarking
+Title: Social Sharing Plugin
+Description: Updated the options section based on engineering notes
+Link: https://player.support.brightcove.com/plugins/social-sharing-plugin.html#Options     
+Category: Brightcove Player
 Status: Released
 
 
 Minor updates:
 
-Title: Cross-Device Resume with the Native SDKs
-Description: Updated overview text to include same or different device
-Link: https://sdks.support.brightcove.com/features/cross-device-resume-sdks.html  
+Title: Known Issues
+Description: Updated issue where player does not function correctly if there is an element on the page with the id "default"
+Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html#player
+Category: Brightcove Player
+Status: Released
+
+Title: Implementing Client-Side Ads with the Native SDKs
+Description: Apple will deny any App Store "Kids" category submission using the IMA SDK
+Link: https://sdks.support.brightcove.com/features/implementing-client-side-ads-native-sdks.html#iOS_Implementation   
 Category: Native SDKs
 Status: Released
 
-Title: Cross-Device Resume with Brightcove Player
-Description: Updated overview text to include same or different device
-Link: https://player.support.brightcove.com/playback/xdr-with-bcplayer.html  
-Category: Brightcove Player
-Status: Released
-
-Title: Overview: Cross-Device Resume
-Description: Updated overview text to include same or different device
-Link: https://apis.support.brightcove.com/xdr/getting-started/xdr-overview.html   
-Category: XDR API
-Status: Released
-
-Title: Tealium Plugin for Brightcove Player
-Description: Added text to emphasize that Tealium if not platform-specific
-Link: https://player.support.brightcove.com/plugins/tealium-plugin-brightcove-player.html   
-Category: Brightcove Player
-Status: Released
-
-Title: Encoding Settings: Watermarks
-Description: Removed GIF from supported formats (no longer is)
-Link: https://zencoder.support.brightcove.com/encoding-settings/assets/encoding-settings-watermarks.html
-Category: Zencoder
-Status: Released
-
-Title: Overview: Analytics API
-Description: Added note that subsequent identical requests will return a 409 error until the initial request has be processed and the response cached
-Link: https://apis.support.brightcove.com/analytics/getting-started/overview-analytics-api-v1.html#Caching
-Category: Analytics API
-Status: Released
-
-Title: Editing Video Properties using the Media Module
-Description: Added screenshot to show where forensic watermarking shows up in video properties
-Link: https://studio.support.brightcove.com/media/editing-video-properties-using-media-module.html
-Category: Media Module, Forensic Watermarking
-Status: Released
-
-Title: Live DRM
-Description: Removed references to Internet Explorer
-Link: https://live.support.brightcove.com/general/live-drm.html#Playback_technologies_used
-Category: Live
-Status: Released
-
-Title: Working with Folders
-Description: Added note that accounts are limited to 1000 folders
-Link: https://apis.support.brightcove.com/cms/managing-videos/cms-api-working-folders.html
-Category: CMS API, Folders
-Status: Released
-
-Title: CMS API Reference
-Description: Added limit of 1000 folders, missing error code for folder limit exceeded
-Link: https://apis.support.brightcove.com/cms/references/reference.html#operation/CreateFolder
-Category: CMS API, Folders
-Status: Released
-
-Title: Live API: Insert ID3 timed metadata
-Description: Added a note in the ID3 doc for the TS stream timestamps.
-Link: https://apis.support.brightcove.com/live-api/guides/live-api-insert-id3-timed-metadata.html
-Category: Live, API
-Type: Minor Update
-
-Title: Creating Social Media Publishing Destinations
-Description: Added a YouTube warning for hidden channels.
-Link: https://studio.support.brightcove.com/social/creating-social-media-publishing-destinations.html#youtube
-Category: Social
-Status: Released 
 
 
-
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 Title: 
 Description: 
