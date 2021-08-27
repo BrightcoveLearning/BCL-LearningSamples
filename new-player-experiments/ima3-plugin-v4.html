@@ -30,6 +30,13 @@
     player.ready(function () {
       myPlayer = this;
       //Do something
+      myPlayer.on('ads-ad-started', function (evt) {
+        console.log('ads-ad-started event passed to event handler', evt);
+        console.log('myPlayer.ads.ad.id', myPlayer.ads.ad.id);
+        console.log('myPlayer.ads.ad.index', myPlayer.ads.ad.index);
+        console.log('myPlayer.ads.ad.duration', myPlayer.ads.ad.duration);
+        console.log('myPlayer.ads.ad.type', myPlayer.ads.ad.type);
+      });
     });
   </script>
 
