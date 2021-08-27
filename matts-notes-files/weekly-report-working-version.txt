@@ -12,6 +12,12 @@ Link: https://beacon.support.brightcove.com/monetization/general/receive-iap-not
 Category: Brightcove Beacon
 Status: LA
 
+Title: Scheduling App releases in the App Stores
+Description: New doc containing the App Stores information regarding App publishing release scheduling options.
+Link: https://beacon.support.brightcove.com/creating-your-apps/general/schedule-apps.html
+Category: Beacon
+Status: LA 
+
 
 Major updates:
 
@@ -56,6 +62,12 @@ Description: Updated the options section based on engineering notes
 Link: https://player.support.brightcove.com/plugins/social-sharing-plugin.html#Options     
 Category: Brightcove Player
 Status: Released
+
+Title: Live DRM
+Description: Update stream format table for Widevine DRM. 
+Link: https://live.support.brightcove.com/general/live-drm.html
+Category: Live
+Status: Released 
 
 
 Minor updates:
