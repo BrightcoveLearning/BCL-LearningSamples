@@ -2,36 +2,6 @@
 If using the GPT proxy script with IMA3, and the adTechOrder is HTML5 first, playback issues can occur. The IMA3 plugin will be affected when using any script that uses window.google or window.google.ima. It is suggested that you check if you're using Brightcove Player, and if so, don't load the proxy on those occasions.
 
 
-2. Replace this
-// Initialize IMA plugin
-myPlayer.ima3({
-  serverUrl: function(callback) {
-    if (myPlayer.mediainfo.id === '4034552795001') {
-      callback('https://pubads.g.doubleclick.net/.../url1');
-    } else {
-      callback('https://pubads.g.doubleclick.net/.../url2');
-    }
-  },
-  requestMode: 'onload',
-  debug: true,
-  debugContribAds: true
-});
-
-with
-
-// Initialize IMA plugin
-myPlayer.ima3({
-  serverUrl: function(callback) {
-    if (myPlayer.mediainfo.id === '4034552795001') {
-      callback('https://pubads.g.doubleclick.net/.../url1');
-    } else {
-      callback('https://pubads.g.doubleclick.net/.../url2');
-    }
-  },
-  requestMode: 'onload',
-  debug: true
-});
-
 
 Any changes made to this page will go live immediately.
 
