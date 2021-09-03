@@ -1,4 +1,24 @@
 Major accomplishments:
+** Week Ending 3 September **
+- Closed 14 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- New doc: Cache clear button in Beacon LA
+- New doc: Montization Resources (links from Joao and Kiran)
+- New doc: Analytics Resources (links from Joao)
+- New doc: Analytics Overview (requested by Kiran, short but needed)
+- Added new Analytics navigation group to Beacon Classic docs
+- Worked with Jim to finalize Receiving In-App Purchase Notifications doc 
+- Completed IMA Plugin v4 doc
+- Completed Migrating to IMA Plugin v4 doc
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+- Beacon doc on Related Content
+
+
+
+
 ** Week Ending 27 August **
 - Closed 4 JIRAs, 1 of which was administrivia
 

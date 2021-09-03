@@ -1,134 +1,78 @@
-New docs:
-
-Title: Description:https://www.gotomeet.me/RobertCrooks/learning-services
-Description: Added screenshot to show where forensic watermarking shows up in video properties
-Link: https://apis.support.brightcove.com/analytics/general/data-sent-from-brightcove-player.html
-Category: Analytics, Data Collection
-Status: Released
-
-Title: Receiving In-App Purchase Notifications
-Description: In this topic, you will learn the requirements for implementing an endpoint to receive in-app purchase notifications.
-Link: https://beacon.support.brightcove.com/monetization/general/receive-iap-notifications.html
-Category: Brightcove Beacon
-Status: LA
-
-Title: Scheduling App releases in the App Stores
-Description: New doc containing the App Stores information regarding App publishing release scheduling options.
-Link: https://beacon.support.brightcove.com/creating-your-apps/general/schedule-apps.html
-Category: Beacon
-Status: LA 
-
-
-Major updates:
-
-Title: Brightcove Social™ Documentation
-Description: All Brightcove Social™ documentation has been updated using the new Brightcove branding
-Link: https://studio.support.brightcove.com/social/index.html
-Category: Brightcove Social™ Documentation
-Status: Released
-
-Title: Overview: Playback API
-Description: Maximum videos per playlist increased to 1000. Also added information about how to retrieve videos for a playlist when there are more than 100
-Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html#Playlist_requests
-Category: Playback API, Playlists
-Status: Released
-
-Title: Playback API Reference
-Description: Maximum videos per limit parameter increased to 1000. Applies to general video and playlist videos requests
-Link: https://apis.support.brightcove.com/playback/references/reference_v1.html#operation/Get_Playlists_by_ID_or_Reference_ID
-Category: Playback API, Playlists
-Status: Released
-
-Title: Uploading Videos Using the Upload Module
-Description: Warning that video cannot currently be uploaded from dropbox - this is a bug introduced by a change in Dropbox, and a fix is in the works
-Link: https://studio.support.brightcove.com/media/uploading-videos-using-upload-module.html
-Category: Ingesting Videos
-Status: Released
-
-Title: Uploading Videos Using Remote URLs
-Description: Warning that video cannot currently be uploaded from dropbox - this is a bug introduced by a change in Dropbox, and a fix is in the works
-Link: https://studio.support.brightcove.com/media/uploading-videos-remote-urls.html
-Category: Ingesting Videos
-Status: Released
-
-Title: Debugging on Mobile Devices
-Description: Updated all sections for working with Android devices
-Link: https://general.support.brightcove.com/developer/debugging-mobile-devices.html      
-Category: General developer
-Status: Released
-
-Title: Social Sharing Plugin
-Description: Updated the options section based on engineering notes
-Link: https://player.support.brightcove.com/plugins/social-sharing-plugin.html#Options     
-Category: Brightcove Player
-Status: Released
-
-Title: Live DRM
-Description: Update stream format table for Widevine DRM. 
-Link: https://live.support.brightcove.com/general/live-drm.html
-Category: Live
-Status: Released 
-
-
-Minor updates:
-
-Title: Known Issues
-Description: Updated issue where player does not function correctly if there is an element on the page with the id "default"
-Link: https://general.support.brightcove.com/support/known-issues-studio-brightcove-player-and-apis.html#player
-Category: Brightcove Player
-Status: Released
-
-Title: Implementing Client-Side Ads with the Native SDKs
-Description: Apple will deny any App Store "Kids" category submission using the IMA SDK
-Link: https://sdks.support.brightcove.com/features/implementing-client-side-ads-native-sdks.html#iOS_Implementation   
-Category: Native SDKs
-Status: Released
+- date: 3-Setember-2021
+  types:
+    - type: New Docs
+      docs:
+        - Title: 'Refreshing the App Cache'
+          Description: 'In this topic, you will learn how to clear the app cache so you can refresh yours apps and see changes you have made as soon as possible.'
+          Link: https://beacon-help.support.brightcove.com/layout/clearing-cache.html
+          Category: Brightcove Beacon
+          Status: Limited Availability
+        - Title: 'Analytics Overview'
+          Description: 'In this topic, you will learn of the two different types of analytics data available for your Beacon content.'
+          Link: https://beacon.support.brightcove.com/analytics/analytics-overview.html
+          Category: Brightcove Beacon
+          Status: Released
+        - Title: 'Resources for Analytics'
+          Description: 'Resources to help you to understand analytics for your Beacon apps.'
+          Link: https://beacon.support.brightcove.com/analytics/resources.html
+          Category: Brightcove Beacon
+          Status: Released
+        - Title: 'Resources for Monetization'
+          Description: 'Resources to help you to configure monetization in the different App stores.'
+          Link: Resources for Monetization
+          Category: Brightcove Beacon
+          Status: Released   
+        - Title: 'Migrating to IMA3 Plugin Version 4'
+          Description: 'In this topic, you will be provided information about migrating to Brightcove's IMA3 Plugin version 4.'
+          Link: https://player.support.brightcove.com/plugins/migrating-ima3-plugin-v4.html
+          Category: Brightcove Player
+          Status: Limited Availability                                     
+    - type: Major updates
+      docs:
+        - Title: ‘Social Module Videos'
+          Description: 'All of the Social module videos have been updated for the blue steel branding.'
+          Link: https://studio.support.brightcove.com/training/video-cloud-studio-training-videos.html#tab6
+          Category: VIdeo Cloud
+          Status: Released    
+        - Title: 'Advertising with the IMA3 Plugin'
+          Description: 'Updated for plugin version 4'
+          Link: https://player.support.brightcove.com/plugins/advertising-ima3-v4-plugin.html
+          Category: Brightcove Beacon
+          Status: Limited Availability 
+        - Title: 'Using Delivery Rules with Brightcove Player'
+          Description: 'Added section for using the JSON editor'
+          Link: https://player.support.brightcove.com/playback/using-delivery-rules-with-bcp.html 
+          Category: Brightcove Player, Delivery Rules
+          Status: Released                     
+    - type: Minor updates
+      docs:
+        - Title: 'Picture-in-Picture Plugin'
+          Description: 'Added note that this plugin does not support captions'
+          Link: https://player.support.brightcove.com/plugins/picture-picture-plugin-aka-floating-or-pinned.html  
+          Category: Brightcove Player
+          Status: Released
 
 
 
 
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
 
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
-
-Title: 
-Description: 
-Link: 
-Category: 
-Status: Released | LA | Internal
-Type: Major Update
 
 
 
