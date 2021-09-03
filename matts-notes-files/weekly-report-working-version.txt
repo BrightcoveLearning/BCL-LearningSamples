@@ -33,7 +33,12 @@
           Description: 'All of the Social module videos have been updated for the blue steel branding.'
           Link: https://studio.support.brightcove.com/training/video-cloud-studio-training-videos.html#tab6
           Category: VIdeo Cloud
-          Status: Released    
+          Status: Released
+        - Title: 'Live Module Videos'
+          Description: 'All of the Live module videos have been updated for the blue steel branding.'
+          Link: https://live.support.brightcove.com/get-started/brightcove-live-training-videos.html
+          Category: Live
+          Status: Released              
         - Title: 'Advertising with the IMA3 Plugin'
           Description: 'Updated for plugin version 4'
           Link: https://player.support.brightcove.com/plugins/advertising-ima3-v4-plugin.html
