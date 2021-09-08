@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="./download-video.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5982565714001"
+    data-account="1752604059001"
+    data-player="S10RYv9QG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+
+  <script src="https://players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script>
+
+  <script src="./download-video.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+      myPlayer.downloadVideo();
+    });
+  </script>
+
+</body>
+
+</html>
