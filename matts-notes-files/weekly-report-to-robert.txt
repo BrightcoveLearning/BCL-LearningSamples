@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 10 September **
+- Closed 11 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- New doc: Related Content
+- Moved numerous doc that were in Beacon Classic site only to Beacon LA
+- New doc: How to setup notifications for doc updates
+- Took notes for 2 Design Partner sessions
+- Updated code and doc for download video sample doc
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 3 September **
 - Closed 14 JIRAs, 1 of which was administrivia
 
