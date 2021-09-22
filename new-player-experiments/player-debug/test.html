@@ -8,7 +8,20 @@
 
 <body>
 
-  <iframe src="https://players.brightcove.net/1507807800001/rXHplU9As_default/index.html?playlistId=1653281884164948705" allowfullscreen="" allow="encrypted-media" width="640" height="360"></iframe>
+  <video-js id="myPlayerID"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="6201753345001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <p><button onclick="toggleDebug()">Toggle Debug Mode</button></p>
+
+
 
   <!--   <video-js id="myPlayerID"
     data-account="1507807800001"
@@ -34,9 +47,20 @@
   <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script> -->
 
   <script>
+    var myPlayer;
     videojs.getPlayer('myPlayerID').ready(function () {
-      var myPlayer = this;
+      myPlayer = this;
+      myPlayer.on('debugon', function () { console.log('dispatch debugon') });
+      myPlayer.on('debugoff', function () { console.log('dispatch debugoff') });
     });
+    function toggleDebug() {
+      if (myPlayer.debug()) {
+        myPlayer.debug(false);
+      } else {
+        myPlayer.debug(true);
+      }
+      console.log('debug state: ', myPlayer.debug());
+    }
   </script>
 
 </body>
