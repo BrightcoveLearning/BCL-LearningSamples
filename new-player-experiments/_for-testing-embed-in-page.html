@@ -3,32 +3,95 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Untitled Document</title>
+  <title>Playback Rate Adjuster</title>
 </head>
 
 <body>
-  <!-- <video-js id="myPlayerID" data-account="1752604059001"
-    data-player="m5mMmQpwJ"
-    data-embed="default"
-    controls=""
-    data-video-id="6077032244001"
-    data-playlist-id=""
-    data-application-id=""
-    width="960" height="540"></video-js>
-  <script src="https://players.brightcove.net/1752604059001/m5mMmQpwJ_default/index.min.js"></script> -->
+  <h1>Playback Rate Adjuster</h1>
 
-  <video-js data-account="1752604059001" data-player="m5mMmQpwJ" data-embed="default" controls="" data-video-id="6152440604001" data-playlist-id="" data-application-id="" width="960" height="540"></video-js>
-  <script src="https://players.brightcove.net/1752604059001/m5mMmQpwJ_default/index.min.js"></script>
+  <video-js id="myPlayerID"
+	  data-video-id="5604123528001"
+	  data-account="1752604059001"
+	  data-player="default"
+	  data-embed="default"
+	  data-application-id
+	  class="video-js"
+	  width="640" height="360"
+	  controls muted></video-js>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
 
+  <script type="text/javascript">
+    const createNewRanges = (timeRanges, playbackRate) => {
+      const newRanges = [];
 
-  <!--   <script>
-    videojs.getPlayer('myPlayerID').on('loadedmetadata', function () {
-      var myPlayer = this;
-      myPlayer.ima3({
-        debug: true
+      for (let i = 0; i < timeRanges.length; i++) {
+        newRanges.push([
+          timeRanges.start(i) / playbackRate,
+          timeRanges.end(i) / playbackRate]);
+      }
+
+      return videojs.createTimeRange(newRanges);
+    };
+
+    const playbackrateAdjuster = function (player) {
+      let tech;
+
+      player.on('ratechange', function () {
+        tech.trigger('durationchange');
+        tech.trigger('timeupdate');
       });
-    })
-  </script> -->
+
+      return {
+        setSource(srcObj, next) {
+          next(null, srcObj);
+        },
+
+        setTech(newTech) {
+          tech = newTech;
+        },
+
+        duration(dur) {
+          return dur / player.playbackRate();
+        },
+
+        currentTime(ct) {
+          return ct / player.playbackRate();
+        },
+
+        setCurrentTime(ct) {
+          return ct * player.playbackRate();
+        },
+
+        buffered(bf) {
+          return createNewRanges(bf, player.playbackRate());
+        },
+
+        seekable(seekable) {
+          return createNewRanges(seekable, player.playbackRate());
+        },
+
+        played(played) {
+          return createNewRanges(played, player.playbackRate());
+        }
+
+      };
+    };
+
+    // Register the middleware with the player
+    videojs.use('*', playbackrateAdjuster);
+
+    videojs.getPlayer("myPlayerID").ready(function () {
+      // When the player is ready, get a reference to it
+      var myPlayer = this;
+      console.log("myPlayer", myPlayer)
+      // +++ Define the playback rate options +++
+      options = { "playbackRates": [0.5, 1, 1.5, 2, 4] };
+      myPlayer.controlBar.playbackRateMenuButton = myPlayer.controlBar.addChild('PlaybackRateMenuButton', {
+        playbackRates: options.playbackRates
+      });
+    });
+
+  </script>
 
 </body>
 
