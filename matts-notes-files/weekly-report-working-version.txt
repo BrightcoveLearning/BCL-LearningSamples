@@ -131,11 +131,12 @@
 
 
 
-        - Title: 'Setup Automatic Email on Documentation Updates'
-          Description: 'In this topic, you will learn how to use Distill to watch the documents updates page and automatically be emailed a notice that updates have changed.'
-          Link: https://support.brightcove.com/distill-setup.html
-          Category: General Documentation
-          Status: Released
+
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
         - Title: ''
           Description: ''
           Link: 
