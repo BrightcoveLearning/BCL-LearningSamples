@@ -1,3 +1,89 @@
+- date: 1-October-2021
+  types:
+    - type: New Docs
+      docs:
+            
+    - type: Major updates
+      docs:
+        - Title: 'https://studio.support.brightcove.com/media/generating-captions-videos.html'
+          Description: 'Added the currently supported languages'
+          Link: https://studio.support.brightcove.com/media/generating-captions-videos.html
+          Category: Video Cloud, Captions
+          Status: Released
+        - Title: 'Creating a JSON Web Token (JWT)'
+          Description: 'Added information on how to create a non-expiring JWT (with a warning that this is not recommended)'
+          Link: https://general.support.brightcove.com/developer/create-json-web-token.html
+          Category: Playback Restrictions, JWT
+          Status: Released
+        - Title: 'Platform APIs Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.apis.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Video Cloud Studio Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.studio.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Brightcove Player Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.player.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Brightcove Live Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://live.player.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Configuring Server-Side Ad Settings'
+          Description: 'Added UI option for Player Enhancements with Live SSAI'
+          Link: https://studio.support.brightcove.com/admin/configuring-server-side-ad-settings.html#live 
+          Category: Video Cloud, Live, SSAI
+          Status: Released
+        - Title: 'Configuring Server-Side Ad Settings'
+          Description: 'Added UI option for Player Enhancements with Live SSAI'
+          Link: https://beacon.support.brightcove.com/monetization/ssai/configuring-server-side-ad-settings.html#live 
+          Category: Beacon, Live, SSAI
+          Status: Released
+        - Title: 'Brightcove AirPlay Plugin'
+          Description: 'Added How it works and Implement using Studio sections'
+          Link: https://player.support.brightcove.com/plugins/airplay-plugin.html  
+          Category: Brightcove Player
+          Status: Released
+
+    - type: Minor updates
+      docs:
+        - Title: 'Configuring Search Engine Optimization Settings for a Portal Experience'
+          Description: ‘Added a section on preventing a site from being indexed'
+          Link: https://gallery.support.brightcove.com/experiences/portal/configuring-search-engine-optimization-settings-portal-experience.html#noindex
+          Category: Gallery
+          Status: Released
+        - Title: 'Policy Keys'
+          Description: 'Updated note about getting Policy Key'
+          Link:  https://sdks.support.brightcove.com/general/policy-keys.html  
+          Category: Native SDKs
+          Status: Released
+        - Title: 'Policy Keys'
+          Description: 'Updated note about getting Policy Key'
+          Link:  https://apis.support.brightcove.com/policy/getting-started/policy-keys.html   
+          Category: Policy API
+          Status: Released
+        - Title: 'Policy Keys'
+          Description: 'Updated note about getting Policy Key'
+          Link:  https://player.support.brightcove.com/content-protection/policy-keys.html  
+          Category: Brightcove Player
+          Status: Released
+        - Title: 'Ad Intelligence Plugin'
+          Description: 'Updated based on feedback'
+          Link:  https://player.support.brightcove.com/plugins/ad-intelligence-plugin.html   
+          Category: Brightcove Player
+          Status: Staging
+        - Title: 'Images and Their Specifications'
+          Description: 'Added information on Hero image specifications'
+          Link: https://beacon.support.brightcove.com/references/image-requirements.html#Hero_image
+          Category: Brightcove Beacon
+          Status: Released
+
 - date: 24-September-2021
   types:
     - type: New Docs

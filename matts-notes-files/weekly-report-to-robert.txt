@@ -1,6 +1,20 @@
 Major accomplishments:
+** Week Ending 1 October **
+- Closed 11 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Beacon doc Authentication Using OAuth out for review 
+- Minor updates to 3 Beacon docs
+- Updated Brightcove Player pre-release page to reflect single Player Update feed
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
+
 ** Week Ending 24 September **
-- Closed 12 JIRAs, 31 of which was administrivia
+- Closed 12 JIRAs, 3 of which was administrivia
 
 JIRA Highlights Include:
 - New Brightcove Player doc: Plauer Debug Mode

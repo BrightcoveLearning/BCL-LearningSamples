@@ -78,7 +78,11 @@
           Link:  https://player.support.brightcove.com/plugins/ad-intelligence-plugin.html   
           Category: Brightcove Player
           Status: Staging
-
+        - Title: 'Images and Their Specifications'
+          Description: 'Added information on Hero image specifications'
+          Link: https://beacon.support.brightcove.com/references/image-requirements.html#Hero_image
+          Category: Brightcove Beacon
+          Status: Released
 
 
 - date: 8-October-2021
@@ -110,11 +114,11 @@
 
 
 
-        - Title: ''
-          Description: ''
-          Link: 
-          Category: 
-          Status: Released | Limited Availability | Staging | Internal
+
+
+
+
+          
         - Title: ''
           Description: ''
           Link: 
