@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Display seekbar clicked time</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5701202551001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+
+  <div id="displayTimesHere"></div>
+
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script src="get-seeked-time.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sample - Related Videos from Playlist</title>
+    <!-- include the Overlay plugin's CSS -->
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
+  <style>
+    /*size the player */
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+
+    /* styling for the video thumbnails */
+    .video-thumbnail {
+      margin: 0;
+      padding: 0;
+      width: 180px;
+      height: 97px;
+      cursor: pointer;
+      border-style: solid;
+    }
+
+    /*override some of the default overlay styling*/
+    div.vjs-overlay.vjs-overlay-top {
+      width: 100%;
+      height: 90%;
+      left: 0;
+      margin-left: -1px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-video-id="4511351172001"
+    data-account="1752604059001"
+    data-player="2fc88f47-3e0f-45bc-9a11-97d9d2f22392"
+    data-embed="default"
+    class="video-js" controls></video>
+  <script src="//players.brightcove.net/1752604059001/2fc88f47-3e0f-45bc-9a11-97d9d2f22392_default/index.min.js"></script>
+  <!--include the Overlay plugin's JavaScript -->
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+
+  <script type="text/javascript">
+  var loadAndPlay,
+    myPlayer,
+    returnedPlaylist;
+
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+      var playlistID = 4609649081001,
+      htmlElement = '',
+      // build a div that will be used as overlay content
+      overlayDiv = createEl('div', {
+        id: 'bclsOverlay'
+      });
+      // get the playlist using the catalog
+      myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
+        //deal with error
+        returnedPlaylist = playlist;
+        // be sure no more than 9 videos in playlist
+        returnedPlaylist = returnedPlaylist.slice(0,9);
+        // call function to use video objects to build div using thumbnails
+        htmlElement = createVideoList(returnedPlaylist);
+        // append div of thumbnails to overlay element
+        overlayDiv.appendChild(htmlElement);
+      });
+      // use overlay plugin to display related videos on pause and video end
+      // note that only starting on pause event as on ended event a pause event is also dispatched
+      myPlayer.overlay({
+        overlays: [{
+          align: 'top',
+          content: overlayDiv,
+          start: 'pause',
+          end: 'play'
+        }]
+      });
+    });
+    /**
+     * loads and plays a video
+     * this function called with thumbnails in
+     * the overlay are clicked
+     * @param {integer} idx the index of the video object in the videoData array
+     */
+    loadAndPlay = function(idx) {
+      myPlayer.catalog.load(returnedPlaylist[idx]);
+      myPlayer.play();
+    }
+
+    /**
+     * create an element
+     *
+     * @param  {string} type - the element type
+     * @param  {object} attributes - attributes to add to the element
+     * @return {HTMLElement} the HTML element
+     */
+    function createEl(type, attributes) {
+      var el,
+        attr;
+      el = document.createElement(type);
+      if (attributes !== null) {
+        for (attr in attributes) {
+          el.setAttribute(attr, attributes[attr]);
+        }
+        return el;
+      }
+    }
+
+    /**
+     * create the html for the overlay
+     *
+     * @param {array} videoData array of video objects
+     * @return {HTMLElement} videoList the div element containing the overlay
+     */
+    function createVideoList(videoData) {
+      var i,
+        iMax = videoData.length,
+        videoList = createEl('div', {
+          id: 'videoList'
+        }),
+        videoHeader = createEl('h1', {
+          style: 'color:#666600;font-size: 2em;margin-bottom:.5em'
+        }),
+        videoWrapper = createEl('div'),
+        thumbnailLink,
+        thumbnailImage;
+      videoList.appendChild(videoWrapper);
+      for (i = 0; i < iMax; i++) {
+        thumbnailLink = createEl('a', {
+          href: 'javascript:loadAndPlay(' + i + ')'
+        })
+        thumbnailImage = createEl('img', {
+          class: 'video-thumbnail',
+          src: videoData[i].thumbnail
+        });
+        videoWrapper.appendChild(thumbnailLink);
+        thumbnailLink.appendChild(thumbnailImage);
+      }
+      return videoList;
+    }
+
+  </script>
+
+</body>
+
+</html>

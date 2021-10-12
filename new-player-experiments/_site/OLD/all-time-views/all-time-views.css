@@ -1,0 +1,21 @@
+.video-js {
+  height: 309px;
+  width: 550px;
+  float: left;
+}
+
+#bcls_alltimePlaysPlaylist {
+  max-width: 170px;
+  min-width: 150px;
+  height: 309px;
+  padding: 5px 5px 0 5px;
+  background-color: #6A8D9D;
+  /* lighter blue */
+}
+
+#bcls_alltimePlaysPlaylist .vjs-playlist-item {
+  background-color: #6A8D9D;
+  /* lighter blue */
+  margin-bottom: 5px;
+  height: 90px;
+}

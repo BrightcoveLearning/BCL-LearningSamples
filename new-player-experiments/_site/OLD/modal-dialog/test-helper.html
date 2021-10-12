@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+    .vjs-my-custom-modal .vjs-modal-dialog-content {
+      color: red;
+      margin-top: 40px;
+      margin-left: 40px;
+    }  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5079788144001"
+    data-account="1507807800001"
+    data-player="HJLWns1Zbx"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/HJLWns1Zbx_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      const myModal = myPlayer.createModal('In the modal');
+      myModal.addClass('vjs-my-custom-modal');
+    });
+  </script>
+
+</body>
+
+</html>

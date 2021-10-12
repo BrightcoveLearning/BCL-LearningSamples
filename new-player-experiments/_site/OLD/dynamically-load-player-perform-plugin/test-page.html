@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF8">
+  <title>Untitled Document</title>
+  <style>
+    iframe {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="placeHolder">
+    <button onclick="addPlayer()">Add Player</button>
+  </div>
+
+  <!-- custom script -->
+  <script type="text/JavaScript">
+    var myPlayer,
+      playerHTML,
+      playerData = { 
+        'accountId' : '3676484087001',
+        'playerId' : '68c6e257-366f-482e-926d-5ac004b740a8'
+      },
+      encodedVideoURL = 'http%3A%2F%2Fsolutions.brightcove.com%2Fbcls%2Fassets%2Fvideos%2FTiger.mp4',
+      encodedVideoType = 'video%2Fmp4';
+
+    function addPlayer() {
+      // dynamically build the player video element
+      playerHTML = '<iframe src=\"//players.brightcove.net/' + playerData.accountId + '/' + playerData.playerId + '_default/index.html?videoType=' + encodedVideoType + '&videoURL=' + encodedVideoURL + '\"' + ' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
+      
+      // inject the player code into the DOM
+      document.getElementById('placeHolder').innerHTML = playerHTML;
+    }
+  </script>
+</body>
+
+</html>

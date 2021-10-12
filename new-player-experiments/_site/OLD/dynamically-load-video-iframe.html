@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamically Change Video</title>
+
+  <!-- Page styles -->
+  <style>
+    iframe {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+  <iframe src='//players.brightcove.net/1752604059001/HkZ9oXaHtZ_default/index.html?videoId=3851380732001'
+    allowfullscreen
+    webkitallowfullscreen
+    mozallowfullscreen></iframe>
+
+  <br/>
+  <button onclick="changeVideo()">Change Video</button>
+
+  <script type="text/JavaScript">
+    // +++ Change video source via iframe src attribute +++
+    function changeVideo(){
+      var iframeTag = document.getElementsByTagName("iframe")[0],
+        newVideo = "?videoId=3851389913001",
+        theSrc = iframeTag.src,
+        srcWithoutVideo = theSrc.substring( 0, theSrc.indexOf( "?" ) ),
+        newSrc = srcWithoutVideo + newVideo;
+      iframeTag.src = newSrc;
+    }
+  </script>
+
+</body>
+</html>

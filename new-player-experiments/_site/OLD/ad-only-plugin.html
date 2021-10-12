@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+	<!-- change title to match the h1 heading -->
+	<title>Ad Only Plugin</title>
+
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/foundation.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/css/normalize.css" />
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+  <script src="//use.edgefonts.net/source-code-pro.js"></script>
+  <link rel="stylesheet" href="//learning-services-media.brightcove.com/doc-assets/js/prism/prism.css">
+  <link rel="stylesheet" href="//docs.brightcove.com/en/styles/template-less/css/bcls-doc.css">
+  <link rel="stylesheet" href="/en/styles/foundation-fixes.css">
+
+  <script>
+      (function(i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;
+          i[r] = i[r] || function() {
+              (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+          a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+          a.async = 1;
+          a.src = g;
+          m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-2728311-29', 'auto');
+      ga('send', 'pageview');
+  </script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/vendor/modernizr.js"></script>
+
+</head>
+
+<body>
+	<!-- header navbar -->
+	<div id="navWrapper" class="fixed"></div>
+	<!-- breadcrumbs -->
+	<nav id="breadCrumbWrapper" class="breadcrumbs show-for-medium-up"></nav>
+	<!-- search -->
+	<div id="searchModal" class="reveal-modal" data-reveal></div>
+	<!-- content -->
+	<!-- content -->
+	<div class="row">
+		<div class="sidebar large-2 columns show-for-large-up">
+			<div id="sidenav" class="side-nav"></div>
+		</div>
+		<div id="main" class="large-10 small-12 columns">
+      <h1>Ad Only Plugin</h1>
+    <!-- begin drupal content -->
+
+    <style>
+     iframe {
+         height: 320px;
+         width: 560px;
+     }
+    </style>
+
+    <article class="bcls-article">
+			<header id="bcls_header" class="bcls-header">
+				<!-- Place document intro sentence(s) here -->
+				<p>This plugin allows you to play only IMA3 ads in a player. No normal video content is supplied.</p>
+				<p>The sample video below demonstrates the use of the Ad Only Plugin. The ad that plays is configured as a preroll in a VMAP/VAST XML document. In this case the player is NOT set to <strong>autoplay</strong>, which you would most likely want for an ad only player, but that is a setting you can change.</p>
+        <iframe src="//players.brightcove.net/1752604059001/N1FXD7t3e_default/index.html" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+			</header>
+			<section id="implementplayersmodule" class="bcls-section">
+				<h2>Implement using Players module</h2><p></p>
+			  <p>To implement the Ad Only Plugin using the Players module, follow these steps:</p>
+			  <ol class="bcls-tasklist">
+			    <li>In Studio, open the <strong>PLAYERS</strong> module and create a player, or locate a player to which you want to add the plugin.</li>
+			    <li>Click the link for the player to open the player properties.</li>
+          <li>Locate the <strong>ADVERTISING</strong> section and click the <strong>EDIT</strong> button, and click <strong>Yes</strong> to enable IMA ads.</li>
+          <li>Supply a <strong>Server URL</strong>. For testing purposes you can use the following VMAP/VAST XML document that will display a single pre-roll ad.
+          <pre class="line-numbers"><code class="language-html">//solutions.brightcove.com/bcls/brightcove-player/vmap/one-preroll-vmap.xml</code></pre></li>
+          <li>Change the <strong>Request Ads</strong> behavior to <code>On demand</code>.</li>
+          <li>Check to be sure your <strong>ADVERTISING</strong> section appears as follows, but using your server URL.
+            <figure class="bcls-figure">
+                <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ad-only-player/studio-advertising.png" alt="studio advertising">
+            </figure>
+          </li>
+          <li>Save the advertising information.</li>
+			    <li>Locate the <strong>Plugins</strong> section and click <strong>Edit</strong>. You will be entering one JavaScript URL for this plugin.</li>
+          <li>The JavaScript for the plugin is provided and will not change for different player implementations. For the <strong>JavaScript URL</strong>, enter:
+                <pre class="line-numbers"><code class="language-html">//players.brightcove.net/videojs-ima3-tech/1/videojs-ima3-tech.min.js</code></pre>
+          </li>
+          <li>Check to be sure your <strong>PLUGINS</strong> section appears as follows.
+            <figure class="bcls-figure">
+                <img class="bcls-image" src="//learning-services-media.brightcove.com/doc-assets/player-development/advertising/ad-only-player/studio-plugins.png" alt="studio plugins">
+            </figure>
+          </li>
+          <li>Click <strong>Save</strong> and then <strong>Publish</strong> the player.</li>
+		    </ol>
+        <p>You can now use either the iframe or in-page embed player implementations to use the ad only player.</p>
+			</section>
+			<!-- <div id="implementcode" class="bcls-section">
+        <h2>Implement using code</h2>
+          <p>To implement a plugin the player needs to know the location of the plugin code, a stylesheet if needed, the plugin name and plugin configuration options. The location of the plugin code and stylesheet are as follows:</p>
+            <ul>
+              <li></li>
+              <li></li>
+      </ul>
+        <p>The name of the plugin is <code>NAME</code>, and an example set of options is:</p>
+        <p><code data-gist-id="6edffc8c896381fb71e9" data-gist-hide-footer="true" data-gist-line="1-5"></code></p>
+        <p>The following shows using the In-Page Embed implementation of the player to associate the NAME Plugin with a single instance of a player.</p>
+          <ul>
+              <li>Line 31: Uses a <code>link</code> tag to include the plugin's CSS in the <code>head</code> of the HTML page.</li>
+              <li>Line 38: Gives the <code>video</code> tag an <code>id</code> attribute, with some value, in this case <strong>video_1</strong>.</li>
+              <li>Line 46: Uses a <code>script</code> tag to include the plugin's JavaScript in the <code>body</code> of the HTML page.</li>
+              <li>Line 53: Creates a reference to the player.</li>
+              <li>Lines 56-58: Initializes the plugin and passes in custom options.</li>
+          </ul>
+          <p><code data-gist-id="6edffc8c896381fb71e9" data-gist-hide-footer="true" data-gist-line="31,37-60"></code></p>
+
+			</div>
+      <div id="properties" class="bcls-section">
+        <h2>Properties</h2>
+        <p>The following plugin properties are used to control the NAME plugin:</p>
+    		<ul>
+          <li><strong>PROPNAME</strong>:
+            <ul>
+              <li>Type: <code>string</code></li>
+              <li>explanation</li>
+            </ul>
+          </li>
+          <li><strong>PROPNAME</strong>:
+            <ul>
+              <li>Type: <code>string</code></li>
+              <li>explanation</li>
+            </ul>
+          </li>
+          <li><strong>PROPNAME</strong>:
+            <ul>
+              <li>Type: <code>string</code></li>
+              <li>explanation</li>
+            </ul>
+          </li>
+        </ul>
+      </div> -->
+
+    </article>
+    <!-- end drupal content -->
+			<section class="bcls-section" id="BCLreferences">
+				<h2>Related Topics</h2>
+				<ul>
+          <li><a href="//docs.brightcove.com/en/video-cloud/brightcove-player/guides/ima-plugin.html">Advertising with IMA3 Plugin Guide</a>
+          </li>
+				</ul>
+			</section>
+		</div>
+	</div>
+
+  <!-- bcl scripts -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.4/gist-embed.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/foundation/5.5.3/js/foundation.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="/en/scripts/docs-nav-data.min.js"></script>
+  <script src="/en/scripts/bcls-doc-site-v2.js"></script>
+  <script src="//learning-services-media.brightcove.com/doc-assets/js/bcls-utils.js"></script>
+  <script src="//learning-services-media.brightcove.com/doc-assets/js/prism/prism.js"></script>
+  <script>
+      $(document).foundation();
+  </script>
+
+
+<div style="text-align:center">
+    <iframe id="CSAT" src="//learning-services-media.brightcove.com/doc-assets/general/surveylink.html" style=" padding-bottom:20px;border:none"></iframe>
+</div>
+<div class="footer text-center"><a id="feedbackMail" href="mailto:docs@brightcove.com">Questions or comments?</a></div>
+<script>
+var feedbackMail = document.getElementById("feedbackMail");
+feedbackMail.setAttribute("href", "mailto:docs@brightcove.com?subject=question regarding " + encodeURI(document.location.href));
+</script>
+</body>
+
+</html>

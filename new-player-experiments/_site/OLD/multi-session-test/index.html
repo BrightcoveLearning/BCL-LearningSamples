@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Brightcove Player Sample: Multiple Session Playback</title>
+</head>
+
+<body>
+  <!-- Player embed code with an id attribute -->
+  <video-js id="myPlayerID"
+    data-video-id="5141730843001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640"
+    height="360"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <!-- Display the start position of the video as well as the current play position -->
+  <p>video start cookie value = <span id="cookieDisplay1"></span></p>
+  <p>current cookie value = <span id="cookieDisplay2"></span></p>
+
+  <!-- Custom script for multiple session playback -->
+  <script type="text/javascript" src="multiple-session.js"></script>
+  <script>videojs.getPlayer('myPlayerID').multipleSession();</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+      .video-js {
+        height: 365px;
+        width: 640px;
+        float: left;
+      }
+      .vjs-playlist {
+        width: 280px;
+        height: 365px;
+      }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-playlist-id="5541484620001"
+    data-account="1752604059001"
+    data-player="BkW9wHlob"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/BkW9wHlob_default/index.min.js"></script>
+
+  <ol class="vjs-playlist"></ol>
+
+  <!-- +++ Add buttons for playlist selection +++ -->
+  <button onclick="loadPlaylist(4845949311001)">Playlist 1</button>
+  <button onclick="loadPlaylist(1754200353001)">Playlist 2</button>
+  <button onclick="loadPlaylist(5541484620001)">Original Playlist</button>
+
+  <script type="text/javascript">
+    var myPlayer;
+
+    videojs('myPlayerID').one('loadedmetadata', function(){
+      myPlayer = this;
+      myPlayer.play()
+    });
+
+    // +++ Retrieve and load playlist +++
+    function loadPlaylist(playlistID){
+      myPlayer.catalog.getPlaylist(playlistID, function(error, playlist){
+        myPlayer.catalog.load(playlist);
+        myPlayer.playlist.first();
+      });
+    }
+  </script>
+
+</body>
+
+</html>

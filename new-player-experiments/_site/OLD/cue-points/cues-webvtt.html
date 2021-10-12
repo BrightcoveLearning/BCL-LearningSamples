@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID" data-video-id="4607357817001"
+    data-account="1752604059001"
+    data-player="VkIrj2aFx"
+    data-embed="default"
+    class="video-js"
+    controls
+    crossorigin="anonymous">
+
+    <track kind="metadata" src="https://solutions.brightcove.com/bcls/tests/player/cuepoints.vtt" />
+
+  </video>
+
+    <p id="insertionPoint2"></p>
+
+    <script src="//players.brightcove.net/1752604059001/VkIrj2aFx_default/index.min.js"></script>
+
+    <script type="text/javascript">
+      videojs("myPlayerID").ready(function(){
+console.log('in ready');
+        var myPlayer = this;
+
+        myPlayer.one("loadedmetadata",function(){
+console.log('in loadedmetadata');
+          var trackIndex = myPlayer.textTracks().length -1;
+          var tt = myPlayer.textTracks()[trackIndex];
+console.log('tt',tt);
+          tt.oncuechange = function() {
+            if(tt.activeCues[0] !== undefined){
+              var dynamicHTML = "id: <strong>" + tt.activeCues[0].id + "</strong>, ";
+              dynamicHTML += "text: <strong>" + tt.activeCues[0].text + "</strong>, ";
+              dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + "</strong>,  ";
+              dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "</strong>";
+              document.getElementById("insertionPoint2").innerHTML += dynamicHTML + "<br/><br/>";
+              jsonData = JSON.parse(tt.activeCues[0].text);
+              document.getElementById("insertionPoint2").innerHTML += jsonData.title + ": " + jsonData.description + "<br/><br/>";
+            } else {
+              document.getElementById("insertionPoint2").innerHTML += "<strong>Cue point duration over</strong>" + "<br/><br/>";
+            }
+          } //end oncuechange
+          //myPlayer.play();
+          myPlayer.muted(true);
+        }); //end loadedmetadata
+      }); //end ready
+    </script>
+
+</body>
+
+</html>

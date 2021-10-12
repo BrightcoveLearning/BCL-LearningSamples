@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+<iframe id="myPlayer" src='//players.brightcove.net/1507807800001/e0eae0f6-1374-4502-b954-61997ec37b6b_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+
+<button onclick="changeVideo()">change video</button>
+
+<script type="text/javascript">
+  function changeVideo(){
+    console.log(document.getElementById('myPlayer').src);
+    var oldSrc = document.getElementById('myPlayer').src;
+    var newSrc = oldSrc + "?videoId=ref:woodpecker_title_refid7";
+    console.log(newSrc);
+    document.getElementById('myPlayer').src = newSrc;
+  }
+</script>
+
+
+
+
+</body>
+
+</html>

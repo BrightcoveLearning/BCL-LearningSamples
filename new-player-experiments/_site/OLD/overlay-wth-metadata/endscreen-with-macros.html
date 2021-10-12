@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>End screen with title as subject</title>
+  <link href="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.css" rel="stylesheet">
+  <style type="text/css">
+    .video-js {
+      width: 600px;
+      height: 338px;
+    }
+  </style>
+</head>
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5701193190001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.min.js"></script>
+  <script type="text/javascript">
+videojs.getPlayer("myPlayerID").on("loadstart", function() {
+  var myPlayer = this;
+
+  // +++ Call endscreen method +++
+  myPlayer.customEndscreen({
+    content: '{mediainfo.name} - {mediainfo.description}'
+  });
+});
+  </script>
+
+</body>
+</html>

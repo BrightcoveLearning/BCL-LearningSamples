@@ -1,0 +1,57 @@
+<html lang="en">
+
+<head>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="videojs.ads.css" />
+
+  <script src="about_video.js"></script>
+</head>
+
+<body>
+<h1>Using Cue Points</h1>
+<p>Cue points can be set for a video. During video playback, an event is dispatched when each cue point is hit.</p>
+<p>Play the following video to see the player display cue point information at pre-roll, mid-roll (5 seconds, 10 seconds, 12 seconds) and post roll times.</p>
+        <video id="myPlayerID"
+          data-account="1507807800001"
+          data-player="6aac508a-741e-41a2-bc7a-5805644cf089"
+          data-embed="default"
+          data-video-id="1507781667001"
+          class="video-js" controls></video>
+
+        <p>******** Cue Point Information ********</p>
+        <p id="insertionPoint"></p>
+        <p>****** End Cue Point Information ******</p>
+
+  <script src="//players.brightcove.net/1507807800001/6aac508a-741e-41a2-bc7a-5805644cf089_default/index.min.js"></script>
+  <script src="http://players.brightcove.net/videojs-ima3/videojs.ima3.min.js"></script>
+  <script src="videojs.ads.js"></script>
+
+  <script>
+    videojs("myPlayerID").ready(function(){
+      var player = this;
+      player.one("loadedmetadata",function(){
+        var tt = player.textTracks()[0];
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            var dynamicHTML = "id: <strong>" + tt.activeCues[0].id + "</strong>, ";
+            dynamicHTML += "text: <strong>" + tt.activeCues[0].text + "</strong>, ";
+            dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + "</strong>,  ";
+            dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "</strong>";
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
+          player.ima3({'serverUrl': 'http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/62650033/testvastadunit&impl=s&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=http%3A%2F%2Fgoogle.com&description_url=http%3A%2F%2Fgoogle.com&correlator=1441760450142&cust_params=indexau%3DB%26indexc%3D1%26indexpcid%3D07C7D0020100%26indexpr%3D64%26indexr%3D7C7D002%26indexs%3D6%26indext%3D55D38A04%26indexu%3DVk5wdGlzQW9JRGdBQUZnUlkuNEFBQUNO%26indexm%3D67c1b8937cf06f99f4bc6343d2adb90e%26indexwp%3D4E20%26indexcp%3D200.00%26indexaid%3DC1BDD88000EA4301%26indextid%3D0%26indexdm%3D64%26indexn%3Ddev.internal.casalemedia.com%26indexepr%3D491974016'});
+          }
+        }
+        //player.play();
+        //player.muted(true);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video id="myPlayerId"
+  data-video-id="4093372393001"
+  data-account="1507807800001"
+  data-player="ryeY0O34JZ"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/ryeY0O34JZ_default/index.min.js"></script>
+
+  <p><button onclick="turnOff()">turn off time update</button></p>
+  <p><button onclick="turnOn()">turn on time update</button></p>
+
+  <script type="text/javascript">
+    var myPlayer;
+    videojs("myPlayerId").ready(function() {
+        myPlayer = this;
+    });
+    function turnOff(){
+      console.log('turning off timeupdate');
+      myPlayer.off('timeupdate');
+    }
+    function turnOn(){
+      console.log('turning on timeupdate');
+      myPlayer.on('timeupdate');
+    }
+  </script>
+
+</body>
+
+</html>

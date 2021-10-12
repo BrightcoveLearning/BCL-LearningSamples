@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prizma widget end slate Playground</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<style>
+		.container {
+			margin: 20px auto;
+		}
+
+		.vjs-prizma-end-slate-show > video,
+		.vjs-prizma-end-slate-show > object,
+		.vjs-prizma-end-slate-show > div:not(.vjs-prizma-end-slate) {
+			display: none !important;
+		}
+
+		#es-brightcove-player{
+			height: 420px;
+		}
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="row player">
+		<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+			<div style="display: block; position: relative; max-width: 100%;">
+				<div style="display: block; padding-top: 56.25%;">
+					<video id="es-brightcove-player" data-video-id="4536840968001" data-account="4535794065001" data-player="default" data-embed="default" class="video-js" controls="" style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
+					<script src="//players.brightcove.net/4535794065001/default_default/index.js"></script>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	(function(window, videojs) {
+		'use strict';
+		var defaults = {},
+
+		/**
+		 * Initialize the plugin.
+		 * @param options (optional) {object} configuration for the plugin
+		 */
+		relatedVideos = function(options) {
+			var player = this,
+				slate = document.createElement('div'),
+				parent = player.contentEl();
+//console.log('contentEl', contentEl());
+			slate.className = 'vjs-prizma-end-slate';
+			slate.id = 'end-slate-wrapper';
+			parent.appendChild(slate);
+			// we want to have it hidden
+			slate.style.display = "none";
+
+			// let's show the end slate and hide the video
+			// when the video ends
+			this.on('pause', function(){
+				var element = player.el();
+				slate.style.display = "block";
+				player.addClass('vjs-prizma-end-slate-show');
+				$(element).find('object').hide();
+			});
+		};
+
+		// register the plugin
+		videojs.plugin('endslate', relatedVideos);
+	})(window, window.videojs);
+
+	videojs("es-brightcove-player").ready(function() {
+		this.endslate();
+	});
+</script>
+
+</body>
+</html>

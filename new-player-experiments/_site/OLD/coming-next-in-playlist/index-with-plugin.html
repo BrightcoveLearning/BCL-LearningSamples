@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
+  <link href="coming-next-in-playlist.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-playlist-id="4684620718001"
+    data-account="1752604059001"
+    data-player="HykmUZvGM"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+  <div class="vjs-playlist"></div>
+
+  <script src="//players.brightcove.net/1752604059001/HykmUZvGM_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+
+  <script src="coming-next-in-playlist.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.comingNextInPlaylist();
+    });
+  </script>
+
+
+</body>
+
+</html>

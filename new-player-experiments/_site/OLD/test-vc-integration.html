@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+<video id="myPlayer"
+  data-account="1507807800001"
+  data-player="e0eae0f6-1374-4502-b954-61997ec37b6b"
+  data-embed="default"
+  data-video-id="2114345470001"
+  class="video-js" 
+  controls></video>
+<script src="//players.brightcove.net/1507807800001/e0eae0f6-1374-4502-b954-61997ec37b6b_default/index.min.js"></script>
+
+<button onclick="changeVideo()">change video</button>
+
+<script type="text/javascript">
+  function changeVideo(){
+    
+videojs.players.myPlayer.bcCatalog.getVideo(myPlayer.dataset.videoId, function(error, video) { 
+  console.log("bcCatalog" , videojs.players.myPlayer.bcCatalog);
+    console.log(video); 
+    videojs.players.myPlayer.src(video.sources);
+    videojs.players.myPlayer.poster(video.poster);
+  })
+  }
+</script>
+    
+</body>
+
+</html>

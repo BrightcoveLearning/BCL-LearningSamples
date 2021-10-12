@@ -1,0 +1,69 @@
+export EMAIL=myname@mycompany.com
+
+export ACCOUNT_ID=1507807800001
+
+curl -X PUT --user $EMAIL https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/migration
+
+git clone https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/migration
+
+cd migration
+
+git add mappings.json
+
+git commit -m "Adding a mappings file"
+
+git push origin master
+
+curl http://players.brightcove.net/$ACCOUNT_ID/migration/mappings.json
+
+
+myname:~ myname$ curl -X PUT --user $EMAIL https://repos.api.brightcove.com/v1/accounts/$ACCOUNT_ID/repos/migration
+Enter host password for user 'myname@mycompany.com':
+{"name":"migration","public_url":"http://players.brightcove.net/1507807800001/migration","repo_url":"https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/migration"}
+myname:~ myname$ git clone https://repos.api.brightcove.ACCOUNT_ID/repos/migration
+Cloning into 'migration'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+myname:~ myname$ cd migration
+myname:migration myname$ git add mappings.json
+myname:migration myname$ git commit -m "Adding a mappings file"
+[master (root-commit) 3c1c076] Adding a mappings file
+ 1 file changed, 6 insertions(+)
+ create mode 100644 mappings.json
+myname:migration myname$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 322 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+remote: Submitting changes. This operation may take up to 5 minutes.
+remote: Saving http://players.brightcove.net/1507807800001/migration/mappings.json
+remote:     All updates have been saved successfully from your git push.
+To https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/migration
+ * [new branch]      master -> master
+myname:migration myname$ curl http://players.brightcove.net/$ACCOUNT_ID/migration/mappings.json
+{
+  "AQ~~,AAABXxBZKsE~,AdU2xXeQoKBP-8tgJnkJv-czgxbjn_aR":
+    {
+      "player_id": "B13X2Aix"
+    }
+}
+
+
+
+
+
+
+
+
+
+
+  "AQ~~,AAABXxBZKsE~,AdU2xXeQoKBP-8tgJnkJv-czgxbjn_aR":
+    {
+      "player_id": "B13X2Aix"
+    },
+  "AQ~~,AAABXxBZKsE~,AdU2xXeQoKBoZQCUzYoB75P1OJYzHA13":
+    {
+      "player_id": "S1MStQ6x"
+    }
+}

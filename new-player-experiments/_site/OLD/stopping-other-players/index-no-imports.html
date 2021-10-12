@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style media="screen">
+    .playerbox {
+      float: left;
+      margin-right: 1em;
+    }
+
+    .wrap:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="player" class="section">
+    <div class="wrap">
+      <div class="playerbox">
+        <p>Player 1</p>
+        <video id="player_1"
+          style="width: 320px; height: 180px;"
+          data-video-id="4093643993001"
+          data-account="1752604059001"
+          data-player="Nynfq6Yde"
+          data-embed="default"
+          class="video-js"
+          controls=""></video>
+        <script src="//players.brightcove.net/1752604059001/Nynfq6Yde_default/index.min.js"></script>
+      </div>
+
+      <div class="playerbox">
+        <p>Player 2</p>
+        <video id="player_2"
+          style="width: 320px; height: 180px;"
+          data-video-id="4454620112001"
+          data-account="1752604059001"
+          data-player="Nynfq6Yde"
+          data-embed="default"
+          class="video-js"
+          controls=""></video>
+        <script src="//players.brightcove.net/1752604059001/Nynfq6Yde_default/index.min.js"></script>
+      </div>
+
+      <div class="playerbox">
+        <p>Player 3</p>
+        <video id="player_3"
+          style="width: 320px; height: 180px;"
+          data-video-id="4029697544001"
+          data-account="1752604059001"
+          data-player="Nynfq6Yde"
+          data-embed="default"
+          class="video-js"
+          controls=""></video>
+        <script src="//players.brightcove.net/1752604059001/Nynfq6Yde_default/index.min.js"></script>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    // Create array for player IDs
+    var players = [];
+
+    // +++  Determine the available player IDs +++//
+    for (x = 0; x < Object.keys(videojs.players).length; x++) {
+      // Assign the player name to setPlayer
+      var setPlayer = Object.keys(videojs.players)[x];
+      // Define the ready event for the player
+      videojs(setPlayer).ready(function() {
+        // Assign this player to a variable
+        myPlayer = this;
+        // Assign and event listener for play event
+        myPlayer.on("play", onPlay);
+        // Push the player to the players array
+        players.push(myPlayer);
+      });
+    }
+
+    // +++ Handle all players' play event +++//
+    function onPlay(e) {
+      // Determine which player the event is coming from
+      var id = e.target.id;
+      // Loop through the array of players
+      for (var i = 0; i < players.length; i++) {
+        // Get the player(s) that did not trigger the play event
+        if (players[i].id() != id) {
+          // Pause the other player(s)
+          videojs(players[i].id()).pause();
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

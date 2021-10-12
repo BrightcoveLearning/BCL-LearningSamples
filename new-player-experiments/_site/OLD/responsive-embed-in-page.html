@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive and sized embed_in_page code</title>
+  <style type="text/css">
+    .outer {
+      width: 80%;
+      display: block;
+      position: relative;
+      margin: 20px auto;
+    }
+    .outer:after {
+      padding-top: 56.25%;
+      display: block;
+      content: '';
+    }
+    .video-js {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Responsive and sized embed_in_page code</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="outer">
+    <video data-account="1752604059001" 
+      data-player="2f725ca4-6741-4f58-a843-22aa012d7912" 
+      data-embed="default" 
+      data-video-id="" 
+      class="video-js" controls></video>
+  </div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <script src="//players.brightcove.net/1752604059001/2f725ca4-6741-4f58-a843-22aa012d7912_default/index.min.js"></script>
+</body>
+
+</html>

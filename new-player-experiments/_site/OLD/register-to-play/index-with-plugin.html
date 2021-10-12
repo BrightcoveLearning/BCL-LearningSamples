@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel="stylesheet">
+  <link href="register-to-play.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="5686632036001"
+  data-account="1752604059001"
+  data-player="BkgjFZhBfG"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/BkgjFZhBfG_default/index.min.js"></script>
+
+
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+
+  <script src="register-to-play.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      var myPlayer = this;
+      myPlayer.registerToPlay();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="renditionSelect"
+  data-video-id="4784463159001"
+  data-account="1507807800001"
+  data-player="VkM8FWKpg"
+  data-embed="default"
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/VkM8FWKpg_default/index.min.js"></script>
+
+  <p><strong>Now playing: <span><code id="nowPlaying"></code></span></strong></p>
+
+
+<script type="text/javascript">
+  videojs("renditionSelect").ready(function() {
+    var myPlayer = this,
+        videoID,
+        totalRenditions,
+        mp4Ara = [],
+        highestQuality;
+
+    myPlayer.one('loadstart', function(evt) {
+        videoName = myPlayer.mediainfo['name'];
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+        for (var i = 0; i < totalRenditions; i++) {
+            if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
+                mp4Ara.push(rendtionsAra[i]);
+            };
+        };
+        mp4Ara.sort(function(a, b) {
+            return b.size - a.size;
+        });
+        highestQuality = mp4Ara[0].src;
+        myPlayer.src(highestQuality);
+        nowPlaying = document.getElementById('nowPlaying').innerHTML = myPlayer.currentSrc();
+    });
+  });
+</script>
+</body>
+
+</html>

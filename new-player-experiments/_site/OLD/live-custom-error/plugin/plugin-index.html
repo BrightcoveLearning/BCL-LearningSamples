@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Live custom error test</title>
+  <!-- Link to plugin's CSS -->
+  <link href="liveCustomError.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5185914204001"
+    data-account="1752604059001"
+    data-player="Hyv669PDZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/Hyv669PDZ_default/index.min.js"></script>
+
+  <!-- Include the plugin's JavaScript -->
+  <script src="liveCustomError.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.liveCustomError();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+ <!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="b79743ad-a0e0-447b-b5b7-934d3e6bfaa0"
+    data-embed="default"
+    data-video-id="4082515861001"
+    class="video-js" controls></video>
+ 
+  <p id="insertionPoint"></p>
+
+  <script src="//players.brightcove.net/1752604059001/b79743ad-a0e0-447b-b5b7-934d3e6bfaa0_default/index.min.js"></script>
+ 
+  <script>
+    videojs("myPlayerID").ready(function(){
+      var player = this;
+      player.one("loadedmetadata",function(){
+        var tt = player.textTracks()[0];
+        tt.oncuechange = function() {
+          if(tt.activeCues[0] !== undefined){
+            var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
+          }
+        }
+        player.play();
+      });
+    });
+  </script>
+   
+</body>
+</html>

@@ -1,0 +1,382 @@
+
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>CentiMark Channel</title>
+  <!-- START PLAYER -->
+  <style type="text/css">
+
+    body, html {
+      height: 100%;
+      width: 100%;
+      margin:0;
+      padding:0;
+    }
+
+    /* container for the tabbed menu, player and playlist */
+    .outer {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      margin:0;
+      background-color: #1a1a1a;
+    }
+    
+    /* tabbed menu */
+    #menu {
+      float: right;
+      padding:0;
+      padding-right: 15px;
+      margin:0;
+      color:#fff;
+      font-family: arial, helvetica, sans-serif;
+      white-space:nowrap;
+      list-style-type:none;
+    }
+    #menu li {
+      display:inline;
+    }
+    #menu li input{
+      min-width: 50px;
+      height: 30px;
+      padding:0.2em 1em;
+      background:#0000cc;
+      color:#fff;
+      text-decoration:none;
+      float:left;
+      border:1px solid #fff;
+      border-top-left-radius: 1em;
+      border-top-right-radius: 1em;
+    }
+    #menu li input:hover {
+      background:#08c;
+      color:#fff;
+    }
+    
+    /* set the player to be responsive */
+    .myplayer {
+      width: 100%;
+      display: block;
+      position: absolute;
+      margin:0;
+      float:left;
+      background-color: #1a1a1a;
+    }
+
+    .myplayer:after {
+      padding-bottom: 56.25%;
+      display: block;
+      content: '';
+    }
+
+    .video-js {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      float:left;
+    }
+
+/* playlist stacked below the player */
+@media only screen and (max-width:49.999em) and (min-width:20em) {
+
+    .outer  {
+      background-color: #1a1a1a;
+      overflow-y: hidden;
+    }
+  
+    .vidWrapper {
+      height:100%;
+    }
+  
+    .myplayer {
+      position: relative;
+    }
+  
+    .playlist-wrapper{
+      width: 100%;
+      overflow-y: scroll;
+      clear:left;
+      height:100%;
+      overflow-y: hidden;
+    }
+
+    .vjs-playlist {
+      max-height: 433px;
+      position: relative;
+      top: 15px;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+    }
+
+    .vjs-playlist .vjs-playlist-item  {
+      min-height: 100px;
+
+    }
+    .vjs-playlist-item.vjs-selected {
+      background: rgb(89, 44,54);
+    }
+
+    .vjs-mouse.vjs-playlist .vjs-playlist-description {
+      white-space: normal;
+      min-height: 99px;
+    }
+  }
+
+/* horizontal playlist below the player */
+@media only screen and (max-width:74.999em) and (min-width:50em) {
+
+    .outer {
+      height: 0;
+    }
+    .myplayer {
+      width: 100%;
+      position: relative;
+    }
+
+    .playlist-wrapper{
+      width:100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      float:left;
+    }
+    
+    .vjs-playlist.vjs-playlist {
+      width: 100%;
+      display: block;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .vjs-playlist-item {
+      display: inline-block;
+      height: 75px;
+    }
+    cite.vjs-playlist-name {
+      display:none;
+    }
+    .vjs-playlist-description {
+      display: none;
+    }
+  
+}
+
+/* vertical playlist to the right of the player */
+@media only screen and (max-width: 2500px) and (min-width:75em) {
+  
+    .outer  {
+      overflow-y: hidden;
+    }  
+  
+    /* the player */
+    .myplayer {
+      width: 70%;
+      position: relative;
+    }
+  
+    /* the player */
+    .video-js {
+      float: left;
+    }
+
+    /* the playlist */
+    .playlist-wrapper{
+      width: 30%;
+      height: 100%;
+      overflow-x: scroll;     
+    }
+
+}
+
+	/* override default styles for overlay */
+	div.vjs-overlay, .vjs-overlay.vjs-overlay-top-left {
+		left: 35%;
+		top: 45%;
+	}
+	/* hide the overlay */
+	.hide-overlay .vjs-overlay {
+	  display: none;
+	}
+	
+	/* make the endscreen buttons smaller */
+	.vjs-overlay-buttons {
+	  font-size: .5em;
+	  position: absolute;
+	  top: 15%;
+	}    
+
+	/* position the endscreen call to action text */
+	div.vjs-custom-overlay {
+	  padding: 0;
+	}
+	.vjs-endscreen-overlay-content {
+	  position: absolute;
+	  top: 35%;
+      text-align: center;
+      width: 100%; 
+	}
+
+    /* hide the custom endscreen */
+	.hide-endscreen .vjs-custom-overlay {
+	  display: none;
+	}
+	
+  </style>
+  
+  <link href="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel="stylesheet">
+  <link href="//players.brightcove.net/videojs-custom-endscreen/dist/videojs-custom-endscreen.css" rel="stylesheet">
+  <style type="text/css">
+  @import url("css/player.css");
+  </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div>
+            <ul id="menu">
+				<li><input id="tab0" type="button" class="button2" onclick="processTab(0);" value="Roof Systems"></input></li>
+				<li><input id="tab1" type="button" class="button2" onclick="processTab(1);" value="Roofing Details"></li>
+				<li><input id="tab2" type="button" class="button2" onclick="processTab(2);" value="Sustainability"></li>
+				<li><input id="tab3" type="button" class="button2" onclick="processTab(3);" value="Service & Maintenance"></li>
+				<li><input id="tab4" type="button" class="button2" onclick="processTab(4);" value="Safety"></li>
+				<li><input id="tab5" type="button" class="button2" onclick="processTab(5);" value="Online Roof Management"></li>
+				<li><input id="tab6" type="button" class="button2" onclick="processTab(6);" value="Flooring Solutions"></li>
+			</ul>
+        </div>
+
+        <div class="myplayer">
+		  
+            <video id="video_1"
+            data-account="1330301281001"
+            data-player="ba1ec69b-da15-4369-990b-7833a3648921"
+            data-embed="default"
+            class="video-js" controls></video>
+<script src="//players.brightcove.net/1330301281001/ba1ec69b-da15-4369-990b-7833a3648921_default/index.min.js"></script>
+		    <p id="cta" style="color:00338e; font-weight: bold; font-size: 20px"></p>
+        </div><!-- end myplayer-->
+        
+  
+        <div class="playlist-wrapper">
+            <ol class="vjs-playlist"></ol>
+        </div><!-- end playlist-weapper -->
+  
+    </div><!-- end outer -->
+
+
+  	<script src="//players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script>
+  	<script src="//players.brightcove.net/videojs-custom-endscreen/dist/videojs-custom-endscreen.min.js"></script>
+
+
+    <script id="pageScript" type="text/javascript">
+        var myPlayer,
+			playlistIds = ["1330297259001", "1397836971001", "1336061734001", "1336061735001", "1391880055001", "1336061736001", "13302972580011"],
+            playlistIdsLength = playlistIds.length,
+            tabs = document.getElementsByClassName("button"),
+            currentTab,
+            currentTabName,
+            playlistNames = [],
+			overlayDisplayed = false;
+      		  
+
+        videojs("video_1").ready(function(){
+		  console.log("player is ready");
+            myPlayer = this;
+            
+            // when a video is loaded, build the call to action
+            myPlayer.on('loadedmetadata', function(){
+			    buildCTA();
+			});
+          
+            // when a video ends, show the custom endscreen
+            myPlayer.on('ended', function(){
+                myPlayer.removeClass('hide-endscreen');
+            });
+		  
+		    myPlayer.on('pause', function(){
+                myPlayer.removeClass('hide-overlay');
+            });
+		  
+		    myPlayer.on('play', function(){
+                myPlayer.addClass('hide-overlay');
+            });
+		  
+		    processTab(0);
+		  
+		    function buildCTA(){
+			  console.log("build CTA");
+			    var playlistAra,
+					videoInPlayer,
+					linkText = '',
+      		        linkURL = '',
+					hrefString = '';
+			  
+			    //Hide custom endscreen
+				myPlayer.addClass('hide-endscreen');	
+			    //Set div with CTA to blank
+				document.getElementById("cta").innerHTML = '';
+				//Build CTA
+				var currentPlaylistLocation = myPlayer.playlist.currentItem();
+				playlistAra = myPlayer.playlist();
+				videoInPlayer = playlistAra[currentPlaylistLocation];
+
+				if (videoInPlayer.link !== null) {
+				  console.log("link found for video");
+					linkText = videoInPlayer.link.text;
+					linkURL = videoInPlayer.link.url;
+					hrefString = '<a href = "' + linkURL + '" target="_blank" style="padding:1em">' + linkText + '</a>';
+					//Put CTA in HTML div
+					document.getElementById("cta").innerHTML = hrefString;
+					//Put CTA in overlay
+					myPlayer.overlay({
+						overlays: [{
+							"content": "<p style='color:#00338e; background-color: white; font-weight: bold; font-size: 20px;'>" + hrefString + "</p>",
+						    "start": "pause",
+						    "end": "loadedmetadata"
+						}]
+					});
+				  
+					//Put CTA in endscreen
+					myPlayer.customEndscreen({
+					    "content": "<p style='color:red; background-color: black; font-weight: bold; font-size: 20px; padding: 1em;'>" + hrefString + "</p>"
+					});
+				} 
+			}
+        });
+
+        function processTab (index) { 
+		    resetTabs();
+            document.getElementById("tab" + index).setAttribute("style","background:#00338e;color: #fff; border-bottom: 1px solid #00FFFF;"); 
+            loadPlaylist(playlistIds[index]);
+        };
+
+        function loadPlaylist (currentId) {
+            myPlayer.catalog.getPlaylist(currentId, function(error, playlist){
+			    try {
+					myPlayer.catalog.load(playlist);
+				} catch (e) {
+					myPlayer.catalog.load(playlist);
+				} ;
+			    
+				myPlayer.play();
+				
+            });
+        };
+
+        function resetTabs () {
+            var i,
+                iMax = tabs.length;
+            for (i = 0; i < iMax; i++) {
+                tabs[i].setAttribute("style", "background: #fff;color: #00338e;")
+            }
+        }
+	  
+    </script>
+<!-- END PLAYER -->
+</body>
+</html>

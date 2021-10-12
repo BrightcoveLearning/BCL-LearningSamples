@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    iframe {
+      width: 640px;
+      height: 360px;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="addPlayer()">Add Player</button>
+
+  <div id="placeHolder"></div>
+
+  <script type="text/JavaScript">
+    var myPlayer,
+      playerHTML,
+      playerData = {
+          'accountId' : '1752604059001',
+          'playerId' : 'rJtrO8EKW',
+          'videoId' : '5550679964001'
+      };
+
+    function addPlayer() {
+      // dynamically build the player video element
+      playerHTML = '<iframe src=\"//players.brightcove.net/' + playerData.accountId + '/' + playerData.playerId + '_default/index.html?videoId=' + playerData.videoId + '\"' + ' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>';
+
+      // inject the player code into the DOM
+      document.getElementById('placeHolder').innerHTML = playerHTML;
+    }
+  </script>
+</body>
+
+</html>

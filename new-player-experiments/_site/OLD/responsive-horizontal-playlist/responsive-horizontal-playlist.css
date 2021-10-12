@@ -1,0 +1,84 @@
+/* Style for the div that wraps the playlist*/
+.bcls-playlist-wrapper {
+  position: relative;
+  background-color: #141B17;
+  /*max-width: 100%;*/
+  width: 100%!important;
+  /*max-height: 95px;
+  min-height: 82px;*/
+  line-height: 76px;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  position: absolute;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the divs that make up the playlist items*/
+.bcls-playlist-item {
+  display: inline-block;
+  border: 2px solid #141B17;
+  padding: 0;
+  margin: 0;
+  height: 74px;
+  width: 124px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+}
+
+/* Style for the divs that make up the playlist item inner div */
+.bcls-item-inner-div {
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* Mouse over style for items */
+.bcls-playlist-item:hover {
+  border-color: #FF0000;
+}
+
+/* Style for the thumbnail images*/
+.bcls-title {
+  color: #fff;
+  font-size: .7em;
+  font-family: sans-serif;
+  font-weight: bold;
+  max-width: 124px;
+  width: 124px;
+  height: 66px;
+  margin-top: 30%;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Style for playlist's left arrow */
+#left-arrow {
+  color: aliceblue;
+  font-size: 40px;
+  position: absolute;
+  margin: auto;
+  background: rgba(245, 41, 5, 1);
+  left: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+/* Style for playlist's right arrow */
+#right-arrow {
+  color: aliceblue;
+  font-size: 40px;
+  position: absolute;
+  margin: auto;
+  background: rgba(245, 41, 5, 1);
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+}

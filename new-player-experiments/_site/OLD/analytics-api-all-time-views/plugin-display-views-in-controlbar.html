@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="5323141859001"
+  data-account="1752604059001"
+  data-player="SylYN6hR9W"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1752604059001/SylYN6hR9W_default/index.min.js"></script>
+
+  <script src="views-in-controlbar.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      myPlayer =this;
+      myPlayer.viewsInControlbar();
+    });
+  </script>
+</body>
+
+</html>

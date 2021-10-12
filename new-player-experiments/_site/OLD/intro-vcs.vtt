@@ -1,0 +1,236 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.530 align:middle line:84%
+
+2
+00:00:03.530 --> 00:00:06.510 align:middle line:90%
+In this video we'll learn how
+to login to and navigate around
+
+3
+00:00:06.510 --> 00:00:09.550 align:middle line:84%
+inside of Video Cloud Studio.
+
+4
+00:00:09.550 --> 00:00:12.020 align:middle line:90%
+Video Cloud Studio is
+a web-based application
+
+5
+00:00:12.020 --> 00:00:15.570 align:middle line:90%
+that we'll use to manage
+our entire video workflow.
+
+6
+00:00:15.570 --> 00:00:18.336 align:middle line:90%
+To access Video Cloud
+Studio open a browser
+
+7
+00:00:18.336 --> 00:00:19.836 align:middle line:90%
+and go to
+videocloud.brightcove.com.
+
+8
+00:00:19.836 --> 00:00:24.986 align:middle line:84%
+
+9
+00:00:24.986 --> 00:00:30.660 align:middle line:90%
+Enter your email address and
+password and click Sign In.
+
+10
+00:00:30.660 --> 00:00:33.800 align:middle line:90%
+I'll start over here on the
+left with the Account Selector.
+
+11
+00:00:33.800 --> 00:00:36.830 align:middle line:90%
+This displays the current
+account you're working with.
+
+12
+00:00:36.830 --> 00:00:39.150 align:middle line:90%
+If you have access
+to multiple accounts
+
+13
+00:00:39.150 --> 00:00:41.820 align:middle line:90%
+you can use the drop down to
+select another Video Cloud
+
+14
+00:00:41.820 --> 00:00:44.980 align:middle line:84%
+account to work with.
+
+15
+00:00:44.980 --> 00:00:48.040 align:middle line:90%
+Video Cloud Studio is
+broken up into modules.
+
+16
+00:00:48.040 --> 00:00:51.220 align:middle line:90%
+The Media module, the
+Publishing module,
+
+17
+00:00:51.220 --> 00:00:53.870 align:middle line:84%
+Advertising, and Analytics.
+
+18
+00:00:53.870 --> 00:00:55.870 align:middle line:90%
+I also have access
+to the Live module,
+
+19
+00:00:55.870 --> 00:00:58.730 align:middle line:90%
+so that's appearing
+here as well.
+
+20
+00:00:58.730 --> 00:01:00.210 align:middle line:90%
+The modules you
+have access to are
+
+21
+00:01:00.210 --> 00:01:05.069 align:middle line:90%
+based upon your Video Cloud
+account and user settings.
+
+22
+00:01:05.069 --> 00:01:08.610 align:middle line:90%
+Up here on the right you'll
+see product updates, the logged
+
+23
+00:01:08.610 --> 00:01:11.840 align:middle line:90%
+in user, and this gear
+icon provides access
+
+24
+00:01:11.840 --> 00:01:16.270 align:middle line:90%
+to your user profile, account
+settings, user management,
+
+25
+00:01:16.270 --> 00:01:16.875 align:middle line:84%
+and reports.
+
+26
+00:01:16.875 --> 00:01:19.672 align:middle line:84%
+
+27
+00:01:19.672 --> 00:01:21.630 align:middle line:90%
+Down the right hand margin
+you have the ability
+
+28
+00:01:21.630 --> 00:01:25.667 align:middle line:90%
+to search the documentation and
+learn about product updates.
+
+29
+00:01:25.667 --> 00:01:28.250 align:middle line:90%
+Remember in an earlier video we
+mentioned that typically we'll
+
+30
+00:01:28.250 --> 00:01:31.022 align:middle line:90%
+put out an update to the
+product every month or so,
+
+31
+00:01:31.022 --> 00:01:32.980 align:middle line:90%
+so this is a good way to
+actually go in and see
+
+32
+00:01:32.980 --> 00:01:35.540 align:middle line:90%
+what's been added to the
+product, what's been changed,
+
+33
+00:01:35.540 --> 00:01:37.970 align:middle line:84%
+things like that.
+
+34
+00:01:37.970 --> 00:01:41.080 align:middle line:90%
+We also have a link here to the
+Support forums, the Developer
+
+35
+00:01:41.080 --> 00:01:45.550 align:middle line:90%
+Center, and a link
+to Contact Support.
+
+36
+00:01:45.550 --> 00:01:48.260 align:middle line:90%
+To access a module, click
+on one of the green buttons
+
+37
+00:01:48.260 --> 00:01:51.930 align:middle line:90%
+or select one of the options
+from the Navigation header.
+
+38
+00:01:51.930 --> 00:01:54.980 align:middle line:90%
+As you can see, the Media module
+is where we upload and manage
+
+39
+00:01:54.980 --> 00:01:58.820 align:middle line:90%
+our videos, we can create
+playlists, add them to players,
+
+40
+00:01:58.820 --> 00:02:00.840 align:middle line:84%
+things like that.
+
+41
+00:02:00.840 --> 00:02:03.950 align:middle line:90%
+The Publishing module's where
+you create and style players,
+
+42
+00:02:03.950 --> 00:02:07.400 align:middle line:90%
+and generate the publishing
+code for a player.
+
+43
+00:02:07.400 --> 00:02:10.150 align:middle line:90%
+The Advertising module is
+where you control and configure
+
+44
+00:02:10.150 --> 00:02:11.640 align:middle line:84%
+your ad policies.
+
+45
+00:02:11.640 --> 00:02:13.240 align:middle line:90%
+The Analytics
+module's where we can
+
+46
+00:02:13.240 --> 00:02:14.970 align:middle line:90%
+go in and see how
+many views are videos
+
+47
+00:02:14.970 --> 00:02:18.530 align:middle line:90%
+are getting, which videos
+are popular, where people are
+
+48
+00:02:18.530 --> 00:02:21.100 align:middle line:90%
+watching from, those
+types of things.
+
+49
+00:02:21.100 --> 00:02:24.570 align:middle line:90%
+We'll have videos on those
+modules a little bit later.
+
+50
+00:02:24.570 --> 00:02:29.398 align:middle line:84%

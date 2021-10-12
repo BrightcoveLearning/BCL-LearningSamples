@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>IMA3 Plugin v4 Code Example</title>
+  <link href="https://players.brightcove.net/videojs-ima3/4/videojs-ima3.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="JLvQcZgxxV"
+    data-embed="default"
+    controls=""
+    data-video-id="5550679964001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/JLvQcZgxxV_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-ima3/4/videojs-ima3.min.js"></script>
+  <script>
+    var myPlayer;
+    var player = bc('myPlayerID');
+    player.ima3({
+      serverUrl: '//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
+    });
+    player.ready(function () {
+      myPlayer = this;
+      //Do something
+      myPlayer.on('ads-ad-started', function (evt) {
+        console.log('ads-ad-started event passed to event handler', evt);
+        console.log('myPlayer.ads.ad.id', myPlayer.ads.ad.id);
+        console.log('myPlayer.ads.ad.index', myPlayer.ads.ad.index);
+        console.log('myPlayer.ads.ad.duration', myPlayer.ads.ad.duration);
+        console.log('myPlayer.ads.ad.type', myPlayer.ads.ad.type);
+      });
+    });
+  </script>
+
+</body>
+
+</html>

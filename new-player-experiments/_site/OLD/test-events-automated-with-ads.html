@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+<video-js id="myPlayerID"
+data-video-id="5796745147001"
+data-account="1507807800001"
+data-player="Jm7Fj158b"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video-js>
+<script src="//players.brightcove.net/1507807800001/Jm7Fj158b_default/index.min.js"></script>
+
+
+<script>
+  var myPlayer,
+    eventsAra=['ended','loadeddata','loadedmetadata','loadstart','play','playing','canplay','progress','ads-first-quartile','ads-ad-ended','ads-ad-started','ads-ad-ended','ads-midpoint','ads-thrid-quartile','ads-play','ads-allpods-completed','ads-request','ads-pod-ended','ads-load','ads-pod-started','ads-ad'],
+    eventsAraLength,
+    eventName;
+
+  videojs.getPlayer('myPlayerID').ready(function() {
+    // get a reference to the player
+    myPlayer = this,
+    eventsAraLength = eventsAra.length;
+
+    for (var i = 0; i < eventsAraLength; i++) {
+      console.log(eventsAra[i]);
+      eventName = eventsAra[i];
+      myPlayer.on(eventsAra[i],function( evt ){
+        console.log('Dispatched: ',evt.type);
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

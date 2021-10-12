@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+    <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+    .bcls-hide-overlay {
+      opacity: 0;
+      -webkit-transition-property: opacity;
+      -webkit-transition-duration: 5s;
+      -webkit-transition-timing-function: ease;
+      transition-property: opacity;
+      transition-duration: 5s;
+      transition-timing-function: ease;
+    }
+    .video-js .vjs-overlay {
+      /* background-color: none; */
+      border-radius: 3px;
+      color: #fff;
+      padding: 10px;
+      position: absolute;
+      text-align: center;
+      width: 33%;
+    }
+    .video-js .vjs-overlay-top-left {
+      top: 5px;
+      left: 5px;
+    }
+    .video-js .vjs-overlay-top {
+      left: 50%;
+      margin-left: -16.5%;
+      top: 5px;
+    }
+    .video-js .vjs-overlay-top-right {
+      right: 5px;
+      top: 5px;
+    }
+    .video-js .vjs-overlay-right {
+      margin-top: -15px;
+      right: 5px;
+      top: 50%;
+    }
+    .video-js .vjs-overlay-bottom-right {
+      bottom: 4em;
+      right: 5px;
+    }
+    .video-js .vjs-overlay-bottom {
+      bottom: 4.5em;
+      left: 50%;
+      margin-left: -16.5%;
+    }
+    .video-js .vjs-overlay-bottom-left {
+      bottom: 4.5em;
+      left: 5px;
+    }
+    .video-js .vjs-overlay-left {
+      left: 5px;
+      margin-top: -15px;
+      top: 50%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <video  id="myPlayerID"
+    data-video-id="5622718636001"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+    <p>this is the page</p>
+
+    <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+    <script src="//players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var player = this,
+      // +++ Define passed in options (this makes more sense when plugin used) +++
+        inputOptions = {
+          'align': 'bottom-left',
+          'imageURL' : '//solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
+          'clickThruURL': '//support.brightcove.com/',
+          'start': 'loadstart',
+          'end': 5
+        },
+          overlayOptions,
+          overlayContent,
+          defaultOptions = {
+            'align': 'bottom-right',
+            'imageURL': '//solutions.brightcove.com/bcls/brightcove-player/logo-overlay/bc-logo.png',
+            'clickThruURL': '',
+            'start': 'loadstart',
+            'end': 'ended'
+          };
+
+        // +++ Remove overlay  +++
+        function endOverlay() {
+          if (isDefined(parseInt(overlayOptions.end)) && player.currentTime() >= overlayOptions.end) {
+            player.off('timeupdate', endOverlay);
+            document.getElementsByClassName('vjs-overlay')[0].className += ' bcls-hide-overlay';
+          }
+        }
+
+       // +++ Add overlay function +++
+        function showOverlay() {
+          player.overlay({
+            content: overlayContent,
+            overlays: [{
+              start: overlayOptions.start,
+              align: overlayOptions.align
+            }]
+          });
+          // handler for timeupdate events
+          player.on('timeupdate', endOverlay);
+        }
+
+        /**
+         * tests for all the ways a variable might be undefined or not have a value
+         * @param {*} x the variable to test
+         * @return {Boolean} true if variable is defined and has a value
+         */
+        function isDefined(x) {
+          if (x === '' || x === null || x === undefined || x === NaN) {
+            return false;
+          }
+          return true;
+        }
+
+  // +++ Function to merge passed in configuration with defaults +++
+        /**
+         * merges inputs or default values into a new settings object
+         * @param {Object} inputOptions the input values
+         * @param {Object} defaultOptions the default values
+         * @return {Object} the settings object
+         */
+        function setOptions(inputOptions, defaultOptions) {
+          var prop, settings = {},
+            aTag, imgTag;
+          for (prop in defaultOptions) {
+            if (defaultOptions.hasOwnProperty(prop)) {
+              settings[prop] = (inputOptions.hasOwnProperty(prop)) ? inputOptions[prop] : defaultOptions[prop];
+            }
+          }
+          return settings;
+        }
+
+        // +++ Call function to merge default options with passed in options +++
+        overlayOptions = setOptions(inputOptions, defaultOptions);
+        // set the content
+        imgTag = new Image();
+        imgTag.onLoad = function() {
+          imgTag.setAttribute('width', this.width);
+          imgTag.setAttribute('height'.this.height);
+        };
+        imgTag.src = overlayOptions.imageURL;
+        if (isDefined(overlayOptions.clickThruURL)) {
+          aTag = document.createElement('a');
+          aTag.setAttribute('href', overlayOptions.clickThruURL);
+          aTag.setAttribute('target', '_blank');
+          aTag.appendChild(imgTag);
+          overlayContent = aTag.outerHTML;
+        } else {
+          overlayContent = imgTag.outerHTML;
+        }
+        // +++ Show overlay +++
+        showOverlay();
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Testing a plugin</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-onceux/2/videojs-onceux.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-account="1507807800001" data-player="HyZQuAqyrM" data-embed="default" data-application-id class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/HyZQuAqyrM_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-onceux/2/videojs-onceux.min.js"></script>
+
+  <script type="text/JavaScript">
+    videojs("myPlayerID").ready(function() { var myPlayer = this, options = { "metadataUri": "http://onceux.unicornmedia.com/now/ads/vmap/od/auto/c8860df3-6695-44f7-a405-ed3634148b85/2a501e22-792f-4348-ad6c-3e48020b199a/725cba9b-a821-47af-ba5b-677d115c4dcf/content.once"
+    }; myPlayer.onceux(options); });
+  </script>
+
+</body>
+
+</html>

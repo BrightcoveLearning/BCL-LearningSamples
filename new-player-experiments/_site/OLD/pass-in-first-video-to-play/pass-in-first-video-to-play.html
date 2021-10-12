@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <div id="place_player_here"></div>
+
+  <script type="text/javascript">
+    var theParamValue,
+      iframe = document.createElement('iframe'),
+      insertionPoint = document.getElementById("place_player_here");
+
+    // Use the helper function below to get the value of the parameter
+    theParamVideoID = getURLparam("playlistVideoId");
+
+    // Dynamically build the iframe
+    iframe.setAttribute('allowfullscreen', 'allowfullscreen');
+    iframe.setAttribute('webkitallowfullscreen', 'webkitallowfullscreen');
+    iframe.setAttribute('mozallowfullscreen', 'mozallowfullscreen');
+    iframe.setAttribute('style', "width: 610px;height: 344px");
+    iframe.src = '//players.brightcove.net/1752604059001/H1HpIEcCb_default/index.html?playlistId=4450721964001&playlistVideoId=' + theParamVideoID;
+    insertionPoint.appendChild(iframe);
+
+    // Helper function to get value for a specific URL parameter
+    function getURLparam(name) {
+      var regex, results;
+      name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+      results = regex.exec(location.search);
+      return results === null ?
+        "" :
+        decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+  </script>
+
+</body>
+
+</html>

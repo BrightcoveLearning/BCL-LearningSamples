@@ -1,0 +1,56 @@
+<VAST version="3.0">
+  <Ad id="1">
+    <InLine>
+      <AdSystem version="1.0">Test Ad Server</AdSystem>
+      <AdTitle>
+        <![CDATA[ Portals ]]>
+      </AdTitle>
+      <Description>
+        <![CDATA[ Demo ad number 6 ]]>
+      </Description>
+      <Error>
+        <![CDATA[ ]]>
+      </Error>
+      <Creatives>
+        <Creative>
+          <Linear>
+            <Duration>00:00:8</Duration>
+            <TrackingEvents/>
+            <AdParameters>
+              <![CDATA[ <xml></xml> ]]>
+            </AdParameters>
+            <VideoClicks/>
+            <MediaFiles>
+              <MediaFile type="video/mp4" width="1280" height="720" delivery="progressive" id="2" bitrate="4316" minBitrate="320" maxBitrate="320" scalable="true" maintainAspectRatio="true">
+                <![CDATA[
+                  http://solutions.brightcove.com/bcls/ads/bc-ads/bcls-ad-6-5seconds.mp4
+                ]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+        <Creative >
+          <CompanionAds>
+            <Companion width="300" height="250">
+              <StaticResource creativeType="image/png">
+                <![CDATA[
+https://pagead2.googlesyndication.com/pagead/imgad?id=CICAgKDTwILFiwEQrAIY-gEyCAAnmA4d6uc2
+]]>
+              </StaticResource>
+              <CompanionClickThrough>
+                <![CDATA[
+https://pubads.g.doubleclick.net/pcs/click?xai=AKAOjstpcV6kjs-V5Q2GErWHP5ER5VWXyU9m2g6aahu1rPHM4z8_Ix3DMHfb-y9-wp0wdgyUW_lI1ww6QhYvesb_2vypcMQ1mkuoo09ot-Fzzve2e3srPv5aeQnE89F2twoc2l8htaRVK_3vzD3SiagquMuWumchQ8UYsUHNvJxfPNs7dnWpgT_CP0cIroenwGbS8f8LaKh4wIJuK2PiR0DOLbWLi4uvX0BvHDuRejeR5Jb-c242zP_oX9zebRnYagxaj4oBd5viRmX45DMTAwG2I4Gr&sig=Cg0ArKJSzMjBbhbUBhQR&adurl=https://developers.google.com/interactive-media-ads/docs/vastinspector_dual
+]]>
+              </CompanionClickThrough>
+            </Companion>
+          </CompanionAds>
+        </Creative>
+      </Creatives>
+      <Extensions>
+        <Extension>
+          <xml>data</xml>
+        </Extension>
+      </Extensions>
+    </InLine>
+  </Ad>
+</VAST>

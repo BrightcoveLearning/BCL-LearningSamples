@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5993987133001"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640" height="380"></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script src="country-flag-caption-label.js"></script>
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer = this;
+      myPlayer.countryFlagCaptionLabel();
+    });
+  </script>
+</body>
+
+</html>

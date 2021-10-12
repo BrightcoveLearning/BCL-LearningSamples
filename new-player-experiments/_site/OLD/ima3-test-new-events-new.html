@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="4093372393001"
+    data-account="1507807800001"
+    data-player="Sk4t5Khbb"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+
+  <script src="//players.brightcove.net/1507807800001/Sk4t5Khbb_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+  <script>
+    var myPlayer;
+
+    var player = bc('myPlayerID');
+    player.ima3({
+      serverUrl: 'http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml'
+    });
+
+    player.ready(function () {
+      myPlayer = this;
+      myPlayer.on('ads-ad-started', function (evt) {
+        console.log('ads-ad-started event passed to event handler', evt);
+        console.log('myPlayer.ads.ad.id', myPlayer.ads.ad.id);
+        console.log('myPlayer.ads.ad.index', myPlayer.ads.ad.index);
+        console.log('myPlayer.ads.ad.duration', myPlayer.ads.ad.duration);
+        console.log('myPlayer.ads.ad.type', myPlayer.ads.ad.type);
+      });
+    });
+  </script>
+</body>
+
+</html>

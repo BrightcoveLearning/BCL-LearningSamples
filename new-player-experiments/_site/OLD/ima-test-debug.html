@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>IMA3 Plugin Code Example</title>
+  <style>
+    .video-js {
+      height: 175px;
+      width: 305px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <video  id="video_1"
+    data-video-id="3851380732001"
+    data-account="1752604059001"
+    data-player="Hy3gDJHu"
+    data-embed="default"
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/Hy3gDJHu_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+  <script>
+    var myPlayer;
+
+    videojs("video_1").on('loadedmetadata',function() {
+      myPlayer = this;
+      myPlayer.ima3({
+        'serverUrl': 'http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml',
+        'debug': true
+      });
+    });
+  </script>
+</body>
+
+</html>

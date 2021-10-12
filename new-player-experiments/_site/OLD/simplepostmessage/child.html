@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <button id="my-btn">Start</button>
+
+    <script>
+        document.getElementById('my-btn').addEventListener('click', handleButtonClick, false);
+
+        function handleButtonClick(e) {
+            //window.alert('sent');
+            window.parent.postMessage('iframe_message', '*')
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5165694790001"
+    data-account="1752604059001"
+    data-player="ByezEPhOZ"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/ByezEPhOZ_default/index.min.js"></script>
+
+  <!-- +++ Insert dynamic in page CTA here +++ -->
+  <p id="cta" style='color:red; font-weight: bold; font-size: 20px'></p>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this;
+
+      // Wait for loadstart before accessing mediainfo information
+      myPlayer.on('loadstart', function(evt) {
+
+        // +++ Build dynamic anchor tag +++
+        var linkText = myPlayer.mediainfo.link.text,
+          linkURL = myPlayer.mediainfo.link.url,
+          hrefString = '<a href = "' + linkURL + '" target="_blank" rel="noopener noreferrer">' + linkText + '</a>';
+
+        // +++ Inject dynamic HTML into p element +++
+        document.getElementById("cta").innerHTML = hrefString;
+
+        // +++ Configure dynamic overlay +++
+        myPlayer.overlay({
+          overlays: [{
+            "align": "bottom",
+            "content": "<p style='color:red; background-color: black; font-weight: bold; font-size: 20px'>" + hrefString + "</p>",
+            "start": "pause",
+            "end": "play"
+          }]
+        });
+
+        // +++ Configure dynamic endscreen +++
+        myPlayer.customEndscreen({
+          "content": "<p style='font-weight: bold; font-size: 20px'>" + hrefString + "</p>"
+        });
+
+        // +++ Remove overlay after video has ended +++
+        myPlayer.on('ended', function() {
+          var overlayElement = document.getElementsByClassName('vjs-overlay')[0];
+          overlayElement.setAttribute('style', 'display: none;');
+        })
+      });
+    });
+  </script>
+
+</body>
+
+</html>

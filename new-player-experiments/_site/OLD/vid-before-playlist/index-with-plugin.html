@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Play video after playlist</title>
+  <link href="video-before-playlist.css" rel="stylesheet">
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="SJ5OoOgOb"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script>
+
+  <div class="vjs-playlist"></div>
+
+  <script src="video-before-playlist.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer = videojs.getPlayer('myPlayerID'),
+      // Create options object and populate with video and playlist
+      options = {};
+      options.beforePlaylistVideo = '4607357817001',
+      options.playlistID = '5769553004001';
+
+    // Call the custom plugin
+    myPlayer.ready(function () {
+      myPlayer.videoBeforePlaylist(options);
+    });
+  </script>
+
+</body>
+
+</html>

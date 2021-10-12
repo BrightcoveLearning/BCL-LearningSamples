@@ -1,0 +1,11 @@
+.video-js {
+  height: 344px;
+  width: 610px;
+}
+.vjs-marker {
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  background-color: blue;
+  width: 4px;
+}

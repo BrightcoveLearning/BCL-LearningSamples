@@ -1,0 +1,265 @@
+
+
+ * @apiParam (Request Body Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
+
+ * @apiSuccess (Response Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer - URL Source",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+            "type":"video/mp4"
+          }]
+        },
+        "autoplay": true,
+        "fullscreenControl": false
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySamplePlayer - Video Cloud source",
+      "configuration": {
+        "video_cloud": {
+          "video": "4443311217001"
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+    "name": "My New Player Name",
+    "description": "My new player description"
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+    "comment": "Comment for GitHub repo"
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request DELETE \
+  --data '{}' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration/master
+
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "languages": [
+        "de",
+        "es"
+      ]
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PUT \
+  --data '{
+    "id": "696e67d6-0142-442c-97bc-94672aaf6041",
+    "description": "This is my updated description",
+    "name": "My video",
+    "configuration": {
+      "media": {
+        "sources": [{
+          "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+          "type": "video/mp4"
+        }]
+      }
+    }
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+
+
+// Get a players embeds
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+
+
+
+
+
+
+
+
+//make embed
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySampleEmbedPlayer3",
+      "configuration": {
+        "media": {
+          "sources": [{
+            "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+            "type":"video/mp4"
+          }]
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+      "name": "MySampleEmbedPlayer2",
+      "configuration": {
+        "video_cloud": {
+          "video": "4443311217001"
+        }
+      }
+    }' \
+    https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+
+//make embed response
+{
+  "id": "29576503-580f-4b8e-a858-86155e1d5ab5",
+  "url": "http://players.brightcove.net/1507807800001/35642fb8-3f95-4da3-92a7-b4f413ef5cca_29576503-580f-4b8e-a858-86155e1d5ab5/index.html",
+  "embed_code": "<iframe src='//players.brightcove.net/1507807800001/35642fb8-3f95-4da3-92a7-b4f413ef5cca_29576503-580f-4b8e-a858-86155e1d5ab5/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+  "embed_in_page": "http://players.brightcove.net/1507807800001/35642fb8-3f95-4da3-92a7-b4f413ef5cca_29576503-580f-4b8e-a858-86155e1d5ab5/in_page.embed",
+  "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/35642fb8-3f95-4da3-92a7-b4f413ef5cca/master/embeds/29576503-580f-4b8e-a858-86155e1d5ab5/preview/index.html",
+  "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/35642fb8-3f95-4da3-92a7-b4f413ef5cca/master/embeds/29576503-580f-4b8e-a858-86155e1d5ab5/preview/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+}
+
+//get single embed
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
+
+
+//publish embed
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request POST \
+  --data '{
+    "comment": "Comment for GitHub repo"
+  }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/publish
+
+
+//delete an embed
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request DELETE \
+  --data '{}' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
+
+
+// get an embed configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/$BRANCH
+
+
+// update an embed configuration
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "name": "New Patched Embed Name",
+      "description": "New patched embed description",
+      "configuration": {
+        "video_cloud": {
+          "video": "123456789"
+        },
+        "languages": [
+          "de",
+          "es"
+        ]
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration
+
+
+// merged combos
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request GET \
+  "https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=master&embedBranch=preview"
+
+
+
+
+
+
+
+

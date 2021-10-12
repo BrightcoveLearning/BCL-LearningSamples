@@ -1,0 +1,33 @@
+curl \
+  --header "Content-Type: application/json" \
+  --user $EMAIL \
+  --request PATCH \
+  --data '{
+      "media": {
+        "sources": [
+          {
+            "src":"http://rdmedia.bbc.co.uk/dash/ondemand/testcard/1/client_manifest-events.mpd",
+            "type":"application/dash+xml"
+          }
+        ]
+      }
+    }' \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+  var   reps = player.dash.representations(),
+      sortedReps = reps.sort(function (rep) {...
+    }),
+      lowBandwidths = [sortedReps[0], sortedReps[1]], // TODO add in checks for arr shorter than 2
+      highBandwidths = [sortedReps.length - 2, sortedReps.length - 1]; // TODO add in checks for arr shorter than 2
+  onClick = function (selectedString) {  
+    var enableBandwidths = selectedString === 'low' ? lowBandwidths : highBandwidths;  
+    player.dash.representations().forEach(function (rep) {      
+      rep.enabled(enabledBandwidths.indexOf(rep.bandwidth) === -1 ? false : true);  
+    });
+  };
+
+
+
+  

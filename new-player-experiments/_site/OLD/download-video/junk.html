@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="5x-download-video.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video data-video-id="4093372393001"
+  data-account="1507807800001"
+  data-player="B1OGtWgal"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/B1OGtWgal_default/index.min.js"></script>
+
+  <script src="5x-download-video.js"></script>
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.downloadVideoPlugin()
+    });
+  </script>
+
+</body>
+
+</html>

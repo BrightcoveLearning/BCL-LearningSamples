@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="most-watched-playlist.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="H18cgu1wG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+
+  <div class="vjs-playlist"></div>
+
+  <script src="//players.brightcove.net/1752604059001/H18cgu1wG_default/index.min.js"></script>
+
+  <script src="most-watched-playlist.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.mostWatchedPlaylist();
+    });
+  </script>
+
+</body>
+
+</html>

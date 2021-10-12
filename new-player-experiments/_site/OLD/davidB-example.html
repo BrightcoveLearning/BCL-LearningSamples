@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 300px;
+      height: 150px;
+    }
+    #thePoster {
+      width: 300px;
+      height: 150px;
+      cursor: pointer;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <video id="myPlayerID"
+      data-account="3676484087001"
+      data-player="7be3e2f4-3f7e-44c3-a978-6a3722c425fb"
+      data-embed="default"
+      class="video-js" controls></video>
+
+    <img id="thePoster">
+  </div>
+
+  <script src="//players.brightcove.net/3676484087001/7be3e2f4-3f7e-44c3-a978-6a3722c425fb_default/index.min.js"></script>
+
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this,
+        imgTag;
+      imgTag = document.getElementById('thePoster');
+      videoTag = document.getElementById('myPlayerID');
+      imgTag.setAttribute('src', myPlayer.options().poster);
+      imgTag.addEventListener('click', playVideo);
+      if( /iPhone|iPad/i.test(navigator.userAgent) ) {
+        videoTag.style.display = 'none';
+        imgTag.style.display = 'block';
+      }
+
+      function playVideo(){
+        myPlayer.play();
+      }
+    });
+  </script>
+
+</body>
+
+</html>

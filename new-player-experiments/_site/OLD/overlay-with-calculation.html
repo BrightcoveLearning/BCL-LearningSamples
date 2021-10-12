@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Brightcove Player CTA Example</title>
+  <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
+</head>
+
+<body>
+  <h2>Brightcove Player CTA Example</h2>
+  <video id="myPlayerID"
+    data-account="1486906377"
+    data-player="V1VpcEdil"
+    data-video-id="4758173526001"
+    data-embed="default"
+    class="video-js"
+    width="640" height="320"
+    controls></video>
+  <script src="//players.brightcove.net/1486906377/V1VpcEdil_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script>
+    videojs("myPlayerID").ready(function () {
+      var myPlayer = this;
+      myPlayer.on('loadstart', function (evt) {
+        var videoDuration = Math.floor(myPlayer.mediainfo.duration);
+        myPlayer.overlay({
+          overlays: [{
+            align: 'bottom',
+            content: "<a href='" + myPlayer.mediainfo.link.url + "'>Click here for more info on " + myPlayer.mediainfo.name + "</a>",
+            start: videoDuration - 3
+          }]
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

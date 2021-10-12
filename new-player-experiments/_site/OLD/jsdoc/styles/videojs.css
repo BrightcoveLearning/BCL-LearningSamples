@@ -1,0 +1,80 @@
+/* Change footer - from Video.js styles */
+#resizer,
+footer {
+  background-color: #ECEEF1;
+  color: #868688;
+  padding: 3px 10px;
+}
+
+.footer-text {
+  padding: 3px;
+  display: block;
+}
+
+footer .copyright {
+  float: left;
+}
+
+footer .other-links {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+footer .other-links li {
+  display: inline;
+}
+
+footer .logo {
+  display: none;
+}
+/* Change text on index page */
+#index-api-docs-div {
+  padding: 100px;
+  text-align: center;
+}
+/* Change text on index page */
+#index-api-docs-title {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+/*.toc-h3 {
+  color: #E78446;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 14px;
+  margin-right: 7px;
+}*/
+/* Change headers in left menu */
+.lnb-api h3 {
+  color: #E78446;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 14px;
+  margin-right: 7px;
+}
+/* Change background color of left menu */
+.lnb {
+  background-color: #585858;
+}
+
+/* Change text in main section headers */
+.main section article h3.subsection-title {
+  color: #E78446;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-left: 14px;
+  margin-right: 7px;
+}
+/* Increase font size in main section of page */
+.main {
+  font-size: 1.2em;
+}
+/* Change size of actual methods/events in main section of page */
+.main section article dl h4 {
+  font-size: 1.2em;
+}
+/* Change size of actual methods/events in main section of page */
+.main section article dl h4 .type-signature, span.icon, .main section article dl h4 .signature {
+  font-size: inherit;
+}

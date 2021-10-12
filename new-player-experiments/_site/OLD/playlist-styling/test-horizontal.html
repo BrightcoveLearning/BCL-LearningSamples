@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Styling</title>
+
+  <style type="text/css">
+    .video-js {
+      height: 360px;
+      width: 640px;
+    }
+
+    /* .vjs-playlist {
+      width: 640px;
+      height: 90px;
+    } */
+
+    .vjs-mouse.vjs-playlist {
+      color: #E9D2B3;
+      background-color: #161D6E;
+    }
+
+     .vjs-playlist .vjs-playlist-duration {
+      color: #9BB4DA;
+      background-color: #1160AA;
+    }
+
+    .vjs-playlist-horizontal .vjs-playlist-item {
+      margin-left: 5px;
+    }
+
+    .vjs-playlist-horizontal .vjs-playlist-item:first-child {
+      margin-left: 0px;
+    }
+
+    div.vjs-playlist.vjs-playlist-horizontal {
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <video-js id="myPlayerID"
+    data-playlist-id="1579619681001"
+    data-account="1507807800001"
+    data-player="BJ3CdomN7"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+  <script src="//players.brightcove.net/1507807800001/BJ3CdomN7_default/index.min.js"></script>
+
+  <div class="vjs-playlist"></div>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function() {
+      var myPlayer = this,
+        options = {};
+      options.horizontal = true;
+      myPlayer.bcPlaylistUi(options);
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5796745147001"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640" height="380"></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+<script>
+  videojs.getPlayer('myPlayerID').ready(function() {
+    var myPlayer = this,
+      repeatTime = 5;
+    myPlayer.muted(true);
+    myPlayer.on('loadedmetadata', function(){
+      myPlayer.play();
+      myPlayer.on('timeupdate',function(){
+        if (myPlayer.currentTime()>= repeatTime) {
+          myPlayer.currentTime(0);
+        }
+      })
+    })
+  });
+</script>
+
+</body>
+
+</html>

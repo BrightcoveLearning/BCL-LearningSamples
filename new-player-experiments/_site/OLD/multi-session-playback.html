@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <video-js id="myPlayerID" data-video-id="5141730843001" data-account="1752604059001" data-player="default" data-embed="default" data-application-id class="video-js" controls width="640" height="360"></video-js>
+    <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+    <!-- Display the start position of the video as well as the current play position -->
+    <p>video start cookie value = <span id="cookieDisplay1"></span></p>
+    <p>current cookie value = <span id="cookieDisplay2"></span></p>
+
+    <script type="text/javascript">
+        videojs.getPlayer('myPlayerID').ready(function() {
+            // Function to read the browser cookie
+            var read_cookie = function(key) {
+                var result;
+                return (result = new RegExp('(^|; )' + encodeURIComponent(key) + '=([^;]*)').exec(document.cookie)) ? result[2] : null;
+            }
+
+            // +++ Read browser cookie +++
+            // Initialize variables and read the browser cookie associated with the Brightcove video position
+            var myPlayer = this,
+                videoStart = 0,
+                currentPosition,
+                cookie = read_cookie("BC_position");
+
+            // +++ Check the cookie value +++
+            // If the cookie exists, then set the video start position to this value. Otherwise, start from the beginning of the video.
+            if (cookie != null) {
+                videoStart = cookie;
+            } else {
+                videoStart = 0;
+            }
+
+            // +++ Start video playback +++
+            // Wait for when the player is ready.
+            myPlayer.on("loadeddata", function() {
+                // If video position is greater than zero, than start playback at that point.
+                if (videoStart > 0) {
+                    myPlayer.currentTime(parseInt(videoStart));
+                    myPlayer.play();
+                }
+            })
+            // Display the video start position
+            document.getElementById("cookieDisplay1").innerHTML = videoStart;
+
+            // +++ Increment the cookie +++
+            // Listen for when the current playback position has changed. This should be every 15-250 milliseconds.
+            myPlayer.on("timeupdate", function() {
+                currentPosition = myPlayer.currentTime();
+                // When the integer value changes, then update the cookie
+                if (Math.round(currentPosition) != videoStart) {
+                    videoStart = Math.round(currentPosition);
+                    document.cookie = "BC_position=" + escape(videoStart) + ";";
+                    // Display the current video position
+                    document.getElementById("cookieDisplay2").innerHTML = read_cookie("BC_position");
+                }
+            });
+
+            // +++ Reset the cookie +++
+            // When video playback reaches the end, then reset the cookie value to zero
+            myPlayer.on("ended", function() {
+                console.log('in ended')
+                videoStart = 0;
+                document.cookie = "BC_position=;expires=0;";
+            })
+        });
+    </script>
+
+</body>
+
+</html>

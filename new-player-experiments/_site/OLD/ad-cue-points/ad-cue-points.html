@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ad Cue Points</title>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Media Cuepoints Example</h1>
+  <p>Select the adTech and if useMediaCuePoints should be true. NOTE: When changing these settings, reload the page first.</p>
+  <p> <b>AdTech:</b>
+    <select name="adTech" id="adTech">
+      <option selected disabled value>Select an adTech</option>
+      <option value="html5">Html5</option>
+      <option value="flash">Flash</option>
+    </select>
+  </p>
+  <p> <b>useMediaCuePoints:</b>
+    <input type="checkbox" name="useMediaCuePoints" id="useMediaCuePoints" value="false" />
+  </p>
+  <p>
+    <button id="submit">Submit and Play</button>
+  </p>
+
+  <video id="myPlayerID"
+    data-video-id="4607746980001"
+    data-account="1507807800001"
+    data-player="r1xWjg6ydx"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video>
+  <script src="//players.brightcove.net/1507807800001/r1xWjg6ydx_default/index.min.js"></script>
+
+  <!-- <video id="myPlayerID"
+    data-video-id="5161566773001"
+    data-account="4967938830001"
+    data-player="default"
+    data-embed="default"
+    data-setup='{"debug": true}'
+    data-application-id
+    class="video-js"
+    controls
+    width="600"
+    height="300">
+  </video>
+  <script src="//players.brightcove.net/4967938830001/default_default/index.min.js"></script> -->
+
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+  <script>
+    var
+     adTechSelect = document.getElementById('adTech'),
+      mediaCuePointsCheckBox = document.getElementById('useMediaCuePoints'),
+      submitBtn = document.getElementById('submit'),
+      options = {
+        adTechOrder: [],
+        useMediaCuePoints: false,
+        requestMode: 'oncue',
+        hardTimeouts: true,
+        debug: true,
+        adSwf: '//players.brightcove.net/videojs-ima3/2/videojs.ima3.swf',
+        serverUrl: "//solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml"
+      };
+    submitBtn.onclick = function () {
+      if (options.useMediaCuePoints === 'undefined' ||
+        options.adTechOrder.length === 0) {
+        console.log('Select an option for all the settings.')
+        return;
+      }
+      videojs('myPlayerID').ready(function(){
+        var myPlayer = this;
+        // trying not to get ratelimitted
+        //options.serverUrl += '&cb=' + Math.random();
+        myPlayer.ima3(options);
+        myPlayer.on('ima3-ready', function () {
+          // triggering loadstart again to force cuepoints to be loaded
+          // typically the ima3 plugin will be ready before the player is
+          // and the cuepoints will already be loaded without this
+          myPlayer.trigger('loadstart');
+          myPlayer.play();
+        });
+      });
+    };
+    adTechSelect.onchange = function () {
+      var selected = adTechSelect.selectedOptions[0].value;
+      options.adTechOrder.push(selected);
+    };
+    mediaCuePointsCheckBox.onchange = function () {
+      var selected = mediaCuePointsCheckBox.checked;
+      options.useMediaCuePoints = selected;
+    };
+  </script>
+</body>
+
+</html>

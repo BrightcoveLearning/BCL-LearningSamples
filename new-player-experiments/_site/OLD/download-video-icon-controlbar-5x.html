@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      width: 640px;
+      height: 360px;
+    }
+    #downloadButton {
+      width: 34px;
+      height: 33px;
+      margin-top: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <video id="myPlayerID"
+    data-video-id="4093643993001"
+    data-account="1752604059001"
+    data-player="41cLpY1_e"
+    data-embed="default"
+    class="video-js" controls></video>
+
+  <script src="//players.brightcove.net/1752604059001/41cLpY1_e_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function () {
+      var myPlayer = this,
+        videoID,
+        videoName,
+        rendtionsAra,
+        totalRenditions,
+        mp4Ara = [],
+        highestQuality,
+        controlBar,
+        spacer,
+        newElement = document.createElement('div'),
+        newLink = document.createElement('a'),
+        newImage = document.createElement('img');
+      // Get video id for use with getVideo() method
+      videoID = myPlayer.options()['data-video-id'];
+      myPlayer.catalog.getVideo(videoID, function (error, video) {
+        // Load video to populate mediainfo
+        myPlayer.catalog.load(video);
+        // Extract name for use in download URL
+        videoName = myPlayer.mediainfo['name'];
+        // Assign renditions to a variable and find number of renditions
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+        // Get only MP4 rendtions into new array
+        for (var i = 0; i < totalRenditions; i++) {
+          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
+            mp4Ara.push(rendtionsAra[i]);
+          };
+        };
+        // Sort MP4 array
+        mp4Ara.sort(function (a, b) {
+          return b.size - a.size;
+        });
+        // Assign largest rendition to a variable for use in URL
+        highestQuality = mp4Ara[0].src;
+        // Assign id to div for icon
+        newElement.id = 'downloadButton';
+        // Assign properties to elements and assign to parents
+        newImage.setAttribute('src', 'http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png');
+        newLink.setAttribute('href', highestQuality + " download=" + videoName);
+        newLink.appendChild(newImage);
+        newElement.appendChild(newLink);
+        // Get control bar and insert before elements
+        // Remember that getElementsByClassName() returns an array
+        //controlBar = myPlayer.controlBar.el();
+        //spacer = myPlayer.controlBar.customControlSpacer.el();
+        //controlBar = document.getElementsByClassName('vjs-control-bar')[0];
+        // Insert the icon div in proper location
+        //spacer = document.getElementsByClassName('vjs-spacer')[0];
+    	  // Set the content of the spacer to be right justified
+        //spacer.setAttribute("style", "justify-content: flex-end;");
+        // Place the new element in the spacer
+        spacer.appendChild(newElement);
+      });
+    });
+  </script>
+</body>
+
+</html>

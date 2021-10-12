@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<video-js id="myPlayerID"
+  data-embed="default"
+  class="video-js" controls></video-js>
+<script src="//players.brightcove.net/1507807800001/BdGVdOd36_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    //Use this approach if you feel comfortable addressing elements directly by ID
+myPlayerID.setAttribute('data-account', 1507807800001);
+myPlayerID.setAttribute('data-player', 'BdGVdOd36');
+myPlayerID.setAttribute('data-video-id', 2114345470001);
+
+Use the bc() method to initialize the the Brightcove Player
+myPlayer = bc("myPlayerID");
+
+    // Use these approach if you choose not to address an element directly by ID
+    var vTag = document.getElementById('myPlayerID');
+    vTag.setAttribute('data-account', 1507807800001);
+    vTag.setAttribute('data-player', 'BdGVdOd36');
+    vTag.setAttribute('data-video-id', 2114345470001);
+
+    // Use the bc() method to initialize the the Brightcove Player
+    myPlayer = bc(vTag);
+
+    // Mute (in case there is an audio track, in which case play won't work) and play the video
+    myPlayer.on('loadedmetadata',function(){
+      myPlayer.muted(true);
+      myPlayer.play();
+    });
+  </script>
+
+</body>
+
+</html>

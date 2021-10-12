@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Embed in page tester</title>
+  <style type="text/css">
+    .video-js {
+      height: 430px;
+      width: 800px;
+      float: left;
+    }
+    .myplayer {
+      width: 1200px;
+      height: 450px;
+      position: relative;
+    }
+    .playlist-wrapper {
+      width: 800px;
+      overflow-x: scroll;
+      overflow-y: hidden;
+    }
+    .vjs-playlist.vjs-playlist {
+      width: auto;
+      white-space: nowrap;
+    }
+    .vjs-playlist-item {
+      display: inline-block;
+      height: 75px;
+    }
+    cite.vjs-playlist-name {
+      display: none;
+    }
+    .vjs-playlist-description {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="myplayer">
+    <video data-playlist-id="1579619681001"
+      data-account="1507807800001"
+      data-player="default"
+      data-embed="default"
+      class="video-js" controls></video>
+
+    <div class="playlist-wrapper">
+      <ol class="vjs-playlist vjs-csspointerevents vjs-mouse"></ol>
+    </div>
+
+  </div>
+
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+</body>
+</html>

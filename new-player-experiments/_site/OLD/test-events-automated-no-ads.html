@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+<video-js id="myPlayerID"
+data-video-id="5796745147001"
+data-account="1507807800001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video-js>
+<script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+
+<script>
+  var myPlayer,
+    eventsAra=['ended','loadeddata','loadedmetadata','loadstart','play','playing','canplay','progress'],
+    eventsAraLength,
+    eventName;
+
+  videojs.getPlayer('myPlayerID').ready(function() {
+    // get a reference to the player
+    myPlayer = this,
+    eventsAraLength = eventsAra.length;
+
+    for (var i = 0; i < eventsAraLength; i++) {
+      eventName = eventsAra[i];
+      myPlayer.on(eventsAra[i],function( evt ){
+        console.log('Dispatched: ',evt.type);
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

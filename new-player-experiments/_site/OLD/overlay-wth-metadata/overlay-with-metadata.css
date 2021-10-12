@@ -1,0 +1,16 @@
+    .video-js {
+      width: 600px;
+      height: 338px;
+    }
+    .vjs-overlay, .vjs-overlay.vjs-overlay-top-left {
+      font-size: 3em;
+      color: red;
+      width: 350px;
+    }
+    #myPlayerID .vjs-big-play-button {
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      margin: auto;
+    }

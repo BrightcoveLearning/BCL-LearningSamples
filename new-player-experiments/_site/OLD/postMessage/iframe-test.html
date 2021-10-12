@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Play Video from iframe Parent</title>
+  <style>
+    iframe {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+<body>
+
+
+  <p><button onclick="playVideo()">Play Video</button></p>
+  <p><button onclick="pauseVideo()">Pause Video</button></p>
+  <p><button onclick="muteVideo()">Mute Video</button></p>
+  <p><button onclick="jumpVideo()">Jump to 15 seconds</button></p>
+
+  <iframe id="iframePlayer" src="//players.brightcove.net/1507807800001/H1ledeYKa_default/index.html?videoId=5076962725001"
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen></iframe>
+
+  <script type="text/javascript">
+    var win = document.getElementById("iframePlayer").contentWindow;
+
+    function playVideo(){
+        win.postMessage("playVideo","http://players.brightcove.net");
+    }
+    function pauseVideo(){
+        win.postMessage("pauseVideo","http://players.brightcove.net");
+    }
+    function muteVideo(){
+        win.postMessage("muteVideo","http://players.brightcove.net");
+    }
+    function jumpVideo(){
+        win.postMessage("currentTimeVideo","http://players.brightcove.net");
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>IMA3 Plugin Code Example</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css" rel="stylesheet">
+</head>
+<body>
+
+<video id="myPlayerID" data-video-id="5755775186001"
+data-account="1752604059001"
+data-player="default"
+data-embed="default"
+data-application-id
+class="video-js"
+controls></video>
+<script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
+
+  <script type="text/javascript">
+  var myPlayer = videojs.getPlayer('myPlayerID');
+  myPlayer.ready(function() {
+      myPlayer.ima3({
+        playsinline: true
+      });
+  });
+</script>
+
+</body>
+
+</html>
+
+
+
+
+//pubads.g.doubleclick.net/gampad/ads?sz=400x300&iu=%2F6062%2Fiab_vast_samples&ciu_szs=300x250%2C728x90&gdfp_req=1&env=vp&output=xml_vast2&unviewed_position_start=1&url=[referrer_url]&correlator=[timestamp]&cust_params=iab_vast_samples%3Dlinear

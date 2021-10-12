@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <table border="1">
+    <tbody>
+      <tr>
+        <td>Master Playlist URI</td>
+        <td><input type="text" id="manifestUri" value="https://examplethingy-i.akamaihd.net/hls/live/999999/exampleustestthingy/master.m3u8" size="100"></td>
+      </tr>
+      <tr>
+        <td>Uses Relative URIs</td>
+        <td><input type="checkbox" id="relativeUri"></td>
+      </tr>
+      <tr>
+        <td>Size of Live Window</td>
+        <td><input type="number" id="liveWindowSize" value="5"><select name="scale" id="liveWindowScale">
+          <option value="1">Seconds</option>
+          <option value="3600">Hours</option>
+          <option value="86400" selected>Days</option>
+          <option value="31557600">Years</option>
+        </select>
+      </td>
+      </tr>
+      <tr>
+        <td>Average Segment Duration<br />(in seconds)</td>
+        <td><input type="number" id="segmentDuration" value="9"></td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+
+  <div>Segment Count: <strong><span id="segmentCount"></span></strong></div>
+  <div>Estimated Manifest Size: <strong><span id="manifestSize"></span></strong></div>
+  <div>Estimated Bandwidth Overhead: <strong><span id="manifestBandwidth"></span></strong></div>
+
+  <script type="text/javascript">
+    let bandwidthScaleTable = [
+      'bps',
+      'kbps',
+      'mbps',
+      'gbps',
+      'tbps',
+      'pbps',
+      'ebps'
+    ];
+    let sizeScaleTable = [
+      'B',
+      'KB',
+      'MB',
+      'GB',
+      'TB',
+      'PB',
+      'EB'
+    ];
+    let absoluteUriOverhead = 54;
+    let relativeUriOverhead = 55;
+    let hlsHeaderOverhead = 120; // The EXT-X-* tags at the start of a media playlist
+    let hlsSegmentOverhead = 10; // The EXT-INF tag
+    function foo() {
+      let manifestUri = document.querySelector('#manifestUri').value;
+      let rootManifest = manifestUri.split('/').slice(0, -1).join('/');
+      let relativeUri = document.querySelector('#relativeUri').checked;
+      let liveWindowSize = parseFloat(document.querySelector('#liveWindowSize').value);
+      let liveWindowScale = parseFloat(document.querySelector('#liveWindowScale').value);
+      let segmentDuration = parseFloat(document.querySelector('#segmentDuration').value);
+      let liveWindowDuration = liveWindowSize * liveWindowScale;
+      let baseUriLength = relativeUri ? relativeUriOverhead : absoluteUriOverhead + rootManifest.length;
+      let segmentCount = Math.ceil(liveWindowDuration / segmentDuration);
+      let estimate = hlsHeaderOverhead + (baseUriLength + hlsSegmentOverhead) * segmentCount;
+      let bandwidthEstimate = estimate / segmentDuration * 8; //in bits per second
+      let estimateScale = 0;
+      while (estimate > 1024) {
+        estimate /= 1024;
+        estimateScale++;
+      }
+      let bandwidthScale = 0;
+      while (bandwidthEstimate > 1024) {
+        bandwidthEstimate /= 1024;
+        bandwidthScale++;
+      }
+      document.querySelector('#manifestSize').innerHTML = estimate.toFixed(2) + sizeScaleTable[estimateScale];
+      document.querySelector('#manifestBandwidth').innerHTML = bandwidthEstimate.toFixed(2) + bandwidthScaleTable[bandwidthScale];
+      document.querySelector('#segmentCount').innerHTML = segmentCount;
+    }
+    let elements = document.querySelectorAll('input, select');
+    for (let i = 0; i < elements.length; i++) elements[i].addEventListener('change', foo);
+    foo();
+  </script>
+
+</body>
+
+</html>

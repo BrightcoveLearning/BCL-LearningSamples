@@ -1,0 +1,46 @@
+.vjs-afk-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 2%;
+    width: 50%;
+    height: 40%;
+    max-height: 225px;
+    min-height: 130px;
+    background: rgba(43, 51, 63, 0.75);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+.vjs-afk-container.hidden {
+    display: none !important;
+}
+.vjs-afk-container h1 {
+    font-size: 2.5em;
+    text-align: center;
+    text-shadow: 2px 2px 8px #333;
+    color: #fff;
+    margin-top: 0;
+}
+.vjs-afk-button.afk-button {
+    display: block;
+    margin: 2% auto;
+    padding: 2% 4%;
+    width: 60%;
+    background: rgba(50,50,50,0.5);
+    border: 1px solid #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.vjs-afk-button.afk-button:hover {
+    background: rgba(100,100,100,0.4);
+}

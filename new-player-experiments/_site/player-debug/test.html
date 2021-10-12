@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="6201753345001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <p><button onclick="toggleDebug()">Toggle Debug Mode</button></p>
+
+
+
+  <!--   <video-js id="myPlayerID"
+    data-account="1507807800001"
+    data-player="5qbwL2GCf"
+    data-embed="default"
+    controls=""
+    data-video-id="6116766236001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1507807800001/5qbwL2GCf_default/index.min.js"></script> -->
+
+  <!--   <video-js
+    data-debug
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="1702845451016855110"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script> -->
+
+  <script>
+    var myPlayer;
+    videojs.getPlayer('myPlayerID').ready(function () {
+      myPlayer = this;
+      myPlayer.on('debugon', function () { console.log('dispatch debugon') });
+      myPlayer.on('debugoff', function () { console.log('dispatch debugoff') });
+    });
+    function toggleDebug() {
+      if (myPlayer.debug()) {
+        myPlayer.debug(false);
+      } else {
+        myPlayer.debug(true);
+      }
+      console.log('debug state: ', myPlayer.debug());
+    }
+  </script>
+
+</body>
+
+</html>

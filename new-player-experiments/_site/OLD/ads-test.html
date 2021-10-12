@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ads Test</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+  <link href="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video id="myPlayerID" data-video-id="5622718636001" data-account="1507807800001" data-player="default" data-embed="default" data-application-id class="video-js" controls></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  <script src="//players.brightcove.net/videojs-ima3/2/videojs.ima3.min.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer = bc('myPlayerID');
+    myPlayer.ima3({
+      "serverUrl": "http://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vmap.xml",
+      "debug": true,
+      "sdkurl": "http://imasdk.googleapis.com/js/sdkloader/ima3_debug.js"
+    });
+
+    myPlayer.ready(function() {
+      myPlayer = this;
+    });
+  </script>
+
+</body>
+
+</html>

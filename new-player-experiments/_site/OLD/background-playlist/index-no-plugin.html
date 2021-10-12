@@ -1,0 +1,86 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <title>Brightcove Player Sample: Background Video</title>
+  <style type="text/css">
+    /* Style the player */
+		body {
+			margin: 0;
+			background-color: black;
+		}
+    /* Hide the player control bar */
+		.video-js .vjs-control-bar {
+			display: none;
+		}
+		/* Remove click events on the player */
+		.video-js {
+			pointer-events: none;
+
+		}
+    /* Style the article container and text */
+		#article {
+		  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+		  background: rgba(0,0,0,0.3);
+		  color: white;
+		  padding: 2rem;
+		  width: 33%;
+		  margin:2rem;
+		  float: right;
+		  font-size: 1.2rem;
+			position: absolute;
+			top: 7em;
+			right: 3em;
+		}
+		h1 {
+		  font-size: 3rem;
+		  text-transform: uppercase;
+		  margin-top: 0;
+		  letter-spacing: .3rem;
+		}
+  </style>
+</head>
+
+<body>
+  <!-- divs around the video element are for responsive sizing -->
+  <div style="position: relative; display: block; max-width: 100%; ">
+    <div style="padding-top: 56.25%;">
+      <!-- The autoplay and muted attributes have been added to the video element. Also, the controls attribute has been removed. If you want the video to loop continually, you can add the loop attribute.-->
+      <video id="myPlayerID"
+      data-playlist-id="4450721964001"
+        data-account="1752604059001"
+        data-player="Hyau9PI4z"
+        data-embed="default"
+        data-application-id
+        class="video-js"
+        autoplay muted
+        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;">
+      </video>
+      <script src="//players.brightcove.net/1752604059001/Hyau9PI4z_default/index.min.js"></script>
+    </div>
+  </div>
+
+  // +++ This article text block will be displayed over the video background +++
+  <div id="article">
+    <h1 id="videoTitle"></h1>
+    <p id=videoDescription></p>
+  </div>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      // Get a reference to the player
+      var myPlayer = this;
+
+      // +++ Set the playlist to repeat +++
+      myPlayer.playlist.repeat(true);
+
+      // +++ Display the title and description +++
+      myPlayer.on('loadstart',function(){
+        videoTitle.textContent = myPlayer.mediainfo.name;
+        videoDescription.textContent = myPlayer.mediainfo.description;
+      })
+    });
+  </script>
+
+</body>
+
+</html>

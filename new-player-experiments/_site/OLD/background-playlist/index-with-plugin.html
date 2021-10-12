@@ -1,0 +1,48 @@
+<!doctype html>
+<head>
+  <meta charset="UTF-8">
+  <title>Brightcove Player Sample: Background Video</title>
+  <link href="background-playlist.css" rel="stylesheet">
+<script src="background-playlist.js"></script>
+</head>
+
+<body>
+  <!-- divs around the video element are for responsive sizing -->
+  <div style="position: relative; display: block; max-width: 100%; ">
+    <div style="padding-top: 56.25%;">
+      <!-- The autoplay and muted attributes have been added to the video element. Also, the controls attribute has been removed. If you want the video to loop continually, you can add the loop attribute.-->
+      <video id="myPlayerID"
+      data-playlist-id="4450721964001"
+        data-account="1752604059001"
+        data-player="Hyau9PI4z"
+        data-embed="default"
+        data-application-id
+        class="video-js"
+        autoplay muted
+        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;">
+      </video>
+    </div>
+  </div>
+
+  // +++ This article text block will be displayed over the video background +++
+  <div id="article">
+    <h1 id="videoTitle"></h1>
+    <p id=videoDescription></p>
+  </div>
+
+  <script src="//players.brightcove.net/1752604059001/Hyau9PI4z_default/index.min.js"></script>
+
+  <script src="background-playlist.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      // Get a reference to the player
+      var myPlayer = this;
+
+      myPlayer.backgroundPlaylist();
+    });
+  </script>
+
+</body>
+
+</html>

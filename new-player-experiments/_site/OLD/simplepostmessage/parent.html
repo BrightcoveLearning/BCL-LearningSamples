@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled Document</title>
+</head>
+
+<body>
+
+    <iframe id="doc_frame" src="child.html"></iframe>
+
+
+    <script>
+        window.addEventListener('message', function(e) {
+            //window.alert('got it');
+            console.log('got it');
+            console.log('e.data: ', e.data)
+        }, false);
+    </script>
+
+</body>
+
+</html>

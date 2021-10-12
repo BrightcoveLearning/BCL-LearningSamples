@@ -1,0 +1,43 @@
+<!--
+  ## Introduction
+
+  The `amp-brightcove` component allows embedding a Brightcove
+  [Video Cloud](https://www.brightcove.com/en/online-video-platform) or
+  [Perform](https://www.brightcove.com/en/perform) player.
+-->
+<!-- -->
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>amp-brightcove</title>
+
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <!-- ## Setup -->
+  <!-- Import the Brightcove component in the header. -->
+  <script async custom-element="amp-brightcove" src="https://cdn.ampproject.org/v0/amp-brightcove-0.1.js"></script>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link rel="canonical" href="https://ampbyexample.com/components/amp-brightcove/">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+</head>
+<body>
+
+  <!-- ## Basic Usage -->
+  <!--
+    A responsive brightcove video. The required data is `data-account` and `data-video-id`. Other
+    supported parameters are `data-player-id`, `data-embed` and `data-playlist-id`.
+  -->
+  <amp-brightcove
+    data-video-id="111111"
+    data-account="3676484087001"
+    data-player-id="S1VV8j3Zdf"
+    layout="responsive"
+    data-param-video-url="https://onceux.unicornmedia.com/now/ads/vmap/od/auto/c8860df3-6695-44f7-a405-ed3634148b85/2a501e22-792f-4348-ad6c-3e48020b199a/725cba9b-a821-47af-ba5b-677d115c4dcf/content.once"
+    width="480" height="270">
+  </amp-brightcove>
+
+
+</body>
+</html>

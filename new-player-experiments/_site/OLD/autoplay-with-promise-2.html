@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 1</title>
+
+  <style type="text/css">
+/* Make player fill outer div */
+.video-js {
+  height: 100%;
+  width: 100%;
+}
+/* Build outer div size of player */
+.outer {
+  width: 610px;
+  height: 344px;
+  border: 1px solid blue;
+  position: relative;
+}
+/* Style inner div to center button */
+.inner {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+  </style>
+</head>
+
+<body>
+
+<!--  No audio track video: 5796745147001 -->
+<!-- Audio track video: 5622718636001 -->
+
+<div id="playerContainer" class="outer">
+  <video  id="myPlayerID"
+    data-video-id="5755775186001"
+    data-account="1752604059001"
+    data-player="S1MUbcg2qz"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    playsinline
+    autoplay></video>
+</div>
+<script src="//players.brightcove.net/1752604059001/S1MUbcg2qz_default/index.min.js"></script>
+
+
+  <script type="text/javascript">
+// videojs("myPlayerID").ready(function() {
+//   var myPlayer = this,
+//     volumeLevel = 0.5;
+//   // +++ Check if in Safari/Chrome or on iOS +++
+//   if (videojs.browser.IS_IOS || videojs.browser.IS_SAFARI || videojs.browser.IS_CHROME) {
+//     // If true, go with the unmute button
+//     var button = document.createElement("button");
+//     // +++ Add button's event listener +++
+//     button.addEventListener("click", function() {
+//       // Mute and adjust volume for the ad player
+//       myPlayer.ima3.adPlayer.muted(false);
+//       myPlayer.ima3.adPlayer.volume(volumeLevel);
+//       //myPlayer.muted(false);
+//       //myPlayer.volume(volumeLevel);
+//       playerContainer.removeChild(button);
+//     });
+//     // +++ Configure the button +++
+//     button.textContent = "Unmute";
+//     button.classList.add("inner");
+//     button.setAttribute(
+//       "style",
+//       "color:black; background-color:red; width:100px; height:50px; opacity: .4;"
+//     );
+//     // +++ Add the button to the container +++
+//     playerContainer.appendChild(button);
+//   } else {
+//     // +++ If not iOS or Safari/Chrome start the audio +++
+//     myPlayer.on("loadstart", function() {
+//       myPlayer.muted(false);
+//       myPlayer.volume(volumeLevel);
+//     });
+//   }
+// });
+var myPlayer = videojs.getPlayer("myPlayerID"),
+  volumeLevel = 0.7;
+
+// +++ Wait for loadedmetadata then try to play video +++
+myPlayer.on("loadedmetadata", function() {
+  // Play video which returns a promise
+  var promise = myPlayer.play();
+  console.log("promise", promise);
+
+  // +++ Use promise to see if video is playing or not +++
+  if (promise !== undefined) {
+    promise
+      .then(function() {
+        // Autoplay started!
+        // If video playing unmute and set the volume
+        myPlayer.muted(false);
+        myPlayer.volume(volumeLevel);
+      })
+      .catch(function(error) {
+        // Autoplay was prevented.
+        // // +++ If autoplay prevented mute the video, play video and display unmute button +++
+        myPlayer.muted(true);
+        myPlayer.play();
+
+        var button = document.createElement("button");
+
+        // +++ Add button's event listener +++
+        button.addEventListener("click", function() {
+          myPlayer.muted(false);
+          myPlayer.volume(volumeLevel);
+          playerContainer.removeChild(button);
+        });
+
+        // +++ Configure the button +++
+        button.textContent = "Unmute";
+        button.classList.add("inner");
+        button.setAttribute(
+          "style",
+          "color:black; background-color:red; width:100px; height:50px; opacity: .4;"
+        );
+
+        // +++ Add the button to the container +++
+        playerContainer.appendChild(button);
+      });
+  }
+});
+  </script>
+
+</body>
+
+</html>

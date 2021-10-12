@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .downloadStyle {
+        order: 9;
+        -webkit-box-ordinal-group: 9;
+        -moz-box-ordinal-group: 9;
+        -webkit-order: 9;
+        -ms-flex-order: 9;
+        padding-top: 7px !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5701190170001"
+    data-account="1752604059001"
+    data-player="S10RYv9QG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    width="640" height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script>
+
+  <script src="download.min.js"></script>
+
+  <script type="text/javascript">
+    videojs("myPlayerID").ready(function() {
+      // Create variables and new div, anchor and image for download icon
+      var myPlayer = this,
+        videoName,
+        totalRenditions,
+        mp4Ara = [],
+        highestQuality,
+        downloadName,
+        spacer,
+        newElement = document.createElement('div'),
+        newImage = document.createElement('img');
+
+      myPlayer.on('loadstart', function() {
+        //Reinitialize array of MP4 renditions in case used with playlist
+        //This prevents the array having a cumulative list for all videos in playlist
+        mp4Ara = [];
+
+        // +++ Get video name and the MP4 renditions +++
+        videoName = myPlayer.mediainfo['name'];
+        rendtionsAra = myPlayer.mediainfo.sources;
+        totalRenditions = rendtionsAra.length;
+
+        // +++ Loop over videos and extract only MP4 versions +++
+        for (var i = 0; i < totalRenditions; i++) {
+          if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
+            mp4Ara.push(rendtionsAra[i]);
+          };
+        };
+
+        // +++ Sort the renditions from highest to lowest on size+++
+        mp4Ara.sort(function(a, b) {
+          return b.size - a.size;
+        });
+
+        // +++ Extract the highest rendition +++
+        highestQuality = mp4Ara[0].src;
+
+        // +++ Build the download image element +++
+        newElement.id = 'downloadImage';
+        newElement.className = 'downloadStyle vjs-control';
+        newImage.setAttribute('src', 'http://solutions.brightcove.com/bcls/brightcove-player/download-video/file-download.png');
+        newImage.style['cursor'] = 'pointer';
+
+        // +++ On image click call the download function +++
+        newImage.onclick = function(){
+          // This function forces download by the browsers
+          // NOT opening the video in a new window/tab
+          console.log('highestQuality', highestQuality);
+          console.log('videoName',videoName);
+          downloadName = videoName + '.mp4';
+          console.log('downloadName', downloadName);
+
+          download(highestQuality);
+        }
+        newElement.appendChild(newImage);
+
+        // +++ Place the download image +++
+        // Get a handle on the spacer element
+        spacer = myPlayer.controlBar.customControlSpacer.el();
+        // Set the content of the spacer to be right justified
+        spacer.setAttribute("style", "justify-content: flex-end;");
+        // Place the new element in the spacer
+        spacer.appendChild(newElement);
+      })
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js {
+      height: 344px;
+      width: 610px;
+  }
+</style>  
+</head>
+
+<body>
+
+255
+
+ <video id="myPlayerID"
+  data-account="1507807800001"
+  data-player="a4934743-6e54-44d2-8138-a061db4a13b7"
+  data-embed="default"
+  data-video-id=""
+  class="video-js" 
+  controls></video>
+<script src="//players.brightcove.net/1507807800001/a4934743-6e54-44d2-8138-a061db4a13b7_default/index.min.js"></script>
+<button onclick="playVideo()">Play Video</button>
+
+  <script type="text/javascript">
+    /*videojs("myPlayerID").ready(function() {
+      var myVideoTag = document.getElementById("myPlayerID");
+      console.log(myVideoTag);
+      myVideoTag.setAttribute("data-video-id","2114345471001");
+    });
+*/
+    function playVideo(){
+      var myVideoTag = document.getElementById("myPlayerID");
+      console.log(myVideoTag);
+      myVideoTag.setAttribute("data-video-id","2114345471001");
+    }
+  </script>  
+  
+ </body>
+</html>

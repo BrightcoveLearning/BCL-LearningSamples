@@ -1,0 +1,11 @@
+.download-overlay {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-size: 1em;
+    padding: 2px;
+    position: absolute;
+    top: 380px;
+    left: 480px;
+    width: 135px;
+    text-align: center;
+}

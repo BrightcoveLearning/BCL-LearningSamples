@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Plugin Dev Test Embed-In-Page</title>
+    <link href="//players.brightcove.com/1507807800001/b89f372d-12b5-4b38-92a9-76011a18cd65_default/bc.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" 
+      href="plugin-dev-test.css">
+</head>
+
+<body>
+    <video id="player"
+      data-account="1507807800001"
+      data-player="b89f372d-12b5-4b38-92a9-76011a18cd65"
+      data-embed="default"
+      data-id=""
+      class="video-js" controls></video>
+    <script src="//players.brightcove.com/1507807800001/b89f372d-12b5-4b38-92a9-76011a18cd65_default/node_modules/video.js/dist/video-js/video.js"></script>
+    <script src="//players.brightcove.com/1507807800001/b89f372d-12b5-4b38-92a9-76011a18cd65_default/bc.min.js">
+    </script>  
+    
+    <script type="text/javascript" src="plugin-dev-test.js">
+    </script>  
+    <script>videojs('player').pluginDevTest();</script>
+</body>
+
+</html>

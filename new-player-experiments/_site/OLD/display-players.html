@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>New Player Sample Code: Display Players</title>
+</head>
+
+<body data-spy="scroll" data-target=".sub-menu" data-offset="100">
+  <!-- Content ============================================= -->
+  <div class="row">
+    <div id="sidenav" class="span2"></div>
+    <div id="main" class="span10">
+      <div id="top" class="section">
+        <h1>New Player Sample Code: Display Players</h1>
+        <!-- content starts here -->
+      </div>
+      <div id="accountinput" class="section">
+        <h2><a name="accountinput"></a>Account input</h2>
+        <p>Username:
+          <input name="account_username" id="account_username" type="text" size="100" value="mboles@brightcove.com">
+        </p>
+        <p>Account ID:
+          <input name="account_id" id="account_id" type="text" size="40" value="1507807800001">
+        </p>
+        <p>Password:
+          <input name="account_password" id="account_password" type="text" size="40" value="test12">
+        </p>
+        <p><button onclick="getPlayerInfo()">Display Players</button>
+        </p>
+      </div>
+      <div id="jsonText" class="section">
+        <h2><a name="jsonText"></a>JSON response</h2>
+        <p>Below is the JSON data returned by the request:</p>
+        <p><pre><code id="jsonResponse"></code></pre></p>
+      </div>
+      <div id="processedResponse" class="section">
+        <h2><a name="processedResponse"></a>Processed response</h2>
+        <p>Below is simple HTML output of some of the player information:</p>
+        <div id="htmlOutput"></div>
+      </div>
+    </div>
+  </div>
+  <!-- bcl scripts ============================================================ -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript">
+    /******** Any scripts specific to page samples should go here *********/
+    var account_id = "",
+      account_password = "",
+      account_username = "";
+
+    var ajaxSuccess = function (data) {
+      document.getElementById("jsonResponse").innerHTML = JSON.stringify(data,null,2);
+      displayData(data);
+    },
+    ajaxError = function (data) {
+      console.log("error data: ");
+      console.log(data);
+    },
+    makeAjaxCall = function (callURL, callType, callData) {
+      if (callData) {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          data: JSON.stringify(callData),
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      } else {
+        $.ajax({
+          type: callType,
+          headers: {
+            "Authorization": "Basic " + btoa(account_username + ":" + account_password),
+            "Content-Type": "application/json"
+          },
+          url: callURL,
+          success: ajaxSuccess,
+          error: ajaxError
+        });
+      }
+    },
+    getPlayerInfo = function () {
+      account_id = document.getElementById("account_id").value,
+      account_password = document.getElementById("account_password").value,
+      account_username = document.getElementById("account_username").value;
+      console.log(account_id + account_password + account_username);
+      call_url = "https://players.api.brightcove.com/v1/accounts/" + account_id + "/players";
+      makeAjaxCall(call_url, "GET", null);
+    },
+    displayData = function (playerData) {
+      var numPlayers = playerData.length,
+        dynamicHTML = "<ol>";
+      for (var i = 0; i < numPlayers; i++) {
+        dynamicHTML += "<li>Player Name: " + playerData[i].name + "</li><ul><li>ID: " + playerData[i].id + "</li><li>Creation Date: " + playerData[i].created_at + "</li></ul>";
+      };
+      dynamicHTML += "</ol>";
+      document.getElementById("htmlOutput").innerHTML = dynamicHTML;
+    };
+  </script>
+</body>
+
+</html>

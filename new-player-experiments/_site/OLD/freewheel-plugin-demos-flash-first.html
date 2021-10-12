@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Flash/HTML</title>
+  <style>
+    .video-js {
+        width: 640px;
+        height: 360px;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="//players.brightcove.net/videojs-freewheel/2/videojs-freewheel.min.css">
+</head>
+<body>
+
+  <video id="myPlayerID" data-video-id="4607746980001"
+  data-account="1507807800001"
+  data-player="S13ndvotx"
+  data-embed="default"
+  data-application-id
+  class="video-js"
+  controls></video>
+  <script src="//players.brightcove.net/1507807800001/S13ndvotx_default/index.min.js"></script>
+
+  <script src="//players.brightcove.net/videojs-freewheel/2/videojs-freewheel.min.js"></script>
+
+  <script type="text/javascript">
+    var options =
+    {
+      "timeout": 5000,
+      "prerollTimeout": 1000,
+      "debug": true,
+      "adTechOrder": [
+        "flash",
+        "html5"
+      ],
+      "Html5": {
+        "videoAssetDuration": 500,
+        "temporalSlots": [
+          {
+            "timePosition": 0,
+            "id": "Preroll_1",
+            "adUnit": "preroll"
+          },
+          {
+            "timePosition": 60,
+            "id": "Postroll_1",
+            "adUnit": "postroll"
+          },
+          {
+            "timePosition": 5,
+            "id": "Midroll_1",
+            "adUnit": "midroll"
+          }
+        ],
+        "videoAssetCustomId": "BrightCove_Test_Video",
+         "siteSectionCustomId": "BrightCove_Player_Section",
+        "serverUrl": "http://demo.v.fwmrm.net/ad/g/1",
+        "sdkurl": "http://adm.fwmrm.net/p/release/latest-JS/adm/prd/AdManager.js",
+        "profile": "global-js",
+        "networkId": 96749,
+        "keyValues": [
+          {
+            "module": "DemoPlayer",
+            "feature": "simpleAds"
+          },
+          {
+            "feature": "trackingURLs"
+          }
+        ]
+      },
+      "Flash": {
+        "videoAssetDuration": 500,
+        "temporalSlots": [
+          {
+            "timePosition": 0,
+            "id": "Preroll_1",
+            "adUnit": "preroll"
+          },
+          {
+            "timePosition": 60,
+            "id": "Postroll_1",
+            "adUnit": "postroll"
+          },
+          {
+            "timePosition": 5,
+            "id": "Midroll_1",
+            "adUnit": "midroll"
+          }
+        ],
+        "videoAssetCustomId": "as3_demo_video_asset",
+        "siteSectionCustomId": "as3_demo_site_section",
+        "serverUrl": "http://demo.v.fwmrm.net/ad/g/1",
+        "sdkurl": "http://adm.fwmrm.net/p/release/latest-AS3/adm/dbg/AdManager.swf",
+        "profile": "3pqa_profile",
+        "networkId": 90750,
+        "swfurl": "//players.brightcove.net/videojs-freewheel/2/videojs.freewheel.swf",
+        "keyValues": [{    
+          "module": "DemoPlayer",
+          "feature": "simpleAds"  
+        },
+        {    
+          "feature": "trackingURLs"  
+        }]
+      }
+    };
+    videojs('myPlayerID').ready(function(){
+      var myPlayer = this;
+      myPlayer.FreeWheelPlugin(options);
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link rel="stylesheet" href="http://solutions.brightcove.com/bcls/brightcove-player/multi-playlist/brightcove-multi-playlist.css">
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-video-id="5323136098001"
+    data-account="1752604059001"
+    data-player="HylBa5Wnl"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls
+    autoplay
+    width="640"
+    height="360"></video>
+  <script src="//players.brightcove.net/1752604059001/HylBa5Wnl_default/index.min.js"></script>
+
+  <script src="http://solutions.brightcove.com/bcls/brightcove-player/multi-playlist/brightcove-multi-playlist.js" type="text/javascript"></script>
+
+  <script>
+    var myPlayer;
+    videojs('myPlayerID').ready(function() {
+      myPlayer = this;
+      var options = {
+        "playlists": [{
+          "id": "4845949311001"
+        }, {
+          "id": "1754200352001"
+        }, {
+          "id": "1754200353001"
+        }]
+      };
+      myPlayer.multiPlaylist(options);
+    });
+  </script>
+
+</body>
+
+</html>

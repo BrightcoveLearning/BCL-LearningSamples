@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Playlist Tester Perform</title>
+  <style type="text/css">
+    button {
+      width: 120px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video id="myPlayerID"
+    data-account="1752604059001"
+    data-player="f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe"
+    data-embed="default"
+    class="video-js" controls></video>
+
+
+  <p><button onclick="nextVideo()">next video</button></p>
+  <p><button onclick="previousVideo()">previous video</button></p>
+  <p><button onclick="goto2()">jump to 4th video</button></p>
+
+  <script src="//players.brightcove.net/1752604059001/f50a2d3c-af51-4d8c-84e3-0c7cdec0edbe_default/index.min.js"></script>
+   
+   
+  <script type="text/javascript">
+    var myPlayer;
+
+    videojs('myPlayerID').ready(function(){
+      myPlayer = this;
+      myPlayer.catalog.getPlaylist('1754200320001', function(error, playlist){
+        myPlayer.catalog.load(playlist);
+        console.log('player.options()[data-playlist-id]:', myPlayer.options()['data-playlist-id']);
+        console.log('mediainfo', myPlayer.mediainfo);
+        myPlayer.playlist.autoadvance(0);
+
+      })
+    });
+    function nextVideo(){
+      var nextVidObject = myPlayer.playlist.next();
+      console.log('nextVidObject', nextVidObject);
+    }
+    function previousVideo(){
+      myPlayer.playlist.previous();
+    }
+    function goto2(){
+      myPlayer.playlist.currentItem(2);
+    }
+  </script>
+    
+</body>
+
+</html>
