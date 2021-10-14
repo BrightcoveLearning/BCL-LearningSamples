@@ -1,0 +1,169 @@
+**** https://brightcove.atlassian.net/browse/OTT-15876 ****
+Description
+Scope:
+
+Describe the required functionalities in Beacon Web App to support the Player Webhook feature to show a side panel. The callbacks required to enable it will be described here.
+
+ 
+
+Details:
+
+As a developer, we will make available a HTML element with ID 'player_side_panel_hook' (check with design where would be shown for RTL languages) that will allow external libraries to hook into.
+
+As a developer, Beacon Web App will ensure that when this element get’s content, it’s width will not go over 1/3 of the viewport width, or 400px wide.
+
+When this element is activated, the player area will be reduced to accommodate, side by side, this element on screen, with no overlaps.
+
+Beacon Web App will be listing to events that enable external libraries to enable/disable the player side panel. These events will be made calling the window.postMessage() method. Details on calling these events:
+
+{
+event: <eventType>,
+data: null
+}
+
+Possible values for eventType:
+
+ enablePlayerSidePanel: will enable a button on the side of the Player area, that will allow Beacon app to know when to show the control to show the Player Side Panel element.
+
+disablePlayerSidePanel: will disable/hide the button on the side of the Player area.
+
+Beacon Web App will manage the animation of showing/hiding the side panel, when users press on the control made available by the enablePlayerSidePanel event.
+
+Beacon Web App will report the events when users hide or show the side panel:
+
+Events will be reported through the window.postMessage() method using the structure:
+
+{
+event: <eventType>,
+data: ...
+}
+
+Supported values for eventType:
+
+beforePlayerSidePanelDisplay: Called before the animation to show the side panel starts.
+
+onPlayerSidePanelDisplay: Called when the animation to show the side panel finishes.
+
+onPlayerSidePanelDisappear: Called when the animation to hide the side panel finishes.
+
+Details on the data object:
+
+{ 
+asset_id: integer, 
+bc_account_id: integer,
+video_id: integer [videocloud ID of the video currently playing], 
+user_language: string [language code of the currently in use language from Beacon API]
+}
+
+
+
+****https://brightcove.atlassian.net/browse/OTT-15873****
+
+When the Beacon Web App is loaded, the object platforms_configurations->web needs to be checked for valid values inside external_js and external_css. These will be available from the GET /settings endpoint from Beacon API.
+
+Each of these properties will have an array of objects with url and name properties.
+
+For the case of Javascript files, each of the objects inside external_js should inject the following source code in the Beacon Web App main HTML page:
+
+<script src=”{{url}}” ></script> 
+
+For the case of CSS files, each of the objects inside the external_css property, will inject the following code in the Beacon Web App main HTML page (after the current internal Beacon CSS definitions):
+
+<link rel="stylesheet" href="{{url}}"/>
+
+
+**** https://brightcove.atlassian.net/browse/OTT-15874 ****
+As a developer, Beacon Web App will provide a set of events callbacks to any subscriber of those events.
+
+The method used to post the described events will be window.postMessage(). All messages will be posted to the main Window object.
+
+Details on the postMessage:
+
+Object sent:
+
+{event: <eventType>,data: ...}
+
+Details on the properties of the object:
+
+eventType:
+
+beforeBeaconPageLoad: Called before the screen starts to load all the elements required, including API calls with details to be shown (asset details, playlist content, etc);
+
+onBeaconPageLoad: Called when all the elements required to render on screen are available and all checks are done (entitlements, episodes list, etc);
+
+onBeaconPageChange: Called when there are changes in the Beacon Web App page, and the component is the same. Applicable to cases when the main asset changes and episode selected in the details page. For the Live TV screen, it is also called when the selected linear channel changes; 
+
+beforeBeaconPageUnload: Called when destroy() method is called, before calling the superclass one. (Not applicable for now)
+
+onBeaconPageUnload: Called after the destroy() from the superclass finishes.
+
+loadedBeaconVideoMetadata: Called every time that a new Brightcove Video is loaded in the player. Applicable to Player (VOD and Live), Live TV, EPG and Auto-Play pages.
+
+data: 
+
+{
+  page_type: [screen|custom_screen|playlist_view_all|details|player_vod|player_live|epg|livetv|search|settings|my_account|favourites|bookmarks|purchased|static_page|manage_subscriptions|device_management|parental_controls|profiles_list|live_event_details|live_event_player|about|change_language|edit_profile|transactions|payments|landing_page],
+  slug: string,
+  asset_id: string  [sent in details|player_vod|player_live event],
+  playlist_id: string  [sent in playlist_view_all event],
+  page_id: string [sent in home event],
+  bc_account_id: string [sent in loadedBeaconVideoMetadata event],
+  device: 'web'
+  video_id: string [sent in loadedBeaconVideoMetadata events],
+  user_language: string [language code of the currently in use language from Beacon API]
+}
+
+Side Notes:
+
+PageLoad: PageLoad is the event of loading a details page, a listing screen, EPG, Live TV, Settings, Search, Favorites/Bookmarks/Purchases.
+
+Note: Will evaluate the possibility of implementing the before events.
+
+
+**** https://brightcove.atlassian.net/browse/OTT-16845  ****
+
+Description
+Use this events for OIDC login
+
+Supported events with OIDC:
+
+userDidSignIn: Called when the sign in process is complete with success;
+
+userDidSignOut: Called before the logout request is done to Beacon APIs. User is sent to the OIDC provider to logout and Beacon Web App is restarted in the new state.
+
+Private claims to be passed to external plugins are listed in the property oidc_available_claims from Settings endpoint, through a json key/value object with all the available claims.
+
+Notes: 
+
+userDidRegister event is not reported with OIDC as Beacon Web App can’t distinguish between user login or user registrations.
+
+**** https://brightcove.atlassian.net/browse/OTT-15875 ****
+Description
+Beacon Web App call the following event when the described user actions happen:
+
+Events will be reported through the window.postMessage() method using the structure:
+
+{
+event: <eventType>,
+data: ...
+}
+
+Supported values for eventType:
+
+userDidSignIn: Called when the sign in process is complete with success;
+
+userDidRegister: Called when the register process is complete with success;
+
+userDidSignOut: Called before the logout request is done to Beacon APIs.
+
+Details on the data object:
+
+{ 
+account_token: string,
+user_name: string,
+user_email: string,
+claims: json object, [key/value for each of the claims available in the JWT token from authentication with OIDC that can be sent to 3rt party plugins]
+}
+
+
+
