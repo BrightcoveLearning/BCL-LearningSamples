@@ -1,141 +1,115 @@
-- date: 8-October-2021
+- date: 15-August-2021
   types:
     - type: New Docs
       docs:
-        - Title: 'Ingesting Videos with Multi-Language Audio Tracks'
-          Description: 'Language audio tracks in your source videos can be preserved in your Video Cloud video renditions. Ingestion of multi-language audio tracks is supported through the Dynamic Ingest API only,'
-          Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/ingesting-videos-multiple-audio-tracks.html
-          Category: Dynamic Ingest API, Multiple Audio Tracks
+        - Title: 'SSAI Ad tracking log'
+          Description: 'SSAI Ad tracking log is a new feature that looks to provide details of how SSAI ads are working. This feature is for VOD and Live.'
+          Link: https://ssai.support.brightcove.com/getting-started/video-cloud-ssai-ad-logs.html
+          Category: SSAI
+          Status: Released
+          
+    - type: Major updates
+      docs:
+        - Title: 'Overview: Dimensions, Fields, and Parameters'
+          Description: 'Updated the tool for checking dimension combinations with many new supported combinations'
+          Link: https://apis.support.brightcove.com/analytics/getting-started/analytics-api-overview-dimensions-fields-and-parameters.html#metrics
+          Category: Analytics API
+          Status: Released
+        - Title: 'Beacon Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.beacon.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Campaign Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.campaign.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Engage Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.engage.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Social Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.social.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Zencoder Documentation (Japanese)'
+          Description: 'Deployed updated translations'
+          Link: https://ja.zencoder.support.brightcove.com/
+          Category: Localized documentation
+          Status: Released
+        - Title: 'Implementing Device Limits'
+          Description: 'Added endpoint for getting all devices within an account'
+          Link: https://apis.support.brightcove.com/playback-restrictions/guides/device-limits.html 
+          Category: Playback Restrictions
+          Status: Released
+       - Title: 'Devices API Reference'
+          Description: 'Added endpoint for getting all devices within an account'
+          Link: https://apis.support.brightcove.com/playback-restrictions/references/devices-api/reference.html 
+          Category: Playback Restrictions
+          Status: Released
+       - Title: 'Submitting New Apps to the Android Store'
+          Description: 'Added section for selecting countries and regions for your app'
+          Link: https://beacon-help.support.brightcove.com/publishing-apps/android/submitting-to-android.html 
+          Category: Brightcove Beacon
+          Status: Released
+       - Title: 'Submitting New Apps to the Android Store'
+          Description: 'Added section for selecting countries and regions for your app'
+          Link: https://beacon.support.brightcove.com/creating-your-apps/android/submitting-to-android.html 
+          Category: Brightcove Beacon
+          Status: Released
+
+  - type: Minor updates
+      docs:
+        - Title: 'The Brightcove Native SDKs'
+          Description: 'Added support for Android 11'
+          Link: https://sdks.support.brightcove.com/getting-started/brightcove-native-player-sdks.html   
+          Category: Native SDK for Android
+          Status: Released
+       - Title: 'Brightcove Native SDKs Feature Support'
+          Description: 'Added support for ExoPlayer 2.14.2'
+          Link: https://sdks.support.brightcove.com/getting-started/brightcove-native-sdks-feature-support.html    
+          Category: Native SDK for Android
+          Status: Released
+        - Title: 'Implementing Delivery Rules'
+          Description: 'Fixed text for response body for Actions'
+          Link: https://apis.support.brightcove.com/delivery-rules/getting-started/implementing-delivery-rules.html     
+          Category: Delivery Rules
+          Status: Released
+       - Title: 'Brightcove Native SDK for Android Release Notes'
+          Description: 'Native SDK for Android release 6.17.1'
+          Link: https://sdks.support.brightcove.com/android/resources/brightcove-native-sdk-android-release-notes.html      
+          Category: Native SDK for Android
+          Status: Released
+       - Title: 'Brightcove Player SDK for Android: Previous SDK information'
+          Description: 'Native SDK for Android release 6.17.1'
+          Link: https://sdks.support.brightcove.com/android/resources/brightcove-player-sdk-android-previous-sdk-information.html      
+          Category: Native SDK for Android
+          Status: Released
+       - Title: 'Overview: Brightcove Native SDK for Android'
+          Description: 'Native SDK for Android release 6.17.1'
+          Link: https://sdks.support.brightcove.com/android/basics/overview-brightcove-player-sdk-android.html       
+          Category: Native SDK for Android
+          Status: Released
+        - Title: 'Creating a Video Clip Using the Live Module'
+          Description: 'Added info about using Create clip using fast VOD pipeline option'
+          Link: https://live.support.brightcove.com/live-module/creating-video-clip-using-live-module.html
+          Category: Live
           Status: Released
         - Title: 'Authentication Using OAuth'
           Description: 'In this topic, you will learn how to configure the integration of Brightcove Beacon with an OIDC provider. Auth0 is used as an example OIDC provider.'
           Link: https://beacon.support.brightcove.com/using-brightcove-beacon/authentication-using-oauth.html
           Category: Brightcove Beacon
-          Status: Released
-
-    - type: Major updates
-      docs:
-        - Title: 'Requesting Auto Captions'
-          Description: 'Clarified that generating auto-captions for existing video requires a digital master, and corrected an example request'
-          Link: https://apis.support.brightcove.com/dynamic-ingest/ingest-guides/requesting-auto-captions.html
-          Category: Dynamic Ingest, Captions
-          Status: Released
-        - Title: 'Live API: Cue Points and Ad Beacons with SSAI'
-          Description: 'Added information on new "cancel" and "cuepoint_id" fields for manual cuepoint insertion'
-          Link: https://apis.support.brightcove.com/live-api/ssai/live-api-cue-points-and-ad-beacons-ssai.html
-          Category: Live API, SSAI, Cuepoints
-          Status: Released
-        - Title: 'Live API Reference'
-          Description: 'Added information on new "cancel" and "cuepoint_id" fields for manual cuepoint insertion (both for jobs and redundant groups)'
-          Link: https://apis.support.brightcove.com/live-api/references/reference.html
-          Category: Live API, SSAI, Cuepoints
-          Status: Released
-        - Title: 'Overview: Playback API'
-          Description: 'Removed information about using a special base URL for the Playback API for IP restrictions - no longer required'
-          Link: https://apis.support.brightcove.com/playback/getting-started/overview-playback-api.html
-          Category: Playback API, IP Restrictions
-          Status: Released
-        - Title: 'Player Configuration Guide'
-          Description: 'Removed information about using a special base URL for the Playback API for IP restrictions - no longer required'
-          Link: https://apis.support.brightcove.com/player-management/guides/player-configuration-guide.html#iprestrictions
-          Category: Player Management API, Playback API, IP Restrictions
-          Status: Released
-        - Title: 'Overview: Cloud Playout Channels API'
-          Description: 'Added new section on getting As-Run Logs'
-          Link: https://apis.support.brightcove.com/cloud-playout-apis/getting-started/overview-channel-api.html#as_run_log
-          Category: Cloud Playout, Channels API
-          Status: Released
-        - Title: 'Channels API Reference'
-          Description: 'Added new endpoint for getting As-Run Logs'
-          Link: https://apis.support.brightcove.com/cloud-playout-apis/references/reference-channels.html#operation/GetAsRunLogs
-          Category: Cloud Playout, Channels API
-          Status: Released
-        - Title: 'Video Report Generator'
-          Description: 'Removed the reporting of total renditions size from the sample, as rendition size information is not available for Dynamic Delivery videos.'
-          Link: https://apis.support.brightcove.com/cms/code-samples/cms-api-sample-video-report-generator.html
-          Category: CMS API, Sample Apps
-          Status: Released
-        - Title: 'Brightcove Documentation home page (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Brightcove Gallery Documentation (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.gallery.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Brightcove SDKs Documentation (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.sdks.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Brightcove SSAI Documentation (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.ssai.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Video Cloud General Documentation (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.general.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Video Cloud Integrations and Connectors Documentation (Japanese)'
-          Description: 'Updated the localized site'
-          Link: https://ja.integrations.support.brightcove.com/index.html
-          Category: Gallery, Localized documentation
-          Status: Released
-        - Title: 'Submitting New Apps to the Android Store'
-          Description: 'Updated screenshots and flow for the latest Google Play Store'
-          Link: https://beacon-help.support.brightcove.com/publishing-apps/android/submitting-to-android.html 
-          Category: Brightcove Beacon
-          Status: Released
-        - Title: 'App Tracking Transparency with the Native SDK for iOS'
-          Description: 'Added section for preventing IDFA tracking with the IMA plugin'
-          Link: https://sdks.support.brightcove.com/ios/privacy/app-tracking-transparency.html 
-          Category: Native SDK for iOS
-          Status: Released
-        - Title: 'Advertising with the IMA3 Plugin'
-          Description: 'Added notes about using ad macros'
-          Link: https://player.support.brightcove.com/plugins/advertising-ima3-plugin.htm
-          Category: Brightcove Player
-          Status: Released
-        - Title: 'Displaying Ads Using Ad Cue Points'
-          Description: 'Added notes section'
-          Link: https://player.support.brightcove.com/advertising/displaying-ads-using-ad-cue-points.html#Notes 
-          Category: Brightcove Player
-          Status: Released
-        - Title: 'Video SEO Schema Generator Plugin'
-          Description: 'Added section for configuring the player to remove the Flash tech'
-          Link: https://player.support.brightcove.com/plugins/video-seo-schema-generator-plugin.html  
-          Category: Brightcove Player
-          Status: Released
-
-    - type: 'Minor Updates'
-      docs:
-        - Title: 'Installing the Connector for Teams'
-          Description: 'Updated screen shots to improve the quality'
-          Link: https://integrations.support.brightcove.com/teams/installation.html
-          Category: Video Cloud Integrations
-          Status: Released
-        - Title: 'Using the Connector for Microsoft Teams'
-          Description: 'Updated screen shots to improve the quality'
-          Link: https://integrations.support.brightcove.com/teams/using.html
-          Category: Video Cloud Integrations
-          Status: Released
-        - Title: 'Creating a JSON Web Token (JWT)'
-          Description: 'Updated Bash script note in the example about setting the exp claim to now + 1 hour'
-          Link: https://general.support.brightcove.com/developer/create-json-web-token.html#Generate_a_token   
-          Category: Playback Restrictions
-          Status: Released
+          Status: Released          
 
 
 
 
 
 
-
-- date: 8-October-2021
+- date: 15-October-2021
   types:
     - type: New Docs
       docs:
@@ -169,6 +143,20 @@
 
 
           
+
+
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
+
+        - Title: ''
+          Description: ''
+          Link: 
+          Category: 
+          Status: Released | Limited Availability | Staging | Internal
+
         - Title: ''
           Description: ''
           Link: 
