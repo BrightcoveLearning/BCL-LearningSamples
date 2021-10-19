@@ -1,3 +1,24 @@
+**** Questions ****
+1. Does the plugin creator need to be concerned with login/OICC/credentials, etc.
+2. 
+
+
+
+**** Jim Meeting Notes ****
+*Use Cases:
+  -Chat bot (Net app) floats on top of web app
+  -Data feed (stock ticker or scoreboard)
+
+*Work only with web app
+
+*JP to setup our account to get plugin testing environment
+
+*Bob Barber - contact
+
+
+
+
+
 **** https://brightcove.atlassian.net/browse/OTT-15876 ****
 Description
 Scope:
@@ -57,6 +78,8 @@ user_language: string [language code of the currently in use language from Beaco
 
 
 
+
+
 ****https://brightcove.atlassian.net/browse/OTT-15873****
 
 When the Beacon Web App is loaded, the object platforms_configurations->web needs to be checked for valid values inside external_js and external_css. These will be available from the GET /settings endpoint from Beacon API.
@@ -70,6 +93,9 @@ For the case of Javascript files, each of the objects inside external_js should 
 For the case of CSS files, each of the objects inside the external_css property, will inject the following code in the Beacon Web App main HTML page (after the current internal Beacon CSS definitions):
 
 <link rel="stylesheet" href="{{url}}"/>
+
+
+
 
 
 **** https://brightcove.atlassian.net/browse/OTT-15874 ****
@@ -118,6 +144,10 @@ Side Notes:
 PageLoad: PageLoad is the event of loading a details page, a listing screen, EPG, Live TV, Settings, Search, Favorites/Bookmarks/Purchases.
 
 Note: Will evaluate the possibility of implementing the before events.
+
+
+
+
 
 
 **** https://brightcove.atlassian.net/browse/OTT-16845  ****
