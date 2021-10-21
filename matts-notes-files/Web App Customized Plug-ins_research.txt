@@ -1,15 +1,23 @@
 **** Questions ****
 1. Does the plugin creator need to be concerned with login/OICC/credentials, etc.
-2. 
+2. Plugins: What elements to document 
+3. Plugins: Use handlebars
+4. Plugins: Micro services to retrieve videos and associated metadata
 
 
 
 **** Tobe Recorded GTM ****
-*Add elements
+*Add elements to show (Tobe's recommendations)
   -Buttons on defalt pages (details pages only)
   -beacon_detials_mid_page_section (details pages only)
-  -
-
+  -slider section
+  -Custom page
+  - (check Adding Custom Elements to Page in docs for complete list)
+*Event handler file src>event.js
+*28:06, how to do basic task
+*Can include more js and css files since array in the Web Customization JSON section
+*Name in Web Customization JSON only for reference
+*
 
 
 
