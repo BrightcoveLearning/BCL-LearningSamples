@@ -4,6 +4,16 @@
 
 
 
+**** Tobe Recorded GTM ****
+*Add elements
+  -Buttons on defalt pages (details pages only)
+  -beacon_detials_mid_page_section (details pages only)
+  -
+
+
+
+
+
 **** Jim Meeting Notes ****
 *Use Cases:
   -Chat bot (Net app) floats on top of web app
