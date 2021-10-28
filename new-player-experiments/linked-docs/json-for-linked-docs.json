@@ -1,0 +1,50 @@
+{
+  "product": {
+    "videocloud": {
+      "module":{
+        "media": {
+          "search-tips": {
+            "_comment": "The location of the is link is ...",
+            "key": "search-tips-doc",
+            "url": "https://studio.support.brightcove.com/media/how-search-videos-and-playlists-media-module.html#advsearch"
+          },
+        },
+        "admin": {
+
+        } 
+      },
+    "beacon": {
+      "module":{
+        "media": {
+          "search-tips": {
+            "_comment": "The location of the is link is ...",
+            "key": "search-tips-doc",
+            "url": "https://beacon-help.support.brightcove.com/media/searching-videos-and-playlist.html#advsearch"
+          }
+        }
+      }
+    }
+  }
+}
+
+
+{
+  "module": {
+    "media": {
+      "search-tips": {
+        "products": {
+          "videocloud": {
+            "_comment": "The location of the is link is ...",
+            "key": "search-tips-doc",
+            "url": "https://studio.support.brightcove.com/media/how-search-videos-and-playlists-media-module.html#advsearch"            
+          },
+          "beacon": {
+            "_comment": "The location of the is link is ...",
+            "key": "search-tips-doc",
+            "url": "https://studio.support.brightcove.com/media/how-search-videos-and-playlists-media-module.html#advsearch"   
+          }
+        }
+      }
+    }
+  }
+}
