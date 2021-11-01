@@ -1,4 +1,5 @@
 // This is startup JS
+
 window.addEventListener("message",
   (event) => {
     const originsAllowed = [
@@ -6,14 +7,16 @@ window.addEventListener("message",
     ];
     if (originsAllowed.includes(event.origin)) {
 
+
       console.log('event: ', event);
       console.log('event.data.data.page_type: ', event.data.data.page_type);
+      console.log('event.data.event: ', event.data.event);
       switch(event.data.event) {
         case 'beforeBeaconPageLoad':
           if (event.data.data.page_type === 'details') {
-            console.log('in beforepageload');
+            console.log('in details page type');
             // Call detailsPageAddCustomButton to add a button to details pages
-            myAddButton = window.postMessage({
+            window.postMessage({
               event: 'detailsPageAddCustomButton',
               data: {
                 title: 'Test Button',
@@ -22,6 +25,10 @@ window.addEventListener("message",
               }
             }, window.location.origin);
           }
+          console.log('after postmessage');
+          break;
+        case 'notlookingforthis':
+          console.log('notlookingforthis');
           break;
         default:
           // code block
