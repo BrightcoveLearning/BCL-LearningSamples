@@ -1,4 +1,17 @@
 Major accomplishments:
+** Week Ending 29 October **
+- Closed 4 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Rolled in comments from Anwar to Ad Targeting in Beacon
+- Copied Beacon doc on Ad Targeting in Beacon to Beacon LA (copied images, updated links, etc.) 
+
+Work NOT Reflected in JIRAs:
+- Great progress on Beacon Plugins code
+- A boatload of meetings
+
+
+
 ** Week Ending 22 October **
 - Closed 20 JIRAs, 2 of which was administrivia
 

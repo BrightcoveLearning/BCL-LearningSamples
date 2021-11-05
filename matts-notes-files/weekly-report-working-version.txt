@@ -1,3 +1,90 @@
+- date: 29-October-2021
+  types:
+    - type: New Docs
+      docs:
+        - Title: 'Dimension: Viewer'
+          Description: 'In this topic, you will learn about the Analytics API viewer dimension. The viewer dimension provides analytics by viewer. Only available if the account has been enabled for viewer analytics.'
+          Link:
+          Category:
+          Status: Released
+        - Title: 'Open Measurement for Server-Side Ads (SSAI) and Brightcove Player'
+          Description: 'In this topic, you will learn how to use the iab Open Measurement SDK with Brightcove Player’s Server-Side Ad Insertion (SSAI) plugin.'
+          Link: https://player.support.brightcove.com/plugins/open-measurement-with-ssai.html  
+          Category: Brightcove Player
+          Status: Released
+        - Title: 'Android: Seeking Behavior with Server-Side Ads (SSAI)'
+          Description: 'In this topic, you will learn about playhead seeking with Server-Side Ad Insertion (SSAI) while using the Brightcove Native SDK for Android.'
+          Link: https://sdks.support.brightcove.com/android/advertising/ssai-seeking-behavior.html 
+          Category: Native SDK for Android
+          Status: Staging
+        - Title: 'Android: Playhead Position and Video Duration'
+          Description: 'In this topic, you will learn about changes when using the playhead position and video duration with the Brightcove Native SDK for Android.'
+          Link: https://sdks.support.brightcove.com/android/playback/playhead-position-and-video-duration.html  
+          Category: Native SDK for Android
+          Status: Staging
+
+    - type: Major updates
+      docs:
+        - Title: 'Installing the Connector for Microsoft Teams'
+          Description: 'Added new section on installing the connector from the App Store'
+          Link: https://integrations.support.brightcove.com/teams/installation.html
+          Category: Integrations, Microsoft Teams Connector
+          Status: Released
+        - Title: 'Using Live Redundancy'
+          Description: 'Added several notes on the necessity of republishing the player with the new video ID after adding a backup stream and on the best regions to use for the primary and backup streams'
+          Link: https://live.support.brightcove.com/live-module/live-redundancy.html
+          Category: Live, Redundancy
+          Status: Released
+        - Title: 'Live API Reference'
+          Description: 'Added the srt_config.latency field to adjust latency for the live steam.'
+          Link: https://apis.support.brightcove.com/live-api/references/reference.html#operation/CreateALiveJob
+          Category: Live
+          Status: Released
+
+    - type: Minor updates
+      docs:
+        - Title: 'Performance Report Reference'
+          Description: ‘Documented new Play Requests field'
+          Link: https://studio.support.brightcove.com/analytics/performance-report-reference.html
+          Category: Video Cloud
+          Status: Released
+        - Title: 'Adobe-AEM-Brightcove Connector: Installation'
+          Description: 'Added a note indicating that before a new version of the connector can be installed, the current version must be completely uninstalled'
+          Link: https://integrations.support.brightcove.com/adobe/adobe-aem-brightcove-connector-installation.html
+          Category: Integrations, AEM Connector
+          Status: Released
+        - Title: 'Adobe-AEM-Brightcove Connector: Overview'
+          Description: 'Added a note indicating that an onboarding package to assist with the initial installation and configuration of the connector is strongly encouraged'
+          Link: https://integrations.support.brightcove.com/adobe/adobe-aem-brightcove-connector-overview.html
+          Category: Integrations, AEM Connector
+          Status: Released
+        - Title: 'Viewing Billing Information'
+          Description: 'Added a note on how and when data gets updated'
+          Link: https://studio.support.brightcove.com/admin/viewing-billing-information.html
+          Category: Studio, Admin, Billing
+          Status: Released
+        - Title: 'CMS API Video Fields Reference'
+          Description: 'Added descriptions of the possible values of the video state'
+          Link: https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html#videoFields
+          Category: CMS API
+          Status: Released
+        - Title: 'CMS API Notifications'
+          Description: 'Added activation and deactivation to the events that trigger notifications'
+          Link: https://apis.support.brightcove.com/cms/getting-started/cms-api-notifications.html#What_triggers
+          Category: CMS API
+          Status: Released
+        - Title: 'Dynamic Ingest API Video Fields Reference'
+          Description: 'Corrected an error in a field name: transcriptions.input_audio_track.kind should have been transcriptions.input_audio_track.variant'
+          Link: https://apis.support.brightcove.com/dynamic-ingest/references/dynamic-ingest-ingest-fields.html
+          Category: Dynamic Ingest API
+          Status: Released
+        - Title: 'Codecs And Formats'
+          Description: 'Added a warning that Zencoder does not support input files with file extensions in UPPERCASE'
+          Link: https://zencoder.support.brightcove.com/general-information/faq-codecs-and-formats.html
+          Category: Zencoder
+          Status: Released
+
+
 - date: 22-October-2021
   types:
     - type: New Docs
@@ -7,6 +94,7 @@
           Link: https://beacon.support.brightcove.com/using-brightcove-beacon/setup-beacon-web-app.html
           Category: Beacon, Beacon Web App
           Status: Released
+
           
     - type: Major updates
       docs:
