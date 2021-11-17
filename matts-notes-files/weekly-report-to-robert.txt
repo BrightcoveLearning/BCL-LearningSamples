@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 5 November **
+- Closed 7 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Started showing progress on the Beacon Plugins so it looked like I actually did some work this week ;-)
+- Updated IMA3 plugin doc with a new option
+- Update Beacon Configuraion Wizard 
+
+Work NOT Reflected in JIRAs:
+- Two meetings and started doc on Sending Push Notifications
+- A boatload of meetings
+
+
+
 ** Week Ending 29 October **
 - Closed 4 JIRAs, 1 of which was administrivia
 
