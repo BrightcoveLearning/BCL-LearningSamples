@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 19 November **
+- Closed 18 JIRAs, 3 of which was administrivia
+
+JIRA Highlights Include:
+- Created new doc Managing Linked Pages
+- Created new doc Configuring App Settings
+- Updated doc Refreshing the App Cache to reflect UI changed (minor update)
+- Updated doc Getting Started with the Layout Module  to reflect UI changed (major update)
+- Created new doc Sending App Notifications (did work over vacation week)
+- Moved Document Standards doc to Confluence and reformatted
+- 
+
+Work NOT Reflected in JIRAs:
+- Created spreadsheet with essential tasks to get done before Beacon GA: https://docs.google.com/spreadsheets/d/1u5qBHrRk6xihNoy6uQa83CTSRXCTALmsB0Ju9oMUOVc/edit#gid=0
+- A boatload of meetings (not sure why, but it was great a number meetings were cancelled and I got more work done. Funny how that is.)
+
+
+
 ** Week Ending 5 November **
 - Closed 7 JIRAs, 1 of which was administrivia
 

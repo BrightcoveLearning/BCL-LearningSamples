@@ -1,126 +1,87 @@
-- date: 22-October-2021
+- date: 19-November-2021
   types:
     - type: New Docs
       docs:
-        - Title: 'Setup for the Beacon Web App'
-          Description: 'This topic explains steps that are required for setting up the Beacon Web App'
-          Link: https://beacon.support.brightcove.com/using-brightcove-beacon/setup-beacon-web-app.html
-          Category: Beacon, Beacon Web App
+        - Title: 'Managing Linked Pages'
+          Description: 'In this topic, you will learn how to create, delete and edit a linked page. A linked page is used when the number of videos in a carousel meets a maximum threshold and the linked page is displayed instead of the carousel.'
+          Link: https://beacon-help.support.brightcove.com/layout/managing-linked-pages.html
+          Product: Beacon
+          Product_area: Managing Pages
+          Product_Update: false
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Limited Availability
+        - Title: 'Configuring App Settings'
+          Description: 'In this topic, you will learn how to configure settings that will be applied throughout your apps.'
+          Link: https://beacon-help.support.brightcove.com/layout/configuring-app-settings.html
+          Product: Beacon
+          Product_area: Managing Pages
+          Product_Update: false
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Limited Availability
+     - Title: 'Sending App Notifications'
+          Description: 'In this topic, you will learn how to use Firebase to send notifications to iOS and Android apps.'
+          Link: https://beacon.support.brightcove.com/using-brightcove-beacon/sending-app-notifications.html
+          Product: Beacon
+          Product_area: Managing Apps
+          Product_Update: false
+          Feature: '(leave blank if Product_Update is false)'
           Status: Released
-          
     - type: Major updates
       docs:
-        - Title: 'Beacon Apps Ad Targeting'
-          Description: 'Beacon ad targeting allows your Beacon apps to send important device-level and user-specific information to your ad server or ad provider.'
-          Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
-          Category: Brightcove Beacon
-          Status: Released
-        - Title: 'Live API Reference'
-          Description: 'Added 2 new endpoints use to activate or deactivate SEP jobs in a redundant group'
-          Link: https://apis.support.brightcove.com/live-api/references/reference.html#tag/Redundant-Groups
-          Category: Live API, SEP, Redundant Groups
-          Status: Released
-       - Title: 'Brightcove Player Error Reference'
-          Description: 'Added section with links to Playback Restrictions documents'
-          Link: https://player.support.brightcove.com/references/brightcove-player-error-reference.html#Playback_Restriction_errors   
-          Category: Brightcove Player
-          Status: Released
-       - Title: 'CMS API Video Fields Reference'
-          Description: 'Added playback_rights_id to video fields'
-          Link: https://apis.support.brightcove.com/cms/references/cms-api-video-fields-reference.html#videoFields  
-          Category: Playback Restrictions, CMS API
-          Status: Released          
-
-  - type: Minor updates
+        - Title: 'Getting Started with the Layout Module'
+          Description: 'Major changes to reflect latest UI updates'
+          Link: https://beacon-help.support.brightcove.com/layout/getting-started-layout-module.html
+          Product: Beacon
+          Product_area: Managing Pages
+          Product_Update: false
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Limited Availability
+    - type: Minor updates
       docs:
-        - Title: 'Engagement Report Reference'
-          Description: 'Documented new Average Viewed Minutes field'
-          Link: https://studio.support.brightcove.com/analytics/engagement-report-reference.html
-          Category: Video Cloud
-          Status: Released
-        - Title: '360°/VR Video Plugin'
-          Description: 'Added note that native HLS captions will not be visible in Safari when this plugin is used'
-          Link: https://player.support.brightcove.com/plugins/360degvr-video-plugin.html
-          Category: Player plugins
-          Status: Released
-        - Title: 'Creating a Video Clip Using the Live Module'
-          Description: 'Rewrote sentence on using fast VOD pipeline to clarify that this option creates one segment-accurate rendition, which is replaced by a full set of frame-accurate renditions when they are ready'
-          Link: https://player.support.brightcove.com/plugins/360degvr-video-plugin.html
-          Category: Player plugins
-          Status: Released
-        - Title: 'Playback Restrictions Error Reference'
-          Description: 'Updated msgs and added note about the Safari browser with Stream Concurrency and Device Limits'
-          Link: https://apis.support.brightcove.com/playback-restrictions/references/playback-rights-errors.html   
-          Category: Playback Restrictions
-          Status: Released
-       - Title: 'Creating a JSON Web Token (JWT)'
-          Description: 'Fixed table layout for Playback Restriction claims'
-          Link: https://general.support.brightcove.com/developer/create-json-web-token.html#Claims_for_Playback_Restrictions  
-          Category: Playback Restrictions
-          Status: Released
-       - Title: 'Staged Documents'
-          Description: 'Added Miscellaneous section with Fallback HDCP and Ad Intelligence Plugin'
-          Link: https://general.support.brightcove.com/index-staging.html  
-          Category: Studio, Brightcove Player
-          Status: Staging
+        - Title: 'Refreshing the App Cache'
+          Description: 'Updated to reflect change of the location of the refresh button'
+          Link: https://beacon-help.support.brightcove.com/layout/clearing-cache.html
+          Product: Beacon
+          Product_area: Managing Pages
+          Product_Update: false
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Limited Availability
 
 
 
-- date: 15-October-2021
+
+- date: 19-November-2021
   types:
     - type: New Docs
       docs:
         - Title: ''
           Description: ''
           Link: 
-          Category: 
+          Product: Video Cloud | Brightcove Player | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: true | false
+          Feature: '(leave blank if Product_Update is false)'
           Status: Released | Limited Availability | Staging | Internal
     - type: Major updates
       docs:
         - Title: ''
           Description: ''
           Link: 
-          Category: 
+          Product: Video Cloud | Brightcove Player | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: true | false
+          Feature: '(leave blank if Product_Update is false)'
           Status: Released | Limited Availability | Staging | Internal
     - type: Minor updates
       docs:
         - Title: ''
           Description: ''
           Link: 
-          Category: 
+          Product: Video Cloud | Brightcove Player | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: true | false
+          Feature: '(leave blank if Product_Update is false)'
           Status: Released | Limited Availability | Staging | Internal
-
-
-
-
-
-
-
-
-
-
-          
-
-
-        - Title: ''
-          Description: ''
-          Link: 
-          Category: 
-          Status: Released | Limited Availability | Staging | Internal
-
-        - Title: ''
-          Description: ''
-          Link: 
-          Category: 
-          Status: Released | Limited Availability | Staging | Internal
-
-        - Title: ''
-          Description: ''
-          Link: 
-          Category: 
-          Status: Released | Limited Availability | Staging | Internal
-
-
 
 
 
