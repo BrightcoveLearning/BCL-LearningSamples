@@ -1,51 +1,36 @@
-- date: 19-November-2021
+- date: 24-November-2021
   types:
     - type: New Docs
       docs:
-        - Title: 'Managing Linked Pages'
-          Description: 'In this topic, you will learn how to create, delete and edit a linked page. A linked page is used when the number of videos in a carousel meets a maximum threshold and the linked page is displayed instead of the carousel.'
-          Link: https://beacon-help.support.brightcove.com/layout/managing-linked-pages.html
+        - Title: 'Using Core Pages'
+          Description: 'In this topic, you will learn how to use and configure Brightcove Beacon core pages.'
+          Link: https://beacon-help.support.brightcove.com/layout/using-core-pages.html
           Product: Beacon
           Product_area: Managing Pages
-          Product_Update: false
-          Feature: '(leave blank if Product_Update is false)'
+          Product_Update: 'false'
+          Feature: ''
           Status: Limited Availability
-        - Title: 'Configuring App Settings'
-          Description: 'In this topic, you will learn how to configure settings that will be applied throughout your apps.'
-          Link: https://beacon-help.support.brightcove.com/layout/configuring-app-settings.html
-          Product: Beacon
-          Product_area: Managing Pages
-          Product_Update: false
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Limited Availability
-     - Title: 'Sending App Notifications'
-          Description: 'In this topic, you will learn how to use Firebase to send notifications to iOS and Android apps.'
-          Link: https://beacon.support.brightcove.com/using-brightcove-beacon/sending-app-notifications.html
-          Product: Beacon
-          Product_area: Managing Apps
-          Product_Update: false
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Released
     - type: Major updates
       docs:
-        - Title: 'Getting Started with the Layout Module'
-          Description: 'Major changes to reflect latest UI updates'
-          Link: https://beacon-help.support.brightcove.com/layout/getting-started-layout-module.html
+        - Title: Creating and Managing Pages''
+          Description: 'Update content and images to latest UI changes'
+          Link: https://beacon-help.support.brightcove.com/layout/creating-managing-pages.html
           Product: Beacon
           Product_area: Managing Pages
-          Product_Update: false
-          Feature: '(leave blank if Product_Update is false)'
+          Product_Update: 'false'
+          Feature: ''
           Status: Limited Availability
     - type: Minor updates
       docs:
-        - Title: 'Refreshing the App Cache'
-          Description: 'Updated to reflect change of the location of the refresh button'
-          Link: https://beacon-help.support.brightcove.com/layout/clearing-cache.html
-          Product: Beacon
-          Product_area: Managing Pages
-          Product_Update: false
+        - Title: ''
+          Description: ''
+          Link: 
+          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: 'true | false'
           Feature: '(leave blank if Product_Update is false)'
-          Status: Limited Availability
+          Status: Released | Limited Availability | Staging | Internal
+
 
 
 
