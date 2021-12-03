@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 3 December **
+- Closed 11 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Made video for the Sending App Notifications doc (request by Jose C)
+- Added series data to the BCLS Beacon app (did image for one series then turned the rest over to Shantal)
+- Rolled in updates for the Using Core Pages doc (got some great additional content from reviews)
+- Worked with Roy, you and Jeff to supply updates for the Syndication UI
+- Updated some of the Beacon in-app help to match UI changes
+- Updated a couple of Beacon docs to match UI changes
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 19 November **
 - Closed 18 JIRAs, 3 of which was administrivia
 
@@ -14,7 +30,6 @@ JIRA Highlights Include:
 Work NOT Reflected in JIRAs:
 - Created spreadsheet with essential tasks to get done before Beacon GA: https://docs.google.com/spreadsheets/d/1u5qBHrRk6xihNoy6uQa83CTSRXCTALmsB0Ju9oMUOVc/edit#gid=0
 - A boatload of meetings (not sure why, but it was great a number meetings were cancelled and I got more work done. Funny how that is.)
-
 
 
 ** Week Ending 5 November **

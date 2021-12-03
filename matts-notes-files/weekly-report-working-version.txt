@@ -1,35 +1,44 @@
-- date: 24-November-2021
+- date: 3-December-2021
   types:
-    - type: New Docs
-      docs:
-        - Title: 'Using Core Pages'
-          Description: 'In this topic, you will learn how to use and configure Brightcove Beacon core pages.'
-          Link: https://beacon-help.support.brightcove.com/layout/using-core-pages.html
-          Product: Beacon
-          Product_area: Managing Pages
-          Product_Update: 'false'
-          Feature: ''
-          Status: Limited Availability
+
+
+        
     - type: Major updates
       docs:
-        - Title: Creating and Managing Pages''
-          Description: 'Update content and images to latest UI changes'
-          Link: https://beacon-help.support.brightcove.com/layout/creating-managing-pages.html
+        - Title: 'Page Details Overview'
+          Description: 'Updated to new UI changes'
+          Link: https://beacon-help.support.brightcove.com/layout/page-details-overview.html
           Product: Beacon
-          Product_area: Managing Pages
+          Product_area: Layout
           Product_Update: 'false'
-          Feature: ''
+          Feature: '(leave blank if Product_Update is false)'
           Status: Limited Availability
     - type: Minor updates
       docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
+        - Title: 'Sending App Notifications'
+          Description: 'One small, but critical, issue corrected. Both document and associated video fixed.'
+          Link: https://beacon.support.brightcove.com/using-brightcove-beacon/sending-app-notifications.html
+          Product: Beacon
+          Product_area: App Notifications
+          Product_Update: 'false'
           Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
+          Status: Released
+        - Title: 'Beacon Apps Ad Targeting'
+          Description: 'Added new ad macros and content around those macros.'
+          Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
+          Product: Beacon
+          Product_area: Monetization
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released
+        - Title: 'Using Core Pages'
+          Description: 'Updated how videos are defined to be recently watched.'
+          Link: https://beacon-help.support.brightcove.com/layout/using-core-pages.html
+          Product: Beacon
+          Product_area: Layout
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Limited Availability
 
 
 
