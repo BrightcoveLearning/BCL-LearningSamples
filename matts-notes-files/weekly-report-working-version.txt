@@ -1,44 +1,54 @@
-- date: 3-December-2021
+- date: 10-December-2021
   types:
-
-
-        
-    - type: Major updates
+    - type: New Docs
       docs:
-        - Title: 'Page Details Overview'
-          Description: 'Updated to new UI changes'
-          Link: https://beacon-help.support.brightcove.com/layout/page-details-overview.html
+       - Title: 'Create Beacon Image Mapping Default Setting'
+          Description: 'Provide a default setting for the mapping of Beacon images for episodes and movies.'
+          Link: https://beacon-la.support.brightcove.com/onboarding-topics/image-mapping.html
           Product: Beacon
-          Product_area: Layout
+          Product_area: Onboarding
           Product_Update: 'false'
           Feature: '(leave blank if Product_Update is false)'
-          Status: Limited Availability
+          Status: Internal
+
+
+    - type: Major updates
+      docs:
+        - Title: ''
+          Description: ''
+          Link: 
+          Product: Video Cloud | Brightcove Player | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: true | false
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released | Limited Availability | Staging | Internal
+
     - type: Minor updates
       docs:
-        - Title: 'Sending App Notifications'
-          Description: 'One small, but critical, issue corrected. Both document and associated video fixed.'
-          Link: https://beacon.support.brightcove.com/using-brightcove-beacon/sending-app-notifications.html
+        - Title: 'Branding Brightcove Beacon Apps'
+          Description: 'Images added to demonstrate logo and color choices'
+          Link: https://beacon.support.brightcove.com/references/branding-beacon-apps.html
           Product: Beacon
-          Product_area: App Notifications
+          Product_area: Styling
           Product_Update: 'false'
           Feature: '(leave blank if Product_Update is false)'
           Status: Released
-        - Title: 'Beacon Apps Ad Targeting'
-          Description: 'Added new ad macros and content around those macros.'
-          Link: https://beacon.support.brightcove.com/monetization/ssai/beacon-apps-ad-targeting.html
+        - Title: 'Images and Their Specifications'
+          Description: 'Added the section: Image use in apps'
+          Link: https://beacon.support.brightcove.com/references/image-requirements.html#Image_use_in_apps
+          Product: Beacon
+          Product_area: App
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released
+        - Title: 'Creating an SVOD Plan'
+          Description: 'Added section: Unpublishing or deleting a package. Also added to Implementing AuthVOD doc.'
+          Link: https://beacon.support.brightcove.com/monetization/general/creating-svod-plan.html#Unpublishing
           Product: Beacon
           Product_area: Monetization
           Product_Update: 'false'
           Feature: '(leave blank if Product_Update is false)'
           Status: Released
-        - Title: 'Using Core Pages'
-          Description: 'Updated how videos are defined to be recently watched.'
-          Link: https://beacon-help.support.brightcove.com/layout/using-core-pages.html
-          Product: Beacon
-          Product_area: Layout
-          Product_Update: 'false'
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Limited Availability
 
 
 
@@ -76,6 +86,36 @@
           Product_Update: true | false
           Feature: '(leave blank if Product_Update is false)'
           Status: Released | Limited Availability | Staging | Internal
+
+
+        - Title: 'Branding Brightcove Beacon Apps'
+          Description: 'Images added'
+          Link: https://beacon.support.brightcove.com/references/branding-beacon-apps.html
+          Product: Beacon
+          Product_area: Styling
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released
+
+
+        - Title: 'Creating an SVOD Plan'
+          Description: 'Added section: Unpublishing or deleting a package. Also added to Implementing AuthVOD doc.'
+          Link: https://beacon.support.brightcove.com/monetization/general/creating-svod-plan.html#Unpublishing
+          Product: Beacon
+          Product_area: Monetization
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released
+
+
+        - Title: 'Create Beacon Image Mapping Default Setting'
+          Description: 'Provide a default setting for the mapping of Beacon images for episodes and movies.'
+          Link: https://beacon-la.support.brightcove.com/onboarding-topics/image-mapping.html
+          Product: Beacon
+          Product_area: Onboarding
+          Product_Update: 'false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Internal
 
 
 

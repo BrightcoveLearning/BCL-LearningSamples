@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 10 December **
+- Closed 12 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Now that we have a site I added content and was able to see where images are used. Added to the Images and Their Specifications docs.
+- JIRA request for graphics/screenshots in the Beacon Branding doc. Ask David Jardim for help and he had @Pedro Fernandes create some graphics which I put into the doc.
+- Updated AuthVOD and AVOD docs with how to delete or unpublish packages.
+- Updated the App Notifications video a couple of times as Joao found one mistake and decided on more content he wanted added.
+
+
+Work NOT Reflected in JIRAs:
+- Started working on Beacon plugins code/doc again
+- A boatload of meetings
+
+
+
 ** Week Ending 3 December **
 - Closed 11 JIRAs, 1 of which was administrivia
 
