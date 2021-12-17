@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 17 December **
+- Closed 23 JIRAs, 2 of which was administrivia
+
+JIRA Highlights Include:
+- Now that we have our own Beacon app I was able to define where different images are used in apps (got nice screenshots) and updated both Beacon Classic and Beacon LA Images and Their Specifications docs. The Beacon LA doc was basically only a skeleton so counted it as a new doc in the weekly report. There were 5 JIRAs from different folks around that issue, so all now closed.
+- Got some nice graphics from Funchal design team, but a little big for our doc format so used some JS and CSS to provide zoom in and out functionality: https://beacon.support.brightcove.com/references/branding-beacon-apps.html#Logos_and_icons
+- Moved Add User and Change User Password docs from Beacon Classic to Beacon Private per Jose C's request
+
+Work NOT Reflected in JIRAs:
+- Spent hours with Shantal getting Jekyll working for her
+- Reviewed MOST all open JIRAs and found some appropriate for Yari and Shantal (also found a few tickets I had done but not closed, hence 23 JIRAs closed this week)
+- A couple of hours, roughly, on how to use includes in Jekyll and how GitHub can automatically copy common content to multiple repos
+- A boatload of meetings
+
+
+
 ** Week Ending 10 December **
 - Closed 12 JIRAs, 1 of which was administrivia
 
