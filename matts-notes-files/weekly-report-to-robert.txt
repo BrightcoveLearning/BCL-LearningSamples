@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 7 January **
+- Closed 5 JIRAs, 0 of which was administrivia
+
+JIRA Highlights Include:
+- Updated Brightcove Player API docs. Usually this is very quick, but every so often changes must be made to the video.js repo and I have to update a bunch of things on my machine to be able to use JSDoc, as was the case this week.
+- Asked to crete a doc on using OneTrust for Beacon App cookie compliance. Needed to get a login to a OneTrust account, which was surprisingly time consuming. Great help from Andy Cruz in GDL, who seems like a great guy to go to for Beacon help, and finally could login. It will literally take me less time to write the doc than it took me to get access to a trial account.
+- Did my security training for the year
+- Updated both Beacon Known Issue docs with info on multi-language support
+
+Work NOT Reflected in JIRAs:
+- STILL working with IT to get CORS enabled on //solutions.brightcove.com/bcls/. Turns out IT owns that and not OPS. Finally Tim Grey said he would just give me supervisor rights temporarily to the server so I can make the change. Not hard, did the change then didn't have rights to save the change. :-( Tim not around today it seems, but should have that fixed next week so I can continue with Beacon plugin docs. 
+- A boatload of meetings
+
+
+
 ** Week Ending 17 December **
 - Closed 23 JIRAs, 2 of which was administrivia
 
