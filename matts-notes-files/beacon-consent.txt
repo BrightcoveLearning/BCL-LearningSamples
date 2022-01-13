@@ -1,0 +1,4 @@
+1. Should I always say "Beacon web app"
+2. Shouldn't two templates be created, one for GDPR and one for CCPA
+3. Who actually implements the scripts, BC or customer
+4. 
