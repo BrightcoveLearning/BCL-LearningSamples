@@ -1,0 +1,20 @@
+- date: 14-January-2022
+  types:
+    - type: New Docs
+      docs:
+        - Title: 'Managing Cookie Consent Using OneTrust'
+          Description: 'In this topic, you will learn how to implement OneTrust Cookie Compliance with Brightcove Beacon.'
+          Link: https://beacon-help.support.brightcove.com/general/managing-cookie-consent.html
+          Product: Beacon
+          Product_area: General Information
+          Product_Update: 'false'
+          Feature: ''
+          Status: Staging
+        - Title: 'Deleting an App User'
+          Description: 'In this topic, you will learn how to delete an app user.'
+          Link: https://beacon.support.brightcove.com/references/delete-app-user.html
+          Product: Beacon
+          Product_area: 
+          Product_Update: 'false'
+          Feature: ''
+          Status: Released
