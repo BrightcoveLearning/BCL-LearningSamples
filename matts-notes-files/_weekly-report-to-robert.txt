@@ -1,4 +1,17 @@
 Major accomplishments:
+** Week Ending 14 January **
+- Closed 2 JIRAs, 0 of which was administrivia
+
+JIRA Highlights Include:
+- Draft of Managing Cookie Consent Using OneTrust doc done. Had a 1 hour meetng with Jose, Jim and Andy Cruz (engineer working on this issue)  Friday AM and got good suggestions. Also found out by asking questions no one in BC really knows exactly how this is going to work. Andy was assigned by Jose a number of questions to clarify. This is a long doc (32 screenshots) and took me LOTS of time to keep working in the OneTrust's UI to understand exactly how all the pieces worked.
+-New doc (refreshing simple) on how to delete an app user in Beacon Classic.
+Work NOT Reflected in JIRAs:
+- Had Shantal watch me build the Delete App User doc (and we recorded) so she could see the entire process of building as doc. Took 1 1/2 hours. She said it was helpful. 
+- Because of the issue with IT not being able to help me with CORS asked Brian Martinez about the issue and he pointed me to the extension that can control CORS locally. GREAT!!
+- A boatload of meetings
+
+
+
 ** Week Ending 7 January **
 - Closed 6 JIRAs, 1 of which was administrivia
 
