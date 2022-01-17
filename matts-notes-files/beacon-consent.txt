@@ -1,3 +1,4 @@
 1. Should I always say "Beacon web app"?
-2. How does the customer get the templates to copy?
-3. Where do the domains come from when Scripts is selected?
+2. How does the customer get the templates to copy? Create two templates - Step 4
+3. Where do the domains come from when Scripts is selected? Create and copy scripts - Step 1
+4. What is done with the scripts once generated? Create and copy scripts - Step 8
