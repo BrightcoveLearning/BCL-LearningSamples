@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style type="text/css">
+    .video-js {
+      height: 344px;
+      width: 610px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-video-id="5325486425001"
+    data-account="1752604059001"
+    data-player="S10RYv9QG"
+    data-embed="default"
+    data-application-id
+    class="video-js"
+    controls></video-js>
+
+  <script src="https://players.brightcove.net/1752604059001/S10RYv9QG_default/index.min.js"></script>
+
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function () {
+      // Create variables and new div, anchor and image for download icon
+      var myPlayer = this,
+        highestQuality,
+        mp4Sources;
+
+      myPlayer.on("loadstart", function () {
+
+        // +++ Get video name and the MP4 renditions +++
+        mp4Sources = myPlayer.currentSources();
+
+        // +++ Sort the renditions from highest to lowest on size+++
+        mp4Sources.sort(function (a, b) {
+          return b.size - a.size;
+        });
+
+        // +++ Extract the highest rendition +++
+        highestQuality = mp4Sources[0];
+
+        myPlayer.off('loadstart');
+      })
+      myPlayer.src(highestQuality);
+    });
+
+
+  </script>
+
+</body>
+
+</html>

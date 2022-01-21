@@ -1,4 +1,9 @@
 1. Should I always say "Beacon web app"?
-2. How does the customer get the templates to copy? Create two templates - Step 4
-3. Where do the domains come from when Scripts is selected? Create and copy scripts - Step 1
-4. What is done with the scripts once generated? Create and copy scripts - Step 8
+2. How does the customer get the templates to copy? Create two templates - Step 4 **JIM ACTION ITEM**
+3. Where do the domains without scan come from when Scripts is selected? Create and copy scripts - Step 1 **JIM ACTION ITEM**
+4. What is done with the scripts once generated? Create and copy scripts - Step 8 "Give to Brightcove Delivery Team"
+
+
+
+PLUGINS
+1. To populate the side panel: beforePlayerSidePanelDisplay or onPlayerSidePanelDisplay

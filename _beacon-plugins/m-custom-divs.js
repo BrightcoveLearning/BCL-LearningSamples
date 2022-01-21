@@ -1,4 +1,7 @@
-// This is startup JS
+const fillInDivs = () => {
+  window.postMessage({
+
+
 window.addEventListener("message",
   (event) => {
     const originsAllowed = [
