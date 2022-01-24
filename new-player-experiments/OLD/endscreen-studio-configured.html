@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Custom Endscreen Plugin</title>
-  <style type="text/css">
+  <!--   <style type="text/css">
     .vjs-overlay-buttons {
       position: absolute;
       top: 5em;
@@ -21,31 +21,30 @@
       width: 100%;
     }
   </style>
-  <link rel="stylesheet" type="text/css" href="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.css">
+ -->
 </head>
 
 <body>
 
-  <video-js id="myPlayerID"
+  <video-js id="myPlayerId"
     data-account="1752604059001"
+    data-player="mdHZaPmZO"
+    data-embed="default"
+    controls=""
     data-video-id="4077874637001"
-    data-player="default"
-    data-embed="default" controls=""
+    data-playlist-id=""
     data-application-id=""
-    width="960" height="540">
-  </video-js>
-  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js">
-  </script>
-  <script type="text/javascript" src="https://players.brightcove.net/videojs-custom-endscreen/2/videojs-custom-endscreen.min.js"></script>
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/mdHZaPmZO_default/index.min.js"></script>
 
-  <script type="text/javascript">
+  <!--   <script type="text/javascript">
     videojs.getPlayer('myPlayerID').ready(function () {
       var myPlayer = this;
       myPlayer.customEndscreen({
         "content": "<a href='https://www.brightcove.com'>Visit our home page</a>"
       })
     });
-  </script>
+  </script> -->
 
 </body>
 
