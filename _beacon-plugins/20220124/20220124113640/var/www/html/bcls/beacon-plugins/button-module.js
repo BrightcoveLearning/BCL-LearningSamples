@@ -1,4 +1,4 @@
-export const detailsPageAddCustomButton = () => {
+export const addCustomButtonDetails = () => {
   
   window.postMessage({
     event: 'detailsPageAddCustomButton',
@@ -10,3 +10,12 @@ export const detailsPageAddCustomButton = () => {
   }, window.location.origin);
 
 };
+
+
+export const handleButtonClick = () => {
+  
+  alert('button was clicked');
+
+};
+
+export {  }

@@ -1,8 +1,11 @@
-import { addCustomButtonDetails, addCustomButtonDetailsParams, handleButtonClick } from './button-module.js';
-import { populateMidPageDiv, clearMidPageDiv } from './div-mid-page-module.js';
-import { populateAppOverflowDiv, clearAppOverflowDiv } from './div-app-overflow-module.js';
-import { openSidePanel, populateSidePanel, clearSidePanel } from './side-panel-module.js';
-
+import { detailsPageAddCustomButton } from './m-button.js';
+import { handleButtonClick } from './m-button-click-handler.js';
+import { openSidePanel } from './m-open-side-panel.js';
+import { midPageDiv } from './m-div-mid-page.js';
+import { appOverflowDiv } from './m-div-app-overflow.js';
+import { populateSidePanel } from './m-populate-side-panel.js';
+import { clearSidePanel } from './m-clear-side-panel.js';
+import { populateSidePanelParam } from './m-populate-side-panel-parameter.js';
 //import { data } from './m-data.js';
 
 
@@ -29,10 +32,9 @@ window.addEventListener("message", (event) => {
       case 'onBeaconPageLoad':
         //data();
         //console.log('panelData value', panelData);
-        populateMidPageDiv();
-        addCustomButtonDetailsParams('Test Button', 'fa fa-info-circle', 'TEST_BTN_ID');
-        //detailsPageAddCustomButton();
-        populateAppOverflowDiv();
+        midPageDiv();
+        detailsPageAddCustomButton();
+        appOverflowDiv();
       break;
 
     }

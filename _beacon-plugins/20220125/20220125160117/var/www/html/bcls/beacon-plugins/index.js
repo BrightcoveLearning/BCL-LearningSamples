@@ -8,7 +8,7 @@ import { openSidePanel, populateSidePanel, clearSidePanel } from './side-panel-m
 
 window.addEventListener("message", (event) => {
   const originsAllowed = [
-    'https://beacon-web.ott.us-east-1.qa.deploys.brightcove.com'
+    'https://beacon-web.ott.us-west-2.qa.deploys.brightcove.com'
   ];
   if (originsAllowed.includes(event.origin)) {
     openSidePanel();

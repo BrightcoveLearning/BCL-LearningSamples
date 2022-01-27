@@ -32,7 +32,7 @@ window.addEventListener("message", (event) => {
         populateMidPageDiv();
         addCustomButtonDetailsParams('Test Button', 'fa fa-info-circle', 'TEST_BTN_ID');
         //detailsPageAddCustomButton();
-        populateAppOverflowDiv();
+        appOverflowDiv();
       break;
 
     }
