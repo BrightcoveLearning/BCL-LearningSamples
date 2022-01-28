@@ -2,6 +2,9 @@
 2. How does the customer get the templates to copy? Create two templates - Step 4 **JIM ACTION ITEM**
 3. Where do the domains without scan come from when Scripts is selected? Create and copy scripts - Step 1 **JIM ACTION ITEM**
 4. What is done with the scripts once generated? Create and copy scripts - Step 8 "Give to Brightcove Delivery Team"
+https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendix_A_Purposes_and_Features_Definitions
+
+
 
 
 

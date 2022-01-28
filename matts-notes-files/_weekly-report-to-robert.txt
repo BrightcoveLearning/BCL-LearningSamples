@@ -1,4 +1,28 @@
 Major accomplishments:
+** Week Ending 28 January **
+- Closed 9 JIRAs, 0 of which was administrivia
+
+JIRA Highlights Include:
+- Got the code finalized for the Beacon Plugin side panel and did a doc for that as a template for Jeff and Yarianna to use
+- Worked with Andy Cruz on some oddities in the implementation in the Beacon web apps for the module based Beacon Plugin code, but all good now
+- Another meeting with Andy Cruz on Cookie Consient doc. BC had planned to give templates to customers, but turns out with OneTrust the idea of importing a template does not exist, so got details on what to add to the cookie consent doc. One part is a bit messy, but will do a video for that.
+Work NOT Reflected in JIRAs:
+- Writing more code on Beacon Plugins. Looking good here, module implementation looking nicer than I had hoped. 
+- A boatload of meetings
+
+
+** Week Ending 21 January **
+- Closed 2 JIRAs, 0 of which was administrivia
+
+JIRA Highlights Include:
+- Created implementation of how Beacon Plugin functionality can use JavaScript modules
+- Had second meeting with Jim, Jose and Andy and got a few more comments and rolled them in. FYI, still more changes to that doc as coming still open questions being resolved by Andy (engineer working on the implementaion)
+Work NOT Reflected in JIRAs:
+- Writing more code on Beacon Plugins 
+- A boatload of meetings
+
+
+
 ** Week Ending 14 January **
 - Closed 2 JIRAs, 0 of which was administrivia
 
