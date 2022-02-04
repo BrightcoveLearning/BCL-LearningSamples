@@ -34,23 +34,14 @@
           Product_Update: 'true'
           Feature: 'Beacon Web Customization with Plugins'
           Status: Staging
-    - type: Major updates
-      docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
+
     - type: Minor updates
       docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
+        - Title: 'Branding CorpTV Apps'
+          Description: 'Updated logos and color pallette images supplied by Funchal designers'
+          Link: https://corptv.support.brightcove.com/styling/branding-ott-apps.html
+          Product: CorpTV
+          Product_area: Styling
+          Product_Update: 'false'
           Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
+          Status: Limited Availability
