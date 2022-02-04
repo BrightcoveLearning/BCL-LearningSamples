@@ -15,3 +15,7 @@ https://iabeurope.eu/iab-europe-transparency-consent-framework-policies/#Appendi
 
 PLUGINS
 1. To populate the side panel: beforePlayerSidePanelDisplay or onPlayerSidePanelDisplay
+
+https://docs.google.com/document/d/16YuPktk2oflk1YOl3VqFlpkAVKHjW5QwnwcGhmP2ikA/edit#
+
+
