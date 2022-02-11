@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 11 February **
+- Closed 15 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Did this week's doc update process
+- With the big projects of cookie consent and Beacon plugins on temporaty pause closed a number of smaller Beacon tickets, including
+	* New doc on how to add needed BC user accounts to Amamzon and Roku
+	* Add warning about useing full screen images in Beacon (no longer officially supported)
+	* New doc on login timeouts for Beacon apps (shortest doc I have ever written)
+	* Add info on all available Beacon languages to Required Information Beacon doc
+	* Add info on Smart TV older model support
+- Rolled in what I thought were final changes to cookie consent doc until finding out the UI had changed :-( Not sure the impact on the doc yet.
+Work NOT Reflected in JIRAs:
+- Continued to drive the Beacon Plugins doc project. Setup meeting with Andy with Jeff, Yarianna and I to get techical info for the last three docs that need to be  written. Last pieces of the project now assigned to Jeff, Yarianna and I. Plan to be done by next Friday.
+- A boatload of meetings
+
+
+
 ** Week Ending 4 February **
 - Closed 8 JIRAs, 0 of which was administrivia
 

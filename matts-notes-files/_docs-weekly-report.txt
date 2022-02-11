@@ -2,46 +2,39 @@
   types:
     - type: New Docs
       docs:
-        - Title: 'Learning Guide: Beacon Plugins'
-          Description: 'In this topic, you will learn about Beacon plugins; what they are, why you would use them, and an introduction to how to implement them.'
-          Link: https://beacon.support.brightcove.com/ott-plugins/learning-guide-beacon-plugins.html
-          Product: Beacon
-          Product_area: OTT Plugins
-          Product_Update: 'true'
-          Feature: 'Beacon Web Customization with Plugins'
-          Status: Staging
-        - Title: 'Using JavaScript Modules for Beacon Plugins'
-          Description: 'In this topic, you will learn how JavaScript modules can be used in the code implementation of Beacon Plugins.'
-          Link: https://beacon.support.brightcove.com/ott-plugins/javascript-modules-beacon-plugins.html
-          Product: Beacon
-          Product_area: OTT Plugins
-          Product_Update: 'true'
-          Feature: 'Beacon Web Customization with Plugins'
-          Status: Staging
-        - Title: 'Dispatching and Handling Events in Beacon Plugins'
-          Description: 'In this topic, you will learn how events are dispatched and handled in Beacon Plugins.'
-          Link: https://beacon.support.brightcove.com/ott-plugins/dispatching-handling-events.html
-          Product: Beacon
-          Product_area: OTT Plugins
-          Product_Update: 'true'
-          Feature: 'Beacon Web Customization with Plugins'
-          Status: Staging
-        - Title: 'Implementing the Side Panel'
-          Description: 'In this topic, you will learn how to implement the side panel using a plugin in your Brightcove Beacon web apps.'
-          Link: https://beacon.support.brightcove.com/ott-plugins/side-panel.html
-          Product: Beacon
-          Product_area: OTT Plugins
-          Product_Update: 'true'
-          Feature: 'Beacon Web Customization with Plugins'
-          Status: Staging
-
+ 
     - type: Minor updates
       docs:
-        - Title: 'Branding CorpTV Apps'
-          Description: 'Updated logos and color pallette images supplied by Funchal designers'
-          Link: https://corptv.support.brightcove.com/styling/branding-ott-apps.html
-          Product: CorpTV
-          Product_area: Styling
-          Product_Update: 'false'
+
+- date: 11-February-2022
+  types:
+    - type: New Docs
+      docs:
+        - Title: ''
+          Description: ''
+          Link: 
+          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: 'true | false'
           Feature: '(leave blank if Product_Update is false)'
-          Status: Limited Availability
+          Status: Released | Limited Availability | Staging | Internal
+    - type: Major updates
+      docs:
+        - Title: ''
+          Description: ''
+          Link: 
+          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: 'true | false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released | Limited Availability | Staging | Internal
+    - type: Minor updates
+      docs:
+        - Title: ''
+          Description: ''
+          Link: 
+          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
+          Product_area: 
+          Product_Update: 'true | false'
+          Feature: '(leave blank if Product_Update is false)'
+          Status: Released | Limited Availability | Staging | Internal
