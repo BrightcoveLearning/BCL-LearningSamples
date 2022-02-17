@@ -18,4 +18,4 @@ PLUGINS
 
 https://docs.google.com/document/d/16YuPktk2oflk1YOl3VqFlpkAVKHjW5QwnwcGhmP2ikA/edit#
 
-
+This document is one part of the Beacon Plugins document collection. Since Beacon Plugins are implemented using JavaScript and CSS, the target audience for this document is developers with some JavaScript experience. To learn more about Beacon Plugins see the <a href=“/ott-plugins/index.html”>Beacon Plugins documentation home page</a>.

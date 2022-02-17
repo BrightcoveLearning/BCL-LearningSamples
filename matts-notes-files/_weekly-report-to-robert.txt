@@ -11,8 +11,9 @@ JIRA Highlights Include:
 	* Add info on all available Beacon languages to Required Information Beacon doc
 	* Add info on Smart TV older model support
 - Rolled in what I thought were final changes to cookie consent doc until finding out the UI had changed :-( Not sure the impact on the doc yet.
+
 Work NOT Reflected in JIRAs:
-- Continued to drive the Beacon Plugins doc project. Setup meeting with Andy with Jeff, Yarianna and I to get techical info for the last three docs that need to be  written. Last pieces of the project now assigned to Jeff, Yarianna and I. Plan to be done by next Friday.
+- Continued to drive the Beacon Plugins doc project. Setup meeting with Andy with Jeff, Yarianna and I to get techical info from Andy for the last three docs that need to be  written. Last pieces of the project now assigned to Jeff, Yarianna and I. Plan to be done by next Friday.
 - A boatload of meetings
 
 
