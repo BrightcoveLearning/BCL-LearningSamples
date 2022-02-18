@@ -1,40 +1,20 @@
-- date: 4-February-2022
+- date: 18-February-2022
   types:
     - type: New Docs
       docs:
- 
-    - type: Minor updates
-      docs:
-
-- date: 11-February-2022
-  types:
-    - type: New Docs
-      docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
-    - type: Major updates
-      docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
-    - type: Minor updates
-      docs:
-        - Title: ''
-          Description: ''
-          Link: 
-          Product: Video Cloud | Live | Beacon | SSAI | Zencoder
-          Product_area: 
-          Product_Update: 'true | false'
-          Feature: '(leave blank if Product_Update is false)'
-          Status: Released | Limited Availability | Staging | Internal
+        - Title: 'Creating a Custom Page'
+          Description: 'In this topic, you will learn how to use a JavaScript plugin to create a custom page in your Beacon web app.'
+          Link: https://beacon.support.brightcove.com/ott-plugins/custom-page.html
+          Product: Beacon
+          Product_area: OTT Plugins
+          Product_Update: 'false'
+          Feature: ''
+          Status: Staging
+        - Title: 'Storing Data in a Separate Module'
+          Description: 'In this topic, you will learn how to store the data for your plugins in a separate module.'
+          Link: https://beacon.support.brightcove.com/ott-plugins/data-module.html
+          Product: Beacon
+          Product_area: OTT Plugins
+          Product_Update: 'false'
+          Feature: ''
+          Status: Staging          
