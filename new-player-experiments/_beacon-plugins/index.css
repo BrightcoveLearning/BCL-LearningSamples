@@ -1,10 +1,24 @@
 /* This is css */
 #beacon_details_mid_page_section {
-  color: blue;
-  font-size: medium;
+   
+    background-color: black;
+    color: white;
+    font-size: medium;
 }
 
 #beacon-web-app-overflow {
-  color: red;
-  font-size: large;
+    background-color: black;
+    color: white;
+    font-size: large;
+}
+
+#custom_page_area {
+  margin-left: 15px;
+  color: darkblue;
+  background-color: beige;
+}
+
+#player_side_panel_hook {
+  margin-top: 50px;
+  padding-top: 20px;
 }

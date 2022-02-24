@@ -8,8 +8,8 @@ import { pageContent } from './data.js';
 
 window.addEventListener("message", (event) => {
   const originsAllowed = [
-    'https://yourapplocation.com',
-    'https://yourapplocation.com'
+    'https://beacon-web.ott.us-west-2.qa.deploys.brightcove.com',
+    'https://beacon-web.ott.us-west-2.stage.deploys.brightcove.com'
   ];
   if (originsAllowed.includes(event.origin)) {
     // console.log('event data', event.data.data);
@@ -52,6 +52,18 @@ window.addEventListener("message", (event) => {
         addCustomButtonDetailsParams('Location', 'fa fa-info-circle', 'location-button');
         // detailsPageAddCustomButton();
         populateAppOverflowDiv();
+      break;   
+        
+      case 'loadedBeaconVideoMetadata':
+        console.log('loadedBeaconVideoMetadata Event data: ', event.data.data);
+      break;
+
+      case 'onBeaconPageChange':
+        console.log('onBeaconPageChange Event data: ', event.data.data);
+      break;
+
+      case 'onBeaconPageUnload':
+        console.log('onBeaconPageUnload Event data: ', event.data.data);
       break;
     }
   }
