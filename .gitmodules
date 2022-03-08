@@ -1,3 +1,6 @@
 [submodule "new-player-experiments/submodule-test"]
 	path = new-player-experiments/submodule-test
 	url = https://github.com/BrightcoveLearning/submodule-test
+[submodule "new-player-experiments/submodule-test2"]
+	path = new-player-experiments/submodule-test2
+	url = https://github.com/BrightcoveLearning/submodule-test2
