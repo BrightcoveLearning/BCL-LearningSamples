@@ -1,0 +1,129 @@
+DOCS:
+https://git-scm.com/docs/git-submodule
+https://git-scm.com/book/en/v2/Git-Tools-Submodules
+
+
+
+NOTES
+If you already cloned the project and forgot --recurse-submodules, you can combine the git submodule init and git submodule update steps by running git submodule update --init. To also initialize, fetch and checkout any nested submodules, you can use the foolproof git submodule update --init --recursive.
+
+If you want to check for new work in a submodule, you can go into the directory and run git fetch and git merge the upstream branch to update the local code.
+
+There is an easier way to do this (check for new work in a submodule) as well, if you prefer to not manually fetch and merge in the subdirectory. If you run git submodule update --remote, Git will go into your submodules and fetch and update for you.
+
+In order to have a submodule summary when executing “git status”, execute the “git config” command and add the “status.submoduleSummary” option. $ git config --global status.submoduleSummary true
+
+By default, the git pull command recursively fetches submodules changes, as we can see in the output of the first command above. However, it does not update the submodules. This is shown by the output of the git status command, which shows the submodule is “modified”, and has “new commits”. What’s more, the brackets showing the new commits point left (<), indicating that these commits are recorded in MainProject but are not present in the local DbConnector checkout. To finalize the update, you need to run git submodule update:
+
+$ git submodule update --init --recursive
+Submodule path 'vendor/plugins/demo': checked out '48679c6302815f6c76f1fe30625d795d9e55fc56'
+
+$ git status
+ On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
+Note that to be on the safe side, you should run git submodule update with the --init flag in case the MainProject commits you just pulled added new submodules, and with the --recursive flag if any submodules have nested submodules.
+
+If you want to automate this process, you can add the --recurse-submodules flag to the git pull command (since Git 2.14). This will make Git run git submodule update right after the pull, putting the submodules in the correct state. Moreover, if you want to make Git always pull with --recurse-submodules, you can set the configuration option submodule.recurse to true (this works for git pull since Git 2.15). This option will make Git use the --recurse-submodules flag for all commands that support it (except clone).
+
+
+
+https://gist.github.com/armadsen/e534971c643d88309e14a8d40196bcfa
+armadsen/CommitSubmodules.sh
+if [[ "$#" -ne 1 ]]; then
+    echo "You must specify a commit message as an argument."
+    exit 1
+fi
+
+COMMIT_MESSAGE="$1"
+git submodule foreach "echo 'Adding all files.'; git add ."
+git submodule foreach "echo 'Stashing.'; git stash"
+git submodule foreach "echo 'Checking out master branch.'; git checkout master"
+git submodule foreach "echo 'Applying stash.'; git stash apply"
+git submodule foreach "echo 'Readding all files.'; git add ."
+git submodule foreach "echo 'Committing changes.'; git commit -a -q -m '${COMMIT_MESSAGE}' || :"
+echo 'Adding main repo changes.'
+git add .
+echo 'Committing changes to main repo.'
+git commit -a -m "${COMMIT_MESSAGE}"
+
+
+LOCAL CHANGE CAN"T PUSH - SOLUTION
+mboles-pro:parent4submodules mboles$  cd submodule-test
+mboles-pro:submodule-test mboles$ git add .
+mboles-pro:submodule-test mboles$ git commit -m 'my commit'
+[detached HEAD 94b8d63] my commit
+ 1 file changed, 3 insertions(+)
+mboles-pro:submodule-test mboles$ git push origin HEAD:main
+To https://github.com/BrightcoveLearning/submodule-test
+ ! [rejected]        HEAD -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/BrightcoveLearning/submodule-test'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+mboles-pro:submodule-test mboles$ git checkout main
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  94b8d63 my commit
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 94b8d63
+
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 15 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+mboles-pro:submodule-test mboles$ git pull
+Updating ff91419..dc667a0
+Fast-forward
+ file5.txt   |  2 ++
+ file6.txt   |  4 ++++
+ robert1.txt |  3 +++
+ robert2.txt |  1 +
+ yari.txt    | 10 ++++++++++
+ 5 files changed, 20 insertions(+)
+ create mode 100644 file5.txt
+ create mode 100644 file6.txt
+ create mode 100644 robert1.txt
+ create mode 100644 robert2.txt
+ create mode 100644 yari.txt
+mboles-pro:submodule-test mboles$ git push origin HEAD:main
+Everything up-to-date
+mboles-pro:submodule-test mboles$ 
+
+
+
+------------------------------------ 
+**Seems to work
+Get updates from all submodules, in parent directory
+git submodule update --remote
+
+View config
+git config --list
+
+Push to submodule
+git add .
+git commit -m 'message'
+git push origin HEAD:main
+
+Detached Head
+git checkout <branch-name>
+
+
+
+
+
+
+
+
+
+------------------------------------
+**Problem/Solultion
+P: fatal: Needed a single revision Unable to find current origin/master revision in submodule path 'new-player-experiments/submodule-test'
+S: In submodule folder: git switch main
+
+
+
