@@ -1,10 +1,10 @@
 Major accomplishments:
 ** Week Ending 25 February **
-- Closed 9 JIRAs, 3 of which was administrivia
+- Closed 10 JIRAs, 3 of which was administrivia
 
 JIRA Highlights Include:
 - Big emphasis this week on submodules. Have test worthy scripts complete. Working with Bob & Shantel next week for production testing
-- Three JIRAs for rather minor Beaco doc updates
+- Three JIRAs for rather minor Beacon doc updates
 
 Work NOT Reflected in JIRAs:
 - A boatload of meetings
