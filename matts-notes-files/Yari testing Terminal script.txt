@@ -1,0 +1,198 @@
+Yari testing Terminal script
+
+
+ytineo@ytineo-pro parent4submodules % git submodule update --init --recursive
+ytineo@ytineo-pro parent4submodules % git submodule update --remote
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/BrightcoveLearning/submodule-test
+   15f8b25..2718049  main       -> origin/main
+Submodule path 'submodule-test': checked out '27180498a7361a87dc337468653bc78b5c93565a'
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (2/2), done.
+From https://github.com/BrightcoveLearning/submodule-test2
+   d7d7dfe..a232a7e  main       -> origin/main
+Submodule path 'submodule-test2': checked out 'a232a7e70b59c0cc9c871715a594e93bf6d6cb98'
+ytineo@ytineo-pro parent4submodules % git submodule foreach ‘git add .’
+Entering 'submodule-test'
+error: cannot run ‘git: No such file or directory
+fatal: run_command returned non-zero status for submodule-test
+.
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git add .'
+Entering 'submodule-test'
+Entering 'submodule-test2'
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit -m '145'"
+Entering 'submodule-test'
+[detached HEAD 4806cc6] 145
+ 1 file changed, 2 insertions(+)
+Entering 'submodule-test2'
+[detached HEAD 71b69a7] 145
+ 1 file changed, 2 insertions(+)
+ytineo@ytineo-pro parent4submodules % git push origin HEAD:main --recurse-submodules=on-demand
+Everything up-to-date
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git push origin HEAD:main'
+Entering 'submodule-test'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 142.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test
+   2718049..4806cc6  HEAD -> main
+Entering 'submodule-test2'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 283 bytes | 283.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test2
+   a232a7e..71b69a7  HEAD -> main
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git add .'          
+Entering 'submodule-test'
+Entering 'submodule-test2'
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit -m '145'"
+Entering 'submodule-test'
+[detached HEAD 94234a4] 145
+ 1 file changed, 2 insertions(+)
+Entering 'submodule-test2'
+[detached HEAD a183991] 145
+ 1 file changed, 2 insertions(+)
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git push origin HEAD:main'
+Entering 'submodule-test'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 290 bytes | 145.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test
+   4806cc6..94234a4  HEAD -> main
+Entering 'submodule-test2'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 286 bytes | 286.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test2
+   71b69a7..a183991  HEAD -> main
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git add .'                
+Entering 'submodule-test'
+Entering 'submodule-test2'
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit -m '204'"      
+Entering 'submodule-test'
+HEAD detached from 2718049
+nothing to commit, working tree clean
+fatal: run_command returned non-zero status for submodule-test
+.
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit HEAD:main -m '204'"
+Entering 'submodule-test'
+error: pathspec 'HEAD:main' did not match any file(s) known to git
+fatal: run_command returned non-zero status for submodule-test
+.
+ytineo@ytineo-pro parent4submodules % git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git checkout main'
+Entering 'submodule-test'
+Previous HEAD position was 94234a4 145
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+Entering 'submodule-test2'
+Previous HEAD position was a183991 145
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit HEAD:main -m '204'"
+Entering 'submodule-test'
+error: pathspec 'HEAD:main' did not match any file(s) known to git
+fatal: run_command returned non-zero status for submodule-test
+.
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit -m '204'" 
+Entering 'submodule-test'
+On branch main
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+fatal: run_command returned non-zero status for submodule-test
+.
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git pull"                     
+Entering 'submodule-test'
+remote: Enumerating objects: 8, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From https://github.com/BrightcoveLearning/submodule-test
+   94234a4..cbaea9f  main       -> origin/main
+Updating 15f8b25..cbaea9f
+Fast-forward
+ yari.txt | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 yari.txt
+Entering 'submodule-test2'
+Updating d7d7dfe..a183991
+Fast-forward
+ yari1.txt | 5 +++++
+ 1 file changed, 5 insertions(+)
+ create mode 100644 yari1.txt
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git push origin HEAD:main'    
+Entering 'submodule-test'
+Everything up-to-date
+Entering 'submodule-test2'
+Everything up-to-date
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git add .'         
+Entering 'submodule-test'
+Entering 'submodule-test2'
+ytineo@ytineo-pro parent4submodules % git submodule foreach "git commit -m '216'"          
+Entering 'submodule-test'
+[main f814299] 216
+ 1 file changed, 2 insertions(+)
+Entering 'submodule-test2'
+[main 68a6283] 216
+ 1 file changed, 3 insertions(+)
+ytineo@ytineo-pro parent4submodules % git push origin HEAD:main --recurse-submodules=on-demand
+Everything up-to-date
+ytineo@ytineo-pro parent4submodules % git submodule foreach 'git push origin HEAD:main'
+Entering 'submodule-test'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 315 bytes | 157.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test
+   cbaea9f..f814299  HEAD -> main
+Entering 'submodule-test2'
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 295.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/BrightcoveLearning/submodule-test2
+   a183991..68a6283  HEAD -> main
+ytineo@ytineo-pro parent4submodules %
+
+ 
+Yarianna Tineo
+
+Associate Learning Specialist
+
+Brightcove.com
