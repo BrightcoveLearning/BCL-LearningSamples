@@ -9,6 +9,10 @@ branch=main
 
 
 NOTES
+In parent 
+git submodule add <path_of_sumbmodule_repo>
+
+
 If you already cloned the project and forgot --recurse-submodules, you can combine the git submodule init and git submodule update steps by running git submodule update --init. To also initialize, fetch and checkout any nested submodules, you can use the foolproof git submodule update --init --recursive.
 
 If you want to check for new work in a submodule, you can go into the directory and run git fetch and git merge the upstream branch to update the local code.
