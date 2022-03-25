@@ -1,6 +1,6 @@
 Major accomplishments:
 ** Week Ending 25 March **
-- Closed 16 JIRAs, 6 of which was administrivia
+- Closed 17 JIRAs, 6 of which was administrivia
 
 JIRA Highlights Include:
 - Submodules scripts ready for production testing
