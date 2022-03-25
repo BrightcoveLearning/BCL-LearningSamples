@@ -9,7 +9,7 @@ branch=main
 
 
 NOTES
-In parent 
+In _includes or assts/images 
 git submodule add <path_of_sumbmodule_repo>
 
 

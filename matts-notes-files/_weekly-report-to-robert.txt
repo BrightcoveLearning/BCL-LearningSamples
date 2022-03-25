@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 25 March **
+- Closed 16 JIRAs, 6 of which was administrivia
+
+JIRA Highlights Include:
+- Submodules scripts ready for production testing
+- Updated Brightcove Player doc Step-by-Step: Brightcove Player and Step-by-Step: Player Customization docs
+- Updated Beacon Core Pages doc as major new fuctionality added
+- Updated Brightcove Player plugins changelog doc as HLS and Errors now baked into player and updates to those plugins now in player release notes
+- Minor updates to both Beacon and Brightcove Player docs
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 18 March **
 - Closed 10 JIRAs, 3 of which was administrivia
 
