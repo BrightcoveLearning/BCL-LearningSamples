@@ -22,3 +22,7 @@ The second sentence should name the solution.
 
 ** Write the way your users talk 
 Use a conversational, more informal style in your in-app support content. This includes using contractions and second person pronouns for the user (i.e. addressing readers as “you”). 
+
+
+** Verbiage
+Introduction / Overview / No Name
