@@ -1,0 +1,24 @@
+** Keep it simple 
+One thought per sentence. One instruction at a time. 
+
+** Chunk your content for optimal skimming
+The new design is optimized for the “spotted pattern” (Kara Pernice, Nielsen Norman Group) style of reading. 
+
+** The Inverted Pyramid Structure
+Introduction
+For decades, the “inverted pyramid” structure has been a mainstay of traditional mass media writing. Following this structure, the “base” of the pyramid—the most fundamental facts—appear at the top of the story, in the lead paragraph. Non-essential information appears in the following paragraphs, or “nut” graphs, in order of importance.
+
+While some media writers are critical of the inverted pyramid structure, it remains one of the most widely used and time tested structures in mass media writing.
+
+WHAT’S ESSENTIAL?
+Essential information generally refers to the oft-cited “Five Ws” of journalism: Who, What, When, Where, and Why. A successful lead paragraph communicates, on a basic level, the essential facts of who did what, when, where, and why.
+
+The “nut” graphs that follow contain additional details, quotes from sources, statistics, background, or other information. These are added to the article in order of importance, so that the least important items are at the bottom.
+
+** Intro paragraph
+The first sentence should name the issue. 
+
+The second sentence should name the solution. 
+
+** Write the way your users talk 
+Use a conversational, more informal style in your in-app support content. This includes using contractions and second person pronouns for the user (i.e. addressing readers as “you”). 
