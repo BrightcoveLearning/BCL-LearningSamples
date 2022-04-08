@@ -8,17 +8,38 @@
 
 <body>
 
-  <video-js data-account="1507807800001"
-  data-player="default"
-  data-embed="default"
-  controls=""
-  muted=""
-  data-video-id="6116766235001"
-  data-playlist-id=""
-  data-application-id=""
-  width="960" height="540"></video-js>
-  <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+  <video-js id="myPlayerID"
+    data-account="1507807800001"
+    data-player="zN3V18ZPEu"
+    data-embed="default"
+    controls=""
+    data-video-id="1507781667001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1507807800001/zN3V18ZPEu_default/index.min.js"></script>
 
+  <p id="insertionPoint"></p>
+
+  <script src="https://players.brightcove.net/1507807800001/6aac508a-741e-41a2-bc7a-5805644cf089_default/index.min.js"></script>
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var player = this;
+      player.one("loadedmetadata", function () {
+        var tt = player.textTracks()[0];
+        tt.oncuechange = function () {
+          if (tt.activeCues[0] !== undefined) {
+            var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
+          }
+        }
+        player.play();
+      });
+    });
+  </script>
 </body>
 
 </html>

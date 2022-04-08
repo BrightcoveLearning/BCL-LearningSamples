@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'>
+</head>
+
+<body>
+
+  <video-js  id="myPlayerID"
+    data-account="1507807800001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="6116779877001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+  <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+      myPlayer.overlay({
+        content: "jump forward"
+        align: "bottom-right",
+        imageURL: "https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-back-forward-buttons/forward-button.png",
+        start: "loadstart"
+      })
+    });
+  </script>
+</body>
+
+</html>
