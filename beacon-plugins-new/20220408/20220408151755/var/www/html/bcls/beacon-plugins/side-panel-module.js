@@ -7,7 +7,6 @@ const openSidePanel = () => {
 
 };
 
-
 const populateSidePanelStadium = (eventObj) => {
   console.log('*** enablePlayerSidePanel eventObj***: ', eventObj);
   var panelArea = document.getElementById('player_side_panel_hook');
@@ -66,12 +65,11 @@ const populateSidePanelStadium = (eventObj) => {
   panelArea.insertAdjacentHTML('afterbegin', content);
 };
 
-
 const populateSidePanel = (eventObj) => {
   console.log('*** enablePlayerSidePanel eventObj***: ', eventObj);
   var panelArea = document.getElementById('player_side_panel_hook');
   var content = '<h3>Example event object passed to the enablePlayerSidePanel event handler</h3>'
-    + '<br><br>{<br>'
+    + '<br><br><br>'
     + ' asset_id: ' + '"' + eventObj.asset_id + '"<br>'
     + ' bc_account_id: ' + '"' + eventObj.bc_account_id + '"<br>'
     + ' device: ' + '"' + eventObj.device + '"<br>'
@@ -86,6 +84,16 @@ const populateSidePanel = (eventObj) => {
 };
 
 
+const populateSidePanelStadiumIframe = (eventObj) => {
+  console.log('*** enablePlayerSidePanel eventObj***: ', eventObj);
+  var panelArea = document.getElementById('player_side_panel_hook');
+  var content = '<h3>Example event object passed to the enablePlayerSidePanel event handler</h3>'
+    + '<br><br><br>'
+    + '<iframe src="https://playtherally.com/overlay/sbgistadium/ballyrally/ballyrally"></iframe>';
+  panelArea.insertAdjacentHTML('afterbegin', content);
+};
+
+
 const clearSidePanel = () => {
   
   var panelArea = document.getElementById('player_side_panel_hook');
@@ -93,4 +101,4 @@ const clearSidePanel = () => {
   
 };
 
-export { openSidePanel, populateSidePanel, clearSidePanel, populateSidePanelStadium };
+export { openSidePanel, populateSidePanel, clearSidePanel, populateSidePanelStadium, populateSidePanelStadiumIframe };

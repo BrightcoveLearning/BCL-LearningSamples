@@ -1,8 +1,8 @@
 import { addCustomButtonDetails, addCustomButtonDetailsParams, handleButtonClick } from './button-module.js';
 import { populateMidPageDiv, clearMidPageDiv } from './div-mid-page-module.js';
 import { populateAppOverflowDiv, clearAppOverflowDiv } from './div-app-overflow-module.js';
-import { openSidePanel, populateSidePanel, clearSidePanel } from './side-panel-module.js';
-import { populateCustomPage } from './custom-page-module.js';
+import { openSidePanel, populateSidePanel, clearSidePanel, populateSidePanelStadium, populateSidePanelStadiumIframe } from './side-panel-module.js';
+import { populateCustomPage, populateStadiumPage } from './custom-page-module.js';
 import { pageContent } from './data.js';
 
 
@@ -40,7 +40,7 @@ window.addEventListener("message", (event) => {
 
       case 'onBeaconPageLoad':
         if (event.data.data.slug == '24849-custom-for-plugin') {
-          populateCustomPage(pageContent);
+          populateStadiumPage();
         }
         
         console.log('onBeaconPageLoad Event data: ', event.data.data);
@@ -52,7 +52,7 @@ window.addEventListener("message", (event) => {
         addCustomButtonDetailsParams('Location', 'fa fa-info-circle', 'location-button');
         // detailsPageAddCustomButton();
         populateAppOverflowDiv();
-      break;   
+      break;
         
       case 'loadedBeaconVideoMetadata':
         console.log('loadedBeaconVideoMetadata Event data: ', event.data.data);

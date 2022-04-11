@@ -52,7 +52,7 @@ window.addEventListener("message", (event) => {
         addCustomButtonDetailsParams('Location', 'fa fa-info-circle', 'location-button');
         // detailsPageAddCustomButton();
         populateAppOverflowDiv();
-      break;   
+      break;
         
       case 'loadedBeaconVideoMetadata':
         console.log('loadedBeaconVideoMetadata Event data: ', event.data.data);

@@ -7,7 +7,6 @@ const openSidePanel = () => {
 
 };
 
-
 const populateSidePanelStadium = (eventObj) => {
   console.log('*** enablePlayerSidePanel eventObj***: ', eventObj);
   var panelArea = document.getElementById('player_side_panel_hook');
