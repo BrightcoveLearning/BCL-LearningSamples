@@ -1,5 +1,0 @@
-#FAC8BF; /* pink */
-#94FFFC; /* turquoise */
-#466675; /* darker blue */
-#6A8D9D; /* lighter blue */
-#CCCCCC; /* gray */
