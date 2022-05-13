@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <!-- styles for the Playlist Endscreen plugin -->
+  <link href="https://players.brightcove.net/videojs-playlist-endscreen/1.0.4/videojs-playlist-endscreen.css" rel="stylesheet">
+
+  <div style="max-width: 782px;">
+    <video-js id="myPlayerID"
+			data-account="1752604059001"
+			data-player="default"
+			data-embed="default"
+			controls=""
+			data-video-id="5686632036001"
+			data-playlist-id=""
+			data-application-id=""
+			class="vjs-fluid">
+		</video-js>
+  </div>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <!-- script for the Playlist Endscreen plugin -->
+  <script src="https://players.brightcove.net/videojs-playlist-endscreen/1/videojs-playlist-endscreen.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+
+      // initialize the Playlist Endscreen plugin
+      myPlayer.playlistEndscreen({
+        playlistId: '1752604519001',
+        title: 'My Custom Title',
+        publishTime: true
+      });
+    });
+  </script>
+</body>
+
+</html>
