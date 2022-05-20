@@ -10,10 +10,10 @@
 
 
 ***Core Code***
-  <iframe src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.html?videoId=4036854518001"
-    allowfullscreen
-    webkitallowfullscreen
-    mozallowfullscreen></iframe>
+  <iframe src="https://players.brightcove.net/921483702001/NJB3JCBqe_default/index.html?videoId=5724790166001"
+    allowfullscreen=""
+    allow="encrypted-media"
+    width="640" height="360"></iframe>
 
   <p><button onclick="changeVideo()">change video</button></p>
 

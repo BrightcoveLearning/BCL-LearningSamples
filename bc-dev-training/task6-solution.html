@@ -5,29 +5,24 @@
   <meta charset="UTF-8">
   <title>Solution 5</title>
 
-   <link href="//players.brightcove.net/videojs-overlay/1/videojs-overlay.css" rel='stylesheet'>
-
-  <style type="text/css">
-    .video-js {
-      width: 480px;
-      height: 270px;
-    }
-  </style>
+  <link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'>
 </head>
 
 <body>
 
   <video-js id="myPlayerID"
-    data-video-id="4036854518001"
     data-account="921483702001"
-    data-player="NJB3JCBqe"
+    data-player="default"
     data-embed="default"
-    class="video-js"
-    controls></video-js>
+    controls=""
+    data-video-id="4036854518001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
 
-  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
 
-  <script src="//players.brightcove.net/videojs-overlay/1/videojs-overlay.min.js"></script>
+  <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
 
   <script type="text/javascript">
     videojs.getPlayer('myPlayerID').ready(function(){

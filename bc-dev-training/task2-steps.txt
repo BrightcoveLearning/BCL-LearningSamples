@@ -18,31 +18,34 @@
 
 ***Core Code***
   <video-js id="myPlayerID"
-    data-video-id="4036854518001"
     data-account="921483702001"
-    data-player="NJB3JCBqe"
+    data-player="default"
     data-embed="default"
-    class="video-js"
-    controls></video-js>
+    controls=""
+    data-video-id="5793330982001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
 
   <p><button onclick="changeVideo()">change video</button></p>
 
-  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
     var myPlayer;
 
-    videojs.getPlayer('myPlayerID').on('loadedmetadata',function(){
+    videojs.getPlayer('myPlayerID').ready(function(){
       myPlayer = this;
       myPlayer.muted(true);
-      myPlayer.play();
+      myPlayer.on('loadedmetadata', function(){
+        myPlayer.play();
+      });
     });
 
     function changeVideo() {
-      myPlayer.catalog.getVideo('922656010001', function (error, video) {
+      myPlayer.catalog.getVideo('3742256818001', function (error, video) {
         console.log("error", error)
         myPlayer.catalog.load(video);
-        myPlayer.muted(true);
         myPlayer.play();
       })
     }

@@ -10,17 +10,6 @@
     myPlayer.muted(true);
     myPlayer.play();
   });
-8. In the block, assign the player instance to a variable named myPlayer
-9. Use the play() method to start the video
-10. Browse page and see the video plays but in the default size of 300 x 150
-11. Add CSS to videojs class to set width to 480px and height to 270px
-  <style type="text/css">
-    .video-js {
-      width: 480px;
-      height: 270px;
-    }
-  </style>
-12. Browse again to see new dimensions, BUT WILL NOT PLAY because of Chrome autoplay restrictions. Show it will play in Firefox. Change the video so it does NOT have an audio track, and show it works.
 
 OPTIONAL - Only if ahead of schedule
 13. After using play() method add event listener for timeupate
@@ -32,33 +21,27 @@ OPTIONAL - Only if ahead of schedule
 15. View Console to see timeupdate events being dispatched
 
 
-
-***Core Code***
-  <style type="text/css">
-    .video-js {
-      width: 480px;
-      height: 270px;
-    }
-  </style>
-</head>
-
-<body>
+***Core Code***\
 
   <video-js id="myPlayerID"
-    data-video-id="5793330982001"
     data-account="921483702001"
-    data-player="NJB3JCBqe"
+    data-player="default"
     data-embed="default"
-    class="video-js"
-    controls></video-js>
+    controls=""
+    data-video-id="5793330982001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
 
-  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
-    videojs.getPlayer('myPlayerID').on('loadedmetadata',function(){
-      var myPlayer = this;
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer =this;
       myPlayer.muted(true);
-      myPlayer.play();
+      myPlayer.on('loadedmetadata', function(){
+        myPlayer.play();
+      });
       myPlayer.on("timeupdate",showUpdate);
     });
 

@@ -3,31 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Task 2</title>
-
-  <style type="text/css">
-    .video-js {
-      width: 480px;
-      height: 270px;
-    }
-  </style>
+  <title>Solution 1</title>
 </head>
 
 <body>
 
-  <video-js id="myPlayerID"
-    data-video-id="4036854518001"
-    data-account="921483702001"
-    data-player="NJB3JCBqe"
-    data-embed="default"
-    class="video-js"
-    controls></video-js>
+<!--  No audio track video: 5793330982001 -->
 
-  <script src="//players.brightcove.net/921483702001/NJB3JCBqe_default/index.min.js"></script>
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="5793330982001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
-    videojs.getPlayer('myPlayerID').ready(function(){
-      var myPlayer = this;
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer =this;
       myPlayer.muted(true);
       myPlayer.on('loadedmetadata', function(){
         myPlayer.play();
