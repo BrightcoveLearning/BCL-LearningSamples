@@ -15,7 +15,7 @@
     data-player="MCQjvqXXF"
     data-embed="default"
     controls=""
-    data-video-id="5831704295001"
+    data-video-id="6306731825112"
     data-playlist-id=""
     data-application-id=""
     width="640" height="360"></video-js>
@@ -28,11 +28,13 @@
 
       //  Get a reference to the PLAYER
       var myPlayer = this;
-    // Mute the PLAYER so no autoplay issues arise
-
-    // Be sure the VIDEO is ready to interact with
-    
-    )}
+      // Mute the PLAYER so no autoplay issues arise
+      myPlayer.muted(true);
+      // Be sure the VIDEO is ready to interact with, if yes play the video
+      myPlayer.on('loadedmetadata', function () {
+        myPlayer.play();
+      });
+    })
 
   </script>
 
