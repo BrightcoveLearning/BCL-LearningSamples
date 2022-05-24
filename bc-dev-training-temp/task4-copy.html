@@ -18,7 +18,15 @@
   <!-- custom script -->
   <script type="text/JavaScript">
 
-  </script>
+      function changeVideo() {
+        var iframeTag = document.getElementsByTagName("iframe")[0],
+          newVideo = "?videoId=3742256815001",
+          theSrc = iframeTag.src,
+          srcWithoutVideo = theSrc.substring( 0, theSrc.indexOf( "?" ) ),
+          newSrc = srcWithoutVideo + newVideo;
+        iframeTag.src = newSrc;
+      }
+    </script>
 </body>
 
 </html>

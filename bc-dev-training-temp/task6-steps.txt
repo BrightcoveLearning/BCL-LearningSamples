@@ -1,0 +1,63 @@
+1. Show the Overlay Plugin as part of a player:
+  Developer Training
+  BC Player Dev Training with Overlay - DO NOT DELETE Copy
+2. Copy Overlay Plugin's CSS and JavaScript into HTML page
+   <link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'>
+   <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+3. Call overlay and pass in options
+      myPlayer.overlay({
+        "content": "<strong>Default overlay content</strong>",
+        "overlays": [{
+          "content": "This event-triggered overlay message appears when the video is playing",
+          "start": "play",
+          "end": "pause",
+          "align": "top-right"
+        }, {
+          "content": "This timed overlay message appears between 2 and 5 seconds",
+          "start": 2,
+          "end": 5,
+          "align": "bottom-right"
+        }, {
+          "start": 4,
+          "end": 8,
+          "align": "bottom-left"
+        }]
+      });
+4. Browse to see overlay in action
+
+
+
+
+***Core Code***
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="4036854518001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function(){
+      var myPlayer = this;
+
+      myPlayer.on('loadstart',function(){
+        var groups = myPlayer.mediainfo.tags;
+        groups = groups.join(', ');
+        myPlayer.overlay({
+          "overlays": [{
+            "content": "<span style='background-color:black'>For similar videos see the groups: <br /><strong>" + groups + "</strong></span>",
+            "start": "play",
+            "end": 4,
+            "align": "bottom-left"
+          }]
+        });
+      });
+    });
+  </script>

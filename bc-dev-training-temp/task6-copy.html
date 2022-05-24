@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Task 6</title>
+
+  <link href="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.css" rel='stylesheet'>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="MCQjvqXXF"
+    data-embed="default"
+    controls=""
+    data-video-id="6306731825112"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+  <script src="https://players.brightcove.net/921483702001/MCQjvqXXF_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-overlay/2/videojs-overlay.min.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+
+      myPlayer.on('loadstart', function () {
+        var groups = myPlayer.mediainfo.tags;
+        groups = groups.join(', ');
+        myPlayer.overlay({
+          "overlays": [{
+            "content": "<span style='background-color:black'>For similar videos see the groups: <br /><strong>" + groups + "</strong></span>",
+            "start": "play",
+            "end": 4,
+            "align": "bottom-left"
+          }]
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -8,30 +8,31 @@
 
 <body>
 
-  <!--  No audio track video: 5793330982001 -->
+<!--  No audio track video: 5793330982001 -->
 
   <video-js id="myPlayerID"
     data-account="921483702001"
-    data-player="MCQjvqXXF"
+    data-player="default"
     data-embed="default"
     controls=""
-    data-video-id="6306731825112"
+    data-video-id="5793330982001"
     data-playlist-id=""
     data-application-id=""
     width="640" height="360"></video-js>
-  <script src="https://players.brightcove.net/921483702001/MCQjvqXXF_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/921483702001/default_default/index.min.js"></script>
 
   <script type="text/javascript">
-    videojs.getPlayer('myPlayerID').ready(function () {
-      var myPlayer = this;
+    videojs.getPlayer('myPlayerID').ready(function() {
+      var myPlayer =this;
       myPlayer.muted(true);
-      myPlayer.on('loadedmetadata', function () {
+      myPlayer.on('loadedmetadata', function(){
         myPlayer.play();
       });
-      myPlayer.on("timeupdate", showUpdate);
+      myPlayer.on("timeupdate",showUpdate);
     });
 
-    function showUpdate(evt) {
+    function showUpdate(evt){
       console.log(evt);
     }
   </script>
