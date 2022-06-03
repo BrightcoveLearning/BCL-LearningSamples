@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 1</title>
+</head>
+
+<body>
+
+  <!--  No audio track video: 5793330982001 -->
+
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="MCQjvqXXF"
+    data-embed="default"
+    controls=""
+    data-video-id="6306731825112"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <p><button onclick="changeVideo()">change video</button></p>
+
+  <script src="https://players.brightcove.net/921483702001/MCQjvqXXF_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    var myPlayer;
+
+    videojs.getPlayer('myPlayerID').ready(function () {
+      myPlayer = this;
+      myPlayer.muted(true);
+      myPlayer.on('loadedmetadata', function () {
+        myPlayer.play();
+      });
+    });
+
+    function changeVideo() {
+      myPlayer.catalog.getVideo('3742256818001', function (error, video) {
+        console.log("video:", video);
+        console.log("error:", error);
+        myPlayer.catalog.load(video);
+        myPlayer.play();
+      })
+    }
+  </script>
+
+</body>
+
+</html>

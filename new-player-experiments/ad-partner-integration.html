@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contrib ads ad plugin</title>
+
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="6077029038001"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540"></video-js>
+
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/6.9.0/videojs.ads.js"></script>
+
+  <script>
+    const player = videojs.getPlayer("myPlayerID");
+    let creative = '';
+
+    player.ads();
+
+    player.on('contentupdate', function () {
+
+      // Console output
+      console.log("### videojs EVENT: contentupdate");
+
+      // can fetch ad inventory here...
+      player.setTimeout(() => {
+        creative = 'https://solutions.brightcove.com/bcls/ads/bc-ads/bcls-ad-1-8seconds.mp4';
+      }, 100);
+      player.trigger('adsready');
+
+      // Console output
+      console.log("### videojs EVENT: adsready");
+
+    });
+
+    player.on('loadedmetadata', function () {
+      // Console output
+      console.log("### videojs EVENT: loadedmetadata");
+    });
+
+    player.on('readyforpreroll', function () {
+
+      // Console output
+      console.log("### videojs EVENT: readyforpreroll");
+
+      player.ads.startLinearAdMode();
+      // play your linear ad content
+      player.src(creative);
+      player.one('durationchange', function () {
+        player.play();
+      });
+      // when ad has finished restore player
+      player.one('adended', function () {
+
+        // Console output
+        console.log("### videojs EVENT: adended");
+
+        player.ads.endLinearAdMode();
+      });
+    });
+
+    player.on('ended', function () {
+      // Console output
+      console.log("### videojs EVENT: ended");
+    });
+  </script>
+</body>
+
+</html>

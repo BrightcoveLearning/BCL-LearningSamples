@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Solution 2</title>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="921483702001"
+    data-player="MCQjvqXXF"
+    data-embed="default"
+    controls=""
+    data-video-id="6306731825112"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <br />
+
+  <div id="textTarget"></div>
+
+  <script src="https://players.brightcove.net/921483702001/MCQjvqXXF_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this,
+        dynamicHTML;
+      myPlayer.on('loadstart', function () {
+        console.log("mediainfo: ", myPlayer.mediainfo);
+        dynamicHTML = "<p>Video Title: <strong>" + myPlayer.mediainfo.name + "</strong></p>";
+        dynamicHTML += "<p>Description: <strong>" + myPlayer.mediainfo.description + "</strong></p>";
+        document.getElementById("textTarget").innerHTML = dynamicHTML;
+        myPlayer.muted(true);
+        myPlayer.play();
+      });
+    });
+  </script>
+
+</body>
+
+</html>
