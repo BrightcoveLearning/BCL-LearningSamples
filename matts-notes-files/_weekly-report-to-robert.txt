@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 24 June **
+- Closed 12 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- New OTT doc on app "Parental Controls" - this led to the nav group name of "Publishing Apps" to "App Publishing and Behavior" so we have a good place for this type of doc. Added "iOS Account Deletion" to the group. Jim D wants more of this type of doc. Made this change to Beacon Studio, Beacon Classic and CorpTV
+- After meeting with JP about "Roles as Rights" setup and tested in JP's QA enviroment. Works well. I will ask JP to setup our Beacon account with feature so we can document. 
+- Saw in JP's QA environment "Pages as Assets" was working. I will ask JP to setup our Beacon account with feature so we can document. 
+- Complete Harassment Prevention Training
+
+Work NOT Reflected in JIRAs:
+- A boatload of meetings
+
+
+
 ** Week Ending 10 June **
 - Closed 11 JIRAs, 3 of which were administrivia
 
