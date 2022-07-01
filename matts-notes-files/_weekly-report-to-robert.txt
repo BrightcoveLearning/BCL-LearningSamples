@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 1 July **
+- Closed 9 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- Updated player sample for compatibility with a Brightcove Player release in late April. The issue was actually a bug in the player that is now being fixed, but a simple change in code order made it work so I just did that.
+- One design partner note taking session
+- Updated the Beacon core pages Settings section. The Settings section UI had some major changes since the last update of the doc.
+- Created text for 10 tool tips for the Universal Search UI. Discussed with Jeff then submitted to Dave Kelly for use.
+- Updated the Google Tag Manager plugin based on an update that Ben Clifford did on the plugin. Completed update but did not publish as the feature has not been rolled into the plugin as of yet. I have a note in my calendar to check status every Tuesday.
+- Doc update process
+
+Work NOT Reflected in JIRAs:
+- Working on internal facing doc on setting up Beacon apps for Customer sharable Beacon App for demos 
+- A boatload of meetings (9 hours total)
+
+
+
 ** Week Ending 24 June **
 - Closed 12 JIRAs, 1 of which were administrivia
 
