@@ -28,7 +28,7 @@
       myPlayer.on('loadedmetadata', function () {
         myPlayer.play();
       });
-      myPlayer.one("timeupdate", showUpdate);
+      myPlayer.on("timeupdate", showUpdate);
     });
 
     function showUpdate(evt) {

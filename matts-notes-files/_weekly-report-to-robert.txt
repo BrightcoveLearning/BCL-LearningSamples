@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 8 July **
+- Closed 13 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- New internal doc on setting up temporary Beacon apps for customer use
+- New internal doc on connecting Firebase to Beacon for functional notification UI in Beacon Studio
+- Another set of submodules setup
+- Closed five OTT JIRAs that were about documenation needs. A couple I had to do a bit of doc updating, the other three the docs were done and I had just had not closed the JIRA
+- Weekly doc update process complete
+
+Work NOT Reflected in JIRAs:
+- Started looking at the process of updating Googled Analytics to GA4 
+- A boatload of meetings (5 hours total)
+
+
+
 ** Week Ending 1 July **
 - Closed 9 JIRAs, 1 of which were administrivia
 
