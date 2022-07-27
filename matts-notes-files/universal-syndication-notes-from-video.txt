@@ -1,0 +1,46 @@
+Apple: 
+-Takes several months to complete process
+-Customer, BC and Apple work together
+-BOTH format types must be run and submitted together, same sets of assets need to be both files, different files for series, seasons, episode
+-On completion of process Beacon app assets will show in Apple searches
+-Customer continues to submit reports (spreadsheets) at some regualar interval
+
+-Universal link prefix: Catalog web site top level URL of customer's Beacon web app, 
+
+-Google site map xml
+	-Gnerates a site map following GOogle specs 
+	-
+
+
+-sitemap index xml
+	-LImitations on some sitemaps, links to one or more Google site map XML files, points to 
+	-Max 50,000 links or 50mb size
+	-
+
+-Delays of several days before results are seen
+
+-Roku, forms filled out to prepare for process
+
+
+
+
+From private multi-person Slack
+
+Matthew Boles
+ Today at 12:29 PM
+@rjune
+ - A couple of follow up questions:
+A customer would never use Sitemap index without having 2 or more Google site maps. Correct?
+If a customer is using the forth coming SEO report, would they use the Google Site Map, or does that become irrelevant if using the SEO option?
+Thanks! (edited) 
+2 replies
+
+
+Rich June
+  39 minutes ago
+Hi Matthew, a customer that is going to be part of Beacon’s SEO integration would always use a sitemap index file.  Google has limits on how big a single sitemap file can be, so even if the customer has just one sitemap syndication, the syndication service might split the resulting sitemap into multiple files, the sitemap index is the thing that will encapsulate the links to all of those.  Also, parts of the Beacon backend will assume the sitemap index exists for customers that leverage the Beacon SEO integration. (edited) 
+
+
+Rich June
+  34 minutes ago
+For the second question, customers that are leveraging Beacon SEO support would create all 3 syndications, they work hand in hand.  Google will look at the sitemap index to find the sitemap files, it will look at the sitemap files to gather a list of page urls in the customer’s deployment, and then it will actually try to crawl those urls.  That’s where the SEO page syndication come into play, when the Beacon backend detects a search crawler trying to load one of the webapp pages, it will fetch the corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly webapp page.
