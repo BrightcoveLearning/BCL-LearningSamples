@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 29 July **
+- Closed 17 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- Rolled in review comments for Customer Demo Sites doc
+- Continued work on Universal Syndication doc, rolled in comments and also added content to introduction and added an overview of the processes; this doc may be growing and chaning for weeks to come as SEO report is being added shortly
+- Help Shantal prepare weekly doc/product updates to get her ready for her turn next month
+- Finished Bumper Videos doc, got reviews and rolled in comments. Won't put in navigation until bug fixed (v6.66.3) that I found that the Title and Short Description displayed is for the bumper and not the main contene video
+- One design partner not taking session
+
+Work NOT Reflected in JIRAs:
+- Met with Rich Juen, Alberto Cueta and Carlos Bajo three times over last two weeks to get info and clarify Universal Syndication; very helpful and building a good relationship with them
+- A boatload of meetings (5 1/2 hours total)
+
+
+
+Major accomplishments:
 ** Week Ending 15 July **
 - Closed 4 JIRAs, 1 of which were administrivia
 
