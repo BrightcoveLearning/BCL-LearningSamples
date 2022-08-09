@@ -50,6 +50,23 @@ export EMBED_ID=
 Video Cloud video: 3674727957001
 
 
+// upgrade v5 to v6 
+curl \
+      --header "Content-Type: application/json" \
+      --user $EMAIL \
+      --request PATCH \
+      --data '{
+          "player": {
+            "template": {
+                "locked": false,
+                "name": "single-video-template",
+                "version": "6.65.3"
+            }
+          }
+        }' \
+      https://players.api.brightcove.com/v2/accounts/1507807800001/players/3c59134e-89e8-4864-87e2-3cc871f8c361/configuration
+
+
 // turn off debugger on right-click
 curl \
   --header "Content-Type: application/json" \
