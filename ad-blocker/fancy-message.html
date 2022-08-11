@@ -9,7 +9,7 @@
 <body>
 
   <video-js id="myPlayerID" data-account="1752604059001"
-          data-player="H1Qvsb12"
+          data-player="default"
           data-embed="default"
           controls=""
           data-video-id="4607357817001"
@@ -17,14 +17,19 @@
           data-application-id=""
           width="600" height="340"
           playsinline></video-js>
-  <script src="https://players.brightcove.net/1752604059001/H1Qvsb12_default/index.min.js"></script>
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <div id="ad-blocker-note"></div>
 
   <script>
     videojs.getPlayer('myPlayerID').ready(function () {
       var myPlayer = this;
       myPlayer.usingAdBlocker().then(
         hasBlocker => {
-          if (hasBlocker) { alert('You have an ad blocker enabled, which ruins this demo'); }
+          if (hasBlocker) {
+            var newP = document.createElement("p");
+            newP = '<aside class="bcls-aside bcls-aside--warning language-editable">This ad will not play as you are using an ad blocker.</aside>';
+            document.getElementById("ad-blocker-note").insertAdjacentHTML('afterbegin', newP);
+          }
         });
     });
   </script>
