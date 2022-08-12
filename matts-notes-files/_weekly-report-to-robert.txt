@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 12 Aug **
+- Closed 5 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- Added ad blocker notification to IMA3 demo (had a few comments that demo not working, and ask if they have an ad blocker on and yes). Ben Clifford suggested to add an ad blocker detection using the usingAdBlocker() method, which I did not know existed. Added so now a warning note appears if an ad blocker is present. I don't think this is documented, will ask Pat O next week if I should.
+- After demo, got the Roku asset search syndication doc finished and out for review.
+- Review comment for public facing doc on access Beacon demo apps rolled in and added doc to navigation.
+
+Work NOT Reflected in JIRAs:
+- Monday PTO
+- STILL more meetings around OTT Syndication. 
+- Started doc on SEO syndication and waiting for UI to get this option then I can finish the doc. 
+- Meetings (4 hours total)
+
+
+
 ** Week Ending 5 Aug **
 - Closed 10 JIRAs, 1 of which were administrivia
 
