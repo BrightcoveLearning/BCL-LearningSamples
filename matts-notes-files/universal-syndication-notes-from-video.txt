@@ -44,3 +44,12 @@ Hi Matthew, a customer that is going to be part of Beacon’s SEO integration wo
 Rich June
   34 minutes ago
 For the second question, customers that are leveraging Beacon SEO support would create all 3 syndications, they work hand in hand.  Google will look at the sitemap index to find the sitemap files, it will look at the sitemap files to gather a list of page urls in the customer’s deployment, and then it will actually try to crawl those urls.  That’s where the SEO page syndication come into play, when the Beacon backend detects a search crawler trying to load one of the webapp pages, it will fetch the corresponding SEO-optimized page from the syndication service and return that page content to the crawler instead of the normal, SEO-unfriendly webapp page.
+
+From meeting with Carlos and Alberto
+-Google site search operator https://developers.google.com/search/docs/advanced/debug/search-operators/all-search-site
+-During onboarding if SEO is desired backend configuration done by BC personell 
+-Customer will create syndication for sitemap, sitemap index and SEO page, regenerate post to public accesible location
+-Does SEO cost something
+-Show images of before and after SEO applied
+-Show image of pagea and associated googlebot look and report in Google search
+
