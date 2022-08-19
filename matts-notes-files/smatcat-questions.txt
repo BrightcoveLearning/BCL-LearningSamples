@@ -1,0 +1,10 @@
+*Technologies used
+*How do you handle updates to docs
+*Cost, how does billing work; different fees for different languages
+*Where are translated sites hosted
+*Can we create a list of "do not translate" terms
+*Can we specify that contents of certain tags or tags with a certain attribute/class don't get translated
+*Is it possible to manually edit translations? What is the workflow?
+*Can human checking be part of the process for a specific language
+*What is the repeated interaction from us?
+

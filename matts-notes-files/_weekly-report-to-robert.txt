@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 19 Aug **
+- Closed 6 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- Changes to Layout module UI causing LOTS of content and image udpates. Mostly done with those.
+- Investigations of Smartcat and GTranslate for localization
+- Minor update to Player Playlist API reference
+
+Work NOT Reflected in JIRAs:
+- OTT External Search doc (was OTT Syndications and SEO doc) draft out the door. Have comments and will roll those in next week. This will close about tem JIRAs as doc contains info on Apple, Roku and Google search as well as SEO info.
+- Working on a Player Sample (Play video not in playlist at end of playlist) and odd things heppening. Will need to reach out to Player team for help.
+- Time spent in meetings: 7 1/2 hours
+
+
+
 ** Week Ending 12 Aug **
 - Closed 5 JIRAs, 1 of which were administrivia
 

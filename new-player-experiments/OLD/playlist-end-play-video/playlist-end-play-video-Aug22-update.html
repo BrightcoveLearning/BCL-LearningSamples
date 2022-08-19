@@ -4,48 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Play video after playlist</title>
-  <style type="text/css">
-    .video-js {
-      height: 350px;
-      width: 640px;
-      float: left;
-    }
 
-    .vjs-playlist {
-      width: 280px;
-      height: 350px;
-    }
-  </style>
 </head>
 
 <body>
 
-  <video-js id="myPlayerID"
-  data-playlist-id="5541484620001"
-  data-account="1752604059001"
-  data-player="SJ5OoOgOb"
-  data-embed="default"
-  data-application-id
-  class="video-js"
-  controls
-  width="400"
-  height="225"></video-js>
-  <script src="https://players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script>
-  <!--
+  <div style="width: 960px; height: 540px;"><video-js id="myPlayerID" data-account="1752604059001" data-player="zVYHcyUsL" data-embed="default" controls="" data-video-id="" data-playlist-id="5541484620001" data-application-id="" width="960" height="540" class="vjs-fill"></video-js>
+    <div class="vjs-playlist"></div>
+    <script src="https://players.brightcove.net/1752604059001/zVYHcyUsL_default/index.min.js"></script>
+  </div>
 
-  <video id="myPlayerID"
-    data-playlist-id="5541484620001"
+  <!--   <video-js id="myPlayerID"
     data-account="1752604059001"
-    data-player="SJ5OoOgOb"
+    data-player="zVYHcyUsL"
     data-embed="default"
-    data-application-id
-    class="video-js"
-    controls
-    width="400"
-    height="225"></video>
-  <script src="//players.brightcove.net/1752604059001/SJ5OoOgOb_default/index.min.js"></script> -->
-
-  <ol class="vjs-playlist"></ol>
+    controls=""
+    data-video-id=""
+    data-playlist-id="5541484620001"
+    data-application-id=""
+    width="960" height="540"
+    class="vjs-fill"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/zVYHcyUsL_default/index.min.js"></script> -->
 
   <script type="text/javascript">
     // +++ Check for loadedmetadat before acting on the playlist +++
