@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 25 Aug **
+- Closed 21 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- The OTT External Feeds document done! This documenmt was addressed by numerous JIRAs, both KNOW and OTT as it combines implmenting feeds from Apple, Roku and SEO support. Docs not in navigation as not yet in production.
+- Usign View All Pages is done. This is one of three documents on how secondaray pages are used. The other two docs Managing Secondary Pages (mechanics of dealing with secondary pages) and Adding Pages to Playlists (another use case for secondary pages).
+- Updated three Brightcove Player docs, mostly minor issues
+- Made new images for learning guide to CorpTV and Beacon (copied Roy's initial work but I can edit the images now)
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 6 hours
+
+
+
 ** Week Ending 19 Aug **
 - Closed 6 JIRAs, 1 of which were administrivia
 
