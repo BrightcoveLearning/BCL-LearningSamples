@@ -48,7 +48,7 @@
         // Check if playlist is over by comparing length to index of last video played
         if (lengthOfPlaylist === currentVideoInPlaylist) {
           // Use Video Cloud catalog to get video object
-          myPlayer.catalog.getVideo(afterPlaylistVideo, function (error, video) {
+          myPlayer.catalog.getVideo(5769553004001, function (error, video) {
             // Load the video object into the player
             myPlayer.catalog.load(video);
             // Play the video

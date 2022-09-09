@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="tTstQb2r7E"
+    data-embed="default"
+    controls=""
+    data-video-id="1742506883797698902"
+    data-playlist-id=""
+    data-application-id=""
+    width="800" height="450"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/tTstQb2r7E_default/index.min.js"></script>
+
+
+  <br>
+  <p><button onclick="questions()">Questions</button></p>
+  <p><button onclick="hyperlinks()">Links</button></p>
+
+  <script>
+    var myPlayer;
+    videojs('myPlayerID').ready(function () {
+      myPlayer = this;
+    });
+
+    function questions() {
+      console.log('questions button');
+      myPlayer.currentTime(29);
+    }
+
+    function hyperlinks() {
+      console.log('links button');
+      myPlayer.currentTime(183);
+
+    }
+
+  </script>
+
+</body>
+
+</html>

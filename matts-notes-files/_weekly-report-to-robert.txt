@@ -1,4 +1,35 @@
 Major accomplishments:
+** Week Ending 9 Sep **
+- Closed 11 JIRAs, 1 of which was administrivia
+
+JIRA Highlights Include:
+- Checked 69 of the v5 players. Updated all to v6 and deactivated I found were not in use, just in case. I will set a date in the future to delete all players that we don't need to re-activate. I have 84 to go. Most are just not used, and others it seems the upgrade still works in the examples.
+- Six of the upgrades needed a little work to the docs or examples, so did that
+- Wrote a post for The Bright Spot on Brightcove Player bumpers
+- Created a section on a Miro board to show for an example of "standard" links on site home pages
+- MOre time spent with Smartcat and GTranslate
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 4.5 hours (another light week for meetings, YEA)
+
+
+** Week Ending 2 Sep **
+- Closed 20 JIRAs, 1 of which were administrivia
+
+JIRA Highlights Include:
+- Moved Pages as Assets and OTT Catalog Export (SEO) docs from my working folders to production and added new docs to navigation
+- Updated various other docs that had more minor updates needed for new UI changes
+- More research on meetings on Smartcat
+- Added screenshots to TVOD and SVOD docs about how those implementations look in actual apps. Best thing made a contact with someone who knows monetization well and has functioning apps from which I can take screenshots.
+- Wrote up document and using prefixes if same folder at different levels in different sites
+- Setup a "Pages as Assets" example in a QA instance of Beacon. Took some time as I had to upload videos and create pages to get a meaningful example 
+- Closed a few other "quick fix" JIRAs
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 4.5 hours (light week for meetings, YEA)
+
+
+
 ** Week Ending 25 Aug **
 - Closed 21 JIRAs, 1 of which were administrivia
 
