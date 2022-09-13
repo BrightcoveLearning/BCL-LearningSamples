@@ -30,6 +30,33 @@ BCpkADawqM1ywQHVxA4YUxj6wEyTF2TtVzF79D_heysLu9FkcMjuaQzFOf2uQV6c8mav-IedvwXORUq1
 client id: d16d4840-f7bc-45e7-a8a1-a225366b2141
 client secret: dfQdWS_fvOsUzJPZM8vXBU25kpDX_1rpgW4r2EGZ2WwiUzLnPId63ygHQNBu9Fc-6dRCwwul1GyLqfNnHspMaQ
 
+//Used to upgrade players from v5 to v6
+curl \
+      --header "Content-Type: application/json" \
+      --user $EMAIL \
+      --request PATCH \
+      --data '{
+          "player": {
+            "template": {
+                "locked": false,
+                "name": "single-video-template",
+                "version": "6.66.4" !!THIS MUST BE THE LATEST VERSION!!
+            }
+          }
+        }' \
+      https://players.api.brightcove.com/v2/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+
+
+
+curl \
+ --header "Content-Type: application/json" \
+ --user $EMAIL \
+  --request POST \
+  https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+
+
+export PLAYER_ID=ryxXH8YT
+
 //playlist API credentials
 f8abe626-fed1-4dda-af53-949b4c10b2ce
 LbKp2FoWQSmrm_TZpFducDWVCUbJN1slOyZsFImwmyniyvsSdFbBWl9zVSrMAcRAWI9NpbZ2uJpUwbtEqhPqsg
