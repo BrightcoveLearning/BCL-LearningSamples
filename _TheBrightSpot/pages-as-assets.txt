@@ -1,0 +1,9 @@
+Adding Pages to Playlists
+
+You can now create secondary pages and add them to playlists. This gives you the option to have an asset in a playlist that when clicked shows a new page.
+
+The functionality of adding pages to playlists permits you to create a thumbnail in a playlist that when clicked opens a new page. For instance, say you have 20 playlists that fit under an Outdoor Adventures page, but you don't want that many carousels on a single page. Using secondary pages you can group the 20 videos into separate secondary pages then add the secondary pages to the Outdoor Adventures page. 
+
+The two thumbnails in the following screenshot from a Beacon app actually open new pages.
+
+For details see the Adding Pages to Playlists document.
