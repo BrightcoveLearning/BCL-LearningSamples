@@ -8,29 +8,39 @@
 
 <body>
 
-  <video-js id="myPlayerID" data-account="1752604059001"
-          data-player="default"
-          data-embed="default"
-          controls=""
-          data-video-id="4607357817001"
-          data-playlist-id=""
-          data-application-id=""
-          width="600" height="340"
-          playsinline></video-js>
-  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <div style="width: 600px;">
+    <video-js id="myPlayerID"
+      data-account="1752604059001"
+      data-player="ZDaDSLULho"
+      data-embed="default"
+      controls=""
+      data-video-id="5701193190001"
+      data-playlist-id=""
+      data-application-id=""
+      width="600" height="337.5" class="vjs-fluid"></video-js>
+  </div>
+  <script src="https://players.brightcove.net/1752604059001/ZDaDSLULho_default/index.min.js"></script>
+
   <div id="ad-blocker-note"></div>
 
   <script>
     videojs.getPlayer('myPlayerID').ready(function () {
       var myPlayer = this;
-      myPlayer.usingAdBlocker().then(
-        hasBlocker => {
-          if (hasBlocker) {
-            var newP = document.createElement("p");
-            newP = '<aside class="bcls-aside bcls-aside--warning language-editable">This ad will not play as you are using an ad blocker.</aside>';
-            document.getElementById("ad-blocker-note").insertAdjacentHTML('afterbegin', newP);
-          }
-        });
+      console.log(myPlayer.usingAdBlocker());
+      myPlayer.usingAdBlocker().then(hasBlocker => {
+        console.log('hasBlocker: ', hasBlocker);
+        if (hasBlocker) {
+          var newP = document.createElement("p");
+          newP = '<strong>Ads will not play as you are using an ad blocker.</strong>';
+          document.getElementById("ad-blocker-note").insertAdjacentHTML('afterbegin', newP);
+        }
+      });
+
+      if (myPlayer.usingAdBlocker()) {
+        var newP = document.createElement("p");
+        newP = '<strong>This ad will not play as you are using an ad blocker.</strong>';
+        document.getElementById("ad-blocker-note2").insertAdjacentHTML('afterbegin', newP);
+      }
     });
   </script>
 
