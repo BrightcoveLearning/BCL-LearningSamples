@@ -1,0 +1,15 @@
+Topics:
+
+* IMA HTML5 Video Suite Inspector
+  https://googleads.github.io/googleads-ima-html5/vsi/
+
+* Ad Events and Ad Objects
+  https://player.support.brightcove.com/advertising/ad-events-and-ad-objects.html
+
+* Ad Blockers
+  https://player.support.brightcove.com/advertising/checking-for-ad-blockers.html
+
+* Static VMAP for testing
+  https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/tags
+
+* Check usage from Google     
