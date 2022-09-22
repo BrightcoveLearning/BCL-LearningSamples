@@ -1,0 +1,252 @@
+---
+title: 'Quick Start: Player Customization - Legacy Skin'
+parent: 'Styling & Appearance'
+---
+<article class="bcls-article">
+  <h1>Quick Start: Player Customization - Legacy Skin</h1>
+  <summary>
+    <aside class="bcls-aside bcls-aside--warning">This document contains information on the Brightcove Player 1.x skin (graphite), not the most current skin. This transition to the newer skin took place the second week of December, 2015. For the most current version of the document see <a href="/styling/customizing-player-appearance.html">this document</a>.</aside>
+    <p>In this topic, hands-on steps are provided that when followed customizes the appearance of the Brightcove Player. To customize the appearance of the Brightcove Player you need to use Cascading Style Sheets (CSS). This document will go through the process of changing the appearance and location of the play button that initially overlays the video.</p>
+  </summary>
+  <section id="Overview" class="bcls-section">
+    <h2>Overview</h2>
+    <p>This document will have several sections as using CSS with the in-page embed and the iframe implementations of the player are quite different.</p>
+    <p>The content in this document uses Chrome's development tools, but all modern browsers have equivalent functionality. For a brief introduction to using development tools in different browsers, see the <a href="https://general.support.brightcove.com/developer/concepts-javascript-debugging-basics.html">Debugging Basics</a> document.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Some basic player styling is provided inside of Video Cloud Studio. For more information, see <a href="https://studio.support.brightcove.com/players/styling-players.html">Styling Players</a>.</aside>
+  </section>
+  <section id="determineselector" class="bcls-section">
+    <h2>Determine player selector</h2>
+    <p>CSS selectors allow you to select and manipulate HTML elements on a page. CSS selectors are used to "find" (or select) HTML elements based on their id, class, type, attribute, and more. The first thing you must do when trying to alter the look of an element on an HTML page is determine the selector to use to address the element. The following steps show how to find the selector for the player and then change the size of the player.</p>
+    <ol class="bcls-tasklist">
+      <li>In Video Cloud Studio, open the Media module and select a video to publish.</li>
+      <li>Copy the <strong>In-Page</strong> publishing code.</li>
+      <li>Using your HTML editor, create a new HTML page.</li>
+      <li>Paste the publishing code into the body of your HTML page.</li>
+      <li>Browse the newly created page. By default, the player will be sized with default dimensions of 300 x 150 pixels.</li>
+      <li>Open your browser's development tools and drill down into the HTML to find the <code translate="No">div</code> tag that surrounds the player. You will see the <code translate="No">div</code> tag has a class of <code translate="No">video-js</code>. The <code translate="No">div</code> that contains the player will always have a class of <code translate="No">video-js</code>. <code translate="No">video-js</code> is the class name we will need when styling the player.</li>
+      <li>Check the screenshot below to see the class highlighted in red. Highlighted in green is the video tag, which is Brightcove Player.
+        <figure class="bcls-figure"><img class="bcls-image" alt="player-div-with-video" src="/assets/images/styling/customization-legacy-skin/player-div-with-video.png" /></figure>
+        <aside class="bcls-aside bcls-aside--tip">
+          <p>Note: Depending on the operating system and browser being used, the Flash fallback version of the player may be displayed. If your player is using the Flash fallback version of the player, you will not see a <code translate="No">video</code> tag. Instead you will see the <code translate="No">div</code> surrounding an <code translate="No">object</code>tag, as highlighted below.</p>
+          <figure class="bcls-figure"><img class="bcls-image" alt="player-div-with-object" src="/assets/images/styling/customization-legacy-skin/player-div-with-object.png" /></figure>
+        </aside>
+      </li>
+      <li>Now that you know the correct class to use for a CSS selector, we can use that class selector to change the size of the player. The <code translate="No">style</code> block below should be placed just above the end of the <code translate="No">head</code> section of your HTML page. In CSS terminology, this is an example of using a <strong>class selector</strong>.
+        <pre class="line-numbers">
+      <code class="language-html" translate="No">  &lt;style&gt;
+          .video-js {
+            height: 344px;
+            width: 610px;
+          }
+        &lt;/style&gt;
+      &lt;/head&gt;</code></pre>
+      </li>
+      <li>Save and browse your HTML page and you will see the player has a new size.</li>
+    </ol>
+  </section>
+  <section id="buttonselector" class="bcls-section">
+    <h2>Play button selector</h2>
+    <p>Another approach is going to be used to find the selector for the play button. The following steps show you how to find the correct selector for the play button and then change its appearance.</p>
+    <ol class="bcls-tasklist">
+      <li>Browse your HTML page.</li>
+      <li>Right click on the play button that overlays the player and select <strong>Inspect Element</strong>.</li>
+      <li>Note that the <code translate="No">div</code> tag that is highlighted represents the play button and has a class of <code translate="No">vjs-big-play-button</code>.
+        <figure class="bcls-figure"><img class="bcls-image" alt="big-play-button-div" src="/assets/images/styling/customization-legacy-skin/big-play-button-div.png" /></figure>
+      </li>
+      <li>Alter your styles to include CSS that changes the color and opacity of the play button (lines 17-18) as well as centers the button inside the player (lines 19-23).
+        <pre class="line-numbers">
+      <code class="language-html" translate="No">&lt;style&gt;
+          .video-js {
+            height: 344px;
+            width: 610px;
+          }
+          .vjs-big-play-button {
+            background-color: red;
+            opacity: .3;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+          }
+        &lt;/style&gt;  </code></pre>
+      </li>
+      <li>Browse your page and you will see not all the styles have been used. The button is not red.
+        <figure class="bcls-figure"><img class="bcls-image" alt="button-not-red" src="/assets/images/styling/customization-legacy-skin/button-not-red.png" /></figure>
+      </li>
+      <li>Look to the right of your developer tools and you will see a summary of your styles. You can look down and see that changing the background to red is overridden, represented by it being crossed out.
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-overridden" src="/assets/images/styling/customization-legacy-skin/styles-background-overridden.png" /></figure>
+        <aside class="bcls-aside bcls-aside--information">Note: In Safari, the style may not be crossed out even though it is being overridden.</aside>
+        <p>What has happened is that numerous changes are made to the background color. The style you set has been overridden in the "cascading" part of CSS. You can change this by utilizing functionality of CSS called <strong>specificity</strong>. Specificity determines which CSS rule is applied by browsers and is a type of weighting that has a bearing on how your cascading style sheet (CSS) rules are displayed. Using specificity, you can make your style more important than others, forcing it to be used. There is a brief introduction to CSS specificity in the <a href="/styling/customizing-player-appearance-legacy-skin.html#specificity">Customize Player Appearance - Legacy Skin</a> doc, and numerous references in any search.</p>
+      </li>
+      <li>Note that the <code translate="No">div</code> tag surrounds the player has numerous classes associated with it.
+        <figure class="bcls-figure"><img class="bcls-image" alt="multiple-classes" src="/assets/images/styling/customization-legacy-skin/multiple-classes.png" /></figure>
+      </li>
+      <li>In this case, using the combination of <code translate="No">video-js</code> and <code translate="No">vjs-mouse</code> will "boost" your styles to take precedence. Alter your styles to use the new combination selector. Note that there is no space between the first two classes, but there is one before the last class (details of why can be found in rules for specificity).
+        <pre class="line-numbers">
+      <code class="language-css" translate="No">    <span class="bcls-highlight">.video-js.vjs-mouse .vjs-big-play-button</span> {
+            background-color: #ff0000;
+            opacity: .3;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+          }</code></pre>
+      </li>
+      <li>Browse your page and see that all styles are now applied.
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-working" src="/assets/images/styling/customization-legacy-skin/styles-background-working.png" /></figure>
+      </li>
+      <li>Again look to the right of your developer tools and you will see a summary of your styles. Now you see that your background color change is not overridden.
+        <figure class="bcls-figure"><img class="bcls-image" alt="styles-background-NOT-overridden" src="/assets/images/styling/customization-legacy-skin/styles-background-NOT-overridden.png" /></figure>
+      </li>
+    </ol>
+  </section>
+  <section id="inpageembed" class="bcls-section">
+    <h2>In-page embed</h2>
+    <p>When working with selectors and styles above, the results were used with the in-page embed implementation of the player, as shown here:</p>
+    <pre class="line-numbers">
+      <code class="language-html" translate="No">&lt;!doctype html&gt;
+      &lt;html&gt;
+      
+      &lt;head&gt;
+          &lt;meta charset="UTF-8"&gt;
+          &lt;title&gt;Embed in page tester&lt;/title&gt;
+         &lt;style&gt;
+          .video-js {
+            height: 344px;
+            width: 610px;
+          }
+          .video-js.vjs-mouse .vjs-big-play-button {
+            background-color: red;
+            opacity: .3;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+          }
+         &lt;/style&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+      
+        &lt;video
+          data-video-id="4443311217001"
+          data-account="1507807800001"
+          data-player="30a9c9e0-295b-4102-a7af-a3f86bba91ab"
+          data-embed="default"
+          controls&gt;&lt;/video&gt;
+        &lt;script src="//players.brightcove.net/1507807800001/30a9c9e0-295b-4102-a7af-a3f86bba91ab_default/index.min.js"&gt;&lt;/script&gt;
+      
+      
+      &lt;/body&gt;
+      &lt;/html&gt; </code></pre>
+    <p>This is a very common way to use CSS with an HTML page. You see the <code translate="No">style</code> block is on the page with the <code translate="No">video</code> tag.</p>
+    <aside class="bcls-aside bcls-aside--information">Note: Depending upon your CSS experience, you may be wondering why the code above did not assign an <code translate="No">id</code> attribute to the <code translate="No">video</code> tag. You could then use a selector like <code translate="No">#myPlayer .vjs-big-play-button</code>. In fact, you could have and it would have worked. The problem is, the CSS created using id selectors will not work when using the iframe player implementation, so only existing class names were used. By not using an <code translate="No">id</code> attribute, the styles will be directly applicable to iframe player implementations.</aside>
+  </section>
+  <section id="iframe" class="bcls-section">
+    <h2>iframe</h2>
+    <p>The iframe implementation, not surprisingly, places the Brightcove Player in an iframe that you then place in an HTML page. You can style the actual iframe itself, change its size for instance, using styles on the page that contains the iframe, but styles on page of the iframe DO NOT cascade into the iframe itself. The iframe literally pulls in a separate HTML page, so desired styles for the contents of the iframe must be associated with the HTML page in the iframe.</p>
+    <p>When using the iframe implementation of the Brightcove Player, the steps to apply CSS are:</p>
+    <ul>
+      <li>Place styles in an Internet accessible file</li>
+      <li>Link the stylesheet to the player (done using Studio or the Player Management API)</li>
+    </ul>
+    <aside class="bcls-aside bcls-aside--information">Note: The following steps assume you will be working from the HTML you completed in the previous steps and shown in the code snippet above. If you wish to keep that as a working example, simply copy the code into another file and start the following steps in the new file.</aside>
+    <ol class="bcls-tasklist">
+      <li>In Studio, publish a video and copy the code for an iframe implementation of the player.</li>
+      <li>In your HTML page, replace the in-page embed code with the iframe code.</li>
+      <li>Change the <code translate="No">.video-js</code> class selector to an element selector using <code translate="No">iframe</code> as the element. Leave <code translate="No">width</code> and <code translate="No">height</code> the same, as shown here:
+        <pre class="line-numbers">
+  <code class="language-css" translate="No">iframe {
+      height: 344px;
+      width: 610px;
+    }</code></pre>
+      </li>
+      <li>Check to be sure your HTML page looks similar to the following:
+        <pre class="line-numbers">
+      <code class="language-html" translate="No">&lt;!doctype html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;iframe tester&lt;/title&gt;
+      
+         &lt;style&gt;
+          iframe {
+            height: 344px;
+            width: 610px;
+          }
+          .video-js.vjs-mouse .vjs-big-play-button {
+            background-color: red;
+            opacity: .3;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+            margin: auto;
+          }
+         &lt;/style&gt;
+      &lt;body&gt;
+      
+        &lt;iframe src='//players.brightcove.net/1507807800001/30a9c9e0-295b-4102-a7af-a3f86bba91ab_default/index.html?videoId=4443311217001'
+          allowfullscreen allow='encrypted-media'&gt;&lt;/iframe&gt;
+      
+      &lt;/body&gt;
+      &lt;/html&gt;</code></pre>
+      </li>
+      <li>Browse the page and you will see the iframe player is sized correctly. As mentioned earlier, the styles for the button will NOT be functioning.</li>
+      <li>Create a file named <strong>customize-qs.css</strong> and save it in an Internet accessible location.</li>
+      <li>Cut the styles for the button and paste them into the file and save it. Cut only the styles for the button, you cannot include the <code translate="No">style</code> tags. The file should contain only this content:
+        <pre class="line-numbers">
+      <code class="language-css" translate="No">.video-js.vjs-mouse .vjs-big-play-button {
+        background-color: red;
+        opacity: .3;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+      }  </code></pre>
+      </li>
+      <li>Check to be sure your HTML page looks similar to the following:
+        <pre class="line-numbers">
+      <code class="language-html" translate="No">&lt;!doctype html&gt;
+      &lt;html&gt;
+      &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;iframe tester&lt;/title&gt;
+      
+        &lt;style&gt;
+          iframe {
+            height: 344px;
+            width: 610px;
+          }
+        &lt;/style&gt;
+      &lt;body&gt;
+      
+        &lt;iframe src='//players.brightcove.net/1507807800001/30a9c9e0-295b-4102-a7af-a3f86bba91ab_default/index.html?videoId=4443311217001'
+          allowfullscreen allow='encrypted-media'&gt;&lt;/iframe&gt;
+      
+      &lt;/body&gt;
+      &lt;/html&gt;</code></pre>
+      </li>
+      <li>In Studio, go into the <strong>Players</strong> module and edit the player you are using for this quick start.</li>
+      <li>Locate the <strong>PLUGINS</strong> section and click the <strong>Edit</strong> button.</li>
+      <li>Click the <strong>CSS</strong> entry and enter the path to your CSS file, as shown here:
+        <figure class="bcls-figure"><img class="bcls-image" alt="studio-enter-css" src="/assets/images/styling/customization-legacy-skin/studio-enter-css.png" /></figure>
+      </li>
+      <li>Click <strong>Save</strong> to save your changes in the <strong>PLUGINS</strong> section.
+        <aside class="bcls-aside bcls-aside--information">The preview player at the top of the page will update to show the CSS styles applied to the button.</aside>
+      </li>
+      <li>At the top of the page, click <strong>Publish</strong> to publish your player.</li>
+      <li>Return to your browser and refresh the page. Once the published changes are active, you will see your styles applied to the iframe player. It can be several minutes before the published changes are visible.</li>
+    </ol>
+  </section>
+  <section id="explorestyles" class="bcls-section">
+    <h2>Explore styles</h2>
+    <p>In this section a JSBin is used to allow you to explore styles and make more customizations to the big play button than what is shown above. Once you get a look you like, you can simply copy the CSS generated and use it with either player implementation as shown above.</p>
+    <p>One issue that may seem confusing is that the actual arrow in the button is not an image but part of a font family. That is why you control its size using <code translate="No">font-size</code> and use <code translate="No">ems</code> as units.</p>
+    <a class="jsbin-embed" href="http://jsbin.com/fobuhi/embed?css,output">JS Bin on jsbin.com</a>
+    <script src="http://static.jsbin.com/js/embed.min.js?3.34.3"></script>
+  </section>
+</article>

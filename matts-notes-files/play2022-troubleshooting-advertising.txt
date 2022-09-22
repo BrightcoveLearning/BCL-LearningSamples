@@ -13,3 +13,8 @@ Topics:
   https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/tags
 
 * Check usage from Google     
+
+* Docs from Google
+  https://support.google.com/google-ads/answer/10977314?hl=en
+
+  
