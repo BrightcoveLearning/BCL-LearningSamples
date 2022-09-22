@@ -1,0 +1,3 @@
+Matthew Boles has been with Brightcove for over 10 years and has worked with different versions of Brightcove Player the entire time. He writes player samples and documentation, and also delivers a webinar on Developing with Brightcove Player. In addition, he is a major contributor to the Brightcove Beacon documentation.
+
+Matthew has vast experience in developing and delivering learning content, starting as secondary education teacher in mathematics and computer science. Leaving teaching he developed and/or delivered technical courses for Novell, Microsoft, Allaire, Adobe and now Brightcove. Matthew co-authored several technical books, including a book on Adobe Flex that was translated into six languages.
