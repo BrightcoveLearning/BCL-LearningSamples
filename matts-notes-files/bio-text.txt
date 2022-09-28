@@ -1,3 +1,25 @@
 Matthew Boles has been with Brightcove for over 10 years and has worked with different versions of Brightcove Player the entire time. He writes player samples and documentation, and also delivers a webinar on Developing with Brightcove Player. In addition, he is a major contributor to the Brightcove Beacon documentation.
 
 Matthew has vast experience in developing and delivering learning content, starting as secondary education teacher in mathematics and computer science. Leaving teaching he developed and/or delivered technical courses for Novell, Microsoft, Allaire, Adobe and now Brightcove. Matthew co-authored several technical books, including a book on Adobe Flex that was translated into six languages.
+
+
+
+
+Matthew Boles is a Learning Specialist at Brightcove. He has a diverse background in web development, computer networking and teaching in both professional computer classes and the public schools. Matt’s current emphasis is developing Brightcove Player learning content for documentation and training. He also delivers Brightcove’s official training courses on player development. Matt has co-authored several books and spoken at conferences around the world for Allaire/Macromedia/Adobe and now Brightcove.
+
+
+
+Matt has been working on the documentation and training materials for Brightcove Player since the player’s inception.  His current emphasis is App Cloud. For the 12 years before coming to Brightcove, Matt developed and delivered official Allaire/Macromedia/Adobe curricula in the Flex, ColdFusion and Flash development content areas.
+
+Matt Boles is a Learning Specialist at Brightcove. He develops learning content for documentation and training, as well as delivering training courses. His current emphasis is App Cloud. For the 12 years before coming to Brightcove, Matt developed and delivered official Allaire/Macromedia/Adobe curricula in the Flex, ColdFusion and Flash development content areas.
+
+
+Matt Boles is a Technical Training Specialist for Adobe and has been developing and teaching courses on Flex since the 1.0 release.  Matt has a diverse background in web development, computer networking, and teaching in both professional computer classes and the public schools.  He coauthored the Flex Training from the Source books for Flex 2, 3 and 4, and was also a coauthor on the Certified ColdFusion Developer Study Guide.  He has also developed official Allaire/Macromedia/Adobe curricula in the Flex, ColdFusion and Flash development content areas.
+
+
+Matt Boles is a Technical Training Specialist for Adobe and has been developing and teaching courses on Flex since the 1.0 release.  Matt has a diverse background in web development, computer networking, and teaching in both professional computer classes and the public schools.  He coauthored the Flex Training from the Source books for Flex 2, 3 and 4, and was also a coauthor on the Certified ColdFusion Developer Study Guide.  Matt has developed official Allaire/Macromedia/Adobe curricula in the Flex, ColdFusion and Flash development content areas.  He regularly speaks at conferences, including every MAX event that has been held.
+
+
+Matt Boles joins Brightcove as a Learning Specialist reporting to Robert Crooks. He has a diverse background in web development, computer networking, and teaching in both professional computer classes and the public schools. Matt spent the last 12 years at Allaire/Macromedia/Adobe developing and teaching curricula in the Flex, Flash Development and ColdFusion content areas. He also coauthored the Flex: Training from the Source book, which was translated into eight languages. Matt will work remotely from the Tampa, FL area, where he greatly enjoys fishing from his flats boat.
+
+
