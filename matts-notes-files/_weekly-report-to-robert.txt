@@ -8,8 +8,8 @@ JIRA Highlights Include:
 - Some minor updates in OTT Catalog Export UI caused a couple of screenshot updates 
 
 Work NOT Reflected in JIRAs:
-- Fair amount of time helping Shantal with a Beacon UI doc, which she did a great job on. Time invested well worth it as she can take some of the Beacon doc on going forward.
-- Time spent in meetings: 7 1/2 hours
+- Fair amount of time helping Shantal with a Beacon UI doc, which she did a great job on. Time invested well worth it as she can take some of the Beacon docs on going forward.
+- Time spent in meetings: 8 1/2 hours
 
 
 
