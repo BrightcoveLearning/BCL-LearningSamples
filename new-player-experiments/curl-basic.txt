@@ -40,7 +40,7 @@ curl \
             "template": {
                 "locked": false,
                 "name": "single-video-template",
-                "version": "6.66.4" !!THIS MUST BE THE LATEST VERSION!!
+                "version": "6.66.4"
             }
           }
         }' \
