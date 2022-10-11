@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Player Sample: Alltime Views</title>
-        <style>
-          body {
-              font-family: sans-serif;
-              margin: 4em;
-          }
-            /*.video-js {
-              height: 350px;
-              width: 640px;
-              float: left;
-            }
-            .vjs-playlist {
-              width: 200px;
-              height: 338px;
-            }
-            .vjs-playlist-item {
-                min-height: 120px;
-            }*/
-        </style>
-    </head>
-    <body>
-        <h1>Player Sample: Alltime Views</h1>
-        <video id="bcls_alltimePlaysPlayer" data-playlist-id="5282200243001"
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Player Sample: All Time Views</title>
+
+</head>
+
+<body>
+  <h1>Player Sample: Alltime Views</h1>
+  <div style="width: 640px;" class="vjs-playlist-player-container">
+    <video-js id="bcls_alltimePlaysPlayer"
         data-account="1752604059001"
-        data-player="By0VIfFIg"
+        data-player="Vl55bAD4t"
         data-embed="default"
-        data-application-id
-        class="video-js"
-        controls
-        width="600"
-        height="337.5"></video>
-        <script src="//players.brightcove.net/1752604059001/By0VIfFIg_default/index.min.js"></script><ol class="vjs-playlist"></ol>
-        <script>
-        var options = {
-            "proxyURL": "https://solutions.brightcove.com/bcls/bcls-proxy/alltime-views-proxy.php",
-            "hasPlaylist": true
-            };
-        </script>
-        <script src="alltimeViews.js"></script>
-        <script>
-        videojs('bcls_alltimePlaysPlayer').alltimeViews(options);
-        </script>
-    </body>
+        controls=""
+        data-video-id=""
+        data-playlist-id="5541484620001"
+        data-application-id=""
+        width="640" height="360"
+        class="vjs-fluid"></video-js>
+    <div id="bcls_alltimePlaysPlaylist" class="vjs-playlist"></div>
+  </div>
+  <script src="https://players.brightcove.net/1752604059001/Vl55bAD4t_default/index.min.js"></script>
+  <script>
+    var options = {
+      "proxyURL": "https://solutions.brightcove.com/bcls/bcls-proxy/alltime-views-proxy.php",
+      "hasPlaylist": true
+    };
+  </script>
+  <script src="alltimeViews.js"></script>
+  <script>
+    videojs('bcls_alltimePlaysPlayer').alltimeViews(options);
+  </script>
+</body>
+
 </html>

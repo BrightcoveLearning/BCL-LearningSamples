@@ -1,4 +1,4 @@
-videojs.plugin('alltimeViews', function(options) {
+videojs.registerPlugin('alltimeViews', function(options) {
     var player = this,
         el,
         txt,
