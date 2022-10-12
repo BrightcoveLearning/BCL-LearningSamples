@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ERROR-PLAY Ad Events</title>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="mRQhx7vjW"
+    data-embed="default"
+    controls=""
+    data-video-id="5701193190001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+
+  <div id="insertionPoint">
+    <p>Events dispatched:</p>
+  </div>
+
+
+
+  <script src="https://players.brightcove.net/1752604059001/mRQhx7vjW_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs('myPlayerID').ready(function () {
+      var myPlayer = this;
+      var theDiv = document.getElementById('insertionPoint'),
+        eventsAra = ['ads-request', 'ads-load',
+          'ads-pod-started', 'ads-pod-ended', 'ads-allpods-completed', 'ads-ad-started', 'ads-ad-ended',
+          'ads-first-quartile', 'ads-midpoint', 'ads-third-quartile', 'ads-pause', 'ads-play',
+          'ads-volumechange', 'ads-click'];
+
+      eventsAra.forEach(event => myPlayer.on(event, displayEvent));
+
+      function displayEvent(event) {
+        console.log('event: ', event);
+        theDiv.innerHTML += '<strong>' + event.type + '</strong><br>';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
