@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ad Blocker Demo</title>
+</head>
+
+<body>
+
+  <div style="width: 960px;">
+    <video-js id="myPlayerID"
+              data-account="1752604059001"
+              data-player="ZDaDSLULho"
+              data-embed="default"
+              controls=""
+              data-video-id="5701193190001"
+              data-playlist-id=""
+              data-application-id=""
+              width="960" height="540" class="vjs-fluid"></video-js>
+  </div>
+  <div id="ad-blocker-note" style="color:red; font-size: 40px"></div>
+
+  <script src="https://players.brightcove.net/1752604059001/ZDaDSLULho_default/index.min.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+      console.log(myPlayer.usingAdBlocker());
+      myPlayer.usingAdBlocker().then(hasBlocker => {
+        console.log('hasBlocker: ', hasBlocker);
+        if (hasBlocker) {
+          var newP = document.createElement("p");
+          newP = '<strong>Ads will not play as you are using an ad blocker.</strong>';
+          document.getElementById("ad-blocker-note").insertAdjacentHTML('afterbegin', newP);
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
