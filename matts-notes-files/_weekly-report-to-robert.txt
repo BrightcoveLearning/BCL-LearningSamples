@@ -7,6 +7,7 @@ JIRA Highlights Include:
 - Fixed a Code Sample that wasn't working. I think all the samples that use playlists need to be looked at. Some don't work and I use a new player and seems fix any issues.
 - Jeff and I helped Han and Roy with UI review and verbiage suggestions for UI and tool tips
 - Couple of other minor updates to Beacon docs 
+- Did a The Bright Spot post (doing one a week since I started 5 weeks ago)
 
 Work NOT Reflected in JIRAs:
 - Time spent in meetings: 10 1/2 hours (three hours of meetings with Anwar on the PLAY session)
