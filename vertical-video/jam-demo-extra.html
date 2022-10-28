@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+  <style>
+    .video-js.vjs-has-started .vjs-control.vjs-close-modal {
+      opacity: 1;
+      transition: opacity .1s;
+      position: absolute;
+      margin: 16px;
+      right: 0;
+      width: 16px;
+      height: 16px;
+      background-image: url('http://icons.iconarchive.com/icons/kyo-tux/delikate/256/Close-icon.png');
+      background-size: cover;
+      cursor: pointer;
+    }
+
+    .video-js.vjs-ended .vjs-big-play-button {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="videoContainer" style="position: relative; display: block;
+max-width: 300px;">
+    <div style="padding-top: 150%;">
+      <video-js id="myPlayerID"
+        data-video-id="6057428475001"
+        data-account="1752604059001"
+        data-player="tUnbGgd07"
+        data-embed="default"
+        data-application-id
+        controls
+        playsinline
+        style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px;
+width: 100%; height: 100%;"></video-js>
+      <script src="//players.brightcove.net/1752604059001/tUnbGgd07_default/index.min.js"></script>
+    </div>
+  </div>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      // +++ Initialize variables and check for mobile device +++
+      var player = this,
+        playerContainer = document.getElementById('videoContainer'),
+        isMobile = (/Android|webOS|iPhone|BlackBerry|Windows Phone|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent)) ? true : false;
+
+      if (isMobile) {
+        // +++ Define a modal close button +++
+        var CloseModal = videojs.getComponent('button');
+        var CloseModal_ = videojs.extend(CloseModal, {
+          constructor: function () {
+            CloseModal.apply(this, arguments);
+            this.addClass('vjs-close-modal');
+            this.controlText('Close video');
+          },
+          handleClick: function () {
+            playerContainer.style.maxWidth = '300px';
+          }
+        });
+
+        videojs.registerComponent('CloseModal', CloseModal_);
+        player.addChild('CloseModal', {});
+
+        // +++ When playback begins, enter full width mode +++
+        player.on('play', function () {
+          playerContainer.style.width = '100%';
+          playerContainer.style.maxWidth = '';
+        });
+      }
+
+      // +++ When playback ends, exit full width mode +++
+      player.on('ended', function () {
+        playerContainer.style.maxWidth = '300px';
+        player.currentTime(0);
+      });
+    });
+  </script>
+
+</body>
+
+</html>
