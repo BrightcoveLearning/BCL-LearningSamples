@@ -4,7 +4,7 @@ Major accomplishments:
 
 JIRA Highlights Include:
 - Updated the videos in the doc samples account to a compatible version with current players; 295 videos
-- Created a The Bright Spot post on web SEO tool
+- Created a The Bright Spot post on web SEO tool for Beacon
 - Helped Shantal on the introduction for the Managing Viewer Authentication document
 - Worked on the submodules for interactivity, but I think made things worse :-(
 - Updated the Beacon product release doc and wrote instructions up for the process in Confluence
