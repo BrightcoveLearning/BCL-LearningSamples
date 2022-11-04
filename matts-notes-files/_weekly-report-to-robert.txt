@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 4 Nov **
+- Closed 12 JIRAs, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Updated the videos in the doc samples account to a compatible version with current players; 295 videos
+- Created a The Bright Spot post on web SEO tool
+- Helped Shantal on the introduction for the Managing Viewer Authentication document
+- Worked on the submodules for interactivity, but I think made things worse :-(
+- Updated the Beacon product release doc and wrote instructions up for the process in COnfluence
+
+Work NOT Reflected in JIRAs:
+- Research on a couple of topics for Beacon docs (weirdness in Apple cancel vs. renew subscription)
+- Time spent in meetings: 6 hours (average)
+
+
+
 ** Week Ending 28 Oct **
 - Closed 9 JIRAs, 1 of which was/were administrivia
 
