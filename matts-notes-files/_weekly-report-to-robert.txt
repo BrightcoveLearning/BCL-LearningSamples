@@ -7,7 +7,8 @@ JIRA Highlights Include:
 - Created a The Bright Spot post on web SEO tool
 - Helped Shantal on the introduction for the Managing Viewer Authentication document
 - Worked on the submodules for interactivity, but I think made things worse :-(
-- Updated the Beacon product release doc and wrote instructions up for the process in COnfluence
+- Updated the Beacon product release doc and wrote instructions up for the process in Confluence
+- Updated security on Beacon Wizard form, to many folks had access for Mike Smith; this took awhile as you can't just revoke eidtors, finally found out if I copied the form to my account, then put back in shared drive that reset the editors
 
 Work NOT Reflected in JIRAs:
 - Research on a couple of topics for Beacon docs (weirdness in Apple cancel vs. renew subscription)
