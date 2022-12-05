@@ -1,4 +1,55 @@
 Major accomplishments:
+** Week Ending 2 Dec **
+- Closed 9 JIRAs, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- Created video showing location of Brightcove Player in Beacon web apps. Goes in Brightcove Player Plugin Compatibility doc, which is now just waiting for the feature to go into prod.
+- Finally got all the info currently available from engineers into Brightcove Player Plugin Compatibility doc. That I will need to keep buggin the engineers to dupdate, which plugins are working in Brightcove Player use in Beacon apps.
+- A few minor doc updates
+- Weekly doc and product updates
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 7 1/2 hours (higher than normal for me)
+
+
+
+** Week Ending 25 Nov **
+- Closed 8 JIRAs, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Completed my portion of Player E doc (renamed to Choosing Your Player) and Shantal making a few additions.
+- Lots of time on submodule understanding.
+- A few minor doc updates
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 1 1/2 hours (holiday schedule)
+
+
+
+** Week Ending 18 Nov **
+- Closed 8 JIRAs, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- Concluded research for two Beaocn docs: Brightcove Player Plugin Compatibility AND Player E (involved meetings with numerous engineers). Will write docs next week.
+- Updated an out of date player dev video (reloadSourceOnError used in HLS doc)
+- A few minor doc updates
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 7 1/2 hours (above average)
+
+
+
+** Week Ending 10 Nov **
+- Closed 4 JIRAs, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Minor issues corrected in a few JIRAs
+
+Work NOT Reflected in JIRAs:
+- Research on two new Beacon docs, Brightcove Player Plugin Compatibility AND Player E (will name it something like Brightcove Player in Beacon Apps)
+- Time spent in meetings: 6 hours (average)
+
+
 ** Week Ending 4 Nov **
 - Closed 12 JIRAs, 1 of which was/were administrivia
 

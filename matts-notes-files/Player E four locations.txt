@@ -1,0 +1,14 @@
+Player E is used in four locations of Beacon web apps. Each of the four instances of the player are tailored for the its specific use.
+
+The four locations where Player E is used are:
+
+1. Autoplay page layout - This is the page layout that has video automatically start at the top of the page, with thumbnails for other videos below the auto-started video
+
+2. Live TV preview - You will see this instance of Player E when you go to a live TV channel and a preview of what is currently showing on the channel plays
+
+3. EPG Preview - When you go to the EPG, or electronic programmign guide (which you can think of as a TV schedule), you see a small preview of what is currently playing on the selected channel
+
+4. VOD Playback - You can think of this as the "normal" video playback. This player is used when you click on a video you wish to watch and view it playing.
+
+What follows in the rest of this video are quick recordings of each of the four instances of the player in action.
+
