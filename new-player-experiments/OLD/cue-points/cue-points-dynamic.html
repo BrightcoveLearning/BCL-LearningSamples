@@ -8,51 +8,34 @@
 
 <body>
 
-  <video id="myPlayerID" data-video-id="4607746980001"
+  <video id="myPlayerID" data-video-id="1507781667001"
     data-account="1507807800001"
     data-player="default"
     data-embed="default"
     class="video-js"
-    controls></video>
-    <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
+    controls
+    width="800px" height="600px"></video>
+  <script src="//players.brightcove.net/1507807800001/default_default/index.min.js"></script>
 
   <p id="insertionPoint"></p>
 
-  <script type="text/javascript">
-
-    videojs("myPlayerID").ready(function () {
-      var myPlayer = this,
-        textTrack = [],
-        allTextTacks,
-        attLength,
-        tt;
-
-      myPlayer.one("loadedmetadata", function () {
-        textTrack = myPlayer.addTextTrack('metadata', 'Timed Cue Point');
-        textTrack.addCue(new window.VTTCue(2, 5, 'cue point 1 text'));
-        textTrack.addCue(new window.VTTCue(10, 15, 'cue point 2 text'));
-        allTextTacks = myPlayer.textTracks();
-        attLength = allTextTacks.length;
-        for (var i = 0; i < attLength; i++) {
-          if (allTextTacks[i].label === 'Timed Cue Point') {
-            tt = allTextTacks[i];
-            break;
-          };
-        };
-
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var player = this;
+      player.one("loadedmetadata", function () {
+        var tt = player.textTracks()[0];
         tt.oncuechange = function () {
           if (tt.activeCues[0] !== undefined) {
             var dynamicHTML = "id: " + tt.activeCues[0].id + ", ";
-            dynamicHTML += "text: <strong>" + tt.activeCues[0].text + "</strong>, ";
-            dynamicHTML += "startTime: <strong>" + tt.activeCues[0].startTime + "</strong>,  ";
-            dynamicHTML += "endTime: <strong>" + tt.activeCues[0].endTime + "</strong>";
-            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/><br/>";
-          } else {
-            document.getElementById("insertionPoint").innerHTML += "Cue point duration over" + "<br/><br/>";
+            dynamicHTML += "text: " + tt.activeCues[0].text + ", ";
+            dynamicHTML += "startTime: " + tt.activeCues[0].startTime + ",  ";
+            dynamicHTML += "endTime: " + tt.activeCues[0].endTime;
+            document.getElementById("insertionPoint").innerHTML += dynamicHTML + "<br/>";
           }
-        } //end oncuechange
-      }); //end on loadedmetadata
-    }); //end ready
+        }
+        player.play();
+      });
+    });
   </script>
 
 </body>

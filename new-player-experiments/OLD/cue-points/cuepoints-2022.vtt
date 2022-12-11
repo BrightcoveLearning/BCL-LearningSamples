@@ -1,0 +1,17 @@
+WEBVTT
+
+Carry
+00:00:03.000 --> 00:00:09.000
+{
+  "id": "First cue point",
+  "title": "Carry the rim",
+  "description": "Getting ready to mount a tire on the rim."
+}
+
+Balance
+00:00:10.000 --> 00:00:15.000
+{
+  "id": "Second cue point",
+  "title": "Balance the tire and rim",
+  "description": "Spin the mounted tire to check the balance."
+}

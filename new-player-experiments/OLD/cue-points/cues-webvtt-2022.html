@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled Document</title>
+
+</head>
+
+<body>
+
+  <video-js id="myPlayerID2"
+    data-account="1752604059001"
+    data-player="default"
+    data-embed="default"
+    controls=""
+    data-video-id="4607357817001"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360">
+
+    <track kind="metadata" label="external-metadata-vtt" src="https://solutions.brightcove.com/bcls/brightcove-player/cuepoints/cuepoints-2022.vtt" />
+
+  </video-js>
+
+  <pre id="insertionPoint"></pre>
+
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+    videojs.getPlayer('myPlayerID2').ready(function () {
+      var player = this;
+      player.one("loadedmetadata", () => {
+        const tt = [].find.call(player.textTracks(), ({ label }) => label === 'external-metadata-vtt');
+        console.log('tt: ', tt);
+        if (!tt) {
+          return;
+        }
+
+        tt.mode = 'hidden';
+
+        tt.oncuechange = () => {
+          const outputEl = document.getElementById("insertionPoint");
+          const activeCue = tt.activeCues[0];
+
+          if (!activeCue) {
+            outputEl.innerHTML += `Cue point duration over\n\n\n`;
+            return;
+          }
+
+          const { id, text, startTime, endTime } = activeCue;
+          outputEl.innerHTML += `id: ${id}\ntext: ${text}\nstartTime: ${startTime}, endTime: ${endTime}\n`;
+
+          try {
+            const { title, description } = JSON.parse(text);
+            outputEl.innerHTML += `${title}: ${description}\n`
+          } catch (e) {
+            //ignore
+          }
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
