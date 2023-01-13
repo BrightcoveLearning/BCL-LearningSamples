@@ -1,4 +1,50 @@
 Major accomplishments:
+** Week Ending 13 Jan **
+- Closed 6 JIRAs, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- Major surgery on Publishing a Cloud Playout Channel
+- Updates to a few Beacon docs where I got more information from engineers
+
+Work NOT Reflected in JIRAs:
+- HUGE redo of Beacon Live SSAI doc. Total redo as now have to have one configuration for Roku and one for all others. Still need to talk to you about how to implement changes needed via Live API.
+- More time spent on submodule madness - getting closer to solution I think (or at least hope)
+- Lots of time spent on Player E Selection and Features doc, will go live next week 
+- Time spent in meetings: 9 1/2 hours (high for me)
+
+
+
+** Week Ending 6 Jan **
+- Closed 3 JIRAs, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Security training done
+- Worked with Bob on chaning the Media section into folders
+
+Work NOT Reflected in JIRAs:
+- Updated Beacon stub files to match Bob's folder changes
+- LOTS more time spent on submodule madness
+- Helped Shantal do the quarter change for doc/product updates. During this also updated the instructions here and there.
+- Major update to Publishing a Cloud Player channel doc in progress.
+
+
+
+** Week Ending 9 Dec **
+- Closed 14 JIRAs, 3 of which was/were administrivia
+
+JIRA Highlights Include:
+- Updated Google Tag Manger doc and still working with person who send JIRA
+- Gathered submodule troubleshooting tips together on one page in Condluence
+- Created video for Player E in Beacon apps. This will need to be updated once Player E is in production and we can show a better video that demos more features.
+- Updated Programmtic Cue Points doc. This took a bit of research, but code updated and doc published.
+- Weekly doc and product updates email sent
+
+Work NOT Reflected in JIRAs:
+- Research on submodule issues, still confusing me I admit
+- Time spent in meetings: 6 hours (normal for me)
+
+
+
 ** Week Ending 9 Dec **
 - Closed 3 JIRAs, 1 of which was/were administrivia
 
