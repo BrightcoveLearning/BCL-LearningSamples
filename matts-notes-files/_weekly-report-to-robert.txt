@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 20 Jan **
+- Closed 9 JIRAs (6 KNOW and 2 OTT), 3 of which was/were administrivia
+
+JIRA Highlights Include:
+- The two big Player E Beacon docs out the door, Player E Selection and Features AND Brightcove Player Plugin Compatibility with Player E
+- Fixed the weird issue with the flag being displayed for caption languages. I mentioned this to  you all I did was re-copy the code into the CodePen, and all was good.
+- Got the two language video added to the BC Training Beacon account
+
+Work NOT Reflected in JIRAs:
+- Getting ready for the Live API changes for the Beason Live SSAI doc. Have meeting schedule with Ted K next week. Also have tasks in Insomnia that do the job. Wish I could just tell customers to use Insomnia. :-)
+- Time spent in meetings: 4 1/2 hours (low for me, YEA)
+
+
+
+Major accomplishments:
 ** Week Ending 13 Jan **
 - Closed 6 JIRAs, 2 of which was/were administrivia
 
