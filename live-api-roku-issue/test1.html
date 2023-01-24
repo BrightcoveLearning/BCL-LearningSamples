@@ -3,62 +3,52 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Live API Work</title>
+  <title>Live API Sample: Create a Live Job</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/source-code-pro" type="text/css" />
+
+
+  <link rel="stylesheet" href="style.css">
+
+
 </head>
 
 <body>
 
+  <section class="bcls-section">
+    <h2 id="inputs">App inputs</h2>
+
+    <p>Live API Key: <input id="live_key" type="text" value="qm2Dw5RuF03ucxVEUKoMGgGsZB1ZK6c7sFN19vs5" /></p>
+
+    <p>Select region: <select name="regionSelect" id="regionSelect"></select></p>
+
+    <p><button id="sendButton" class="bcls-button">Create the Job</button></p>
+  </section>
+
+  <section class="bcls-section">
+    <h2 id="outputs">App outputs</h2>
+
+    <h3>Log</h3>
+
+    <p>Application Configuration Names</p>
+    <textarea name="configNames" id="configNames" class="bcls-code" rows="8" cols="80"></textarea>
+
+    <h3>Roku and All Except Roku Names Input</h3>
+
+    <p><code>Roku Ad Configuration Name</code></p>
+    <textarea name="rokuName" id="rokuName" cols="100" rows="2" class="bcls-code"></textarea>
+
+    <p><code>All Except Roku Ad Configuration Name</code></p>
+    <textarea name="exceptRokuName" id="exceptRokuName" cols="100" rows="2" class="bcls-code"></textarea>
+
+    <h3>Full response</h3>
+
+    <pre class="line-numbers"><code id="apiResponse">Response will appear here...</code></pre>
+  </section>
 
 
+  <script src="index.js"></script>
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Live API Sample: Create a Live Job</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/source-code-pro" type="text/css" />
-
-
-    <link rel="stylesheet" href="style.css">
-
-
-  </head>
-
-  <body>
-
-    <section class="bcls-section">
-      <h2 id="inputs">App inputs</h2>
-
-      <p>Live API Key: <input id="live_key" type="text" value="qm2Dw5RuF03ucxVEUKoMGgGsZB1ZK6c7sFN19vs5" /></p>
-
-      <p>Select region: <select name="regionSelect" id="regionSelect"></select></p>
-
-      <p><button id="sendButton" class="bcls-button">Create the Job</button></p>
-    </section>
-
-    <section class="bcls-section">
-      <h2 id="outputs">App outputs</h2>
-
-      <h3>Log</h3>
-
-      <p>Application Configuration Names</p>
-      <textarea name="configNames" id="configNames" class="bcls-code" rows="8" cols="80"></textarea>
-
-      <h3>Roku and All Except Roku Names Input</h3>
-
-      <p><code>Roku Ad Configuration Name</code></p>
-      <textarea name="rokuName" id="rokuName" cols="100" rows="2" class="bcls-code"></textarea>
-
-      <p><code>All Except Roku Ad Configuration Name</code></p>
-      <textarea name="exceptRokuName" id="exceptRokuName" cols="100" rows="2" class="bcls-code"></textarea>
-
-      <h3>Full response</h3>
-
-      <pre class="line-numbers"><code id="apiResponse">Response will appear here...</code></pre>
-    </section>
-
-
-    <script src="index.js"></script>
-
-  </body>
+</body>
 
 </html>
