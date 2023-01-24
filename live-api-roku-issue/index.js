@@ -5,6 +5,7 @@ var BCLS = ( function (window, document) {
     exceptRokuName   = document.getElementById('exceptRokuName'),
     apiResponse      = document.getElementById('apiResponse'),
     sendButton       = document.getElementById('sendButton'),
+    writePropsButton = document.getElementById('writePropsButton'),
     configNames      = document.getElementById('configNames'),
     proxyURL         = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
     regions          = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1',  'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
