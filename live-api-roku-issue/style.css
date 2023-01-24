@@ -1,0 +1,40 @@
+/* * The body style is just for the
+ * background color of the codepen.
+ * Do not include in your code.
+ */
+body {
+  background-color: #111;
+  color: #f5f5f5;
+  font-family: sans-serif;
+  margin: 2em;
+}
+/*
+ * Styles essential to the sample
+ * are below
+ */
+.bcls-code {
+  color: #111;
+  font-family: 'Source Code Pro',monospace;
+  padding: 1em;
+  width: 90%;
+  min-height: 2em;
+  background-color: #cfcfcf;
+  font-size: 1rem;
+}
+.bcls-button {
+  padding: .5em;
+  background-color: #333;
+  border: 1px yellow solid;
+  border-radius: .5em;
+  color: yellow;
+  cursor: pointer;
+}
+fieldset {
+  color: #64AAB2;
+  border: 1px #64AAB2 solid;
+  border-radius: .5em;
+}
+code {
+  color: #E4B842;
+  font-family: 'Source Code Pro',monospace;
+}
