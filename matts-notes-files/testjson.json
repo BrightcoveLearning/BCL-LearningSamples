@@ -1,5 +1,23 @@
-{
-	"application": {
+[
+	{
+		"application_ad_configuration": {
+			"ad_configuration_expected_response_type": "Vast",
+			"ad_configuration_transforms": [
+				{
+					"xpath": "/",
+					"xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
+				}
+			],
+			"ad_configuration_description": "House Ads Config - b7ed6db4577743bba67f3452a76a5ce7",
+			"ad_configuration_url_format": "http://test-ads.bcovlive.io/ads/subaru/subaru-dogtested.xml",
+			"ad_configuration_strategy": "SingleAdResponse"
+		},
+		"application_id": "3b1cfddc23ee4fc08bca8c33f1a2f225",
+		"account_id": "b7ed6db4577743bba67f3452a76a5ce7",
+		"application_description": "House Ads - b7ed6db4577743bba67f3452a76a5ce7",
+		"application_type": "ads"
+	},
+	{
 		"application_ad_configuration": {
 			"ad_configuration_client_sdk_enabled": false,
 			"enable_roku_workarounds": true,
@@ -18,27 +36,26 @@
 		"application_id": "5f0ba576311048a986a64b694337c639",
 		"account_id": "b7ed6db4577743bba67f3452a76a5ce7",
 		"application_description": "Live - No DVR - Roku",
-		"application_type": "ads",
-		"updated_application": {
-			"account_id": "b7ed6db4577743bba67f3452a76a5ce7",
-			"application_id": "5f0ba576311048a986a64b694337c639",
-			"application_description": "Live - No DVR - Roku",
-			"application_ad_configuration": {
-				"ad_configuration_client_sdk_enabled": false,
-				"ad_tracking_sample_percentage": 0,
-				"ad_configuration_description": "Live - No DVR - Roku",
-				"ad_configuration_expected_response_type": "Vast",
-				"enable_roku_workarounds": true,
-				"ad_configuration_transforms": [
-					{
-						"xpath": "/",
-						"xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
-					}
-				],
-				"ad_configuration_url_format": "https://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml",
-				"ad_configuration_strategy": "SingleAdResponse"
-			}
-		}
+		"application_type": "ads"
 	},
-	"action": "updated"
-}
+	{
+		"application_ad_configuration": {
+			"ad_configuration_client_sdk_enabled": false,
+			"ad_tracking_sample_percentage": 0,
+			"ad_configuration_description": "Live - No DVR - All except Roku",
+			"ad_configuration_expected_response_type": "Vast",
+			"ad_configuration_transforms": [
+				{
+					"xpath": "/",
+					"xslt": "<xsl:stylesheet version=\"1.0\" xmlns:xsl=\"http://www.w3.org/1999/XSL/Transform\" xmlns:Det=\"http://Det.com\"><xsl:output omit-xml-declaration=\"yes\"/><xsl:template match=\"node()|@*\"><xsl:copy><xsl:apply-templates select=\"node()|@*\"/></xsl:copy></xsl:template></xsl:stylesheet>"
+				}
+			],
+			"ad_configuration_url_format": "https://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml",
+			"ad_configuration_strategy": "SingleAdResponse"
+		},
+		"application_id": "9cab57fce88141398e8a022116592189",
+		"account_id": "b7ed6db4577743bba67f3452a76a5ce7",
+		"application_description": "Live - No DVR - All except Roku",
+		"application_type": "ads"
+	}
+]

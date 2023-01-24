@@ -1,12 +1,11 @@
 var BCLS = ( function (window, document) {
   var live_key       = document.getElementById('live_key'),
     regionSelect     = document.getElementById('regionSelect'),
-    stream_url       = document.getElementById('stream_url'),
-    playback_url     = document.getElementById('playback_url'),
-    playback_url_dvr = document.getElementById('playback_url_dvr'),
+    rokuName         = document.getElementById('rokuName'),
+    exceptRokuName   = document.getElementById('exceptRokuName'),
     apiResponse      = document.getElementById('apiResponse'),
     sendButton       = document.getElementById('sendButton'),
-    reqBody          = document.getElementById('reqBody'),
+    configNames      = document.getElementById('configNames'),
     proxyURL         = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
     regions          = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1',  'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
     apiKey           = 'qm2Dw5RuF03ucxVEUKoMGgGsZB1ZK6c7sFN19vs5',
@@ -112,18 +111,22 @@ console.log('playback_url', responseDecoded.playback_url);
     function createRequest() {
       var options = {},
         responseDecoded,
-        playlist;
+        numOfAdConfigs,
+        i;
       body.region = getSelectedValue(regionSelect).value;
       options.url = 'https://api.bcovlive.io/v1/ssai/applications';
-//      reqBody.textContent = JSON.stringify(body);
       options.requestBody = '';
-      options.requestType = 'POST';
+      options.requestType = 'GET';
       options.apiKey = live_key.value;
       console.log('options in create', options);
       makeRequest(options, function(response) {
         if (isJson(response)) {
           responseDecoded = JSON.parse(response);
           console.log('responseDecoded', responseDecoded);
+          numOfAdConfigs = responseDecoded.length;
+          for (let i = 0; i <= numOfAdConfigs - 1; i++) {
+            reqBody.textContent += responseDecoded[i].application_description + '\r\n';
+          }
 /*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
           stream_url.textContent = responseDecoded.stream_url;
           playback_url.textContent = responseDecoded.playback_url;
