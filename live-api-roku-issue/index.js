@@ -9,13 +9,15 @@ var BCLS = ( function (window, document) {
     notRokuRadioButtons = document.getElementById('notRokuRadioButtons'),
     proxyURL         = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
     regions          = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1',  'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
-    apiKey           = 'qm2Dw5RuF03ucxVEUKoMGgGsZB1ZK6c7sFN19vs5',
-    body             = JSON.parse('{"live_stream":true,"region":"us-west-2","reconnect_time":20,"outputs":[{"label":"hls1080p","live_stream":true,"width":1920,"height":1080,"video_codec":"h264","h264_profile":"main","video_bitrate":2400,"segment_seconds":6,"keyframe_interval":60},{"label":"hls720p","live_stream":true,"width":1280,"height":720,"video_codec":"h264","h264_profile":"main","video_bitrate":1843,"segment_seconds":6,"keyframe_interval":60},{"label":"hls480p","live_stream":true,"width":640,"height":360,"video_codec":"h264","h264_profile":"main","video_bitrate":819,"segment_seconds":6,"keyframe_interval":60}]}'),
+    apiKey           = '',
+    body             = '',
     requestURL       = 'https://api.bcovlive.io/v1/jobs',
     fragment         = document.createDocumentFragment(),
     option,
     i,
     iMax,
+    responseDecoded,
+    numOfAdConfigs,
     notRokuIDValue,
     rokuIDValue;
 
@@ -41,6 +43,25 @@ var BCLS = ( function (window, document) {
       alert('You must provide a Live API Key');
     }
   });
+
+  writePropsButton.addEventListener('click', function () {
+    var rokuButtonList = document.getElementsByName('rokuID'),
+      notRokuButtonList = document.getElementsByName('notRokuID');
+    for (var i = 0; i < numOfAdConfigs; i++) {
+      if (rokuButtonList[i].checked) {
+        rokuIDValue = rokuButtonList[i].value
+        console.log('rokuIDValue', rokuIDValue);
+      }
+    }
+    for (var i = 0; i < numOfAdConfigs; i++) {
+      if (notRokuButtonList[i].checked) {
+        notRokuIDValue = notRokuButtonList[i].value
+        console.log('notRokuIDValue', notRokuIDValue);
+      }
+    }
+  })
+
+
 
   /**
    * get selected value for single select element
@@ -112,42 +133,32 @@ console.log('playback_url', responseDecoded.playback_url);
       });
     } */
 
-  function setButtonChangeHandlers() {
-
-  }
-  
-  function buildAdConfigCheckboxes(responseDecoded, numOfAdConfigs) {
-    const lineBreak = document.createElement('br');
-    for (let i = 0; i <= numOfAdConfigs - 1; i++) {
-      let label = document.createElement("label");
-      label.innerText = responseDecoded[i].application_description;
-      let input = document.createElement('input');
-      input.value = responseDecoded[i].application_id;
-      input.type = 'radio';
-      input.name = 'rokuID'
-      label.prepend(input);
-      rokuRadioButtons.appendChild(label);
-      notRokuRadioButtons.appendChild(lineBreak);
-      //label.insertAdjacentElement("afterend",lineBreak);      
+    
+    function buildAdConfigCheckboxes() {
+      for (let i = 0; i <= numOfAdConfigs - 1; i++) {
+        let label = document.createElement("label");
+        label.innerText = responseDecoded[i].application_description;
+        let input = document.createElement('input');
+        input.value = responseDecoded[i].application_id;
+        input.type = 'radio';
+        input.name = 'rokuID'
+        label.prepend(input);
+        rokuRadioButtons.appendChild(label);
+      }
+      for (let i = 0; i <= numOfAdConfigs - 1; i++) {
+        let label = document.createElement("label");
+        label.innerText = responseDecoded[i].application_description;
+        let input = document.createElement('input');
+        input.value = responseDecoded[i].application_id;
+        input.type = 'radio';
+        input.name = 'notRokuID'
+        label.prepend(input);
+        notRokuRadioButtons.appendChild(label);
+      }
     }
-    for (let i = 0; i <= numOfAdConfigs - 1; i++) {
-      let label = document.createElement("label");
-      label.innerText = responseDecoded[i].application_description;
-      let input = document.createElement('input');
-      input.value = responseDecoded[i].application_id;
-      input.type = 'radio';
-      input.name = 'notRokuID'
-      label.prepend(input);
-      notRokuRadioButtons.appendChild(label);
-      //notRokuRadioButtons.appendChild(lineBreak);
-      //label.insertAdjacentElement("afterend",lineBreak);
-    }
-  }
 
     function createRequest() {
       var options = {},
-        responseDecoded,
-        numOfAdConfigs,
         i;
       body.region = getSelectedValue(regionSelect).value;
       options.url = 'https://api.bcovlive.io/v1/ssai/applications';
@@ -160,7 +171,7 @@ console.log('playback_url', responseDecoded.playback_url);
           responseDecoded = JSON.parse(response);
           console.log('responseDecoded', responseDecoded);
           numOfAdConfigs = responseDecoded.length;
-          buildAdConfigCheckboxes(responseDecoded, numOfAdConfigs);
+          buildAdConfigCheckboxes();
 /*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
           stream_url.textContent = responseDecoded.stream_url;
           playback_url.textContent = responseDecoded.playback_url;
