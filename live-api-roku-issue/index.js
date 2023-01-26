@@ -1,12 +1,12 @@
 var BCLS = ( function (window, document) {
   var live_key       = document.getElementById('live_key'),
     regionSelect     = document.getElementById('regionSelect'),
-    rokuName         = document.getElementById('rokuName'),
-    exceptRokuName   = document.getElementById('exceptRokuName'),
     apiResponse      = document.getElementById('apiResponse'),
     sendButton       = document.getElementById('sendButton'),
     writePropsButton = document.getElementById('writePropsButton'),
     configNames      = document.getElementById('configNames'),
+    rokuRadioButtons = document.getElementById('rokuRadioButtons'),
+    notRokuRadioButtons = document.getElementById('notRokuRadioButtons'),
     proxyURL         = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
     regions          = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1',  'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
     apiKey           = 'qm2Dw5RuF03ucxVEUKoMGgGsZB1ZK6c7sFN19vs5',
@@ -15,7 +15,9 @@ var BCLS = ( function (window, document) {
     fragment         = document.createDocumentFragment(),
     option,
     i,
-    iMax;
+    iMax,
+    notRokuIDValue,
+    rokuIDValue;
 
   // build select options
   iMax = regions.length;
@@ -109,6 +111,39 @@ console.log('playback_url', responseDecoded.playback_url);
         }
       });
     } */
+
+  function setButtonChangeHandlers() {
+
+  }
+  
+  function buildAdConfigCheckboxes(responseDecoded, numOfAdConfigs) {
+    const lineBreak = document.createElement('br');
+    for (let i = 0; i <= numOfAdConfigs - 1; i++) {
+      let label = document.createElement("label");
+      label.innerText = responseDecoded[i].application_description;
+      let input = document.createElement('input');
+      input.value = responseDecoded[i].application_id;
+      input.type = 'radio';
+      input.name = 'rokuID'
+      label.prepend(input);
+      rokuRadioButtons.appendChild(label);
+      notRokuRadioButtons.appendChild(lineBreak);
+      //label.insertAdjacentElement("afterend",lineBreak);      
+    }
+    for (let i = 0; i <= numOfAdConfigs - 1; i++) {
+      let label = document.createElement("label");
+      label.innerText = responseDecoded[i].application_description;
+      let input = document.createElement('input');
+      input.value = responseDecoded[i].application_id;
+      input.type = 'radio';
+      input.name = 'notRokuID'
+      label.prepend(input);
+      notRokuRadioButtons.appendChild(label);
+      //notRokuRadioButtons.appendChild(lineBreak);
+      //label.insertAdjacentElement("afterend",lineBreak);
+    }
+  }
+
     function createRequest() {
       var options = {},
         responseDecoded,
@@ -125,9 +160,7 @@ console.log('playback_url', responseDecoded.playback_url);
           responseDecoded = JSON.parse(response);
           console.log('responseDecoded', responseDecoded);
           numOfAdConfigs = responseDecoded.length;
-          for (let i = 0; i <= numOfAdConfigs - 1; i++) {
-            reqBody.textContent += responseDecoded[i].application_description + '\r\n';
-          }
+          buildAdConfigCheckboxes(responseDecoded, numOfAdConfigs);
 /*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
           stream_url.textContent = responseDecoded.stream_url;
           playback_url.textContent = responseDecoded.playback_url;
@@ -162,7 +195,7 @@ console.log('playback_url', responseDecoded.playback_url);
             if (httpRequest.status >= 200 && httpRequest.status < 300) {
               // check for completion
               responseRaw = httpRequest.responseText;
-console.log('responseRaw', responseRaw);
+//console.log('responseRaw', responseRaw);
               callback(responseRaw);
             }
           }

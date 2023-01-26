@@ -22,26 +22,23 @@
 
     <p>Select region: <select name="regionSelect" id="regionSelect"></select></p>
 
-    <p><button id="sendButton" class="bcls-button">Create the Job</button></p>
+    <p><button id="sendButton" class="bcls-button">Retrieve Ad Configurations</button></p>
   </section>
 
   <section class="bcls-section">
     <h2 id="outputs">App outputs</h2>
 
     <h3>Log</h3>
+    <h3>Choose your Roku ad configuration</h3>
+    <div id="rokuRadioButtons">
+    </div>
 
-    <p>Application Configuration Names</p>
-    <textarea name="configNames" id="configNames" class="bcls-code" rows="8" cols="80"></textarea>
+    <h3>Choose your All Except Roku ad configuration</h3>
+    <div id="notRokuRadioButtons">
+    </div>
 
-    <h3>Roku and All Except Roku Names Input</h3>
 
-    <p><code>Roku Ad Configuration Name</code></p>
-    <textarea name="rokuName" id="rokuName" cols="100" rows="2" class="bcls-code"></textarea>
-
-    <p><code>All Except Roku Ad Configuration Name</code></p>
-    <textarea name="exceptRokuName" id="exceptRokuName" cols="100" rows="2" class="bcls-code"></textarea>
-
-    <p><button id="writePropsButton" class="bcls-button">Create the Job</button></p>
+    <p><button id="writePropsButton" class="bcls-button">Assign Property Values</button></p>
 
     <h3>Full response</h3>
 
