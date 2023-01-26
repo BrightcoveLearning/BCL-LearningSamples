@@ -34,6 +34,47 @@ var BCLS = ( function (window, document) {
   }
   regionSelect.appendChild(fragment);
 
+
+  function assignProperties(isRoku, IDValue) {
+    //ad_configuration_client_sdk_enabled  and enable_roku_workarounds  
+    var adConfig = responseDecoded.find(item => item.application_id === IDValue),
+      options,
+      urlWithID;
+    if (isRoku === true) {
+      console.log('adConfig to change', adConfig);
+      adConfig.application_ad_configuration.enable_roku_workarounds = true;
+      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
+      console.log('changed', adConfig);
+    } else {
+      console.log('adConfig to change', adConfig);
+      adConfig.application_ad_configuration.enable_roku_workarounds = false;
+      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = true;
+      console.log('changed', adConfig);
+    }
+    urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/' + IDValue;
+    console.log('urlWithID', urlWithID);
+    options.url = urlWithID;
+    options.requestBody = adConfig;
+    options.requestType = 'PUT';
+    options.apiKey = live_key.value;
+    console.log('options in create', options);
+/*     makeRequest(options, function(response) {
+      if (isJson(response)) {
+        responseDecoded = JSON.parse(response);
+        console.log('responseDecoded', responseDecoded);
+        numOfAdConfigs = responseDecoded.length;
+        buildAdConfigCheckboxes();
+/*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
+          stream_url.textContent = responseDecoded.stream_url;
+          playback_url.textContent = responseDecoded.playback_url;
+          playback_url_dvr.textContent = responseDecoded.playback_url_dvr;
+         } else {
+          apiResponse.textContent = response;
+        }
+      }); */
+  }
+
+
   // event handlers
 
   sendButton.addEventListener('click', function() {
@@ -59,6 +100,8 @@ var BCLS = ( function (window, document) {
         console.log('notRokuIDValue', notRokuIDValue);
       }
     }
+    assignProperties(true, rokuIDValue);
+    //assignProperties('notRoku', notRokuIDValue);
   })
 
 
@@ -106,32 +149,6 @@ var BCLS = ( function (window, document) {
       return true;
   }
 
-  /**
-   * prepares the api request and handles the response
-   */
-/*     function createRequest() {
-      var options = {},
-        responseDecoded,
-        playlist;
-      body.region = getSelectedValue(regionSelect).value;
-      options.url = requestURL;
-      reqBody.textContent = JSON.stringify(body);
-      options.requestBody = JSON.stringify(body);
-      options.requestType = 'POST';
-      options.apiKey = live_key.value;
-      makeRequest(options, function(response) {
-        if (isJson(response)) {
-          responseDecoded = JSON.parse(response);
-          apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
-          stream_url.textContent = responseDecoded.stream_url;
-console.log('playback_url', responseDecoded.playback_url);
-          playback_url.textContent = responseDecoded.playback_url;
-          playback_url_dvr.textContent = responseDecoded.playback_url_dvr;
-        } else {
-          apiResponse.textContent = response;
-        }
-      });
-    } */
 
     
     function buildAdConfigCheckboxes() {
