@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 27 Jan **
+- Closed 5 JIRAs (4 KNOW and 1 OTT), 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Improve the Git scripts. I hope things will be better now.
+- Others quick fixes
+
+Work NOT Reflected in JIRAs:
+- Great progress on using the Live API to make the changes to ad configurations. Now down to writing back to the ad configs usign Live API. (Having an issue I would like to discuss actually.)
+- Time spent in meetings: 7 1/2 hours (high for me)
+
+
+
+
 ** Week Ending 20 Jan **
 - Closed 9 JIRAs (6 KNOW and 2 OTT), 3 of which was/were administrivia
 
@@ -13,7 +27,6 @@ Work NOT Reflected in JIRAs:
 
 
 
-Major accomplishments:
 ** Week Ending 13 Jan **
 - Closed 6 JIRAs, 2 of which was/were administrivia
 

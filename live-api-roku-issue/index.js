@@ -38,40 +38,36 @@ var BCLS = ( function (window, document) {
   function assignProperties(isRoku, IDValue) {
     //ad_configuration_client_sdk_enabled  and enable_roku_workarounds  
     var adConfig = responseDecoded.find(item => item.application_id === IDValue),
-      options,
-      urlWithID;
-    if (isRoku === true) {
-      console.log('adConfig to change', adConfig);
+      options = {},
+      urlWithID,
+      responseDecodedUpdate;
+    if (isRoku == true) {
+      //console.log('adConfig to change', adConfig);
       adConfig.application_ad_configuration.enable_roku_workarounds = true;
       adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
-      console.log('changed', adConfig);
+      //console.log('changed', adConfig);
     } else {
-      console.log('adConfig to change', adConfig);
+      //console.log('adConfig to change', adConfig);
       adConfig.application_ad_configuration.enable_roku_workarounds = false;
       adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = true;
-      console.log('changed', adConfig);
+      //console.log('changed', adConfig);
     }
     urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/' + IDValue;
     console.log('urlWithID', urlWithID);
     options.url = urlWithID;
-    options.requestBody = adConfig;
+    options.requestBody = JSON.stringify(adConfig);
     options.requestType = 'PUT';
     options.apiKey = live_key.value;
     console.log('options in create', options);
-/*     makeRequest(options, function(response) {
+    makeRequest(options, function(response) {
       if (isJson(response)) {
-        responseDecoded = JSON.parse(response);
-        console.log('responseDecoded', responseDecoded);
-        numOfAdConfigs = responseDecoded.length;
-        buildAdConfigCheckboxes();
-/*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
-          stream_url.textContent = responseDecoded.stream_url;
-          playback_url.textContent = responseDecoded.playback_url;
-          playback_url_dvr.textContent = responseDecoded.playback_url_dvr;
-         } else {
+        responseDecodedUpdate = JSON.parse(response);
+        console.log('responseDecodedUpdate', responseDecodedUpdate);
+        apiResponse.textContent = JSON.stringify(responseDecodedUpdate, null, '  ');
+      } else {
           apiResponse.textContent = response;
-        }
-      }); */
+      }
+    });
   }
 
 
@@ -149,7 +145,6 @@ var BCLS = ( function (window, document) {
       return true;
   }
 
-
     
     function buildAdConfigCheckboxes() {
       for (let i = 0; i <= numOfAdConfigs - 1; i++) {
@@ -182,18 +177,14 @@ var BCLS = ( function (window, document) {
       options.requestBody = '';
       options.requestType = 'GET';
       options.apiKey = live_key.value;
-      console.log('options in create', options);
+      //console.log('options in create', options);
       makeRequest(options, function(response) {
         if (isJson(response)) {
           responseDecoded = JSON.parse(response);
-          console.log('responseDecoded', responseDecoded);
+          //console.log('responseDecoded', responseDecoded);
           numOfAdConfigs = responseDecoded.length;
           buildAdConfigCheckboxes();
-/*           apiResponse.textContent = JSON.stringify(responseDecoded, null, '  ');
-          stream_url.textContent = responseDecoded.stream_url;
-          playback_url.textContent = responseDecoded.playback_url;
-          playback_url_dvr.textContent = responseDecoded.playback_url_dvr;
- */        } else {
+        } else {
           apiResponse.textContent = response;
         }
       });
@@ -231,10 +222,10 @@ var BCLS = ( function (window, document) {
           alert('Caught Exception: ' + e);
         }
       };
-console.log('options', options);
+console.log('options in makeRequest', options);
     // set up request data
     requestParams = 'url=' + encodeURIComponent(options.url) + '&requestType=' + options.requestType + '&apiKey=' + options.apiKey + '&requestBody=' + options.requestBody;
-    console.log('requestParams: ', requestParams);
+    console.log('requestParams in makeRequest: ', requestParams);
     // set response handler
     httpRequest.onreadystatechange = getResponse;
     // open the request
