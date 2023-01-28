@@ -45,6 +45,7 @@ var BCLS = ( function (window, document) {
       //console.log('adConfig to change', adConfig);
       adConfig.application_ad_configuration.enable_roku_workarounds = true;
       adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
+      delete adConfig.application_type;
       //console.log('changed', adConfig);
     } else {
       //console.log('adConfig to change', adConfig);
@@ -52,7 +53,7 @@ var BCLS = ( function (window, document) {
       adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = true;
       //console.log('changed', adConfig);
     }
-    urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/' + IDValue;
+    urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/application/' + IDValue;
     console.log('urlWithID', urlWithID);
     options.url = urlWithID;
     options.requestBody = JSON.stringify(adConfig);
@@ -69,7 +70,6 @@ var BCLS = ( function (window, document) {
       }
     });
   }
-
 
   // event handlers
 
