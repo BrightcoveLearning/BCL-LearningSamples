@@ -1,18 +1,17 @@
-var BCLS = ( function (window, document) {
-  var live_key       = document.getElementById('live_key'),
-    regionSelect     = document.getElementById('regionSelect'),
-    apiResponse      = document.getElementById('apiResponse'),
-    sendButton       = document.getElementById('sendButton'),
+var BCLS = (function (window, document) {
+  var live_key = document.getElementById('live_key'),
+    regionSelect = document.getElementById('regionSelect'),
+    apiResponse = document.getElementById('apiResponse'),
+    sendButton = document.getElementById('sendButton'),
     writePropsButton = document.getElementById('writePropsButton'),
-    configNames      = document.getElementById('configNames'),
     rokuRadioButtons = document.getElementById('rokuRadioButtons'),
     notRokuRadioButtons = document.getElementById('notRokuRadioButtons'),
-    proxyURL         = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
-    regions          = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1',  'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
-    apiKey           = '',
-    body             = '',
-    requestURL       = 'https://api.bcovlive.io/v1/jobs',
-    fragment         = document.createDocumentFragment(),
+    proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/live-proxy.php',
+    regions = ['us-west-2', 'us-east-1', 'ap-northeast-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-south-1', 'eu-central-1', 'eu-west-1', 'sa-east-1'],
+    apiKey = '',
+    body = '',
+    requestURL = 'https://api.bcovlive.io/v1/jobs',
+    fragment = document.createDocumentFragment(),
     option,
     i,
     iMax,
@@ -42,17 +41,16 @@ var BCLS = ( function (window, document) {
       urlWithID,
       responseDecodedUpdate;
     if (isRoku == true) {
-      //console.log('adConfig to change', adConfig);
+      console.log('Changing Roku');
       adConfig.application_ad_configuration.enable_roku_workarounds = true;
       adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
       delete adConfig.application_type;
-      //console.log('changed', adConfig);
     } else {
-      //console.log('adConfig to change', adConfig);
+      console.log('Changing not Roku');
       adConfig.application_ad_configuration.enable_roku_workarounds = false;
-      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = true;
-      //console.log('changed', adConfig);
-    }
+      adConfig.application_ad_configuration.ad_configuration_client_sdk_enabled = false;
+      delete adConfig.application_type;
+  }
     urlWithID = 'https://api.bcovlive.io/v1/ssai/applications/application/' + IDValue;
     console.log('urlWithID', urlWithID);
     options.url = urlWithID;
@@ -96,8 +94,14 @@ var BCLS = ( function (window, document) {
         console.log('notRokuIDValue', notRokuIDValue);
       }
     }
-    assignProperties(true, rokuIDValue);
-    //assignProperties('notRoku', notRokuIDValue);
+    if (typeof rokuIDValue !== "undefined") {
+      console.log('sending roku values');
+      assignProperties(true, rokuIDValue);
+    }
+    if (typeof notRokuIDValue !== "undefined") {
+      console.log('sending not roku values');
+      assignProperties(false, notRokuIDValue);
+    }
   })
 
 
