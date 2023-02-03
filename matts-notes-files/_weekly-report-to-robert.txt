@@ -1,4 +1,20 @@
 Major accomplishments:
+** Week Ending 3 Feb **
+- Closed 5 JIRAs, 0 of which was/were administrivia
+
+JIRA Highlights Include:
+- Dare I say it, new Git scripts seem to be working
+- Removed VC content from Beacon site not applicable to Beacon. This incuded all of the Publishing Videos & Players navigation section and other individual docs where requests have been made
+- Replaced a section in the Intro Layout Beacon doc on players selection to just show the video I made on Player E features as that is the only player available now to new customers.
+- Finished (YEA!) the form on the Live SSAI Beacon doc that writes two values usign the API to customer ad configs. Also contacted Laura Hernandez to give her a heads up that this could be problematic for customers and support should be ready.  
+
+Work NOT Reflected in JIRAs:
+- Started update to OTT Catalog Export doc as suggested setup procedure from enginners, and reflected in doc is causing issues for customers. UI change has been made, but not in production I found out, so once I see that I will update doc accordingly.
+- Time spent in meetings: 7 1/2 hours (high for me)
+
+
+
+
 ** Week Ending 27 Jan **
 - Closed 5 JIRAs (4 KNOW and 1 OTT), 1 of which was/were administrivia
 
