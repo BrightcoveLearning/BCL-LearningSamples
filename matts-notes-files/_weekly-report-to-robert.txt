@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 10 Feb **
+- Closed 8 JIRAs, 7 KNOW and 1 OTT, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- New doc on Live Event States (Standard that configured live events send out events that the Beacon apps monitor and report)
+- Created doc for Beacon Private site on turning on thumbnail scrubbing for iOS, Android, AppleTV and STV. FYI: Roku is always on and web is done via Beacon Studio PLAYERS module.
+- Separated 1 doc into three. Single Player E doc into:
+	* Player E Selection
+	* Player E VOD Features
+	* Player E Live Features
+
+Work NOT Reflected in JIRAs:
+- Nearly finished a new doc on Player E Live and Live DVR. Only thing is to get feedback. Will publish when feature goes into prod.
+- Time spent in meetings: 8 hours (high for me)
+
+
+
+
 ** Week Ending 3 Feb **
 - Closed 5 JIRAs, 0 of which was/were administrivia
 
