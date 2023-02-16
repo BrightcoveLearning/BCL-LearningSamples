@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Outstream with new ad</title>
+</head>
+
+<body>
+
+  <div style="width:600px">
+    <h1>Lorem Ipsum</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nunc mi ipsum faucibus vitae aliquet nec.
+    </p>
+    <div id="adPlayerDiv"></div>
+    <p>
+      Habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Varius vel pharetra vel turpis nunc eget lorem dolor.
+    </p>
+  </div>
+
+  <!-- The following line is the Brightcove Player script. Replace it with your player. You can  -->
+  <!-- include the default player for your account by just changing the account number to use your own. -->
+  <!-- That way you don't even need to create a new Brightcove Player. -->
+  <script src="https://players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+  <!-- These next two lines are the IMA3 plugin - the ad integration using Google's IMA3 HTML5 SDK. -->
+  <!-- You can get a little bit faster load time if you include these in the player config and build -->
+  <!-- them together as one unit using the Brightcove Player Management API. -->
+  <!-- If you do that then they will be part of the player index.min.js. -->
+  <link href="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.css" rel="stylesheet" />
+  <script src="https://players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
+  <!-- This is the ad-only player loader script. You can use it unmodified since it's hosted from -->
+  <!-- Brightcove's player origin and served over CDN. You can also use it as an example of how to -->
+  <!-- dynamically load the Brightcove Player and do your own thing. It can also be included in your -->
+  <!-- player config if you choose. -->
+  <script src="https://players.brightcove.net/3723496277001/files/adonly.js"></script>
+
+
+  <script>
+    // The following script injects an outstream (aka 'ad-only') player into the div defined above in the text called
+    // 'adPlayerDiv'. You can specify an ad tag here or use in-line VAST, as demonstrated below. Comment out the in-line
+    // adTag is your ad tag URL which defines the ads to play.
+    // For more information on how this works read the comments in the source code included here:
+    // http://players.brightcove.net/3723496277001/files/adonly.js
+
+    // If you don't want it to expand the div you can use the injectAdOnlyPlayer function instead.
+    bcPlayerTools.expandAndInjectAdOnlyPlayer({
+      div: adPlayerDiv,
+      adTag: "https://solutions.brightcove.com/bcls/brightcove-player/vmap/simple-vast.xml",
+      height: 360,
+      animationDuration: 200
+      // autoplays muted by default - which is the only way it will work in some browsers
+      // un-comment these lines if you want to change the settings
+      //  autoplay: false,
+      //	muted: false
+    });
+  </script>
+</body>
+
+</html>
