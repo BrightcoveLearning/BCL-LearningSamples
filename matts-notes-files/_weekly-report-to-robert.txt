@@ -3,12 +3,13 @@ Major accomplishments:
 - Closed 5 JIRAs, 5 KNOW and 0 OTT, 1 of which was/were administrivia
 
 JIRA Highlights Include:
-- Created script to remove submodule and ran it with all team members to be nothing unexpected occurred
+- Created script to remove submodule and ran it with all team members to be sure nothing unexpected occurred
 - Fixed a doc were LG document stub linked to Panasonic content
 - Couple of minor fixes in Beacon docs
 
 Work NOT Reflected in JIRAs:
 - Working on Beacon doc: Skip Introductions and Credits
+- Meeting with Michael Dorf on Magnite advertising
 - Time spent in meetings: 6 1/2 hours (average for me)
 
 
@@ -1173,4 +1174,3 @@ JIRA Highlights Include:
 - Three hours of note taking for the Design Partner sessions
 Work NOT Reflected in JIRAs:
 - A boatload of meetings
-
