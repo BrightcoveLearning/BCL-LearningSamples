@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 17 Feb **
+- Closed 5 JIRAs, 5 KNOW and 0 OTT, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Created script to remove submodule and ran it with all team members to be nothing unexpected occurred
+- Fixed a doc were LG document stub linked to Panasonic content
+- Couple of minor fixes in Beacon docs
+
+Work NOT Reflected in JIRAs:
+- Working on Beacon doc: Skip Introductions and Credits
+- Time spent in meetings: 6 1/2 hours (average for me)
+
+
+
 ** Week Ending 10 Feb **
 - Closed 8 JIRAs, 7 KNOW and 1 OTT, 1 of which was/were administrivia
 
