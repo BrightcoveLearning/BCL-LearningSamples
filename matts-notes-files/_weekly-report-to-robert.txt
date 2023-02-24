@@ -1,4 +1,17 @@
 Major accomplishments:
+** Week Ending 24 Feb **
+- Closed 3 JIRAs, 3 KNOW and 0 OTT, 0 of which was/were administrivia
+
+JIRA Highlights Include:
+- Hopefully the search results now don't show multiple languages
+- Finished Beacon doc: Skip Introductions and Credits which included making a video
+- Edits to Player E Live doc about Live DVR
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 4 1/2 hours (low for me, but Monday holiday)
+
+
+
 ** Week Ending 17 Feb **
 - Closed 5 JIRAs, 5 KNOW and 0 OTT, 1 of which was/were administrivia
 
