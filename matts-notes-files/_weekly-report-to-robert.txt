@@ -1,4 +1,17 @@
 Major accomplishments:
+** Week Ending 3 Mar **
+- Closed 5 JIRAs, 5 KNOW and 0 OTT, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- Final work on search tuning (YEA it works)
+- Couple of minor edits on Beacon docs
+- Review Julissa's ad course
+
+Work NOT Reflected in JIRAs:
+- Bulk of time this week on two new docs 1) Brightcove Ad Monetize 2) Implementing Live Event with DVR
+- Time spent in meetings: 6 1/2 hours (average for me)
+
+
 ** Week Ending 24 Feb **
 - Closed 3 JIRAs, 3 KNOW and 0 OTT, 0 of which was/were administrivia
 
