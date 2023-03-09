@@ -1,4 +1,22 @@
 Major accomplishments:
+** Week Ending 10 Mar **
+- Closed 18 JIRAs, 17 KNOW and 1 OTT, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- New doc: Implementing Live with DVR, draft and final
+- New doc: Brightcove Ad Monetization, draft and final
+- New doc: Brightcove Ad Monetization Technical Overview, draft, waiting for comments from Michael Dorf
+- New doc: Enable DVR for an account, draft and final, Beacon private site
+- Live DVR into prod. I had one old doc I had split into three pieces and once in prod updated navigation so the three docs in nav and the old one removed.
+- Updated two docs' Feature Availability tables for Live DVR changes
+- Minor update around Player 7 versions verbiage
+- Create Google Form to be used as part of goals establishment/achievement
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 10 hours (high for me)
+
+
+
 ** Week Ending 3 Mar **
 - Closed 5 JIRAs, 5 KNOW and 0 OTT, 2 of which was/were administrivia
 
