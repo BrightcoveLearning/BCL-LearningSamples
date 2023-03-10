@@ -1,6 +1,6 @@
 Major accomplishments:
 ** Week Ending 10 Mar **
-- Closed 18 JIRAs, 17 KNOW and 1 OTT, 2 of which was/were administrivia
+- Closed 19 JIRAs, 18 KNOW and 1 OTT, 3 of which was/were administrivia
 
 JIRA Highlights Include:
 - New doc: Implementing Live with DVR, draft and final
@@ -10,7 +10,8 @@ JIRA Highlights Include:
 - Live DVR into prod. I had one old doc I had split into three pieces and once in prod updated navigation so the three docs in nav and the old one removed.
 - Updated two docs' Feature Availability tables for Live DVR changes
 - Minor update around Player 7 versions verbiage
-- Create Google Form to be used as part of goals establishment/achievement
+- Create Google Form to be used as part of goals establishment/achievement (I think Jeff, Shantal and I will be using this)
+- Entered goals in Namely
 
 Work NOT Reflected in JIRAs:
 - Time spent in meetings: 10 hours (high for me)
