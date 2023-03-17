@@ -1,4 +1,19 @@
 Major accomplishments:
+** Week Ending 17 Mar **
+- Closed 8 JIRAs, 8 KNOW and 0 OTT, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- New doc: Interactivity Viewer Plugin, final with the info I have, may get more info from engineers
+- Updated Plugin Version Reference doc with info about Interactivity Viewer plugin (Shantal updated all other plugin versions)
+- Updated Player Configuration Guide doc with interactivity_project_id property
+- Updated a few documents released last week from comments from readers
+
+Work NOT Reflected in JIRAs:
+- Started investigation of docs needed for Beacon Monetization Analytics
+- Time spent in meetings: 5.5 hours (average for me)
+
+
+
 ** Week Ending 10 Mar **
 - Closed 19 JIRAs, 18 KNOW and 1 OTT, 3 of which was/were administrivia
 
