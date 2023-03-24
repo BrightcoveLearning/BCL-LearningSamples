@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 24 Mar **
+- Closed 18 JIRAs, 18 KNOW and 0 OTT, 1 of which was/were administrivia
+
+**NOTE**
+Robert, I went back to my oldest JIRAs and closed 10 I know I will never do. I am going to do this every week for awhile. I am also keeping a list of some that I want to discuss with you if I should close.
+******
+
+JIRA Highlights Include:
+- Found out that some new player plugins have been added and a number of docs needed those added. When looking at the plugin docs I saw they were a mess. Different names for same plugin, old plugins no longer available (two of these), missing plugins, etc. A real mess. Got the docs cleaned up (over 2 days of work). This involved four docs in player-en.  I found we use tables frequently in these plugin docs, and going to do what you said Jeff did, have a table in a shared submodule and include it in multiple docs. Probably be two tables then included in numerous places. Also saw in one of the player plugin doc a note the same table is in one of the API docs, so will link to one of the shared tables (task for next week).
+- Worked on "quiet" submodule scripts. Jeff and I tested (successfully), as you did, and think I can now add files in the root to run these for all of us.
+- Moved BC Player Engineering Plugin Doc Locations doc from Quiver to Confluence. Turned out I think I was the only one who had this, so now in more accessible area for all of us.
+
+Work NOT Reflected in JIRAs:
+- Time spent in meetings: 5.5 hours (average for me)
+
+
+
 ** Week Ending 17 Mar **
 - Closed 8 JIRAs, 8 KNOW and 0 OTT, 1 of which was/were administrivia
 
