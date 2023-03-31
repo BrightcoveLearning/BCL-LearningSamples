@@ -1,0 +1,22 @@
+A property is where your company's online data goes to get processed in Google Analytics.
+
+Google Analytics 4 properties: Also known as GA4 properties, this Analytics property type can process data from both websites and apps. Plus it has many new features for all Analytics users.
+
+An audience is a set of users you define based on different attributes that are important to your business — for example, fans of sports and travel, people shopping for cars, or users who have already engaged with your company's products or services. 
+
+The new way Analytics collects and stores data enables many of the benefits of the latest Google Analytics experience. Rather than using a session-based model, which groups user interactions within a given time frame, it uses an event-based model, which processes each user interaction as a standalone event.
+
+The event-based model:
+In GA4 properties, you can still see session data, but Analytics collects and stores user interactions with your website or app as events. Events provide insight on what's happening in your website or app, such as pageviews, button clicks, user actions, or system events. Events can collect and send pieces of information that more fully specify the action the user took or add further context to the event or user. This information could include things like the value of purchase, the title of the page a user visited, or the geographic location of the user.
+
+Identity spaces in Google Analytics:
+When trying to understand user journeys, Analytics can use several different user identifiers, such as the IDs you assign users logged into your website, Google signals, and device ID. These groups of identifiers are called identity spaces.
+  User-ID:
+If you create your own persistent IDs for signed-in users, you can use this data to accurately measure user journeys across devices. To enable the User-ID feature, you must consistently assign IDs to your users and include the IDs along with the data you send to Analytics.
+  Google signals
+Google signals uses data from users who are signed in to Google. With Google signals enabled, Analytics associates event data it collects from users on your site with the Google accounts of signed-in users who have consented to sharing this information. Enabling Google signals is very simple. You don’t have to make modifications to your website or app to get started with this feature — just turn it on!
+  Device ID
+Analytics can also use device ID as an identity space. On websites, the device ID comes from the user’s browser. On apps, the device ID comes from app-instance ID. You don't need any further setup in Google Analytics to use device ID. 
+
+Identity spaces in GA4 properties:
+In GA4 properties, data is processed using all available identity spaces. First, Analytics looks for User-ID because this feature uses the data you collect. Next, it tries Google signals, and finally, if there isn't a match for either, it relies on the device ID. From there, Analytics creates a single user journey from all the data associated with the same identity. Because these identity spaces are used in all reports, they allow you to de-duplicate users and tell a more unified, holistic story about their relationships with your business.
