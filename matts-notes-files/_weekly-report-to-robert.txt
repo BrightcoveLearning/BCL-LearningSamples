@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 31 Mar **
+- Closed 11 JIRAs, 11 KNOW and 0 OTT, 1 of which was/were administrivia
+
+JIRA Highlights Include:
+- Closed 5 **2018** JIRAs no longer applicable to our work today
+- Distributed quiet scripts to all domains
+- Helped Shantal with Camtasia and replace source tool in Studio
+- Added note on self-hosting Brightcove Player (bad idea) in player overview doc
+- Updated video and doc on Identify and Delete Low Performing Videos 
+
+Work NOT Reflected in JIRAs:
+- Started studying Google Analytics 4
+- Time spent in meetings: 5 hours (average for me)
+
+
+
+Major accomplishments:
 ** Week Ending 24 Mar **
 - Closed 18 JIRAs, 18 KNOW and 0 OTT, 1 of which was/were administrivia
 
