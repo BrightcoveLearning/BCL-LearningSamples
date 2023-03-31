@@ -20,3 +20,6 @@ Analytics can also use device ID as an identity space. On websites, the device I
 
 Identity spaces in GA4 properties:
 In GA4 properties, data is processed using all available identity spaces. First, Analytics looks for User-ID because this feature uses the data you collect. Next, it tries Google signals, and finally, if there isn't a match for either, it relies on the device ID. From there, Analytics creates a single user journey from all the data associated with the same identity. Because these identity spaces are used in all reports, they allow you to de-duplicate users and tell a more unified, holistic story about their relationships with your business.
+
+What does this mean?
+When you only have access to one identity space, like device ID, a single person could appear as a different user every time they interact with your business on a different device. But when you use multiple identity spaces, you can get better insight into user journeys, with more robust cross-device and cross-platform data and reporting that reflects de-duplicated users.
