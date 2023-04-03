@@ -23,3 +23,27 @@ In GA4 properties, data is processed using all available identity spaces. First,
 
 What does this mean?
 When you only have access to one identity space, like device ID, a single person could appear as a different user every time they interact with your business on a different device. But when you use multiple identity spaces, you can get better insight into user journeys, with more robust cross-device and cross-platform data and reporting that reflects de-duplicated users.
+
+Key takeaways:
+*Reporting in GA4 properties is simple: A handful of overview reports each cover a single insight about your business, with the option to learn more by selecting the link at the bottom of each summary card.
+*Use Explorations to drill even deeper into your data. The different exploration techniques allow you to home in on the specific insights you care about and export custom data sets.
+*Use the search box at the top of your Analytics account to find what you need.
+
+Reports and Explorations are complementary areas in the latest Google Analytics experience. They’re designed to provide actionable insights into your website and app data, so you can explore data and insights at the level you need, from technical analysis to high-level reporting.
+
+Explorations
+*The free form exploration allows you to visualize your data with flexibility and ease. To conduct an ad hoc analysis, just drag and drop the variables you’re interested in onto a canvas to see instant visualizations of your data. Don’t see the variable you’re looking for? Select the plus icon to view the full list of dimensions and metrics you can use.
+*Funnel exploration lets you visualize the steps your users take toward a key task or conversion. This tool helps you identify sequences of key events and understand how your users navigate these steps. You'll be able to see where users enter your funnels, as well as where they drop off.
+*Path exploration lets you understand how people progress from one stage in the customer journey to the next. Like funnel exploration, path exploration uncovers the steps users take through your site or app. But while funnels only analyze a single, predefined path, path exploration is free-flowing and can follow any number of undefined paths, even ones you weren’t aware of or didn’t intend. For example, it could uncover looping behavior, which may indicate users becoming stuck
+*Like funnel exploration, path exploration uncovers the steps users take through your site or app. But while funnels only analyze a single, predefined path, path exploration is free-flowing and can follow any number of undefined paths, even ones you weren’t aware of or didn’t intend. For example, it could uncover looping behavior, which may indicate users becoming stuck
+*User exploration lets you select specific groups of users, like people who both visited your website and downloaded your app, and learn more about each anonymous individual user's activities. Understanding individual behavior is important when you want to personalize the user experience or when you need to gain insight into unexpected user behaviors.
+*A cohort is a group of users who share a common characteristic identified in this report by a specific event the user has triggered. For example, all users who signed up this week for your newsletter belong to the same cohort. Cohort exploration allows you to explore the behavior of these groups over time on your app or website.
+
+Introducing data streams
+Data streams are a feature of GA4 properties that allow you to connect a single Analytics property to the various places where your users interact with your business. For example, a company that has both a website and an app would need a separate data stream for each platform to combine their reporting and insights into a single Analytics property.
+
+Key takeaways
+*In GA4 properties, you can set up a data stream for each platform where your users interact with your business to integrate all your data into a single Analytics property.
+*GA4 properties are the future of Analytics — this Analytics experience is for everyone, whether you have a website, an app, or both. 
+*If you currently use Universal Analytics properties for your website, set up a GA4 property alongside it to take advantage of new Analytics features as they come out.
+*Once you're done setting up a GA4 property for your business, verify your account setup by logging into your Google Analytics account, opening your new GA4 property, and seeing if your data has started reporting.
