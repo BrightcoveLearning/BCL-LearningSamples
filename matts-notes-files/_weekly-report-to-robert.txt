@@ -1,6 +1,6 @@
 Major accomplishments:
 ** Week Ending 7 Apr **
-- Closed 18 JIRAs, 17 KNOW and 1 OTT, 2 of which was/were administrivia
+- Closed 19 JIRAs, 18 KNOW and 1 OTT, 2 of which was/were administrivia
 
 JIRA Highlights Include:
 - Closed 5 **2018** JIRAs no longer applicable to our work today
@@ -9,10 +9,11 @@ JIRA Highlights Include:
 - Added download_button and skip_buttons to properties for Player Configuration Guide
 - Made video categories diagram for discussion initially with Julissa, then the group
 - Update Beacon UI doc to match UI changes that went prod this week
+- Reviewed Chad's Player SEO script
 
 Work NOT Reflected in JIRAs:
 - Quite a bit of time helping Shantal with some new learning, mostly Camtasia techniques and Replace Source file
-- Time spent in meetings: 5 hours (average for me)
+- Time spent in meetings: 7 1/2 hours (bit high for me)
 
 
 
