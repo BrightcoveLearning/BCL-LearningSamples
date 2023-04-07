@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 7 Apr **
+- Closed 18 JIRAs, 17 KNOW and 1 OTT, 2 of which was/were administrivia
+
+JIRA Highlights Include:
+- Closed 5 **2018** JIRAs no longer applicable to our work today
+- Gained enough GA4 skills to know we are good to go for support.brightcove.com
+- Got the JSDoc process working again for the Player API update. CSS not being used, but that will be next month's fix.
+- Added download_button and skip_buttons to properties for Player Configuration Guide
+- Made video categories diagram for discussion initially with Julissa, then the group
+- Update Beacon UI doc to match UI changes that went prod this week
+
+Work NOT Reflected in JIRAs:
+- Quite a bit of time helping Shantal with some new learning, mostly Camtasia techniques and Replace Source file
+- Time spent in meetings: 5 hours (average for me)
+
+
+
 ** Week Ending 31 Mar **
 - Closed 11 JIRAs, 11 KNOW and 0 OTT, 1 of which was/were administrivia
 
