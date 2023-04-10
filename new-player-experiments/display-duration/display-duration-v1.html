@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Display Duration Sample</title>
+  <link href="https://players.brightcove.net/videojs-overlay/3/videojs-overlay.css" rel="stylesheet">
+  <style type="text/css">
+    .video-js .vjs-overlay-background {
+      background-color: rgba(0, 0, 0, 1) !important;
+      color: red !important;
+      border-radius: 3px;
+      padding: 10px;
+      width: 33%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="v4fsPmB1M"
+    data-embed="default"
+    controls=""
+    data-video-id="1762795214581202748"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/v4fsPmB1M_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-overlay/3/videojs-overlay.min.js"></script>
+
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var myPlayer = this;
+      myPlayer.on('loadstart', function () {
+        let timeInSeconds = Math.round(myPlayer.mediainfo.duration),
+          timeInMinutesSeconds = fmtMSS(timeInSeconds);
+
+        myPlayer.overlay({
+          overlays: [{
+            align: 'bottom-left',
+            content: 'Duration (min:sec): ' + timeInMinutesSeconds,
+            start: 'loadeddata',
+            end: 'play'
+          }]
+        });
+      });
+    });
+
+    function fmtMSS(s) { return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s };
+  </script>
+
+</body>
+
+</html>

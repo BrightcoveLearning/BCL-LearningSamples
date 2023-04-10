@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Display Duration Sample</title>
+  <link href="https://players.brightcove.net/videojs-overlay/3/videojs-overlay.css" rel="stylesheet">
+  <link href="display-duration.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <video-js id="myPlayerID"
+    data-account="1752604059001"
+    data-player="v4fsPmB1M"
+    data-embed="default"
+    controls=""
+    data-video-id="1762795214581202748"
+    data-playlist-id=""
+    data-application-id=""
+    width="640" height="360"></video-js>
+  <script src="https://players.brightcove.net/1752604059001/v4fsPmB1M_default/index.min.js"></script>
+
+  <script src="https://players.brightcove.net/videojs-overlay/3/videojs-overlay.min.js"></script>
+  <script src="display-duration.js"></script>
+  <script>
+    videojs.getPlayer('myPlayerID').ready(function () {
+      const myPlayer = this;
+      myPlayer.displayDuration();
+    });
+  </script>
+
+</body>
+
+</html>

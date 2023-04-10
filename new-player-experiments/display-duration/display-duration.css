@@ -1,0 +1,7 @@
+.video-js .vjs-overlay-background {
+  background-color: rgba(0, 0, 0, 1) !important;
+  color: red !important;
+  border-radius: 3px;
+  padding: 10px;
+  width: 33%;
+}
