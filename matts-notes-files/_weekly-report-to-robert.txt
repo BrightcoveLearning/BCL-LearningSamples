@@ -1,4 +1,21 @@
 Major accomplishments:
+** Week Ending 14 Apr **
+- Closed 12 JIRAs, 12 KNOW and 0 OTT, 0 of which was/were administrivia
+
+JIRA Highlights Include:
+- New Player Code Sample: Display Video Duration
+- New doc for GA plugin
+- Combined old Google Analytics Self Configuration doc into new GA plugin doc
+- Notes at the top of the Download Video and Download Transcript docs pointing to the new Download Button Plugin doc
+- Minor updates to other Beacon docs
+
+Work NOT Reflected in JIRAs:
+- Research and working with engineer on the IMA DAI Plugin. As far as I know after speaking with the engineer this is Google's implementation of SSAI. Odd it does NOT use videos from VC. Not sure who the audience it. Robert, if you know the positioning of this functionality please let me in on the use case.
+- One hour meeting with Harisha Swaminathan (GA4 plugin engineer) and I can now make a video on how to setup GA4 (start to finish) and show data being collected.  
+- Time spent in meetings: 8 hours (bit high for me) For a change some of these meetings were VERY helpful
+
+
+
 ** Week Ending 7 Apr **
 - Closed 19 JIRAs, 18 KNOW and 1 OTT, 2 of which was/were administrivia
 

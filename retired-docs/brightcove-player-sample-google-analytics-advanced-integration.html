@@ -1,0 +1,287 @@
+---
+title: 'Brightcove Player Sample: Google Analytics Advanced Integration'
+description: 'In this topic, you will learn how to set the Google Analytics Tracking ID dynamically at runtime when using a Brightcove player.'
+parent: Code Samples
+---
+<h1>{{ page.title }}</h1>
+<article class="bcls-article">
+  <summary>{{ page.description }}</summary>
+
+<section class="bcls-section">
+<h2 id="Player_example">Player example</h2>
+<!-- UPDATE description -->
+
+<aside class="bcls-aside bcls-aside--information">This example and associated code is provided as a guide for your production development. The code is not certified for production use nor officially supported.</aside>
+
+<p>This example uses a Brightcove player and adds Google Analytics programmatically, assigning the Tracking ID dynamically at runtime. This approach is useful if you have several GA accounts but don't want a unique player for each.</p>
+<p>
+   When adding GA dynamically, you will not add the Google Analytics plugin in Video Cloud Studio. If you configure it in the Studio, it will be initialized on player load and it will be too late to change the settings (they cannot be overridden).
+</p>
+<p>
+Another benefit of this approach is that our API integration will not create fields in your GA account (Google won't let you rename existing fields).
+</p>
+<p>
+  When you replace the <code translate="No">tracker</code> value in this example with your own Google Analytics Tracing ID, then you should see metrics on your Google Analytics page.
+</p>
+<figure class="bcls-figure"><img class="bcls-image--no-border" alt="Google Analytics home page" src="/assets/images/code-samples/brightcove-player-sample-google-analytics-advanced-integration/ga-home.png" />
+  <figcaption class="bcls-caption--image">Google Analytics home page</figcaption>
+</figure>
+
+<!-- UPDATE codepen here -->
+<p class="codepen" data-height="465" data-theme-id="34967" data-default-tab="result" data-user="bcls1969" data-slug-hash="wvaQwRy" style="height: 465px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="Google Analytics Advanced Integration">
+  <span>See the Pen <a href="https://codepen.io/team/bcls1969/pen/wvaQwRy">
+  Google Analytics Advanced Integration</a> by Brightcove Learning Services (<a href="https://codepen.io/team/rcrooks1969">@bcls1969</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<br/>
+
+<h3>Source code</h3>
+<!-- UPDATE link to GitHub source -->
+<p>
+  You can view the source code by selecting the <strong>HTML</strong>, <strong>CSS</strong> and <strong>JS</strong> buttons in the CodePen above, or you can view the <a href="https://github.com/BrightcoveLearning/google-analytics-advanced-integration">complete solution on GitHub</a>. 
+</p>
+</section>
+
+<section class="bcls-section">
+<h2 id="Using_the_CodePen" class="bcls-expander-head">Using the CodePen</h2>
+
+<div class="bcls-expander-content">
+<p>Here are some tips to effectively use the above CodePen:</p>
+
+<ul>
+	<li>Toggle the actual display of the player by clicking the <strong>Result</strong> button.</li>
+	<li>Click the <strong>HTML/CSS/JS</strong> buttons to display ONE of the code types.</li>
+	<li>Later in this document the logic, flow and styling used in the application will be discussed in the <a href="#Player/HTML_configuration">Player/HTML configuration</a>, <a href="#Applicaton_flow">Application flow</a> and <a href="#Application_styling">Application styling</a> sections. The best way to follow along with the information in those sections is to:
+	<ol>
+		<li>Click the <strong>EDIT ON CODEPEN</strong> button in the CodePen and have the code available in one browser/browser tab.</li>
+		<li>In CodePen, adjust what code you want displayed. You can change the width of different code sections within CodePen.</li>
+		<li>View the <a href="#Player/HTML_configuration">Player/HTML configuration</a>, <a href="#Applicaton_flow">Application flow</a> and/or <a href="#Application_styling">Application styling</a> sections in another browser/browser tab. You will now be able to follow the code explanations and at the same time view the code.</li>
+	</ol>
+	</li>
+</ul>
+</div>
+</section>
+
+<section class="bcls-section">
+<h2 id="developmentsequence" class="bcls-expander-head">Development sequence</h2>
+
+<div class="bcls-expander-content">
+<p>Here is the recommended development sequence:</p>
+
+<ol>
+	<li>Use the In-Page embed player implementation to test the functionality of your player, plugin and CSS (if CSS is needed)</li>
+	<li>Put the plugin's JavaScript and CSS into separate files for local testing</li>
+	<li>Deploy the plugin code and CSS to your server once you have worked out any errors</li>
+	<li>Use Studio to add the plugin and CSS to your player</li>
+	<li>Replace the In-Page embed player implementation if you determine that the iframe implementation is a better fit (detailed in next section)</li>
+</ol>
+
+<p>For details about these steps, review the <a href="https://player.support.brightcove.com/coding-topics/step-step-plugin-development.html">Step-by-Step: Plugin Development</a> guide.</p>
+
+<h3>iframe or In-Page embed</h3>
+
+<p>When developing enhancements for the Brightcove player you will need to decide if the code is a best fit for the iframe or In-Page embed implementation. The best practice recommendation is to build a plugin for use with an iframe implementation. The advantages of using the iframe player are:</p>
+
+<ul>
+	<li>No collisions with existing JavaScript and/or CSS</li>
+	<li>Automatically responsive</li>
+	<li>The iframe eases use in social media apps (or whenever the video will need to "travel" into other apps)</li>
+</ul>
+
+<p>Although integrating the In-Page embed player can be more complex, there are times when you will plan your code around that implementation. To generalize, this approach is best when the containing page needs to communicate to the player. Specifically, here are some examples:</p>
+
+<ul>
+	<li>Code in the containing page needs to listen for and act on player events</li>
+	<li>The player uses styles from the containing page</li>
+	<li>The iframe will cause app logic to fail, like a redirect from the containing page</li>
+</ul>
+
+<p>Even if your final implementation does not use the iframe code, you can still use the In-Page embed code with a plugin for your JavaScript and a separate file for your CSS. This encapsulates your logic so that you can easily use it in multiple players.</p>
+</div>
+<!-- id="expanderContent" --></section>
+
+<section class="bcls-section">
+<h2 id="API/Plugin_resources_used">API/Plugin resources used</h2>
+<!-- UPDATE table, remove unneeded columns -->
+
+<table class="bcls-table">
+	<thead class="bcls-table__head">
+		<tr>
+			<th>API Methods</th>
+			<th>API Events</th>
+		</tr>
+	</thead>
+	<tbody class="bcls-table__body">
+		<tr>
+			<td><a href="https://player.support.brightcove.com/plugins/plugin-registry.html">bcGa()</a></td>
+      <td>&nbsp;</td>
+		</tr>
+	</tbody>
+</table>
+</section>
+<!-- UPDATE player and HTML configuration -->
+
+<section class="bcls-section">
+<h2 id="Player/HTML_configuration">Player/HTML configuration</h2>
+
+<p>This section details any special configuration needed during player creation. In addition, other HTML elements that must be added to the page, beyond the in-page embed player implementation code, are described.</p>
+
+<h3>Player configuration</h3>
+<p>
+  A Brightcove Player is used for this example.
+</p>
+<ol class="bcls-tasklist-restart">
+	<li>In Video Cloud Studio, navigate to the <strong>Players</strong> module. Create a new player.</li>
+  <li>
+    <p>In the left side navigation, expand <strong>Third-Party Analytics</strong>. For the <strong>GoogleAnalytics</strong> option, <strong>DO NOT</strong> select <strong>Enable Google Analytics</strong>. Leave this option unchecked. </p>
+    <figure class="bcls-figure"><img class="bcls-image--no-border" alt="Google Analytics in Studio" src="/assets/images/code-samples/brightcove-player-sample-google-analytics-advanced-integration/enable-ga.png" />
+    	<figcaption class="bcls-caption--image">Google Analytics in Studio</figcaption>
+    </figure>
+  </li>
+</ol>
+
+<h3 id="Other_HTML">Other HTML</h3>
+<p>
+  A script was added after the Brightcove Player embed code.
+</p>
+<ol class="bcls-tasklist-restart">
+	<li>
+    <p>
+      After the Player embed code, add the following script for the Brightcove Google Analytics plugin. We are loading the plugin manually instead of configuring it in Video Cloud Studio.
+    </p>
+    <pre>
+    <code class="language-javascript" translate="No">&lt;script src=&quot;//players.brightcove.net/videojs-bc-ga/1/videojs-bc-ga.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+  </li>
+</ol>
+</section>
+<!-- UPDATE application flow -->
+
+<section class="bcls-section">
+<h2 id="Application_flow">Application flow</h2>
+
+<p>The basic logic behind this application is:</p>
+
+<ul>
+	<li>Create a Brightcove Player without configuring the Google Analytics plugin</li>
+	<li>Load the Google Analytics plugin manually</li>
+  <li>Define options for the plugin, including parameters and events that you want to track</li>
+  <li>Set the tracking id</li>
+  <li>Play your video</li>
+</ul>
+<!-- UPDATE task 1 -->
+<ol class="bcls-tasklist-restart">
+	<li>
+    <h4>Create the player</h4>
+    <p>
+      If you have already done so, see the <a href="#Player/HTML_configuration">Player/HTML configuration</a> section above to create your player in Studio.
+    </p>
+  </li>
+  <li>
+    <h4>
+      Load the plugin
+    </h4>
+    <p>
+      See the <a href="#Other_HTML">Other HTML</a> section above to add the Google Analytics plugin script.
+    </p>
+  </li>
+  <li>
+    <h4>
+      Define plugin options
+    </h4>
+    <p>
+      In the <strong>JS</strong> section of the CodePen, find the code where which is labeled:
+    </p>
+    <pre>
+    <code class="language-javascript" translate="No">// Set up the Google Analytics plugin options</code></pre>
+    <p>
+      The player calls the <a href="https://player.support.brightcove.com/plugins/plugin-registry.html">bcGa() method</a> to initialize the plugin. Notice that you can set parameters and events that you want to track.
+    </p>
+<pre class="line-numbers">
+<code class="language-javascript" translate="No">myPlayer.bcGa({
+  &quot;paramsToTrack&quot;: {
+    &quot;bcvideo_video_seconds_viewed&quot;: &quot;dimension7&quot;,
+    &quot;bcvideo_range&quot;: &quot;dimension8&quot;,
+    &quot;bcvideo_video_duration&quot;: &quot;dimension9&quot;,
+    &quot;bcvideo_player&quot;: &quot;dimension10&quot;,
+    &quot;bcvideo_account&quot;: &quot;dimension11&quot;,
+    &quot;bcvideo_session&quot;: &quot;dimension12&quot;,
+    &quot;bcvideo_platform_version&quot;: &quot;dimension13&quot;
+  },
+  &quot;eventsToTrack&quot;: {
+    &quot;video_impression&quot;: &quot;Video Impression&quot;,
+    &quot;play_request&quot;: &quot;Play Request&quot;,
+    &quot;video_engagement&quot;: &quot;Video Engagement&quot;,
+    &quot;ad_start&quot;: &quot;Ad Start&quot;,
+    &quot;ad_end&quot;: &quot;Ad End&quot;,
+    &quot;player_load&quot;: &quot;Player Load&quot;,
+    &quot;error&quot;: &quot;Error&quot;
+  },
+  &quot;tracker&quot;: &quot;UA-150904906-1&quot;
+})
+/*
+	Two extra events can be added:
+		video_view
+		video_complete
+*/</code></pre>
+<p>
+  For details about events and dimensions, see the <a href="https://studio.support.brightcove.com/players/configuring-google-analytics-event-tracking.html#events">Configuring Google Analytics Event Tracking</a> document.
+</p>
+  </li>
+  <li>
+    <h4>
+      Set the tracking id
+    </h4>
+    <p>
+      In the JavaScript code above, replace the <code translate="No">tracker</code> value with your Google Analytics Tracking ID.
+    </p>
+    <pre>
+    <code class="language-javascript" translate="No">&quot;tracker&quot;: &quot;<span class="bcls-input">your tracking id</span>&quot;</code></pre>
+  </li>
+  <li>
+    <p>
+      Put the HTML and JavaScript code on your web page and play your video. You should see metrics in your
+    </p>
+  </li>
+</ol>
+
+</section>
+<!-- UPDATE CSS description -->
+
+<!-- <section class="bcls-section">
+<h2 id="Application_styling">Application styling</h2>
+
+<p>The CSS positions the player to cover the entire background of the web page. It also positions and styles the text block which sits on top of the player.</p>
+</section> -->
+
+<section class="bcls-section">
+<h2 id="Plugin_code">Plugin code</h2>
+
+<p>Normally when converting the JavaScript into a Brightcove Player plugin nominal changes are needed. One required change is to replace the standard use of the <code translate="No">ready()</code> method with the code that defines a plugin.</p>
+
+<p>Here is the very commonly used start to JavaScript code that will work with the player:</p>
+
+<pre class="line-numbers">
+<code class="language-javascript" translate="No">videojs.getPlayer('myPlayerID').ready(function() {
+  var myPlayer = this;
+  ...
+});</code></pre>
+
+<p>You will change the first line to use the standard syntax to start a Brightcove Player plugin:</p>
+
+<pre class="line-numbers">
+<code class="language-javascript" translate="No">videojs.registerPlugin('pluginName', function(options) {
+  var myPlayer = this;
+  ...
+});</code></pre>
+<!-- UPDATE path to plugin's JavaScript -->
+
+<p>As mentioned earlier, you can see the plugin's JavaScript code in this document's corresponding GitHub repo: <a href="https://github.com/BrightcoveLearning/google-analytics-advanced-integration/blob/master/plugin/advanced-ga.js">advanced-ga.js</a>.</p>
+
+<h3>Using the plugin with a player</h3>
+
+<p>Once you have the plugin's CSS and JavaScript files stored in an Internet accessible location, you can use the plugin with a player. In Studio's <strong>PLAYERS</strong> module you can choose a player, then in the <strong>PLUGINS</strong> section add the URLs to the CSS and JavaScript files, and also add the <strong>Name</strong> and <strong>Options</strong>, if options are needed.</p>
+
+<aside class="bcls-aside bcls-aside--tip">For more information on using Studio to assign plugins to players see the <a href="https://studio.support.brightcove.com/players/configuring-player-plugins.html">Configuring Player Plugins</a> document.</aside>
+</section>
+</article>
