@@ -1,4 +1,18 @@
 Major accomplishments:
+** Week Ending 21 Apr **
+- Closed 2 JIRAs, 2 KNOW and 0 OTT, 0 of which was/were administrivia
+
+JIRA Highlights Include:
+- New doc on Interactivity plugin
+- New doc on Kollective eCDN plugin
+
+Work NOT Reflected in JIRAs:
+- Most of the week's time spent on GA4. Feel good about the actual installation part of the content. Now working on how to create some simple reports. 
+- Met with Jeff and Yari about reorg of Player Dev navigation. Have plan (as approved by you) and now need to find time to make the changes in Jekyll.
+- Time spent in meetings: 8 hours (bit high for me) For a change some of these meetings were VERY helpful
+
+
+
 ** Week Ending 14 Apr **
 - Closed 12 JIRAs, 12 KNOW and 0 OTT, 0 of which was/were administrivia
 
