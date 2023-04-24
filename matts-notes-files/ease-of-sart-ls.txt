@@ -1,0 +1,16 @@
+Objective: Customers are presented with a document and/or video that describes how they can learn about the products they have purchased or considering to purchase.
+
+Role of Learning Services: Standard, repeatable, "out of the box" learning content delivery. The content is determined to be what all, or at least the majority, of customers will need to be successful with their Brightcove products. All of Learning Services content, no matter how delivered, is free to the customer.
+
+Role of Onboarding: When a customer has special needs to get started with their use of Brightcove products, Onboarding handles these situations. Customers will be charged a fee for Onboarding's content delivery and assistance. Examples of such content/assistance are:
+* Migrations of customer base
+* Complex advertising implementation
+* Special customization of player look and behavior
+* etc.
+
+
+The customer can choose the learning style that best suits their needs (of course, can choose on or all):
+1. Content via an LMS (Brightcove Academy) where the student is guided and tracked though courses on Video Cloud Essentials.
+2. Content via Training on Demand courses from the documentation. The topics are presented as videos from which the student can pick and choose the topics to watch and in what order.
+3. Content via instructor led webinars. A series of webinars on various introductory topics. Webinars are regularly scheduled and open to the public or if a customer has a small group (2 or more students) a private webinar can be setup.
+4. Content via a la carte selection of documentation driven by navigation selection or search.
