@@ -20,7 +20,7 @@
     data-application-id=""
     width="640" height="360"></video-js>
 
-  <p><button onclick="changeVideo()">Change Video</button></p>
+  <p><button onclick="changeVideo()">change video</button></p>
 
   <script src="https://players.brightcove.net/921483702001/MCQjvqXXF_default/index.min.js"></script>
 
@@ -36,7 +36,7 @@
     });
 
     function changeVideo() {
-      myPlayer.catalog.getVideo('3742256818001', function (error, video) {
+      myPlayer.catalog.getVideo('5831704295001', function (error, video) {
         console.log("video:", video);
         console.log("error:", error);
         myPlayer.catalog.load(video);

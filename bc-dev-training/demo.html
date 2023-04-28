@@ -10,11 +10,29 @@
 
   <!-- Place player code here -->
   <!-- Be sure to add an id, width & height -->
-
+  <div style="width: 960px;">
+    <video-js  id="myPlayerID"
+    data-account="921483702001"
+    data-player="hRNxImpn9f"
+    data-embed="default"
+    controls=""
+    data-video-id="6306731825112"
+    data-playlist-id=""
+    data-application-id=""
+    width="960" height="540" class="vjs-fluid"></video-js>
+  </div>
+  <script src="https://players.brightcove.net/921483702001/hRNxImpn9f_default/index.min.js"></script>
 
 
   <script>
     // Get the PLAYER and be sure the PLAYER is ready to interact with
+    videojs.getPlayer('myPlayerID').ready(function () {
+      var fish = this;
+      fish.muted(true);
+      fish.on('loadedmetadata', function () {
+        fish.play();
+      })
+    })
 
       //  Get a reference to the PLAYER
 
